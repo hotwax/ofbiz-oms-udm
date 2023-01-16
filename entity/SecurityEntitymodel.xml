@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+    <!-- TODO: skipped element title -->
+    <!-- TODO: skipped element version -->
+    <entity entity-name="X509IssuerProvision" package="org.apache.ofbiz.security.cert" cache="never" group="ofbiz_transactional">
+            <field name="certProvisionId" type="id" is-pk="true">
+        </field>
+            <field name="commonName" type="text-long">
+        </field>
+            <field name="organizationalUnit" type="text-long">
+        </field>
+            <field name="organizationName" type="text-long">
+        </field>
+            <field name="cityLocality" type="text-long">
+        </field>
+            <field name="stateProvince" type="text-long">
+        </field>
+            <field name="country" type="text-long">
+        </field>
+            <field name="serialNumber" type="text-long">
+        </field>
+    </entity>
+    <entity entity-name="UserLogin" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
+            <field name="userLoginId" type="id-long" is-pk="true">
+        </field>
+            <field name="currentPassword" type="text-long">
+        </field>
+            <field name="passwordHint" type="text-long">
+        </field>
+            <field name="isSystem" type="text-indicator">
+        </field>
+            <field name="enabled" type="text-indicator">
+        </field>
+            <field name="isExternal" type="text-indicator">
+        </field>
+            <field name="hasLoggedOut" type="text-indicator">
+        </field>
+            <field name="requirePasswordChange" type="text-indicator">
+        </field>
+            <field name="lastCurrencyUom" type="id">
+        </field>
+            <field name="lastLocale" type="text-short">
+        </field>
+            <field name="lastTimeZone" type="id-long">
+        </field>
+            <field name="disabledDateTime" type="date-time">
+        </field>
+            <field name="successiveFailedLogins" type="number-integer">
+        </field>
+            <field name="externalAuthId" type="id-long">
+        </field>
+            <field name="userLdapDn" type="id-long">
+        </field>
+            <field name="disabledBy" type="id-long">
+        </field>
+        <relationship type="one-nofk" fk-name="DISABLEDBY_USRLGN" title="DisabledBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="disabledBy" related="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="UserLoginPasswordHistory" package="org.apache.ofbiz.security.login" cache="never" group="ofbiz_transactional">
+            <field name="userLoginId" type="id-long" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+            <field name="currentPassword" type="text-long">
+        </field>
+        <relationship type="one" fk-name="USER_LPH_USER" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="UserLoginHistory" package="org.apache.ofbiz.security.login" cache="never" group="ofbiz_transactional">
+            <field name="userLoginId" type="id-long" is-pk="true">
+        </field>
+            <field name="visitId" type="id">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+            <field name="passwordUsed" type="text-long" encrypt="true">
+        </field>
+            <field name="successfulLogin" type="text-indicator">
+        </field>
+        <relationship type="one" fk-name="USER_LH_USER" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="UserLoginSession" package="org.apache.ofbiz.security.login" cache="never" group="ofbiz_transactional">
+            <field name="userLoginId" type="id-long" is-pk="true">
+        </field>
+            <field name="savedDate" type="date-time">
+        </field>
+            <field name="sessionData" type="text-very-long">
+        </field>
+        <relationship type="one" fk-name="USER_SESSION_USER" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+            <field name="groupId" type="id" is-pk="true">
+        </field>
+            <field name="groupName" type="text-long">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+    </entity>
+    <entity entity-name="SecurityGroupPermission" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+            <field name="groupId" type="id" is-pk="true">
+        </field>
+            <field name="permissionId" type="id-long" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="SEC_GRP_PERM_GRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
+            <key-map field-name="groupId"/>
+        </relationship>
+        <relationship type="one-nofk" related="org.apache.ofbiz.security.securitygroup.SecurityPermission">
+            <key-map field-name="permissionId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SecurityPermission" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+            <field name="permissionId" type="id-long" is-pk="true">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+    </entity>
+    <!-- TODO: skipped element view-entity -->
+    <entity entity-name="UserLoginSecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+            <field name="userLoginId" type="id-long" is-pk="true">
+        </field>
+            <field name="groupId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="USER_SECGRP_USER" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="userLoginId"/>
+        </relationship>
+        <relationship type="one" fk-name="USER_SECGRP_GRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
+            <key-map field-name="groupId"/>
+        </relationship>
+        <relationship type="many" related="org.apache.ofbiz.security.securitygroup.SecurityGroupPermission">
+            <key-map field-name="groupId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ProtectedView" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+            <field name="groupId" type="id" is-pk="true">
+        </field>
+            <field name="viewNameId" type="id-long" is-pk="true">
+        </field>
+            <field name="maxHits" type="number-integer">
+        </field>
+            <field name="maxHitsDuration" type="number-integer">
+        </field>
+            <field name="tarpitDuration" type="number-integer">
+        </field>
+        <relationship type="one" fk-name="VIEW_SECGRP_GRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
+            <key-map field-name="groupId"/>
+        </relationship>
+        <relationship type="many" related="org.apache.ofbiz.security.securitygroup.SecurityGroupPermission">
+            <key-map field-name="groupId"/>
+        </relationship>
+    </entity>
+    <!-- TODO: skipped element view-entity -->
+    <entity entity-name="TarpittedLoginView" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+            <field name="viewNameId" type="id-long" is-pk="true">
+        </field>
+            <field name="userLoginId" type="id-long" is-pk="true">
+        </field>
+            <field name="tarpitReleaseDateTime" type="number-integer">
+        </field>
+    </entity>
+    <entity entity-name="UserLoginSecurityQuestion" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
+            <field name="questionEnumId" type="id" is-pk="true">
+        </field>
+            <field name="userLoginId" type="id-long" is-pk="true">
+        </field>
+            <field name="securityAnswer" type="text-long">
+        </field>
+        <relationship type="one" fk-name="SECQ_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="questionEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="ULGNSECQ_ULGN" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="userLoginId"/>
+        </relationship>
+    </entity>
+</entities>
+

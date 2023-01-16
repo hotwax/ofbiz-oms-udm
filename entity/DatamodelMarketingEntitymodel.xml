@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+    <!-- TODO: skipped element title -->
+    <!-- TODO: skipped element version -->
+    <entity entity-name="MarketingCampaign" package="org.apache.ofbiz.marketing.campaign" group="ofbiz_transactional">
+            <field name="marketingCampaignId" type="id" is-pk="true">
+        </field>
+            <field name="parentCampaignId" type="id">
+        </field>
+            <field name="statusId" type="id">
+        </field>
+            <field name="campaignName" type="text-medium">
+        </field>
+            <field name="campaignSummary" type="text-very-long">
+        </field>
+            <field name="budgetedCost" type="currency-amount">
+        </field>
+            <field name="actualCost" type="currency-amount">
+        </field>
+            <field name="estimatedCost" type="currency-amount">
+        </field>
+            <field name="currencyUomId" type="id">
+        </field>
+            <field name="fromDate" type="date-time">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+            <field name="isActive" type="text-indicator">
+        </field>
+            <field name="convertedLeads" type="id">
+        </field>
+            <field name="expectedResponsePercent" type="number-float">
+        </field>
+            <field name="expectedRevenue" type="currency-amount">
+        </field>
+            <field name="numSent" type="number-integer">
+        </field>
+            <field name="startDate" type="date-time">
+        </field>
+            <field name="createdByUserLogin" type="id-long">
+        </field>
+            <field name="lastModifiedByUserLogin" type="id-long">
+        </field>
+        <relationship type="one" fk-name="MKTGCPN_PRNT" title="Parent" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
+            <key-map field-name="parentCampaignId" related="marketingCampaignId"/>
+        </relationship>
+        <relationship type="one" fk-name="MKTGCPN_STS" related="org.apache.ofbiz.common.status.StatusItem">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one" fk-name="MKTGCPN_CUOM" related="org.apache.ofbiz.common.uom.Uom">
+            <key-map field-name="currencyUomId" related="uomId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="MarketingCampaignNote" package="org.apache.ofbiz.marketing.campaign" group="ofbiz_transactional">
+            <field name="marketingCampaignId" type="id" is-pk="true">
+        </field>
+            <field name="noteId" type="id" is-pk="true">
+        </field>
+        <relationship type="one" fk-name="MKTGCPN_NOTE_CMPN" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
+            <key-map field-name="marketingCampaignId"/>
+        </relationship>
+        <relationship type="one" fk-name="MKTGCPN_NOTE_NOTE" related="org.apache.ofbiz.common.note.NoteData">
+            <key-map field-name="noteId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="MarketingCampaignPrice" package="org.apache.ofbiz.marketing.campaign" group="ofbiz_transactional">
+            <field name="marketingCampaignId" type="id" is-pk="true">
+        </field>
+            <field name="productPriceRuleId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="MKTGCPN_PRICE_MC" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
+            <key-map field-name="marketingCampaignId"/>
+        </relationship>
+        <relationship type="one" fk-name="MKTGCPN_PRICE_PP" related="org.apache.ofbiz.product.price.ProductPriceRule">
+            <key-map field-name="productPriceRuleId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="MarketingCampaignPromo" package="org.apache.ofbiz.marketing.campaign" group="ofbiz_transactional">
+            <field name="marketingCampaignId" type="id" is-pk="true">
+        </field>
+            <field name="productPromoId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="MKTGCPN_PROMO_MC" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
+            <key-map field-name="marketingCampaignId"/>
+        </relationship>
+        <relationship type="one" fk-name="MKTGCPN_PROMO_PP" related="org.apache.ofbiz.product.promo.ProductPromo">
+            <key-map field-name="productPromoId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="MarketingCampaignRole" package="org.apache.ofbiz.marketing.campaign" group="ofbiz_transactional">
+            <field name="marketingCampaignId" type="id" is-pk="true">
+        </field>
+            <field name="partyId" type="id" is-pk="true">
+        </field>
+            <field name="roleTypeId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="MKTGCPN_ROLE_MC" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
+            <key-map field-name="marketingCampaignId"/>
+        </relationship>
+        <relationship type="one" fk-name="MKTGCPN_ROLE_PR" related="org.apache.ofbiz.party.party.PartyRole">
+            <key-map field-name="partyId"/>
+            <key-map field-name="roleTypeId"/>
+        </relationship>
+        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="partyId"/>
+        </relationship>
+        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.RoleType">
+            <key-map field-name="roleTypeId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ContactList" package="org.apache.ofbiz.marketing.contact" group="ofbiz_transactional">
+            <field name="contactListId" type="id" is-pk="true">
+        </field>
+            <field name="contactListTypeId" type="id">
+        </field>
+            <field name="contactMechTypeId" type="id">
+        </field>
+            <field name="marketingCampaignId" type="id">
+        </field>
+            <field name="contactListName" type="text-medium">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+            <field name="comments" type="text-long">
+        </field>
+            <field name="isPublic" type="text-indicator">
+        </field>
+            <field name="singleUse" type="text-indicator">
+        </field>
+            <field name="ownerPartyId" type="id">
+        </field>
+            <field name="verifyEmailFrom" type="text-long">
+        </field>
+            <field name="verifyEmailScreen" type="text-long">
+        </field>
+            <field name="verifyEmailSubject" type="text-long">
+        </field>
+            <field name="verifyEmailWebSiteId" type="id">
+        </field>
+            <field name="optOutScreen" type="text-long">
+        </field>
+            <field name="createdByUserLogin" type="id-long">
+        </field>
+            <field name="lastModifiedByUserLogin" type="id-long">
+        </field>
+        <relationship type="one" fk-name="CNCT_LST_MKCMPN" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
+            <key-map field-name="marketingCampaignId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_TYP" related="org.apache.ofbiz.marketing.contact.ContactListType">
+            <key-map field-name="contactListTypeId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_CMCHTP" related="org.apache.ofbiz.party.contact.ContactMechType">
+            <key-map field-name="contactMechTypeId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_CBUL" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="createdByUserLogin" related="userLoginId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_LMUL" title="LastModifiedBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="lastModifiedByUserLogin" related="userLoginId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_OPTY" title="Owner" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="ownerPartyId" related="partyId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="WebSiteContactList" package="org.apache.ofbiz.marketing.contact" group="ofbiz_transactional">
+            <field name="webSiteId" type="id" is-pk="true">
+        </field>
+            <field name="contactListId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="WEB_SITE_CNTCT_LST" related="org.apache.ofbiz.webapp.website.WebSite">
+            <key-map field-name="webSiteId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNTCT_LST_WEB_SITE" related="org.apache.ofbiz.marketing.contact.ContactList">
+            <key-map field-name="contactListId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ContactListCommStatus" package="org.apache.ofbiz.marketing.contact" group="ofbiz_transactional">
+            <field name="contactListId" type="id" is-pk="true">
+        </field>
+            <field name="communicationEventId" type="id" is-pk="true">
+        </field>
+            <field name="contactMechId" type="id" is-pk="true">
+        </field>
+            <field name="partyId" type="id">
+        </field>
+            <field name="messageId" type="text-long">
+        </field>
+            <field name="statusId" type="id">
+        </field>
+            <field name="changeByUserLoginId" type="id-long">
+        </field>
+        <relationship type="one" fk-name="CNCT_LST_CST_CL" related="org.apache.ofbiz.marketing.contact.ContactList">
+            <key-map field-name="contactListId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_CST_CE" related="org.apache.ofbiz.party.communication.CommunicationEvent">
+            <key-map field-name="communicationEventId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_CST_CM" related="org.apache.ofbiz.party.contact.ContactMech">
+            <key-map field-name="contactMechId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_CST_PT" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_CST_ST" related="org.apache.ofbiz.common.status.StatusItem">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_CST_ST_UL" title="ChangeBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="changeByUserLoginId" related="userLoginId"/>
+        </relationship>
+        <index name="CNTLSTCST_MSG_ID" unique="true">
+            <index-field name="messageId"/>
+        </index>
+    </entity>
+    <entity entity-name="ContactListParty" package="org.apache.ofbiz.marketing.contact" group="ofbiz_transactional">
+            <field name="contactListId" type="id" is-pk="true">
+        </field>
+            <field name="partyId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+            <field name="statusId" type="id">
+        </field>
+            <field name="preferredContactMechId" type="id">
+        </field>
+        <relationship type="one" fk-name="CNCT_LSTPTY_CLST" related="org.apache.ofbiz.marketing.contact.ContactList">
+            <key-map field-name="contactListId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LSTPTY_PTY" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LSTPTY_STS" related="org.apache.ofbiz.common.status.StatusItem">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LSTPTY_PCM" title="Preferred" related="org.apache.ofbiz.party.contact.ContactMech">
+            <key-map field-name="preferredContactMechId" related="contactMechId"/>
+        </relationship>
+    </entity>
+    <!-- TODO: skipped element view-entity -->
+    <entity entity-name="ContactListPartyStatus" package="org.apache.ofbiz.marketing.contact" group="ofbiz_transactional">
+            <field name="contactListId" type="id" is-pk="true">
+        </field>
+            <field name="partyId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="statusDate" type="date-time" is-pk="true">
+        </field>
+            <field name="statusId" type="id">
+        </field>
+            <field name="setByUserLoginId" type="id-long">
+        </field>
+            <field name="optInVerifyCode" type="text-medium">
+        </field>
+        <relationship type="one" fk-name="CTLSTPTST_CLP" related="org.apache.ofbiz.marketing.contact.ContactListParty">
+            <key-map field-name="contactListId"/>
+            <key-map field-name="partyId"/>
+            <key-map field-name="fromDate"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ContactListType" package="org.apache.ofbiz.marketing.contact" group="ofbiz_transactional">
+            <field name="contactListTypeId" type="id" is-pk="true">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+    </entity>
+    <entity entity-name="SegmentGroup" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
+            <field name="segmentGroupId" type="id" is-pk="true">
+        </field>
+            <field name="segmentGroupTypeId" type="id">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+            <field name="productStoreId" type="id">
+        </field>
+        <relationship type="one" fk-name="SGMTGRP_TYPE" related="org.apache.ofbiz.marketing.segment.SegmentGroupType">
+            <key-map field-name="segmentGroupTypeId"/>
+        </relationship>
+        <relationship type="one" fk-name="SGMTGRP_PRST" related="org.apache.ofbiz.product.store.ProductStore">
+            <key-map field-name="productStoreId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SegmentGroupClassification" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
+            <field name="segmentGroupId" type="id" is-pk="true">
+        </field>
+            <field name="partyClassificationGroupId" type="id" is-pk="true">
+        </field>
+        <relationship type="one" fk-name="SGMTGRPCLS_SGGP" related="org.apache.ofbiz.marketing.segment.SegmentGroup">
+            <key-map field-name="segmentGroupId"/>
+        </relationship>
+        <relationship type="one" fk-name="SGMTGRPCLS_PCGP" related="org.apache.ofbiz.party.party.PartyClassificationGroup">
+            <key-map field-name="partyClassificationGroupId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SegmentGroupGeo" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
+            <field name="segmentGroupId" type="id" is-pk="true">
+        </field>
+            <field name="geoId" type="id" is-pk="true">
+        </field>
+        <relationship type="one" fk-name="SGMTGRPGEO_SGGP" related="org.apache.ofbiz.marketing.segment.SegmentGroup">
+            <key-map field-name="segmentGroupId"/>
+        </relationship>
+        <relationship type="one" fk-name="SGMTGRPGEO_GEO" related="org.apache.ofbiz.common.geo.Geo">
+            <key-map field-name="geoId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SegmentGroupRole" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
+            <field name="segmentGroupId" type="id" is-pk="true">
+        </field>
+            <field name="partyId" type="id" is-pk="true">
+        </field>
+            <field name="roleTypeId" type="id" is-pk="true">
+        </field>
+        <relationship type="one" fk-name="SGMTGRPRL_SGGP" related="org.apache.ofbiz.marketing.segment.SegmentGroup">
+            <key-map field-name="segmentGroupId"/>
+        </relationship>
+        <relationship type="one" fk-name="SGMTGRPRL_PRLE" related="org.apache.ofbiz.party.party.PartyRole">
+            <key-map field-name="partyId"/>
+            <key-map field-name="roleTypeId"/>
+        </relationship>
+        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="partyId"/>
+        </relationship>
+        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.RoleType">
+            <key-map field-name="roleTypeId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SegmentGroupType" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
+            <field name="segmentGroupTypeId" type="id" is-pk="true">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+    </entity>
+    <!-- TODO: skipped element view-entity -->
+    <entity entity-name="TrackingCode" package="org.apache.ofbiz.marketing.tracking" group="ofbiz_transactional">
+            <field name="trackingCodeId" type="id" is-pk="true">
+        </field>
+            <field name="trackingCodeTypeId" type="id">
+        </field>
+            <field name="marketingCampaignId" type="id">
+        </field>
+            <field name="redirectUrl" type="text-long">
+        </field>
+            <field name="overrideLogo" type="text-long">
+        </field>
+            <field name="overrideCss" type="text-long">
+        </field>
+            <field name="prodCatalogId" type="id">
+        </field>
+            <field name="comments" type="text-long">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+            <field name="trackableLifetime" type="number-integer">
+        </field>
+            <field name="billableLifetime" type="number-integer">
+        </field>
+            <field name="fromDate" type="date-time">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+            <field name="groupId" type="id">
+        </field>
+            <field name="subgroupId" type="id">
+        </field>
+            <field name="createdDate" type="date-time">
+        </field>
+            <field name="createdByUserLogin" type="id-long">
+        </field>
+            <field name="lastModifiedDate" type="date-time">
+        </field>
+            <field name="lastModifiedByUserLogin" type="id-long">
+        </field>
+        <relationship type="one" fk-name="TKNG_COD_MKCMPN" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
+            <key-map field-name="marketingCampaignId"/>
+        </relationship>
+        <relationship type="one" fk-name="TKNG_COD_TYP" related="org.apache.ofbiz.marketing.tracking.TrackingCodeType">
+            <key-map field-name="trackingCodeTypeId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="TrackingCodeOrder" package="org.apache.ofbiz.marketing.tracking" group="ofbiz_transactional">
+            <field name="orderId" type="id" is-pk="true">
+        </field>
+            <field name="trackingCodeTypeId" type="id" is-pk="true">
+        </field>
+            <field name="trackingCodeId" type="id">
+        </field>
+            <field name="isBillable" type="text-indicator">
+        </field>
+            <field name="siteId" type="text-long">
+        </field>
+            <field name="hasExported" type="text-indicator">
+        </field>
+            <field name="affiliateReferredTimeStamp" type="date-time">
+        </field>
+        <relationship type="one" fk-name="TKNG_CODODR_ODR" related="org.apache.ofbiz.order.order.OrderHeader">
+            <key-map field-name="orderId"/>
+        </relationship>
+        <relationship type="one" fk-name="TKNG_CODODR_TKCD" related="org.apache.ofbiz.marketing.tracking.TrackingCode">
+            <key-map field-name="trackingCodeId"/>
+        </relationship>
+        <relationship type="one" fk-name="TKNG_CODODR_TYP" related="org.apache.ofbiz.marketing.tracking.TrackingCodeType">
+            <key-map field-name="trackingCodeTypeId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="TrackingCodeOrderReturn" package="org.apache.ofbiz.marketing.tracking" group="ofbiz_transactional">
+            <field name="returnId" type="id" is-pk="true">
+        </field>
+            <field name="orderId" type="id" is-pk="true">
+        </field>
+            <field name="orderItemSeqId" type="id">
+        </field>
+            <field name="trackingCodeTypeId" type="id" is-pk="true">
+        </field>
+            <field name="trackingCodeId" type="id">
+        </field>
+            <field name="isBillable" type="text-indicator">
+        </field>
+            <field name="siteId" type="text-long">
+        </field>
+            <field name="hasExported" type="text-indicator">
+        </field>
+            <field name="affiliateReferredTimeStamp" type="date-time">
+        </field>
+        <relationship type="one" fk-name="TKNG_CODODR_RTN" related="org.apache.ofbiz.order.return.ReturnHeader">
+            <key-map field-name="returnId"/>
+        </relationship>
+        <relationship type="one" fk-name="TKNG_CODODR_ODRTN" related="org.apache.ofbiz.order.order.OrderHeader">
+            <key-map field-name="orderId"/>
+        </relationship>
+        <relationship type="one" fk-name="TKNG_CODODR_RTNTCD" related="org.apache.ofbiz.marketing.tracking.TrackingCode">
+            <key-map field-name="trackingCodeId"/>
+        </relationship>
+        <relationship type="one" fk-name="TKNG_CODODR_RTNTYP" related="org.apache.ofbiz.marketing.tracking.TrackingCodeType">
+            <key-map field-name="trackingCodeTypeId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="TrackingCodeType" package="org.apache.ofbiz.marketing.tracking" group="ofbiz_transactional">
+            <field name="trackingCodeTypeId" type="id" is-pk="true">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+    </entity>
+    <entity entity-name="TrackingCodeVisit" package="org.apache.ofbiz.marketing.tracking" group="ofbiz_transactional">
+            <field name="trackingCodeId" type="id" is-pk="true">
+        </field>
+            <field name="visitId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="sourceEnumId" type="id">
+        </field>
+        <relationship type="one" fk-name="TKNG_CODVST_TKCD" related="org.apache.ofbiz.marketing.tracking.TrackingCode">
+            <key-map field-name="trackingCodeId"/>
+        </relationship>
+        <relationship type="one" fk-name="TKNG_CODVST_SRCEM" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="sourceEnumId" related="enumId"/>
+        </relationship>
+    </entity>
+    <!-- TODO: skipped element view-entity -->
+    <!-- TODO: skipped element view-entity -->
+    <!-- TODO: skipped element view-entity -->
+    <!-- TODO: skipped element view-entity -->
+    <!-- TODO: skipped element view-entity -->
+    <!-- TODO: skipped element view-entity -->
+    <entity entity-name="SalesOpportunity" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesOpportunityId" type="id" is-pk="true">
+        </field>
+            <field name="opportunityName" type="text-medium">
+        </field>
+            <field name="description" type="text-very-long">
+        </field>
+            <field name="nextStep" type="text-very-long">
+        </field>
+            <field name="nextStepDate" type="date-time">
+        </field>
+            <field name="estimatedAmount" type="currency-amount">
+        </field>
+            <field name="estimatedProbability" type="number-decimal">
+        </field>
+            <field name="currencyUomId" type="id">
+        </field>
+            <field name="marketingCampaignId" type="id">
+        </field>
+            <field name="dataSourceId" type="id">
+        </field>
+            <field name="estimatedCloseDate" type="date-time">
+        </field>
+            <field name="opportunityStageId" type="id">
+        </field>
+            <field name="typeEnumId" type="id">
+        </field>
+            <field name="createdByUserLogin" type="id-long">
+        </field>
+        <relationship type="one" fk-name="SLSOPP_CRNCY_UOM" related="org.apache.ofbiz.common.uom.Uom">
+            <key-map field-name="currencyUomId" related="uomId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLSOPP_STAGE" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunityStage">
+            <key-map field-name="opportunityStageId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLSOPP_TYP_ENUM" title="Type" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="typeEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLSOPP_MKTGCMPG" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
+            <key-map field-name="marketingCampaignId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLSOPP_USRLGN" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="createdByUserLogin" related="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SalesOpportunityHistory" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesOpportunityHistoryId" type="id" is-pk="true">
+        </field>
+            <field name="salesOpportunityId" type="id">
+        </field>
+            <field name="description" type="text-very-long">
+        </field>
+            <field name="nextStep" type="text-very-long">
+        </field>
+            <field name="estimatedAmount" type="currency-amount">
+        </field>
+            <field name="estimatedProbability" type="number-decimal">
+        </field>
+            <field name="currencyUomId" type="id">
+        </field>
+            <field name="estimatedCloseDate" type="date-time">
+        </field>
+            <field name="opportunityStageId" type="id">
+        </field>
+            <field name="changeNote" type="text-very-long">
+        </field>
+            <field name="modifiedByUserLogin" type="id-long">
+        </field>
+            <field name="modifiedTimestamp" type="date-time">
+        </field>
+        <relationship type="one" fk-name="SLOPHI_CRNCY_UOM" related="org.apache.ofbiz.common.uom.Uom">
+            <key-map field-name="currencyUomId" related="uomId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLOPHI_STAGE" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunityStage">
+            <key-map field-name="opportunityStageId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLOPHI_SLSOPP" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunity">
+            <key-map field-name="salesOpportunityId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLOPHI_USRLGN" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="modifiedByUserLogin" related="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SalesOpportunityRole" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesOpportunityId" type="id" is-pk="true">
+        </field>
+            <field name="partyId" type="id" is-pk="true">
+        </field>
+            <field name="roleTypeId" type="id" is-pk="true">
+        </field>
+        <relationship type="one" fk-name="SLSOPPRL_SLSOPP" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunity">
+            <key-map field-name="salesOpportunityId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLSOPPRL_PARTY" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLSOPPRL_ROLETYPE" related="org.apache.ofbiz.party.party.RoleType">
+            <key-map field-name="roleTypeId"/>
+        </relationship>
+        <relationship type="one" fk-name="SLSOPPRL_PTYROLE" related="org.apache.ofbiz.party.party.PartyRole">
+            <key-map field-name="partyId"/>
+            <key-map field-name="roleTypeId"/>
+        </relationship>
+    </entity>
+    <!-- TODO: skipped element view-entity -->
+    <entity entity-name="SalesOpportunityStage" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="opportunityStageId" type="id" is-pk="true">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+            <field name="defaultProbability" type="number-decimal">
+        </field>
+            <field name="sequenceNum" type="number-integer">
+        </field>
+    </entity>
+    <entity entity-name="SalesOpportunityWorkEffort" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesOpportunityId" type="id" is-pk="true">
+        </field>
+            <field name="workEffortId" type="id" is-pk="true">
+        </field>
+        <relationship type="one" fk-name="SOPPWEFF_SOPP" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunity">
+            <key-map field-name="salesOpportunityId"/>
+        </relationship>
+        <relationship type="one" fk-name="SOPPWEFF_WEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
+            <key-map field-name="workEffortId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SalesOpportunityQuote" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesOpportunityId" type="id" is-pk="true">
+        </field>
+            <field name="quoteId" type="id" is-pk="true">
+        </field>
+        <relationship type="one" fk-name="SOPPQTE_SOPP" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunity">
+            <key-map field-name="salesOpportunityId"/>
+        </relationship>
+        <relationship type="one" fk-name="SOPPQTE_QTE" related="org.apache.ofbiz.order.quote.Quote">
+            <key-map field-name="quoteId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SalesForecast" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesForecastId" type="id" is-pk="true">
+        </field>
+            <field name="parentSalesForecastId" type="id">
+        </field>
+            <field name="organizationPartyId" type="id">
+        </field>
+            <field name="internalPartyId" type="id">
+        </field>
+            <field name="customTimePeriodId" type="id">
+        </field>
+            <field name="currencyUomId" type="id">
+        </field>
+            <field name="quotaAmount" type="currency-amount">
+        </field>
+            <field name="forecastAmount" type="currency-amount">
+        </field>
+            <field name="bestCaseAmount" type="currency-amount">
+        </field>
+            <field name="closedAmount" type="currency-amount">
+        </field>
+            <field name="percentOfQuotaForecast" type="number-decimal">
+        </field>
+            <field name="percentOfQuotaClosed" type="number-decimal">
+        </field>
+            <field name="pipelineAmount" type="currency-amount">
+        </field>
+            <field name="createdByUserLoginId" type="id-long">
+        </field>
+            <field name="modifiedByUserLoginId" type="id-long">
+        </field>
+        <relationship type="one" fk-name="SALES4C_PARENT" title="Parent" related="org.apache.ofbiz.marketing.opportunity.SalesForecast">
+            <key-map field-name="parentSalesForecastId" related="salesForecastId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4C_ORG_PARTY" title="Organization" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="organizationPartyId" related="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4C_INT_PARTY" title="Internal" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="internalPartyId" related="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4C_TIME_PER" related="org.apache.ofbiz.common.period.CustomTimePeriod">
+            <key-map field-name="customTimePeriodId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4C_CUR_UOM" related="org.apache.ofbiz.common.uom.Uom">
+            <key-map field-name="currencyUomId" related="uomId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4C_CRT_USER" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="createdByUserLoginId" related="userLoginId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4C_MOD_USER" title="ModifiedBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="modifiedByUserLoginId" related="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SalesForecastDetail" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesForecastId" type="id" is-pk="true">
+        </field>
+            <field name="salesForecastDetailId" type="id" is-pk="true">
+        </field>
+            <field name="amount" type="currency-amount">
+        </field>
+            <field name="quantityUomId" type="id">
+        </field>
+            <field name="quantity" type="number-decimal">
+        </field>
+            <field name="productId" type="id">
+        </field>
+            <field name="productCategoryId" type="id">
+        </field>
+        <relationship type="one" fk-name="SALES4CDTL_SALES4C" related="org.apache.ofbiz.marketing.opportunity.SalesForecast">
+            <key-map field-name="salesForecastId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4CDTL_QTY_UOM" title="Quantity" related="org.apache.ofbiz.common.uom.Uom">
+            <key-map field-name="quantityUomId" related="uomId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4CDTL_PROD" related="org.apache.ofbiz.product.product.Product">
+            <key-map field-name="productId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4CDTL_PCTGRY" related="org.apache.ofbiz.product.category.ProductCategory">
+            <key-map field-name="productCategoryId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SalesForecastHistory" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesForecastHistoryId" type="id" is-pk="true">
+        </field>
+            <field name="salesForecastId" type="id">
+        </field>
+            <field name="parentSalesForecastId" type="id">
+        </field>
+            <field name="organizationPartyId" type="id">
+        </field>
+            <field name="internalPartyId" type="id">
+        </field>
+            <field name="customTimePeriodId" type="id">
+        </field>
+            <field name="currencyUomId" type="id">
+        </field>
+            <field name="quotaAmount" type="currency-amount">
+        </field>
+            <field name="forecastAmount" type="currency-amount">
+        </field>
+            <field name="bestCaseAmount" type="currency-amount">
+        </field>
+            <field name="closedAmount" type="currency-amount">
+        </field>
+            <field name="percentOfQuotaForecast" type="number-decimal">
+        </field>
+            <field name="percentOfQuotaClosed" type="number-decimal">
+        </field>
+            <field name="changeNote" type="text-very-long">
+        </field>
+            <field name="modifiedByUserLoginId" type="id-long">
+        </field>
+            <field name="modifiedTimestamp" type="date-time">
+        </field>
+        <relationship type="one" fk-name="SALES4CH_SALES4C" related="org.apache.ofbiz.marketing.opportunity.SalesForecast">
+            <key-map field-name="salesForecastId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4CH_ORG_PARTY" title="Organization" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="organizationPartyId" related="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4CH_INT_PARTY" title="Internal" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="internalPartyId" related="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4CH_TIME_PER" related="org.apache.ofbiz.common.period.CustomTimePeriod">
+            <key-map field-name="customTimePeriodId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4CH_CUR_UOM" related="org.apache.ofbiz.common.uom.Uom">
+            <key-map field-name="currencyUomId" related="uomId"/>
+        </relationship>
+        <relationship type="one" fk-name="SALES4CH_MOD_USER" title="ModifiedBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="modifiedByUserLoginId" related="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SalesOpportunityCompetitor" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesOpportunityId" type="id" is-pk="true">
+        </field>
+            <field name="competitorPartyId" type="id" is-pk="true">
+        </field>
+            <field name="positionEnumId" type="id">
+        </field>
+            <field name="strengths" type="text-very-long">
+        </field>
+            <field name="weaknesses" type="text-very-long">
+        </field>
+        <relationship type="one" fk-name="SOPPCOMP_SOPP" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunity">
+            <key-map field-name="salesOpportunityId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SalesOpportunityTrckCode" package="org.apache.ofbiz.marketing.opportunity" group="ofbiz_transactional">
+            <field name="salesOpportunityId" type="id" is-pk="true">
+        </field>
+            <field name="trackingCodeId" type="id" is-pk="true">
+        </field>
+            <field name="receivedDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="SOPPTRKCD_SOPP" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunity">
+            <key-map field-name="salesOpportunityId"/>
+        </relationship>
+    </entity>
+    <!-- TODO: skipped element view-entity -->
+</entities>
+

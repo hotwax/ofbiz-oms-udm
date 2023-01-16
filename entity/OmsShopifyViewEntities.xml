@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+
+    <view-entity entity-name="ShopifyProductInventory" package="co.hotwax.shopify" group="ofbiz_transactional">
+        <description>
+            View entity for Product Inventory details for Shopify in HotWax.
+        </description>
+        <member-entity entity-alias="SS" entity-name="co.hotwax.shopify.ShopifyShop"/>
+        <member-entity entity-alias="SSP" entity-name="co.hotwax.shopify.ShopifyShopProduct" join-from-alias="SS" join-optional="true">
+            <key-map field-name="shopId"/>
+        </member-entity>
+        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="SS" join-optional="true">
+            <key-map field-name="productStoreId"/>
+        </member-entity>
+        <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility" join-from-alias="SSP">
+            <key-map field-name="productId"/>
+        </member-entity>
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="SSP">
+            <key-map field-name="productId"/>
+        </member-entity>
+        <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="PF">
+            <key-map field-name="facilityId"/>
+        </member-entity>
+        <member-entity entity-alias="FGM" entity-name="org.apache.ofbiz.product.facility.FacilityGroupMember" join-from-alias="PF" join-optional="true">
+            <key-map field-name="facilityId"/>
+        </member-entity>
+        <member-entity entity-alias="FG" entity-name="org.apache.ofbiz.product.facility.FacilityGroup" join-from-alias="FGM" join-optional="true">
+            <key-map field-name="facilityGroupId"/>
+        </member-entity>
+        <alias entity-alias="SS" name="productStoreId"/>
+        <alias entity-alias="SSP" name="productId"/>
+        <alias entity-alias="SSP" name="shopifyProductId"/>
+        <alias entity-alias="SSP" name="shopifyInventoryItemId"/>
+        <alias entity-alias="P" field="internalName" name="sku"/>
+        <alias entity-alias="PF" name="computedLastInventoryCount" function="sum"/>
+        <alias entity-alias="PF" field="lastUpdatedStamp" function="max" name="updatedDate"/>
+        <alias entity-alias="PF" name="facilityId"/>
+        <alias entity-alias="PF" name="allowBrokering"/>
+        <alias entity-alias="F" name="facilityTypeId"/>
+        <alias entity-alias="F" name="maximumOrderLimit"/>
+        <alias entity-alias="F" field="lastUpdatedStamp" function="max" name="facilityUpdatedDate"/>
+        <alias entity-alias="PS" name="storeName"/>
+        <alias entity-alias="PS" field="externalId" name="storeExternalId"/>
+        <alias entity-alias="FG" name="facilityGroupTypeId"/>
+        <alias entity-alias="FGM" name="facilityGroupId"/>
+        <!-- FGM fromDate & thruDate included for date filter handling -->
+        <alias entity-alias="FGM" field="fromDate" name="facilityGroupFromDate"/>
+        <alias entity-alias="FGM" field="thruDate" name="facilityGroupThruDate"/>
+        <!-- TODO Below comment does not hold true as of now as  is not handled with Online Facility Group,
+             the service to prepare the inventory feed has condition on maximumOrderLimit field.
+             - For Facility Turn Off setting, earlier Facility's maximumOrderLimit field used to get
+             updated; Going forward, for this scenario the facility will not be part of
+             SHOPIFY_GROUP_FAC group so it will not be included in the view to compute the Inventory. -->
+        <!-- 1. Condition added to include inventory for Online Facility Group -->
+        <!-- 2. OR with Condition added to include facilityTypeId='CONFIGURATION' for the below scenario,
+             As part of initial implementation, the only condition added was to include members of
+             only Online group and CONFIGURATION type facility is not member of it.
+             Due to this, if threshold is updated for a product, the feed will not pick it up as a change
+             since that record is not included in the view, And so updated inventory does not get pushed to
+             Shopify. -->
+        <entity-condition>
+            <econditions combine="or">
+                <econditions>
+                    <econdition field-name="facilityGroupTypeId" value="SHOPIFY_GROUP_FAC"/>
+                    <date-filter from-field-name="facilityGroupFromDate" thru-field-name="facilityGroupThruDate"/>
+                </econditions>
+                <econditions>
+                    <econdition field-name="facilityTypeId" value="CONFIGURATION"/>
+                </econditions>
+            </econditions>
+        </entity-condition>
+    </view-entity>
+
+    <view-entity entity-name="ProductFacilityAndType" package="co.hotwax.product.facility" group="ofbiz_transactional">
+        <description>
+            View entity for Product Facility and Facility Type details.
+        </description>
+        <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility"/>
+        <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="PF">
+            <key-map field-name="facilityId"/>
+        </member-entity>
+        <alias-all entity-alias="PF"/>
+        <alias entity-alias="F" name="facilityTypeId"/>
+        <alias entity-alias="F" name="facilityName"/>
+        <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
+    </view-entity>
+</entities>

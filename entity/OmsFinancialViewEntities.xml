@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+
+    <!-- View entity to fetch the Return Items for Financial Reporting, using member entities of OFBiz -->
+    <view-entity entity-name="FinancialReturnItemsSyncQueue" package="co.hotwax.financial" group="ofbiz_transactional">
+        <description>View to get the Return Items for Financial Reporting.</description>
+        <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem"/>
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="RI" join-optional="true">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="RS" entity-name="org.apache.ofbiz.order.return.ReturnStatus" join-from-alias="RI">
+            <key-map field-name="returnId"/>
+            <key-map field-name="returnItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="RH" entity-name="org.apache.ofbiz.order.return.ReturnHeader" join-from-alias="RI">
+            <key-map field-name="returnId"/>
+        </member-entity>
+        <member-entity entity-alias="FRH" entity-name="co.hotwax.common.FinancialReturnHistory" join-from-alias="RI" join-optional="true">
+            <key-map field-name="returnId"/>
+            <key-map field-name="returnItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="RI" name="returnId"/>
+        <alias entity-alias="RI" name="returnItemSeqId"/>
+        <alias entity-alias="RH" name="entryDate"/>
+        <alias entity-alias="RI" name="orderId"/>
+        <alias entity-alias="RI" name="orderItemSeqId" />
+        <alias entity-alias="RI" name="returnItemAmountTotal" field="returnPrice"/>
+        <alias entity-alias="RS" name="statusId" />
+        <alias entity-alias="RS" name="completedDatetime" field="statusDatetime" function="max"/>
+        <alias entity-alias="OH" name="productStoreId"/>
+        <entity-condition>
+            <econditions>
+                <econdition entity-alias="RS" field-name="statusId" operator="equals" value="RETURN_COMPLETED"/>
+                <econdition entity-alias="RI" field-name="statusId" operator="equals" value="RETURN_COMPLETED"/>
+                <econdition entity-alias="RS" field-name="returnItemSeqId" operator="not-equals" value=""/>
+                <econdition entity-alias="FRH" field-name="returnId" operator="equals" value=""/>
+            </econditions>
+            <order-by field-name="completedDatetime"/>
+        </entity-condition>
+    </view-entity>
+
+    <view-entity entity-name="FinancialAppeasementSyncQueue" package="co.hotwax.financial" group="ofbiz_transactional">
+        <description>View to get the Order Items for Appeasement Financial Feed processing.</description>
+        <member-entity entity-alias="RH" entity-name="org.apache.ofbiz.order.return.ReturnHeader"/>
+        <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment" join-from-alias="RH">
+            <key-map field-name="returnId"/>
+        </member-entity>
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="RA">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="FRH" entity-name="co.hotwax.common.FinancialReturnHistory" join-from-alias="RA" join-optional="true">
+            <key-map field-name="returnId"/>
+        </member-entity>
+        <alias name="returnId" entity-alias="RH"/>
+        <alias name="entryDate" entity-alias="RH"/>
+        <alias name="returnAdjustmentTypeId" entity-alias="RA"/>
+        <alias name="amount" entity-alias="RA"/>
+        <alias name="comments" entity-alias="RA"/>
+        <alias name="orderId" entity-alias="OH"/>
+        <alias name="orderDate" entity-alias="OH"/>
+        <alias name="returnDate" entity-alias="RH"/>
+        <alias name="productStoreId" entity-alias="OH"/>
+        <entity-condition>
+            <econditions>
+                <econdition entity-alias="RA" field-name="returnItemSeqId" value="_NA_"/>
+                <econdition entity-alias="RA" field-name="returnAdjustmentTypeId" value="APPEASEMENT"/>
+                <econdition entity-alias="OH" field-name="orderTypeId" value="SALES_ORDER"/>
+                <econdition entity-alias="FRH" field-name="returnId" value=""/>
+            </econditions>
+            <order-by field-name="entryDate"/>
+        </entity-condition>
+    </view-entity>
+
+    <view-entity entity-name="FinancialOrderItemsSyncQueue" package="co.hotwax.financial" group="ofbiz_transactional">
+        <description>View to get the Order Items for Financial Reporting.</description>
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"></member-entity>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="OI">
+            <key-map field-name="productId"/>
+        </member-entity>
+        <member-entity entity-alias="PT" entity-name="org.apache.ofbiz.product.product.ProductType" join-from-alias="P">
+            <key-map field-name="productTypeId"/>
+        </member-entity>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="FOH" entity-name="co.hotwax.common.FinancialOrderHistory" join-from-alias="OS" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="OS" name="orderId"/>
+        <alias entity-alias="OS" name="orderItemSeqId"/>
+        <alias entity-alias="P" name="productId"/>
+        <alias entity-alias="P" name="productTypeId"/>
+        <alias entity-alias="PT" name="isPhysical"/>
+        <alias entity-alias="PT" name="isDigital"/>
+        <alias entity-alias="OH" name="salesChannelEnumId"/>
+        <alias entity-alias="OH" name="orderDate"/>
+        <alias entity-alias="OH" name="entryDate"/>
+        <alias entity-alias="OS" name="statusId"/>
+        <alias entity-alias="OS" name="completedDatetime" field="statusDatetime"/>
+        <alias entity-alias="OH" name="orderTypeId"/>
+        <alias entity-alias="OH" name="productStoreId"/>
+        <entity-condition>
+            <econditions>
+                <econdition entity-alias="OH" field-name="orderTypeId" operator="equals" value="SALES_ORDER"/>
+                <econdition entity-alias="FOH" field-name="orderId" operator="equals" value=""/>
+            </econditions>
+            <order-by field-name="completedDatetime"/>
+        </entity-condition>
+    </view-entity>
+</entities>
+

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+    <!-- TODO: skipped element title -->
+    <!-- TODO: skipped element version -->
+    <entity entity-name="ProductManufacturingRule" package="org.apache.ofbiz.manufacturing.bom" group="ofbiz_transactional">
+            <field name="ruleId" type="id" is-pk="true">
+        </field>
+            <field name="productId" type="id">
+        </field>
+            <field name="productIdFor" type="id">
+        </field>
+            <field name="productIdIn" type="id">
+        </field>
+            <field name="ruleSeqId" type="id">
+        </field>
+            <field name="fromDate" type="date-time">
+        </field>
+            <field name="productIdInSubst" type="id">
+        </field>
+            <field name="productFeature" type="id">
+        </field>
+            <field name="ruleOperator" type="id">
+        </field>
+            <field name="quantity" type="number-float">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="PRODUCT_PARENT" related="org.apache.ofbiz.product.product.Product">
+            <key-map field-name="productId"/>
+        </relationship>
+        <relationship type="one" fk-name="PRODUCT_FOR" title="ProductFor" related="org.apache.ofbiz.product.product.Product">
+            <key-map field-name="productIdFor" related="productId"/>
+        </relationship>
+        <relationship type="one" fk-name="PRODUCT_IN" title="ProductIn" related="org.apache.ofbiz.product.product.Product">
+            <key-map field-name="productIdIn" related="productId"/>
+        </relationship>
+        <relationship type="one" fk-name="PRODUCT_SUBST" title="ProductSubst" related="org.apache.ofbiz.product.product.Product">
+            <key-map field-name="productIdInSubst" related="productId"/>
+        </relationship>
+        <relationship type="one" fk-name="PRODUCT_FEAT" related="org.apache.ofbiz.product.feature.ProductFeature">
+            <key-map field-name="productFeature" related="productFeatureId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="TechDataCalendar" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
+            <field name="calendarId" type="id" is-pk="true">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+            <field name="calendarWeekId" type="id">
+        </field>
+        <relationship type="one" fk-name="CALENDAR_WEEK" related="org.apache.ofbiz.manufacturing.techdata.TechDataCalendarWeek">
+            <key-map field-name="calendarWeekId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="TechDataCalendarExcDay" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
+            <field name="calendarId" type="id" is-pk="true">
+        </field>
+            <field name="exceptionDateStartTime" type="date-time" is-pk="true">
+        </field>
+            <field name="exceptionCapacity" type="number-decimal">
+        </field>
+            <field name="usedCapacity" type="number-decimal">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+        <relationship type="one" fk-name="EXC_DAY_CALENDAR" related="org.apache.ofbiz.manufacturing.techdata.TechDataCalendar">
+            <key-map field-name="calendarId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="TechDataCalendarExcWeek" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
+            <field name="calendarId" type="id" is-pk="true">
+        </field>
+            <field name="exceptionDateStart" type="date" is-pk="true">
+        </field>
+            <field name="calendarWeekId" type="id">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+        <relationship type="one" fk-name="EXC_WEEK_CALENDAR" related="org.apache.ofbiz.manufacturing.techdata.TechDataCalendar">
+            <key-map field-name="calendarId"/>
+        </relationship>
+        <relationship type="one" fk-name="EXC_WEEK_WEEK" related="org.apache.ofbiz.manufacturing.techdata.TechDataCalendarWeek">
+            <key-map field-name="calendarWeekId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="TechDataCalendarWeek" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
+            <field name="calendarWeekId" type="id" is-pk="true">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+            <field name="mondayStartTime" type="time">
+        </field>
+            <field name="mondayCapacity" type="number-float">
+        </field>
+            <field name="tuesdayStartTime" type="time">
+        </field>
+            <field name="tuesdayCapacity" type="number-float">
+        </field>
+            <field name="wednesdayStartTime" type="time">
+        </field>
+            <field name="wednesdayCapacity" type="number-float">
+        </field>
+            <field name="thursdayStartTime" type="time">
+        </field>
+            <field name="thursdayCapacity" type="number-float">
+        </field>
+            <field name="fridayStartTime" type="time">
+        </field>
+            <field name="fridayCapacity" type="number-float">
+        </field>
+            <field name="saturdayStartTime" type="time">
+        </field>
+            <field name="saturdayCapacity" type="number-float">
+        </field>
+            <field name="sundayStartTime" type="time">
+        </field>
+            <field name="sundayCapacity" type="number-float">
+        </field>
+    </entity>
+    <entity entity-name="MrpEventType" package="org.apache.ofbiz.manufacturing.mrp" group="ofbiz_transactional">
+            <field name="mrpEventTypeId" type="id" is-pk="true">
+        </field>
+            <field name="description" type="text-long">
+        </field>
+    </entity>
+    <entity entity-name="MrpEvent" package="org.apache.ofbiz.manufacturing.mrp" group="ofbiz_transactional">
+            <field name="mrpId" type="id" is-pk="true">
+        </field>
+            <field name="productId" type="id" is-pk="true">
+        </field>
+            <field name="eventDate" type="date-time" is-pk="true">
+        </field>
+            <field name="mrpEventTypeId" type="id" is-pk="true">
+        </field>
+            <field name="facilityId" type="id">
+        </field>
+            <field name="quantity" type="number-float">
+        </field>
+            <field name="eventName" type="text-very-long">
+        </field>
+            <field name="isLate" type="text-indicator">
+        </field>
+            <field name="createdDate" type="date-time" is-pk="true">
+        </field>
+        <relationship type="one" fk-name="MRPEV_PROD" related="org.apache.ofbiz.product.product.Product">
+            <key-map field-name="productId"/>
+        </relationship>
+        <relationship type="one" fk-name="MRPEV_TYP" related="org.apache.ofbiz.manufacturing.mrp.MrpEventType">
+            <key-map field-name="mrpEventTypeId"/>
+        </relationship>
+        <relationship type="one" fk-name="MRPEV_FAC" related="org.apache.ofbiz.product.facility.Facility">
+            <key-map field-name="facilityId"/>
+        </relationship>
+    </entity>
+    <!-- TODO: skipped element view-entity -->
+</entities>
+
