@@ -24,5 +24,10 @@ under the License.
     <extend-entity entity-name="SystemMessage" package="moqui.service.message">
         <field name="productStoreId" type="id"/>
     </extend-entity>
+
+    <!-- Extending the entity to include a field to store reference of parent job name in the cloned service job -->
+    <extend-entity entity-name="ServiceJob" package="moqui.service.job">
+        <field  name="parentJobName" type="text-short"/>
+    </extend-entity>
 </entities>
 
