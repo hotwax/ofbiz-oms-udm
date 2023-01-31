@@ -279,7 +279,7 @@ under the License.
 
     <!-- View entity to fetch the Order Items for FulfilledOrder Reporting, using member entities of OFBiz -->
     <view-entity entity-name="FulfilledOrderItemsSyncQueue" package="co.hotwax.warehouse" group="ofbiz_transactional">
-        <description>View to get details for the Brokered Order Items.</description>
+        <description>View to get details for the Fulfilled Order Items.</description>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
             <key-map field-name="orderId"/>
