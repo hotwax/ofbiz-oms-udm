@@ -351,13 +351,13 @@ under the License.
         <alias entity-alias="OH" name="grandTotal"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
-        <alias entity-alias="OI" field="quantity" name="itemQuantity"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <alias entity-alias="OISG" name="shipGroupSeqId"/>
         <alias entity-alias="OISG" field="shipmentMethodTypeId" name="slaShipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
         <alias entity-alias="OISG" name="telecomContactMechId"/>
+        <alias entity-alias="OISGA" field="quantity" name="itemQuantity"/>
         <alias entity-alias="EFO" name="externalFulfillmentOrderItemId"/>
         <alias entity-alias="EFO" name="fulfillmentStatus"/>
         <alias entity-alias="P" field="firstName" name="customerFirstName"/>
