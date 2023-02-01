@@ -366,7 +366,7 @@ under the License.
         <alias entity-alias="F" field="externalId" name="facilityExternalId" />
         <alias entity-alias="FT" name="facilityTypeId"/>
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
-        <alias entity-alias="OS" name="statusDatetime"/>
+        <alias entity-alias="OS" name="statusDatetime" function="max"/>
         <alias entity-alias="PD" name="productId"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
         <alias entity-alias="ODR" field="partyId" name="customerPartyId"/>
