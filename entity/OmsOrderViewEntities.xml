@@ -278,7 +278,7 @@ under the License.
     </view-entity>
 
     <!-- View entity to fetch the Order Items for FulfilledOrder Reporting, using member entities of OFBiz -->
-    <view-entity entity-name="FulfilledOrderItemsSyncQueue" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAndShipmentSyncQueue" package="co.hotwax.warehouse" group="ofbiz_transactional">
         <description>View to get details for the Fulfilled Order Items.</description>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
@@ -366,14 +366,13 @@ under the License.
         <alias entity-alias="F" field="externalId" name="facilityExternalId" />
         <alias entity-alias="FT" name="facilityTypeId"/>
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
-        <alias entity-alias="OS" name="statusDatetime" />
+        <alias entity-alias="OS" name="statusDatetime"/>
         <alias entity-alias="PD" name="productId"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
         <alias entity-alias="ODR" field="partyId" name="customerPartyId"/>
         <alias entity-alias="OSH" field="quantity" name="shippedQuantity"/>
         <alias entity-alias="SHI" name="shipmentId"/>
         <alias entity-alias="SHI" name="shipmentItemSeqId"/>
-        <alias entity-alias="SHI" field="productId" name="shippedProductId"/>
         <alias entity-alias="SH" field="statusId" name="shipmentStatusId"/>
         <alias entity-alias="SH" field="destinationContactMechId" name="shipToContactMechId"/>
         <alias entity-alias="SH" field="destinationTelecomNumberId" name="shipToTelecomContactMechId"/>
@@ -383,6 +382,7 @@ under the License.
         <alias entity-alias="SHIRS" name="carrierPartyId"/>
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
+        <alias entity-alias="PT" name="isDigital"/>
         <entity-condition>
             <econditions combine="and">
                 <econdition entity-alias="OH" field-name="orderTypeId" operator="equals" value="SALES_ORDER"/>
