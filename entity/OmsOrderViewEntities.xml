@@ -376,10 +376,10 @@ under the License.
         <alias entity-alias="SH" field="statusId" name="shipmentStatusId"/>
         <alias entity-alias="SH" field="destinationContactMechId" name="shipToContactMechId"/>
         <alias entity-alias="SH" field="destinationTelecomNumberId" name="shipToTelecomContactMechId"/>
-        <alias entity-alias="SH" name="shipmentMethodTypeId"/>
         <alias entity-alias="SH" name="shipmentTypeId"/>
         <alias entity-alias="SHIRS" name="trackingIdNumber"/>
         <alias entity-alias="SHIRS" name="carrierPartyId"/>
+        <alias entity-alias="SHIRS" name="shipmentMethodTypeId"/>
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
