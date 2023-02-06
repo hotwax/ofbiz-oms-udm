@@ -67,9 +67,12 @@ under the License.
         <alias entity-alias="PS" field="externalId" name="storeExternalId"/>
         <alias entity-alias="FG" name="facilityGroupTypeId"/>
         <alias entity-alias="FGM" name="facilityGroupId"/>
-        <!-- FGM fromDate & thruDate included for date filter handling -->
+        <!-- FGM fromDate & thruDate included for date filter handling in the generate#ShopifyInventoryFeed service -->
         <alias entity-alias="FGM" field="fromDate" name="facilityGroupFromDate"/>
         <alias entity-alias="FGM" field="thruDate" name="facilityGroupThruDate"/>
+        <!-- PSF fromDate & thruDate included for date filter handling -->
+        <alias entity-alias="PSF" field="fromDate" name="productStoreFacilityFromDate"/>
+        <alias entity-alias="PSF" field="thruDate" name="productStoreFacilityThruDate"/>
         <!-- When facility is turned off, then the eligible products should be identified and hence the lastUpdatedStamp
             of FacilityGroupMember is added. -->
         <alias entity-alias="FGM" field="lastUpdatedStamp" name="facilityGroupMemberUpdatedDate" function="max"/>
@@ -93,6 +96,8 @@ under the License.
                 <econdition field-name="facilityGroupTypeId" value="SHOPIFY_GROUP_FAC"/>
                 <econdition field-name="facilityTypeId" value="CONFIGURATION"/>
             </econditions>
+            <!-- The date filter is added on PSF fromDate and thruDate to exclude the expired records of ProductStoreFacility -->
+            <date-filter from-field-name="productStoreFacilityFromDate" thru-field-name="productStoreFacilityThruDate"/>
         </entity-condition>
     </view-entity>
 
