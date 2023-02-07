@@ -34,10 +34,7 @@ under the License.
         <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility" join-from-alias="SSP">
             <key-map field-name="productId"/>
         </member-entity>
-        <member-entity entity-alias="PSF" entity-name="org.apache.ofbiz.product.store.ProductStoreFacility" join-from-alias="PF">
-            <key-map field-name="facilityId"/>
-        </member-entity>
-        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="PSF" join-optional="true">
+        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="SS" join-optional="true">
             <key-map field-name="productStoreId"/>
         </member-entity>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="SSP">
@@ -46,13 +43,13 @@ under the License.
         <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="PF">
             <key-map field-name="facilityId"/>
         </member-entity>
-        <member-entity entity-alias="FGM" entity-name="org.apache.ofbiz.product.facility.FacilityGroupMember" join-from-alias="PF" join-optional="true">
+        <member-entity entity-alias="FGM" entity-name="org.apache.ofbiz.product.facility.FacilityGroupMember" join-from-alias="F" join-optional="true">
             <key-map field-name="facilityId"/>
         </member-entity>
         <member-entity entity-alias="FG" entity-name="org.apache.ofbiz.product.facility.FacilityGroup" join-from-alias="FGM" join-optional="true">
             <key-map field-name="facilityGroupId"/>
         </member-entity>
-        <alias entity-alias="PSF" name="productStoreId"/>
+        <alias entity-alias="SS" name="productStoreId"/>
         <alias entity-alias="SSP" name="productId"/>
         <alias entity-alias="SSP" name="shopifyProductId"/>
         <alias entity-alias="SSP" name="shopifyInventoryItemId"/>
@@ -70,9 +67,6 @@ under the License.
         <!-- FGM fromDate & thruDate included for date filter handling in the generate#ShopifyInventoryFeed service -->
         <alias entity-alias="FGM" field="fromDate" name="facilityGroupFromDate"/>
         <alias entity-alias="FGM" field="thruDate" name="facilityGroupThruDate"/>
-        <!-- PSF fromDate & thruDate included for date filter handling -->
-        <alias entity-alias="PSF" field="fromDate" name="productStoreFacilityFromDate"/>
-        <alias entity-alias="PSF" field="thruDate" name="productStoreFacilityThruDate"/>
         <!-- When facility is turned off, then the eligible products should be identified and hence the lastUpdatedStamp
             of FacilityGroupMember is added. -->
         <alias entity-alias="FGM" field="lastUpdatedStamp" name="facilityGroupMemberUpdatedDate" function="max"/>
@@ -96,8 +90,6 @@ under the License.
                 <econdition field-name="facilityGroupTypeId" value="SHOPIFY_GROUP_FAC"/>
                 <econdition field-name="facilityTypeId" value="CONFIGURATION"/>
             </econditions>
-            <!-- The date filter is added on PSF fromDate and thruDate to exclude the expired records of ProductStoreFacility -->
-            <date-filter from-field-name="productStoreFacilityFromDate" thru-field-name="productStoreFacilityThruDate"/>
         </entity-condition>
     </view-entity>
 
@@ -114,4 +106,34 @@ under the License.
         <alias entity-alias="F" name="facilityName"/>
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
     </view-entity>
+
+    <view-entity entity-name="ProductStoreFacilityAndShopifyInventory" package="co.hotwax.shopify" group="ofbiz_transactional">
+        <description>View entity to get Products associated with the respective facilities of a Product Store</description>
+        <member-entity entity-alias="PSF" entity-name="org.apache.ofbiz.product.store.ProductStoreFacility">
+        </member-entity>
+        <!-- NOTE: Using sub-select here to use the result of ShopifyProductInventory view in while joining it with ProductStoreFacility -->
+        <member-entity entity-alias="SPI" entity-name="co.hotwax.shopify.ShopifyProductInventory" join-from-alias="PSF" sub-select="true">
+            <key-map field-name="facilityId"/>
+            <key-map field-name="productStoreId"/>
+        </member-entity>
+        <alias-all entity-alias="SPI">
+            <exclude field="computedLastInventoryCount"/>
+            <exclude field="updatedDate"/>
+            <exclude field="facilityGroupMemberUpdatedDate"/>
+        </alias-all>
+        <!-- NOTE: Applied the sum and max functions again on the ShopifyProductInventory's fields as this view is being used
+            in the generate#ShopifyInventoryFeed service and if function is not applied on these fields in this view, we don't get the
+            expected results. -->
+        <!-- TODO: Check removing the functions on these fields from ShopifyProductInventory view. -->
+        <alias entity-alias="PSF" field="lastUpdatedStamp" name="productStoreFacilityUpdatedDate" function="max"/>
+        <alias entity-alias="PSF" field="fromDate" name="productStoreFacilityFromDate"/>
+        <alias entity-alias="PSF" field="thruDate" name="productStoreFacilityThruDate"/>
+        <alias entity-alias="SPI" name="computedLastInventoryCount" function="sum"/>
+        <alias entity-alias="SPI" name="updatedDate" function="max"/>
+        <alias entity-alias="SPI" name="facilityGroupMemberUpdatedDate" function="max"/>
+        <entity-condition>
+            <!-- The date filter is added on PSF fromDate and thruDate to exclude the expired records of ProductStoreFacility -->
+            <date-filter from-field-name="productStoreFacilityFromDate" thru-field-name="productStoreFacilityThruDate"/>
+        </entity-condition>
+   </view-entity>
 </entities>
