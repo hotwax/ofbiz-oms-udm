@@ -21,6 +21,8 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
 
+    <!-- NOTE: The products that have been deleted from Shopify will not appear in the view as their record in ShopifyShopProduct is also deleted.
+        Hence no extra handling is required. -->
     <view-entity entity-name="ShopifyProductInventory" package="co.hotwax.shopify" group="ofbiz_transactional">
         <description>
             View entity for Product Inventory details for Shopify in HotWax.
@@ -29,11 +31,11 @@ under the License.
         <member-entity entity-alias="SSP" entity-name="co.hotwax.shopify.ShopifyShopProduct" join-from-alias="SS" join-optional="true">
             <key-map field-name="shopId"/>
         </member-entity>
-        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="SS" join-optional="true">
-            <key-map field-name="productStoreId"/>
-        </member-entity>
         <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility" join-from-alias="SSP">
             <key-map field-name="productId"/>
+        </member-entity>
+        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="SS" join-optional="true">
+            <key-map field-name="productStoreId"/>
         </member-entity>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="SSP">
             <key-map field-name="productId"/>
@@ -41,7 +43,7 @@ under the License.
         <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="PF">
             <key-map field-name="facilityId"/>
         </member-entity>
-        <member-entity entity-alias="FGM" entity-name="org.apache.ofbiz.product.facility.FacilityGroupMember" join-from-alias="PF" join-optional="true">
+        <member-entity entity-alias="FGM" entity-name="org.apache.ofbiz.product.facility.FacilityGroupMember" join-from-alias="F" join-optional="true">
             <key-map field-name="facilityId"/>
         </member-entity>
         <member-entity entity-alias="FG" entity-name="org.apache.ofbiz.product.facility.FacilityGroup" join-from-alias="FGM" join-optional="true">
@@ -58,19 +60,24 @@ under the License.
         <alias entity-alias="PF" name="allowBrokering"/>
         <alias entity-alias="F" name="facilityTypeId"/>
         <alias entity-alias="F" name="maximumOrderLimit"/>
-        <alias entity-alias="F" field="lastUpdatedStamp" function="max" name="facilityUpdatedDate"/>
         <alias entity-alias="PS" name="storeName"/>
         <alias entity-alias="PS" field="externalId" name="storeExternalId"/>
         <alias entity-alias="FG" name="facilityGroupTypeId"/>
         <alias entity-alias="FGM" name="facilityGroupId"/>
-        <!-- FGM fromDate & thruDate included for date filter handling -->
+        <!-- FGM fromDate & thruDate included for date filter handling in the generate#ShopifyInventoryFeed service -->
         <alias entity-alias="FGM" field="fromDate" name="facilityGroupFromDate"/>
         <alias entity-alias="FGM" field="thruDate" name="facilityGroupThruDate"/>
-        <!-- TODO Below comment does not hold true as of now as  is not handled with Online Facility Group,
-             the service to prepare the inventory feed has condition on maximumOrderLimit field.
-             - For Facility Turn Off setting, earlier Facility's maximumOrderLimit field used to get
-             updated; Going forward, for this scenario the facility will not be part of
-             SHOPIFY_GROUP_FAC group so it will not be included in the view to compute the Inventory. -->
+        <!-- When facility is turned off, then the eligible products should be identified and hence the lastUpdatedStamp
+            of FacilityGroupMember is added. -->
+        <alias entity-alias="FGM" field="lastUpdatedStamp" name="facilityGroupMemberUpdatedDate" function="max"/>
+        <!-- For facility turn off scenario, the facility will not be a part of SHOPIFY_GROUP_FAC group.
+            When the facility is removed from the SHOPIFY_GROUP_FAC group then its thruDate is set in the
+            FacilityGroupMember entity. -->
+        <!-- The date-filter on FacilityGroupMember's fromDate and thruDate is removed to identify the facilities that
+            have been turned off for inventory sharing i.e. where thruDate is set.
+            If we keep the date-filter in the view, the expired records of FacilityGroupMember will not come in the view,
+            and so the inventory change due to turned off facilities will not be identified, hence the updated inventory
+            will not be pushed to Shopify.. -->
         <!-- 1. Condition added to include inventory for Online Facility Group -->
         <!-- 2. OR with Condition added to include facilityTypeId='CONFIGURATION' for the below scenario,
              As part of initial implementation, the only condition added was to include members of
@@ -80,13 +87,8 @@ under the License.
              Shopify. -->
         <entity-condition>
             <econditions combine="or">
-                <econditions>
-                    <econdition field-name="facilityGroupTypeId" value="SHOPIFY_GROUP_FAC"/>
-                    <date-filter from-field-name="facilityGroupFromDate" thru-field-name="facilityGroupThruDate"/>
-                </econditions>
-                <econditions>
-                    <econdition field-name="facilityTypeId" value="CONFIGURATION"/>
-                </econditions>
+                <econdition field-name="facilityGroupTypeId" value="SHOPIFY_GROUP_FAC"/>
+                <econdition field-name="facilityTypeId" value="CONFIGURATION"/>
             </econditions>
         </entity-condition>
     </view-entity>
@@ -104,4 +106,37 @@ under the License.
         <alias entity-alias="F" name="facilityName"/>
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
     </view-entity>
+
+    <!-- Note: This view is created as we need to get the products associated with correct Product Stores and Facilities.
+        To join with ProductStoreFacility we need to map productStoreId and facilityId both, it was not possible in ShopifyProductInventory view
+        as no member entity had both productStoreId and facilityId. Hence in this view we use the ShopifyProductInventory view as member entity with sub-select=true,
+        this allows us to join the ProductStoreFacility with the result of ShopifyProductInventory on productStoreId and facilityId fields. -->
+    <view-entity entity-name="ProductStoreFacilityAndShopifyInventory" package="co.hotwax.shopify" group="ofbiz_transactional">
+        <description>View entity to get Products associated with the respective facilities of a Product Store</description>
+        <member-entity entity-alias="PSF" entity-name="org.apache.ofbiz.product.store.ProductStoreFacility"/>
+        <!-- NOTE: Using sub-select here to use the result of ShopifyProductInventory view while joining it with ProductStoreFacility -->
+        <member-entity entity-alias="SPI" entity-name="co.hotwax.shopify.ShopifyProductInventory" join-from-alias="PSF" sub-select="true">
+            <key-map field-name="facilityId"/>
+            <key-map field-name="productStoreId"/>
+        </member-entity>
+        <alias-all entity-alias="SPI">
+            <exclude field="computedLastInventoryCount"/>
+            <exclude field="updatedDate"/>
+            <exclude field="facilityGroupMemberUpdatedDate"/>
+        </alias-all>
+        <!-- NOTE: Applied the sum and max functions again on the ShopifyProductInventory's fields as this view is being used
+            in the generate#ShopifyInventoryFeed service and if function is not applied on these fields in this view, we don't get the
+            expected results. -->
+        <!-- TODO: Check removing the functions on these fields from ShopifyProductInventory view. -->
+        <alias entity-alias="PSF" field="lastUpdatedStamp" name="productStoreFacilityUpdatedDate" function="max"/>
+        <alias entity-alias="PSF" field="fromDate" name="productStoreFacilityFromDate"/>
+        <alias entity-alias="PSF" field="thruDate" name="productStoreFacilityThruDate"/>
+        <alias entity-alias="SPI" name="computedLastInventoryCount" function="sum"/>
+        <alias entity-alias="SPI" name="updatedDate" function="max"/>
+        <alias entity-alias="SPI" name="facilityGroupMemberUpdatedDate" function="max"/>
+        <entity-condition>
+            <!-- The date filter is added on PSF fromDate and thruDate to exclude the expired records of ProductStoreFacility -->
+            <date-filter from-field-name="productStoreFacilityFromDate" thru-field-name="productStoreFacilityThruDate"/>
+        </entity-condition>
+   </view-entity>
 </entities>
