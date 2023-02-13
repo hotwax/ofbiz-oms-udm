@@ -28,6 +28,12 @@ under the License.
     <!-- Extending the entity to include a field to store reference of parent job name in the cloned service job -->
     <extend-entity entity-name="ServiceJob" package="moqui.service.job">
         <field  name="parentJobName" type="text-short"/>
+        <field name="jobTypeEnumId" type="id"/>
+        <relationship type="one" title="ServiceJobType" related="moqui.basic.Enumeration">
+            <key-map field-name="jobTypeEnumId"/></relationship>
+        <seed-data>
+            <moqui.basic.EnumerationType description="Service Job Type" enumTypeId="ServiceJobType"/>
+        </seed-data>
     </extend-entity>
 </entities>
 
