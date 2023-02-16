@@ -193,7 +193,7 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="OISGINR" entity-name="org.apache.ofbiz.order.order.OrderItemShipGrpInvRes" join-from-alias="OISGA">
+        <member-entity entity-alias="OISGINR" entity-name="org.apache.ofbiz.order.order.OrderItemShipGrpInvRes" join-from-alias="OISGA" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
             <key-map field-name="shipGroupSeqId"/>
@@ -257,6 +257,7 @@ under the License.
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
         <alias entity-alias="OS" name="statusDatetime" />
         <alias entity-alias="PD" name="productId"/>
+        <alias entity-alias="PD" name="productTypeId"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
         <alias entity-alias="ODR" field="partyId" name="customerPartyId"/>
         <entity-condition>
