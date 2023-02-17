@@ -391,11 +391,20 @@ under the License.
 
     <!-- NOTE: Not added group attribute in the view entity definition as fix done in Moqui,
          TODO update all view entities to remove the use of group attribute as not needed now -->
+    <!-- The ReturnItemResponse entity is included in the view for handling below scenario,
+        1. The same order has a return and an appeasement.
+        2. The view should include ReturnItemResponse entity with join-optional true as for Sales,
+        this entity does not hold records, but it contains records for Returns and Appeasements.
+        2. Now for Sales Items, we can fetch payment details using order Id and statusId = 'PAYMENT_SETTLED'.
+        3. For Return Items, we can fetch payment details using return Id and statusId = 'PAYMENT_REFUNDED'.
+        4. For Appeasements, we can fetch payment details using return Id and statusId = 'PAYMENT_REFUNDED'.
+        5. This way we can correctly fetch details for the return and appeasement for the same order. -->
     <view-entity entity-name="OrderPaymentPreferenceAndType" package="co.hotwax.financial">
         <member-entity entity-alias="OPP" entity-name="org.apache.ofbiz.order.order.OrderPaymentPreference"/>
         <member-entity entity-alias="PMT" entity-name="org.apache.ofbiz.accounting.payment.PaymentMethodType" join-from-alias="OPP" join-optional="true">
             <key-map field-name="paymentMethodTypeId"/>
         </member-entity>
+        <member-entity entity-alias="RIR" entity-name="org.apache.ofbiz.order.return.ReturnItemResponse" join-from-alias="OPP" join-optional="true">
         <alias entity-alias="OPP" name="orderId"/>
         <alias entity-alias="OPP" name="statusId"/>
         <alias entity-alias="OPP" field="maxAmount" name="amount" />
@@ -403,6 +412,7 @@ under the License.
         <alias entity-alias="PMT" name="paymentMethodTypeId"/>
         <alias entity-alias="PMT" name="paymentMethodCode"/>
         <alias entity-alias="PMT" field="description" name="paymentMethodDescription"/>
+        <alias entity-alias="RIR" name="returnId"/>
     </view-entity>
 
     <!-- To get the Party and Person details -->
