@@ -405,6 +405,8 @@ under the License.
             <key-map field-name="paymentMethodTypeId"/>
         </member-entity>
         <member-entity entity-alias="RIR" entity-name="org.apache.ofbiz.order.return.ReturnItemResponse" join-from-alias="OPP" join-optional="true">
+            <key-map field-name="orderPaymentPreferenceId"/>
+        </member-entity>
         <alias entity-alias="OPP" name="orderId"/>
         <alias entity-alias="OPP" name="statusId"/>
         <alias entity-alias="OPP" field="maxAmount" name="amount" />
