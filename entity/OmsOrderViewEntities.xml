@@ -279,7 +279,7 @@ under the License.
 
     <!-- View entity to fetch the Order Items for FulfilledOrder Reporting, using member entities of OFBiz -->
     <view-entity entity-name="OrderItemAndShipmentSyncQueue" package="co.hotwax.warehouse" group="ofbiz_transactional">
-        <description>View to get details for the Fulfilled Order Items.</description>
+        <description>View to get details for the Order Item and Shipment details.</description>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
             <key-map field-name="orderId"/>
@@ -305,6 +305,12 @@ under the License.
             <key-map field-name="shipmentItemSeqId"/>
         </member-entity>
         <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="SHI" join-optional="true">
+            <key-map field-name="shipmentId"/>
+        </member-entity>
+        <!-- NOTE: ShipmentRouteSegment entity included for details regarding tracking Number, carrier party and shipment method
+        and be able to group the items using these fields when the view is used in the Fulfilled Items Feed.
+        TODO We may get multiple records for Shipment Route Segments, and this should be revisited for this scenario. -->
+        <member-entity entity-alias="SHIRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SH" join-optional="true">
             <key-map field-name="shipmentId"/>
         </member-entity>
         <member-entity entity-alias="EFO" entity-name="co.hotwax.warehouse.ExternalFulfillmentOrderItem" join-from-alias="OISGA" join-optional="true">
@@ -337,9 +343,6 @@ under the License.
         </member-entity>
         <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH">
             <key-map field-name="currencyUom" related="uomId"/>
-        </member-entity>
-        <member-entity entity-alias="SHIRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SH" join-optional="true">
-            <key-map field-name="shipmentId"/>
         </member-entity>
         <alias entity-alias="OH" name="productStoreId"/>
         <alias entity-alias="OH" name="orderId"/>
