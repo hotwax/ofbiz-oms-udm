@@ -31,14 +31,14 @@ under the License.
             <key-map field-name="productCategoryId"/>
         </member-entity>
         <alias entity-alias="PSC" name="productStoreId"/>
-        <alias entity-alias="PSC" field="fromDate" name="fromDatePSC"/>
-        <alias entity-alias="PSC" field="thruDate" name="thruDatePSC"/>
+        <alias entity-alias="PSC" field="fromDate" name="pscFromDate"/>
+        <alias entity-alias="PSC" field="thruDate" name="pscThruDate"/>
         <alias entity-alias="PCC" name="productCategoryId"/>
         <alias entity-alias="PCC" name="prodCatalogCategoryTypeId"/>
-        <alias entity-alias="PCC" field="fromDate" name="fromDatePCC"/>
-        <alias entity-alias="PCC" field="thruDate" name="thruDatePCC"/>
+        <alias entity-alias="PCC" field="fromDate" name="pccFromDate"/>
+        <alias entity-alias="PCC" field="thruDate" name="pccThruDate"/>
         <alias entity-alias="PCM" name="productId"/>
-        <alias entity-alias="PCM" field="fromDate" name="fromDatePCM"/>
-        <alias entity-alias="PCM" field="thruDate" name="thruDatePCM"/>
+        <alias entity-alias="PCM" field="fromDate" name="pcmFromDate"/>
+        <alias entity-alias="PCM" field="thruDate" name="pcmThruDate"/>
     </view-entity>
 </entities>
