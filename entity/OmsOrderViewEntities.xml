@@ -392,7 +392,7 @@ under the License.
                 <econditions combine="or">
                     <econdition entity-alias="EFO" field-name="fulfillmentStatus" operator="equals" value="REJECT"/>
                     <econdition entity-alias="EFO" field-name="fulfillmentStatus" operator="equals" value=""/>
-                </econditions>.
+                </econditions>
                 <econditions combine="or">
                     <econdition entity-alias="OISGA" field-name="quantity" operator="greater" to-entity-alias="OISGA" to-field-name="cancelQuantity"/>
                     <econdition entity-alias="OISGA" field-name="cancelQuantity" operator="equals" value=""/>
