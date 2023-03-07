@@ -278,6 +278,132 @@ under the License.
         </entity-condition>
     </view-entity>
 
+    <!-- View entity to fetch the Order Items for FulfilledOrder Reporting, using member entities of OFBiz -->
+    <view-entity entity-name="OrderItemAndShipmentSyncQueue" package="co.hotwax.warehouse" group="ofbiz_transactional">
+        <description>View to get details for the Order Item and Shipment details.</description>
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+            <key-map field-name="salesChannelEnumId" related="enumId"/>
+        </member-entity>
+        <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OISGA">
+            <key-map field-name="orderId"/>
+            <key-map field-name="shipGroupSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OSH" entity-name="org.apache.ofbiz.order.order.OrderShipment" join-from-alias="OISGA" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="shipGroupSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="SHI" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentItem" join-from-alias="OSH" join-optional="true">
+            <key-map field-name="shipmentId"/>
+            <key-map field-name="shipmentItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="SHI" join-optional="true">
+            <key-map field-name="shipmentId"/>
+        </member-entity>
+        <!-- NOTE: ShipmentRouteSegment entity included for details regarding tracking Number, carrier party and shipment method
+        and be able to group the items using these fields when the view is used in the Fulfilled Items Feed.
+        TODO We may get multiple records for Shipment Route Segments, and this should be revisited for this scenario. -->
+        <member-entity entity-alias="SHIRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SH" join-optional="true">
+            <key-map field-name="shipmentId"/>
+        </member-entity>
+        <member-entity entity-alias="EFO" entity-name="co.hotwax.warehouse.ExternalFulfillmentOrderItem" join-from-alias="OISGA" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="shipGroupSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="OISG">
+            <key-map field-name="facilityId"/>
+        </member-entity>
+        <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F">
+            <key-map field-name="facilityTypeId"/>
+        </member-entity>
+        <member-entity entity-alias="ODR" entity-name="org.apache.ofbiz.order.order.OrderRole" join-from-alias="OH" join-optional="true">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.party.party.Person" join-from-alias="ODR" join-optional="true">
+            <key-map field-name="partyId"/>
+        </member-entity>
+        <member-entity entity-alias="PD" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="OI" join-optional="true">
+            <key-map field-name="productId"/>
+        </member-entity>
+        <member-entity entity-alias="PT" entity-name="org.apache.ofbiz.product.product.ProductType" join-from-alias="PD" join-optional="true">
+            <key-map field-name="productTypeId"/>
+        </member-entity>
+        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH">
+            <key-map field-name="currencyUom" related="uomId"/>
+        </member-entity>
+        <alias entity-alias="OH" name="productStoreId"/>
+        <alias entity-alias="OH" name="orderId"/>
+        <alias entity-alias="OH" name="orderName"/>
+        <alias entity-alias="OH" name="orderDate"/>
+        <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
+        <alias entity-alias="OH" name="entryDate"/>
+        <alias entity-alias="UOM" field="abbreviation" name="currency"/>
+        <alias entity-alias="OH" name="grandTotal"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
+        <alias entity-alias="OI" name="unitPrice"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OISG" name="shipGroupSeqId"/>
+        <alias entity-alias="OISG" field="shipmentMethodTypeId" name="slaShipmentMethodTypeId"/>
+        <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
+        <alias entity-alias="OISG" name="telecomContactMechId"/>
+        <alias entity-alias="OISGA" field="quantity" name="itemQuantity"/>
+        <alias entity-alias="EFO" name="externalFulfillmentOrderItemId"/>
+        <alias entity-alias="EFO" name="fulfillmentStatus"/>
+        <alias entity-alias="P" field="firstName" name="customerFirstName"/>
+        <alias entity-alias="P" field="lastName" name="customerLastName"/>
+        <alias entity-alias="F" name="facilityId"/>
+        <alias entity-alias="F" field="externalId" name="facilityExternalId" />
+        <alias entity-alias="FT" name="facilityTypeId"/>
+        <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
+        <alias entity-alias="OS" name="statusDatetime" function="max"/>
+        <alias entity-alias="PD" name="productId"/>
+        <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
+        <alias entity-alias="ODR" field="partyId" name="customerPartyId"/>
+        <alias entity-alias="OSH" field="quantity" name="shippedQuantity"/>
+        <alias entity-alias="SHI" name="shipmentId"/>
+        <alias entity-alias="SHI" name="shipmentItemSeqId"/>
+        <alias entity-alias="SH" field="statusId" name="shipmentStatusId"/>
+        <alias entity-alias="SH" field="destinationContactMechId" name="shipToContactMechId"/>
+        <alias entity-alias="SH" field="destinationTelecomNumberId" name="shipToTelecomContactMechId"/>
+        <alias entity-alias="SH" name="shipmentTypeId"/>
+        <alias entity-alias="SHIRS" name="trackingIdNumber"/>
+        <alias entity-alias="SHIRS" name="carrierPartyId"/>
+        <alias entity-alias="SHIRS" name="shipmentMethodTypeId"/>
+        <alias entity-alias="PT" name="productTypeId"/>
+        <alias entity-alias="PT" name="isPhysical"/>
+        <alias entity-alias="PT" name="isDigital"/>
+        <entity-condition>
+            <econditions combine="and">
+                <econdition entity-alias="OH" field-name="orderTypeId" operator="equals" value="SALES_ORDER"/>
+                <econditions combine="or">
+                    <econdition entity-alias="EFO" field-name="fulfillmentStatus" operator="equals" value="REJECT"/>
+                    <econdition entity-alias="EFO" field-name="fulfillmentStatus" operator="equals" value=""/>
+                </econditions>
+                <econditions combine="or">
+                    <econdition entity-alias="OISGA" field-name="quantity" operator="greater" to-entity-alias="OISGA" to-field-name="cancelQuantity"/>
+                    <econdition entity-alias="OISGA" field-name="cancelQuantity" operator="equals" value=""/>
+                </econditions>
+                <econdition entity-alias="ODR" field-name="roleTypeId" operator="equals" value="BILL_TO_CUSTOMER"/>
+            </econditions>
+            <order-by field-name="entryDate"/>
+        </entity-condition>
+    </view-entity>
+
     <view-entity entity-name="PostalAddressView" package="co.hotwax.financial" group="ofbiz_transactional">
         <member-entity entity-alias="PA" entity-name="org.apache.ofbiz.party.contact.PostalAddress"/>
         <member-entity entity-alias="COUNTRYGEO" entity-name="org.apache.ofbiz.common.geo.Geo" join-from-alias="PA" join-optional="true">
