@@ -314,9 +314,11 @@ under the License.
         <member-entity entity-alias="SHIRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SH" join-optional="true">
             <key-map field-name="shipmentId"/>
         </member-entity>
-        <!-- Previously, with the ExternalFulfillmentOrderItem entity we used the orderId,orderItemSeqId, and shipGroupSeqId for join with
-        OrderItemShipGroupAssoc entity. But in the OrderFulfillmentHistory entity shipGroupSeqId is not available.
-        Then in the case of explode/off new orderItemSeqId is created for each item. -->
+        <!-- 1. Previously, the join was added with the ExternalFulfillmentOrderItem entity using the fields orderId,orderItemSeqId,shipGroupSeqId.
+             2. Now the change is done to join with the OrderFulfillmentHistory entity using the fields orderId and orderItemSeqId.
+             3. The shipGroupSeqId is not available in OrderFulfillmentHistory entity, this could have created possible issue for the scenario of explode OFF partial fulfillment
+             of an order Item as in that case shipGroupSeqId can be same.
+             4. This will not be an issue as discussed, for this scenario, new orderItem will be created for the remaining quantity for that item. -->
         <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.OrderFulfillmentHistory" join-from-alias="OISGA" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
@@ -393,10 +395,7 @@ under the License.
         <entity-condition>
             <econditions combine="and">
                 <econdition entity-alias="OH" field-name="orderTypeId" operator="equals" value="SALES_ORDER"/>
-                <econditions combine="or">
-                    <econdition entity-alias="OFH" field-name="comments" operator="equals" value="REJECT"/>
-                    <econdition entity-alias="OFH" field-name="comments" operator="equals" value=""/>
-                </econditions>
+                <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
                 <econditions combine="or">
                     <econdition entity-alias="OISGA" field-name="quantity" operator="greater" to-entity-alias="OISGA" to-field-name="cancelQuantity"/>
                     <econdition entity-alias="OISGA" field-name="cancelQuantity" operator="equals" value=""/>
