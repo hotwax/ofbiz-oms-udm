@@ -366,9 +366,6 @@ under the License.
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
         <alias entity-alias="OISG" name="telecomContactMechId"/>
         <alias entity-alias="OISGA" field="quantity" name="itemQuantity"/>
-        <alias entity-alias="OFH" name="fulfillmentLogId"/>
-        <alias entity-alias="OFH" name="comments"/>
-        <alias entity-alias="OFH" name="externalFulfillmentId"/>
         <alias entity-alias="P" field="firstName" name="customerFirstName"/>
         <alias entity-alias="P" field="lastName" name="customerLastName"/>
         <alias entity-alias="F" name="facilityId"/>
