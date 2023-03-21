@@ -314,10 +314,14 @@ under the License.
         <member-entity entity-alias="SHIRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SH" join-optional="true">
             <key-map field-name="shipmentId"/>
         </member-entity>
-        <member-entity entity-alias="EFO" entity-name="co.hotwax.warehouse.ExternalFulfillmentOrderItem" join-from-alias="OISGA" join-optional="true">
+        <!-- 1. Previously, the join was added with the ExternalFulfillmentOrderItem entity using the fields orderId,orderItemSeqId,shipGroupSeqId.
+             2. Now the change is done to join with the OrderFulfillmentHistory entity using the fields orderId and orderItemSeqId.
+             3. The shipGroupSeqId is not available in OrderFulfillmentHistory entity, this could have created possible issue for the scenario of explode OFF partial fulfillment
+             of an order Item as in that case shipGroupSeqId can be same.
+             4. This will not be an issue as discussed, for this scenario, new orderItem will be created for the remaining quantity for that item. -->
+        <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.OrderFulfillmentHistory" join-from-alias="OISGA" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
-            <key-map field-name="shipGroupSeqId"/>
         </member-entity>
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
             <key-map field-name="orderId"/>
@@ -362,8 +366,6 @@ under the License.
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
         <alias entity-alias="OISG" name="telecomContactMechId"/>
         <alias entity-alias="OISGA" field="quantity" name="itemQuantity"/>
-        <alias entity-alias="EFO" name="externalFulfillmentOrderItemId"/>
-        <alias entity-alias="EFO" name="fulfillmentStatus"/>
         <alias entity-alias="P" field="firstName" name="customerFirstName"/>
         <alias entity-alias="P" field="lastName" name="customerLastName"/>
         <alias entity-alias="F" name="facilityId"/>
@@ -390,10 +392,7 @@ under the License.
         <entity-condition>
             <econditions combine="and">
                 <econdition entity-alias="OH" field-name="orderTypeId" operator="equals" value="SALES_ORDER"/>
-                <econditions combine="or">
-                    <econdition entity-alias="EFO" field-name="fulfillmentStatus" operator="equals" value="REJECT"/>
-                    <econdition entity-alias="EFO" field-name="fulfillmentStatus" operator="equals" value=""/>
-                </econditions>
+                <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
                 <econditions combine="or">
                     <econdition entity-alias="OISGA" field-name="quantity" operator="greater" to-entity-alias="OISGA" to-field-name="cancelQuantity"/>
                     <econdition entity-alias="OISGA" field-name="cancelQuantity" operator="equals" value=""/>
