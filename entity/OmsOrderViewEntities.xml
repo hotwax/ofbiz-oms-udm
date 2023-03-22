@@ -305,13 +305,22 @@ under the License.
             <key-map field-name="shipmentId"/>
             <key-map field-name="shipmentItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="SHI" join-optional="true">
+        <member-entity entity-alias="SPCT" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentPackageContent" join-from-alias="SHI" join-optional="true">
             <key-map field-name="shipmentId"/>
+            <key-map field-name="shipmentItemSeqId"/>
         </member-entity>
-        <!-- NOTE: ShipmentRouteSegment entity included for details regarding tracking Number, carrier party and shipment method
+        <member-entity entity-alias="SPKG" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentPackage" join-from-alias="SPCT" join-optional="true">
+            <key-map field-name="shipmentId"/>
+            <key-map field-name="shipmentPackageSeqId"/>
+        </member-entity>
+        <!-- NOTE: ShipmentPackageRouteSeg entity and Shipment entity included for details regarding tracking code, carrier party and shipment method
         and be able to group the items using these fields when the view is used in the Fulfilled Items Feed.
         TODO We may get multiple records for Shipment Route Segments, and this should be revisited for this scenario. -->
-        <member-entity entity-alias="SHIRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SH" join-optional="true">
+        <member-entity entity-alias="SPRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentPackageRouteSeg" join-from-alias="SPKG" join-optional="true">
+            <key-map field-name="shipmentId"/>
+            <key-map field-name="shipmentPackageSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="SPRS" join-optional="true">
             <key-map field-name="shipmentId"/>
         </member-entity>
         <!-- 1. Previously, the join was added with the ExternalFulfillmentOrderItem entity using the fields orderId,orderItemSeqId,shipGroupSeqId.
@@ -383,9 +392,9 @@ under the License.
         <alias entity-alias="SH" field="destinationContactMechId" name="shipToContactMechId"/>
         <alias entity-alias="SH" field="destinationTelecomNumberId" name="shipToTelecomContactMechId"/>
         <alias entity-alias="SH" name="shipmentTypeId"/>
-        <alias entity-alias="SHIRS" name="trackingIdNumber"/>
-        <alias entity-alias="SHIRS" name="carrierPartyId"/>
-        <alias entity-alias="SHIRS" name="shipmentMethodTypeId"/>
+        <alias entity-alias="SPRS" field="trackingCode" name="trackingNumber"/>
+        <alias entity-alias="SH" name="carrierPartyId"/>
+        <alias entity-alias="SH" name="shipmentMethodTypeId"/>
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
