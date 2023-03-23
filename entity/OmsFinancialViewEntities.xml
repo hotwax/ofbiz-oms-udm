@@ -39,6 +39,9 @@ under the License.
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
         </member-entity>
+        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
+            <key-map field-name="productStoreId"/>
+        </member-entity>
         <alias entity-alias="RI" name="returnId"/>
         <alias entity-alias="RI" name="returnItemSeqId"/>
         <alias entity-alias="RH" name="entryDate"/>
@@ -48,6 +51,9 @@ under the License.
         <alias entity-alias="RS" name="statusId" />
         <alias entity-alias="RS" name="completedDatetime" field="statusDatetime" function="max"/>
         <alias entity-alias="OH" name="productStoreId"/>
+        <alias entity-alias="OH" name="orderName"/>
+        <alias entity-alias="PS" name="productStoreExternalId" field="externalId"/>
+        <alias entity-alias="RH" name="customerPartyId" field="fromPartyId"/>
         <entity-condition>
             <econditions>
                 <econdition entity-alias="RS" field-name="statusId" operator="equals" value="RETURN_COMPLETED"/>
