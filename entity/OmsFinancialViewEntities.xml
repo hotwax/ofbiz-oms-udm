@@ -127,7 +127,7 @@ under the License.
         <alias entity-alias="OH" name="orderDate"/>
         <alias entity-alias="OH" name="entryDate"/>
         <alias entity-alias="OS" name="statusId"/>
-        <alias entity-alias="OS" name="completedDatetime" field="statusDatetime"/>
+        <alias entity-alias="OS" name="completedDatetime" field="statusDatetime" function="max"/>
         <alias entity-alias="OH" name="orderTypeId"/>
         <alias entity-alias="OH" name="productStoreId"/>
         <entity-condition>
