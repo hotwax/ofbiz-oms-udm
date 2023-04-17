@@ -464,6 +464,24 @@ under the License.
             <econdition entity-alias="OAH" field-name="orderAdjustmentId" value=""/>
         </entity-condition>
     </view-entity>
+    <view-entity entity-name="FulfilledOrderAdjustmentAndHistory" package="co.hotwax.financial" group="ofbiz_transactional">
+        <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment"/>
+        <member-entity entity-alias="FOAH" entity-name="co.hotwax.common.FulfilledOrderAdjustmentHistory" join-from-alias="OA" join-optional="true">
+            <key-map field-name="orderAdjustmentId"/>
+        </member-entity>
+        <alias entity-alias="OA" name="orderAdjustmentId"/>
+        <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
+        <alias entity-alias="OA" name="orderId"/>
+        <alias entity-alias="OA" name="orderItemSeqId"/>
+        <alias entity-alias="OA" name="shipGroupSeqId"/>
+        <alias entity-alias="OA" name="comments"/>
+        <alias entity-alias="OA" name="description"/>
+        <alias entity-alias="OA" name="amount"/>
+        <alias entity-alias="OA" name="createdDate"/>
+        <entity-condition>
+            <econdition entity-alias="FOAH" field-name="orderAdjustmentId" value=""/>
+        </entity-condition>
+    </view-entity>
     <view-entity entity-name="ReturnItemAndAdjustment" package="co.hotwax.financial" group="ofbiz_transactional">
         <description>View to get the Return Items and their Adjustments.</description>
         <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem"/>
