@@ -2860,6 +2860,18 @@ under the License.
         </relationship>
     </entity>
 
+    <entity entity-name="FulfilledOrderAdjustmentHistory" package="co.hotwax.common" group="ofbiz_transactional">
+        <field name="orderAdjustmentHistoryId" type="id" is-pk="true"/>
+        <field name="orderAdjustmentId" type="id"/>
+        <field name="orderAdjustmentTypeId" type="id"/>
+        <field name="orderId" type="id"/>
+        <field name="createdDate" type="date-time"/>
+        <field name="comments" type="text-very-long"/>
+        <relationship type="one" related="org.apache.ofbiz.order.order.OrderAdjustment">
+            <key-map field-name="orderAdjustmentId"/>
+        </relationship>
+    </entity>
+
     <entity entity-name="ShipmentItemHistory" package="co.hotwax.common" group="ofbiz_transactional">
         <field name="shipmentItemHistoryId" type="id" is-pk="true"/>
         <field name="shipmentId" type="id"/>
