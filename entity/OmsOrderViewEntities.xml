@@ -496,6 +496,7 @@ under the License.
                     <econdition entity-alias="OISGA" field-name="cancelQuantity" operator="equals" value=""/>
                 </econditions>
             </econditions>
+            <order-by field-name="entryDate"/>
         </entity-condition>
     </view-entity>
 
@@ -581,6 +582,7 @@ under the License.
         <alias entity-alias="OISG" field="shipmentMethodTypeId" name="slaShipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
         <alias entity-alias="OISG" name="telecomContactMechId"/>
+        <alias entity-alias="OISGA" field="quantity" name="itemQuantity"/>
         <alias entity-alias="F" name="facilityId"/>
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
         <alias entity-alias="FT" name="facilityTypeId"/>
@@ -604,6 +606,10 @@ under the License.
         <entity-condition>
             <econdition entity-alias="ODR" field-name="roleTypeId" operator="equals" value="BILL_TO_CUSTOMER"/>
             <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
+            <econditions combine="or">
+                <econdition entity-alias="OISGA" field-name="quantity" operator="greater" to-entity-alias="OISGA" to-field-name="cancelQuantity"/>
+                <econdition entity-alias="OISGA" field-name="cancelQuantity" operator="equals" value=""/>
+            </econditions>
         </entity-condition>
     </view-entity>
 
