@@ -104,7 +104,7 @@ under the License.
         <alias entity-alias="SHR" name="shipmentPackageSeqId"/>
         <alias entity-alias="SHR" name="receivedDate" field="datetimeReceived" function="max"/>
         <alias entity-alias="SHR" name="totalQuantityAccepted" field="quantityAccepted" function="sum"/>
-        <alias entity-alias="SHR" name="quantityRejected" function="sum"/>
+        <alias entity-alias="SHR" name="totalQuantityRejected" field="quantityRejected" function="sum"/>
         <alias entity-alias="SH" name="shipmentStatusId" field="statusId"/>
         <alias entity-alias="SH" name="shipmentTypeId"/>
         <entity-condition>
