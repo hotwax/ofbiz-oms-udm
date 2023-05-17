@@ -103,8 +103,6 @@ under the License.
         <alias entity-alias="SH" name="shipmentTypeId"/>
         <entity-condition>
             <econdition entity-alias="OH" field-name="orderTypeId" value="PURCHASE_ORDER"/>
-            <econdition entity-alias="SH" field-name="shipmentTypeId" value="PURCHASE_SHIPMENT"/>
-            <econdition entity-alias="SH" field-name="statusId" value="PURCH_SHIP_RECEIVED"/>
         </entity-condition>
     </view-entity>
 </entities>
