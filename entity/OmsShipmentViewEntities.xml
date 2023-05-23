@@ -87,29 +87,29 @@ under the License.
         <alias entity-alias="OH" name="productStoreId"/>
         <alias entity-alias="OH" name="orderId"/>
         <alias entity-alias="OH" name="orderName"/>
-        <alias entity-alias="OH" name="orderExternalId" field="externalId"/>
+        <alias entity-alias="OH" field="externalId" name="orderExternalId"/>
         <alias entity-alias="OH" name="orderDate"/>
-        <alias entity-alias="OH" name="statusId"/>
+        <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
         <alias entity-alias="OH" name="originFacilityId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
-        <alias entity-alias="OI" name="itemStatusId" field="statusId"/>
+        <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
         <alias entity-alias="OI" name="unitPrice"/>
-        <alias entity-alias="OI" name="orderItemExternalId" field="externalId"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <alias entity-alias="OI" name="productId"/>
         <alias entity-alias="OI" name="estimatedDeliveryDate"/>
         <alias entity-alias="OI" name="isNewProduct"/>
         <alias entity-alias="OI" name="quantity"/>
         <alias entity-alias="OI" name="availableToPromise"/>
-        <alias entity-alias="P" name="sku" field="internalName"/>
-        <alias entity-alias="SR" name="receiptId"/>
+        <alias entity-alias="P" field="internalName" name="sku"/>
+        <alias entity-alias="SH" field="statusId" name="shipmentStatusId"/>
+        <alias entity-alias="SH" name="shipmentTypeId"/>
         <alias entity-alias="SR" name="shipmentId"/>
         <alias entity-alias="SR" name="shipmentItemSeqId"/>
+        <alias entity-alias="SR" name="receiptId"/>
         <alias entity-alias="SR" name="shipmentPackageSeqId"/>
-        <alias entity-alias="SR" name="receivedDate" field="datetimeReceived" function="max"/>
-        <alias entity-alias="SR" name="totalQuantityAccepted" field="quantityAccepted" function="sum"/>
-        <alias entity-alias="SR" name="totalQuantityRejected" field="quantityRejected" function="sum"/>
-        <alias entity-alias="SH" name="shipmentStatusId" field="statusId"/>
-        <alias entity-alias="SH" name="shipmentTypeId"/>
+        <alias entity-alias="SR" field="datetimeReceived" name="receivedDate" function="max"/>
+        <alias entity-alias="SR" field="quantityAccepted" name="totalQuantityAccepted" function="sum"/>
+        <alias entity-alias="SR" field="quantityRejected" name="totalQuantityRejected" function="sum"/>
         <entity-condition>
             <econdition entity-alias="OH" field-name="orderTypeId" value="PURCHASE_ORDER"/>
             <econdition entity-alias="SIH" field-name="receiptId" operator="equals" value=""/>
