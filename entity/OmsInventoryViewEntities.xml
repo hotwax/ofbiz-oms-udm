@@ -63,13 +63,15 @@ under the License.
     </view-entity>
     
     <!-- View for Inventory Count Import Variance -->
-    <!-- NOTE The View will include records for all status for an inventoryCountImportId; the service
-         using this view should put a check on the statusId field to get records for only a
-         particular status if required. -->
+    <!-- NOTE The view could be used for fetching details for a particular status of Inventory
+         Count Import; but this does not mean for an inventoryCountImportId, it will pull records
+         for all status in InvCountImportStatus.
+         The information will be prepared for the current status of the inventoryCountImportId. -->
     <view-entity entity-name="InventoryCountImportVariance" package="co.hotwax.warehouse">
         <member-entity entity-alias="ICI" entity-name="co.hotwax.warehouse.InventoryCountImport"/>
         <member-entity entity-alias="ICIS" entity-name="co.hotwax.warehouse.InvCountImportStatus" join-from-alias="ICI">
             <key-map field-name="inventoryCountImportId"/>
+            <key-map field-name="statusId"/>
         </member-entity>
         <member-entity entity-alias="ICIV" entity-name="co.hotwax.warehouse.InvCountImportVariance" join-from-alias="ICI">
             <key-map field-name="inventoryCountImportId"/>
@@ -83,11 +85,9 @@ under the License.
         <alias entity-alias="ICI" name="inventoryCountImportId"/>
         <alias entity-alias="ICI" name="facilityId"/>
         <!-- This is the current statusId from InventoryCountImport -->
-        <alias entity-alias="ICI" field="statusId" name="invCountImportStatusId"/>
+        <alias entity-alias="ICI" name="statusId"/>
         <alias entity-alias="ICI" name="createdDate"/>
-        <!-- This is the status Id from InvCountImportStatus; the view is generic to have all status Ids for an inventoryCountImportId -->
-        <alias entity-alias="ICIS" name="statusId"/>
-        <alias entity-alias="ICIS" name="statusDate"/>
+        <alias entity-alias="ICIS" name="statusDate" function="max"/>
         <alias entity-alias="ICIV" name="productId"/>
         <alias entity-alias="ICIV" name="locationSeqId"/>
         <alias entity-alias="ICIV" name="systemQuantityOnHand"/>
