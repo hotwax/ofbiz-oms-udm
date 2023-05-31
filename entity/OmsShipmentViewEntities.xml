@@ -59,6 +59,7 @@ under the License.
         <alias entity-alias="SITM" name="quantity"/>
         <alias entity-alias="SITM" name="availableToPromise"/>
         <alias entity-alias="SITM" name="serialNumber"/>
+        <alias entity-alias="SITM" field="externalId" name="shipmentItemExternalId"/>
         <alias entity-alias="SR" name="totalQuantityAccepted" field="quantityAccepted" function="sum"/>
         <alias entity-alias="SR" name="receivedDate" field="datetimeReceived" function="max"/>
         <alias entity-alias="SR" name="receiptId"/>
