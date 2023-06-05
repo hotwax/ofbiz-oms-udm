@@ -58,10 +58,62 @@ under the License.
         <alias entity-alias="SITM" name="productId"/>
         <alias entity-alias="SITM" name="quantity"/>
         <alias entity-alias="SITM" name="availableToPromise"/>
+        <alias entity-alias="SITM" name="serialNumber"/>
+        <alias entity-alias="SITM" field="externalId" name="shipmentItemExternalId"/>
         <alias entity-alias="SR" name="totalQuantityAccepted" field="quantityAccepted" function="sum"/>
         <alias entity-alias="SR" name="receivedDate" field="datetimeReceived" function="max"/>
         <alias entity-alias="SR" name="receiptId"/>
         <entity-condition>
+            <econdition entity-alias="SIH" field-name="receiptId" operator="equals" value=""/>
+        </entity-condition>
+    </view-entity>
+
+    <view-entity entity-name="PurchaseOrderShipmentReceipt" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"></member-entity>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="OI">
+            <key-map field-name="productId"/>
+        </member-entity>
+        <member-entity entity-alias="SR" entity-name="org.apache.ofbiz.shipment.receipt.ShipmentReceipt" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="SR" join-optional="true">
+            <key-map field-name="shipmentId"/>
+        </member-entity>
+        <member-entity entity-alias="SIH" entity-name="co.hotwax.common.ShipmentItemHistory" join-from-alias="SR" join-optional="true">
+            <key-map field-name="receiptId"/>
+        </member-entity>
+        <alias entity-alias="OH" name="productStoreId"/>
+        <alias entity-alias="OH" name="orderId"/>
+        <alias entity-alias="OH" name="orderName"/>
+        <alias entity-alias="OH" field="externalId" name="orderExternalId"/>
+        <alias entity-alias="OH" name="orderDate"/>
+        <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
+        <alias entity-alias="OH" name="originFacilityId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
+        <alias entity-alias="OI" name="unitPrice"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="estimatedDeliveryDate"/>
+        <alias entity-alias="OI" name="isNewProduct"/>
+        <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OI" name="availableToPromise"/>
+        <alias entity-alias="P" field="internalName" name="sku"/>
+        <alias entity-alias="SH" field="statusId" name="shipmentStatusId"/>
+        <alias entity-alias="SH" name="shipmentTypeId"/>
+        <alias entity-alias="SR" name="shipmentId"/>
+        <alias entity-alias="SR" name="shipmentItemSeqId"/>
+        <alias entity-alias="SR" name="receiptId"/>
+        <alias entity-alias="SR" name="shipmentPackageSeqId"/>
+        <alias entity-alias="SR" field="datetimeReceived" name="receivedDate" function="max"/>
+        <alias entity-alias="SR" field="quantityAccepted" name="totalQuantityAccepted" function="sum"/>
+        <alias entity-alias="SR" field="quantityRejected" name="totalQuantityRejected" function="sum"/>
+        <entity-condition>
+            <econdition entity-alias="OH" field-name="orderTypeId" value="PURCHASE_ORDER"/>
             <econdition entity-alias="SIH" field-name="receiptId" operator="equals" value=""/>
         </entity-condition>
     </view-entity>
