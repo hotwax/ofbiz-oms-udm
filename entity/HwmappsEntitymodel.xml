@@ -1967,6 +1967,7 @@ under the License.
         </field>
             <field name="availableToPromise" type="number-decimal">
         </field>
+        <field name="externalId" type="id-long"/>
     </extend-entity>
     <extend-entity entity-name="PicklistItem" package="org.apache.ofbiz.shipment.picklist" group="ofbiz_transactional">
             <field name="picked" type="number-decimal">
