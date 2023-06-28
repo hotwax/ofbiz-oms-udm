@@ -2586,6 +2586,8 @@ under the License.
         </field>
             <field name="supplierRmaId" type="id">
         </field>
+        <field name="returnChannelEnumId" type="id">
+        </field>
         <relationship type="one" fk-name="RTN_HEAD_TYPE" related="org.apache.ofbiz.order.return.ReturnHeaderType">
             <key-map field-name="returnHeaderTypeId"/>
         </relationship>
