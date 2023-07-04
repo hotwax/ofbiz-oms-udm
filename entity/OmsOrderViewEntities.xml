@@ -220,6 +220,9 @@ under the License.
         <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="OISG">
             <key-map field-name="facilityId"/>
         </member-entity>
+        <member-entity entity-alias="FG" entity-name="org.apache.ofbiz.product.facility.FacilityGroup" join-from-alias="F" join-optional="true">
+            <key-map field-name="primaryFacilityGroupId" related="facilityGroupId"/>
+        </member-entity>
         <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F">
             <key-map field-name="facilityTypeId"/>
         </member-entity>
@@ -261,6 +264,7 @@ under the License.
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
         <alias entity-alias="FT" name="facilityTypeId"/>
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
+        <alias entity-alias="FG" name="facilityGroupTypeId"/>
         <alias entity-alias="OS" name="statusDatetime"/>
         <alias entity-alias="PD" name="productId"/>
         <alias entity-alias="PD" name="productTypeId"/>
