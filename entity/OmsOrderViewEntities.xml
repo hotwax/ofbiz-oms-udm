@@ -264,6 +264,7 @@ under the License.
         <alias entity-alias="OS" name="statusDatetime"/>
         <alias entity-alias="PD" name="productId"/>
         <alias entity-alias="PD" name="productTypeId"/>
+        <alias entity-alias="PD" name="internalName"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
         <alias entity-alias="ODR" field="partyId" name="customerPartyId"/>
         <entity-condition>
