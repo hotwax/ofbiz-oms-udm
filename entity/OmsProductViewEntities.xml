@@ -41,4 +41,22 @@ under the License.
         <alias entity-alias="PCM" field="fromDate" name="pcmFromDate"/>
         <alias entity-alias="PCM" field="thruDate" name="pcmThruDate"/>
     </view-entity>
+
+    <view-entity entity-name="ProductAssocAndFrom" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+        <description>View for Product Assoc and Parent Product details</description>
+        <member-entity entity-alias="PA" entity-name="org.apache.ofbiz.product.product.ProductAssoc"/>
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="PA">
+            <key-map field-name="productId"/></member-entity>
+        <alias-all entity-alias="PA"/>
+        <alias-all entity-alias="P"/>
+    </view-entity>
+
+    <view-entity entity-name="ProductAssocAndTo" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+        <description>View for Product Assoc and Associated Product Details</description>
+        <member-entity entity-alias="PA" entity-name="org.apache.ofbiz.product.product.ProductAssoc"/>
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="PA">
+            <key-map field-name="productIdTo" related="productId"/></member-entity>
+        <alias-all entity-alias="PA"/>
+        <alias-all entity-alias="P"><exclude field="productId"/></alias-all>
+    </view-entity>
 </entities>
