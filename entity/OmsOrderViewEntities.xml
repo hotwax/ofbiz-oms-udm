@@ -249,6 +249,7 @@ under the License.
         <alias entity-alias="OISGINR" name="reservedDatetime"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OI" name="itemDescription"/>
         <alias entity-alias="OISG" name="shipGroupSeqId"/>
         <alias entity-alias="OISG" name="shipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
