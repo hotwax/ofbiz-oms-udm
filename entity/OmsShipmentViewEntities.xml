@@ -64,7 +64,7 @@ under the License.
         <alias entity-alias="SR" name="receivedDate" field="datetimeReceived" function="max"/>
         <alias entity-alias="SR" name="receiptId"/>
         <entity-condition>
-            <econdition entity-alias="SIH" field-name="receiptId" operator="equals" value=""/>
+            <econdition entity-alias="SIH" field-name="shipmentId" operator="equals" value=""/>
         </entity-condition>
     </view-entity>
 
