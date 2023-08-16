@@ -241,6 +241,7 @@ under the License.
         <alias entity-alias="OH" name="orderDate"/>
         <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
         <alias entity-alias="OH" name="entryDate"/>
+        <alias entity-alias="OH" field="externalId" name="orderExternalId"/>
         <alias entity-alias="UOM" field="abbreviation" name="currency"/>
         <alias entity-alias="OH" name="grandTotal"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
