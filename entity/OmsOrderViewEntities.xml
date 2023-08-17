@@ -236,6 +236,7 @@ under the License.
         <alias entity-alias="OH" name="orderDate"/>
         <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
         <alias entity-alias="OH" name="entryDate"/>
+        <alias entity-alias="OH" field="externalId" name="orderExternalId"/>
         <alias entity-alias="UOM" field="abbreviation" name="currency"/>
         <alias entity-alias="OH" name="grandTotal"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
@@ -248,6 +249,7 @@ under the License.
         <alias entity-alias="OISG" name="shipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
         <alias entity-alias="OISG" name="telecomContactMechId"/>
+        <alias entity-alias="OISG" name="orderFacilityId"/>
         <alias entity-alias="EFO" name="externalFulfillmentOrderItemId"/>
         <alias entity-alias="EFO" name="fulfillmentStatus"/>
         <alias entity-alias="P" field="firstName" name="customerFirstName"/>
