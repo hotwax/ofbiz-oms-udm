@@ -510,6 +510,9 @@ under the License.
         <member-entity entity-alias="PT" entity-name="org.apache.ofbiz.product.product.ProductType" join-from-alias="P" join-optional="true">
             <key-map field-name="productTypeId"/>
         </member-entity>
+        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+            <key-map field-name="salesChannelEnumId" related="enumId"/>
+        </member-entity>
         <alias entity-alias="OH" name="productStoreId"/>
         <alias entity-alias="OH" name="orderId"/>
         <alias entity-alias="OH" name="orderName"/>
@@ -535,6 +538,7 @@ under the License.
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
+        <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
         <entity-condition>
             <!-- Using the below conditions we are fetching the eligible orders that are not sent to the external system -->
             <econditions combine="and">
