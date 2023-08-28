@@ -31,8 +31,9 @@ under the License.
             <key-map field-name="shipmentId"/>
             <key-map field-name="shipmentItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="SIH" entity-name="co.hotwax.common.ShipmentItemHistory" join-from-alias="SR" join-optional="true">
-            <key-map field-name="receiptId"/>
+        <member-entity entity-alias="SIH" entity-name="co.hotwax.common.ShipmentItemHistory" join-from-alias="SITM" join-optional="true">
+            <key-map field-name="shipmentId"/>
+            <key-map field-name="shipmentItemSeqId"/>
         </member-entity>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="SH" join-optional="true">
             <key-map field-name="primaryOrderId" related="orderId"/>
