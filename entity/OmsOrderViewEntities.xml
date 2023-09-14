@@ -713,6 +713,9 @@ under the License.
         <alias entity-alias="OIA" name="orderId"/>
         <alias entity-alias="OIA" name="orderItemSeqId"/>
         <alias entity-alias="OIA" name="shipGroupSeqId"/>
+        <alias entity-alias="OIA" name="toOrderId"/>
+        <alias entity-alias="OIA" name="toOrderItemSeqId"/>
+        <alias entity-alias="OIA" name="toShipGroupSeqId"/>
         <alias entity-alias="OIA" name="orderItemAssocTypeId"/>
         <alias entity-alias="SH" name="shipmentId"/>
         <alias entity-alias="SH" name="shipmentTypeId"/>
