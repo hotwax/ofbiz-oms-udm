@@ -691,6 +691,41 @@ under the License.
             </econditions>
         </entity-condition>
     </view-entity>
+
+    <!-- View entity to fetch the shipment details of the associated order items -->
+    <view-entity entity-name="OrderItemAssocAndShipment" package="co.hotwax.warehouse" group="ofbiz_transactional">
+        <member-entity entity-alias="OIA" entity-name="org.apache.ofbiz.order.order.OrderItemAssoc"/>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderShipment" join-from-alias="OIA">
+            <key-map field-name="toOrderId" related="orderId"/>
+            <key-map field-name="toOrderItemSeqId" related="orderItemSeqId"/>
+            <key-map field-name="toShipGroupSeqId" related="shipGroupSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="OS">
+            <key-map field-name="shipmentId"/>
+        </member-entity>
+        <member-entity entity-alias="SRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SH">
+            <key-map field-name="shipmentId"/>
+        </member-entity>
+        <member-entity entity-alias="SPRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentPackageRouteSeg" join-from-alias="SRS">
+            <key-map field-name="shipmentId"/>
+            <key-map field-name="shipmentRouteSegmentId"/>
+        </member-entity>
+        <alias entity-alias="OIA" name="orderId"/>
+        <alias entity-alias="OIA" name="orderItemSeqId"/>
+        <alias entity-alias="OIA" name="shipGroupSeqId"/>
+        <alias entity-alias="OIA" name="toOrderId"/>
+        <alias entity-alias="OIA" name="toOrderItemSeqId"/>
+        <alias entity-alias="OIA" name="toShipGroupSeqId"/>
+        <alias entity-alias="OIA" name="orderItemAssocTypeId"/>
+        <alias entity-alias="SH" name="shipmentId"/>
+        <alias entity-alias="SH" name="shipmentTypeId"/>
+        <alias entity-alias="SH" field="statusId" name="shipmentStatusId"/>
+        <alias entity-alias="SH" name="shipmentCreatedDate" field="createdDate"/>
+        <alias entity-alias="SH" name="shipmentMethodTypeId"/>
+        <alias entity-alias="SH" name="carrierPartyId"/>
+        <alias entity-alias="SRS" name="shipmentRouteSegmentId"/>
+        <alias entity-alias="SPRS" name="trackingNumber" field="trackingCode"/>
+    </view-entity>
 </entities>
 
 
