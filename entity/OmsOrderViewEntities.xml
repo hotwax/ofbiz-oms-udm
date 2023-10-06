@@ -246,7 +246,8 @@ under the License.
         <alias entity-alias="OH" name="grandTotal"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
-        <alias entity-alias="OISGINR" name="quantity" function="sum"/>
+        <alias entity-alias="OI" field="quantity" name="orderItemQuantity"/>
+        <alias entity-alias="OISGINR" field="quantity" name="reservedItemQuantity" function="sum"/>
         <alias entity-alias="OISGINR" name="reservedDatetime"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
