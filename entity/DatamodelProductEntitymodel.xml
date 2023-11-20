@@ -3024,7 +3024,7 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ProductPromoCode" package="org.apache.ofbiz.product.promo" group="ofbiz_transactional">
-            <field name="productPromoCodeId" type="id" is-pk="true">
+            <field name="productPromoCodeId" type="id-long" is-pk="true">
         </field>
             <field name="productPromoId" type="id">
         </field>

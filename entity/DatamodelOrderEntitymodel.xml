@@ -32,7 +32,7 @@ under the License.
         </field>
             <field name="shipGroupSeqId" type="id">
         </field>
-            <field name="comments" type="text-long">
+            <field name="comments" type="text-very-long">
         </field>
             <field name="description" type="text-long">
         </field>
@@ -711,6 +711,10 @@ under the License.
         <relationship type="many" related="org.apache.ofbiz.order.order.OrderItemTypeAttr">
             <key-map field-name="attrName"/>
         </relationship>
+        <index name="ORDR_ID_ATTR_NAME_IDX">
+            <index-field name="orderId"/>
+            <index-field name="attrName"/>
+        </index>
     </entity>
     <entity entity-name="OrderItemBilling" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
             <field name="orderId" type="id" is-pk="true">
@@ -764,6 +768,8 @@ under the License.
             <field name="changeUserLogin" type="id-long">
         </field>
             <field name="quantity" type="number-decimal">
+        </field>
+            <field name="availableToPromise" type="number-decimal">
         </field>
             <field name="cancelQuantity" type="number-decimal">
         </field>
@@ -2586,7 +2592,7 @@ under the License.
         </field>
             <field name="supplierRmaId" type="id">
         </field>
-        <field name="returnChannelEnumId" type="id">
+            <field name="returnChannelEnumId" type="id">
         </field>
         <relationship type="one" fk-name="RTN_HEAD_TYPE" related="org.apache.ofbiz.order.return.ReturnHeaderType">
             <key-map field-name="returnHeaderTypeId"/>
@@ -2624,6 +2630,12 @@ under the License.
         <relationship type="one-nofk" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="createdBy" related="userLoginId"/>
         </relationship>
+        <relationship type="one" fk-name="RTN_CHNL" title="ReturnChannel" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="returnChannelEnumId" related="enumId"/>
+        </relationship>
+        <index name="RTN_CHNL_INDX">
+            <index-field name="returnChannelEnumId"/>
+        </index>
     </entity>
     <entity entity-name="ReturnHeaderType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
             <field name="returnHeaderTypeId" type="id" is-pk="true">

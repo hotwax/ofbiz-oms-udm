@@ -199,9 +199,9 @@ under the License.
         </field>
             <field name="dataSourceId" type="id">
         </field>
-            <field name="latitude" type="text-medium">
+            <field name="latitude" type="number-float">
         </field>
-            <field name="longitude" type="text-medium">
+            <field name="longitude" type="number-float">
         </field>
             <field name="elevation" type="number-decimal">
         </field>
@@ -389,6 +389,8 @@ under the License.
             <field name="uomTypeId" type="id">
         </field>
             <field name="abbreviation" type="text-medium">
+        </field>
+            <field name="numericCode" type="number-integer">
         </field>
             <field name="code" type="text-medium">
         </field>
@@ -658,7 +660,7 @@ under the License.
     <entity entity-name="SystemProperty" package="org.apache.ofbiz.common.property" group="ofbiz_transactional">
             <field name="systemResourceId" type="id-long" is-pk="true">
         </field>
-            <field name="systemPropertyId" type="id-long" is-pk="true">
+            <field name="systemPropertyId" type="text-medium" is-pk="true">
         </field>
             <field name="systemPropertyValue" type="text-long">
         </field>
