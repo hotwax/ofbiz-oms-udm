@@ -1648,6 +1648,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
+    <!-- TODO: skipped element view-entity -->
     <entity entity-name="PartyRole" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
             <field name="partyId" type="id" is-pk="true">
         </field>
