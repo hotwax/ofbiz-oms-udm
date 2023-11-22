@@ -657,6 +657,7 @@ under the License.
         <alias entity-alias="P" field="firstName" name="customerFirstName"/>
         <alias entity-alias="P" field="lastName" name="customerLastName"/>
         <alias entity-alias="OISG" name="shipGroupSeqId"/>
+        <alias entity-alias="OISG" name="maySplit"/>
         <alias entity-alias="OISG" field="shipmentMethodTypeId" name="slaShipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
         <alias entity-alias="OISG" name="telecomContactMechId"/>
