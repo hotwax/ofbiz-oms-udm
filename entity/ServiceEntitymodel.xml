@@ -28,6 +28,8 @@ under the License.
         </field>
             <field name="runTime" type="date-time">
         </field>
+            <field name="runTimeEpoch" type="number-integer">
+        </field>
             <field name="priority" type="number-integer">
         </field>
             <field name="poolId" type="text-medium">

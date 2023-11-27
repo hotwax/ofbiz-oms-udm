@@ -64,36 +64,6 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyProduct" package="co.hotwax.shopify" group="ofbiz_transactional">
-            <field name="shopifyConfigId" type="id" is-pk="true">
-        </field>
-            <field name="productId" type="id" is-pk="true">
-        </field>
-            <field name="shopifyProductId" type="id-long">
-        </field>
-            <field name="shopifyInventoryItemId" type="id-long">
-        </field>
-        <relationship type="one" fk-name="SHPFY_PROD" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHPFY_CONF" related="co.hotwax.shopify.ShopifyConfig">
-            <key-map field-name="shopifyConfigId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ShopifyLocation" package="co.hotwax.shopify" group="ofbiz_transactional">
-            <field name="shopifyConfigId" type="id" is-pk="true">
-        </field>
-            <field name="facilityId" type="id" is-pk="true">
-        </field>
-            <field name="shopifyLocationId" type="id-long">
-        </field>
-        <relationship type="one" fk-name="SHPFY_FAC" related="org.apache.ofbiz.product.facility.Facility">
-            <key-map field-name="facilityId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHPFY_LOC_CONF" related="co.hotwax.shopify.ShopifyConfig">
-            <key-map field-name="shopifyConfigId"/>
-        </relationship>
-    </entity>
     <entity entity-name="ShopifyMetafield" package="co.hotwax.shopify" group="ofbiz_transactional">
             <field name="metafieldId" type="id" is-pk="true">
         </field>
@@ -101,7 +71,7 @@ under the License.
         </field>
             <field name="metaKey" type="text-medium">
         </field>
-            <field name="metavalue" type="text-medium">
+            <field name="metavalue" type="text-very-long">
         </field>
             <field name="metatype" type="text-medium">
         </field>
@@ -141,6 +111,8 @@ under the License.
             <field name="shopifyConfigId" type="id">
         </field>
             <field name="remoteFilePath" type="text-long">
+        </field>
+            <field name="namespace" type="text-long">
         </field>
         <relationship type="one" fk-name="DTMGR_SHPF_CONF" related="co.hotwax.shopify.ShopifyConfig">
             <key-map field-name="shopifyConfigId"/>
@@ -222,6 +194,35 @@ under the License.
             <key-map field-name="orderId"/>
         </relationship>
         <relationship type="one" fk-name="SHPFY_ODR_SHOP" related="co.hotwax.shopify.ShopifyShop">
+            <key-map field-name="shopId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ShopifyShopCarrierShipment" package="co.hotwax.shopify" group="ofbiz_transactional">
+            <field name="shopId" type="id" is-pk="true">
+        </field>
+            <field name="carrierPartyId" type="id" is-pk="true">
+        </field>
+            <field name="shipmentMethodTypeId" type="id" is-pk="true">
+        </field>
+            <field name="shopifyShippingMethod" type="text-long">
+        </field>
+        <relationship type="one" fk-name="SHPFY_SPTMD_SHOP" related="co.hotwax.shopify.ShopifyShop">
+            <key-map field-name="shopId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ShopifyShopTypeMapping" package="co.hotwax.shopify" group="ofbiz_transactional">
+            <field name="shopId" type="id" is-pk="true">
+        </field>
+            <field name="mappedTypeId" type="id">
+        </field>
+            <field name="mappedValue" type="id">
+        </field>
+            <field name="mappedKey" type="id-long" is-pk="true">
+        </field>
+        <relationship type="one-nofk" fk-name="SHOP_TYPE_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="mappedTypeId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="SHOP_TYPE_SHOP" related="co.hotwax.shopify.ShopifyShop">
             <key-map field-name="shopId"/>
         </relationship>
     </entity>

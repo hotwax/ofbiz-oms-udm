@@ -246,7 +246,8 @@ under the License.
         <alias entity-alias="OH" name="grandTotal"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
-        <alias entity-alias="OISGINR" name="quantity" function="sum"/>
+        <alias entity-alias="OI" field="quantity" name="orderItemQuantity"/>
+        <alias entity-alias="OISGINR" field="quantity" name="reservedItemQuantity" function="sum"/>
         <alias entity-alias="OISGINR" name="reservedDatetime"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
@@ -656,6 +657,7 @@ under the License.
         <alias entity-alias="P" field="firstName" name="customerFirstName"/>
         <alias entity-alias="P" field="lastName" name="customerLastName"/>
         <alias entity-alias="OISG" name="shipGroupSeqId"/>
+        <alias entity-alias="OISG" name="maySplit"/>
         <alias entity-alias="OISG" field="shipmentMethodTypeId" name="slaShipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
         <alias entity-alias="OISG" name="telecomContactMechId"/>
@@ -698,7 +700,6 @@ under the License.
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderShipment" join-from-alias="OIA">
             <key-map field-name="toOrderId" related="orderId"/>
             <key-map field-name="toOrderItemSeqId" related="orderItemSeqId"/>
-            <key-map field-name="toShipGroupSeqId" related="shipGroupSeqId"/>
         </member-entity>
         <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="OS">
             <key-map field-name="shipmentId"/>
