@@ -66,23 +66,7 @@ under the License.
         <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.feature.ProductFeature" join-from-alias="PFA">
             <key-map field-name="productFeatureId"/>
         </member-entity>
-        <alias entity-alias="PF" name="productFeatureId"/>
-        <alias entity-alias="PF" name="productFeatureTypeId"/>
-        <alias entity-alias="PF" name="productFeatureCategoryId"/>
-        <alias entity-alias="PF" name="description"/>
-        <alias entity-alias="PF" name="uomId"/>
-        <alias entity-alias="PF" name="numberSpecified"/>
-        <alias entity-alias="PF" name="defaultAmount"/>
-        <alias entity-alias="PF" name="defaultSequenceNum"/>
-        <alias entity-alias="PF" name="abbrev"/>
-        <alias entity-alias="PF" name="idCode"/>
-        <alias entity-alias="PFA" name="productId"/>
-        <alias entity-alias="PFA" name="productFeatureApplTypeId"/>
-        <alias entity-alias="PFA" name="fromDate"/>
-        <alias entity-alias="PFA" name="thruDate"/>
-        <alias entity-alias="PFA" name="sequenceNum"/>
-        <alias entity-alias="PFA" name="amount"/>
-        <alias entity-alias="PFA" name="recurringAmount"/>
-        <alias entity-alias="PFA" name="contentId"/>
+        <alias-all entity-alias="PFA"/>
+        <alias-all entity-alias="PF"/>
     </view-entity>
 </entities>
