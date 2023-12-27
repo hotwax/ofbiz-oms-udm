@@ -20,131 +20,81 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-    <!-- TODO: skipped element version -->
+<description>None</description>    <!-- TODO: skipped element version -->
     <entity entity-name="EntityGroup" package="org.apache.ofbiz.entity.group" group="ofbiz_transactional">
-            <field name="entityGroupId" type="id" is-pk="true">
-        </field>
-            <field name="entityGroupName" type="text-medium">
-        </field>
+        <field name="entityGroupId" type="id" is-pk="true"></field>
+        <field name="entityGroupName" type="text-medium"></field>
     </entity>
     <entity entity-name="EntityGroupEntry" package="org.apache.ofbiz.entity.group" group="ofbiz_transactional">
-            <field name="entityGroupId" type="id" is-pk="true">
-        </field>
-            <field name="entityOrPackage" type="text-long" is-pk="true">
-        </field>
-            <field name="applEnumId" type="id">
-        </field>
+        <field name="entityGroupId" type="id" is-pk="true"></field>
+        <field name="entityOrPackage" type="text-long" is-pk="true"></field>
+        <field name="applEnumId" type="id"></field>
         <relationship type="one" fk-name="ENTGRP_GRP" related="org.apache.ofbiz.entity.group.EntityGroup">
             <key-map field-name="entityGroupId"/>
         </relationship>
     </entity>
     <entity entity-name="EntitySync" package="org.apache.ofbiz.entity.synchronization" group="ofbiz_transactional">
-            <field name="entitySyncId" type="id" is-pk="true">
-        </field>
-            <field name="runStatusId" type="id">
-        </field>
-            <field name="lastSuccessfulSynchTime" type="date-time">
-        </field>
-            <field name="lastHistoryStartDate" type="date-time">
-        </field>
-            <field name="preOfflineSynchTime" type="date-time">
-        </field>
-            <field name="offlineSyncSplitMillis" type="number-integer">
-        </field>
-            <field name="syncSplitMillis" type="number-integer">
-        </field>
-            <field name="syncEndBufferMillis" type="number-integer">
-        </field>
-            <field name="maxRunningNoUpdateMillis" type="number-integer">
-        </field>
-            <field name="targetServiceName" type="text-long">
-        </field>
-            <field name="targetDelegatorName" type="text-long">
-        </field>
-            <field name="keepRemoveInfoHours" type="number-float">
-        </field>
-            <field name="forPullOnly" type="text-indicator">
-        </field>
-            <field name="forPushOnly" type="text-indicator">
-        </field>
+        <field name="entitySyncId" type="id" is-pk="true"></field>
+        <field name="runStatusId" type="id"></field>
+        <field name="lastSuccessfulSynchTime" type="date-time"></field>
+        <field name="lastHistoryStartDate" type="date-time"></field>
+        <field name="preOfflineSynchTime" type="date-time"></field>
+        <field name="offlineSyncSplitMillis" type="number-integer"></field>
+        <field name="syncSplitMillis" type="number-integer"></field>
+        <field name="syncEndBufferMillis" type="number-integer"></field>
+        <field name="maxRunningNoUpdateMillis" type="number-integer"></field>
+        <field name="targetServiceName" type="text-long"></field>
+        <field name="targetDelegatorName" type="text-long"></field>
+        <field name="keepRemoveInfoHours" type="number-float"></field>
+        <field name="forPullOnly" type="text-indicator"></field>
+        <field name="forPushOnly" type="text-indicator"></field>
         <relationship type="one-nofk" title="Last" related="org.apache.ofbiz.entity.synchronization.EntitySyncHistory">
             <key-map field-name="entitySyncId"/>
             <key-map field-name="lastHistoryStartDate" related="startDate"/>
         </relationship>
     </entity>
     <entity entity-name="EntitySyncHistory" package="org.apache.ofbiz.entity.synchronization" group="ofbiz_transactional">
-            <field name="entitySyncId" type="id" is-pk="true">
-        </field>
-            <field name="startDate" type="date-time" is-pk="true">
-        </field>
-            <field name="runStatusId" type="id">
-        </field>
-            <field name="beginningSynchTime" type="date-time">
-        </field>
-            <field name="lastSuccessfulSynchTime" type="date-time">
-        </field>
-            <field name="lastCandidateEndTime" type="date-time">
-        </field>
-            <field name="lastSplitStartTime" type="number-integer">
-        </field>
-            <field name="toCreateInserted" type="number-integer">
-        </field>
-            <field name="toCreateUpdated" type="number-integer">
-        </field>
-            <field name="toCreateNotUpdated" type="number-integer">
-        </field>
-            <field name="toStoreInserted" type="number-integer">
-        </field>
-            <field name="toStoreUpdated" type="number-integer">
-        </field>
-            <field name="toStoreNotUpdated" type="number-integer">
-        </field>
-            <field name="toRemoveDeleted" type="number-integer">
-        </field>
-            <field name="toRemoveAlreadyDeleted" type="number-integer">
-        </field>
-            <field name="totalRowsExported" type="number-integer">
-        </field>
-            <field name="totalRowsToCreate" type="number-integer">
-        </field>
-            <field name="totalRowsToStore" type="number-integer">
-        </field>
-            <field name="totalRowsToRemove" type="number-integer">
-        </field>
-            <field name="totalSplits" type="number-integer">
-        </field>
-            <field name="totalStoreCalls" type="number-integer">
-        </field>
-            <field name="runningTimeMillis" type="number-integer">
-        </field>
-            <field name="perSplitMinMillis" type="number-integer">
-        </field>
-            <field name="perSplitMaxMillis" type="number-integer">
-        </field>
-            <field name="perSplitMinItems" type="number-integer">
-        </field>
-            <field name="perSplitMaxItems" type="number-integer">
-        </field>
+        <field name="entitySyncId" type="id" is-pk="true"></field>
+        <field name="startDate" type="date-time" is-pk="true"></field>
+        <field name="runStatusId" type="id"></field>
+        <field name="beginningSynchTime" type="date-time"></field>
+        <field name="lastSuccessfulSynchTime" type="date-time"></field>
+        <field name="lastCandidateEndTime" type="date-time"></field>
+        <field name="lastSplitStartTime" type="number-integer"></field>
+        <field name="toCreateInserted" type="number-integer"></field>
+        <field name="toCreateUpdated" type="number-integer"></field>
+        <field name="toCreateNotUpdated" type="number-integer"></field>
+        <field name="toStoreInserted" type="number-integer"></field>
+        <field name="toStoreUpdated" type="number-integer"></field>
+        <field name="toStoreNotUpdated" type="number-integer"></field>
+        <field name="toRemoveDeleted" type="number-integer"></field>
+        <field name="toRemoveAlreadyDeleted" type="number-integer"></field>
+        <field name="totalRowsExported" type="number-integer"></field>
+        <field name="totalRowsToCreate" type="number-integer"></field>
+        <field name="totalRowsToStore" type="number-integer"></field>
+        <field name="totalRowsToRemove" type="number-integer"></field>
+        <field name="totalSplits" type="number-integer"></field>
+        <field name="totalStoreCalls" type="number-integer"></field>
+        <field name="runningTimeMillis" type="number-integer"></field>
+        <field name="perSplitMinMillis" type="number-integer"></field>
+        <field name="perSplitMaxMillis" type="number-integer"></field>
+        <field name="perSplitMinItems" type="number-integer"></field>
+        <field name="perSplitMaxItems" type="number-integer"></field>
         <relationship type="one" fk-name="ENTSYNC_HSTSNC" related="org.apache.ofbiz.entity.synchronization.EntitySync">
             <key-map field-name="entitySyncId"/>
         </relationship>
     </entity>
     <entity entity-name="EntitySyncInclude" package="org.apache.ofbiz.entity.synchronization" group="ofbiz_transactional">
-            <field name="entitySyncId" type="id" is-pk="true">
-        </field>
-            <field name="entityOrPackage" type="text-long" is-pk="true">
-        </field>
-            <field name="applEnumId" type="id">
-        </field>
+        <field name="entitySyncId" type="id" is-pk="true"></field>
+        <field name="entityOrPackage" type="text-long" is-pk="true"></field>
+        <field name="applEnumId" type="id"></field>
         <relationship type="one" fk-name="ENTSYNC_INCSNC" related="org.apache.ofbiz.entity.synchronization.EntitySync">
             <key-map field-name="entitySyncId"/>
         </relationship>
     </entity>
     <entity entity-name="EntitySyncIncludeGroup" package="org.apache.ofbiz.entity.synchronization" group="ofbiz_transactional">
-            <field name="entitySyncId" type="id" is-pk="true">
-        </field>
-            <field name="entityGroupId" type="id" is-pk="true">
-        </field>
+        <field name="entitySyncId" type="id" is-pk="true"></field>
+        <field name="entityGroupId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="ENTSNCGU_GRP" related="org.apache.ofbiz.entity.group.EntityGroup">
             <key-map field-name="entityGroupId"/>
         </relationship>
@@ -154,10 +104,8 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="EntitySyncRemove" package="org.apache.ofbiz.entity.synchronization" group="ofbiz_transactional">
-            <field name="entitySyncRemoveId" type="id" is-pk="true">
-        </field>
-            <field name="primaryKeyRemoved" type="text-very-long">
-        </field>
+        <field name="entitySyncRemoveId" type="id" is-pk="true"></field>
+        <field name="primaryKeyRemoved" type="text-very-long"></field>
     </entity>
 </entities>
 

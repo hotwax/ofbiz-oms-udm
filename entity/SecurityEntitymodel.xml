@@ -20,120 +20,76 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-    <!-- TODO: skipped element version -->
+<description>None</description>    <!-- TODO: skipped element version -->
     <entity entity-name="X509IssuerProvision" package="org.apache.ofbiz.security.cert" cache="never" group="ofbiz_transactional">
-            <field name="certProvisionId" type="id" is-pk="true">
-        </field>
-            <field name="commonName" type="text-long">
-        </field>
-            <field name="organizationalUnit" type="text-long">
-        </field>
-            <field name="organizationName" type="text-long">
-        </field>
-            <field name="cityLocality" type="text-long">
-        </field>
-            <field name="stateProvince" type="text-long">
-        </field>
-            <field name="country" type="text-long">
-        </field>
-            <field name="serialNumber" type="text-long">
-        </field>
+        <field name="certProvisionId" type="id" is-pk="true"></field>
+        <field name="commonName" type="text-long"></field>
+        <field name="organizationalUnit" type="text-long"></field>
+        <field name="organizationName" type="text-long"></field>
+        <field name="cityLocality" type="text-long"></field>
+        <field name="stateProvince" type="text-long"></field>
+        <field name="country" type="text-long"></field>
+        <field name="serialNumber" type="text-long"></field>
     </entity>
     <entity entity-name="UserLogin" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
-            <field name="userLoginId" type="id-long" is-pk="true">
-        </field>
-            <field name="currentPassword" type="text-long">
-        </field>
-            <field name="passwordHint" type="text-long">
-        </field>
-            <field name="isSystem" type="text-indicator">
-        </field>
-            <field name="enabled" type="text-indicator">
-        </field>
-            <field name="isExternal" type="text-indicator">
-        </field>
-            <field name="hasLoggedOut" type="text-indicator">
-        </field>
-            <field name="requirePasswordChange" type="text-indicator">
-        </field>
-            <field name="lastCurrencyUom" type="id">
-        </field>
-            <field name="lastLocale" type="text-short">
-        </field>
-            <field name="lastTimeZone" type="id-long">
-        </field>
-            <field name="disabledDateTime" type="date-time">
-        </field>
-            <field name="successiveFailedLogins" type="number-integer">
-        </field>
-            <field name="externalAuthId" type="id-long">
-        </field>
-            <field name="userLdapDn" type="id-long">
-        </field>
-            <field name="disabledBy" type="id-long">
-        </field>
+        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="currentPassword" type="text-long"></field>
+        <field name="passwordHint" type="text-long"></field>
+        <field name="isSystem" type="text-indicator"></field>
+        <field name="enabled" type="text-indicator"></field>
+        <field name="isExternal" type="text-indicator"></field>
+        <field name="hasLoggedOut" type="text-indicator"></field>
+        <field name="requirePasswordChange" type="text-indicator"></field>
+        <field name="lastCurrencyUom" type="id"></field>
+        <field name="lastLocale" type="text-short"></field>
+        <field name="lastTimeZone" type="id-long"></field>
+        <field name="disabledDateTime" type="date-time"></field>
+        <field name="successiveFailedLogins" type="number-integer"></field>
+        <field name="externalAuthId" type="id-long"><description>For use with external authentication; the userLdapDn should be replaced with this</description></field>
+        <field name="userLdapDn" type="id-long"><description>The user's LDAP Distinguished Name - used for LDAP authentication</description></field>
+        <field name="disabledBy" type="id-long"></field>
         <relationship type="one-nofk" fk-name="DISABLEDBY_USRLGN" title="DisabledBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="disabledBy" related="userLoginId"/>
         </relationship>
     </entity>
     <entity entity-name="UserLoginPasswordHistory" package="org.apache.ofbiz.security.login" cache="never" group="ofbiz_transactional">
-            <field name="userLoginId" type="id-long" is-pk="true">
-        </field>
-            <field name="fromDate" type="date-time" is-pk="true">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
-            <field name="currentPassword" type="text-long">
-        </field>
+        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
+        <field name="currentPassword" type="text-long"></field>
         <relationship type="one" fk-name="USER_LPH_USER" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="userLoginId"/>
         </relationship>
     </entity>
     <entity entity-name="UserLoginHistory" package="org.apache.ofbiz.security.login" cache="never" group="ofbiz_transactional">
-            <field name="userLoginId" type="id-long" is-pk="true">
-        </field>
-            <field name="visitId" type="id">
-        </field>
-            <field name="fromDate" type="date-time" is-pk="true">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
-            <field name="passwordUsed" type="text-long" encrypt="true">
-        </field>
-            <field name="successfulLogin" type="text-indicator">
-        </field>
+        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="visitId" type="id"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
+        <field name="passwordUsed" type="text-long" encrypt="true"></field>
+        <field name="successfulLogin" type="text-indicator"></field>
         <relationship type="one" fk-name="USER_LH_USER" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="userLoginId"/>
         </relationship>
     </entity>
     <entity entity-name="UserLoginSession" package="org.apache.ofbiz.security.login" cache="never" group="ofbiz_transactional">
-            <field name="userLoginId" type="id-long" is-pk="true">
-        </field>
-            <field name="savedDate" type="date-time">
-        </field>
-            <field name="sessionData" type="text-very-long">
-        </field>
+        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="savedDate" type="date-time"></field>
+        <field name="sessionData" type="text-very-long"></field>
         <relationship type="one" fk-name="USER_SESSION_USER" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="userLoginId"/>
         </relationship>
     </entity>
     <entity entity-name="SecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
-            <field name="groupId" type="id" is-pk="true">
-        </field>
-            <field name="groupName" type="text-long">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="groupId" type="id" is-pk="true"></field>
+        <field name="groupName" type="text-long"></field>
+        <field name="description" type="text-long"></field>
     </entity>
     <entity entity-name="SecurityGroupPermission" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
-            <field name="groupId" type="id" is-pk="true">
-        </field>
-            <field name="permissionId" type="id-long" is-pk="true">
-        </field>
-            <field name="fromDate" type="date-time" is-pk="true">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
+<description>Defines a permission available to a security group; there is no FK to SecurityPermission because we want to leave open the possibility of ad-hoc permissions, especially for the Entity Data Maintenance pages which have TONS of permissions</description>        <field name="groupId" type="id" is-pk="true"></field>
+        <field name="permissionId" type="id-long" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="SEC_GRP_PERM_GRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
             <key-map field-name="groupId"/>
         </relationship>
@@ -142,21 +98,15 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="SecurityPermission" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
-            <field name="permissionId" type="id-long" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="permissionId" type="id-long" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="UserLoginSecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
-            <field name="userLoginId" type="id-long" is-pk="true">
-        </field>
-            <field name="groupId" type="id" is-pk="true">
-        </field>
-            <field name="fromDate" type="date-time" is-pk="true">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
+<description>Maps a UserLogin to a security group</description>        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="groupId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="USER_SECGRP_USER" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="userLoginId"/>
         </relationship>
@@ -168,16 +118,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ProtectedView" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
-            <field name="groupId" type="id" is-pk="true">
-        </field>
-            <field name="viewNameId" type="id-long" is-pk="true">
-        </field>
-            <field name="maxHits" type="number-integer">
-        </field>
-            <field name="maxHitsDuration" type="number-integer">
-        </field>
-            <field name="tarpitDuration" type="number-integer">
-        </field>
+<description>Defines views protected from data leakage</description>        <field name="groupId" type="id" is-pk="true"></field>
+        <field name="viewNameId" type="id-long" is-pk="true"><description>name of view to protect from data theft</description></field>
+        <field name="maxHits" type="number-integer"><description>number of hits before tarpitting a login for a view</description></field>
+        <field name="maxHitsDuration" type="number-integer"><description>period of time associated with maxHits (in seconds)</description></field>
+        <field name="tarpitDuration" type="number-integer"><description>period of time a login will not be able to acces  this view again (in seconds)</description></field>
         <relationship type="one" fk-name="VIEW_SECGRP_GRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
             <key-map field-name="groupId"/>
         </relationship>
@@ -187,20 +132,14 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="TarpittedLoginView" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
-            <field name="viewNameId" type="id-long" is-pk="true">
-        </field>
-            <field name="userLoginId" type="id-long" is-pk="true">
-        </field>
-            <field name="tarpitReleaseDateTime" type="number-integer">
-        </field>
+<description>Login View couple currently tarpitted : any access to the view for the login is denied</description>        <field name="viewNameId" type="id-long" is-pk="true"><description>name of view protected from data theft</description></field>
+        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="tarpitReleaseDateTime" type="number-integer"><description>Date/Time at which the login will gain anew access to the view (in milliseconds from midnight, January 1, 1970 UTC , 0 meaning no tarpit to allow the admin to free a view and to keep history</description></field>
     </entity>
     <entity entity-name="UserLoginSecurityQuestion" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
-            <field name="questionEnumId" type="id" is-pk="true">
-        </field>
-            <field name="userLoginId" type="id-long" is-pk="true">
-        </field>
-            <field name="securityAnswer" type="text-long">
-        </field>
+        <field name="questionEnumId" type="id" is-pk="true"></field>
+        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="securityAnswer" type="text-long"></field>
         <relationship type="one" fk-name="SECQ_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="questionEnumId" related="enumId"/>
         </relationship>
