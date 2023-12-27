@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
@@ -128,8 +128,8 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ContentAssoc" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
-        <field name="contentId" type="id" is-pk="true"><description>"parent" content</description></field>
-        <field name="contentIdTo" type="id" is-pk="true"><description>"child" or "sub" content</description></field>
+        <field name="contentId" type="id" is-pk="true"><description>&quot;parent&quot; content</description></field>
+        <field name="contentIdTo" type="id" is-pk="true"><description>&quot;child&quot; or &quot;sub&quot; content</description></field>
         <field name="contentAssocTypeId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
@@ -943,7 +943,7 @@ under the License.
     <entity entity-name="WebAnalyticsConfig" package="org.apache.ofbiz.content.website" group="ofbiz_transactional">
         <field name="webSiteId" type="id" is-pk="true"></field>
         <field name="webAnalyticsTypeId" type="id" is-pk="true"></field>
-        <field name="webAnalyticsCode" type="text-very-long"><description>copy in here the analitics javascript code without the beginning- and end<script> tags</description></field>
+        <field name="webAnalyticsCode" type="text-very-long"><description>copy in here the analitics javascript code without the beginning- and end&lt;script&gt; tags</description></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.content.website.WebAnalyticsType">
             <key-map field-name="webAnalyticsTypeId"/>
         </relationship>

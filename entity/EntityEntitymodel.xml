@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <entity entity-name="EntityAuditLog" package="org.apache.ofbiz.entity.audit" group="ofbiz_transactional">
         <field name="auditHistorySeqId" type="id" is-pk="true"><description>Sequenced primary key</description></field>
         <field name="changedEntityName" type="text-long"></field>
@@ -54,11 +54,11 @@ under the License.
         <field name="tenantId" type="id" is-pk="true"></field>
         <field name="tenantName" type="text-medium"></field>
         <field name="initialPath" type="text-long"></field>
-        <field name="disabled" type="text-indicator"><description>Disabled if 'Y', defaults to 'N' (not disabled).</description></field>
+        <field name="disabled" type="text-indicator"><description>Disabled if &apos;Y&apos;, defaults to &apos;N&apos; (not disabled).</description></field>
     </entity>
     <entity entity-name="TenantDataSource" package="org.apache.ofbiz.entity.tenant" group="ofbiz_transactional">
 <description>There should be one record for each tenant and each group-map for the active delegator.
-            The jdbc fields will override the datasource -> inline-jdbc values for the per-tenant delegator.</description>        <field name="tenantId" type="id" is-pk="true"></field>
+            The jdbc fields will override the datasource -&gt; inline-jdbc values for the per-tenant delegator.</description>        <field name="tenantId" type="id" is-pk="true"></field>
         <field name="entityGroupName" type="text-medium" is-pk="true"></field>
         <field name="jdbcUri" type="text-long"></field>
         <field name="jdbcUsername" type="text-long"></field>
@@ -69,7 +69,7 @@ under the License.
     </entity>
     <entity entity-name="TenantKeyEncryptingKey" package="org.apache.ofbiz.entity.tenant" group="ofbiz_transactional">
 <description>There should be one record for each tenant and each group-map for the active delegator.
-            The jdbc fields will override the datasource -> inline-jdbc values for the per-tenant delegator.</description>        <field name="tenantId" type="id" is-pk="true"></field>
+            The jdbc fields will override the datasource -&gt; inline-jdbc values for the per-tenant delegator.</description>        <field name="tenantId" type="id" is-pk="true"></field>
         <field name="kekText" type="text-long"></field>
         <relationship type="one" fk-name="TNTKEK_TNT" related="org.apache.ofbiz.entity.tenant.Tenant">
             <key-map field-name="tenantId"/>

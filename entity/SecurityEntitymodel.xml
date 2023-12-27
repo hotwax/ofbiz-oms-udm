@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <entity entity-name="X509IssuerProvision" package="org.apache.ofbiz.security.cert" cache="never" group="ofbiz_transactional">
         <field name="certProvisionId" type="id" is-pk="true"></field>
         <field name="commonName" type="text-long"></field>
@@ -46,7 +46,7 @@ under the License.
         <field name="disabledDateTime" type="date-time"></field>
         <field name="successiveFailedLogins" type="number-integer"></field>
         <field name="externalAuthId" type="id-long"><description>For use with external authentication; the userLdapDn should be replaced with this</description></field>
-        <field name="userLdapDn" type="id-long"><description>The user's LDAP Distinguished Name - used for LDAP authentication</description></field>
+        <field name="userLdapDn" type="id-long"><description>The user&apos;s LDAP Distinguished Name - used for LDAP authentication</description></field>
         <field name="disabledBy" type="id-long"></field>
         <relationship type="one-nofk" fk-name="DISABLEDBY_USRLGN" title="DisabledBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="disabledBy" related="userLoginId"/>

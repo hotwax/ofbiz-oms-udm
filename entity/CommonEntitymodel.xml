@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <entity entity-name="DataSource" package="org.apache.ofbiz.common.datasource" group="ofbiz_transactional">
         <field name="dataSourceId" type="id" is-pk="true"></field>
         <field name="dataSourceTypeId" type="id"></field>
@@ -393,7 +393,7 @@ under the License.
         <field name="editFormLocation" type="text-long"></field>
         <field name="description" type="text-long"></field>
         <field name="screenshot" type="text-long"></field>
-        <field name="securityServiceName" type="text-long"><description>The service named here is used to see if current user can see the portlet on the list of available portlets; the screen that the portlet calls should also call this service to check permission and not render; the service named here must implement the "permissionInterface" service just like services used for service permissions</description></field>
+        <field name="securityServiceName" type="text-long"><description>The service named here is used to see if current user can see the portlet on the list of available portlets; the screen that the portlet calls should also call this service to check permission and not render; the service named here must implement the &quot;permissionInterface&quot; service just like services used for service permissions</description></field>
         <field name="securityMainAction" type="text-medium"><description>The main action which can be done with this portlet, possible values: CREATE UPDATE VIEW DELETE</description></field>
     </entity>
     <entity entity-name="PortletCategory" package="org.apache.ofbiz.common.portal" group="ofbiz_transactional">

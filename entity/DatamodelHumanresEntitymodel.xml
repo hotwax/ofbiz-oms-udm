@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <entity entity-name="PartyQual" package="org.apache.ofbiz.humanres.ability" group="ofbiz_transactional">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="partyQualTypeId" type="id" is-pk="true"></field>

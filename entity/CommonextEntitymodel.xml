@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <extend-entity entity-name="NoteData" package="org.apache.ofbiz.common.note" group="ofbiz_transactional">
         <field name="moreInfoUrl" type="text-long"><description>url to go to the related screen in the system</description></field>
         <field name="moreInfoItemId" type="text-long"><description>The id of the item to be displayed i.e. custRequestId, commEventId etc</description></field>

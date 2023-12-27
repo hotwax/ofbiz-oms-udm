@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <!-- TODO: skipped element default-resource-name -->
     <entity entity-name="ProdCatalog" package="org.apache.ofbiz.product.catalog" group="ofbiz_transactional">
         <field name="prodCatalogId" type="id" is-pk="true"></field>
@@ -2031,7 +2031,7 @@ under the License.
             <key-map field-name="intervalMeterTypeId" related="productMeterTypeId"/>
         </relationship>
         <relationship type="one-nofk" title="Interval" related="org.apache.ofbiz.product.product.ProductMeter">
-<description>This can't have a foreign key because the intervalMeterTypeId field is optional, but the productId field is not</description>            <key-map field-name="productId"/>
+<description>This can&apos;t have a foreign key because the intervalMeterTypeId field is optional, but the productId field is not</description>            <key-map field-name="productId"/>
             <key-map field-name="intervalMeterTypeId" related="productMeterTypeId"/>
         </relationship>
     </entity>
@@ -2366,7 +2366,7 @@ under the License.
         <field name="autoSaveCart" type="text-indicator"></field>
         <field name="autoApproveReviews" type="text-indicator" enable-audit-log="true"></field>
         <field name="isDemoStore" type="text-indicator"></field>
-        <field name="isImmediatelyFulfilled" type="text-indicator"><description>If immediately fulfilled (for physical stores, etc): don't send email notices, don't reserve inventory, and IFF inventory info isn't found on the server then don't issue inventory right away</description></field>
+        <field name="isImmediatelyFulfilled" type="text-indicator"><description>If immediately fulfilled (for physical stores, etc): don&apos;t send email notices, don&apos;t reserve inventory, and IFF inventory info isn&apos;t found on the server then don&apos;t issue inventory right away</description></field>
         <field name="inventoryFacilityId" type="id"></field>
         <field name="oneInventoryFacility" type="text-indicator"></field>
         <field name="checkInventory" type="text-indicator" enable-audit-log="true"></field>
@@ -2792,7 +2792,7 @@ under the License.
 <description>Used to define payments that a vendor related to the store will accept (for multi-vendor stores)</description>        <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="vendorPartyId" type="id" is-pk="true"></field>
         <field name="paymentMethodTypeId" type="id" is-pk="true"></field>
-        <field name="creditCardEnumId" type="id" is-pk="true"><description>If not applicable for the paymentMethodTypeId, use "_NA_"</description></field>
+        <field name="creditCardEnumId" type="id" is-pk="true"><description>If not applicable for the paymentMethodTypeId, use &quot;_NA_&quot;</description></field>
         <relationship type="one" fk-name="PRDSTRVPM_PRDS" related="org.apache.ofbiz.product.store.ProductStore">
             <key-map field-name="productStoreId"/>
         </relationship>

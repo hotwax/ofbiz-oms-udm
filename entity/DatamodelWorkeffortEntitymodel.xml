@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <entity entity-name="TimeEntry" package="org.apache.ofbiz.workeffort.timesheet" group="ofbiz_transactional">
         <field name="timeEntryId" type="id" is-pk="true"></field>
         <field name="partyId" type="id"></field>
@@ -402,7 +402,7 @@ under the License.
         <field name="statusId" type="id"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
-        <field name="availabilityStatusId" type="id"><description>Points to StatusItem value with statusTypeId="WEFA_AVAILABILITY"</description></field>
+        <field name="availabilityStatusId" type="id"><description>Points to StatusItem value with statusTypeId=&quot;WEFA_AVAILABILITY&quot;</description></field>
         <field name="allocatedCost" type="currency-amount"></field>
         <field name="comments" type="text-long"></field>
         <relationship type="one" fk-name="WKEFF_FXDAA_WEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
@@ -539,14 +539,14 @@ under the License.
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
         <field name="assignedByUserLoginId" type="id-long"></field>
-        <field name="statusId" type="id"><description>Point to StatusItem value with statusTypeId="PRTYASGN_STATUS"</description></field>
+        <field name="statusId" type="id"><description>Point to StatusItem value with statusTypeId=&quot;PRTYASGN_STATUS&quot;</description></field>
         <field name="statusDateTime" type="date-time"></field>
-        <field name="expectationEnumId" type="id"><description>Point to Enumeration value with enumTypeId="WORK_EFF_EXPECT"</description></field>
-        <field name="delegateReasonEnumId" type="id"><description>Point to Enumeration value with enumTypeId="WORK_EFF_DEL_REAS"</description></field>
+        <field name="expectationEnumId" type="id"><description>Point to Enumeration value with enumTypeId=&quot;WORK_EFF_EXPECT&quot;</description></field>
+        <field name="delegateReasonEnumId" type="id"><description>Point to Enumeration value with enumTypeId=&quot;WORK_EFF_DEL_REAS&quot;</description></field>
         <field name="facilityId" type="id"></field>
         <field name="comments" type="text-long"></field>
         <field name="mustRsvp" type="text-indicator"></field>
-        <field name="availabilityStatusId" type="id"><description>Points to StatusItem value with statusTypeId="WEPA_AVAILABILITY"</description></field>
+        <field name="availabilityStatusId" type="id"><description>Points to StatusItem value with statusTypeId=&quot;WEPA_AVAILABILITY&quot;</description></field>
         <relationship type="one" fk-name="WKEFF_PA_WE" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
             <key-map field-name="workEffortId"/>
         </relationship>

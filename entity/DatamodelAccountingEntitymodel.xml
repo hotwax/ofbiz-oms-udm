@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <entity entity-name="Budget" package="org.apache.ofbiz.accounting.budget" group="ofbiz_transactional">
         <field name="budgetId" type="id" is-pk="true"></field>
         <field name="budgetTypeId" type="id"></field>
@@ -1724,7 +1724,7 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ProductAverageCost" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
-<description>Running tally of a product's average cost in a particular company and facility</description>        <field name="productAverageCostTypeId" type="id" is-pk="true"></field>
+<description>Running tally of a product&apos;s average cost in a particular company and facility</description>        <field name="productAverageCostTypeId" type="id" is-pk="true"></field>
         <field name="organizationPartyId" type="id" is-pk="true"></field>
         <field name="productId" type="id" is-pk="true"></field>
         <field name="facilityId" type="id" is-pk="true"></field>
@@ -2313,9 +2313,9 @@ under the License.
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
         <field name="merchantId" type="text-long"><description>You merchant ID</description></field>
         <field name="apiVersion" type="text-medium"><description>Target CyberSource API version</description></field>
-        <field name="production" type="text-medium"><description>Enable production "mode" (true|false)</description></field>
+        <field name="production" type="text-medium"><description>Enable production &quot;mode&quot; (true|false)</description></field>
         <field name="keysDir" type="text-long"><description>Directory of the keys from CyberSource (Generate using online tools)</description></field>
-        <field name="keysFile" type="text-long"><description>Name of the keystore (if different then "merchantID".p12)</description></field>
+        <field name="keysFile" type="text-long"><description>Name of the keystore (if different then &quot;merchantID&quot;.p12)</description></field>
         <field name="logEnabled" type="text-medium"><description>Log transaction information (true|false)</description></field>
         <field name="logDir" type="text-long"><description>Log directory</description></field>
         <field name="logFile" type="text-long"><description>Log file name</description></field>
@@ -2405,7 +2405,7 @@ under the License.
         <field name="fixContact" type="text-indicator"><description>Will displace contact info on WorldPay in non-editable format</description></field>
         <field name="hideContact" type="text-indicator"><description>Will hide the contact info completely</description></field>
         <field name="hideCurrency" type="text-indicator"><description>This causes the currency drop down to be no hidden, so fixing the currency that the shopper must value purchase in</description></field>
-        <field name="langId" type="text-medium"><description>The shopper's language choice, as a 2-character ISO 639 code, with optional regionalisation using 2-character country code separated by hyphen</description></field>
+        <field name="langId" type="text-medium"><description>The shopper&apos;s language choice, as a 2-character ISO 639 code, with optional regionalisation using 2-character country code separated by hyphen</description></field>
         <field name="noLanguageMenu" type="text-indicator"><description>This suppresses the display of the language menu if noLanguageMenu no you have a choice of languages enabled for your value installation</description></field>
         <field name="withDelivery" type="text-indicator"><description>Displays input fields for delivery address and withDelivery no mandate that they be filled in</description></field>
         <field name="testMode" type="number-integer"><description>Test Mode (100: approve / 101: cancelled / 0: Live Mode (no test)</description></field>

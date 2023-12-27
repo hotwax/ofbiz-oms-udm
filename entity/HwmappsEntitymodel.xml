@@ -49,7 +49,7 @@ under the License.
         <field name="orderItemSeqId" type="id"></field>
     </extend-entity>
     <extend-entity entity-name="WebSiteContent" package="org.apache.ofbiz.content.website" group="ofbiz_transactional">
-        <field name="authRequired" type="text-indicator"><description>Added this flag for checking the authentication needed or not for accessing the website's content. By default it is empty.</description></field>
+        <field name="authRequired" type="text-indicator"><description>Added this flag for checking the authentication needed or not for accessing the website&apos;s content. By default it is empty.</description></field>
     </extend-entity>
     <extend-entity entity-name="PartyCarrierAccount" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
         <field name="service" type="text-medium"></field>
@@ -454,7 +454,7 @@ under the License.
         <field name="prodCatalogId" type="id"></field>
         <field name="displayMaintenancePage" type="text-indicator"><description>If set to Y, redirect user to site maintenance page</description></field>
         <field name="webPageOptimization" type="text-indicator"><description>If set to Y, use custom page rendering for Product, Category, Home</description></field>
-        <field name="webSiteTypeId" type="id"><description>Deprecated: Please don't use this. Defines website type</description></field>
+        <field name="webSiteTypeId" type="id"><description>Deprecated: Please don&apos;t use this. Defines website type</description></field>
         <field name="salesChannel" type="id"><description>Defines sales channel of website</description></field>
         <relationship type="one" fk-name="WEBSITE_CATALOG" related="org.apache.ofbiz.product.catalog.ProdCatalog">
             <key-map field-name="prodCatalogId"/>
@@ -497,7 +497,7 @@ under the License.
         <field name="salesVelocity" type="number-decimal"></field>
         <field name="requirementMethodEnumId" type="id"></field>
         <field name="computedLastInventoryCount" type="number-decimal"><description>This field represents computed last inventory count (availableToPromiseTotal - minimumStock) of a product at a certain point of time
-                if availableToPromiseTotal <= minimumStock it will set as 0</description></field>
+                if availableToPromiseTotal &lt;= minimumStock it will set as 0</description></field>
         <field name="allowBrokering" type="text-indicator"></field>
     </extend-entity>
     <extend-entity entity-name="Content" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
@@ -1595,7 +1595,7 @@ under the License.
         <field name="carrierPostalCodeId" type="id" is-pk="true"></field>
         <field name="originPostalCode" type="text-medium"></field>
         <field name="destinationPostalCode" type="text-medium"></field>
-        <field name="shippingZone" type="number-integer"><description>Not used zone keyword since it's showing warning on console as RESERVED KEYWORD.</description></field>
+        <field name="shippingZone" type="number-integer"><description>Not used zone keyword since it&apos;s showing warning on console as RESERVED KEYWORD.</description></field>
         <field name="carrierPartyId" type="id"></field>
         <field name="groundTransitTime" type="number-integer"></field>
         <relationship type="one" fk-name="CPRTY" related="org.apache.ofbiz.party.party.Party">
@@ -1687,7 +1687,7 @@ under the License.
         <field name="currentPassword" type="text-long" encrypt="true" enable-audit-log="true"><description>Username for basic auth when sending to the remote system.</description></field>
         <field name="publicKey" type="text-very-long" enable-audit-log="true"><description>Public Key for key based authentication, generally RSA PEM format</description></field>
         <field name="privateKey" type="text-very-long" encrypt="true" enable-audit-log="true"><description>Private Key for key based authentication, generally RSA PEM PKCS #8 format like OpenSSH</description></field>
-        <field name="remotePublicKey" type="text-very-long" enable-audit-log="true"><description>Remote System's Public Key for decryption, signature validation, etc; generally RSA PEM or X.509 Certificate format</description></field>
+        <field name="remotePublicKey" type="text-very-long" enable-audit-log="true"><description>Remote System&apos;s Public Key for decryption, signature validation, etc; generally RSA PEM or X.509 Certificate format</description></field>
         <field name="sharedSecret" type="text-long" encrypt="true" enable-audit-log="true"><description>Shared secret for auth on receive and/or sign on send.</description></field>
         <field name="sendSharedSecret" type="text-long" encrypt="true" enable-audit-log="true"><description>Shared secret for auth on send if different from secret used to authorize on receive.</description></field>
         <field name="authHeaderName" type="text-long"></field>

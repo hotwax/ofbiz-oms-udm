@@ -20,7 +20,7 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
-<description>None</description>    <!-- TODO: skipped element version -->
+    <!-- TODO: skipped element version -->
     <entity entity-name="BrowserType" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
         <field name="browserTypeId" type="id" is-pk="true"></field>
         <field name="browserName" type="text-medium"></field>
@@ -158,7 +158,7 @@ under the License.
         <field name="httpsHost" type="text-long"></field>
         <field name="httpsPort" type="text-short"></field>
         <field name="enableHttps" type="text-indicator"></field>
-        <field name="webappPath" type="text-long"><description>Set to your webapp for this website if it's hidden by a httpd frontend; set to / if you have a reverse proxy which hides your website webapp</description></field>
+        <field name="webappPath" type="text-long"><description>Set to your webapp for this website if it&apos;s hidden by a httpd frontend; set to / if you have a reverse proxy which hides your website webapp</description></field>
         <field name="standardContentPrefix" type="text-long"></field>
         <field name="secureContentPrefix" type="text-long"></field>
         <field name="cookieDomain" type="text-long"></field>
