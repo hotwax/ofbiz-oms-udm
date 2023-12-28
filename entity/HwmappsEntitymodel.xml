@@ -1346,6 +1346,9 @@ under the License.
         <field name="isNewProduct" type="text-indicator"></field>
         <field name="availableToPromise" type="number-decimal"></field>
         <field name="estimatedDeliveryDate" type="date-time" enable-audit-log="true"></field>
+        <field name="requestedDeliveryDate" type="date"></field>
+        <field name="requestedDeliveryTime" type="time"></field>
+        <field name="deliveryWindow" type="number-float"></field>
         <field name="taxCode" type="id-long"></field>
         <relationship type="one" fk-name="OI_SHMT" related="org.apache.ofbiz.shipment.shipment.Shipment">
             <key-map field-name="shipmentId"/>
