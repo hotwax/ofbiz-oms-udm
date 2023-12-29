@@ -252,6 +252,9 @@ under the License.
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <alias entity-alias="OI" name="itemDescription"/>
+        <alias entity-alias="OI" name="requestedDeliveryDate"/>
+        <alias entity-alias="OI" name="requestedDeliveryTime"/>
+        <alias entity-alias="OI" name="deliveryWindow"/>
         <alias entity-alias="OISG" name="shipGroupSeqId"/>
         <alias entity-alias="OISG" name="shipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
