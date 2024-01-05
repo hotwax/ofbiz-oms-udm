@@ -44,6 +44,7 @@ under the License.
         </member-entity>
         <alias entity-alias="RI" name="returnId"/>
         <alias entity-alias="RI" name="returnItemSeqId"/>
+        <alias entity-alias="RI" name="returnReasonId"/>
         <alias entity-alias="RH" name="entryDate"/>
         <alias entity-alias="RH" name="returnDate"/>
         <alias entity-alias="RH" name="returnChannelEnumId"/>
