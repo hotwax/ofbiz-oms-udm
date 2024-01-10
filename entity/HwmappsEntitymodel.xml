@@ -1348,10 +1348,14 @@ under the License.
         <field name="estimatedDeliveryDate" type="date-time" enable-audit-log="true"></field>
         <field name="requestedDeliveryDate" type="date"></field>
         <field name="requestedDeliveryTime" type="time"></field>
+        <field name="requestedShipMethTypeId" type="id"></field>
         <field name="deliveryWindow" type="number-float"></field>
         <field name="taxCode" type="id-long"></field>
         <relationship type="one" fk-name="OI_SHMT" related="org.apache.ofbiz.shipment.shipment.Shipment">
             <key-map field-name="shipmentId"/>
+        </relationship>
+        <relationship type="one" fk-name="ORD_ITM_ITSG_SHMTP" related="org.apache.ofbiz.shipment.shipment.ShipmentMethodType">
+            <key-map field-name="requestedShipMethTypeId" related="shipmentMethodTypeId"/>
         </relationship>
     </extend-entity>
     <extend-entity entity-name="OrderItemChange" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
@@ -1525,6 +1529,7 @@ under the License.
     </entity>
     <extend-entity entity-name="ReturnItem" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="externalId" type="id-long"></field>
+        <field name="reason" type="text-medium"></field>
     </extend-entity>
     <extend-entity entity-name="ReturnReason" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="parentTypeId" type="id"><description>This will act as parent return reason Id.</description></field>
