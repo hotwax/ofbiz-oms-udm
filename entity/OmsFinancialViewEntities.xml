@@ -35,7 +35,7 @@ under the License.
         <member-entity entity-alias="RH" entity-name="org.apache.ofbiz.order.return.ReturnHeader" join-from-alias="RI">
             <key-map field-name="returnId"/>
         </member-entity>
-        <member-entity entity-alias="FRH" entity-name="co.hotwax.common.FinancialReturnHistory" join-from-alias="RI" join-optional="true">
+        <member-entity entity-alias="FRH" entity-name="co.hotwax.integration.financial.FinancialReturnHistory" join-from-alias="RI" join-optional="true">
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
         </member-entity>
@@ -76,7 +76,7 @@ under the License.
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="RA">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="FRH" entity-name="co.hotwax.common.FinancialReturnHistory" join-from-alias="RA" join-optional="true">
+        <member-entity entity-alias="FRH" entity-name="co.hotwax.integration.financial.FinancialReturnHistory" join-from-alias="RA" join-optional="true">
             <key-map field-name="returnId"/>
         </member-entity>
         <alias name="returnId" entity-alias="RH"/>
@@ -115,7 +115,7 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="FOH" entity-name="co.hotwax.common.FinancialOrderHistory" join-from-alias="OS" join-optional="true">
+        <member-entity entity-alias="FOH" entity-name="co.hotwax.integration.financial.FinancialOrderHistory" join-from-alias="OS" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
