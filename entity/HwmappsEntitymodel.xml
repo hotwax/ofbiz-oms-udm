@@ -1529,7 +1529,7 @@ under the License.
     </entity>
     <extend-entity entity-name="ReturnItem" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="externalId" type="id-long"></field>
-        <field name="reason" type="text-medium"></field>
+        <field name="reason" type="text-long"></field>
     </extend-entity>
     <extend-entity entity-name="ReturnReason" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="parentTypeId" type="id"><description>This will act as parent return reason Id.</description></field>
