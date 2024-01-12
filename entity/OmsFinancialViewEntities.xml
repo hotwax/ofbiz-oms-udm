@@ -28,6 +28,13 @@ under the License.
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="RI" join-optional="true">
             <key-map field-name="orderId"/>
         </member-entity>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="RI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+            <key-map field-name="salesChannelEnumId" related="enumId"/>
+        </member-entity>
         <member-entity entity-alias="RS" entity-name="org.apache.ofbiz.order.return.ReturnStatus" join-from-alias="RI">
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
@@ -44,6 +51,9 @@ under the License.
         </member-entity>
         <alias entity-alias="RI" name="returnId"/>
         <alias entity-alias="RI" name="returnItemSeqId"/>
+        <alias entity-alias="RI" name="returnReasonId"/>
+        <alias entity-alias="RI" name="returnReasonNote" field="reason"/>
+        <alias entity-alias="OI" name="orderItemRequestedShipMethTypeId" field="requestedShipMethTypeId"/>
         <alias entity-alias="RH" name="entryDate"/>
         <alias entity-alias="RH" name="returnDate"/>
         <alias entity-alias="RH" name="returnChannelEnumId"/>
@@ -54,6 +64,8 @@ under the License.
         <alias entity-alias="RS" name="completedDatetime" field="statusDatetime" function="max"/>
         <alias entity-alias="OH" name="productStoreId"/>
         <alias entity-alias="OH" name="orderName"/>
+        <alias entity-alias="OH" field="salesChannelEnumId" name="orderSalesChannelEnumId"/>
+        <alias entity-alias="SCENM" field="enumCode" name="orderSalesChannel"/>
         <alias entity-alias="PS" name="productStoreExternalId" field="externalId"/>
         <alias entity-alias="RH" name="customerPartyId" field="fromPartyId"/>
         <entity-condition>
