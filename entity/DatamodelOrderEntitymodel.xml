@@ -22,76 +22,41 @@ under the License.
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
     <entity entity-name="OrderAdjustment" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderAdjustmentId" type="id" is-pk="true">
-        </field>
-            <field name="orderAdjustmentTypeId" type="id">
-        </field>
-            <field name="orderId" type="id">
-        </field>
-            <field name="orderItemSeqId" type="id">
-        </field>
-            <field name="shipGroupSeqId" type="id">
-        </field>
-            <field name="comments" type="text-very-long">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="amount" type="currency-precise">
-        </field>
-            <field name="recurringAmount" type="currency-precise">
-        </field>
-            <field name="amountAlreadyIncluded" type="currency-precise">
-        </field>
-            <field name="productPromoId" type="id">
-        </field>
-            <field name="productPromoRuleId" type="id">
-        </field>
-            <field name="productPromoActionSeqId" type="id">
-        </field>
-            <field name="productFeatureId" type="id">
-        </field>
-            <field name="correspondingProductId" type="id">
-        </field>
-            <field name="taxAuthorityRateSeqId" type="id">
-        </field>
-            <field name="sourceReferenceId" type="id-long">
-        </field>
-            <field name="sourcePercentage" type="number-decimal">
-        </field>
-            <field name="customerReferenceId" type="id-long">
-        </field>
-            <field name="primaryGeoId" type="id">
-        </field>
-            <field name="secondaryGeoId" type="id">
-        </field>
-            <field name="exemptAmount" type="currency-amount">
-        </field>
-            <field name="taxAuthGeoId" type="id">
-        </field>
-            <field name="taxAuthPartyId" type="id">
-        </field>
-            <field name="overrideGlAccountId" type="id">
-        </field>
-            <field name="includeInTax" type="text-indicator">
-        </field>
-            <field name="includeInShipping" type="text-indicator">
-        </field>
-            <field name="isManual" type="text-indicator">
-        </field>
-            <field name="createdDate" type="date-time">
-        </field>
-            <field name="createdByUserLogin" type="id-long">
-        </field>
-            <field name="lastModifiedDate" type="date-time">
-        </field>
-            <field name="lastModifiedByUserLogin" type="id-long">
-        </field>
-            <field name="originalAdjustmentId" type="id">
-        </field>
-            <field name="oldAmountPerQuantity" type="currency-amount" column-name="AMOUNT_PER_QUANTITY">
-        </field>
-            <field name="oldPercentage" type="number-float" column-name="PERCENTAGE">
-        </field>
+<description>Note that both includeInTax and includeInShipping should default to true, except in the case where this adjustment is a tax or shipping adjustment then should be ignored.</description>        <field name="orderAdjustmentId" type="id" is-pk="true"></field>
+        <field name="orderAdjustmentTypeId" type="id"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="shipGroupSeqId" type="id"></field>
+        <field name="comments" type="text-very-long"></field>
+        <field name="description" type="text-long"></field>
+        <field name="amount" type="currency-precise"></field>
+        <field name="recurringAmount" type="currency-precise"></field>
+        <field name="amountAlreadyIncluded" type="currency-precise"><description>The amount here is already represented in the price, such as VAT taxes.</description></field>
+        <field name="productPromoId" type="id"></field>
+        <field name="productPromoRuleId" type="id"></field>
+        <field name="productPromoActionSeqId" type="id"></field>
+        <field name="productFeatureId" type="id"></field>
+        <field name="correspondingProductId" type="id"></field>
+        <field name="taxAuthorityRateSeqId" type="id"></field>
+        <field name="sourceReferenceId" type="id-long"></field>
+        <field name="sourcePercentage" type="number-decimal"><description>for tax entries this is the tax percentage</description></field>
+        <field name="customerReferenceId" type="id-long"><description>for tax entries this is partyTaxId</description></field>
+        <field name="primaryGeoId" type="id"><description>for tax entries this is the primary jurisdiction Geo (the smallest or most local Geo that this tax is for, usually a state/province, perhaps a county or a city)</description></field>
+        <field name="secondaryGeoId" type="id"><description>for tax entries this is the secondary jurisdiction Geo (usually a country, or other Geo that the primary is within)</description></field>
+        <field name="exemptAmount" type="currency-amount"><description>an amount that would normally apply, but not to this order; for tax exemption represents the what the tax would have been</description></field>
+        <field name="taxAuthGeoId" type="id"><description>these taxAuth fields deprecate the primaryGeoId and secondaryGeoId fields and will be used with the newer tax calc stuff</description></field>
+        <field name="taxAuthPartyId" type="id"></field>
+        <field name="overrideGlAccountId" type="id"><description>used to specify the override or actual glAccountId used for the adjustment, avoids problems if configuration changes after initial posting, etc</description></field>
+        <field name="includeInTax" type="text-indicator"></field>
+        <field name="includeInShipping" type="text-indicator"></field>
+        <field name="isManual" type="text-indicator"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="lastModifiedDate" type="date-time"></field>
+        <field name="lastModifiedByUserLogin" type="id-long"></field>
+        <field name="originalAdjustmentId" type="id"><description>specifies relation to source OrderAdjustment - eg. for tax on shipping charges</description></field>
+        <field name="oldAmountPerQuantity" type="currency-amount" column-name="AMOUNT_PER_QUANTITY"></field>
+        <field name="oldPercentage" type="number-float" column-name="PERCENTAGE"></field>
         <relationship type="one" fk-name="ORDER_ADJ_TYPE" related="org.apache.ofbiz.order.order.OrderAdjustmentType">
             <key-map field-name="orderAdjustmentTypeId"/>
         </relationship>
@@ -150,14 +115,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderAdjustmentAttribute" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderAdjustmentId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="attrValue" type="text-long">
-        </field>
-            <field name="attrDescription" type="text-long">
-        </field>
+        <field name="orderAdjustmentId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="attrValue" type="text-long"></field>
+        <field name="attrDescription" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_ADJ_ATTR" related="org.apache.ofbiz.order.order.OrderAdjustment">
             <key-map field-name="orderAdjustmentId"/>
         </relationship>
@@ -166,27 +127,19 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderAdjustmentType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderAdjustmentTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="hasTable" type="text-indicator">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="orderAdjustmentTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_ADJ_TYPPAR" title="Parent" related="org.apache.ofbiz.order.order.OrderAdjustmentType">
             <key-map field-name="parentTypeId" related="orderAdjustmentTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="OrderAdjustmentBilling" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderAdjustmentId" type="id" is-pk="true">
-        </field>
-            <field name="invoiceId" type="id" is-pk="true">
-        </field>
-            <field name="invoiceItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="amount" type="currency-amount">
-        </field>
+        <field name="orderAdjustmentId" type="id" is-pk="true"></field>
+        <field name="invoiceId" type="id" is-pk="true"></field>
+        <field name="invoiceItemSeqId" type="id" is-pk="true"></field>
+        <field name="amount" type="currency-amount"></field>
         <relationship type="one" fk-name="ORDER_ADJBLNG_OA" related="org.apache.ofbiz.order.order.OrderAdjustment">
             <key-map field-name="orderAdjustmentId"/>
         </relationship>
@@ -199,12 +152,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderAdjustmentTypeAttr" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderAdjustmentTypeId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="orderAdjustmentTypeId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_ADJ_TYPATTR" related="org.apache.ofbiz.order.order.OrderAdjustmentType">
             <key-map field-name="orderAdjustmentTypeId"/>
         </relationship>
@@ -216,14 +166,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderAttribute" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="attrValue" type="text-long">
-        </field>
-            <field name="attrDescription" type="text-long">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="attrValue" type="text-long"></field>
+        <field name="attrDescription" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_ATTR_HDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -232,25 +178,19 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderBlacklist" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="blacklistString" type="text-long" is-pk="true">
-        </field>
-            <field name="orderBlacklistTypeId" type="id" is-pk="true">
-        </field>
+        <field name="blacklistString" type="text-long" is-pk="true"></field>
+        <field name="orderBlacklistTypeId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="ORDER_BKL_TYPE" related="org.apache.ofbiz.order.order.OrderBlacklistType">
             <key-map field-name="orderBlacklistTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="OrderBlacklistType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderBlacklistTypeId" type="id" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="orderBlacklistTypeId" type="id" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
     </entity>
     <entity entity-name="CommunicationEventOrder" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="communicationEventId" type="id" is-pk="true">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="communicationEventId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="COMEV_ORDER_ORDER" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -259,12 +199,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderContactMech" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="contactMechPurposeTypeId" type="id" is-pk="true">
-        </field>
-            <field name="contactMechId" type="id" is-pk="true">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
+        <field name="contactMechId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="ORDER_CMECH_HDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -276,18 +213,12 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderContent" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="contentId" type="id" is-pk="true">
-        </field>
-            <field name="orderContentTypeId" type="id" is-pk="true">
-        </field>
-            <field name="fromDate" type="date-time" is-pk="true">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="contentId" type="id" is-pk="true"></field>
+        <field name="orderContentTypeId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="ORD_CNT_PROD" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -299,41 +230,26 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderContentType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderContentTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="hasTable" type="text-indicator">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="orderContentTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="ORDCT_TYP_PARENT" title="Parent" related="org.apache.ofbiz.order.order.OrderContentType">
             <key-map field-name="parentTypeId" related="orderContentTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="OrderDeliverySchedule" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="estimatedReadyDate" type="date-time">
-        </field>
-            <field name="cartons" type="number-integer">
-        </field>
-            <field name="skidsPallets" type="number-integer">
-        </field>
-            <field name="unitsPieces" type="number-decimal">
-        </field>
-            <field name="totalCubicSize" type="number-decimal">
-        </field>
-            <field name="totalCubicUomId" type="id">
-        </field>
-            <field name="totalWeight" type="number-decimal">
-        </field>
-            <field name="totalWeightUomId" type="id">
-        </field>
-            <field name="statusId" type="id">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="estimatedReadyDate" type="date-time"></field>
+        <field name="cartons" type="number-integer"></field>
+        <field name="skidsPallets" type="number-integer"></field>
+        <field name="unitsPieces" type="number-decimal"></field>
+        <field name="totalCubicSize" type="number-decimal"></field>
+        <field name="totalCubicUomId" type="id"></field>
+        <field name="totalWeight" type="number-decimal"></field>
+        <field name="totalWeightUomId" type="id"></field>
+        <field name="statusId" type="id"></field>
         <relationship type="one" fk-name="ORDER_DELSCH_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -352,64 +268,35 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderHeader" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderTypeId" type="id">
-        </field>
-            <field name="orderName" type="text-medium">
-        </field>
-            <field name="externalId" type="id-long">
-        </field>
-            <field name="salesChannelEnumId" type="id">
-        </field>
-            <field name="orderDate" type="date-time">
-        </field>
-            <field name="priority" type="text-indicator">
-        </field>
-            <field name="entryDate" type="date-time">
-        </field>
-            <field name="pickSheetPrintedDate" type="date-time">
-        </field>
-            <field name="visitId" type="id">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="createdBy" type="id-long">
-        </field>
-            <field name="firstAttemptOrderId" type="id">
-        </field>
-            <field name="currencyUom" type="id">
-        </field>
-            <field name="syncStatusId" type="id">
-        </field>
-            <field name="billingAccountId" type="id">
-        </field>
-            <field name="originFacilityId" type="id">
-        </field>
-            <field name="webSiteId" type="id">
-        </field>
-            <field name="productStoreId" type="id">
-        </field>
-            <field name="terminalId" type="id-long">
-        </field>
-            <field name="transactionId" type="id-long">
-        </field>
-            <field name="autoOrderShoppingListId" type="id">
-        </field>
-            <field name="needsInventoryIssuance" type="text-indicator">
-        </field>
-            <field name="isRushOrder" type="text-indicator">
-        </field>
-            <field name="internalCode" type="id-long">
-        </field>
-            <field name="remainingSubTotal" type="currency-amount">
-        </field>
-            <field name="grandTotal" type="currency-amount">
-        </field>
-            <field name="isViewed" type="text-indicator">
-        </field>
-            <field name="invoicePerShipment" type="text-indicator">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderTypeId" type="id"></field>
+        <field name="orderName" type="text-medium"></field>
+        <field name="externalId" type="id-long"></field>
+        <field name="salesChannelEnumId" type="id"></field>
+        <field name="orderDate" type="date-time"></field>
+        <field name="priority" type="text-indicator"><description>Sets priority for Inventory Reservation</description></field>
+        <field name="entryDate" type="date-time"></field>
+        <field name="pickSheetPrintedDate" type="date-time"><description>This will be set to a date when pick sheet of the order is printed</description></field>
+        <field name="visitId" type="id"></field>
+        <field name="statusId" type="id"></field>
+        <field name="createdBy" type="id-long"></field>
+        <field name="firstAttemptOrderId" type="id"></field>
+        <field name="currencyUom" type="id"></field>
+        <field name="syncStatusId" type="id"></field>
+        <field name="billingAccountId" type="id"></field>
+        <field name="originFacilityId" type="id"></field>
+        <field name="webSiteId" type="id"></field>
+        <field name="productStoreId" type="id"></field>
+        <field name="terminalId" type="id-long"></field>
+        <field name="transactionId" type="id-long"></field>
+        <field name="autoOrderShoppingListId" type="id"></field>
+        <field name="needsInventoryIssuance" type="text-indicator"></field>
+        <field name="isRushOrder" type="text-indicator"></field>
+        <field name="internalCode" type="id-long"></field>
+        <field name="remainingSubTotal" type="currency-amount"></field>
+        <field name="grandTotal" type="currency-amount"></field>
+        <field name="isViewed" type="text-indicator"></field>
+        <field name="invoicePerShipment" type="text-indicator"></field>
         <relationship type="one" fk-name="ORDER_HDR_TYPE" related="org.apache.ofbiz.order.order.OrderType">
             <key-map field-name="orderTypeId"/>
         </relationship>
@@ -451,12 +338,9 @@ under the License.
         </index>
     </entity>
     <entity entity-name="OrderHeaderNote" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="noteId" type="id" is-pk="true">
-        </field>
-            <field name="internalNote" type="text-indicator">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="noteId" type="id" is-pk="true"></field>
+        <field name="internalNote" type="text-indicator"></field>
         <relationship type="one" fk-name="ORDER_HDRNT_HDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -465,10 +349,8 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderHeaderWorkEffort" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="workEffortId" type="id" is-pk="true">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="workEffortId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="ORDERHDWE_OH" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -477,98 +359,52 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItem" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="externalId" type="id-long">
-        </field>
-            <field name="orderItemTypeId" type="id">
-        </field>
-            <field name="orderItemGroupSeqId" type="id">
-        </field>
-            <field name="isItemGroupPrimary" type="text-indicator">
-        </field>
-            <field name="fromInventoryItemId" type="id">
-        </field>
-            <field name="budgetId" type="id">
-        </field>
-            <field name="budgetItemSeqId" type="id">
-        </field>
-            <field name="productId" type="id">
-        </field>
-            <field name="supplierProductId" type="id-long">
-        </field>
-            <field name="productFeatureId" type="id">
-        </field>
-            <field name="prodCatalogId" type="id">
-        </field>
-            <field name="productCategoryId" type="id">
-        </field>
-            <field name="isPromo" type="text-indicator">
-        </field>
-            <field name="quoteId" type="id">
-        </field>
-            <field name="quoteItemSeqId" type="id">
-        </field>
-            <field name="shoppingListId" type="id">
-        </field>
-            <field name="shoppingListItemSeqId" type="id">
-        </field>
-            <field name="subscriptionId" type="id">
-        </field>
-            <field name="deploymentId" type="id">
-        </field>
-            <field name="quantity" type="number-decimal" enable-audit-log="true">
-        </field>
-            <field name="cancelQuantity" type="number-decimal">
-        </field>
-            <field name="selectedAmount" type="number-decimal">
-        </field>
-            <field name="unitPrice" type="currency-precise" enable-audit-log="true">
-        </field>
-            <field name="unitListPrice" type="currency-precise">
-        </field>
-            <field name="unitAverageCost" type="currency-amount">
-        </field>
-            <field name="unitRecurringPrice" type="currency-amount">
-        </field>
-            <field name="isModifiedPrice" type="text-indicator">
-        </field>
-            <field name="recurringFreqUomId" type="id">
-        </field>
-            <field name="itemDescription" type="text-long">
-        </field>
-            <field name="comments" type="text-long">
-        </field>
-            <field name="correspondingPoId" type="id">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="syncStatusId" type="id">
-        </field>
-            <field name="estimatedShipDate" type="date-time">
-        </field>
-            <field name="estimatedDeliveryDate" type="date-time">
-        </field>
-            <field name="autoCancelDate" type="date-time">
-        </field>
-            <field name="dontCancelSetDate" type="date-time">
-        </field>
-            <field name="dontCancelSetUserLogin" type="id-long">
-        </field>
-            <field name="shipBeforeDate" type="date-time">
-        </field>
-            <field name="shipAfterDate" type="date-time">
-        </field>
-            <field name="cancelBackOrderDate" type="date-time">
-        </field>
-            <field name="overrideGlAccountId" type="id">
-        </field>
-            <field name="salesOpportunityId" type="id">
-        </field>
-            <field name="changeByUserLoginId" type="id-long" enable-audit-log="true">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="externalId" type="id-long"></field>
+        <field name="orderItemTypeId" type="id"></field>
+        <field name="orderItemGroupSeqId" type="id"></field>
+        <field name="isItemGroupPrimary" type="text-indicator"></field>
+        <field name="fromInventoryItemId" type="id"></field>
+        <field name="budgetId" type="id"></field>
+        <field name="budgetItemSeqId" type="id"></field>
+        <field name="productId" type="id"></field>
+        <field name="supplierProductId" type="id-long"></field>
+        <field name="productFeatureId" type="id"></field>
+        <field name="prodCatalogId" type="id"></field>
+        <field name="productCategoryId" type="id"></field>
+        <field name="isPromo" type="text-indicator"></field>
+        <field name="quoteId" type="id"></field>
+        <field name="quoteItemSeqId" type="id"></field>
+        <field name="shoppingListId" type="id"></field>
+        <field name="shoppingListItemSeqId" type="id"></field>
+        <field name="subscriptionId" type="id"></field>
+        <field name="deploymentId" type="id"></field>
+        <field name="quantity" type="number-decimal" enable-audit-log="true"></field>
+        <field name="cancelQuantity" type="number-decimal"></field>
+        <field name="selectedAmount" type="number-decimal"></field>
+        <field name="unitPrice" type="currency-precise" enable-audit-log="true"></field>
+        <field name="unitListPrice" type="currency-precise"></field>
+        <field name="unitAverageCost" type="currency-amount"></field>
+        <field name="unitRecurringPrice" type="currency-amount"></field>
+        <field name="isModifiedPrice" type="text-indicator"></field>
+        <field name="recurringFreqUomId" type="id"></field>
+        <field name="itemDescription" type="text-long"></field>
+        <field name="comments" type="text-long"></field>
+        <field name="correspondingPoId" type="id"></field>
+        <field name="statusId" type="id"></field>
+        <field name="syncStatusId" type="id"></field>
+        <field name="estimatedShipDate" type="date-time"></field>
+        <field name="estimatedDeliveryDate" type="date-time"></field>
+        <field name="autoCancelDate" type="date-time"></field>
+        <field name="dontCancelSetDate" type="date-time"></field>
+        <field name="dontCancelSetUserLogin" type="id-long"></field>
+        <field name="shipBeforeDate" type="date-time"></field>
+        <field name="shipAfterDate" type="date-time"></field>
+        <field name="cancelBackOrderDate" type="date-time"><description>Used to cancel all orders from suppliers when its in past</description></field>
+        <field name="overrideGlAccountId" type="id"><description>Used to specify the override or actual glAccountId used for the adjustment, avoids problems if configuration changes after initial posting, etc.</description></field>
+        <field name="salesOpportunityId" type="id"></field>
+        <field name="changeByUserLoginId" type="id-long" enable-audit-log="true"></field>
         <relationship type="one" fk-name="ORDER_ITEM_HDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -628,22 +464,14 @@ under the License.
         </index>
     </entity>
     <entity entity-name="OrderItemAssoc" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="shipGroupSeqId" type="id" is-pk="true">
-        </field>
-            <field name="toOrderId" type="id" is-pk="true">
-        </field>
-            <field name="toOrderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="toShipGroupSeqId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemAssocTypeId" type="id" is-pk="true">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="shipGroupSeqId" type="id" is-pk="true"></field>
+        <field name="toOrderId" type="id" is-pk="true"></field>
+        <field name="toOrderItemSeqId" type="id" is-pk="true"></field>
+        <field name="toShipGroupSeqId" type="id" is-pk="true"></field>
+        <field name="orderItemAssocTypeId" type="id" is-pk="true"></field>
+        <field name="quantity" type="number-decimal"></field>
         <relationship type="one" fk-name="ORDER_ITASS_TYPE" related="org.apache.ofbiz.order.order.OrderItemAssocType">
             <key-map field-name="orderItemAssocTypeId"/>
         </relationship>
@@ -681,29 +509,20 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemAssocType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderItemAssocTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="hasTable" type="text-indicator">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="orderItemAssocTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_ITAS_TYPPAR" title="Parent" related="org.apache.ofbiz.order.order.OrderItemAssocType">
             <key-map field-name="parentTypeId" related="orderItemAssocTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="OrderItemAttribute" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="attrValue" type="text-long">
-        </field>
-            <field name="attrDescription" type="text-long">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="attrValue" type="text-long"></field>
+        <field name="attrDescription" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_ITEM_ATTR" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
@@ -717,22 +536,14 @@ under the License.
         </index>
     </entity>
     <entity entity-name="OrderItemBilling" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="invoiceId" type="id" is-pk="true">
-        </field>
-            <field name="invoiceItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="itemIssuanceId" type="id">
-        </field>
-            <field name="shipmentReceiptId" type="id">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="amount" type="currency-amount">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="invoiceId" type="id" is-pk="true"></field>
+        <field name="invoiceItemSeqId" type="id" is-pk="true"></field>
+        <field name="itemIssuanceId" type="id"></field>
+        <field name="shipmentReceiptId" type="id"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="amount" type="currency-amount"></field>
         <relationship type="one" fk-name="ORDER_ITBLNG_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -755,32 +566,19 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemChange" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderItemChangeId" type="id" is-pk="true">
-        </field>
-            <field name="orderId" type="id">
-        </field>
-            <field name="orderItemSeqId" type="id">
-        </field>
-            <field name="changeTypeEnumId" type="id">
-        </field>
-            <field name="changeDatetime" type="date-time">
-        </field>
-            <field name="changeUserLogin" type="id-long">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="availableToPromise" type="number-decimal">
-        </field>
-            <field name="cancelQuantity" type="number-decimal">
-        </field>
-            <field name="unitPrice" type="currency-amount">
-        </field>
-            <field name="itemDescription" type="text-long">
-        </field>
-            <field name="reasonEnumId" type="id">
-        </field>
-            <field name="changeComments" type="text-long">
-        </field>
+        <field name="orderItemChangeId" type="id" is-pk="true"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="changeTypeEnumId" type="id"></field>
+        <field name="changeDatetime" type="date-time"></field>
+        <field name="changeUserLogin" type="id-long"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="availableToPromise" type="number-decimal"></field>
+        <field name="cancelQuantity" type="number-decimal"></field>
+        <field name="unitPrice" type="currency-amount"></field>
+        <field name="itemDescription" type="text-long"></field>
+        <field name="reasonEnumId" type="id"></field>
+        <field name="changeComments" type="text-long"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -799,14 +597,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemContactMech" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="contactMechPurposeTypeId" type="id" is-pk="true">
-        </field>
-            <field name="contactMechId" type="id">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
+        <field name="contactMechId" type="id"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -822,14 +616,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemGroup" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemGroupSeqId" type="id" is-pk="true">
-        </field>
-            <field name="parentGroupSeqId" type="id">
-        </field>
-            <field name="groupName" type="text-medium">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemGroupSeqId" type="id" is-pk="true"></field>
+        <field name="parentGroupSeqId" type="id"></field>
+        <field name="groupName" type="text-medium"></field>
         <relationship type="one" fk-name="ORDERITMGRP_HDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -839,12 +629,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemGroupOrder" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="groupOrderId" type="id" is-pk="true">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="groupOrderId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="OIGO_ORDER_ITEM" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
@@ -854,22 +641,14 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemPriceInfo" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderItemPriceInfoId" type="id" is-pk="true">
-        </field>
-            <field name="orderId" type="id">
-        </field>
-            <field name="orderItemSeqId" type="id">
-        </field>
-            <field name="productPriceRuleId" type="id">
-        </field>
-            <field name="productPriceActionSeqId" type="id">
-        </field>
-            <field name="modifyAmount" type="currency-precise">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="rateCode" type="text-medium">
-        </field>
+        <field name="orderItemPriceInfoId" type="id" is-pk="true"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="productPriceRuleId" type="id"></field>
+        <field name="productPriceActionSeqId" type="id"></field>
+        <field name="modifyAmount" type="currency-precise"></field>
+        <field name="description" type="text-long"></field>
+        <field name="rateCode" type="text-medium"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -886,14 +665,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemRole" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="partyId" type="id" is-pk="true">
-        </field>
-            <field name="roleTypeId" type="id" is-pk="true">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="partyId" type="id" is-pk="true"></field>
+        <field name="roleTypeId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="ORDER_ITRL_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -913,44 +688,25 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemShipGroup" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="shipGroupSeqId" type="id" is-pk="true">
-        </field>
-            <field name="shipmentMethodTypeId" type="id" enable-audit-log="true">
-        </field>
-            <field name="supplierPartyId" type="id">
-        </field>
-            <field name="vendorPartyId" type="id">
-        </field>
-            <field name="carrierPartyId" type="id" enable-audit-log="true">
-        </field>
-            <field name="carrierRoleTypeId" type="id">
-        </field>
-            <field name="facilityId" type="id">
-        </field>
-            <field name="contactMechId" type="id">
-        </field>
-            <field name="telecomContactMechId" type="id">
-        </field>
-            <field name="trackingNumber" type="text-medium">
-        </field>
-            <field name="shippingInstructions" type="text-long">
-        </field>
-            <field name="maySplit" type="text-indicator" enable-audit-log="true">
-        </field>
-            <field name="giftMessage" type="text-long">
-        </field>
-            <field name="isGift" type="text-indicator">
-        </field>
-            <field name="shipAfterDate" type="date-time">
-        </field>
-            <field name="shipByDate" type="date-time">
-        </field>
-            <field name="estimatedShipDate" type="date-time">
-        </field>
-            <field name="estimatedDeliveryDate" type="date-time">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="shipGroupSeqId" type="id" is-pk="true"></field>
+        <field name="shipmentMethodTypeId" type="id" enable-audit-log="true"></field>
+        <field name="supplierPartyId" type="id"></field>
+        <field name="vendorPartyId" type="id"><description>For use with multi-vendor stores, order will be split so that each ship group is associated with only one vendor (only if applicable)</description></field>
+        <field name="carrierPartyId" type="id" enable-audit-log="true"></field>
+        <field name="carrierRoleTypeId" type="id"></field>
+        <field name="facilityId" type="id"></field>
+        <field name="contactMechId" type="id"></field>
+        <field name="telecomContactMechId" type="id"></field>
+        <field name="trackingNumber" type="text-medium"></field>
+        <field name="shippingInstructions" type="text-long"></field>
+        <field name="maySplit" type="text-indicator" enable-audit-log="true"></field>
+        <field name="giftMessage" type="text-long"></field>
+        <field name="isGift" type="text-indicator"></field>
+        <field name="shipAfterDate" type="date-time"></field>
+        <field name="shipByDate" type="date-time"></field>
+        <field name="estimatedShipDate" type="date-time"></field>
+        <field name="estimatedDeliveryDate" type="date-time"></field>
         <relationship type="one" fk-name="ORDER_ITSG_ORDH" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -992,16 +748,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemShipGroupAssoc" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="shipGroupSeqId" type="id" is-pk="true">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="cancelQuantity" type="number-decimal">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="shipGroupSeqId" type="id" is-pk="true"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="cancelQuantity" type="number-decimal"></field>
         <relationship type="one" fk-name="ORDER_ISGA_ORDH" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1015,34 +766,20 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemShipGrpInvRes" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="shipGroupSeqId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="inventoryItemId" type="id" is-pk="true">
-        </field>
-            <field name="reserveOrderEnumId" type="id">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="quantityNotAvailable" type="number-decimal">
-        </field>
-            <field name="reservedDatetime" type="date-time">
-        </field>
-            <field name="createdDatetime" type="date-time">
-        </field>
-            <field name="promisedDatetime" type="date-time">
-        </field>
-            <field name="currentPromisedDate" type="date-time">
-        </field>
-            <field name="priority" type="text-indicator">
-        </field>
-            <field name="sequenceId" type="number-integer">
-        </field>
-            <field name="oldPickStartDate" type="date-time" column-name="PICK_START_DATE">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="shipGroupSeqId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="inventoryItemId" type="id" is-pk="true"></field>
+        <field name="reserveOrderEnumId" type="id"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="quantityNotAvailable" type="number-decimal"></field>
+        <field name="reservedDatetime" type="date-time"></field>
+        <field name="createdDatetime" type="date-time"></field>
+        <field name="promisedDatetime" type="date-time"></field>
+        <field name="currentPromisedDate" type="date-time"></field>
+        <field name="priority" type="text-indicator"><description>Sets priority for Inventory Reservation</description></field>
+        <field name="sequenceId" type="number-integer"></field>
+        <field name="oldPickStartDate" type="date-time" column-name="PICK_START_DATE"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1064,25 +801,18 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderItemType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderItemTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="hasTable" type="text-indicator">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="orderItemTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_ITEM_TYPPAR" title="Parent" related="org.apache.ofbiz.order.order.OrderItemType">
             <key-map field-name="parentTypeId" related="orderItemTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="OrderItemTypeAttr" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderItemTypeId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="orderItemTypeId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_ITEM_TYPATR" related="org.apache.ofbiz.order.order.OrderItemType">
             <key-map field-name="orderItemTypeId"/>
         </relationship>
@@ -1094,16 +824,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderNotification" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderNotificationId" type="id" is-pk="true">
-        </field>
-            <field name="orderId" type="id">
-        </field>
-            <field name="emailType" type="id">
-        </field>
-            <field name="comments" type="text-long">
-        </field>
-            <field name="notificationDate" type="date-time">
-        </field>
+        <field name="orderNotificationId" type="id" is-pk="true"></field>
+        <field name="orderId" type="id"></field>
+        <field name="emailType" type="id"></field>
+        <field name="comments" type="text-long"></field>
+        <field name="notificationDate" type="date-time"></field>
         <relationship type="one" fk-name="ORD_NOTIFY_ORDHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1115,54 +840,36 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderPaymentPreference" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderPaymentPreferenceId" type="id" is-pk="true">
-        </field>
-            <field name="orderId" type="id">
-        </field>
-            <field name="orderItemSeqId" type="id">
-        </field>
-            <field name="shipGroupSeqId" type="id">
-        </field>
-            <field name="productPricePurposeId" type="id">
-        </field>
-            <field name="paymentMethodTypeId" type="id">
-        </field>
-            <field name="paymentMethodId" type="id">
-        </field>
-            <field name="finAccountId" type="id">
-        </field>
-            <field name="securityCode" type="text-long" encrypt="true">
-        </field>
-            <field name="track2" type="text-long" encrypt="true">
-        </field>
-            <field name="presentFlag" type="text-indicator">
-        </field>
-            <field name="swipedFlag" type="text-indicator">
-        </field>
-            <field name="overflowFlag" type="text-indicator">
-        </field>
-            <field name="maxAmount" type="currency-amount">
-        </field>
-            <field name="processAttempt" type="number-integer">
-        </field>
-            <field name="billingPostalCode" type="text-medium">
-        </field>
-            <field name="manualAuthCode" type="text-medium">
-        </field>
-            <field name="manualRefNum" type="text-medium">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="needsNsfRetry" type="text-indicator">
-        </field>
-            <field name="createdDate" type="date-time">
-        </field>
-            <field name="createdByUserLogin" type="id-long">
-        </field>
-            <field name="lastModifiedDate" type="date-time">
-        </field>
-            <field name="lastModifiedByUserLogin" type="id-long">
-        </field>
+        <field name="orderPaymentPreferenceId" type="id" is-pk="true"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="shipGroupSeqId" type="id"></field>
+        <field name="productPricePurposeId" type="id"></field>
+        <field name="paymentMethodTypeId" type="id"></field>
+        <field name="paymentMethodId" type="id"></field>
+        <field name="finAccountId" type="id"><description>For paying with a fin account instead of payment method on file</description></field>
+        <field name="securityCode" type="text-long" encrypt="true"><description>NOTE: THIS SHOULD NEVER BE PERSISTED OUTSIDE THE SCOPE OF A SINGLE TRANSACTION,
+              TYPICALLY ONLY FOR AUTHORIZATION PURPOSES, SHOULD BE REMOVED IMMEDIATELY FOLLOWING USE;
+              this is the 3 digit on back (for Visa, MC, etc) or 4 digit on front (Amex, etc) card
+              verification code; also note that this field is longer than needed to accommodate encryption.</description></field>
+        <field name="track2" type="text-long" encrypt="true"><description>NOTE: THIS SHOULD NEVER BE PERSISTED OUTSIDE THE SCOPE OF A SINGLE TRANSACTION,
+              TYPICALLY ONLY FOR AUTHORIZATION PURPOSES, SHOULD BE REMOVED IMMEDIATELY FOLLOWING USE;
+              this is raw track2 data, exactly as read by the magnetic swipe reader;
+              also note that this field is longer than needed to accommodate encryption.</description></field>
+        <field name="presentFlag" type="text-indicator"></field>
+        <field name="swipedFlag" type="text-indicator"></field>
+        <field name="overflowFlag" type="text-indicator"></field>
+        <field name="maxAmount" type="currency-amount"></field>
+        <field name="processAttempt" type="number-integer"></field>
+        <field name="billingPostalCode" type="text-medium"></field>
+        <field name="manualAuthCode" type="text-medium"></field>
+        <field name="manualRefNum" type="text-medium"></field>
+        <field name="statusId" type="id"></field>
+        <field name="needsNsfRetry" type="text-indicator"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="lastModifiedDate" type="date-time"></field>
+        <field name="lastModifiedByUserLogin" type="id-long"></field>
         <relationship type="one" fk-name="ORDER_PMPRF_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1204,12 +911,14 @@ under the License.
         <index name="NSF_RETRY_CHECK">
             <index-field name="needsNsfRetry"/>
         </index>
+        <index name="MANUAL_REF_NUM_IDX">
+            <index-field name="orderId"/>
+            <index-field name="manualRefNum"/>
+        </index>
     </entity>
     <entity entity-name="OrderProductPromoCode" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="productPromoCodeId" type="id" is-pk="true">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="productPromoCodeId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="ORDER_PPCD_ORD" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1218,16 +927,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderRole" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="partyId" type="id" is-pk="true">
-        </field>
-            <field name="roleTypeId" type="id" is-pk="true">
-        </field>
-            <field name="fromDate" type="date-time" is-pk="true">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="partyId" type="id" is-pk="true"></field>
+        <field name="roleTypeId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="ORDER_ROLE_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1246,18 +950,12 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderShipment" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="shipGroupSeqId" type="id" is-pk="true">
-        </field>
-            <field name="shipmentId" type="id" is-pk="true">
-        </field>
-            <field name="shipmentItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="shipGroupSeqId" type="id" is-pk="true"></field>
+        <field name="shipmentId" type="id" is-pk="true"></field>
+        <field name="shipmentItemSeqId" type="id" is-pk="true"></field>
+        <field name="quantity" type="number-decimal"></field>
         <relationship type="one" fk-name="ORDER_SHPMT_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1279,22 +977,14 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderStatus" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-            <field name="orderStatusId" type="id" is-pk="true">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="orderId" type="id">
-        </field>
-            <field name="orderItemSeqId" type="id">
-        </field>
-            <field name="orderPaymentPreferenceId" type="id">
-        </field>
-            <field name="statusDatetime" type="date-time">
-        </field>
-            <field name="statusUserLogin" type="id-long">
-        </field>
-            <field name="changeReason" type="text-long">
-        </field>
+        <field name="orderStatusId" type="id" is-pk="true"></field>
+        <field name="statusId" type="id"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="orderPaymentPreferenceId" type="id"></field>
+        <field name="statusDatetime" type="date-time"></field>
+        <field name="statusUserLogin" type="id-long"></field>
+        <field name="changeReason" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_STTS_STTS" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
@@ -1313,18 +1003,12 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderSummaryEntry" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="entryDate" type="date" is-pk="true">
-        </field>
-            <field name="productId" type="id" is-pk="true">
-        </field>
-            <field name="facilityId" type="id" is-pk="true">
-        </field>
-            <field name="totalQuantity" type="number-decimal">
-        </field>
-            <field name="grossSales" type="currency-amount">
-        </field>
-            <field name="productCost" type="currency-amount">
-        </field>
+        <field name="entryDate" type="date" is-pk="true"></field>
+        <field name="productId" type="id" is-pk="true"></field>
+        <field name="facilityId" type="id" is-pk="true"></field>
+        <field name="totalQuantity" type="number-decimal"></field>
+        <field name="grossSales" type="currency-amount"></field>
+        <field name="productCost" type="currency-amount"></field>
         <relationship type="one" fk-name="ORDER_SMENT_PROD" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
         </relationship>
@@ -1333,22 +1017,14 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderTerm" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="termTypeId" type="id" is-pk="true">
-        </field>
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="termValue" type="currency-amount">
-        </field>
-            <field name="termDays" type="number-integer">
-        </field>
-            <field name="textValue" type="text-long">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="uomId" type="id">
-        </field>
+        <field name="termTypeId" type="id" is-pk="true"></field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="termValue" type="currency-amount"></field>
+        <field name="termDays" type="number-integer"></field>
+        <field name="textValue" type="text-long"></field>
+        <field name="description" type="text-long"></field>
+        <field name="uomId" type="id"></field>
         <relationship type="one" fk-name="ORDER_TERM_UOM" related="org.apache.ofbiz.common.uom.Uom">
             <key-map field-name="uomId"/>
         </relationship>
@@ -1364,18 +1040,12 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderTermAttribute" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="termTypeId" type="id" is-pk="true">
-        </field>
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="attrValue" type="text-long">
-        </field>
-            <field name="attrDescription" type="text-long">
-        </field>
+        <field name="termTypeId" type="id" is-pk="true"></field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="attrValue" type="text-long"></field>
+        <field name="attrDescription" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_TATTR_OTRM" related="org.apache.ofbiz.order.order.OrderTerm">
             <key-map field-name="termTypeId"/>
             <key-map field-name="orderId"/>
@@ -1383,25 +1053,18 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="hasTable" type="text-indicator">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="orderTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.order.order.OrderType">
             <key-map field-name="parentTypeId" related="orderTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="OrderTypeAttr" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderTypeId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="orderTypeId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="ORDER_TPAT_ORTYP" related="org.apache.ofbiz.order.order.OrderType">
             <key-map field-name="orderTypeId"/>
         </relationship>
@@ -1413,16 +1076,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ProductOrderItem" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="engagementId" type="id" is-pk="true">
-        </field>
-            <field name="engagementItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="productId" type="id">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="engagementId" type="id" is-pk="true"></field>
+        <field name="engagementItemSeqId" type="id" is-pk="true"></field>
+        <field name="productId" type="id"></field>
         <relationship type="one" fk-name="PROD_OITEM_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1442,14 +1100,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="WorkOrderItemFulfillment" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-            <field name="workEffortId" type="id" is-pk="true">
-        </field>
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="shipGroupSeqId" type="id">
-        </field>
+        <field name="workEffortId" type="id" is-pk="true"></field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="shipGroupSeqId" type="id"></field>
         <relationship type="one" fk-name="WORDER_ITFMT_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1467,30 +1121,18 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="Quote" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="quoteId" type="id" is-pk="true">
-        </field>
-            <field name="quoteTypeId" type="id">
-        </field>
-            <field name="partyId" type="id">
-        </field>
-            <field name="issueDate" type="date-time">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="currencyUomId" type="id">
-        </field>
-            <field name="productStoreId" type="id">
-        </field>
-            <field name="salesChannelEnumId" type="id">
-        </field>
-            <field name="validFromDate" type="date-time">
-        </field>
-            <field name="validThruDate" type="date-time">
-        </field>
-            <field name="quoteName" type="text-medium">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="quoteId" type="id" is-pk="true"></field>
+        <field name="quoteTypeId" type="id"></field>
+        <field name="partyId" type="id"></field>
+        <field name="issueDate" type="date-time"></field>
+        <field name="statusId" type="id"></field>
+        <field name="currencyUomId" type="id"></field>
+        <field name="productStoreId" type="id"></field>
+        <field name="salesChannelEnumId" type="id"></field>
+        <field name="validFromDate" type="date-time"></field>
+        <field name="validThruDate" type="date-time"></field>
+        <field name="quoteName" type="text-medium"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="QUOTE_QTTYP" related="org.apache.ofbiz.order.quote.QuoteType">
             <key-map field-name="quoteTypeId"/>
         </relationship>
@@ -1514,14 +1156,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="QuoteAttribute" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="quoteId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="attrValue" type="text-long">
-        </field>
-            <field name="attrDescription" type="text-long">
-        </field>
+        <field name="quoteId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="attrValue" type="text-long"></field>
+        <field name="attrDescription" type="text-long"></field>
         <relationship type="one" fk-name="QUOTE_ATTR" related="org.apache.ofbiz.order.quote.Quote">
             <key-map field-name="quoteId"/>
         </relationship>
@@ -1530,59 +1168,35 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="QuoteCoefficient" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="quoteId" type="id" is-pk="true">
-        </field>
-            <field name="coeffName" type="id-long" is-pk="true">
-        </field>
-            <field name="coeffValue" type="number-decimal">
-        </field>
+        <field name="quoteId" type="id" is-pk="true"></field>
+        <field name="coeffName" type="id-long" is-pk="true"></field>
+        <field name="coeffValue" type="number-decimal"></field>
         <relationship type="one" fk-name="QUOTE_COEFF" related="org.apache.ofbiz.order.quote.Quote">
             <key-map field-name="quoteId"/>
         </relationship>
     </entity>
     <entity entity-name="QuoteItem" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="quoteId" type="id" is-pk="true">
-        </field>
-            <field name="quoteItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="productId" type="id">
-        </field>
-            <field name="productFeatureId" type="id">
-        </field>
-            <field name="deliverableTypeId" type="id">
-        </field>
-            <field name="skillTypeId" type="id">
-        </field>
-            <field name="uomId" type="id">
-        </field>
-            <field name="workEffortId" type="id">
-        </field>
-            <field name="custRequestId" type="id">
-        </field>
-            <field name="custRequestItemSeqId" type="id">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="selectedAmount" type="number-decimal">
-        </field>
-            <field name="quoteUnitPrice" type="currency-amount">
-        </field>
-            <field name="reservStart" type="date-time">
-        </field>
-            <field name="reservLength" type="number-decimal">
-        </field>
-            <field name="reservPersons" type="number-decimal">
-        </field>
-            <field name="configId" type="id">
-        </field>
-            <field name="estimatedDeliveryDate" type="date-time">
-        </field>
-            <field name="comments" type="text-long">
-        </field>
-            <field name="isPromo" type="text-indicator">
-        </field>
-            <field name="leadTimeDays" type="number-integer">
-        </field>
+        <field name="quoteId" type="id" is-pk="true"></field>
+        <field name="quoteItemSeqId" type="id" is-pk="true"></field>
+        <field name="productId" type="id"></field>
+        <field name="productFeatureId" type="id"></field>
+        <field name="deliverableTypeId" type="id"></field>
+        <field name="skillTypeId" type="id"></field>
+        <field name="uomId" type="id"></field>
+        <field name="workEffortId" type="id"></field>
+        <field name="custRequestId" type="id"></field>
+        <field name="custRequestItemSeqId" type="id"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="selectedAmount" type="number-decimal"></field>
+        <field name="quoteUnitPrice" type="currency-amount"></field>
+        <field name="reservStart" type="date-time"></field>
+        <field name="reservLength" type="number-decimal"></field>
+        <field name="reservPersons" type="number-decimal"></field>
+        <field name="configId" type="id"></field>
+        <field name="estimatedDeliveryDate" type="date-time"></field>
+        <field name="comments" type="text-long"></field>
+        <field name="isPromo" type="text-indicator"></field>
+        <field name="leadTimeDays" type="number-integer"></field>
         <relationship type="one" fk-name="QUOTE_ITM_QTE" related="org.apache.ofbiz.order.quote.Quote">
             <key-map field-name="quoteId"/>
         </relationship>
@@ -1613,10 +1227,8 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="QuoteNote" package="org.apache.ofbiz.order.quote" cache="never" group="ofbiz_transactional">
-            <field name="quoteId" type="id" is-pk="true">
-        </field>
-            <field name="noteId" type="id" is-pk="true">
-        </field>
+        <field name="quoteId" type="id" is-pk="true"></field>
+        <field name="noteId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="QUOTE_NT_QTE" related="org.apache.ofbiz.order.quote.Quote">
             <key-map field-name="quoteId"/>
         </relationship>
@@ -1625,16 +1237,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="QuoteRole" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="quoteId" type="id" is-pk="true">
-        </field>
-            <field name="partyId" type="id" is-pk="true">
-        </field>
-            <field name="roleTypeId" type="id" is-pk="true">
-        </field>
-            <field name="fromDate" type="date-time">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
+        <field name="quoteId" type="id" is-pk="true"></field>
+        <field name="partyId" type="id" is-pk="true"></field>
+        <field name="roleTypeId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time"></field>
+        <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="QUOTE_RL_QUOTE" related="org.apache.ofbiz.order.quote.Quote">
             <key-map field-name="quoteId"/>
         </relationship>
@@ -1650,22 +1257,14 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="QuoteTerm" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="termTypeId" type="id" is-pk="true">
-        </field>
-            <field name="quoteId" type="id" is-pk="true">
-        </field>
-            <field name="quoteItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="termValue" type="number-integer">
-        </field>
-            <field name="uomId" type="id">
-        </field>
-            <field name="termDays" type="number-integer">
-        </field>
-            <field name="textValue" type="text-long">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="termTypeId" type="id" is-pk="true"></field>
+        <field name="quoteId" type="id" is-pk="true"></field>
+        <field name="quoteItemSeqId" type="id" is-pk="true"></field>
+        <field name="termValue" type="number-integer"></field>
+        <field name="uomId" type="id"></field>
+        <field name="termDays" type="number-integer"></field>
+        <field name="textValue" type="text-long"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="QUOTE_TERM_QTE" related="org.apache.ofbiz.order.quote.Quote">
             <key-map field-name="quoteId"/>
         </relationship>
@@ -1678,18 +1277,12 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="QuoteTermAttribute" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="termTypeId" type="id" is-pk="true">
-        </field>
-            <field name="quoteId" type="id" is-pk="true">
-        </field>
-            <field name="quoteItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="attrValue" type="text-long">
-        </field>
-            <field name="attrDescription" type="text-long">
-        </field>
+        <field name="termTypeId" type="id" is-pk="true"></field>
+        <field name="quoteId" type="id" is-pk="true"></field>
+        <field name="quoteItemSeqId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="attrValue" type="text-long"></field>
+        <field name="attrDescription" type="text-long"></field>
         <relationship type="one" fk-name="QUOTE_TERM_ATTR" related="org.apache.ofbiz.order.quote.QuoteTerm">
             <key-map field-name="termTypeId"/>
             <key-map field-name="quoteId"/>
@@ -1697,25 +1290,18 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="QuoteType" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="quoteTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="hasTable" type="text-indicator">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="quoteTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="QUOTE_TYPE_PAR" title="Parent" related="org.apache.ofbiz.order.quote.QuoteType">
             <key-map field-name="parentTypeId" related="quoteTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="QuoteTypeAttr" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="quoteTypeId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="quoteTypeId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="QUOTE_TPAT_QTYP" related="org.apache.ofbiz.order.quote.QuoteType">
             <key-map field-name="quoteTypeId"/>
         </relationship>
@@ -1727,10 +1313,8 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="QuoteWorkEffort" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-            <field name="quoteId" type="id" is-pk="true">
-        </field>
-            <field name="workEffortId" type="id" is-pk="true">
-        </field>
+        <field name="quoteId" type="id" is-pk="true"></field>
+        <field name="workEffortId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="QUOTE_WE_QUOTE" related="org.apache.ofbiz.order.quote.Quote">
             <key-map field-name="quoteId"/>
         </relationship>
@@ -1739,60 +1323,33 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="QuoteAdjustment" package="org.apache.ofbiz.order.quote" cache="never" group="ofbiz_transactional">
-            <field name="quoteAdjustmentId" type="id" is-pk="true">
-        </field>
-            <field name="quoteAdjustmentTypeId" type="id">
-        </field>
-            <field name="quoteId" type="id">
-        </field>
-            <field name="quoteItemSeqId" type="id">
-        </field>
-            <field name="comments" type="text-long">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="amount" type="currency-amount">
-        </field>
-            <field name="productPromoId" type="id">
-        </field>
-            <field name="productPromoRuleId" type="id">
-        </field>
-            <field name="productPromoActionSeqId" type="id">
-        </field>
-            <field name="productFeatureId" type="id">
-        </field>
-            <field name="correspondingProductId" type="id">
-        </field>
-            <field name="sourceReferenceId" type="id-long">
-        </field>
-            <field name="sourcePercentage" type="number-decimal">
-        </field>
-            <field name="customerReferenceId" type="id-long">
-        </field>
-            <field name="primaryGeoId" type="id">
-        </field>
-            <field name="secondaryGeoId" type="id">
-        </field>
-            <field name="exemptAmount" type="currency-amount">
-        </field>
-            <field name="taxAuthGeoId" type="id">
-        </field>
-            <field name="taxAuthPartyId" type="id">
-        </field>
-            <field name="overrideGlAccountId" type="id">
-        </field>
-            <field name="includeInTax" type="text-indicator">
-        </field>
-            <field name="includeInShipping" type="text-indicator">
-        </field>
-            <field name="createdDate" type="date-time">
-        </field>
-            <field name="createdByUserLogin" type="id-long">
-        </field>
-            <field name="lastModifiedDate" type="date-time">
-        </field>
-            <field name="lastModifiedByUserLogin" type="id-long">
-        </field>
+<description>Note that both includeInTax and includeInShipping should default to true, except in the case where this adjustment is a tax or shipping adjustment then should be ignored.</description>        <field name="quoteAdjustmentId" type="id" is-pk="true"></field>
+        <field name="quoteAdjustmentTypeId" type="id"></field>
+        <field name="quoteId" type="id"></field>
+        <field name="quoteItemSeqId" type="id"></field>
+        <field name="comments" type="text-long"></field>
+        <field name="description" type="text-long"></field>
+        <field name="amount" type="currency-amount"></field>
+        <field name="productPromoId" type="id"></field>
+        <field name="productPromoRuleId" type="id"></field>
+        <field name="productPromoActionSeqId" type="id"></field>
+        <field name="productFeatureId" type="id"></field>
+        <field name="correspondingProductId" type="id"></field>
+        <field name="sourceReferenceId" type="id-long"></field>
+        <field name="sourcePercentage" type="number-decimal"></field>
+        <field name="customerReferenceId" type="id-long"></field>
+        <field name="primaryGeoId" type="id"></field>
+        <field name="secondaryGeoId" type="id"></field>
+        <field name="exemptAmount" type="currency-amount"></field>
+        <field name="taxAuthGeoId" type="id"></field>
+        <field name="taxAuthPartyId" type="id"></field>
+        <field name="overrideGlAccountId" type="id"></field>
+        <field name="includeInTax" type="text-indicator"></field>
+        <field name="includeInShipping" type="text-indicator"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="lastModifiedDate" type="date-time"></field>
+        <field name="lastModifiedByUserLogin" type="id-long"></field>
         <relationship type="one" fk-name="QUOTE_ADJ_TYPE" related="org.apache.ofbiz.order.order.OrderAdjustmentType">
             <key-map field-name="quoteAdjustmentTypeId" related="orderAdjustmentTypeId"/>
         </relationship>
@@ -1833,52 +1390,32 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequest" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="custRequestTypeId" type="id">
-        </field>
-            <field name="custRequestCategoryId" type="id">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="fromPartyId" type="id">
-        </field>
-            <field name="priority" type="number-integer">
-        </field>
-            <field name="custRequestDate" type="date-time">
-        </field>
-            <field name="responseRequiredDate" type="date-time">
-        </field>
-            <field name="custRequestName" type="text-medium">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="maximumAmountUomId" type="id">
-        </field>
-            <field name="productStoreId" type="id">
-        </field>
-            <field name="salesChannelEnumId" type="id">
-        </field>
-            <field name="fulfillContactMechId" type="id">
-        </field>
-            <field name="currencyUomId" type="id">
-        </field>
-            <field name="openDateTime" type="date-time">
-        </field>
-            <field name="closedDateTime" type="date-time">
-        </field>
-            <field name="internalComment" type="text-long">
-        </field>
-            <field name="reason" type="text-long">
-        </field>
-            <field name="createdDate" type="date-time">
-        </field>
-            <field name="createdByUserLogin" type="id-long">
-        </field>
-            <field name="lastModifiedDate" type="date-time">
-        </field>
-            <field name="lastModifiedByUserLogin" type="id-long">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="custRequestTypeId" type="id"></field>
+        <field name="custRequestCategoryId" type="id"></field>
+        <field name="statusId" type="id"></field>
+        <field name="fromPartyId" type="id"></field>
+        <field name="priority" type="number-integer"></field>
+        <field name="custRequestDate" type="date-time"><description>When the customer (or whoever) submitted the request, maybe out of OFBiz : comming by mail, email, etc.</description></field>
+        <field name="responseRequiredDate" type="date-time"><description>responseRequiredDate is the time the customer needs a response.</description></field>
+        <field name="custRequestName" type="text-medium"></field>
+        <field name="description" type="text-long"></field>
+        <field name="maximumAmountUomId" type="id"></field>
+        <field name="productStoreId" type="id"></field>
+        <field name="salesChannelEnumId" type="id"></field>
+        <field name="fulfillContactMechId" type="id"><description>Field to support a location of a cust request--ie, product literature sent to an address, service call at a localtion, etc.</description></field>
+        <field name="currencyUomId" type="id"></field>
+        <field name="openDateTime" type="date-time"><description>Used when the customer service person, or anyone assigned to handle the incoming request, opens it for action.
+          You  cantake the customer requestdate and openDateTime to see the efficiency of the customer service people.</description></field>
+        <field name="closedDateTime" type="date-time"><description>Used when the customer service person, or anyone assigned to handle the incoming request, closes it as resolution.
+          In some customer response systems, the openDateTime and closedDateTime can happen more than once as the customer is not satified with the resolution.</description></field>
+        <field name="internalComment" type="text-long"></field>
+        <field name="reason" type="text-long"></field>
+        <field name="createdDate" type="date-time"><description>When it is actually stored in the system.</description></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="lastModifiedDate" type="date-time"><description>Last modified date can be till the closedDateTime which is when the customer service people, or anyone assigned to handle the incoming request, says it is resolved.
+          This gives when the last action was done to see if the steps to resolve the request are happening in a timely manner.</description></field>
+        <field name="lastModifiedByUserLogin" type="id-long"></field>
         <relationship type="one" fk-name="CUST_REQ_TYPE" related="org.apache.ofbiz.order.request.CustRequestType">
             <key-map field-name="custRequestTypeId"/>
         </relationship>
@@ -1911,14 +1448,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestAttribute" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="attrValue" type="text-long">
-        </field>
-            <field name="attrDescription" type="text-long">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="attrValue" type="text-long"></field>
+        <field name="attrDescription" type="text-long"></field>
         <relationship type="one" fk-name="CUST_REQ_ATTR" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -1927,21 +1460,16 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestCategory" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestCategoryId" type="id" is-pk="true">
-        </field>
-            <field name="custRequestTypeId" type="id">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="custRequestCategoryId" type="id" is-pk="true"></field>
+        <field name="custRequestTypeId" type="id"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="CUST_RQCT_TYPE" related="org.apache.ofbiz.order.request.CustRequestType">
             <key-map field-name="custRequestTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="CustRequestCommEvent" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="communicationEventId" type="id" is-pk="true">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="communicationEventId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="CUSTREQ_CEV_CRQ" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -1950,14 +1478,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestContent" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="contentId" type="id" is-pk="true">
-        </field>
-            <field name="fromDate" type="date-time" is-pk="true">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="contentId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="CUSTREQ_CNT_CUSTRQ" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -1966,40 +1490,23 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestItem" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="custRequestItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="custRequestResolutionId" type="id">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="priority" type="number-integer">
-        </field>
-            <field name="sequenceNum" type="number-integer">
-        </field>
-            <field name="requiredByDate" type="date-time">
-        </field>
-            <field name="productId" type="id">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="selectedAmount" type="number-decimal">
-        </field>
-            <field name="maximumAmount" type="currency-amount">
-        </field>
-            <field name="reservStart" type="date-time">
-        </field>
-            <field name="reservLength" type="number-decimal">
-        </field>
-            <field name="reservPersons" type="number-decimal">
-        </field>
-            <field name="configId" type="id">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="story" type="text-very-long">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="custRequestItemSeqId" type="id" is-pk="true"></field>
+        <field name="custRequestResolutionId" type="id"></field>
+        <field name="statusId" type="id"></field>
+        <field name="priority" type="number-integer"></field>
+        <field name="sequenceNum" type="number-integer"></field>
+        <field name="requiredByDate" type="date-time"></field>
+        <field name="productId" type="id"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="selectedAmount" type="number-decimal"></field>
+        <field name="maximumAmount" type="currency-amount"></field>
+        <field name="reservStart" type="date-time"></field>
+        <field name="reservLength" type="number-decimal"></field>
+        <field name="reservPersons" type="number-decimal"></field>
+        <field name="configId" type="id"></field>
+        <field name="description" type="text-long"></field>
+        <field name="story" type="text-very-long"></field>
         <relationship type="one" fk-name="CUST_REQITM_CREQ" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -2014,10 +1521,8 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestNote" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="noteId" type="id" is-pk="true">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="noteId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="CRQ_CR" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -2026,12 +1531,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestItemNote" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="custRequestItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="noteId" type="id" is-pk="true">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="custRequestItemSeqId" type="id" is-pk="true"></field>
+        <field name="noteId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="CUST_REQ_ITNT" related="org.apache.ofbiz.order.request.CustRequestItem">
             <key-map field-name="custRequestId"/>
             <key-map field-name="custRequestItemSeqId"/>
@@ -2041,12 +1543,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestItemWorkEffort" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="custRequestItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="workEffortId" type="id" is-pk="true">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="custRequestItemSeqId" type="id" is-pk="true"></field>
+        <field name="workEffortId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="WORK_REQFL_CSTRQ" related="org.apache.ofbiz.order.request.CustRequestItem">
             <key-map field-name="custRequestId"/>
             <key-map field-name="custRequestItemSeqId"/>
@@ -2059,27 +1558,19 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestResolution" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestResolutionId" type="id" is-pk="true">
-        </field>
-            <field name="custRequestTypeId" type="id">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="custRequestResolutionId" type="id" is-pk="true"></field>
+        <field name="custRequestTypeId" type="id"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="CUST_RQRS_TYPE" related="org.apache.ofbiz.order.request.CustRequestType">
             <key-map field-name="custRequestTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="CustRequestParty" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="partyId" type="id" is-pk="true">
-        </field>
-            <field name="roleTypeId" type="id" is-pk="true">
-        </field>
-            <field name="fromDate" type="date-time" is-pk="true">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="partyId" type="id" is-pk="true"></field>
+        <field name="roleTypeId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="CREQ_RL_CRQST" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -2095,18 +1586,12 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestStatus" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestStatusId" type="id" is-pk="true">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="custRequestId" type="id">
-        </field>
-            <field name="custRequestItemSeqId" type="id">
-        </field>
-            <field name="statusDate" type="date-time">
-        </field>
-            <field name="changeByUserLoginId" type="id-long">
-        </field>
+        <field name="custRequestStatusId" type="id" is-pk="true"></field>
+        <field name="statusId" type="id"></field>
+        <field name="custRequestId" type="id"></field>
+        <field name="custRequestItemSeqId" type="id"></field>
+        <field name="statusDate" type="date-time"></field>
+        <field name="changeByUserLoginId" type="id-long"></field>
         <relationship type="one" fk-name="CUST_REQST_STTS" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
@@ -2122,16 +1607,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestType" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="hasTable" type="text-indicator">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="partyId" type="id">
-        </field>
+        <field name="custRequestTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-long"></field>
+        <field name="partyId" type="id"><description>party or party group(via partyRelationShip entity) responsible for responding to the communication request of this particular type</description></field>
         <relationship type="one" fk-name="CUST_REQ_TYPE_PAR" title="Parent" related="org.apache.ofbiz.order.request.CustRequestType">
             <key-map field-name="parentTypeId" related="custRequestTypeId"/>
         </relationship>
@@ -2143,12 +1623,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestTypeAttr" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestTypeId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="custRequestTypeId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="CUST_REQ_TYPE_ATTR" related="org.apache.ofbiz.order.request.CustRequestType">
             <key-map field-name="custRequestTypeId"/>
         </relationship>
@@ -2160,10 +1637,8 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CustRequestWorkEffort" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="workEffortId" type="id" is-pk="true">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="workEffortId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="CSTREQ_WF_CREQ" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -2172,16 +1647,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="RespondingParty" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-            <field name="respondingPartySeqId" type="id" is-pk="true">
-        </field>
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="partyId" type="id" is-pk="true">
-        </field>
-            <field name="contactMechId" type="id">
-        </field>
-            <field name="dateSent" type="date-time">
-        </field>
+        <field name="respondingPartySeqId" type="id" is-pk="true"></field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="partyId" type="id" is-pk="true"></field>
+        <field name="contactMechId" type="id"></field>
+        <field name="dateSent" type="date-time"></field>
         <relationship type="one" fk-name="RESP_PTY_CSREQ" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -2193,14 +1663,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="DesiredFeature" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="desiredFeatureId" type="id" is-pk="true">
-        </field>
-            <field name="requirementId" type="id" is-pk="true">
-        </field>
-            <field name="productFeatureId" type="id">
-        </field>
-            <field name="optionalInd" type="text-indicator">
-        </field>
+        <field name="desiredFeatureId" type="id" is-pk="true"></field>
+        <field name="requirementId" type="id" is-pk="true"></field>
+        <field name="productFeatureId" type="id"></field>
+        <field name="optionalInd" type="text-indicator"></field>
         <relationship type="one" fk-name="DES_FEAT_REQ" related="org.apache.ofbiz.order.requirement.Requirement">
             <key-map field-name="requirementId"/>
         </relationship>
@@ -2209,14 +1675,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderRequirementCommitment" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="orderId" type="id" is-pk="true">
-        </field>
-            <field name="orderItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="requirementId" type="id" is-pk="true">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="requirementId" type="id" is-pk="true"></field>
+        <field name="quantity" type="number-decimal"></field>
         <relationship type="one" fk-name="ORDREQ_CMT_ORD" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -2229,42 +1691,24 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="Requirement" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="requirementId" type="id" is-pk="true">
-        </field>
-            <field name="requirementTypeId" type="id">
-        </field>
-            <field name="facilityId" type="id">
-        </field>
-            <field name="deliverableId" type="id">
-        </field>
-            <field name="fixedAssetId" type="id">
-        </field>
-            <field name="productId" type="id">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="requirementStartDate" type="date-time">
-        </field>
-            <field name="requiredByDate" type="date-time">
-        </field>
-            <field name="estimatedBudget" type="currency-amount">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="useCase" type="text-very-long">
-        </field>
-            <field name="reason" type="text-long">
-        </field>
-            <field name="createdDate" type="date-time">
-        </field>
-            <field name="createdByUserLogin" type="id-long">
-        </field>
-            <field name="lastModifiedDate" type="date-time">
-        </field>
-            <field name="lastModifiedByUserLogin" type="id-long">
-        </field>
+        <field name="requirementId" type="id" is-pk="true"></field>
+        <field name="requirementTypeId" type="id"></field>
+        <field name="facilityId" type="id"></field>
+        <field name="deliverableId" type="id"></field>
+        <field name="fixedAssetId" type="id"></field>
+        <field name="productId" type="id"></field>
+        <field name="statusId" type="id"></field>
+        <field name="description" type="text-long"></field>
+        <field name="requirementStartDate" type="date-time"></field>
+        <field name="requiredByDate" type="date-time"></field>
+        <field name="estimatedBudget" type="currency-amount"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="useCase" type="text-very-long"></field>
+        <field name="reason" type="text-long"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="lastModifiedDate" type="date-time"></field>
+        <field name="lastModifiedByUserLogin" type="id-long"></field>
         <relationship type="one" fk-name="REQ_TYPE" related="org.apache.ofbiz.order.requirement.RequirementType">
             <key-map field-name="requirementTypeId"/>
         </relationship>
@@ -2288,14 +1732,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="RequirementAttribute" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="requirementId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="attrValue" type="text-long">
-        </field>
-            <field name="attrDescription" type="text-long">
-        </field>
+        <field name="requirementId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="attrValue" type="text-long"></field>
+        <field name="attrDescription" type="text-long"></field>
         <relationship type="one" fk-name="REQ_ATTR" related="org.apache.ofbiz.order.requirement.Requirement">
             <key-map field-name="requirementId"/>
         </relationship>
@@ -2304,14 +1744,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="RequirementBudgetAllocation" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="budgetId" type="id" is-pk="true">
-        </field>
-            <field name="budgetItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="requirementId" type="id" is-pk="true">
-        </field>
-            <field name="amount" type="currency-amount">
-        </field>
+        <field name="budgetId" type="id" is-pk="true"></field>
+        <field name="budgetItemSeqId" type="id" is-pk="true"></field>
+        <field name="requirementId" type="id" is-pk="true"></field>
+        <field name="amount" type="currency-amount"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.accounting.budget.Budget">
             <key-map field-name="budgetId"/>
         </relationship>
@@ -2324,12 +1760,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="RequirementCustRequest" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="custRequestId" type="id" is-pk="true">
-        </field>
-            <field name="custRequestItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="requirementId" type="id" is-pk="true">
-        </field>
+        <field name="custRequestId" type="id" is-pk="true"></field>
+        <field name="custRequestItemSeqId" type="id" is-pk="true"></field>
+        <field name="requirementId" type="id" is-pk="true"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -2342,16 +1775,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="RequirementRole" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="requirementId" type="id" is-pk="true">
-        </field>
-            <field name="partyId" type="id" is-pk="true">
-        </field>
-            <field name="roleTypeId" type="id" is-pk="true">
-        </field>
-            <field name="fromDate" type="date-time" is-pk="true">
-        </field>
-            <field name="thruDate" type="date-time">
-        </field>
+        <field name="requirementId" type="id" is-pk="true"></field>
+        <field name="partyId" type="id" is-pk="true"></field>
+        <field name="roleTypeId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="REQ_ROLE_REQ" related="org.apache.ofbiz.order.requirement.Requirement">
             <key-map field-name="requirementId"/>
         </relationship>
@@ -2364,14 +1792,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="RequirementStatus" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="requirementId" type="id" is-pk="true">
-        </field>
-            <field name="statusId" type="id" is-pk="true">
-        </field>
-            <field name="statusDate" type="date-time">
-        </field>
-            <field name="changeByUserLoginId" type="id-long">
-        </field>
+        <field name="requirementId" type="id" is-pk="true"></field>
+        <field name="statusId" type="id" is-pk="true"></field>
+        <field name="statusDate" type="date-time"></field>
+        <field name="changeByUserLoginId" type="id-long"></field>
         <relationship type="one" fk-name="REQ_STTS_REQ" related="org.apache.ofbiz.order.requirement.Requirement">
             <key-map field-name="requirementId"/>
         </relationship>
@@ -2383,25 +1807,18 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="RequirementType" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="requirementTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="hasTable" type="text-indicator">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="requirementTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="REQ_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.order.requirement.RequirementType">
             <key-map field-name="parentTypeId" related="requirementTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="RequirementTypeAttr" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="requirementTypeId" type="id" is-pk="true">
-        </field>
-            <field name="attrName" type="id-long" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="requirementTypeId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="REQ_TYPE_ATTR" related="org.apache.ofbiz.order.requirement.RequirementType">
             <key-map field-name="requirementTypeId"/>
         </relationship>
@@ -2413,18 +1830,13 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="WorkReqFulfType" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="workReqFulfTypeId" type="id" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="workReqFulfTypeId" type="id" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
     </entity>
     <entity entity-name="WorkRequirementFulfillment" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-            <field name="requirementId" type="id" is-pk="true">
-        </field>
-            <field name="workEffortId" type="id" is-pk="true">
-        </field>
-            <field name="workReqFulfTypeId" type="id">
-        </field>
+        <field name="requirementId" type="id" is-pk="true"></field>
+        <field name="workEffortId" type="id" is-pk="true"></field>
+        <field name="workReqFulfTypeId" type="id"></field>
         <relationship type="one" fk-name="WORK_REQFL_REQ" related="org.apache.ofbiz.order.requirement.Requirement">
             <key-map field-name="requirementId"/>
         </relationship>
@@ -2436,68 +1848,39 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ReturnAdjustment" package="org.apache.ofbiz.order.return" cache="never" group="ofbiz_transactional">
-            <field name="returnAdjustmentId" type="id" is-pk="true">
-        </field>
-            <field name="returnAdjustmentTypeId" type="id">
-        </field>
-            <field name="returnId" type="id">
-        </field>
-            <field name="returnItemSeqId" type="id">
-        </field>
-            <field name="shipGroupSeqId" type="id">
-        </field>
-            <field name="comments" type="text-very-long">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="returnTypeId" type="id">
-        </field>
-            <field name="orderAdjustmentId" type="id">
-        </field>
-            <field name="amount" type="currency-precise">
-        </field>
-            <field name="productPromoId" type="id">
-        </field>
-            <field name="productPromoRuleId" type="id">
-        </field>
-            <field name="productPromoActionSeqId" type="id">
-        </field>
-            <field name="productFeatureId" type="id">
-        </field>
-            <field name="correspondingProductId" type="id">
-        </field>
-            <field name="taxAuthorityRateSeqId" type="id">
-        </field>
-            <field name="sourceReferenceId" type="id-long">
-        </field>
-            <field name="sourcePercentage" type="number-decimal">
-        </field>
-            <field name="customerReferenceId" type="id-long">
-        </field>
-            <field name="primaryGeoId" type="id">
-        </field>
-            <field name="secondaryGeoId" type="id">
-        </field>
-            <field name="exemptAmount" type="currency-amount">
-        </field>
-            <field name="taxAuthGeoId" type="id">
-        </field>
-            <field name="taxAuthPartyId" type="id">
-        </field>
-            <field name="overrideGlAccountId" type="id">
-        </field>
-            <field name="includeInTax" type="text-indicator">
-        </field>
-            <field name="includeInShipping" type="text-indicator">
-        </field>
-            <field name="createdDate" type="date-time">
-        </field>
-            <field name="createdByUserLogin" type="id-long">
-        </field>
-            <field name="lastModifiedDate" type="date-time">
-        </field>
-            <field name="lastModifiedByUserLogin" type="id-long">
-        </field>
+<description>Tax, shipping, and promotional adjustments which are carried over from the order to the return.
+        Note that both includeInTax and includeInShipping should default to true, except in the case where this adjustment is a tax or shipping adjustment
+        then should be ignored.</description>        <field name="returnAdjustmentId" type="id" is-pk="true"></field>
+        <field name="returnAdjustmentTypeId" type="id"></field>
+        <field name="returnId" type="id"></field>
+        <field name="returnItemSeqId" type="id"></field>
+        <field name="shipGroupSeqId" type="id"></field>
+        <field name="comments" type="text-very-long"></field>
+        <field name="description" type="text-long"></field>
+        <field name="returnTypeId" type="id"><description>actually used for disbursement type: store credit, cash refund, exchange</description></field>
+        <field name="orderAdjustmentId" type="id"></field>
+        <field name="amount" type="currency-precise"></field>
+        <field name="productPromoId" type="id"></field>
+        <field name="productPromoRuleId" type="id"></field>
+        <field name="productPromoActionSeqId" type="id"></field>
+        <field name="productFeatureId" type="id"></field>
+        <field name="correspondingProductId" type="id"></field>
+        <field name="taxAuthorityRateSeqId" type="id"></field>
+        <field name="sourceReferenceId" type="id-long"></field>
+        <field name="sourcePercentage" type="number-decimal"><description>for tax entries this is the tax percentage</description></field>
+        <field name="customerReferenceId" type="id-long"><description>for tax entries this is partyTaxId</description></field>
+        <field name="primaryGeoId" type="id"><description>for tax entries this is the primary jurisdiction Geo (the smallest or most local Geo that this tax is for, usually a state/province, perhaps a county or a city)</description></field>
+        <field name="secondaryGeoId" type="id"><description>for tax entries this is the secondary jurisdiction Geo (usually a country, or other Geo that the primary is within)</description></field>
+        <field name="exemptAmount" type="currency-amount"><description>an amount that would normally apply, but not to this order; for tax exemption represents the what the tax would have been</description></field>
+        <field name="taxAuthGeoId" type="id"><description>these taxAuth fields deprecate the primaryGeoId and secondaryGeoId fields and will be used with the newer tax calc stuff</description></field>
+        <field name="taxAuthPartyId" type="id"></field>
+        <field name="overrideGlAccountId" type="id"><description>used to specify the override or actual glAccountId used for the adjustment, avoids problems if configuration changes after initial posting, etc</description></field>
+        <field name="includeInTax" type="text-indicator"></field>
+        <field name="includeInShipping" type="text-indicator"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="lastModifiedDate" type="date-time"></field>
+        <field name="lastModifiedByUserLogin" type="id-long"></field>
         <relationship type="one" fk-name="RETURN_ADJ_TYPE" related="org.apache.ofbiz.order.return.ReturnAdjustmentType">
             <key-map field-name="returnAdjustmentTypeId"/>
         </relationship>
@@ -2547,53 +1930,32 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ReturnAdjustmentType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnAdjustmentTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="hasTable" type="text-indicator">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="returnAdjustmentTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="RETURN_ADJ_TYPPAR" title="Parent" related="org.apache.ofbiz.order.return.ReturnAdjustmentType">
             <key-map field-name="parentTypeId" related="returnAdjustmentTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="ReturnHeader" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnId" type="id" is-pk="true">
-        </field>
-            <field name="externalId" type="id-long">
-        </field>
-            <field name="returnHeaderTypeId" type="id">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="createdBy" type="id-long">
-        </field>
-            <field name="fromPartyId" type="id">
-        </field>
-            <field name="toPartyId" type="id">
-        </field>
-            <field name="paymentMethodId" type="id">
-        </field>
-            <field name="finAccountId" type="id">
-        </field>
-            <field name="billingAccountId" type="id">
-        </field>
-            <field name="entryDate" type="date-time">
-        </field>
-            <field name="originContactMechId" type="id">
-        </field>
-            <field name="destinationFacilityId" type="id">
-        </field>
-            <field name="needsInventoryReceive" type="text-indicator">
-        </field>
-            <field name="currencyUomId" type="id">
-        </field>
-            <field name="supplierRmaId" type="id">
-        </field>
-            <field name="returnChannelEnumId" type="id">
-        </field>
+        <field name="returnId" type="id" is-pk="true"></field>
+        <field name="externalId" type="id-long"><description>This field stores return ID of the external system</description></field>
+        <field name="returnHeaderTypeId" type="id"></field>
+        <field name="statusId" type="id"></field>
+        <field name="createdBy" type="id-long"></field>
+        <field name="fromPartyId" type="id"></field>
+        <field name="toPartyId" type="id"></field>
+        <field name="paymentMethodId" type="id"></field>
+        <field name="finAccountId" type="id"></field>
+        <field name="billingAccountId" type="id"></field>
+        <field name="entryDate" type="date-time"></field>
+        <field name="originContactMechId" type="id"></field>
+        <field name="destinationFacilityId" type="id"></field>
+        <field name="needsInventoryReceive" type="text-indicator"></field>
+        <field name="currencyUomId" type="id"></field>
+        <field name="supplierRmaId" type="id"></field>
+        <field name="returnChannelEnumId" type="id"></field>
         <relationship type="one" fk-name="RTN_HEAD_TYPE" related="org.apache.ofbiz.order.return.ReturnHeaderType">
             <key-map field-name="returnHeaderTypeId"/>
         </relationship>
@@ -2638,47 +2000,29 @@ under the License.
         </index>
     </entity>
     <entity entity-name="ReturnHeaderType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnHeaderTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="returnHeaderTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="RTHEAD_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.order.return.ReturnHeaderType">
             <key-map field-name="parentTypeId" related="returnHeaderTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="ReturnItem" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnId" type="id" is-pk="true">
-        </field>
-            <field name="returnItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="returnReasonId" type="id" enable-audit-log="true">
-        </field>
-            <field name="returnTypeId" type="id" enable-audit-log="true">
-        </field>
-            <field name="returnItemTypeId" type="id">
-        </field>
-            <field name="productId" type="id">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="orderId" type="id">
-        </field>
-            <field name="orderItemSeqId" type="id">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="expectedItemStatus" type="id">
-        </field>
-            <field name="returnQuantity" type="number-decimal" enable-audit-log="true">
-        </field>
-            <field name="receivedQuantity" type="number-decimal" enable-audit-log="true">
-        </field>
-            <field name="returnPrice" type="currency-amount" enable-audit-log="true">
-        </field>
-            <field name="returnItemResponseId" type="id">
-        </field>
+        <field name="returnId" type="id" is-pk="true"></field>
+        <field name="returnItemSeqId" type="id" is-pk="true"></field>
+        <field name="returnReasonId" type="id" enable-audit-log="true"><description>why item is returned: did not like, wrong item, damaged, etc. etc.</description></field>
+        <field name="returnTypeId" type="id" enable-audit-log="true"><description>actually used for disbursement type: store credit, cash refund, exchange</description></field>
+        <field name="returnItemTypeId" type="id"><description>what is returned: a product, a service, etc</description></field>
+        <field name="productId" type="id"><description>we need this field to be able to figure out net sales of a product</description></field>
+        <field name="description" type="text-long"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="statusId" type="id"></field>
+        <field name="expectedItemStatus" type="id"></field>
+        <field name="returnQuantity" type="number-decimal" enable-audit-log="true"><description>promised by the customer</description></field>
+        <field name="receivedQuantity" type="number-decimal" enable-audit-log="true"><description>actually received from the customer</description></field>
+        <field name="returnPrice" type="currency-amount" enable-audit-log="true"></field>
+        <field name="returnItemResponseId" type="id"></field>
         <relationship type="one" fk-name="RTN_ITEM_RTN" related="org.apache.ofbiz.order.return.ReturnHeader">
             <key-map field-name="returnId"/>
         </relationship>
@@ -2720,22 +2064,14 @@ under the License.
         </index>
     </entity>
     <entity entity-name="ReturnItemResponse" package="org.apache.ofbiz.order.return" cache="never" group="ofbiz_transactional">
-            <field name="returnItemResponseId" type="id" is-pk="true">
-        </field>
-            <field name="orderPaymentPreferenceId" type="id">
-        </field>
-            <field name="replacementOrderId" type="id">
-        </field>
-            <field name="paymentId" type="id">
-        </field>
-            <field name="billingAccountId" type="id">
-        </field>
-            <field name="finAccountTransId" type="id">
-        </field>
-            <field name="responseAmount" type="currency-amount">
-        </field>
-            <field name="responseDate" type="date-time">
-        </field>
+<description>Records what was done with a return: whether a replacement order, a payment, or a billing account credit was issued</description>        <field name="returnItemResponseId" type="id" is-pk="true"></field>
+        <field name="orderPaymentPreferenceId" type="id"></field>
+        <field name="replacementOrderId" type="id"></field>
+        <field name="paymentId" type="id"></field>
+        <field name="billingAccountId" type="id"></field>
+        <field name="finAccountTransId" type="id"></field>
+        <field name="responseAmount" type="currency-amount"></field>
+        <field name="responseDate" type="date-time"></field>
         <relationship type="one" fk-name="RTN_PAY_ORDPAYPF" related="org.apache.ofbiz.order.order.OrderPaymentPreference">
             <key-map field-name="orderPaymentPreferenceId"/>
         </relationship>
@@ -2753,23 +2089,18 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ReturnItemType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnItemTypeId" type="id" is-pk="true">
-        </field>
-            <field name="parentTypeId" type="id">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+<description>ReturnItemType records the type of a ReturnItem</description>        <field name="returnItemTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="RETURN_ITEM_TYPPAR" title="Parent" related="org.apache.ofbiz.order.return.ReturnItemType">
             <key-map field-name="parentTypeId" related="returnItemTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="ReturnItemTypeMap" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnItemMapKey" type="id" is-pk="true">
-        </field>
-            <field name="returnHeaderTypeId" type="id" is-pk="true">
-        </field>
-            <field name="returnItemTypeId" type="id">
-        </field>
+<description>Mapping between productTypeId and returnItemTypeId for product order items, orderItemTypeId and returnItemTypeId for other
+          order items, or orderAdjustmentTypeId and returnAdjustmentTypeId.  Separate mappings for different types of returns (customer vs. vendor)</description>        <field name="returnItemMapKey" type="id" is-pk="true"></field>
+        <field name="returnHeaderTypeId" type="id" is-pk="true"></field>
+        <field name="returnItemTypeId" type="id"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.return.ReturnItemType">
             <key-map field-name="returnItemTypeId"/>
         </relationship>
@@ -2781,26 +2112,17 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ReturnReason" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnReasonId" type="id" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="sequenceId" type="id">
-        </field>
+        <field name="returnReasonId" type="id" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
+        <field name="sequenceId" type="id"></field>
     </entity>
     <entity entity-name="ReturnStatus" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnStatusId" type="id" is-pk="true">
-        </field>
-            <field name="statusId" type="id">
-        </field>
-            <field name="returnId" type="id">
-        </field>
-            <field name="returnItemSeqId" type="id">
-        </field>
-            <field name="changeByUserLoginId" type="id-long">
-        </field>
-            <field name="statusDatetime" type="date-time">
-        </field>
+        <field name="returnStatusId" type="id" is-pk="true"></field>
+        <field name="statusId" type="id"></field>
+        <field name="returnId" type="id"></field>
+        <field name="returnItemSeqId" type="id"></field>
+        <field name="changeByUserLoginId" type="id-long"></field>
+        <field name="statusDatetime" type="date-time"></field>
         <relationship type="one" fk-name="RTN_STTS_STTS" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
@@ -2816,28 +2138,18 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ReturnType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnTypeId" type="id" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="sequenceId" type="id">
-        </field>
+        <field name="returnTypeId" type="id" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
+        <field name="sequenceId" type="id"></field>
     </entity>
     <entity entity-name="ReturnItemBilling" package="org.apache.ofbiz.order.return" cache="never" group="ofbiz_transactional">
-            <field name="returnId" type="id" is-pk="true">
-        </field>
-            <field name="returnItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="invoiceId" type="id" is-pk="true">
-        </field>
-            <field name="invoiceItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="shipmentReceiptId" type="id">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="amount" type="currency-amount">
-        </field>
+        <field name="returnId" type="id" is-pk="true"></field>
+        <field name="returnItemSeqId" type="id" is-pk="true"></field>
+        <field name="invoiceId" type="id" is-pk="true"></field>
+        <field name="invoiceItemSeqId" type="id" is-pk="true"></field>
+        <field name="shipmentReceiptId" type="id"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="amount" type="currency-amount"></field>
         <relationship type="one" fk-name="RTN_ITBLNG_RHDR" related="org.apache.ofbiz.order.return.ReturnHeader">
             <key-map field-name="returnId"/>
         </relationship>
@@ -2857,16 +2169,11 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ReturnItemShipment" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnId" type="id" is-pk="true">
-        </field>
-            <field name="returnItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="shipmentId" type="id" is-pk="true">
-        </field>
-            <field name="shipmentItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
+        <field name="returnId" type="id" is-pk="true"></field>
+        <field name="returnItemSeqId" type="id" is-pk="true"></field>
+        <field name="shipmentId" type="id" is-pk="true"></field>
+        <field name="shipmentItemSeqId" type="id" is-pk="true"></field>
+        <field name="quantity" type="number-decimal"></field>
         <relationship type="one" fk-name="RIT_SHPMT_RHDR" related="org.apache.ofbiz.order.return.ReturnHeader">
             <key-map field-name="returnId"/>
         </relationship>
@@ -2883,10 +2190,8 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CommunicationEventReturn" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
-            <field name="returnId" type="id" is-pk="true">
-        </field>
-            <field name="communicationEventId" type="id" is-pk="true">
-        </field>
+        <field name="returnId" type="id" is-pk="true"></field>
+        <field name="communicationEventId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="COMEV_RTN_RETURN" related="org.apache.ofbiz.order.return.ReturnHeader">
             <key-map field-name="returnId"/>
         </relationship>
@@ -2895,12 +2200,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ReturnContactMech" package="org.apache.ofbiz.order.return" cache="never" group="ofbiz_transactional">
-            <field name="returnId" type="id" is-pk="true">
-        </field>
-            <field name="contactMechPurposeTypeId" type="id" is-pk="true">
-        </field>
-            <field name="contactMechId" type="id" is-pk="true">
-        </field>
+        <field name="returnId" type="id" is-pk="true"></field>
+        <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
+        <field name="contactMechId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="RETURN_CMECH_HDR" related="org.apache.ofbiz.order.return.ReturnHeader">
             <key-map field-name="returnId"/>
         </relationship>
@@ -2912,34 +2214,20 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="CartAbandonedLine" package="org.apache.ofbiz.order.shoppingcart" cache="never" group="ofbiz_transactional">
-            <field name="visitId" type="id" is-pk="true">
-        </field>
-            <field name="cartAbandonedLineSeqId" type="id" is-pk="true">
-        </field>
-            <field name="productId" type="id">
-        </field>
-            <field name="prodCatalogId" type="id">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="reservStart" type="date-time">
-        </field>
-            <field name="reservLength" type="number-decimal">
-        </field>
-            <field name="reservPersons" type="number-decimal">
-        </field>
-            <field name="unitPrice" type="currency-amount">
-        </field>
-            <field name="reserv2ndPPPerc" type="number-decimal">
-        </field>
-            <field name="reservNthPPPerc" type="number-decimal">
-        </field>
-            <field name="configId" type="id">
-        </field>
-            <field name="totalWithAdjustments" type="currency-amount">
-        </field>
-            <field name="wasReserved" type="text-indicator">
-        </field>
+        <field name="visitId" type="id" is-pk="true"></field>
+        <field name="cartAbandonedLineSeqId" type="id" is-pk="true"></field>
+        <field name="productId" type="id"></field>
+        <field name="prodCatalogId" type="id"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="reservStart" type="date-time"></field>
+        <field name="reservLength" type="number-decimal"></field>
+        <field name="reservPersons" type="number-decimal"></field>
+        <field name="unitPrice" type="currency-amount"></field>
+        <field name="reserv2ndPPPerc" type="number-decimal"></field>
+        <field name="reservNthPPPerc" type="number-decimal"></field>
+        <field name="configId" type="id"></field>
+        <field name="totalWithAdjustments" type="currency-amount"></field>
+        <field name="wasReserved" type="text-indicator"></field>
         <relationship type="one" fk-name="CART_ABLN_PRD" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
         </relationship>
@@ -2948,46 +2236,26 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ShoppingList" package="org.apache.ofbiz.order.shoppinglist" group="ofbiz_transactional">
-            <field name="shoppingListId" type="id" is-pk="true">
-        </field>
-            <field name="shoppingListTypeId" type="id">
-        </field>
-            <field name="parentShoppingListId" type="id">
-        </field>
-            <field name="productStoreId" type="id">
-        </field>
-            <field name="visitorId" type="id">
-        </field>
-            <field name="partyId" type="id">
-        </field>
-            <field name="listName" type="text-medium">
-        </field>
-            <field name="description" type="text-long">
-        </field>
-            <field name="isPublic" type="text-indicator">
-        </field>
-            <field name="isActive" type="text-indicator">
-        </field>
-            <field name="currencyUom" type="id">
-        </field>
-            <field name="shipmentMethodTypeId" type="id">
-        </field>
-            <field name="carrierPartyId" type="id">
-        </field>
-            <field name="carrierRoleTypeId" type="id">
-        </field>
-            <field name="contactMechId" type="id">
-        </field>
-            <field name="paymentMethodId" type="id">
-        </field>
-            <field name="recurrenceInfoId" type="id">
-        </field>
-            <field name="lastOrderedDate" type="date-time">
-        </field>
-            <field name="lastAdminModified" type="date-time">
-        </field>
-            <field name="productPromoCodeId" type="id">
-        </field>
+        <field name="shoppingListId" type="id" is-pk="true"></field>
+        <field name="shoppingListTypeId" type="id"></field>
+        <field name="parentShoppingListId" type="id"></field>
+        <field name="productStoreId" type="id"></field>
+        <field name="visitorId" type="id"></field>
+        <field name="partyId" type="id"></field>
+        <field name="listName" type="text-medium"></field>
+        <field name="description" type="text-long"></field>
+        <field name="isPublic" type="text-indicator"></field>
+        <field name="isActive" type="text-indicator"></field>
+        <field name="currencyUom" type="id"></field>
+        <field name="shipmentMethodTypeId" type="id"></field>
+        <field name="carrierPartyId" type="id"></field>
+        <field name="carrierRoleTypeId" type="id"></field>
+        <field name="contactMechId" type="id"></field>
+        <field name="paymentMethodId" type="id"></field>
+        <field name="recurrenceInfoId" type="id"></field>
+        <field name="lastOrderedDate" type="date-time"></field>
+        <field name="lastAdminModified" type="date-time"></field>
+        <field name="productPromoCodeId" type="id"></field>
         <relationship type="one" fk-name="SHLIST_PARENT" title="Parent" related="org.apache.ofbiz.order.shoppinglist.ShoppingList">
             <key-map field-name="parentShoppingListId" related="shoppingListId"/>
         </relationship>
@@ -3031,26 +2299,16 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ShoppingListItem" package="org.apache.ofbiz.order.shoppinglist" group="ofbiz_transactional">
-            <field name="shoppingListId" type="id" is-pk="true">
-        </field>
-            <field name="shoppingListItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="productId" type="id">
-        </field>
-            <field name="quantity" type="number-decimal">
-        </field>
-            <field name="modifiedPrice" type="currency-precise">
-        </field>
-            <field name="reservStart" type="date-time">
-        </field>
-            <field name="reservLength" type="number-decimal">
-        </field>
-            <field name="reservPersons" type="number-decimal">
-        </field>
-            <field name="quantityPurchased" type="number-decimal">
-        </field>
-            <field name="configId" type="id">
-        </field>
+        <field name="shoppingListId" type="id" is-pk="true"></field>
+        <field name="shoppingListItemSeqId" type="id" is-pk="true"></field>
+        <field name="productId" type="id"></field>
+        <field name="quantity" type="number-decimal"></field>
+        <field name="modifiedPrice" type="currency-precise"></field>
+        <field name="reservStart" type="date-time"></field>
+        <field name="reservLength" type="number-decimal"></field>
+        <field name="reservPersons" type="number-decimal"></field>
+        <field name="quantityPurchased" type="number-decimal"></field>
+        <field name="configId" type="id"></field>
         <relationship type="one" fk-name="SHLIST_ITEM_LIST" related="org.apache.ofbiz.order.shoppinglist.ShoppingList">
             <key-map field-name="shoppingListId"/>
         </relationship>
@@ -3059,12 +2317,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ShoppingListItemSurvey" package="org.apache.ofbiz.order.shoppinglist" group="ofbiz_transactional">
-            <field name="shoppingListId" type="id" is-pk="true">
-        </field>
-            <field name="shoppingListItemSeqId" type="id" is-pk="true">
-        </field>
-            <field name="surveyResponseId" type="id" is-pk="true">
-        </field>
+        <field name="shoppingListId" type="id" is-pk="true"></field>
+        <field name="shoppingListItemSeqId" type="id" is-pk="true"></field>
+        <field name="surveyResponseId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="SHLIST_ITSUR_LIST" related="org.apache.ofbiz.order.shoppinglist.ShoppingList">
             <key-map field-name="shoppingListId"/>
         </relationship>
@@ -3077,16 +2332,12 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ShoppingListType" package="org.apache.ofbiz.order.shoppinglist" group="ofbiz_transactional">
-            <field name="shoppingListTypeId" type="id" is-pk="true">
-        </field>
-            <field name="description" type="text-long">
-        </field>
+        <field name="shoppingListTypeId" type="id" is-pk="true"></field>
+        <field name="description" type="text-long"></field>
     </entity>
     <entity entity-name="ShoppingListWorkEffort" package="org.apache.ofbiz.order.shoppinglist" group="ofbiz_transactional">
-            <field name="shoppingListId" type="id" is-pk="true">
-        </field>
-            <field name="workEffortId" type="id" is-pk="true">
-        </field>
+        <field name="shoppingListId" type="id" is-pk="true"></field>
+        <field name="workEffortId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="SHLISTWE_SHLST" related="org.apache.ofbiz.order.shoppinglist.ShoppingList">
             <key-map field-name="shoppingListId"/>
         </relationship>
