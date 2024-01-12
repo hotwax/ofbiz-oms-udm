@@ -207,7 +207,7 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
         </member-entity>
-        <member-entity entity-alias="EFO" entity-name="co.hotwax.warehouse.ExternalFulfillmentOrderItem" join-from-alias="OISGA" join-optional="true">
+        <member-entity entity-alias="EFO" entity-name="co.hotwax.integration.order.ExternalFulfillmentOrderItem" join-from-alias="OISGA" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
             <key-map field-name="shipGroupSeqId"/>
@@ -310,7 +310,7 @@ under the License.
 
     <view-entity entity-name="ReturnAdjustmentAndHistory" package="co.hotwax.financial" group="ofbiz_transactional">
         <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment"/>
-        <member-entity entity-alias="RAH" entity-name="co.hotwax.common.ReturnAdjustmentHistory" join-from-alias="RA" join-optional="true">
+        <member-entity entity-alias="RAH" entity-name="co.hotwax.integration.order.return.ReturnAdjustmentHistory" join-from-alias="RA" join-optional="true">
             <key-map field-name="returnAdjustmentId"/>
         </member-entity>
         <alias entity-alias="RA" name="returnAdjustmentId"/>
@@ -328,7 +328,7 @@ under the License.
     </view-entity>
     <view-entity entity-name="OrderAdjustmentAndHistory" package="co.hotwax.financial" group="ofbiz_transactional">
         <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment"/>
-        <member-entity entity-alias="OAH" entity-name="co.hotwax.common.OrderAdjustmentHistory" join-from-alias="OA" join-optional="true">
+        <member-entity entity-alias="OAH" entity-name="co.hotwax.integration.order.OrderAdjustmentHistory" join-from-alias="OA" join-optional="true">
             <key-map field-name="orderAdjustmentId"/>
         </member-entity>
         <alias entity-alias="OA" name="orderAdjustmentId"/>
@@ -346,7 +346,7 @@ under the License.
     </view-entity>
     <view-entity entity-name="FulfilledOrderAdjustmentAndHistory" package="co.hotwax.financial" group="ofbiz_transactional">
         <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment"/>
-        <member-entity entity-alias="FOAH" entity-name="co.hotwax.common.FulfilledOrderAdjustmentHistory" join-from-alias="OA" join-optional="true">
+        <member-entity entity-alias="FOAH" entity-name="co.hotwax.integration.order.FulfilledOrderAdjustmentHistory" join-from-alias="OA" join-optional="true">
             <key-map field-name="orderAdjustmentId"/>
         </member-entity>
         <alias entity-alias="OA" name="orderAdjustmentId"/>
@@ -494,7 +494,7 @@ under the License.
                      3. The shipGroupSeqId is not available in OrderFulfillmentHistory entity, this could have created possible issue for the scenario of explode OFF partial fulfillment
                      of an order Item as in that case shipGroupSeqId can be same.
                      4. This will not be an issue as discussed, for this scenario, new orderItem will be created for the remaining quantity for that item.  -->
-        <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.OrderFulfillmentHistory" join-from-alias="OISGA" join-optional="true">
+        <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.order.OrderFulfillmentHistory" join-from-alias="OISGA" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
@@ -592,7 +592,7 @@ under the License.
                    3. The shipGroupSeqId is not available in OrderFulfillmentHistory entity, this could have created possible issue for the scenario of explode OFF partial fulfillment
                    of an order Item as in that case shipGroupSeqId can be same.
                    4. This will not be an issue as discussed, for this scenario, new orderItem will be created for the remaining quantity for that item.  -->
-        <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.OrderFulfillmentHistory" join-from-alias="OISGA" join-optional="true">
+        <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.order.OrderFulfillmentHistory" join-from-alias="OISGA" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>

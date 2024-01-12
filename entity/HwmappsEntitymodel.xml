@@ -1348,10 +1348,14 @@ under the License.
         <field name="estimatedDeliveryDate" type="date-time" enable-audit-log="true"></field>
         <field name="requestedDeliveryDate" type="date"></field>
         <field name="requestedDeliveryTime" type="time"></field>
+        <field name="requestedShipMethTypeId" type="id"></field>
         <field name="deliveryWindow" type="number-float"></field>
         <field name="taxCode" type="id-long"></field>
         <relationship type="one" fk-name="OI_SHMT" related="org.apache.ofbiz.shipment.shipment.Shipment">
             <key-map field-name="shipmentId"/>
+        </relationship>
+        <relationship type="one" fk-name="ORD_ITM_ITSG_SHMTP" related="org.apache.ofbiz.shipment.shipment.ShipmentMethodType">
+            <key-map field-name="requestedShipMethTypeId" related="shipmentMethodTypeId"/>
         </relationship>
     </extend-entity>
     <extend-entity entity-name="OrderItemChange" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
@@ -1461,7 +1465,7 @@ under the License.
         <field name="returnDate" type="date-time"></field>
         <field name="employeeId" type="id"></field>
     </extend-entity>
-    <entity entity-name="OrderIdentification" package="co.hotwax.oms" group="ofbiz_transactional">
+    <entity entity-name="OrderIdentification" package="co.hotwax.order" group="ofbiz_transactional">
         <field name="orderIdentificationTypeId" type="id" is-pk="true"></field>
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="idValue" type="id-long"></field>
@@ -1507,7 +1511,7 @@ under the License.
             <key-map field-name="shipmentContentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnIdentification" package="co.hotwax.oms" group="ofbiz_transactional">
+    <entity entity-name="ReturnIdentification" package="co.hotwax.order.return" group="ofbiz_transactional">
         <field name="returnIdentificationTypeId" type="id" is-pk="true"></field>
         <field name="returnId" type="id" is-pk="true"></field>
         <field name="idValue" type="id-long"></field>
@@ -1525,6 +1529,7 @@ under the License.
     </entity>
     <extend-entity entity-name="ReturnItem" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="externalId" type="id-long"></field>
+        <field name="reason" type="text-long"></field>
     </extend-entity>
     <extend-entity entity-name="ReturnReason" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="parentTypeId" type="id"><description>This will act as parent return reason Id.</description></field>
@@ -1837,7 +1842,7 @@ under the License.
     <extend-entity entity-name="PaymentMethodType" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentMethodCode" type="text-medium"></field>
     </extend-entity>
-    <entity entity-name="FinancialOrderHistory" package="co.hotwax.common" group="ofbiz_transactional">
+    <entity entity-name="FinancialOrderHistory" package="co.hotwax.integration.financial" group="ofbiz_transactional">
         <field name="financialOrderHistoryId" type="id" is-pk="true"></field>
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>
@@ -1848,7 +1853,7 @@ under the License.
             <key-map field-name="orderItemSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="FinancialReturnHistory" package="co.hotwax.common" group="ofbiz_transactional">
+    <entity entity-name="FinancialReturnHistory" package="co.hotwax.integration.financial" group="ofbiz_transactional">
         <field name="financialReturnHistoryId" type="id" is-pk="true"></field>
         <field name="returnId" type="id"></field>
         <field name="returnItemSeqId" type="id"></field>
@@ -1859,7 +1864,7 @@ under the License.
             <key-map field-name="returnItemSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="FinancialFeedErrorHistory" package="co.hotwax.common" group="ofbiz_transactional">
+    <entity entity-name="FinancialFeedErrorHistory" package="co.hotwax.integration.financial" group="ofbiz_transactional">
         <field name="financialLogId" type="id" is-pk="true"></field>
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>
@@ -1878,7 +1883,7 @@ under the License.
             <key-map field-name="returnId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderFulfillmentHistory" package="co.hotwax.integration" group="ofbiz_transactional">
+    <entity entity-name="OrderFulfillmentHistory" package="co.hotwax.integration.order" group="ofbiz_transactional">
         <field name="fulfillmentLogId" type="id" is-pk="true"></field>
         <field name="externalConfigId" type="id"></field>
         <field name="shipmentId" type="id"></field>
@@ -1895,7 +1900,7 @@ under the License.
             <key-map field-name="orderItemSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderFulfillmentErrorHistory" package="co.hotwax.integration" group="ofbiz_transactional">
+    <entity entity-name="OrderFulfillmentErrorHistory" package="co.hotwax.integration.order" group="ofbiz_transactional">
         <field name="fulfillmentLogId" type="id" is-pk="true"></field>
         <field name="externalConfigId" type="id"></field>
         <field name="shipmentId" type="id"></field>
@@ -1936,7 +1941,7 @@ under the License.
             <key-map field-name="productStoreId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderCancelHistory" package="co.hotwax.integration" group="ofbiz_transactional">
+    <entity entity-name="OrderCancelHistory" package="co.hotwax.integration.order" group="ofbiz_transactional">
         <field name="cancelLogId" type="id" is-pk="true"></field>
         <field name="externalConfigId" type="id"></field>
         <field name="orderId" type="id"></field>
@@ -1955,7 +1960,7 @@ under the License.
             <index-field name="orderItemChangeId"/>
         </index>
     </entity>
-    <entity entity-name="OrderCancelErrorHistory" package="co.hotwax.integration" group="ofbiz_transactional">
+    <entity entity-name="OrderCancelErrorHistory" package="co.hotwax.integration.order" group="ofbiz_transactional">
         <field name="cancelLogId" type="id" is-pk="true"></field>
         <field name="externalConfigId" type="id"></field>
         <field name="orderId" type="id"></field>
@@ -1993,7 +1998,7 @@ under the License.
             <key-map field-name="productId"/>
         </relationship>
     </entity>
-    <entity entity-name="ExternalFulfillmentOrderItem" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <entity entity-name="ExternalFulfillmentOrderItem" package="co.hotwax.integration.order" group="ofbiz_transactional">
         <field name="externalFulfillmentOrderItemId" type="id" is-pk="true"></field>
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>
@@ -2053,7 +2058,7 @@ under the License.
             <index-field name="longitude"/>
         </index>
     </extend-entity>
-    <entity entity-name="ShipmentItemHistory" package="co.hotwax.common" group="ofbiz_transactional">
+    <entity entity-name="ShipmentItemHistory" package="co.hotwax.integration.shipment" group="ofbiz_transactional">
         <field name="shipmentItemHistoryId" type="id" is-pk="true"></field>
         <field name="shipmentId" type="id"></field>
         <field name="shipmentItemSeqId" type="id"></field>
@@ -2070,7 +2075,7 @@ under the License.
             <key-map field-name="receiptId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderAdjustmentHistory" package="co.hotwax.common" group="ofbiz_transactional">
+    <entity entity-name="OrderAdjustmentHistory" package="co.hotwax.integration.order" group="ofbiz_transactional">
         <field name="orderAdjustmentHistoryId" type="id" is-pk="true"></field>
         <field name="orderAdjustmentId" type="id"></field>
         <field name="orderAdjustmentTypeId" type="id"></field>
@@ -2081,7 +2086,7 @@ under the License.
             <key-map field-name="orderAdjustmentId"/>
         </relationship>
     </entity>
-    <entity entity-name="FulfilledOrderAdjustmentHistory" package="co.hotwax.common" group="ofbiz_transactional">
+    <entity entity-name="FulfilledOrderAdjustmentHistory" package="co.hotwax.integration.order" group="ofbiz_transactional">
         <field name="orderAdjustmentHistoryId" type="id" is-pk="true"></field>
         <field name="orderAdjustmentId" type="id"></field>
         <field name="orderAdjustmentTypeId" type="id"></field>
@@ -2092,7 +2097,7 @@ under the License.
             <key-map field-name="orderAdjustmentId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnAdjustmentHistory" package="co.hotwax.common" group="ofbiz_transactional">
+    <entity entity-name="ReturnAdjustmentHistory" package="co.hotwax.integration.order.return" group="ofbiz_transactional">
         <field name="returnAdjustmentHistoryId" type="id" is-pk="true"></field>
         <field name="returnAdjustmentId" type="id"></field>
         <field name="returnAdjustmentTypeId" type="id"></field>
