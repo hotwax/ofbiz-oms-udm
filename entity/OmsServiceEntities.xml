@@ -23,6 +23,7 @@ under the License.
     <!-- Extending the entity to include a field to store productStoreId so that it can be used in sendPath of SystemMessageType for brand specific feeds -->
     <extend-entity entity-name="SystemMessage" package="moqui.service.message">
         <field name="productStoreId" type="id"/>
+        <field name="shopId" type="id"/>
     </extend-entity>
 
     <!-- Extending the entity to include a field to store reference of parent job name in the cloned service job -->
