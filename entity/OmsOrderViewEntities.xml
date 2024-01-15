@@ -487,8 +487,8 @@ under the License.
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="SHOC" entity-name="co.hotwax.shopify.ShopifyConfig" join-from-alias="OH">
-            <key-map field-name="productStoreId"/>
+        <member-entity entity-alias="SHSHOPO" entity-name="co.hotwax.shopify.ShopifyShopOrder" join-from-alias="OH">
+            <key-map field-name="orderId"/>
         </member-entity>
         <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc" join-from-alias="OI">
             <key-map field-name="orderId"/>
@@ -534,7 +534,7 @@ under the License.
         <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
         <alias entity-alias="OH" name="entryDate"/>
         <alias entity-alias="OH" name="grandTotal"/>
-        <alias entity-alias="SHOC" name="shopifyConfigId"/>
+        <alias entity-alias="SHSHOPO" name="shopId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
         <alias entity-alias="OI" name="unitPrice"/>
