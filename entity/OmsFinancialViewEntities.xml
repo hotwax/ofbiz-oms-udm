@@ -28,6 +28,9 @@ under the License.
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="RI" join-optional="true">
             <key-map field-name="orderId"/>
         </member-entity>
+        <member-entity entity-alias="SSO" entity-name="co.hotwax.shopify.ShopifyShopOrder" join-from-alias="OH" join-optional="true">
+            <key-map field-name="orderId"/>
+        </member-entity>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="RI" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
@@ -53,6 +56,7 @@ under the License.
         <alias entity-alias="RI" name="returnItemSeqId"/>
         <alias entity-alias="RI" name="returnReasonId"/>
         <alias entity-alias="RI" name="returnReasonNote" field="reason"/>
+        <alias entity-alias="SSO" name="shopId"/>
         <alias entity-alias="OI" name="orderItemRequestedShipMethTypeId" field="requestedShipMethTypeId"/>
         <alias entity-alias="RH" name="entryDate"/>
         <alias entity-alias="RH" name="returnDate"/>
