@@ -59,4 +59,14 @@ under the License.
         <alias-all entity-alias="PA"/>
         <alias-all entity-alias="P"><exclude field="productId"/></alias-all>
     </view-entity>
+
+    <view-entity entity-name="ProductFeatureAndAppl" package="co.hotwax.product.feature" group="ofbiz_transactional">
+        <description>ProductFeature And ProductFeatureAppl View Entity</description>
+        <member-entity entity-alias="PFA" entity-name="org.apache.ofbiz.product.feature.ProductFeatureAppl"/>
+        <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.feature.ProductFeature" join-from-alias="PFA">
+            <key-map field-name="productFeatureId"/>
+        </member-entity>
+        <alias-all entity-alias="PFA"/>
+        <alias-all entity-alias="PF"/>
+    </view-entity>
 </entities>

@@ -19,15 +19,15 @@ under the License.
 -->
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
-    <!-- TODO: skipped element title -->
-    <!-- TODO: skipped element version -->
-    <extend-entity entity-name="NoteData" package="org.apache.ofbiz.common.note" group="ofbiz_transactional">
-        <field name="moreInfoUrl" type="text-long"><description>url to go to the related screen in the system</description></field>
-        <field name="moreInfoItemId" type="text-long"><description>The id of the item to be displayed i.e. custRequestId, commEventId etc</description></field>
-        <field name="moreInfoItemName" type="text-long"><description>The name of the item to be displayed i.e. custRequestId, commEventId etc</description></field>
-        <index name="systemInfo" unique="false">
-            <index-field name="noteName"/>
-        </index>
-    </extend-entity>
+    <entity entity-name="UserLoginFirebaseClient" package="co.hotwax.firebase" group="ofbiz_transactional">
+        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="deviceId" type="id-long" is-pk="true"></field>
+        <field name="applicationId" type="id" is-pk="true"></field>
+        <field name="registrationToken" type="text-very-long"></field>
+        <field name="createdDate" type="date-time"></field>
+        <relationship type="one" fk-name="FC_USER_LOGIN" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="userLoginId"/>
+        </relationship>
+    </entity>
 </entities>
 
