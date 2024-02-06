@@ -1562,6 +1562,9 @@ under the License.
         <field name="changeReasonEnumId" type="id"></field>
         <field name="comments" type="text-very-long"></field>
         <field name="carrierPostalCodeId" type="id"></field>
+        <field name="routingGroupId" type="id"></field>
+        <field name="orderRoutingId" type="id"></field>
+        <field name="routingRuleId" type="id"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1597,6 +1600,10 @@ under the License.
             <index-field name="shipGroupSeqId"/>
             <index-field name="changeDatetime"/>
             <index-field name="routerUserLogin"/>
+        </index>
+        <index name="IDX_OFC_ROUTE">
+            <index-field name="routingGroupId"/>
+            <index-field name="orderRoutingId"/>
         </index>
     </entity>
     <entity entity-name="CarrierPostalCodeMapping" package="co.hotwax.facility" group="ofbiz_transactional">
