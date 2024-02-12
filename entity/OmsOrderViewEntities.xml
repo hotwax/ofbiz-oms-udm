@@ -45,6 +45,9 @@ under the License.
         <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F" join-optional="true">
             <key-map field-name="facilityTypeId"/>
         </member-entity>
+        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+            <key-map field-name="currencyUom" related="uomId"/>
+        </member-entity>
 
         <alias entity-alias="OISGA" name="orderId"/>
         <alias entity-alias="OISGA" name="orderItemSeqId"/>
@@ -52,6 +55,10 @@ under the License.
 
         <alias entity-alias="OH" name="orderName"/>
         <alias entity-alias="OH" name="grandTotal"/>
+        <alias entity-alias="OH" name="orderDate"/>
+        <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
+        <alias entity-alias="OH" name="salesChannelEnumId"/>
+        <alias entity-alias="UOM" field="abbreviation" name="currency"/>
 
         <alias entity-alias="OI" name="quantity"/>
         <alias entity-alias="OI" name="unitPrice"/>
