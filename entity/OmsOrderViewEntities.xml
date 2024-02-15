@@ -58,7 +58,7 @@ under the License.
 
         <alias entity-alias="OH" name="orderName"/>
         <alias entity-alias="OH" name="grandTotal"/>
-        <alias entity-alias="OH" name="orderDate" function="max"/>
+        <alias entity-alias="OH" name="orderDate"/>
         <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
         <alias entity-alias="OH" name="salesChannelEnumId"/>
         <alias entity-alias="OH" name="orderTypeId"/>
@@ -66,7 +66,7 @@ under the License.
         <alias entity-alias="UOM" field="abbreviation" name="currency"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannelEnumCode"/>
 
-        <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OI" name="quantity" function="sum"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
         <alias entity-alias="OI" name="productId"/>
