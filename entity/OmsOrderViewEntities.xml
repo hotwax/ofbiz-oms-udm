@@ -66,7 +66,7 @@ under the License.
         <alias entity-alias="UOM" field="abbreviation" name="currency"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannelEnumCode"/>
 
-        <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OI" name="quantity" function="sum"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
         <alias entity-alias="OI" name="productId"/>
@@ -421,6 +421,7 @@ under the License.
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
         </member-entity>
         <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment" join-from-alias="OI" join-optional="true">
             <key-map field-name="orderId"/>
@@ -430,6 +431,7 @@ under the License.
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OI" name="productId"/>
         <alias entity-alias="OS" name="statusId" />
         <alias entity-alias="OS" field="statusDatetime" name="completedDatetime"/>
         <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
