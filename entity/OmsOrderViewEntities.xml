@@ -747,7 +747,7 @@ under the License.
     <view-entity entity-name="OrderStatusAndItemStatus" package="co.hotwax.financial" group="ofbiz_transactional">
         <description>View to fetch the Order Status and Item Status Details.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
-        <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem" join-from-alias="OI">
+        <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem" join-from-alias="OI" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
