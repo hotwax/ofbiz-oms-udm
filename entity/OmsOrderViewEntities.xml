@@ -402,8 +402,10 @@ under the License.
         <alias entity-alias="RI" name="orderItemSeqId"/>
         <alias entity-alias="RI" name="returnPrice"/>
         <alias entity-alias="RI" name="returnQuantity"/>
+        <alias entity-alias="RI" name="productId"/>
         <alias entity-alias="RS" name="statusId" />
         <alias entity-alias="RS" name="completedDatetime" field="statusDatetime" function="max"/>
+        <alias entity-alias="RA" name="returnAdjustmentId"/>
         <alias entity-alias="RA" name="returnAdjustmentTypeId"/>
         <alias entity-alias="RA" name="comments"/>
         <alias entity-alias="RA" name="description"/>
@@ -435,6 +437,7 @@ under the License.
         <alias entity-alias="OI" name="productId"/>
         <alias entity-alias="OS" name="statusId" />
         <alias entity-alias="OS" field="statusDatetime" name="completedDatetime"/>
+        <alias entity-alias="OA" name="orderAdjustmentId"/>
         <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
         <alias entity-alias="OA" name="comments"/>
         <alias entity-alias="OA" name="description"/>
