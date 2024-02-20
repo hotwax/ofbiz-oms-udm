@@ -638,6 +638,9 @@ under the License.
         <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="SPRS" join-optional="true">
             <key-map field-name="shipmentId"/>
         </member-entity>
+        <member-entity entity-alias="SRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SH">
+            <key-map field-name="shipmentId"/>
+        </member-entity>
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
@@ -697,6 +700,7 @@ under the License.
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
+        <alias entity-alias="SRS" name="actualCarrierCode" field="actualCarrierCode"/>
         <entity-condition>
             <!-- Here we are preparing the Shipment Item for eligible Order that are not sent to the external system.
              So we need to add the below condition same as FulfilledOrderItemsSyncQueue view. -->
