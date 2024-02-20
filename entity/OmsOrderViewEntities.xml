@@ -700,7 +700,7 @@ under the License.
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
-        <alias entity-alias="SRS" name="actualCarrierCode" field="actualCarrierCode"/>
+        <alias entity-alias="SRS" name="actualCarrierCode"/>
         <entity-condition>
             <!-- Here we are preparing the Shipment Item for eligible Order that are not sent to the external system.
              So we need to add the below condition same as FulfilledOrderItemsSyncQueue view. -->
@@ -745,6 +745,7 @@ under the License.
         <alias entity-alias="SH" name="carrierPartyId"/>
         <alias entity-alias="SRS" name="shipmentRouteSegmentId"/>
         <alias entity-alias="SPRS" name="trackingNumber" field="trackingCode"/>
+        <alias entity-alias="SRS" name="actualCarrierCode"/>
     </view-entity>
 </entities>
 
