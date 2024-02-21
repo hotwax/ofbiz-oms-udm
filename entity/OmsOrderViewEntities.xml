@@ -638,8 +638,9 @@ under the License.
         <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="SPRS" join-optional="true">
             <key-map field-name="shipmentId"/>
         </member-entity>
-        <member-entity entity-alias="SRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SH">
+        <member-entity entity-alias="SRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SPRS" join-optional="true">
             <key-map field-name="shipmentId"/>
+            <key-map field-name="shipmentRouteSegmentId"/>
         </member-entity>
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
             <key-map field-name="orderId"/>
