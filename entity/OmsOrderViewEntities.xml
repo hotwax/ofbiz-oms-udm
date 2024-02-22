@@ -765,6 +765,29 @@ under the License.
         <alias entity-alias="SRS" name="shipmentRouteSegmentId"/>
         <alias entity-alias="SPRS" name="trackingNumber" field="trackingCode"/>
     </view-entity>
+          
+    <!-- View entity to fetch order item and return item details -->
+    <view-entity entity-name="OrderItemAndReturnItemView" package="co.hotwax.financial" group="ofbiz_transactional">
+        <description>View to fetch the Order Item and Return Item Details.</description>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" field="statusId" name="orderItemStatus"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="quantity" function="sum"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OI" name="orderItemTypeId"/>
+        <alias entity-alias="OI" name="cancelQuantity"/>
+        <alias-all entity-alias="RI">
+            <exclude field="statusId"/>
+            <exclude field="productId"/>
+        </alias-all>
+        <alias entity-alias="RI" field="statusId" name="returnItemStatus"/>
+    </view-entity>     
 </entities>
 
 
