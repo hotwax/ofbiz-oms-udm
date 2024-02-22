@@ -413,6 +413,7 @@ under the License.
         </member-entity>
         <alias entity-alias="OI" name="orderId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" name="productId"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" name="quantity"/>
         <alias entity-alias="OS" name="statusId" />
