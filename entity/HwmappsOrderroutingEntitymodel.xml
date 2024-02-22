@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+    <entity entity-name="OrderRouting" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="orderRoutingId" type="id" is-pk="true">
+        </field>
+            <field name="isActive" type="text-indicator">
+        </field>
+            <field name="routingName" type="text-medium">
+        </field>
+            <field name="createdByUserLogin" type="id-long">
+        </field>
+            <field name="createdDate" type="date-time">
+        </field>
+        <relationship type="one-nofk" fk-name="OR_USR_LOGIN" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="createdByUserLogin" related="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="OrderFilterCondition" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="orderRoutingId" type="id" is-pk="true">
+        </field>
+            <field name="conditionSeqId" type="id" is-pk="true">
+        </field>
+            <field name="conditionTypeEnumId" type="id">
+        </field>
+            <field name="inputParamEnumId" type="id">
+        </field>
+            <field name="operatorEnumId" type="id">
+        </field>
+            <field name="condValue" type="text-long">
+        </field>
+            <field name="sequenceNum" type="number-integer">
+        </field>
+            <field name="createdDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="ORO_COND_TYPE_ENUM" title="ConditionType" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="conditionTypeEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="ORO_COND_INENUM" title="InputParam" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="inputParamEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="ORO_COND_OPENUM" title="Operator" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="operatorEnumId" related="enumId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="OrderRoutingRuleFilter" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="ruleFilterId" type="id" is-pk="true">
+        </field>
+            <field name="orderRoutingId" type="id">
+        </field>
+            <field name="sequenceNum" type="number-integer">
+        </field>
+            <field name="createdDate" type="date-time">
+        </field>
+        <relationship type="one-nofk" fk-name="ORR_ORDROU" related="co.hotwax.order.routing.OrderRouting">
+            <key-map field-name="orderRoutingId" related="orderRoutingId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="RoutingRuleFilterCondition" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="ruleFilterId" type="id" is-pk="true">
+        </field>
+            <field name="ruleConditionSeqId" type="id" is-pk="true">
+        </field>
+            <field name="conditionTypeEnumId" type="id">
+        </field>
+            <field name="inputParamEnumId" type="id">
+        </field>
+            <field name="operatorEnumId" type="id">
+        </field>
+            <field name="condValue" type="text-long">
+        </field>
+            <field name="createdDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="RR_COND_TYPE_ENUM" title="ConditionType" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="conditionTypeEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="RR_COND_INENUM" title="InputParam" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="inputParamEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="RR_COND_OPENUM" title="Operator" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="operatorEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="RRFC_RULE_ID" related="co.hotwax.order.routing.OrderRoutingRuleFilter">
+            <key-map field-name="ruleFilterId" related="ruleFilterId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="OrderRoutingRule" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="routingRuleId" type="id" is-pk="true">
+        </field>
+            <field name="ruleName" type="text-medium">
+        </field>
+            <field name="isActive" type="text-indicator">
+        </field>
+            <field name="assignmentEnumId" type="id">
+        </field>
+            <field name="fulfillEntireShipGroup" type="text-indicator">
+        </field>
+            <field name="createdDate" type="date-time">
+        </field>
+            <field name="createdByUserLogin" type="id-long">
+        </field>
+        <relationship type="one" fk-name="ORO_RULE_ASENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="assignmentEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one-nofk" fk-name="ORR_USR_LOGIN" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="createdByUserLogin" related="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="RoutingRuleAssoc" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="ruleFilterId" type="id" is-pk="true">
+        </field>
+            <field name="routingRuleId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+            <field name="sequenceNum" type="number-integer">
+        </field>
+        <relationship type="one" fk-name="RRA_RULE_FLT" related="co.hotwax.order.routing.OrderRoutingRuleFilter">
+            <key-map field-name="ruleFilterId" related="ruleFilterId"/>
+        </relationship>
+        <relationship type="one" fk-name="RRA_RULE" related="co.hotwax.order.routing.OrderRoutingRule">
+            <key-map field-name="routingRuleId" related="routingRuleId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="RoutingRuleInvCondition" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="routingRuleId" type="id" is-pk="true">
+        </field>
+            <field name="conditionSeqId" type="id" is-pk="true">
+        </field>
+            <field name="inputParamEnumId" type="id">
+        </field>
+            <field name="operatorEnumId" type="id">
+        </field>
+            <field name="condValue" type="text-long">
+        </field>
+            <field name="createdDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="RULE_INV_OPENUM" title="Operator" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="operatorEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="RULE_INV_INENUM" title="InputParam" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="inputParamEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="RULE_INV_OOR" related="co.hotwax.order.routing.OrderRoutingRule">
+            <key-map field-name="routingRuleId" related="routingRuleId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="OrderRoutingRuleAction" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="routingRuleId" type="id">
+        </field>
+            <field name="actionSeqId" type="id" is-pk="true">
+        </field>
+            <field name="actionTypeEnumId" type="id">
+        </field>
+            <field name="actionValue" type="text-long">
+        </field>
+            <field name="createdDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="ORRA_RULE" related="co.hotwax.order.routing.OrderRoutingRule">
+            <key-map field-name="routingRuleId" related="routingRuleId"/>
+        </relationship>
+        <relationship type="one" fk-name="ORRA_RULE_ENUM" title="Action" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="actionTypeEnumId" related="enumId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="OrderRoutingRun" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="routingRunId" type="id" is-pk="true">
+        </field>
+            <field name="orderRoutingId" type="id">
+        </field>
+            <field name="createdByUserLogin" type="id">
+        </field>
+            <field name="hasError" type="text-indicator">
+        </field>
+            <field name="startDate" type="date-time">
+        </field>
+            <field name="endDate" type="date-time">
+        </field>
+            <field name="result" type="text-long">
+        </field>
+        <relationship type="one" fk-name="ORD_ROU_RUN" related="co.hotwax.order.routing.OrderRouting">
+            <key-map field-name="orderRoutingId"/>
+        </relationship>
+        <relationship type="one-nofk" fk-name="ROURUN_USR_LOGIN" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="createdByUserLogin" related="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ProductStoreOrderRouting" package="co.hotwax.order.routing" group="ofbiz_transactional">
+            <field name="orderRoutingId" type="id" is-pk="true">
+        </field>
+            <field name="productStoreId" type="id" is-pk="true">
+        </field>
+            <field name="routingAssocTypeId" type="id" is-pk="true">
+        </field>
+            <field name="fromDate" type="date-time" is-pk="true">
+        </field>
+            <field name="thruDate" type="date-time">
+        </field>
+        <relationship type="one" fk-name="PSOR_ORD_ROU" related="co.hotwax.order.routing.OrderRouting">
+            <key-map field-name="orderRoutingId"/>
+        </relationship>
+        <relationship type="one" fk-name="ROURUN_PROD_STR" related="org.apache.ofbiz.product.store.ProductStore">
+            <key-map field-name="productStoreId" related="productStoreId"/>
+        </relationship>
+        <relationship type="one" fk-name="ROURUN_ASSC_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="routingAssocTypeId" related="enumId"/>
+        </relationship>
+    </entity>
+</entities>
+
