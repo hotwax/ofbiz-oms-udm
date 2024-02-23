@@ -415,9 +415,11 @@ under the License.
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OI" name="productId"/>
         <alias entity-alias="OS" name="statusId" />
         <alias entity-alias="OS" field="statusDatetime" name="completedDatetime"/>
         <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
+        <alias entity-alias="OA" name="orderAdjustmentId"/>
         <alias entity-alias="OA" name="comments"/>
         <alias entity-alias="OA" name="description"/>
         <alias entity-alias="OA" name="amount" function="sum"/>
