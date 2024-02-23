@@ -278,6 +278,7 @@ under the License.
         <alias entity-alias="OS" name="statusDatetime"/>
         <alias entity-alias="PD" name="productId"/>
         <alias entity-alias="PD" name="productTypeId"/>
+        <alias entity-alias="PD" name="internalName"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
         <alias entity-alias="ODR" field="partyId" name="customerPartyId"/>
         <entity-condition>
@@ -637,6 +638,10 @@ under the License.
         <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="SPRS" join-optional="true">
             <key-map field-name="shipmentId"/>
         </member-entity>
+        <member-entity entity-alias="SRS" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentRouteSegment" join-from-alias="SPRS" join-optional="true">
+            <key-map field-name="shipmentId"/>
+            <key-map field-name="shipmentRouteSegmentId"/>
+        </member-entity>
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
@@ -696,6 +701,7 @@ under the License.
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
+        <alias entity-alias="SRS" name="actualCarrierCode"/>
         <entity-condition>
             <!-- Here we are preparing the Shipment Item for eligible Order that are not sent to the external system.
              So we need to add the below condition same as FulfilledOrderItemsSyncQueue view. -->
@@ -740,6 +746,7 @@ under the License.
         <alias entity-alias="SH" name="carrierPartyId"/>
         <alias entity-alias="SRS" name="shipmentRouteSegmentId"/>
         <alias entity-alias="SPRS" name="trackingNumber" field="trackingCode"/>
+        <alias entity-alias="SRS" name="actualCarrierCode"/>
     </view-entity>
 </entities>
 

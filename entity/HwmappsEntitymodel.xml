@@ -132,6 +132,10 @@ under the License.
     </extend-entity>
     <extend-entity entity-name="SecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
         <field name="groupName" type="text-medium"></field>
+        <field name="groupTypeEnumId" type="id"></field>
+        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="groupTypeEnumId" related="enumId"/>
+        </relationship>
     </extend-entity>
     <extend-entity entity-name="EmailTemplateSetting" package="org.apache.ofbiz.common.email" group="ofbiz_transactional">
         <field name="templateContentId" type="id"></field>
@@ -232,6 +236,7 @@ under the License.
         <field name="isGenerateThirdPartyLabel" type="text-indicator"></field>
         <field name="isTrackingRequired" type="text-indicator"></field>
         <field name="referenceNumber" type="text-medium"></field>
+        <field name="actualCarrierCode" type="id"></field>
     </extend-entity>
     <extend-entity entity-name="EftAccount" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="routingNumber" type="text-medium" encrypt="true"><description>This field contains sensitive information, thus encrypted.</description></field>
@@ -1562,6 +1567,9 @@ under the License.
         <field name="changeReasonEnumId" type="id"></field>
         <field name="comments" type="text-very-long"></field>
         <field name="carrierPostalCodeId" type="id"></field>
+        <field name="routingGroupId" type="id"></field>
+        <field name="orderRoutingId" type="id"></field>
+        <field name="routingRuleId" type="id"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -1597,6 +1605,10 @@ under the License.
             <index-field name="shipGroupSeqId"/>
             <index-field name="changeDatetime"/>
             <index-field name="routerUserLogin"/>
+        </index>
+        <index name="IDX_OFC_ROUTE">
+            <index-field name="routingGroupId"/>
+            <index-field name="orderRoutingId"/>
         </index>
     </entity>
     <entity entity-name="CarrierPostalCodeMapping" package="co.hotwax.facility" group="ofbiz_transactional">
