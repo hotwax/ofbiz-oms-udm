@@ -532,6 +532,7 @@ under the License.
         <alias entity-alias="OH" name="orderId"/>
         <alias entity-alias="OH" name="orderName"/>
         <alias entity-alias="OH" name="orderDate"/>
+        <alias entity-alias="OH" name="orderTypeId"/>
         <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
         <alias entity-alias="OH" name="entryDate"/>
         <alias entity-alias="OH" name="grandTotal"/>
@@ -558,7 +559,6 @@ under the License.
         <entity-condition>
             <!-- Using the below conditions we are fetching the eligible orders that are not sent to the external system -->
             <econditions combine="and">
-                <econdition entity-alias="OH" field-name="orderTypeId" operator="equals" value="SALES_ORDER"/>
                 <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
                 <econditions combine="or">
                     <econdition entity-alias="OISGA" field-name="quantity" operator="greater" to-entity-alias="OISGA" to-field-name="cancelQuantity"/>
