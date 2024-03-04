@@ -787,7 +787,28 @@ under the License.
             <exclude field="productId"/>
         </alias-all>
         <alias entity-alias="RI" field="statusId" name="returnItemStatus"/>
-    </view-entity>     
+    </view-entity>
+
+    <!-- View entity to fetch Order Item and Attribute details. -->
+    <view-entity entity-name="OrderItemAndAttribute" package="co.hotwax.financial" group="ofbiz_transactional">
+        <description>View to fetch the Order Item and Item Attribute Details.</description>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <member-entity entity-alias="OIA" entity-name="org.apache.ofbiz.order.order.OrderItemAttribute" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" field="statusId" name="orderItemStatus"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="quantity" function="sum"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OI" name="orderItemTypeId"/>
+        <alias-all entity-alias="OIA">
+            <exclude field="orderId"/>
+            <exclude field="orderItemSeqId"/>
+        </alias-all>
+    </view-entity>
 </entities>
 
 
