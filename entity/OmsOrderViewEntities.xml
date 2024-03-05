@@ -732,6 +732,9 @@ under the License.
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="OI">
             <key-map field-name="orderId"/>
         </member-entity>
+        <member-entity entity-alias="SSO" entity-name="co.hotwax.shopify.ShopifyShopOrder" join-from-alias="OH" join-optional="true">
+            <key-map field-name="orderId"/>
+        </member-entity>
         <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
@@ -810,10 +813,12 @@ under the License.
         <alias entity-alias="OH" name="orderId"/>
         <alias entity-alias="OH" name="orderName"/>
         <alias entity-alias="OH" name="orderDate"/>
+        <alias entity-alias="OH" name="orderTypeId"/>
         <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
         <alias entity-alias="OH" field="externalId" name="orderExternalId"/>
         <alias entity-alias="OH" name="entryDate"/>
         <alias entity-alias="OH" name="grandTotal"/>
+        <alias entity-alias="SSO" name="shopId"/>
         <alias entity-alias="UOM" field="abbreviation" name="currency"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
