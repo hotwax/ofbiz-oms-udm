@@ -716,10 +716,11 @@ under the License.
     </view-entity>
 
     <!-- TODO: This view entity can be removed in future when a new order item will be created for remaining quantities of an order item in new Shipment
-         in case of Partial Fulfillment Explode-off scenario. The existing view OrderItemAndShipment can be reused here. 
-    This view is used for fetching the Shipment Details for the Fulfilled Order Items with partial Fulfillment.
+         in case of Partial Fulfillment Explode-off scenario. The existing views FulfilledOrderItemsSyncQueue and OrderItemAndShipment can be used in place
+         of it.
+    This view is used for both purposes fetch the Fulfilled Order Item details and fetch the Shipment Details for the Fulfilled Order Items.
     NOTE:
-    1. It is being used to prepare the Feed for Fulfilled Order Items along with the view FulfilledOrderItemsSyncQueue.
+    1. It is being used to prepare the Feed for Fulfilled Order Items.
     2. This includes the use of OrderFulfillmentHistory entity to get only those fulfilled order items shipment wise for which history is not created.
     3. It is used to handle the scenario of explode-off in which an item can be included in multiple Shipments if its quantity is greater than 1.
        Here, Order Item Ship Group Assoc is removed and ship group seq id is directly fetched from Order Item.
@@ -810,6 +811,7 @@ under the License.
         <alias entity-alias="OH" name="orderId"/>
         <alias entity-alias="OH" name="orderName"/>
         <alias entity-alias="OH" name="orderDate"/>
+        <alias entity-alias="OH" name="orderTypeId"/>
         <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
         <alias entity-alias="OH" field="externalId" name="orderExternalId"/>
         <alias entity-alias="OH" name="entryDate"/>
