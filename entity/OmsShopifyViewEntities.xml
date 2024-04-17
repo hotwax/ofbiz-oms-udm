@@ -95,7 +95,7 @@ under the License.
 
         <entity-condition>
             <econditions combine="or">
-                <econdition field-name="facilityGroupTypeId" value="SHOPIFY_GROUP_FAC"/>
+                <econdition field-name="facilityGroupTypeId" value="CHANNEL_FAC_GROUP"/>
                 <econdition field-name="facilityTypeId" value="CONFIGURATION"/>
             </econditions>
         </entity-condition>
