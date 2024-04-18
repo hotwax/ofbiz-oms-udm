@@ -92,13 +92,6 @@ under the License.
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
-
-        <entity-condition>
-            <econditions combine="or">
-                <econdition field-name="facilityGroupTypeId" value="CHANNEL_FAC_GROUP"/>
-                <econdition field-name="facilityTypeId" value="CONFIGURATION"/>
-            </econditions>
-        </entity-condition>
     </view-entity>
 
     <view-entity entity-name="ProductFacilityAndType" package="co.hotwax.product.facility" group="ofbiz_transactional">
