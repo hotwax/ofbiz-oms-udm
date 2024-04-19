@@ -23,9 +23,9 @@ under the License.
 
     <!-- NOTE: The products that have been deleted from Shopify will not appear in the view as their record in ShopifyShopProduct is also deleted.
         Hence no extra handling is required. -->
-    <!-- The ShopifyProductInventory view supports to fetch the inventory for multichannel.
-         If there is a requirement to fetch the inventory for the specific Facility Group, a parameter 'facilityGroupId' is added to the service,
-         which allows to fetch the inventory for a particular Facility Group. -->
+    <!-- The ShopifyProductInventory view has the support to fetch the inventory for multi channel inventory scenario.
+         If there is a requirement to fetch the inventory for the specific channel i.e. Shopify, it will be a separate Facility Group, and so a parameter 'facilityGroupId' is added to the corresponding service 
+          to fetch the inventory to be sent to Shopify. -->
 
     <view-entity entity-name="ShopifyProductInventory" package="co.hotwax.shopify" group="ofbiz_transactional">
         <description>
