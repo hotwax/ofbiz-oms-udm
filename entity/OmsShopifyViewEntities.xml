@@ -74,8 +74,8 @@ under the License.
         <!-- When facility is turned off, then the eligible products should be identified and hence the lastUpdatedStamp
             of FacilityGroupMember is added. -->
         <alias entity-alias="FGM" field="lastUpdatedStamp" name="facilityGroupMemberUpdatedDate" function="max"/>
-        <!-- For facility turn off scenario, the facility will not be a part of CHANNEL_FAC_GROUP group.
-            When the facility is removed from the CHANNEL_FAC_GROUP group then its thruDate is set in the
+        <!-- For facility turn off scenario, the facility will not be a part of SHOPIFY_GROUP_FAC group.
+            When the facility is removed from the SHOPIFY_GROUP_FAC group then its thruDate is set in the
             FacilityGroupMember entity. -->
         <!-- The date-filter on FacilityGroupMember's fromDate and thruDate is removed to identify the facilities that
             have been turned off for inventory sharing i.e. where thruDate is set.
