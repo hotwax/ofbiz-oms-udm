@@ -23,6 +23,10 @@ under the License.
 
     <!-- NOTE: The products that have been deleted from Shopify will not appear in the view as their record in ShopifyShopProduct is also deleted.
         Hence no extra handling is required. -->
+    <!-- The ShopifyProductInventory view supports to fetch the inventory for multichannel.
+         If there is a requirement to fetch the inventory for the specific Facility Group, a parameter 'facilityGroupId' is added to the service,
+         which allows to fetch the inventory for a particular Facility Group. -->
+
     <view-entity entity-name="ShopifyProductInventory" package="co.hotwax.shopify" group="ofbiz_transactional">
         <description>
             View entity for Product Inventory details for Shopify in HotWax.
@@ -81,14 +85,7 @@ under the License.
             have been turned off for inventory sharing i.e. where thruDate is set.
             If we keep the date-filter in the view, the expired records of FacilityGroupMember will not come in the view,
             and so the inventory change due to turned off facilities will not be identified, hence the updated inventory
-            will not be pushed to Shopify.. -->
-        <!-- 1. Condition added to include inventory for Online Facility Group -->
-        <!-- 2. OR with Condition added to include facilityTypeId='CONFIGURATION' for the below scenario,
-             As part of initial implementation, the only condition added was to include members of
-             only Online group and CONFIGURATION type facility is not member of it.
-             Due to this, if threshold is updated for a product, the feed will not pick it up as a change
-             since that record is not included in the view, And so updated inventory does not get pushed to
-             Shopify. -->
+            will not be pushed to Shopify. -->
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
