@@ -162,12 +162,10 @@ under the License.
         <alias-all entity-alias="FG"/>
         <alias-all entity-alias="FGM">
             <exclude field="facilityGroupId"/>
-            <exclude field="fromDate"/>
         </alias-all>
         <alias-all entity-alias="F">
             <exclude field="facilityId"/>
             <exclude field="description"/>
         </alias-all>
-        <alias entity-alias="FGM" name="fromDate" function="max"/>
     </view-entity>
 </entities>
