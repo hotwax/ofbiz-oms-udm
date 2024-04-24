@@ -73,12 +73,12 @@ under the License.
             <key-map field-name="inventoryCountImportId"/>
             <key-map field-name="statusId"/>
         </member-entity>
-        <member-entity entity-alias="ICIV" entity-name="co.hotwax.warehouse.InvCountImportVariance" join-from-alias="ICI">
+        <member-entity entity-alias="ICII" entity-name="co.hotwax.warehouse.InventoryCountImportItem" join-from-alias="ICI">
             <key-map field-name="inventoryCountImportId"/>
         </member-entity>
-        <member-entity entity-alias="ICII" entity-name="co.hotwax.warehouse.InventoryCountImportItem" join-from-alias="ICIV">
+        <member-entity entity-alias="ICIV" entity-name="co.hotwax.warehouse.InvCountImportVariance" join-from-alias="ICII">
             <key-map field-name="inventoryCountImportId"/>
-            <key-map field-name="invCountImportItemSeqId" related="importItemSeqId"/>
+            <key-map field-name="importItemSeqId" related="invCountImportItemSeqId"/>
         </member-entity>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="ICIV">
             <key-map field-name="productId"/>
