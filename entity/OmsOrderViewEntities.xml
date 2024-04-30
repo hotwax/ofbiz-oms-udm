@@ -445,6 +445,7 @@ under the License.
         <alias entity-alias="OA" name="orderAdjustmentId"/>
         <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
         <alias entity-alias="OA" name="comments"/>
+        <alias entity-alias="OA" name="exemptAmount"/>
         <alias entity-alias="OA" name="description"/>
         <alias entity-alias="OA" name="amount" function="sum"/>
         <entity-condition>
