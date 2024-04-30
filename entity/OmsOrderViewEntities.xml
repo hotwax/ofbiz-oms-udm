@@ -399,6 +399,10 @@ under the License.
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
         </member-entity>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="RI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
         <alias entity-alias="RI" name="returnId"/>
         <alias entity-alias="RI" name="returnItemSeqId"/>
         <alias entity-alias="RI" name="orderId"/>
@@ -413,6 +417,7 @@ under the License.
         <alias entity-alias="RA" name="comments"/>
         <alias entity-alias="RA" name="description"/>
         <alias entity-alias="RA" name="amount" function="sum"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <entity-condition>
             <econditions>
                 <econdition entity-alias="RS" field-name="returnItemSeqId" operator="not-equals" value=""/>
