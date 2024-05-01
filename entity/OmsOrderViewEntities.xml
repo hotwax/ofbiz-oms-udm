@@ -900,7 +900,7 @@ under the License.
     </view-entity>
 
     <!--This view is created to fetch the orderItem and its shipment details needed in the fulfilledOrderItems Feed -->
-    <view-entity entity-name="OrderItemAndShipment" package="co.hotwax.warehouse">
+    <view-entity entity-name="OrderItemAndShipmentDetailsView" package="co.hotwax.warehouse">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="OI">
             <key-map field-name="orderId"/>
