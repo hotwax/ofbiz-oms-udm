@@ -70,7 +70,7 @@ under the License.
         <alias entity-alias="OH" name="productStoreId"/>
         <alias entity-alias="OH" name="orderDate"/>
         <alias entity-alias="OH" name="statusId"/>
-        <alias entity-alias="OH" name="orderExternalId"/>
+        <alias entity-alias="OH" field="externalId" name="orderExternalId"/>
         <alias entity-alias="OH" name="orderTypeId"/>
         <alias entity-alias="OH" name="entryDate"/>
 
