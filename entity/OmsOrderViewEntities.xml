@@ -451,6 +451,9 @@ under the License.
         <alias entity-alias="OPP" name="statusId"/>
         <alias entity-alias="OPP" field="maxAmount" name="amount" />
         <alias entity-alias="OPP" name="createdDate" />
+        <alias entity-alias="OPP" name="manualAuthCode" />
+        <alias entity-alias="OPP" name="manualRefNum" />
+        <alias entity-alias="OPP" name="paymentMode" />
         <alias entity-alias="PMT" name="paymentMethodTypeId"/>
         <alias entity-alias="PMT" name="paymentMethodCode"/>
         <alias entity-alias="PMT" field="description" name="paymentMethodDescription"/>
