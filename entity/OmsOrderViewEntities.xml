@@ -48,12 +48,6 @@ under the License.
         <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
-        <member-entity entity-alias="ODR" entity-name="org.apache.ofbiz.order.order.OrderRole" join-from-alias="OH" join-optional="true">
-            <key-map field-name="orderId"/>
-        </member-entity>
-        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.party.party.Person" join-from-alias="ODR" join-optional="true">
-            <key-map field-name="partyId"/>
-        </member-entity>
         <member-entity entity-alias="SSO" entity-name="co.hotwax.shopify.ShopifyShopOrder" join-from-alias="OH" join-optional="true">
             <key-map field-name="orderId"/>
         </member-entity>
@@ -78,6 +72,7 @@ under the License.
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
         <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="cancelQuantity"/>
 
         <alias entity-alias="OISG" name="facilityId"/>
         <alias entity-alias="OISG" field="contactMechId" name="shipToPostalContactMechId"/>
@@ -92,9 +87,6 @@ under the License.
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
 
         <alias entity-alias="UOM" field="abbreviation" name="currency"/>
-        <alias entity-alias="ODR" name="partyId"/>
-        <alias entity-alias="P" field="firstName" name="customerFirstName"/>
-        <alias entity-alias="P" field="lastName" name="customerLastName"/>
         <alias entity-alias="SSO" name="shopId"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
     </view-entity>
