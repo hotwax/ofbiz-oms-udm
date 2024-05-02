@@ -898,6 +898,61 @@ under the License.
         <alias entity-alias="SPRS" name="trackingNumber" field="trackingCode"/>
         <alias entity-alias="SRS" name="actualCarrierCode"/>
     </view-entity>
+
+
+    <!--Adding the view-entity to fetch the eligible order items for sending fulfilled order items info for Shopify.
+     1. Scenario of ADOC
+         1.1 Fulfilled Order Items Feed for Shopify, this contains a check on Item Status to be completed as it should be item wise.
+         1.2 Fulfilled Order Items Feed for ERP (for GL Posting/Invoicing), this contains a check on Order Status to be completed as it should be sent when the entire order is completed.
+     2. In this view we are handling the case of Shopify.
+     -->
+    <view-entity entity-name="FulfilledOrdersView" package="co.hotwax.warehouse">
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.order.OrderFulfillmentHistory" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias-all entity-alias="SOV">
+            <exclude field="orderId"/>
+            <exclude field="orderItemSeqId"/>
+        </alias-all>
+        <entity-condition>
+            <econditions combine="and">
+                <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
+                <econditions combine="or">
+                    <econdition entity-alias="OI" field-name="quantity" operator="greater" to-entity-alias="OI" to-field-name="cancelQuantity"/>
+                    <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
+                </econditions>
+            </econditions>
+        </entity-condition>
+    </view-entity>
+
+    <view-entity entity-name="FulfilledOrderItemsView" package="co.hotwax.warehouse">
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <member-entity entity-alias="OISDV" entity-name="co.hotwax.warehouse.OrderItemAndShipmentDetailsView" sub-select="true" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.order.OrderFulfillmentHistory" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias-all entity-alias="OISDV">
+            <exclude field="orderId"/>
+            <exclude field="orderItemSeqId"/>
+        </alias-all>
+        <entity-condition>
+            <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
+        </entity-condition>
+    </view-entity>
 </entities>
 
 
