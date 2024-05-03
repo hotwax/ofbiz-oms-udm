@@ -952,11 +952,6 @@ under the License.
             <key-map field-name="shipmentId"/>
             <key-map field-name="shipmentRouteSegmentId"/>
         </member-entity>
-        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-            <key-map field-name="statusId"/>
-        </member-entity>
         <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="OISG">
             <key-map field-name="facilityId"/>
         </member-entity>
