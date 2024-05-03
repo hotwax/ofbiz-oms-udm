@@ -899,7 +899,6 @@ under the License.
         <alias entity-alias="SRS" name="actualCarrierCode"/>
     </view-entity>
 
-
     <!--Adding the view-entity to fetch the eligible order items for sending fulfilled order items info for Shopify.
      1. Scenario of ADOC
          1.1 Fulfilled Order Items Feed for Shopify, this contains a check on Item Status to be completed as it should be item wise.
@@ -916,12 +915,18 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
+        </member-entity>
         <alias entity-alias="OI" name="orderId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias-all entity-alias="SOV">
             <exclude field="orderId"/>
             <exclude field="orderItemSeqId"/>
         </alias-all>
+        <alias entity-alias="OS" name="statusDatetime" function="max"/>
         <entity-condition>
             <econditions combine="and">
                 <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
@@ -943,12 +948,18 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
+        </member-entity>
         <alias entity-alias="OI" name="orderId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias-all entity-alias="OISDV">
             <exclude field="orderId"/>
             <exclude field="orderItemSeqId"/>
         </alias-all>
+        <alias entity-alias="OS" name="statusDatetime" function="max"/>
         <entity-condition>
             <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
         </entity-condition>
