@@ -489,7 +489,6 @@ under the License.
         <alias entity-alias="OPP" name="manualAuthCode" />
         <alias entity-alias="OPP" name="manualRefNum" />
         <alias entity-alias="OPP" name="paymentMode" />
-        <alias entity-alias="OPP" name="track2"/>
         <alias entity-alias="PMT" name="paymentMethodTypeId"/>
         <alias entity-alias="PMT" name="paymentMethodCode"/>
         <alias entity-alias="PMT" field="description" name="paymentMethodDescription"/>
