@@ -45,6 +45,12 @@ under the License.
         <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F" join-optional="true">
             <key-map field-name="facilityTypeId"/>
         </member-entity>
+        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+            <key-map field-name="currencyUom" related="uomId"/>
+        </member-entity>
+        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+            <key-map field-name="salesChannelEnumId" related="enumId"/>
+        </member-entity>
 
         <alias entity-alias="OISGA" name="orderId"/>
         <alias entity-alias="OISGA" name="orderItemSeqId"/>
@@ -52,17 +58,29 @@ under the License.
 
         <alias entity-alias="OH" name="orderName"/>
         <alias entity-alias="OH" name="grandTotal"/>
+        <alias entity-alias="OH" name="orderDate"/>
+        <alias entity-alias="OH" field="statusId" name="orderStatusId"/>
+        <alias entity-alias="OH" name="salesChannelEnumId"/>
+        <alias entity-alias="OH" name="orderTypeId"/>
+        <alias entity-alias="OH" field="externalId" name="orderExternalId"/>
 
-        <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="UOM" field="abbreviation" name="currency"/>
+
+        <alias entity-alias="SCENM" field="enumCode" name="salesChannelEnumCode"/>
+
+        <alias entity-alias="OI" name="quantity" function="sum"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
         <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="taxCode"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
 
         <alias entity-alias="OISG" name="facilityId"/>
         <alias entity-alias="OISG" field="contactMechId" name="shipToPostalContactMechId"/>
         <alias entity-alias="OISG" name="shipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="telecomContactMechId" name="shipToTelecomContactMechId"/>
         <alias entity-alias="OISG" name="carrierPartyId"/>
+        <alias entity-alias="OISG" name="orderFacilityId"/>
 
         <alias entity-alias="PS" field="externalId" name="productStoreExternalId"/>
 
@@ -134,11 +152,14 @@ under the License.
         <alias entity-alias="RI" name="orderId"/>
         <alias entity-alias="RI" name="orderItemSeqId"/>
         <alias entity-alias="RI" field="returnPrice" name="returnItemPrice"/>
-        <alias entity-alias="RI" name="returnQuantity"/>
+        <alias entity-alias="RI" name="returnQuantity" function="sum"/>
         <alias entity-alias="RI" name="returnReasonId"/>
         <alias entity-alias="RI" name="productId"/>
         <alias entity-alias="RI" name="returnReasonNote" field="reason"/>
+        <alias entity-alias="RI" field="statusId" name="returnItemStatusId"/>
         <alias entity-alias="OI" name="orderItemRequestedShipMethTypeId" field="requestedShipMethTypeId"/>
+        <alias entity-alias="OI" name="taxCode"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
 
         <alias entity-alias="OH" name="orderName"/>
 
@@ -375,10 +396,15 @@ under the License.
         <member-entity entity-alias="RS" entity-name="org.apache.ofbiz.order.return.ReturnStatus" join-from-alias="RI">
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
+            <key-map field-name="statusId"/>
         </member-entity>
         <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment" join-from-alias="RI" join-optional="true">
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="RI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
         </member-entity>
         <alias entity-alias="RI" name="returnId"/>
         <alias entity-alias="RI" name="returnItemSeqId"/>
@@ -386,12 +412,15 @@ under the License.
         <alias entity-alias="RI" name="orderItemSeqId"/>
         <alias entity-alias="RI" name="returnPrice"/>
         <alias entity-alias="RI" name="returnQuantity"/>
+        <alias entity-alias="RI" name="productId"/>
         <alias entity-alias="RS" name="statusId" />
         <alias entity-alias="RS" name="completedDatetime" field="statusDatetime" function="max"/>
+        <alias entity-alias="RA" name="returnAdjustmentId"/>
         <alias entity-alias="RA" name="returnAdjustmentTypeId"/>
         <alias entity-alias="RA" name="comments"/>
         <alias entity-alias="RA" name="description"/>
         <alias entity-alias="RA" name="amount" function="sum"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <entity-condition>
             <econditions>
                 <econdition entity-alias="RS" field-name="returnItemSeqId" operator="not-equals" value=""/>
@@ -406,6 +435,7 @@ under the License.
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
         </member-entity>
         <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment" join-from-alias="OI" join-optional="true">
             <key-map field-name="orderId"/>
@@ -413,14 +443,19 @@ under the License.
         </member-entity>
         <alias entity-alias="OI" name="orderId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" name="quantity"/>
         <alias entity-alias="OS" name="statusId" />
         <alias entity-alias="OS" field="statusDatetime" name="completedDatetime"/>
+        <alias entity-alias="OA" name="orderAdjustmentId"/>
         <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
         <alias entity-alias="OA" name="comments"/>
+        <alias entity-alias="OA" name="exemptAmount"/>
         <alias entity-alias="OA" name="description"/>
         <alias entity-alias="OA" name="amount" function="sum"/>
+        <alias entity-alias="OA" name="sourceReferenceId"/>
         <entity-condition>
             <econditions>
                 <econdition entity-alias="OS" field-name="orderItemSeqId" operator="not-equals" value=""/>
@@ -451,6 +486,9 @@ under the License.
         <alias entity-alias="OPP" name="statusId"/>
         <alias entity-alias="OPP" field="maxAmount" name="amount" />
         <alias entity-alias="OPP" name="createdDate" />
+        <alias entity-alias="OPP" name="manualAuthCode" />
+        <alias entity-alias="OPP" name="manualRefNum" />
+        <alias entity-alias="OPP" name="paymentMode" />
         <alias entity-alias="PMT" name="paymentMethodTypeId"/>
         <alias entity-alias="PMT" name="paymentMethodCode"/>
         <alias entity-alias="PMT" field="description" name="paymentMethodDescription"/>
@@ -897,6 +935,50 @@ under the License.
         <alias entity-alias="SRS" name="shipmentRouteSegmentId"/>
         <alias entity-alias="SPRS" name="trackingNumber" field="trackingCode"/>
         <alias entity-alias="SRS" name="actualCarrierCode"/>
+    </view-entity>
+
+    <!-- View entity to fetch order item and return item details -->
+    <view-entity entity-name="OrderItemAndReturnItemView" package="co.hotwax.financial" group="ofbiz_transactional">
+        <description>View to fetch the Order Item and Return Item Details.</description>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" field="statusId" name="orderItemStatus"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="quantity" function="sum"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OI" name="orderItemTypeId"/>
+        <alias entity-alias="OI" name="cancelQuantity"/>
+        <alias-all entity-alias="RI">
+            <exclude field="statusId"/>
+            <exclude field="productId"/>
+        </alias-all>
+        <alias entity-alias="RI" field="statusId" name="returnItemStatus"/>
+    </view-entity>
+
+    <!-- View entity to fetch Order Item and Attribute details. -->
+    <view-entity entity-name="OrderItemAndAttribute" package="co.hotwax.financial" group="ofbiz_transactional">
+        <description>View to fetch the Order Item and Item Attribute Details.</description>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <member-entity entity-alias="OIA" entity-name="org.apache.ofbiz.order.order.OrderItemAttribute" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" field="statusId" name="orderItemStatus"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="quantity" function="sum"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OI" name="orderItemTypeId"/>
+        <alias-all entity-alias="OIA">
+            <exclude field="orderId"/>
+            <exclude field="orderItemSeqId"/>
+        </alias-all>
     </view-entity>
 </entities>
 
