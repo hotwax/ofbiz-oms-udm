@@ -54,11 +54,6 @@ under the License.
         <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
-        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-            <key-map field-name="statusId"/>
-        </member-entity>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="OI">
             <key-map field-name="productId"/>
         </member-entity>
@@ -103,8 +98,6 @@ under the License.
 
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
-        <alias entity-alias="OS" name="statusDatetime" function="max"/>
-
     </view-entity>
 
     <view-entity entity-name="AppeasementView" package="co.hotwax.financial" group="ofbiz_transactional">
