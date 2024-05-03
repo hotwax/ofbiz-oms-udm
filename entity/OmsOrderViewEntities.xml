@@ -976,32 +976,37 @@ under the License.
         <alias entity-alias="SRS" name="actualCarrierCode"/>
     </view-entity>
 
-    <!-- TODO create in OMS and migrate entity defn using group="ofbiz_transactional" -->
-    <entity entity-name="OrderGlPostingHistory" package="co.hotwax.integration.order" group="ofbiz_transactional">
-        <field name="glPostingLogId" type="id" is-pk="true"></field>
+    <!-- TODO remove from here and migrate - create in OMS and migrate entity defn using group="ofbiz_transactional" -->
+    <entity entity-name="OrderFulfillmentHistoryErp" package="co.hotwax.integration.order" group="ofbiz_transactional">
+        <field name="fulfillmentLogIdErp" type="id" is-pk="true"></field>
         <field name="shipmentId" type="id"></field>
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>
         <field name="createdDate" type="date-time"></field>
         <field name="comments" type="text-long"></field>
-        <relationship type="one" fk-name="ORD_GL_POST_SHIP" related="org.apache.ofbiz.shipment.shipment.Shipment">
+        <relationship type="one" fk-name="ORD_FULFIL_ERP_SHIP" related="org.apache.ofbiz.shipment.shipment.Shipment">
             <key-map field-name="shipmentId"/>
         </relationship>
-        <relationship type="one" fk-name="ORD_GL_POST_OI" related="org.apache.ofbiz.order.order.OrderItem">
+        <relationship type="one" fk-name="ORD_FULFIL_ERP_OI" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </relationship>
     </entity>
 
     <!-- TODO add description -->
-    <view-entity entity-name="OrderItemAndGlPostingHistory" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="FulfilledOrderItemsForErp" package="co.hotwax.warehouse" group="ofbiz_transactional">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
         <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="OGPH" entity-name="co.hotwax.integration.order.OrderGlPostingHistory" join-from-alias="OI" join-optional="true">
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="OFHERP" entity-name="co.hotwax.integration.order.OrderFulfillmentHistoryErp" join-from-alias="OI" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
@@ -1011,16 +1016,19 @@ under the License.
             <exclude field="orderId"/>
             <exclude field="orderItemSeqId"/>
         </alias-all>
+        <alias entity-alias="OS" name="statusDatetime" function="max"/>
         <entity-condition>
             <!-- Using the below conditions we are fetching the eligible orders that are not sent to the external system -->
             <econditions combine="and">
-                <econdition entity-alias="OGPH" field-name="orderId" operator="equals" value=""/>
+                <econdition entity-alias="OFHERP" field-name="orderId" operator="equals" value=""/>
                 <econditions combine="or">
-                    <econdition entity-alias="SOV" field-name="quantity" operator="greater" to-entity-alias="SOV" to-field-name="cancelQuantity"/>
-                    <econdition entity-alias="SOV" field-name="cancelQuantity" operator="equals" value=""/>
+                    <econdition entity-alias="OI" field-name="quantity" operator="greater" to-entity-alias="OI" to-field-name="cancelQuantity"/>
+                    <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
                 </econditions>
             </econditions>
-            <order-by field-name="entryDate"/>
+            <!-- TODO facing issue when using in this view, need to debug and check
+                    Unknown column 'SOV.ENTRY_DATE' in 'order clause' -->
+<!--            <order-by field-name="entryDate"/>-->
         </entity-condition>
     </view-entity>
 
@@ -1038,11 +1046,6 @@ under the License.
         <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
-        </member-entity>
-        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-            <key-map field-name="statusId"/>
         </member-entity>
         <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
@@ -1122,13 +1125,12 @@ under the License.
         <alias entity-alias="OISG" field="shipmentMethodTypeId" name="slaShipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
         <alias entity-alias="OISG" name="telecomContactMechId"/>
-        <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OI" field="quantity" name="itemQuantity"/>
         <alias entity-alias="OI" name="cancelQuantity"/>
         <alias entity-alias="F" name="facilityId"/>
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
         <alias entity-alias="FT" name="facilityTypeId"/>
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
-        <alias entity-alias="OS" name="statusDatetime" function="max"/>
         <alias entity-alias="PP" name="productId"/>
         <alias entity-alias="PP" name="internalName"/>
         <alias entity-alias="OSH" field="quantity" name="shippedQuantity"/>
@@ -1138,7 +1140,7 @@ under the License.
         <alias entity-alias="SH" field="destinationContactMechId" name="shipToContactMechId"/>
         <alias entity-alias="SH" field="destinationTelecomNumberId" name="shipToTelecomContactMechId"/>
         <alias entity-alias="SH" name="shipmentTypeId"/>
-        <alias entity-alias="SPRS" name="trackingCode"/>
+        <alias entity-alias="SPRS" field="trackingCode" name="trackingNumber"/>
         <alias entity-alias="SH" name="carrierPartyId"/>
         <alias entity-alias="SH" name="shipmentMethodTypeId"/>
         <alias entity-alias="PT" name="productTypeId"/>
@@ -1149,22 +1151,28 @@ under the License.
             <!-- Here we are preparing the Shipment Item for eligible Order that are not sent to the external system.
              So we need to add the below condition same as FulfilledOrderItemsSyncQueue view. -->
             <econdition entity-alias="ODR" field-name="roleTypeId" operator="equals" value="BILL_TO_CUSTOMER"/>
-            <econditions combine="or">
+            <!-- TODO add note -->
+            <!--<econditions combine="or">
                 <econdition entity-alias="OI" field-name="quantity" operator="greater" to-entity-alias="OI" to-field-name="cancelQuantity"/>
                 <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
-            </econditions>
+            </econditions>-->
         </entity-condition>
     </view-entity>
 
     <!-- TODO add description -->
-    <view-entity entity-name="OrderItemShipmentAndGlPostingHistory" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemShipmentForErp" package="co.hotwax.warehouse" group="ofbiz_transactional">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
-        <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI" join-optional="true">
+        <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="OGPH" entity-name="co.hotwax.integration.order.OrderGlPostingHistory" join-from-alias="OI" join-optional="true">
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="OFHERP" entity-name="co.hotwax.integration.order.OrderFulfillmentHistoryErp" join-from-alias="OI" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
@@ -1174,8 +1182,13 @@ under the License.
             <exclude field="orderId"/>
             <exclude field="orderItemSeqId"/>
         </alias-all>
+        <alias entity-alias="OS" name="statusDatetime" function="max"/>
         <entity-condition>
-            <econdition entity-alias="OGPH" field-name="orderId" operator="equals" value=""/>
+            <econdition entity-alias="OFHERP" field-name="orderId" operator="equals" value=""/>
+            <econditions combine="or">
+                <econdition entity-alias="OI" field-name="quantity" operator="greater" to-entity-alias="OI" to-field-name="cancelQuantity"/>
+                <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
+            </econditions>
         </entity-condition>
     </view-entity>
 </entities>
