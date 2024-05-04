@@ -962,6 +962,10 @@ under the License.
         <alias entity-alias="OS" name="statusDatetime" function="max"/>
         <entity-condition>
             <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
+            <econditions combine="or">
+                <econdition entity-alias="OI" field-name="quantity" operator="greater" to-entity-alias="OI" to-field-name="cancelQuantity"/>
+                <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
+            </econditions>
         </entity-condition>
     </view-entity>
 </entities>
