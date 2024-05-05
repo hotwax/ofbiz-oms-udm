@@ -413,18 +413,14 @@ under the License.
         </member-entity>
         <alias entity-alias="OI" name="orderId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
-        <alias entity-alias="OI" name="productId"/>
-        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" name="quantity"/>
         <alias entity-alias="OS" name="statusId" />
         <alias entity-alias="OS" field="statusDatetime" name="completedDatetime"/>
         <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
         <alias entity-alias="OA" name="comments"/>
-        <alias entity-alias="OA" name="exemptAmount"/>
         <alias entity-alias="OA" name="description"/>
         <alias entity-alias="OA" name="amount" function="sum"/>
-        <alias entity-alias="OA" name="sourceReferenceId"/>
         <entity-condition>
             <econditions>
                 <econdition entity-alias="OS" field-name="orderItemSeqId" operator="not-equals" value=""/>
@@ -901,6 +897,52 @@ under the License.
         <alias entity-alias="SRS" name="shipmentRouteSegmentId"/>
         <alias entity-alias="SPRS" name="trackingNumber" field="trackingCode"/>
         <alias entity-alias="SRS" name="actualCarrierCode"/>
+    </view-entity>
+
+    <!-- View entity to fetch Order Item Adjustments and Attributes. -->
+    <!-- NOTE: OrderItemAndAdjustment view entity is already exist to fetch the Order Item Adjustments, but in the Get Orders API there is a requirement to prepare the
+         Order Item Adjustments along with Order Adjustments Attributes. Hence, a new entity OrderItemAdjustmentAndAttribute is created for this purpose.
+         This is required to prevent issues with existing code, as the OrderItemAndAdjustment view is already used to fetch the Order Item Adjustments in the feeds. -->
+    <!-- TODO: Check if necessary fields can be added to the existing view and verify the feeds, if everything looks good then use the existing OrderItemAndAdjustment view to simplify things. -->
+
+    <view-entity entity-name="OrderItemAdjustmentAndAttribute" package="co.hotwax.order" group="ofbiz_transactional">
+        <description>View to get the Order Items and their Adjustments.</description>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OAA" entity-name="org.apache.ofbiz.order.order.OrderAdjustmentAttribute" join-from-alias="OA" join-optional="true">
+            <key-map field-name="orderAdjustmentId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OI" name="unitPrice"/>
+        <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OS" name="statusId" />
+        <alias entity-alias="OS" field="statusDatetime" name="completedDatetime"/>
+        <alias entity-alias="OA" name="orderAdjustmentId"/>
+        <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
+        <alias entity-alias="OA" name="comments"/>
+        <alias entity-alias="OA" name="exemptAmount"/>
+        <alias entity-alias="OA" name="description"/>
+        <alias entity-alias="OA" name="amount" function="sum"/>
+        <alias entity-alias="OA" name="sourceReferenceId"/>
+        <alias entity-alias="OAA" name="attrName"/>
+        <alias entity-alias="OAA" name="attrValue"/>
+        <entity-condition>
+            <econditions>
+                <econdition entity-alias="OS" field-name="orderItemSeqId" operator="not-equals" value=""/>
+            </econditions>
+            <order-by field-name="completedDatetime"/>
+        </entity-condition>
     </view-entity>
 </entities>
 
