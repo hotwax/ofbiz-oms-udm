@@ -965,7 +965,7 @@ under the License.
         </alias-all>
     </view-entity>
 
-    <view-entity entity-name="SalesOrderItemView" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="OrderAndItemsView" package="co.hotwax.financial" group="ofbiz_transactional">
         <description>View to get Order details for Sales Order Item.</description>
         <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc"></member-entity>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="OISGA">
