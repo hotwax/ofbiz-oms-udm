@@ -37,7 +37,7 @@ under the License.
             <key-map field-name="shipGroupSeqId"/>
         </member-entity>
         <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
-            <key-map field-name="productStoreId"/>
+            <key-map field-name="productStoreId" related="productStoreId"/>
         </member-entity>
         <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="OISG" join-optional="true">
             <key-map field-name="facilityId"/>
