@@ -965,17 +965,13 @@ under the License.
         </alias-all>
     </view-entity>
 
-    <view-entity entity-name="OrderAndItemsView" package="co.hotwax.financial" group="ofbiz_transactional">
-        <description>View to get Order details for Sales Order Item.</description>
-        <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc"></member-entity>
-        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="OISGA">
+    <view-entity entity-name="OrderItemDetail" package="co.hotwax.order" group="ofbiz_transactional">
+        <description>View to get Order details for Sales Order Item</description>
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OISGA">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-        </member-entity>
-        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OISGA">
+        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
         </member-entity>
@@ -995,10 +991,7 @@ under the License.
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
 
-        <alias entity-alias="OISGA" name="orderId"/>
-        <alias entity-alias="OISGA" name="orderItemSeqId"/>
-        <alias entity-alias="OISGA" name="shipGroupSeqId"/>
-
+        <alias entity-alias="OH" name="orderId"/>
         <alias entity-alias="OH" name="orderName"/>
         <alias entity-alias="OH" name="grandTotal"/>
         <alias entity-alias="OH" name="orderDate"/>
@@ -1011,6 +1004,8 @@ under the License.
 
         <alias entity-alias="SCENM" field="enumCode" name="salesChannelEnumCode"/>
 
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" name="shipGroupSeqId"/>
         <alias entity-alias="OI" name="quantity" function="sum"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
