@@ -157,9 +157,5 @@ under the License.
             <exclude field="facilityId"/>
             <exclude field="description"/>
         </alias-all>
-<<<<<<< HEAD
-        <entity-condition><date-filter entity-alias="FGM"/></entity-condition>
-=======
->>>>>>> fdd5aa325eddc651d76e0dca907e8df9cf9dcd3c
     </view-entity>
 </entities>
