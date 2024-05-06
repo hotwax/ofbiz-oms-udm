@@ -211,7 +211,7 @@ under the License.
          This is required to prevent issues with existing code, as the ReturnedItemAndAdjustment view is already used to fetch the Return Item Adjustments in the feeds. -->
     <!-- TODO: Check if necessary fields can be added to the existing view and verify the feeds, if everything looks good then use the existing ReturnedItemAndAdjustment view to simplify things. -->
 
-    <view-entity entity-name="ReturnedItemAndAdjustment" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="ReturnedItemAndAdjustment" package="co.hotwax.order" group="ofbiz_transactional">
         <description>View to get the Return Items and their Adjustments.</description>
         <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem"/>
         <member-entity entity-alias="RS" entity-name="org.apache.ofbiz.order.return.ReturnStatus" join-from-alias="RI">
