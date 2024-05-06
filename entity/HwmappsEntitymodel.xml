@@ -1422,6 +1422,7 @@ under the License.
     <extend-entity entity-name="OrderPaymentPreference" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="paymentMode" type="text-long"></field>
         <field name="cardName" type="text-long"></field>
+        <field name="requestId" type="text-long"></field>
     </extend-entity>
     <extend-entity entity-name="FacilityLocation" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
         <field name="isLocked" type="text-indicator"><description>Indicates a facility location is locked for reservations or not</description></field>
