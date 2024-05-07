@@ -1006,7 +1006,7 @@ under the License.
             <key-map field-name="orderItemSeqId"/>
             <key-map field-name="statusId"/>
         </member-entity>
-        <member-entity entity-alias="OFHERP" entity-name="co.hotwax.integration.order.OrderFulfillmentErpHistory" join-from-alias="OI" join-optional="true">
+        <member-entity entity-alias="OFEH" entity-name="co.hotwax.integration.order.OrderFulfillmentErpHistory" join-from-alias="OI" join-optional="true">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
