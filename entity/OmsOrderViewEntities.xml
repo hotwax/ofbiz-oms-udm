@@ -378,15 +378,10 @@ under the License.
         <member-entity entity-alias="RS" entity-name="org.apache.ofbiz.order.return.ReturnStatus" join-from-alias="RI">
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
-            <key-map field-name="statusId"/>
         </member-entity>
         <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment" join-from-alias="RI" join-optional="true">
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
-        </member-entity>
-        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="RI">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
         </member-entity>
         <alias entity-alias="RI" name="returnId"/>
         <alias entity-alias="RI" name="returnItemSeqId"/>
@@ -394,15 +389,12 @@ under the License.
         <alias entity-alias="RI" name="orderItemSeqId"/>
         <alias entity-alias="RI" name="returnPrice"/>
         <alias entity-alias="RI" name="returnQuantity"/>
-        <alias entity-alias="RI" name="productId"/>
         <alias entity-alias="RS" name="statusId" />
         <alias entity-alias="RS" name="completedDatetime" field="statusDatetime" function="max"/>
-        <alias entity-alias="RA" name="returnAdjustmentId"/>
         <alias entity-alias="RA" name="returnAdjustmentTypeId"/>
         <alias entity-alias="RA" name="comments"/>
         <alias entity-alias="RA" name="description"/>
         <alias entity-alias="RA" name="amount" function="sum"/>
-        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <entity-condition>
             <econditions>
                 <econdition entity-alias="RS" field-name="returnItemSeqId" operator="not-equals" value=""/>
@@ -417,7 +409,6 @@ under the License.
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
-            <key-map field-name="statusId"/>
         </member-entity>
         <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment" join-from-alias="OI" join-optional="true">
             <key-map field-name="orderId"/>
@@ -425,19 +416,14 @@ under the License.
         </member-entity>
         <alias entity-alias="OI" name="orderId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
-        <alias entity-alias="OI" name="productId"/>
-        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" name="quantity"/>
         <alias entity-alias="OS" name="statusId" />
         <alias entity-alias="OS" field="statusDatetime" name="completedDatetime"/>
-        <alias entity-alias="OA" name="orderAdjustmentId"/>
         <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
         <alias entity-alias="OA" name="comments"/>
-        <alias entity-alias="OA" name="exemptAmount"/>
         <alias entity-alias="OA" name="description"/>
         <alias entity-alias="OA" name="amount" function="sum"/>
-        <alias entity-alias="OA" name="sourceReferenceId"/>
         <entity-condition>
             <econditions>
                 <econdition entity-alias="OS" field-name="orderItemSeqId" operator="not-equals" value=""/>
