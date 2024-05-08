@@ -899,13 +899,9 @@ under the License.
         <alias entity-alias="SRS" name="actualCarrierCode"/>
     </view-entity>
 
-    <!--Adding the view-entity to fetch the eligible order items for sending fulfilled order items info for Shopify.
-     1. Scenario of ADOC
-         1.1 Fulfilled Order Items Feed for Shopify, this contains a check on Item Status to be completed as it should be item wise.
-         1.2 Fulfilled Order Items Feed for ERP (for GL Posting/Invoicing), this contains a check on Order Status to be completed as it should be sent when the entire order is completed.
-     2. In this view we are handling the case of Shopify.
+    <!-- New view is added to fetch the eligible orders to be send in the fulfilment feed for Shopify
      -->
-    <view-entity entity-name="FulfilledOrdersItemsForShopify" package="co.hotwax.warehouse">
+    <view-entity entity-name="FulfilledOrdersItemsForShopify" package="co.hotwax.warehouse" group="ofbiz_transactional">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
             <key-map field-name="orderItemSeqId"/>
@@ -938,9 +934,9 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="OrderItemShipmentForShopify" package="co.hotwax.warehouse">
+    <view-entity entity-name="OrderItemShipmentForShopify" package="co.hotwax.warehouse" group="ofbiz_transactional">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
-        <member-entity entity-alias="OISDV" entity-name="co.hotwax.warehouse.OrderItemAndShipmentDetailsView" sub-select="true" join-from-alias="OI">
+        <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
@@ -955,7 +951,7 @@ under the License.
         </member-entity>
         <alias entity-alias="OI" name="orderId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
-        <alias-all entity-alias="OISDV">
+        <alias-all entity-alias="OISD">
             <exclude field="orderId"/>
             <exclude field="orderItemSeqId"/>
         </alias-all>
