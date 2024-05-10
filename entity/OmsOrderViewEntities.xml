@@ -899,8 +899,13 @@ under the License.
         <alias entity-alias="SRS" name="actualCarrierCode"/>
     </view-entity>
 
-    <!-- TODO add description -->
+    <!-- This view is used for fetching the Fulfilled Order Item details to send to ERP.
+    NOTE:
+    1. It is being used to prepare the Feed for Fulfilled Order Items.
+    2. This includes the use of OrderFulfillmentErpHistory entity to get only those fulfilled order items for which history is not created.
+    3. This is required so that when the view is used in the feed, the same order items is not included multiple times in the feeds. -->
     <view-entity entity-name="FulfilledOrderItemsForErp" package="co.hotwax.warehouse" group="ofbiz_transactional">
+        <description>View to get order item details using OrderFulfillmentErpHistory.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
         <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
@@ -964,6 +969,11 @@ under the License.
         </member-entity>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.party.party.Person" join-from-alias="ODR" join-optional="true">
             <key-map field-name="partyId"/>
+        </member-entity>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
         </member-entity>
         <member-entity entity-alias="OSH" entity-name="org.apache.ofbiz.order.order.OrderShipment" join-from-alias="OI" join-optional="true">
             <key-map field-name="orderId"/>
@@ -1053,11 +1063,16 @@ under the License.
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
         <alias entity-alias="SRS" name="actualCarrierCode"/>
+        <alias entity-alias="OS" name="statusDatetime"/>
         <entity-condition>
             <!-- Here we are preparing the Shipment Item for eligible Order that are not sent to the external system.
              So we need to add the below condition same as FulfilledOrderItemsSyncQueue view. -->
             <econdition entity-alias="ODR" field-name="roleTypeId" operator="equals" value="BILL_TO_CUSTOMER"/>
-            <!-- TODO add note -->
+            <!-- NOTE these conditions are now included in the OrderItemShipmentForShopify and OrderItemShipmentForErp
+                 views which are used to prepare the eligible shipments for the fulfilled order items feed
+                 for Shopify and ERP respectively.
+                 If this view is being used in any service, check to add these conditions as part of
+                 entity conditions in the service if required -->
             <!--<econditions combine="or">
                 <econdition entity-alias="OI" field-name="quantity" operator="greater" to-entity-alias="OI" to-field-name="cancelQuantity"/>
                 <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
@@ -1065,8 +1080,13 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <!-- TODO add description -->
+    <!-- This view is used for fetching the Fulfilled Order Item shipment details to send to ERP.
+    NOTE:
+    1. It is being used to prepare the Feed for Fulfilled Order Items.
+    2. This includes the use of OrderFulfillmentErpHistory entity to get only those fulfilled order items for which history is not created.
+    3. This is required so that when the view is used in the feed, the same order items is not included multiple times in the feeds. -->
     <view-entity entity-name="OrderItemShipmentForErp" package="co.hotwax.warehouse" group="ofbiz_transactional">
+        <description>View to get order item and shipment details using OrderFulfillmentErpHistory.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
         <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI">
