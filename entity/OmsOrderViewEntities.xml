@@ -954,6 +954,7 @@ under the License.
         <alias-all entity-alias="OISD">
             <exclude field="orderId"/>
             <exclude field="orderItemSeqId"/>
+            <exclude field="statusDatetime"/>
         </alias-all>
         <alias entity-alias="OS" name="statusDatetime" function="max"/>
         <entity-condition>
