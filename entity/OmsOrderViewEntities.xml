@@ -83,8 +83,8 @@ under the License.
         <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
             <key-map field-name="productStoreId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
-            <key-map field-name="currencyUom" related="uomId"/>
+        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="RH" join-optional="true">
+            <key-map field-name="currencyUomId" related="uomId"/>
         </member-entity>
 
         <alias entity-alias="RH" name="returnId"/>
