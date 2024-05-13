@@ -83,6 +83,9 @@ under the License.
         <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
             <key-map field-name="productStoreId"/>
         </member-entity>
+        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+            <key-map field-name="currencyUom" related="uomId"/>
+        </member-entity>
 
         <alias entity-alias="RH" name="returnId"/>
         <alias entity-alias="RH" name="entryDate"/>
@@ -99,6 +102,8 @@ under the License.
         <alias entity-alias="OH" name="orderTypeId"/>
 
         <alias entity-alias="PS" field="externalId" name="productStoreExternalId"/>
+
+        <alias entity-alias="UOM" field="abbreviation" name="currency"/>
         <entity-condition>
             <order-by field-name="-entryDate"/>
         </entity-condition>
