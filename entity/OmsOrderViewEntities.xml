@@ -142,6 +142,7 @@ under the License.
         <alias entity-alias="RI" name="returnQuantity"/>
         <alias entity-alias="RI" name="returnReasonId"/>
         <alias entity-alias="RI" name="productId"/>
+        <alias entity-alias="RI" name="statusId"/>
         <alias entity-alias="RI" name="returnReasonNote" field="reason"/>
         <alias entity-alias="OI" name="orderItemRequestedShipMethTypeId" field="requestedShipMethTypeId"/>
 
