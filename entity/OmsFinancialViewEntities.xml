@@ -73,6 +73,7 @@ under the License.
         <alias entity-alias="SCENM" field="enumCode" name="orderSalesChannel"/>
         <alias entity-alias="PS" name="productStoreExternalId" field="externalId"/>
         <alias entity-alias="RH" name="customerPartyId" field="fromPartyId"/>
+        <alias entity-alias="RH" field="statusId" name="returnStatusId"/>
         <entity-condition>
             <econditions>
                 <econdition entity-alias="RS" field-name="returnItemSeqId" operator="not-equals" value=""/>
