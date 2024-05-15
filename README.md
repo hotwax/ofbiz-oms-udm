@@ -14,5 +14,5 @@ TODO identify and update for earlier versions.
 NOTE Before using this component, identify the minimum compatible HC OMS release version esp. database changes.
 
 | ofbiz-oms-udm release | HC OMS release | Comments |
-| -----------------------| --- | --- | --- |
-| v1.4.0                | v5.10.0 | |
+|-----------------------|----------------|----------|
+| v1.4.0                | v5.10.0        |          |
