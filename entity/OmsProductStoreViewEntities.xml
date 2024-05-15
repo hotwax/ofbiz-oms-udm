@@ -36,8 +36,15 @@ under the License.
             <key-map field-name="facilityTypeId"/>
         </member-entity>
 
-        <alias-all entity-alias="PS"/>
+        <alias entity-alias="PS" name="productStoreId"/>
+        <alias entity-alias="PS" name="storeName"/>
         <alias entity-alias="PSF" name="facilityCount" field="facilityId" function="count"/>
+        <entity-condition>
+            <econditions>
+                <econdition entity-alias="FT" field-name="facilityTypeId" operator="not-equals" value="VIRTUAL_FACILITY"/>
+                <econdition entity-alias="FT" field-name="parentTypeId" operator="not-equals" value="VIRTUAL_FACILITY"/>
+            </econditions>
+        </entity-condition>
     </view-entity>
     <view-entity entity-name="ProductStoreShipmentMethCount" package="co.hotwax.product.store">
         <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore"/>
@@ -46,7 +53,8 @@ under the License.
             <entity-condition><date-filter entity-alias="PSSM"/></entity-condition>
         </member-entity>
 
-        <alias-all entity-alias="PS"/>
+        <alias entity-alias="PS" name="productStoreId"/>
+        <alias entity-alias="PS" name="storeName"/>
         <alias entity-alias="PSSM" name="shipmentMethodCount" field="shipmentMethodTypeId" function="count"/>
     </view-entity>
 </entities>
