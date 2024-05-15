@@ -36,8 +36,12 @@ under the License.
         <field name="expireDate" type="date-time"><description>Expire Date</description></field>
         <field name="localeString" type="text-short"></field>
         <field name="customerClassificationId" type="id"></field>
+        <field name="presentmentCurrencyUom" type="id"></field>
         <relationship type="one-nofk" fk-name="FK_ORD_CUSTCLS_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="customerClassificationId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="ORDER_HDR_PCUOM" related="org.apache.ofbiz.common.uom.Uom">
+            <key-map field-name="presentmentCurrencyUom" related="uomId"/>
         </relationship>
         <index name="ORD_CUSTCLASS_ENUM">
             <index-field name="customerClassificationId"/>
@@ -87,7 +91,6 @@ under the License.
         <field name="contentId" type="id"></field>
     </extend-entity>
     <extend-entity entity-name="Enumeration" package="org.apache.ofbiz.common.enum" group="ofbiz_transactional">
-        <field name="enumName" type="text-medium"></field>
         <field name="sequenceNum" type="number-integer"></field>
     </extend-entity>
     <extend-entity entity-name="TrackingCode" package="org.apache.ofbiz.marketing.tracking" group="ofbiz_transactional">
@@ -530,6 +533,12 @@ under the License.
             <key-map field-name="productId"/>
         </relationship>
     </extend-entity>
+    <extend-entity entity-name="FacilityContent" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+        <field name="facilityContentTypeEnumId" type="id"></field>
+        <relationship type="one" fk-name="FAC_CNT_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="facilityContentTypeEnumId" related="enumId"/>
+        </relationship>
+    </extend-entity>
     <entity entity-name="ProductStorePaymentNetwork" package="co.hotwax.easyerpadmin" group="ofbiz_transactional">
         <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="creditCardEnumId" type="id" is-pk="true"></field>
@@ -591,13 +600,14 @@ under the License.
         <field name="scriptTitle" type="text-long"></field>
         <field name="delimiter" type="text-medium"></field>
         <field name="fileNamePattern" type="text-long"></field>
-        <field name="sync" type="text-indicator"></field>
+        <field name="executionModeId" type="id"></field>
         <field name="multiThreading" type="text-indicator"></field>
         <field name="importPath" type="text-long"></field>
         <field name="exportPath" type="text-long"></field>
-        <field name="schemaValidator" type="text-long"></field>
-        <field name="namespaceSchemaLocation" type="text-long"></field>
         <field name="priority" type="number-integer"></field>
+        <relationship type="one" fk-name="DTMGR_CONF_ENM" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="executionModeId" related="enumId"/>
+        </relationship>
     </entity>
     <entity entity-name="DataManagerLog" package="co.hotwax.datamanager" group="ofbiz_transactional">
         <field name="logId" type="id" is-pk="true"></field>
@@ -608,11 +618,15 @@ under the License.
         <field name="logTypeEnumId" type="id"></field>
         <field name="createdByUserLogin" type="id-long"></field>
         <field name="createdDate" type="date-time"></field>
+        <field name="startDateTime" type="date-time"></field>
+        <field name="finishDateTime" type="date-time"></field>
+        <field name="cancelDateTime" type="date-time"></field>
         <field name="jobId" type="id"></field>
         <field name="statusId" type="id"></field>
         <field name="errorRecordContentId" type="id"></field>
         <field name="logFileContentId" type="id"></field>
         <field name="runtimeDataId" type="id"></field>
+        <field name="createdByJobId" type="id"></field>
         <relationship type="one" fk-name="DM_LOG_DM_CONFG" related="co.hotwax.datamanager.DataManagerConfig">
             <key-map field-name="configId"/>
         </relationship>
@@ -645,6 +659,9 @@ under the License.
         </relationship>
         <relationship type="one-nofk" related="org.apache.ofbiz.service.schedule.RuntimeData">
             <key-map field-name="runtimeDataId"/>
+        </relationship>
+        <relationship type="one-nofk" fk-name="DTMGR_CRTED_JOB" title="Initiating" related="org.apache.ofbiz.service.schedule.JobSandbox">
+            <key-map field-name="createdByJobId" related="jobId"/>
         </relationship>
     </entity>
     <entity entity-name="DataManagerConfigRole" package="co.hotwax.datamanager" group="ofbiz_transactional">
@@ -959,27 +976,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="CNT_STTS_UL" title="ChangeBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="CommunicationMessage" package="co.hotwax.party.party" group="ofbiz_transactional">
-        <field name="communicationEventId" type="id" is-pk="true"></field>
-        <field name="messageId" type="id" is-pk="true"></field>
-        <field name="statusId" type="id"></field>
-        <field name="fromPartyId" type="id"></field>
-        <field name="content" type="text-very-long"></field>
-        <field name="contentId" type="id"></field>
-        <field name="createdDate" type="date-time"></field>
-        <relationship type="one" fk-name="CM_MESSAGE_MSG" related="org.apache.ofbiz.party.communication.CommunicationEvent">
-            <key-map field-name="communicationEventId"/>
-        </relationship>
-        <relationship type="one" fk-name="CM_MESSAGE_CNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
-        </relationship>
-        <relationship type="one" fk-name="CM_MESSAGE_STTS" related="org.apache.ofbiz.common.status.StatusItem">
-            <key-map field-name="statusId"/>
-        </relationship>
-        <relationship type="one" fk-name="CM_MESSAGE_Party" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="fromPartyId" related="partyId"/>
         </relationship>
     </entity>
     <entity entity-name="ProductCSVData" package="co.hotwax.datamanager" group="ofbiz_transactional">
@@ -1422,6 +1418,9 @@ under the License.
     <extend-entity entity-name="OrderPaymentPreference" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="paymentMode" type="text-long"></field>
         <field name="cardName" type="text-long"></field>
+        <field name="presentmentAmount" type="currency-amount"></field>
+        <field name="presentmentCurrencyUom" type="id"></field>
+        <field name="exchangeRate" type="number-float"></field>
         <field name="requestId" type="text-long"></field>
     </extend-entity>
     <extend-entity entity-name="FacilityLocation" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
@@ -1763,6 +1762,7 @@ under the License.
     </extend-entity>
     <extend-entity entity-name="ShipmentPackageRouteSeg" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="labelImageUrl" type="text-long"></field>
+        <field name="internationalInvoiceUrl" type="text-long"></field>
         <field name="packagePickupPrn" type="id"></field>
         <field name="packagePickupDate" type="date-time"></field>
     </extend-entity>
@@ -1944,9 +1944,9 @@ under the License.
     <entity entity-name="ProductStoreSetting" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
         <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="settingTypeEnumId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="settingValue" type="text-long"></field>
+        <field name="fromDate" type="date-time" is-pk="true" enable-audit-log="true"></field>
+        <field name="thruDate" type="date-time" enable-audit-log="true"></field>
+        <field name="settingValue" type="text-long" enable-audit-log="true"></field>
         <relationship type="one" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="settingTypeEnumId" related="enumId"/>
         </relationship>
@@ -2157,6 +2157,42 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="PSFG_FACGRP" related="org.apache.ofbiz.product.facility.FacilityGroup">
             <key-map field-name="facilityGroupId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="FacilityCarrierConfig" package="co.hotwax.facility" group="ofbiz_transactional">
+        <field name="facilityCarrierConfigId" type="id" is-pk="true"></field>
+        <field name="facilityId" type="id"></field>
+        <field name="carrierPartyId" type="id"></field>
+        <field name="customSigner" type="text-medium"></field>
+        <relationship type="one-nofk" related="org.apache.ofbiz.product.facility.Facility">
+            <key-map field-name="facilityId"/>
+        </relationship>
+    </entity>
+    <extend-entity entity-name="InventoryItemVariance" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+        <field name="reasonEnumId" type="id"></field>
+        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="reasonEnumId" related="enumId"/>
+        </relationship>
+    </extend-entity>
+    <extend-entity entity-name="VarianceReasonGlAccount" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
+        <field name="reasonEnumId" type="id"></field>
+        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="reasonEnumId" related="enumId"/>
+        </relationship>
+    </extend-entity>
+    <entity entity-name="OrderFulfillmentErpHistory" package="co.hotwax.integration.order" group="ofbiz_transactional">
+        <field name="fulfillmentErpHistoryId" type="id" is-pk="true"></field>
+        <field name="shipmentId" type="id"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="comments" type="text-long"></field>
+        <relationship type="one" fk-name="ORD_FULFIL_ERP_SHIP" related="org.apache.ofbiz.shipment.shipment.Shipment">
+            <key-map field-name="shipmentId"/>
+        </relationship>
+        <relationship type="one" fk-name="ORD_FULFIL_ERP_OI" related="org.apache.ofbiz.order.order.OrderItem">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
         </relationship>
     </entity>
 </entities>
