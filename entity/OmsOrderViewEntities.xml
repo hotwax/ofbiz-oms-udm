@@ -235,6 +235,12 @@ under the License.
         <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F">
             <key-map field-name="facilityTypeId"/>
         </member-entity>
+        <member-entity entity-alias="FGM" entity-name="org.apache.ofbiz.product.facility.FacilityGroupMember" join-from-alias="F">
+            <key-map field-name="facilityId"/>
+        </member-entity>
+        <member-entity entity-alias="FG" entity-name="org.apache.ofbiz.product.facility.FacilityGroup" join-from-alias="FGM">
+            <key-map field-name="facilityGroupId"/>
+        </member-entity>
         <member-entity entity-alias="ODR" entity-name="org.apache.ofbiz.order.order.OrderRole" join-from-alias="OH" join-optional="true">
             <key-map field-name="orderId"/>
         </member-entity>
@@ -287,6 +293,14 @@ under the License.
         <alias entity-alias="PD" name="internalName"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
         <alias entity-alias="ODR" field="partyId" name="customerPartyId"/>
+        <alias entity-alias="FG" name="facilityGroupTypeId"/>
+        <alias entity-alias="FGM" name="facilityGroupId"/>
+        <!-- FGM fromDate & thruDate included for date filter handling in the generate#BrokeredOrderItemsFeed service -->
+        <alias entity-alias="FGM" field="fromDate" name="facilityGroupFromDate"/>
+        <alias entity-alias="FGM" field="thruDate" name="facilityGroupThruDate"/>
+        <!-- When facility is turned off, then the eligible products should be identified and hence the lastUpdatedStamp
+            of FacilityGroupMember is added. -->
+        <alias entity-alias="FGM" field="lastUpdatedStamp" name="facilityGroupMemberUpdatedDate" function="max"/>
         <entity-condition>
             <econditions combine="and">
                 <econdition entity-alias="OH" field-name="orderTypeId" operator="equals" value="SALES_ORDER"/>
