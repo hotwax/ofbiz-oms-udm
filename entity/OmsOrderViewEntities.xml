@@ -1019,14 +1019,10 @@ under the License.
          This is required to prevent issues with existing code, as the ReturnedItemAndAdjustment view is already used to fetch the Return Item Adjustments in the feeds. -->
     <!-- TODO: Check if necessary fields can be added to the existing view and verify the feeds, if everything looks good then use the existing ReturnedItemAndAdjustment view to simplify things. -->
 
-    <view-entity entity-name="ReturnedItemAndAdjustment" package="co.hotwax.order" group="ofbiz_transactional">
+    <view-entity entity-name="ReturnAdjustmentAndItem" package="co.hotwax.order" group="ofbiz_transactional">
         <description>View to get the Return Items and their Adjustments.</description>
-        <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem"/>
-        <member-entity entity-alias="RS" entity-name="org.apache.ofbiz.order.return.ReturnStatus" join-from-alias="RI">
-            <key-map field-name="returnId"/>
-            <key-map field-name="returnItemSeqId"/>
-        </member-entity>
-        <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment" join-from-alias="RI" join-optional="true">
+        <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment"/>
+        <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem" join-from-alias="RA">
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
         </member-entity>
@@ -1034,10 +1030,10 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
-            <key-map field-name="orderId"/>
-            <key-map field-name="shipGroupSeqId"/>
+        <member-entity entity-alias="RH" entity-name="org.apache.ofbiz.order.return.ReturnHeader" join-from-alias="RI">
+            <key-map field-name="returnId"/>
         </member-entity>
+
         <alias entity-alias="RI" name="returnId"/>
         <alias entity-alias="RI" name="returnItemSeqId"/>
         <alias entity-alias="RI" name="orderId"/>
@@ -1045,21 +1041,17 @@ under the License.
         <alias entity-alias="RI" name="returnPrice"/>
         <alias entity-alias="RI" name="returnQuantity"/>
         <alias entity-alias="RI" name="productId"/>
-        <alias entity-alias="RS" name="statusId" />
-        <alias entity-alias="RS" name="completedDatetime" field="statusDatetime" function="max"/>
+        <alias entity-alias="RI" name="statusId" />
+
         <alias entity-alias="RA" name="returnAdjustmentId"/>
         <alias entity-alias="RA" name="returnAdjustmentTypeId"/>
         <alias entity-alias="RA" name="comments"/>
         <alias entity-alias="RA" name="description"/>
         <alias entity-alias="RA" name="amount" function="sum"/>
+
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
-        <alias entity-alias="OISG" name="facilityId"/>
-        <entity-condition>
-            <econditions>
-                <econdition entity-alias="RS" field-name="returnItemSeqId" operator="not-equals" value=""/>
-            </econditions>
-            <order-by field-name="completedDatetime"/>
-        </entity-condition>
+
+        <alias entity-alias="RH" field="destinationFacilityId" name="returnFacilityId"/>
     </view-entity>
 
     <!-- View entity to fetch Order Item Adjustments and Attributes. -->
