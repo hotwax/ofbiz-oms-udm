@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+
+    <view-entity entity-name="ProductStoreFacilityCount" package="co.hotwax.product.store">
+        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore"/>
+        <member-entity entity-alias="PSF" entity-name="org.apache.ofbiz.product.store.ProductStoreFacility" join-from-alias="PS" join-optional="true">
+            <key-map field-name="productStoreId"/>
+            <entity-condition>
+                <date-filter entity-alias="PSF"/>
+            </entity-condition>
+        </member-entity>
+        <member-entity entity-alias="FAC" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="PSF" join-optional="true">
+            <key-map field-name="facilityId"/>
+        </member-entity>
+        <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="FAC" join-optional="true">
+            <key-map field-name="facilityTypeId"/>
+        </member-entity>
+
+        <alias entity-alias="PS" name="productStoreId"/>
+        <alias entity-alias="PS" name="storeName"/>
+        <alias entity-alias="PSF" name="facilityCount" field="facilityId" function="count"/>
+        <entity-condition>
+            <econditions>
+                <econdition entity-alias="FT" field-name="facilityTypeId" operator="not-equals" value="VIRTUAL_FACILITY"/>
+                <econdition entity-alias="FT" field-name="parentTypeId" operator="not-equals" value="VIRTUAL_FACILITY"/>
+            </econditions>
+        </entity-condition>
+    </view-entity>
+    <view-entity entity-name="ProductStoreShipmentMethCount" package="co.hotwax.product.store">
+        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore"/>
+        <member-entity entity-alias="PSSM" entity-name="org.apache.ofbiz.product.store.ProductStoreShipmentMeth" join-from-alias="PS" join-optional="true">
+            <key-map field-name="productStoreId"/>
+            <entity-condition><date-filter entity-alias="PSSM"/></entity-condition>
+        </member-entity>
+
+        <alias entity-alias="PS" name="productStoreId"/>
+        <alias entity-alias="PS" name="storeName"/>
+        <alias entity-alias="PSSM" name="shipmentMethodCount" field="shipmentMethodTypeId" function="count"/>
+    </view-entity>
+</entities>
