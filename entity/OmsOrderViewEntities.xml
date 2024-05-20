@@ -937,25 +937,20 @@ under the License.
         <alias entity-alias="RI" field="statusId" name="returnItemStatus"/>
     </view-entity>
 
-    <!-- View entity to fetch Order Item and Attribute details. -->
-    <view-entity entity-name="OrderItemAndAttribute" package="co.hotwax.financial" group="ofbiz_transactional">
-        <description>View to fetch the Order Item and Item Attribute Details.</description>
-        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
-        <member-entity entity-alias="OIA" entity-name="org.apache.ofbiz.order.order.OrderItemAttribute" join-from-alias="OI" join-optional="true">
+    <view-entity entity-name="OrderAttributeAndItem" package="co.hotwax.financial" group="ofbiz_transactional">
+        <description>View to fetch the Order Item Attributes including some item details.</description>
+        <member-entity entity-alias="OIA" entity-name="org.apache.ofbiz.order.order.OrderItemAttribute"/>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OIA">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
-        <alias entity-alias="OI" name="orderId"/>
-        <alias entity-alias="OI" name="orderItemSeqId"/>
-        <alias entity-alias="OI" field="statusId" name="orderItemStatus"/>
+
+        <alias-all entity-alias="OIA"/>
+        <alias entity-alias="OI" name="statusId"/>
         <alias entity-alias="OI" name="productId"/>
-        <alias entity-alias="OI" name="quantity" function="sum"/>
+        <alias entity-alias="OI" name="quantity"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <alias entity-alias="OI" name="orderItemTypeId"/>
-        <alias-all entity-alias="OIA">
-            <exclude field="orderId"/>
-            <exclude field="orderItemSeqId"/>
-        </alias-all>
     </view-entity>
 
     <view-entity entity-name="OrderItemDetail" package="co.hotwax.order" group="ofbiz_transactional">
@@ -1041,20 +1036,20 @@ under the License.
             <key-map field-name="returnId"/>
         </member-entity>
 
-        <alias entity-alias="RI" name="returnId"/>
-        <alias entity-alias="RI" name="returnItemSeqId"/>
+        <alias entity-alias="RA" name="returnId"/>
+        <alias entity-alias="RA" name="returnItemSeqId"/>
+        <alias entity-alias="RA" name="returnAdjustmentId"/>
+        <alias entity-alias="RA" name="returnAdjustmentTypeId"/>
+        <alias entity-alias="RA" name="comments"/>
+        <alias entity-alias="RA" name="description"/>
+        <alias entity-alias="RA" name="amount" function="sum"/>
+
         <alias entity-alias="RI" name="orderId"/>
         <alias entity-alias="RI" name="orderItemSeqId"/>
         <alias entity-alias="RI" name="returnPrice"/>
         <alias entity-alias="RI" name="returnQuantity"/>
         <alias entity-alias="RI" name="productId"/>
         <alias entity-alias="RI" name="statusId" />
-
-        <alias entity-alias="RA" name="returnAdjustmentId"/>
-        <alias entity-alias="RA" name="returnAdjustmentTypeId"/>
-        <alias entity-alias="RA" name="comments"/>
-        <alias entity-alias="RA" name="description"/>
-        <alias entity-alias="RA" name="amount" function="sum"/>
 
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
 
@@ -1076,6 +1071,8 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
         </member-entity>
+        <alias entity-alias="OA" name="orderId"/>
+        <alias entity-alias="OA" name="orderItemSeqId"/>
         <alias entity-alias="OA" name="orderAdjustmentId"/>
         <alias entity-alias="OA" name="orderAdjustmentTypeId"/>
         <alias entity-alias="OA" name="comments"/>
@@ -1084,8 +1081,6 @@ under the License.
         <alias entity-alias="OA" name="amount" function="sum"/>
         <alias entity-alias="OA" name="sourceReferenceId"/>
 
-        <alias entity-alias="OI" name="orderId"/>
-        <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias entity-alias="OI" name="productId"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <alias entity-alias="OI" name="unitPrice"/>
