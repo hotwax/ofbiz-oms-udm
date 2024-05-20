@@ -948,7 +948,7 @@ under the License.
         <alias-all entity-alias="OIA"/>
         <alias entity-alias="OI" name="statusId"/>
         <alias entity-alias="OI" name="productId"/>
-        <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OI" name="quantity" function="sum"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
         <alias entity-alias="OI" name="orderItemTypeId"/>
     </view-entity>
