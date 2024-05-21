@@ -22,9 +22,9 @@ under the License.
     <entity entity-name="IntegrationTypeMapping" package="co.hotwax.integration" group="ofbiz_transactional">
         <field name="integrationMappingId" type="id" is-pk="true"><description>(Primary Key, Auto-increment): Unique identifier for each integration type mapping.</description></field>
         <field name="integrationTypeId" type="id"><description>Identifier for the integration type.</description></field>
-        <field name="integrationRefId" type="id"><description>Identifier referencing the integration entity (if applicable).</description></field>
-        <field name="mappingKey" type="text-medium"><description>The key used for mapping in the integration.</description></field>
-        <field name="mappingValue" type="text-medium"><description>The corresponding value for the mapping key.</description></field>
+        <field name="integrationRefId" type="id" enable-audit-log="true"><description>Identifier referencing the integration entity (if applicable).</description></field>
+        <field name="mappingKey" type="text-medium" enable-audit-log="true"><description>The key used for mapping in the integration.</description></field>
+        <field name="mappingValue" type="text-medium" enable-audit-log="true"><description>The corresponding value for the mapping key.</description></field>
         <field name="description" type="text-long"><description>A brief description of the integration type mapping.</description></field>
         <relationship type="one-nofk" fk-name="INTGR_TYPE_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="integrationTypeId" related="enumId"/>

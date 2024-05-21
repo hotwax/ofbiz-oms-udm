@@ -53,6 +53,7 @@ under the License.
         <field name="enumTypeId" type="id"></field>
         <field name="enumCode" type="text-medium"></field>
         <field name="sequenceId" type="id"></field>
+        <field name="enumName" type="text-medium"></field>
         <field name="description" type="text-long"></field>
         <relationship type="one" fk-name="ENUM_TO_TYPE" related="org.apache.ofbiz.common.enum.EnumerationType">
             <key-map field-name="enumTypeId"/>

@@ -918,7 +918,7 @@ under the License.
     </entity>
     <entity entity-name="OrderProductPromoCode" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderId" type="id" is-pk="true"></field>
-        <field name="productPromoCodeId" type="id" is-pk="true"></field>
+        <field name="productPromoCodeId" type="id-long" is-pk="true"></field>
         <relationship type="one" fk-name="ORDER_PPCD_ORD" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -2255,7 +2255,7 @@ under the License.
         <field name="recurrenceInfoId" type="id"></field>
         <field name="lastOrderedDate" type="date-time"></field>
         <field name="lastAdminModified" type="date-time"></field>
-        <field name="productPromoCodeId" type="id"></field>
+        <field name="productPromoCodeId" type="id-long"></field>
         <relationship type="one" fk-name="SHLIST_PARENT" title="Parent" related="org.apache.ofbiz.order.shoppinglist.ShoppingList">
             <key-map field-name="parentShoppingListId" related="shoppingListId"/>
         </relationship>
