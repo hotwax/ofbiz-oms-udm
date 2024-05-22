@@ -101,6 +101,6 @@ under the License.
         <alias entity-alias="ICIV" name="varianceQuantityOnHand"/>
         <alias entity-alias="P" field="internalName" name="sku"/>
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
-        <alias entity-alias="F" field="facilityName" name="facilityName"/>
+        <alias entity-alias="F" name="facilityName"/>
     </view-entity>
 </entities>
