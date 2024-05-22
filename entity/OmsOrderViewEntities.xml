@@ -1104,6 +1104,25 @@ under the License.
             <order-by field-name="completedDatetime"/>
         </entity-condition>
     </view-entity>
+
+    <!-- View entity to fetch Order Item and Order Item Change details. -->
+    <view-entity entity-name="OrderItemAndChange" package="co.hotwax.order" group="ofbiz_transactional">
+        <description>View to fetch the Order Item and Order Item Change Details.</description>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <member-entity entity-alias="OIC" entity-name="org.apache.ofbiz.order.order.OrderItemChange" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" name="statusId"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="quantity" function="sum"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OIC" name="reasonEnumId"/>
+        <alias entity-alias="OIC" field="changeDatetime" name="orderItemChangeDatetime"/>
+        <alias entity-alias="OIC" name="cancelQuantity"/>
+    </view-entity>
 </entities>
 
 
