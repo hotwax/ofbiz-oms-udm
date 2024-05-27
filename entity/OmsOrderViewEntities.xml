@@ -1131,9 +1131,8 @@ under the License.
         <alias entity-alias="OIC" name="cancelQuantity"/>
     </view-entity>
 
-
     <view-entity entity-name="OrderItemAndShipGroup" package="co.hotwax.order" group="ofbiz_transactional">
-        <description>View to get Order details for Financial Feed processing.</description>
+        <description>View to get Order Item and Ship Group details.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
             <key-map field-name="orderId"/>
