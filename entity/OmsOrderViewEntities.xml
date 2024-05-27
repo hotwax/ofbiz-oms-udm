@@ -1130,6 +1130,30 @@ under the License.
         <alias entity-alias="OIC" field="changeDatetime" name="orderItemChangeDatetime"/>
         <alias entity-alias="OIC" name="cancelQuantity"/>
     </view-entity>
+
+
+    <view-entity entity-name="OrderItemAndShipGroup" package="co.hotwax.order" group="ofbiz_transactional">
+        <description>View to get Order details for Financial Feed processing.</description>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="shipGroupSeqId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
+        <alias entity-alias="OI" name="statusId"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OI" name="cancelQuantity"/>
+        <alias entity-alias="OI" name="unitPrice"/>
+        <alias entity-alias="OI" name="shipGroupSeqId"/>
+        <alias-all entity-alias="OISG">
+            <exclude field="orderId"/>
+            <exclude field="shipGroupSeqId"/>
+        </alias-all>
+    </view-entity>
+
 </entities>
 
 
