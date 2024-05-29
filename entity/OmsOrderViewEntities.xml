@@ -1001,6 +1001,7 @@ under the License.
         <alias entity-alias="OI" name="shipGroupSeqId"/>
         <alias entity-alias="OI" name="quantity" function="sum"/>
         <alias entity-alias="OI" name="unitPrice"/>
+        <alias entity-alias="OI" name="unitListPrice"/>
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
         <alias entity-alias="OI" name="productId"/>
         <alias entity-alias="OI" name="taxCode"/>
