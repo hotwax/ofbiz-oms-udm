@@ -1121,6 +1121,10 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
+        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="shipGroupSeqId"/>
+        </member-entity>
         <alias entity-alias="OI" name="orderId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias entity-alias="OI" name="statusId"/>
@@ -1130,6 +1134,7 @@ under the License.
         <alias entity-alias="OIC" name="reasonEnumId"/>
         <alias entity-alias="OIC" field="changeDatetime" name="orderItemChangeDatetime"/>
         <alias entity-alias="OIC" name="cancelQuantity"/>
+        <alias entity-alias="OISG" name="facilityId"/>
     </view-entity>
 
     <view-entity entity-name="OrderItemAndShipGroup" package="co.hotwax.order" group="ofbiz_transactional">
