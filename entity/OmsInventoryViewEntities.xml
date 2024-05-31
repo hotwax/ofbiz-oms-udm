@@ -28,7 +28,7 @@ under the License.
             <key-map field-name="physicalInventoryId"/>
         </member-entity>
         <member-entity entity-alias="VRENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="IIV">
-            <key-map field-name="varianceReasonId" related="enumId"/>
+            <key-map field-name="reasonEnumId" related="enumId"/>
         </member-entity>
         <member-entity entity-alias="II" entity-name="org.apache.ofbiz.product.inventory.InventoryItem" join-from-alias="IIV">
             <key-map field-name="inventoryItemId"/>
