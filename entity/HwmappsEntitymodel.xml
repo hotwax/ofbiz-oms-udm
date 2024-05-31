@@ -2159,5 +2159,11 @@ under the License.
             <key-map field-name="facilityGroupId"/>
         </relationship>
     </entity>
+    <extend-entity entity-name="InventoryItemVariance" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+        <field name="reasonEnumId" type="id"></field>
+        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="reasonEnumId" related="enumId"/>
+        </relationship>
+    </extend-entity>
 </entities>
 
