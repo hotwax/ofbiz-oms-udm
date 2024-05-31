@@ -651,6 +651,9 @@ under the License.
         <relationship type="one" fk-name="FACILITY_SUOM" title="FacilitySize" related="org.apache.ofbiz.common.uom.Uom">
             <key-map field-name="facilitySizeUomId" related="uomId"/>
         </relationship>
+        <index name="EXT_FAC_ID_INDX">
+            <index-field name="externalId"/>
+        </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="FacilityAttribute" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">

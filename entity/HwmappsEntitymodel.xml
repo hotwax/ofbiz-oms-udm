@@ -1422,6 +1422,11 @@ under the License.
         <field name="presentmentCurrencyUom" type="id"></field>
         <field name="exchangeRate" type="number-float"></field>
         <field name="requestId" type="text-long"></field>
+        <field name="parentRefNum" type="text-medium"></field>
+        <field name="applicationIdentifier" type="text-medium"></field>
+        <index name="APPLI_IDENT_IDX">
+            <index-field name="applicationIdentifier"/>
+        </index>
     </extend-entity>
     <extend-entity entity-name="FacilityLocation" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
         <field name="isLocked" type="text-indicator"><description>Indicates a facility location is locked for reservations or not</description></field>
@@ -2191,6 +2196,25 @@ under the License.
             <key-map field-name="shipmentId"/>
         </relationship>
         <relationship type="one" fk-name="ORD_FULFIL_ERP_OI" related="org.apache.ofbiz.order.order.OrderItem">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </relationship>
+    </entity>
+    <extend-entity entity-name="OrderItemGroup" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+        <field name="orderItemGroupTypeId" type="id"></field>
+        <relationship type="one" fk-name="FK_OIG_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="orderItemGroupTypeId" related="enumId"/>
+        </relationship>
+    </extend-entity>
+    <entity entity-name="OrderItemGroupAssoc" package="co.hotwax.integration.order" group="ofbiz_transactional">
+        <field name="orderId" type="id" is-pk="true"></field>
+        <field name="orderItemSeqId" type="id" is-pk="true"></field>
+        <field name="orderItemGroupSeqId" type="id" is-pk="true"></field>
+        <relationship type="one" fk-name="ORD_ITEM_GRP_MEM" related="org.apache.ofbiz.order.order.OrderItemGroup">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemGroupSeqId"/>
+        </relationship>
+        <relationship type="one" fk-name="ORD_ITEM_GRP_MEM" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </relationship>
