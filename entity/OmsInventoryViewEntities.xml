@@ -61,7 +61,7 @@ under the License.
         <alias entity-alias="PR" name="productId"/>
         <alias entity-alias="PR" name="productTypeId"/>
     </view-entity>
-    
+
     <!-- View for Inventory Count Import Variance -->
     <!-- NOTE The view could be used for fetching details for a particular status of Inventory
          Count Import; but this does not mean for an inventoryCountImportId, it will pull records
@@ -73,8 +73,12 @@ under the License.
             <key-map field-name="inventoryCountImportId"/>
             <key-map field-name="statusId"/>
         </member-entity>
-        <member-entity entity-alias="ICIV" entity-name="co.hotwax.warehouse.InvCountImportVariance" join-from-alias="ICI">
+        <member-entity entity-alias="ICII" entity-name="co.hotwax.warehouse.InventoryCountImportItem" join-from-alias="ICI">
             <key-map field-name="inventoryCountImportId"/>
+        </member-entity>
+        <member-entity entity-alias="ICIV" entity-name="co.hotwax.warehouse.InvCountImportVariance" join-from-alias="ICII">
+            <key-map field-name="inventoryCountImportId"/>
+            <key-map field-name="importItemSeqId" related="invCountImportItemSeqId"/>
         </member-entity>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="ICIV">
             <key-map field-name="productId"/>
@@ -86,6 +90,7 @@ under the License.
         <alias entity-alias="ICI" name="facilityId"/>
         <!-- This is the current statusId from InventoryCountImport -->
         <alias entity-alias="ICI" name="statusId"/>
+        <alias entity-alias="ICII" field="statusId" name="inventoryCountItemStatusId"/>
         <alias entity-alias="ICI" name="createdDate"/>
         <alias entity-alias="ICIS" name="statusDate" function="max"/>
         <alias entity-alias="ICIV" name="invCountImportItemSeqId"/>
@@ -96,5 +101,6 @@ under the License.
         <alias entity-alias="ICIV" name="varianceQuantityOnHand"/>
         <alias entity-alias="P" field="internalName" name="sku"/>
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
+        <alias entity-alias="F" name="facilityName"/>
     </view-entity>
 </entities>
