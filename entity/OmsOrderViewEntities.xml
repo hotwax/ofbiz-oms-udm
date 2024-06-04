@@ -463,6 +463,7 @@ under the License.
         <alias entity-alias="PMT" name="paymentMethodCode"/>
         <alias entity-alias="PMT" field="description" name="paymentMethodDescription"/>
         <alias entity-alias="RIR" name="returnId"/>
+        <alias entity-alias="OPP" name="applicationIdentifier"/>
     </view-entity>
 
     <!-- To get the Party and Person details -->
