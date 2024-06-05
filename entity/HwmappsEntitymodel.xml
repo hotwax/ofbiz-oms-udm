@@ -1423,6 +1423,10 @@ under the License.
         <field name="paymentMode" type="text-long"></field>
         <field name="cardName" type="text-long"></field>
         <field name="requestId" type="text-long"></field>
+        <field name="applicationIdentifier" type="text-medium"></field>
+        <index name="APPLI_IDENT_IDX">
+            <index-field name="applicationIdentifier"/>
+        </index>
     </extend-entity>
     <extend-entity entity-name="FacilityLocation" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
         <field name="isLocked" type="text-indicator"><description>Indicates a facility location is locked for reservations or not</description></field>
