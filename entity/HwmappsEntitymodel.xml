@@ -1477,6 +1477,7 @@ under the License.
         <field name="transactionId" type="id-long"></field>
         <field name="returnDate" type="date-time"></field>
         <field name="employeeId" type="id"></field>
+        <field name="terminalId" type="id-long"></field>
     </extend-entity>
     <entity entity-name="OrderIdentification" package="co.hotwax.order" group="ofbiz_transactional">
         <field name="orderIdentificationTypeId" type="id" is-pk="true"></field>
@@ -2217,7 +2218,7 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemGroupSeqId"/>
         </relationship>
-        <relationship type="one" fk-name="ORD_ITEM_GRP_MEM" related="org.apache.ofbiz.order.order.OrderItem">
+        <relationship type="one" fk-name="ORD_ITEM_GRP_ITM" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </relationship>
