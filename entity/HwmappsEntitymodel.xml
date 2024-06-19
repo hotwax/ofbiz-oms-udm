@@ -2169,5 +2169,21 @@ under the License.
             <key-map field-name="reasonEnumId" related="enumId"/>
         </relationship>
     </extend-entity>
+
+    <entity entity-name="OrderFulfillmentErpHistory" package="co.hotwax.integration.order" group="ofbiz_transactional">
+        <field name="fulfillmentErpHistoryId" type="id" is-pk="true"></field>
+        <field name="shipmentId" type="id"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="comments" type="text-long"></field>
+        <relationship type="one" fk-name="ORD_FULFIL_ERP_SHIP" related="org.apache.ofbiz.shipment.shipment.Shipment">
+            <key-map field-name="shipmentId"/>
+        </relationship>
+        <relationship type="one" fk-name="ORD_FULFIL_ERP_OI" related="org.apache.ofbiz.order.order.OrderItem">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </relationship>
+    </entity>
 </entities>
 
