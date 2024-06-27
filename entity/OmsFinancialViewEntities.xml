@@ -74,6 +74,7 @@ under the License.
         <alias entity-alias="PS" name="productStoreExternalId" field="externalId"/>
         <alias entity-alias="RH" name="customerPartyId" field="fromPartyId"/>
         <alias entity-alias="RH" field="statusId" name="returnStatusId"/>
+        <alias entity-alias="RI" name="returnTypeId"/>
         <entity-condition>
             <econditions>
                 <econdition entity-alias="RS" field-name="returnItemSeqId" operator="not-equals" value=""/>

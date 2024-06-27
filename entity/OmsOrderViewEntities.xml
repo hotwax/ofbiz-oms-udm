@@ -161,6 +161,8 @@ under the License.
         <alias entity-alias="RH" field="originContactMechId" name="shipToContactMechId"/>
         <alias entity-alias="RH" name="returnDate"/>
         <alias entity-alias="RH" field="externalId" name="returnExternalId"/>
+        <alias entity-alias="RI" name="returnTypeId"/>
+        <alias entity-alias="RI" name="receivedQuantity"/>
     </view-entity>
 
     <view-entity entity-name="OrderItemAndHistory" package="co.hotwax.oms" group="ofbiz_transactional">
