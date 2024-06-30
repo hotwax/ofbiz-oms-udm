@@ -801,8 +801,9 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="InvCountImportStatus" package="co.hotwax.warehouse" group="ofbiz_transactional">
-        <field name="statusId" type="id" is-pk="true"></field>
-        <field name="inventoryCountImportId" type="id" is-pk="true"></field>
+        <field name="invCountImpStatusId" type="id" is-pk="true"></field>
+        <field name="statusId" type="id"></field>
+        <field name="inventoryCountImportId" type="id"></field>
         <field name="statusDate" type="date-time"></field>
         <field name="changeByUserLoginId" type="id-long"></field>
         <relationship type="one" fk-name="INV_COUNT_IMP_STTS" related="org.apache.ofbiz.common.status.StatusItem">
