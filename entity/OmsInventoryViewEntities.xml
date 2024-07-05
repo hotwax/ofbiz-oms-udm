@@ -27,8 +27,8 @@ under the License.
         <member-entity entity-alias="IIV" entity-name="org.apache.ofbiz.product.inventory.InventoryItemVariance" join-from-alias="PI">
             <key-map field-name="physicalInventoryId"/>
         </member-entity>
-        <member-entity entity-alias="VR" entity-name="org.apache.ofbiz.product.inventory.VarianceReason" join-from-alias="IIV">
-            <key-map field-name="varianceReasonId"/>
+        <member-entity entity-alias="VRENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="IIV">
+            <key-map field-name="reasonEnumId" related="enumId"/>
         </member-entity>
         <member-entity entity-alias="II" entity-name="org.apache.ofbiz.product.inventory.InventoryItem" join-from-alias="IIV">
             <key-map field-name="inventoryItemId"/>
@@ -54,7 +54,7 @@ under the License.
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
         <alias entity-alias="F" name="facilityTypeId"/>
 
-        <alias entity-alias="VR" field="description" name="varianceDescription"/>
+        <alias entity-alias="VRENM" field="description" name="varianceDescription"/>
 
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
 
@@ -101,5 +101,6 @@ under the License.
         <alias entity-alias="ICIV" name="varianceQuantityOnHand"/>
         <alias entity-alias="P" field="internalName" name="sku"/>
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
+        <alias entity-alias="F" name="facilityName"/>
     </view-entity>
 </entities>

@@ -16,3 +16,4 @@ NOTE Before using this component, identify the minimum compatible HC OMS release
 | ofbiz-oms-udm release | HC OMS release | Comments |
 |-----------------------|----------------|----------|
 | v1.4.0                | v5.10.0        |          |
+| v1.3.13               | v5.10.2        |          |
