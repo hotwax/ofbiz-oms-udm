@@ -1486,6 +1486,76 @@ under the License.
             </econditions>
         </entity-condition>
     </view-entity>
-</entities>
 
+
+    <!-- New view is added to fetch the eligible orders to be send in the fulfilment feed for Shopify
+     -->
+    <view-entity entity-name="FulfilledOrdersItemsForShopify" package="co.hotwax.warehouse" group="ofbiz_transactional">
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
+        <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.order.OrderFulfillmentHistory" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias-all entity-alias="SOV">
+            <exclude field="orderId"/>
+            <exclude field="orderItemSeqId"/>
+        </alias-all>
+        <alias entity-alias="OS" name="statusDatetime" function="max"/>
+        <entity-condition>
+            <econditions combine="and">
+                <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
+                <econditions combine="or">
+                    <econdition entity-alias="OI" field-name="quantity" operator="greater" to-entity-alias="OI" to-field-name="cancelQuantity"/>
+                    <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
+                </econditions>
+            </econditions>
+        </entity-condition>
+    </view-entity>
+
+    <view-entity entity-name="OrderItemShipmentForShopify" package="co.hotwax.warehouse" group="ofbiz_transactional">
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
+        <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OFH" entity-name="co.hotwax.integration.order.OrderFulfillmentHistory" join-from-alias="OI" join-optional="true">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias-all entity-alias="OISD">
+            <exclude field="orderId"/>
+            <exclude field="orderItemSeqId"/>
+            <exclude field="statusDatetime"/>
+        </alias-all>
+        <alias entity-alias="OS" name="statusDatetime" function="max"/>
+        <entity-condition>
+            <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
+            <econditions combine="or">
+                <econdition entity-alias="OI" field-name="quantity" operator="greater" to-entity-alias="OI" to-field-name="cancelQuantity"/>
+                <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
+            </econditions>
+        </entity-condition>
+    </view-entity>
+
+</entities>
 
