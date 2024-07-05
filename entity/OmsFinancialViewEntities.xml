@@ -41,6 +41,7 @@ under the License.
         <member-entity entity-alias="RS" entity-name="org.apache.ofbiz.order.return.ReturnStatus" join-from-alias="RI">
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
+            <key-map field-name="statusId"/>
         </member-entity>
         <member-entity entity-alias="RH" entity-name="org.apache.ofbiz.order.return.ReturnHeader" join-from-alias="RI">
             <key-map field-name="returnId"/>
@@ -64,7 +65,7 @@ under the License.
         <alias entity-alias="RI" name="orderId"/>
         <alias entity-alias="RI" name="orderItemSeqId" />
         <alias entity-alias="RI" name="returnItemAmountTotal" field="returnPrice"/>
-        <alias entity-alias="RS" name="statusId" />
+        <alias entity-alias="RI" name="statusId" />
         <alias entity-alias="RS" name="completedDatetime" field="statusDatetime" function="max"/>
         <alias entity-alias="OH" name="productStoreId"/>
         <alias entity-alias="OH" name="orderName"/>
@@ -72,10 +73,10 @@ under the License.
         <alias entity-alias="SCENM" field="enumCode" name="orderSalesChannel"/>
         <alias entity-alias="PS" name="productStoreExternalId" field="externalId"/>
         <alias entity-alias="RH" name="customerPartyId" field="fromPartyId"/>
+        <alias entity-alias="RH" field="statusId" name="returnStatusId"/>
+        <alias entity-alias="RI" name="returnTypeId"/>
         <entity-condition>
             <econditions>
-                <econdition entity-alias="RS" field-name="statusId" operator="equals" value="RETURN_COMPLETED"/>
-                <econdition entity-alias="RI" field-name="statusId" operator="equals" value="RETURN_COMPLETED"/>
                 <econdition entity-alias="RS" field-name="returnItemSeqId" operator="not-equals" value=""/>
                 <econdition entity-alias="FRH" field-name="returnId" operator="equals" value=""/>
             </econditions>

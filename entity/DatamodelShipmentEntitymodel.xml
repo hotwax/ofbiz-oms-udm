@@ -441,6 +441,9 @@ under the License.
         <relationship type="one-nofk" title="From" related="org.apache.ofbiz.party.party.PartyGroup">
             <key-map field-name="partyIdFrom" related="partyId"/>
         </relationship>
+        <index name="EXT_SHIP_ID_INDX">
+            <index-field name="externalId"/>
+        </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="ShipmentAttribute" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
