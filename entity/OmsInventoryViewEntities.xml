@@ -128,7 +128,7 @@ under the License.
         <alias entity-alias="PF" name="allowPickup"/>
         <alias entity-alias="PF" name="computedLastInventoryCount" function="sum"/>
         <alias entity-alias="PF" name="lastInventoryCount" function="sum"/>
-        <alias entity-alias="PF" name="minimumStock"/>
+        <alias entity-alias="PF" name="minimumStock" function="sum"/>
 
         <alias entity-alias="P" name="internalName"/>
 
