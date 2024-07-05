@@ -23,6 +23,10 @@ under the License.
 
     <!-- NOTE: The products that have been deleted from Shopify will not appear in the view as their record in ShopifyShopProduct is also deleted.
         Hence no extra handling is required. -->
+    <!-- The ShopifyProductInventory view has the support to fetch the inventory for multi channel inventory scenario.
+         If there is a requirement to fetch the inventory for the specific channel i.e. Shopify, it will be a separate Facility Group, and so a parameter 'facilityGroupId' is added to the corresponding service 
+          to fetch the inventory to be sent to Shopify. -->
+
     <view-entity entity-name="ShopifyProductInventory" package="co.hotwax.shopify" group="ofbiz_transactional">
         <description>
             View entity for Product Inventory details for Shopify in HotWax.
@@ -81,24 +85,10 @@ under the License.
             have been turned off for inventory sharing i.e. where thruDate is set.
             If we keep the date-filter in the view, the expired records of FacilityGroupMember will not come in the view,
             and so the inventory change due to turned off facilities will not be identified, hence the updated inventory
-            will not be pushed to Shopify.. -->
-        <!-- 1. Condition added to include inventory for Online Facility Group -->
-        <!-- 2. OR with Condition added to include facilityTypeId='CONFIGURATION' for the below scenario,
-             As part of initial implementation, the only condition added was to include members of
-             only Online group and CONFIGURATION type facility is not member of it.
-             Due to this, if threshold is updated for a product, the feed will not pick it up as a change
-             since that record is not included in the view, And so updated inventory does not get pushed to
-             Shopify. -->
+            will not be pushed to Shopify. -->
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
         <alias entity-alias="PT" name="isDigital"/>
-
-        <entity-condition>
-            <econditions combine="or">
-                <econdition field-name="facilityGroupTypeId" value="SHOPIFY_GROUP_FAC"/>
-                <econdition field-name="facilityTypeId" value="CONFIGURATION"/>
-            </econditions>
-        </entity-condition>
     </view-entity>
 
     <view-entity entity-name="ProductFacilityAndType" package="co.hotwax.product.facility" group="ofbiz_transactional">
@@ -147,4 +137,30 @@ under the License.
             <date-filter from-field-name="productStoreFacilityFromDate" thru-field-name="productStoreFacilityThruDate"/>
         </entity-condition>
    </view-entity>
+
+    <view-entity entity-name="FacilityGroupAndMember" package="co.hotwax.facility" group="ofbiz_transactional">
+        <description>
+            View entity for Facility and Facility Group Member details.
+        </description>
+        <member-entity entity-alias="FG" entity-name="org.apache.ofbiz.product.facility.FacilityGroup"/>
+        <member-entity entity-alias="FGM" entity-name="org.apache.ofbiz.product.facility.FacilityGroupMember" join-from-alias="FG">
+            <key-map field-name="facilityGroupId"/>
+        </member-entity>
+        <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="FGM">
+            <key-map field-name="facilityId"/>
+        </member-entity>
+        <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F" join-optional="true">
+            <key-map field-name="facilityTypeId"/>
+        </member-entity>
+        <alias-all entity-alias="FG"/>
+        <alias-all entity-alias="FGM">
+            <exclude field="facilityGroupId"/>
+        </alias-all>
+        <alias-all entity-alias="F">
+            <exclude field="facilityId"/>
+            <exclude field="description"/>
+        </alias-all>
+        <alias entity-alias="FT" name="parentFacilityTypeId" field="parentTypeId"/>
+        <entity-condition><date-filter entity-alias="FGM"/></entity-condition>
+    </view-entity>
 </entities>
