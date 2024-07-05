@@ -651,6 +651,9 @@ under the License.
         <relationship type="one" fk-name="FACILITY_SUOM" title="FacilitySize" related="org.apache.ofbiz.common.uom.Uom">
             <key-map field-name="facilitySizeUomId" related="uomId"/>
         </relationship>
+        <index name="EXT_FAC_ID_INDX">
+            <index-field name="externalId"/>
+        </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="FacilityAttribute" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
@@ -2242,7 +2245,7 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="ProductPromoCodeEmail" package="org.apache.ofbiz.product.promo" group="ofbiz_transactional">
-        <field name="productPromoCodeId" type="id" is-pk="true"></field>
+        <field name="productPromoCodeId" type="id-long" is-pk="true"></field>
         <field name="emailAddress" type="text-long" is-pk="true"></field>
         <relationship type="one" fk-name="PROD_PRCDE_PCD" related="org.apache.ofbiz.product.promo.ProductPromoCode">
             <key-map field-name="productPromoCodeId"/>
@@ -2250,7 +2253,7 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="ProductPromoCodeParty" package="org.apache.ofbiz.product.promo" group="ofbiz_transactional">
-        <field name="productPromoCodeId" type="id" is-pk="true"></field>
+        <field name="productPromoCodeId" type="id-long" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="PROD_PRCDP_PCD" related="org.apache.ofbiz.product.promo.ProductPromoCode">
             <key-map field-name="productPromoCodeId"/>
@@ -2324,7 +2327,7 @@ under the License.
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="promoSequenceId" type="id" is-pk="true"></field>
         <field name="productPromoId" type="id"></field>
-        <field name="productPromoCodeId" type="id"></field>
+        <field name="productPromoCodeId" type="id-long"></field>
         <field name="partyId" type="id"></field>
         <field name="totalDiscountAmount" type="currency-amount"></field>
         <field name="quantityLeftInActions" type="number-decimal"></field>

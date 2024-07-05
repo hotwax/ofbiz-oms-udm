@@ -518,6 +518,9 @@ under the License.
         <index name="COMMEVT_MSG_ID" unique="true">
             <index-field name="messageId"/>
         </index>
+        <index name="EXT_COMEVNT_ID_INDX">
+            <index-field name="externalId"/>
+        </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
@@ -607,6 +610,9 @@ under the License.
         </relationship>
         <index name="INFO_STRING_IDX">
             <index-field name="infoString"/>
+        </index>
+        <index name="EXT_CNTMECH_ID_INDX">
+            <index-field name="externalId"/>
         </index>
     </entity>
     <entity entity-name="ContactMechAttribute" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
