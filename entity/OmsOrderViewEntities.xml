@@ -1306,7 +1306,7 @@ under the License.
             </econditions>
             <!-- TODO facing issue when using in this view, need to debug and check
                     Unknown column 'SOV.ENTRY_DATE' in 'order clause' -->
-            <!--            <order-by field-name="entryDate"/>-->
+<!--            <order-by field-name="entryDate"/>-->
         </entity-condition>
     </view-entity>
 
