@@ -156,12 +156,30 @@ under the License.
     <entity entity-name="ShopifyShopTypeMapping" package="co.hotwax.shopify" group="ofbiz_transactional">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="mappedTypeId" type="id"></field>
-        <field name="mappedValue" type="id"></field>
+        <field name="mappedValue" type="id" enable-audit-log="true"></field>
         <field name="mappedKey" type="id-long" is-pk="true"></field>
         <relationship type="one-nofk" fk-name="SHOP_TYPE_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="mappedTypeId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="SHOP_TYPE_SHOP" related="co.hotwax.shopify.ShopifyShop">
+            <key-map field-name="shopId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ShopifyShopScript" package="co.hotwax.shopify" group="ofbiz_transactional">
+        <field name="scriptId" type="id" is-pk="true"></field>
+        <field name="shopId" type="id"></field>
+        <field name="scriptTypeId" type="id"></field>
+        <field name="mimeTypeId" type="id-long"></field>
+        <field name="scriptVersion" type="id"></field>
+        <field name="scriptTagId" type="id"><description>Shopify script tag id</description></field>
+        <field name="eventType" type="id"></field>
+        <field name="templateLocation" type="text-long"></field>
+        <field name="fromDate" type="date-time"></field>
+        <field name="thruDate" type="date-time"></field>
+        <relationship type="one" fk-name="SHOP_SCRIPT_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="scriptTypeId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="SHOP_SCRIPT_SHOP" related="co.hotwax.shopify.ShopifyShop">
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
