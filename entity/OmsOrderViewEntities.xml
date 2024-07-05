@@ -908,6 +908,7 @@ under the License.
         <description>View to get order item details using OrderFulfillmentErpHistory.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
+        <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
         <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
@@ -1089,6 +1090,7 @@ under the License.
         <description>View to get order item and shipment details using OrderFulfillmentErpHistory.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
+        <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
         <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
