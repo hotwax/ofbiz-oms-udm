@@ -903,6 +903,7 @@ under the License.
      -->
     <view-entity entity-name="FulfilledOrdersItemsForShopify" package="co.hotwax.warehouse" group="ofbiz_transactional">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+         <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
         <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
             <key-map field-name="orderItemSeqId"/>
             <key-map field-name="orderId"/>
@@ -936,6 +937,7 @@ under the License.
 
     <view-entity entity-name="OrderItemShipmentForShopify" package="co.hotwax.warehouse" group="ofbiz_transactional">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
+        <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
         <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
