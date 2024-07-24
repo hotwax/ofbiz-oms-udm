@@ -738,7 +738,7 @@ under the License.
         <alias entity-alias="PP" name="internalName"/>
         <alias entity-alias="OSH" field="quantity" name="shippedQuantity"/>
         <alias entity-alias="SHI" name="shipmentId"/>
-        <alias entity-alias="SHI" name="shipmentItemSeqId"/>
+        <alias entity-alias="SHI" name="shipmentItemSeqId" is-aggregate="true"/>
         <alias entity-alias="SH" field="statusId" name="shipmentStatusId"/>
         <alias entity-alias="SH" field="destinationContactMechId" name="shipToContactMechId"/>
         <alias entity-alias="SH" field="destinationTelecomNumberId" name="shipToTelecomContactMechId"/>
