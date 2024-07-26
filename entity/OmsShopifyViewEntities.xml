@@ -163,4 +163,15 @@ under the License.
         <alias entity-alias="FT" name="parentFacilityTypeId" field="parentTypeId"/>
         <entity-condition><date-filter entity-alias="FGM"/></entity-condition>
     </view-entity>
+
+    <view-entity entity-name="ShopifyShopAndConfig" package="co.hotwax.shopify" group="ofbiz_transactional">
+        <member-entity entity-alias="SHS" entity-name="co.hotwax.shopify.ShopifyShop"/>
+        <member-entity entity-alias="SHC" entity-name="co.hotwax.shopify.ShopifyConfig" join-from-alias="SHS">
+            <key-map field-name="shopId"/>
+        </member-entity>
+        <alias-all entity-alias="SHS"/>
+        <alias-all entity-alias="SHC">
+            <exclude field="productStoreId"/>
+        </alias-all>
+    </view-entity>
 </entities>
