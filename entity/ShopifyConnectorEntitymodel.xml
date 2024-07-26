@@ -22,7 +22,7 @@ under the License.
     <entity entity-name="ShopifyConfig" package="co.hotwax.shopify" group="ofbiz_transactional">
         <field name="shopifyConfigId" type="id" is-pk="true"></field>
         <field name="shopifyConfigName" type="text-medium"></field>
-        <field name="accessScopeEnumId" type="id"></field>
+        <field name="accessScopeEnumId" type="id" enable-audit-log="true"></field>
         <field name="apiVersion" type="text-short"></field>
         <field name="productStoreId" type="id"></field>
         <field name="shopId" type="id"><description>Shopify shop id</description></field>

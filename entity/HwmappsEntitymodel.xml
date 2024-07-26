@@ -1580,6 +1580,7 @@ under the License.
         <field name="routingGroupId" type="id"></field>
         <field name="orderRoutingId" type="id"></field>
         <field name="routingRuleId" type="id"></field>
+        <field name="routingRunId" type="id"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -2222,6 +2223,18 @@ under the License.
         <relationship type="one" fk-name="ORD_ITEM_GRP_ITM" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
+        </relationship>
+    </entity>
+    <extend-entity entity-name="StatusItem" package="org.apache.ofbiz.common.status" group="ofbiz_transactional">
+        <field name="statusAge" type="number-integer"></field>
+    </extend-entity>
+    <entity entity-name="ReturnAttribute" package="co.hotwax.order.return" group="ofbiz_transactional">
+        <field name="returnId" type="id" is-pk="true"></field>
+        <field name="attrName" type="id-long" is-pk="true"></field>
+        <field name="attrValue" type="text-long"></field>
+        <field name="attrDescription" type="text-long"></field>
+        <relationship type="one" fk-name="RETURN_ATTR_HDR" related="org.apache.ofbiz.order.return.ReturnHeader">
+            <key-map field-name="returnId"/>
         </relationship>
     </entity>
 </entities>
