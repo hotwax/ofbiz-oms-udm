@@ -121,6 +121,7 @@ under the License.
         <alias entity-alias="RH" name="returnDate"/>
         <alias entity-alias="RH" field="fromPartyId" name="customerPartyId" />
         <alias entity-alias="RH" name="originContactMechId"/>
+        <alias entity-alias="RH" field="destinationFacilityId" name="returnFacilityId"/>
 
         <alias entity-alias="RA" name="comments"/>
         <alias entity-alias="RA" name="amount"/>
