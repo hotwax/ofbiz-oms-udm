@@ -825,6 +825,7 @@ under the License.
         <field name="productIdentifier" type="id-long"></field>
         <field name="quantity" type="number-decimal"></field>
         <field name="countedByUserLoginId" type="id"></field>
+        <field name="createdDate" type="date-time"></field>
         <relationship type="one" fk-name="INV_COUNT_IMPORT" related="co.hotwax.warehouse.InventoryCountImport">
             <key-map field-name="inventoryCountImportId"/>
         </relationship>
