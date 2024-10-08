@@ -1567,11 +1567,7 @@ under the License.
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc" join-from-alias="OI">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-        </member-entity>
-        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OISGA">
+        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
         </member-entity>
@@ -1600,4 +1596,3 @@ under the License.
     </view-entity>
 
 </entities>
-
