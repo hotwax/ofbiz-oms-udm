@@ -1565,5 +1565,38 @@ under the License.
         </entity-condition>
     </view-entity>
 
-</entities>
+    <view-entity entity-name="VirtualFacilityOrderItemCount" package="co.hotwax.warehouse">
+        <description>Virtual Facility order item count</description>
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="shipGroupSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="FAC" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="OISG">
+            <key-map field-name="facilityId"/>
+        </member-entity>
+        <member-entity entity-alias="FACT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="FAC">
+            <key-map field-name="facilityTypeId"/>
+        </member-entity>
 
+        <alias entity-alias="OH" name="orderId"/>
+        <alias entity-alias="OH" name="orderTypeId"/>
+        <alias entity-alias="OH" name="orderStatusId" field="statusId"/>
+        <alias entity-alias="OH" name="productStoreId" />
+        <alias entity-alias="OI" name="orderItemSeqId"/>
+        <alias entity-alias="OI" name="itemStatusId" field="statusId" />
+        <alias entity-alias="OI" name="productId" />
+        <alias entity-alias="OI" name="quantity"/>
+        <alias entity-alias="OI" name="itemCount" field="quantity" function="sum"/>
+        <alias entity-alias="OISG" name="facilityId"/>
+        <alias entity-alias="FAC" name="facilityTypeId"/>
+
+        <entity-condition>
+            <econdition entity-alias="FACT" field-name="parentTypeId" operator="equals" value="VIRTUAL_FACILITY"/>
+        </entity-condition>
+    </view-entity>
+
+</entities>
