@@ -166,6 +166,7 @@ under the License.
         </member-entity>
         <alias-all entity-alias="PF"/>
         <alias entity-alias="PF" name="totalLastInventoryCount" field="lastInventoryCount" function="sum"/>
+        <alias entity-alias="PF" name="totalComputedLastInventoryCount" field="computedLastInventoryCount" function="sum"/>
         <alias entity-alias="F" name="facilityId"/>
         <alias entity-alias="F" name="facilityName"/>
         <alias entity-alias="F" name="facilityTypeId"/>
