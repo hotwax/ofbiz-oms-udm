@@ -153,16 +153,16 @@ under the License.
 
     </view-entity>
 
-    <view-entity entity-name="FacilityAndProductFacility" package="co.hotwax.facility">
-        <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility"/>
-        <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility" join-from-alias="F">
+    <view-entity entity-name="ProductFacilityView" package="co.hotwax.facility">
+        <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility"/>
+        <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="PF">
             <key-map field-name="facilityId"/>
-        </member-entity>
-        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="PF">
-            <key-map field-name="productId"/>
         </member-entity>
         <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F">
             <key-map field-name="facilityTypeId"/>
+        </member-entity>
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="PF">
+            <key-map field-name="productId"/>
         </member-entity>
         <alias-all entity-alias="PF"/>
         <alias entity-alias="PF" name="totalLastInventoryCount" field="lastInventoryCount" function="sum"/>
