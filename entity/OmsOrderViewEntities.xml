@@ -1599,4 +1599,31 @@ under the License.
         </entity-condition>
     </view-entity>
 
+    <view-entity entity-name="OrderItemShipGroupAndAssoc" package="co.hotwax.warehouse" group="ofbiz_transactional">
+        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup"/>
+        <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc" join-from-alias="OISG">
+            <key-map field-name="orderId"/>
+            <key-map field-name="shipGroupSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OISGA">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </member-entity>
+        <alias entity-alias="OISG" name="orderId"/>
+        <alias entity-alias="OISG" name="facilityId"/>
+        <alias entity-alias="OISG" name="orderFacilityId"/>
+        <alias entity-alias="OISG" name="shipAfterDate"/>
+        <alias entity-alias="OISG" name="shipmentMethodTypeId"/>
+        <alias entity-alias="OISG" name="shipGroupSeqId"/>
+        <alias entity-alias="OISGA" name="quantity"/>
+        <alias entity-alias="OISGA" name="orderItemSeqId"/>
+        <alias entity-alias="OI" name="autoCancelDate"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="itemDescription"/>
+        <alias entity-alias="OI" name="itemQuantity" field="quantity"/>
+        <alias entity-alias="OI" name="itemExternalId" field="externalId"/>
+        <alias entity-alias="OI" name="cancelQuantity"/>
+        <alias entity-alias="OI" name="statusId"/>
+    </view-entity>
+
 </entities>
