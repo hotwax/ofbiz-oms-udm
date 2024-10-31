@@ -223,59 +223,5 @@ under the License.
         <field name="contactListTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-long"></field>
     </entity>
-    <entity entity-name="SegmentGroup" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
-        <field name="segmentGroupId" type="id" is-pk="true"></field>
-        <field name="segmentGroupTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
-        <field name="productStoreId" type="id"></field>
-        <relationship type="one" fk-name="SGMTGRP_TYPE" related="org.apache.ofbiz.marketing.segment.SegmentGroupType">
-            <key-map field-name="segmentGroupTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="SGMTGRP_PRST" related="org.apache.ofbiz.product.store.ProductStore">
-            <key-map field-name="productStoreId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="SegmentGroupClassification" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
-        <field name="segmentGroupId" type="id" is-pk="true"></field>
-        <field name="partyClassificationGroupId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="SGMTGRPCLS_SGGP" related="org.apache.ofbiz.marketing.segment.SegmentGroup">
-            <key-map field-name="segmentGroupId"/>
-        </relationship>
-        <relationship type="one" fk-name="SGMTGRPCLS_PCGP" related="org.apache.ofbiz.party.party.PartyClassificationGroup">
-            <key-map field-name="partyClassificationGroupId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="SegmentGroupGeo" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
-        <field name="segmentGroupId" type="id" is-pk="true"></field>
-        <field name="geoId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="SGMTGRPGEO_SGGP" related="org.apache.ofbiz.marketing.segment.SegmentGroup">
-            <key-map field-name="segmentGroupId"/>
-        </relationship>
-        <relationship type="one" fk-name="SGMTGRPGEO_GEO" related="org.apache.ofbiz.common.geo.Geo">
-            <key-map field-name="geoId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="SegmentGroupRole" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
-        <field name="segmentGroupId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="SGMTGRPRL_SGGP" related="org.apache.ofbiz.marketing.segment.SegmentGroup">
-            <key-map field-name="segmentGroupId"/>
-        </relationship>
-        <relationship type="one" fk-name="SGMTGRPRL_PRLE" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="SegmentGroupType" package="org.apache.ofbiz.marketing.segment" group="ofbiz_transactional">
-        <field name="segmentGroupTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
-    </entity>
 </entities>
 
