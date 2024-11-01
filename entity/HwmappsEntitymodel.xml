@@ -93,12 +93,6 @@ under the License.
     <extend-entity entity-name="Enumeration" package="org.apache.ofbiz.common.enum" group="ofbiz_transactional">
         <field name="sequenceNum" type="number-integer"></field>
     </extend-entity>
-    <extend-entity entity-name="TrackingCode" package="org.apache.ofbiz.marketing.tracking" group="ofbiz_transactional">
-        <field name="productPriceRuleId" type="id"></field>
-        <relationship type="one" fk-name="TRCK_CD_PRC_RL" related="org.apache.ofbiz.product.price.ProductPriceRule">
-            <key-map field-name="productPriceRuleId"/>
-        </relationship>
-    </extend-entity>
     <extend-entity entity-name="PartyGroup" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
         <field name="pdfLogoImageUrl" type="text-long"></field>
     </extend-entity>
@@ -253,9 +247,6 @@ under the License.
     </extend-entity>
     <extend-entity entity-name="PartyDataSource" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
         <field name="thruDate" type="date-time"></field>
-    </extend-entity>
-    <extend-entity entity-name="TrackingCode" package="org.apache.ofbiz.marketing.tracking" group="ofbiz_transactional">
-        <field name="useLimitPerCode" type="number-integer"></field>
     </extend-entity>
     <extend-entity entity-name="ProductCategory" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
         <field name="productCategoryUrlName" type="text-medium"><description>Category name to be used in URL on store front</description></field>
@@ -887,31 +878,6 @@ under the License.
             <key-map field-name="productCategoryIdTo" related="productCategoryId"/>
         </relationship>
     </entity>
-    <entity entity-name="MktgCampaignContentType" package="co.hotwax.buynow" group="ofbiz_transactional">
-        <field name="mktgCampaignContentTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
-        <relationship type="one" fk-name="MKTGCPN_TYP_PARENT" title="Parent" related="co.hotwax.buynow.MktgCampaignContentType">
-            <key-map field-name="parentTypeId" related="mktgCampaignContentTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="MarketingCampaignContent" package="co.hotwax.buynow" group="ofbiz_transactional">
-        <field name="marketingCampaignId" type="id" is-pk="true"></field>
-        <field name="contentId" type="id" is-pk="true"></field>
-        <field name="mktgCampaignContentTypeId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="MKTGCPN_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
-        </relationship>
-        <relationship type="one" fk-name="MKTGCPN_CNT_TYPE" related="co.hotwax.buynow.MktgCampaignContentType">
-            <key-map field-name="mktgCampaignContentTypeId" related="mktgCampaignContentTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="MKTGCPN_CNT_MC" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
-            <key-map field-name="marketingCampaignId"/>
-        </relationship>
-    </entity>
     <entity entity-name="PartyProduct" package="co.hotwax.commerce.party" group="ofbiz_transactional">
 <description>Defines the association of products with parties.</description>        <field name="partyId" type="id" is-pk="true"></field>
         <field name="productId" type="id" is-pk="true"></field>
@@ -1221,16 +1187,6 @@ under the License.
             <key-map field-name="reasonEnumId" related="enumId"/>
         </relationship>
     </entity>
-    <entity entity-name="ContactListNote" package="co.hotwax.party.party" group="ofbiz_transactional">
-        <field name="contactListId" type="id" is-pk="true"></field>
-        <field name="noteId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="CONTCT_LST_NOTE" related="org.apache.ofbiz.marketing.contact.ContactList">
-            <key-map field-name="contactListId"/>
-        </relationship>
-        <relationship type="one" fk-name="CNTCT_NOTE_CNTCT" related="org.apache.ofbiz.common.note.NoteData">
-            <key-map field-name="noteId"/>
-        </relationship>
-    </entity>
     <entity entity-name="RoleTypeGroup" package="co.hotwax.common" group="ofbiz_transactional">
         <field name="roleTypeGroupId" type="id" is-pk="true"></field>
         <field name="parentRoleTypeGroupId" type="id"></field>
@@ -1288,23 +1244,6 @@ under the License.
         <field name="enableDataVault" type="text-indicator"><description>Enable Data Vault</description></field>
         <relationship type="one" fk-name="PGFD_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
             <key-map field-name="paymentGatewayConfigId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="MarketingCampaignStatus" package="co.hotwax.workeffort.workeffort" group="ofbiz_transactional">
-        <field name="marketingCampaignStatusId" type="id" is-pk="true"></field>
-        <field name="statusId" type="id"></field>
-        <field name="marketingCampaignId" type="id"></field>
-        <field name="reason" type="text-long"></field>
-        <field name="statusDate" type="date-time"></field>
-        <field name="createdByUserLogin" type="id-long"></field>
-        <relationship type="one" fk-name="MKTGCPN_STS_MKTG" related="org.apache.ofbiz.marketing.campaign.MarketingCampaign">
-            <key-map field-name="marketingCampaignId"/>
-        </relationship>
-        <relationship type="one" fk-name="MKTGCPN_STS_STS" related="org.apache.ofbiz.common.status.StatusItem">
-            <key-map field-name="statusId"/>
-        </relationship>
-        <relationship type="one" fk-name="MKTGCPN_STS_USER" related="org.apache.ofbiz.security.login.UserLogin">
-            <key-map field-name="createdByUserLogin" related="userLoginId"/>
         </relationship>
     </entity>
     <entity entity-name="ProductStoreTaxSettingType" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
