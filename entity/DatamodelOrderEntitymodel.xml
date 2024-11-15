@@ -28,7 +28,7 @@ under the License.
         <field name="orderItemSeqId" type="id"></field>
         <field name="shipGroupSeqId" type="id"></field>
         <field name="comments" type="text-very-long"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="amount" type="currency-precise"></field>
         <field name="recurringAmount" type="currency-precise"></field>
         <field name="amountAlreadyIncluded" type="currency-precise"><description>The amount here is already represented in the price, such as VAT taxes.</description></field>
@@ -117,8 +117,8 @@ under the License.
     <entity entity-name="OrderAdjustmentAttribute" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderAdjustmentId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_ADJ_ATTR" related="org.apache.ofbiz.order.order.OrderAdjustment">
             <key-map field-name="orderAdjustmentId"/>
         </relationship>
@@ -130,7 +130,7 @@ under the License.
         <field name="orderAdjustmentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_ADJ_TYPPAR" title="Parent" related="org.apache.ofbiz.order.order.OrderAdjustmentType">
             <key-map field-name="parentTypeId" related="orderAdjustmentTypeId"/>
         </relationship>
@@ -154,7 +154,7 @@ under the License.
     <entity entity-name="OrderAdjustmentTypeAttr" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderAdjustmentTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_ADJ_TYPATTR" related="org.apache.ofbiz.order.order.OrderAdjustmentType">
             <key-map field-name="orderAdjustmentTypeId"/>
         </relationship>
@@ -168,8 +168,8 @@ under the License.
     <entity entity-name="OrderAttribute" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_ATTR_HDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -178,7 +178,7 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="OrderBlacklist" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-        <field name="blacklistString" type="text-long" is-pk="true"></field>
+        <field name="blacklistString" type="text-medium" is-pk="true"></field>
         <field name="orderBlacklistTypeId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="ORDER_BKL_TYPE" related="org.apache.ofbiz.order.order.OrderBlacklistType">
             <key-map field-name="orderBlacklistTypeId"/>
@@ -186,7 +186,7 @@ under the License.
     </entity>
     <entity entity-name="OrderBlacklistType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderBlacklistTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="CommunicationEventOrder" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderId" type="id" is-pk="true"></field>
@@ -233,7 +233,7 @@ under the License.
         <field name="orderContentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ORDCT_TYP_PARENT" title="Parent" related="org.apache.ofbiz.order.order.OrderContentType">
             <key-map field-name="parentTypeId" related="orderContentTypeId"/>
         </relationship>
@@ -389,8 +389,8 @@ under the License.
         <field name="unitRecurringPrice" type="currency-amount"></field>
         <field name="isModifiedPrice" type="text-indicator"></field>
         <field name="recurringFreqUomId" type="id"></field>
-        <field name="itemDescription" type="text-long"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="itemDescription" type="text-medium"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="correspondingPoId" type="id"></field>
         <field name="statusId" type="id"></field>
         <field name="syncStatusId" type="id"></field>
@@ -453,9 +453,6 @@ under the License.
         <relationship type="one" fk-name="ORDER_ITEM_OGLA" title="Override" related="org.apache.ofbiz.accounting.ledger.GlAccount">
             <key-map field-name="overrideGlAccountId" related="glAccountId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_ITEM_SLSOPP" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunity">
-            <key-map field-name="salesOpportunityId"/>
-        </relationship>
         <relationship type="one" fk-name="ORDER_ITEM_USRLGN" title="ChangeBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
         </relationship>
@@ -512,7 +509,7 @@ under the License.
         <field name="orderItemAssocTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_ITAS_TYPPAR" title="Parent" related="org.apache.ofbiz.order.order.OrderItemAssocType">
             <key-map field-name="parentTypeId" related="orderItemAssocTypeId"/>
         </relationship>
@@ -521,8 +518,8 @@ under the License.
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_ITEM_ATTR" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
@@ -576,9 +573,9 @@ under the License.
         <field name="availableToPromise" type="number-decimal"></field>
         <field name="cancelQuantity" type="number-decimal"></field>
         <field name="unitPrice" type="currency-amount"></field>
-        <field name="itemDescription" type="text-long"></field>
+        <field name="itemDescription" type="text-medium"></field>
         <field name="reasonEnumId" type="id"></field>
-        <field name="changeComments" type="text-long"></field>
+        <field name="changeComments" type="text-medium"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
@@ -647,7 +644,7 @@ under the License.
         <field name="productPriceRuleId" type="id"></field>
         <field name="productPriceActionSeqId" type="id"></field>
         <field name="modifyAmount" type="currency-precise"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="rateCode" type="text-medium"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
@@ -699,9 +696,9 @@ under the License.
         <field name="contactMechId" type="id"></field>
         <field name="telecomContactMechId" type="id"></field>
         <field name="trackingNumber" type="text-medium"></field>
-        <field name="shippingInstructions" type="text-long"></field>
+        <field name="shippingInstructions" type="text-medium"></field>
         <field name="maySplit" type="text-indicator" enable-audit-log="true"></field>
-        <field name="giftMessage" type="text-long"></field>
+        <field name="giftMessage" type="text-medium"></field>
         <field name="isGift" type="text-indicator"></field>
         <field name="shipAfterDate" type="date-time"></field>
         <field name="shipByDate" type="date-time"></field>
@@ -804,7 +801,7 @@ under the License.
         <field name="orderItemTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_ITEM_TYPPAR" title="Parent" related="org.apache.ofbiz.order.order.OrderItemType">
             <key-map field-name="parentTypeId" related="orderItemTypeId"/>
         </relationship>
@@ -812,7 +809,7 @@ under the License.
     <entity entity-name="OrderItemTypeAttr" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderItemTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_ITEM_TYPATR" related="org.apache.ofbiz.order.order.OrderItemType">
             <key-map field-name="orderItemTypeId"/>
         </relationship>
@@ -827,7 +824,7 @@ under the License.
         <field name="orderNotificationId" type="id" is-pk="true"></field>
         <field name="orderId" type="id"></field>
         <field name="emailType" type="id"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="notificationDate" type="date-time"></field>
         <relationship type="one" fk-name="ORD_NOTIFY_ORDHDR" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
@@ -848,11 +845,11 @@ under the License.
         <field name="paymentMethodTypeId" type="id"></field>
         <field name="paymentMethodId" type="id"></field>
         <field name="finAccountId" type="id"><description>For paying with a fin account instead of payment method on file</description></field>
-        <field name="securityCode" type="text-long" encrypt="true"><description>NOTE: THIS SHOULD NEVER BE PERSISTED OUTSIDE THE SCOPE OF A SINGLE TRANSACTION,
+        <field name="securityCode" type="text-medium" encrypt="true"><description>NOTE: THIS SHOULD NEVER BE PERSISTED OUTSIDE THE SCOPE OF A SINGLE TRANSACTION,
               TYPICALLY ONLY FOR AUTHORIZATION PURPOSES, SHOULD BE REMOVED IMMEDIATELY FOLLOWING USE;
               this is the 3 digit on back (for Visa, MC, etc) or 4 digit on front (Amex, etc) card
               verification code; also note that this field is longer than needed to accommodate encryption.</description></field>
-        <field name="track2" type="text-long" encrypt="true"><description>NOTE: THIS SHOULD NEVER BE PERSISTED OUTSIDE THE SCOPE OF A SINGLE TRANSACTION,
+        <field name="track2" type="text-medium" encrypt="true"><description>NOTE: THIS SHOULD NEVER BE PERSISTED OUTSIDE THE SCOPE OF A SINGLE TRANSACTION,
               TYPICALLY ONLY FOR AUTHORIZATION PURPOSES, SHOULD BE REMOVED IMMEDIATELY FOLLOWING USE;
               this is raw track2 data, exactly as read by the magnetic swipe reader;
               also note that this field is longer than needed to accommodate encryption.</description></field>
@@ -984,7 +981,7 @@ under the License.
         <field name="orderPaymentPreferenceId" type="id"></field>
         <field name="statusDatetime" type="date-time"></field>
         <field name="statusUserLogin" type="id-long"></field>
-        <field name="changeReason" type="text-long"></field>
+        <field name="changeReason" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_STTS_STTS" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
@@ -1022,8 +1019,8 @@ under the License.
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="termValue" type="currency-amount"></field>
         <field name="termDays" type="number-integer"></field>
-        <field name="textValue" type="text-long"></field>
-        <field name="description" type="text-long"></field>
+        <field name="textValue" type="text-medium"></field>
+        <field name="description" type="text-medium"></field>
         <field name="uomId" type="id"></field>
         <relationship type="one" fk-name="ORDER_TERM_UOM" related="org.apache.ofbiz.common.uom.Uom">
             <key-map field-name="uomId"/>
@@ -1044,8 +1041,8 @@ under the License.
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_TATTR_OTRM" related="org.apache.ofbiz.order.order.OrderTerm">
             <key-map field-name="termTypeId"/>
             <key-map field-name="orderId"/>
@@ -1056,7 +1053,7 @@ under the License.
         <field name="orderTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.order.order.OrderType">
             <key-map field-name="parentTypeId" related="orderTypeId"/>
         </relationship>
@@ -1064,7 +1061,7 @@ under the License.
     <entity entity-name="OrderTypeAttr" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_TPAT_ORTYP" related="org.apache.ofbiz.order.order.OrderType">
             <key-map field-name="orderTypeId"/>
         </relationship>
@@ -1132,7 +1129,7 @@ under the License.
         <field name="validFromDate" type="date-time"></field>
         <field name="validThruDate" type="date-time"></field>
         <field name="quoteName" type="text-medium"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="QUOTE_QTTYP" related="org.apache.ofbiz.order.quote.QuoteType">
             <key-map field-name="quoteTypeId"/>
         </relationship>
@@ -1158,8 +1155,8 @@ under the License.
     <entity entity-name="QuoteAttribute" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
         <field name="quoteId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="QUOTE_ATTR" related="org.apache.ofbiz.order.quote.Quote">
             <key-map field-name="quoteId"/>
         </relationship>
@@ -1194,7 +1191,7 @@ under the License.
         <field name="reservPersons" type="number-decimal"></field>
         <field name="configId" type="id"></field>
         <field name="estimatedDeliveryDate" type="date-time"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="isPromo" type="text-indicator"></field>
         <field name="leadTimeDays" type="number-integer"></field>
         <relationship type="one" fk-name="QUOTE_ITM_QTE" related="org.apache.ofbiz.order.quote.Quote">
@@ -1208,9 +1205,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="QUOTE_ITM_DELT" related="org.apache.ofbiz.workeffort.workeffort.DeliverableType">
             <key-map field-name="deliverableTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ITM_SKLT" related="org.apache.ofbiz.humanres.ability.SkillType">
-            <key-map field-name="skillTypeId"/>
         </relationship>
         <relationship type="one" fk-name="QUOTE_ITM_UOM" related="org.apache.ofbiz.common.uom.Uom">
             <key-map field-name="uomId"/>
@@ -1263,8 +1257,8 @@ under the License.
         <field name="termValue" type="number-integer"></field>
         <field name="uomId" type="id"></field>
         <field name="termDays" type="number-integer"></field>
-        <field name="textValue" type="text-long"></field>
-        <field name="description" type="text-long"></field>
+        <field name="textValue" type="text-medium"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="QUOTE_TERM_QTE" related="org.apache.ofbiz.order.quote.Quote">
             <key-map field-name="quoteId"/>
         </relationship>
@@ -1281,8 +1275,8 @@ under the License.
         <field name="quoteId" type="id" is-pk="true"></field>
         <field name="quoteItemSeqId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="QUOTE_TERM_ATTR" related="org.apache.ofbiz.order.quote.QuoteTerm">
             <key-map field-name="termTypeId"/>
             <key-map field-name="quoteId"/>
@@ -1293,7 +1287,7 @@ under the License.
         <field name="quoteTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="QUOTE_TYPE_PAR" title="Parent" related="org.apache.ofbiz.order.quote.QuoteType">
             <key-map field-name="parentTypeId" related="quoteTypeId"/>
         </relationship>
@@ -1301,7 +1295,7 @@ under the License.
     <entity entity-name="QuoteTypeAttr" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
         <field name="quoteTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="QUOTE_TPAT_QTYP" related="org.apache.ofbiz.order.quote.QuoteType">
             <key-map field-name="quoteTypeId"/>
         </relationship>
@@ -1327,8 +1321,8 @@ under the License.
         <field name="quoteAdjustmentTypeId" type="id"></field>
         <field name="quoteId" type="id"></field>
         <field name="quoteItemSeqId" type="id"></field>
-        <field name="comments" type="text-long"></field>
-        <field name="description" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
+        <field name="description" type="text-medium"></field>
         <field name="amount" type="currency-amount"></field>
         <field name="productPromoId" type="id"></field>
         <field name="productPromoRuleId" type="id"></field>
@@ -1399,7 +1393,7 @@ under the License.
         <field name="custRequestDate" type="date-time"><description>When the customer (or whoever) submitted the request, maybe out of OFBiz : comming by mail, email, etc.</description></field>
         <field name="responseRequiredDate" type="date-time"><description>responseRequiredDate is the time the customer needs a response.</description></field>
         <field name="custRequestName" type="text-medium"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="maximumAmountUomId" type="id"></field>
         <field name="productStoreId" type="id"></field>
         <field name="salesChannelEnumId" type="id"></field>
@@ -1409,8 +1403,8 @@ under the License.
           You  cantake the customer requestdate and openDateTime to see the efficiency of the customer service people.</description></field>
         <field name="closedDateTime" type="date-time"><description>Used when the customer service person, or anyone assigned to handle the incoming request, closes it as resolution.
           In some customer response systems, the openDateTime and closedDateTime can happen more than once as the customer is not satified with the resolution.</description></field>
-        <field name="internalComment" type="text-long"></field>
-        <field name="reason" type="text-long"></field>
+        <field name="internalComment" type="text-medium"></field>
+        <field name="reason" type="text-medium"></field>
         <field name="createdDate" type="date-time"><description>When it is actually stored in the system.</description></field>
         <field name="createdByUserLogin" type="id-long"></field>
         <field name="lastModifiedDate" type="date-time"><description>Last modified date can be till the closedDateTime which is when the customer service people, or anyone assigned to handle the incoming request, says it is resolved.
@@ -1450,8 +1444,8 @@ under the License.
     <entity entity-name="CustRequestAttribute" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
         <field name="custRequestId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="CUST_REQ_ATTR" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
         </relationship>
@@ -1462,7 +1456,7 @@ under the License.
     <entity entity-name="CustRequestCategory" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
         <field name="custRequestCategoryId" type="id" is-pk="true"></field>
         <field name="custRequestTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="CUST_RQCT_TYPE" related="org.apache.ofbiz.order.request.CustRequestType">
             <key-map field-name="custRequestTypeId"/>
         </relationship>
@@ -1505,7 +1499,7 @@ under the License.
         <field name="reservLength" type="number-decimal"></field>
         <field name="reservPersons" type="number-decimal"></field>
         <field name="configId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="story" type="text-very-long"></field>
         <relationship type="one" fk-name="CUST_REQITM_CREQ" related="org.apache.ofbiz.order.request.CustRequest">
             <key-map field-name="custRequestId"/>
@@ -1560,7 +1554,7 @@ under the License.
     <entity entity-name="CustRequestResolution" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
         <field name="custRequestResolutionId" type="id" is-pk="true"></field>
         <field name="custRequestTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="CUST_RQRS_TYPE" related="org.apache.ofbiz.order.request.CustRequestType">
             <key-map field-name="custRequestTypeId"/>
         </relationship>
@@ -1610,7 +1604,7 @@ under the License.
         <field name="custRequestTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="partyId" type="id"><description>party or party group(via partyRelationShip entity) responsible for responding to the communication request of this particular type</description></field>
         <relationship type="one" fk-name="CUST_REQ_TYPE_PAR" title="Parent" related="org.apache.ofbiz.order.request.CustRequestType">
             <key-map field-name="parentTypeId" related="custRequestTypeId"/>
@@ -1625,7 +1619,7 @@ under the License.
     <entity entity-name="CustRequestTypeAttr" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
         <field name="custRequestTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="CUST_REQ_TYPE_ATTR" related="org.apache.ofbiz.order.request.CustRequestType">
             <key-map field-name="custRequestTypeId"/>
         </relationship>
@@ -1698,13 +1692,13 @@ under the License.
         <field name="fixedAssetId" type="id"></field>
         <field name="productId" type="id"></field>
         <field name="statusId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="requirementStartDate" type="date-time"></field>
         <field name="requiredByDate" type="date-time"></field>
         <field name="estimatedBudget" type="currency-amount"></field>
         <field name="quantity" type="number-decimal"></field>
         <field name="useCase" type="text-very-long"></field>
-        <field name="reason" type="text-long"></field>
+        <field name="reason" type="text-medium"></field>
         <field name="createdDate" type="date-time"></field>
         <field name="createdByUserLogin" type="id-long"></field>
         <field name="lastModifiedDate" type="date-time"></field>
@@ -1734,8 +1728,8 @@ under the License.
     <entity entity-name="RequirementAttribute" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
         <field name="requirementId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="REQ_ATTR" related="org.apache.ofbiz.order.requirement.Requirement">
             <key-map field-name="requirementId"/>
         </relationship>
@@ -1810,7 +1804,7 @@ under the License.
         <field name="requirementTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="REQ_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.order.requirement.RequirementType">
             <key-map field-name="parentTypeId" related="requirementTypeId"/>
         </relationship>
@@ -1818,7 +1812,7 @@ under the License.
     <entity entity-name="RequirementTypeAttr" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
         <field name="requirementTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="REQ_TYPE_ATTR" related="org.apache.ofbiz.order.requirement.RequirementType">
             <key-map field-name="requirementTypeId"/>
         </relationship>
@@ -1831,7 +1825,7 @@ under the License.
     </entity>
     <entity entity-name="WorkReqFulfType" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
         <field name="workReqFulfTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="WorkRequirementFulfillment" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
         <field name="requirementId" type="id" is-pk="true"></field>
@@ -1856,7 +1850,7 @@ under the License.
         <field name="returnItemSeqId" type="id"></field>
         <field name="shipGroupSeqId" type="id"></field>
         <field name="comments" type="text-very-long"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="returnTypeId" type="id"><description>actually used for disbursement type: store credit, cash refund, exchange</description></field>
         <field name="orderAdjustmentId" type="id"></field>
         <field name="amount" type="currency-precise"></field>
@@ -1933,7 +1927,7 @@ under the License.
         <field name="returnAdjustmentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="RETURN_ADJ_TYPPAR" title="Parent" related="org.apache.ofbiz.order.return.ReturnAdjustmentType">
             <key-map field-name="parentTypeId" related="returnAdjustmentTypeId"/>
         </relationship>
@@ -2005,7 +1999,7 @@ under the License.
     <entity entity-name="ReturnHeaderType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="returnHeaderTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="RTHEAD_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.order.return.ReturnHeaderType">
             <key-map field-name="parentTypeId" related="returnHeaderTypeId"/>
         </relationship>
@@ -2017,7 +2011,7 @@ under the License.
         <field name="returnTypeId" type="id" enable-audit-log="true"><description>actually used for disbursement type: store credit, cash refund, exchange</description></field>
         <field name="returnItemTypeId" type="id"><description>what is returned: a product, a service, etc</description></field>
         <field name="productId" type="id"><description>we need this field to be able to figure out net sales of a product</description></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>
         <field name="statusId" type="id"></field>
@@ -2094,7 +2088,7 @@ under the License.
     <entity entity-name="ReturnItemType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
 <description>ReturnItemType records the type of a ReturnItem</description>        <field name="returnItemTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="RETURN_ITEM_TYPPAR" title="Parent" related="org.apache.ofbiz.order.return.ReturnItemType">
             <key-map field-name="parentTypeId" related="returnItemTypeId"/>
         </relationship>
@@ -2116,7 +2110,7 @@ under the License.
     </entity>
     <entity entity-name="ReturnReason" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="returnReasonId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="sequenceId" type="id"></field>
     </entity>
     <entity entity-name="ReturnStatus" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
@@ -2142,7 +2136,7 @@ under the License.
     </entity>
     <entity entity-name="ReturnType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="returnTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="sequenceId" type="id"></field>
     </entity>
     <entity entity-name="ReturnItemBilling" package="org.apache.ofbiz.order.return" cache="never" group="ofbiz_transactional">
@@ -2246,7 +2240,7 @@ under the License.
         <field name="visitorId" type="id"></field>
         <field name="partyId" type="id"></field>
         <field name="listName" type="text-medium"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="isPublic" type="text-indicator"></field>
         <field name="isActive" type="text-indicator"></field>
         <field name="currencyUom" type="id"></field>
@@ -2336,7 +2330,7 @@ under the License.
     </entity>
     <entity entity-name="ShoppingListType" package="org.apache.ofbiz.order.shoppinglist" group="ofbiz_transactional">
         <field name="shoppingListTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="ShoppingListWorkEffort" package="org.apache.ofbiz.order.shoppinglist" group="ofbiz_transactional">
         <field name="shoppingListId" type="id" is-pk="true"></field>

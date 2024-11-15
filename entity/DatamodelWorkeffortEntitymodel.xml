@@ -32,7 +32,7 @@ under the License.
         <field name="invoiceId" type="id"></field>
         <field name="invoiceItemSeqId" type="id"></field>
         <field name="hours" type="number-float"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <relationship type="one" fk-name="TIME_ENT_PRTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
         </relationship>
@@ -61,7 +61,7 @@ under the License.
         <field name="thruDate" type="date-time"></field>
         <field name="statusId" type="id"></field>
         <field name="approvedByUserLoginId" type="id-long"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <relationship type="one" fk-name="TIMESHEET_PRTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
         </relationship>
@@ -113,7 +113,7 @@ under the License.
     <entity entity-name="CommunicationEventWorkEff" package="org.apache.ofbiz.workeffort.workeffort" group="ofbiz_transactional">
         <field name="workEffortId" type="id" is-pk="true"></field>
         <field name="communicationEventId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="COMEV_WEFF_WEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
             <key-map field-name="workEffortId"/>
         </relationship>
@@ -125,14 +125,14 @@ under the License.
         <field name="deliverableId" type="id" is-pk="true"></field>
         <field name="deliverableTypeId" type="id"></field>
         <field name="deliverableName" type="text-medium"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="DELIVERABLE_DLTYP" related="org.apache.ofbiz.workeffort.workeffort.DeliverableType">
             <key-map field-name="deliverableTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="DeliverableType" package="org.apache.ofbiz.workeffort.workeffort" group="ofbiz_transactional">
         <field name="deliverableTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="WorkEffort" package="org.apache.ofbiz.workeffort.workeffort" group="ofbiz_transactional">
         <field name="workEffortId" type="id" is-pk="true"></field>
@@ -147,8 +147,8 @@ under the License.
         <field name="workEffortName" type="text-medium"></field>
         <field name="showAsEnumId" type="id"></field>
         <field name="sendNotificationEmail" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
-        <field name="locationDesc" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
+        <field name="locationDesc" type="text-medium"></field>
         <field name="estimatedStartDate" type="date-time"></field>
         <field name="estimatedCompletionDate" type="date-time"></field>
         <field name="actualStartDate" type="date-time"></field>
@@ -161,13 +161,13 @@ under the License.
         <field name="totalMilliSecondsAllowed" type="number-float"></field>
         <field name="totalMoneyAllowed" type="currency-amount"></field>
         <field name="moneyUomId" type="id"></field>
-        <field name="specialTerms" type="text-long"></field>
+        <field name="specialTerms" type="text-medium"></field>
         <field name="timeTransparency" type="number-integer"><description>Deprecated - use the availabilityStatusId field in the assignment entities instead</description></field>
         <field name="universalId" type="text-medium"></field>
         <field name="sourceReferenceId" type="id-long"></field>
         <field name="fixedAssetId" type="id"><description>Deprecated - use the WorkEffortFixedAssetAssign entity instead</description></field>
         <field name="facilityId" type="id"></field>
-        <field name="infoUrl" type="text-long"></field>
+        <field name="infoUrl" type="text-medium"></field>
         <field name="recurrenceInfoId" type="id"><description>Deprecated - use the tempExprId field instead</description></field>
         <field name="tempExprId" type="id"></field>
         <field name="runtimeDataId" type="id"></field>
@@ -261,8 +261,8 @@ under the License.
         <field name="workEffortAssocTypeId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="WK_EFFRTASSC_ATTR" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortAssoc">
             <key-map field-name="workEffortIdFrom"/>
             <key-map field-name="workEffortIdTo"/>
@@ -277,7 +277,7 @@ under the License.
         <field name="workEffortAssocTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="WK_EFFRTASSC_TPAR" title="Parent" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortAssocType">
             <key-map field-name="parentTypeId" related="workEffortAssocTypeId"/>
         </relationship>
@@ -285,7 +285,7 @@ under the License.
     <entity entity-name="WorkEffortAssocTypeAttr" package="org.apache.ofbiz.workeffort.workeffort" group="ofbiz_transactional">
         <field name="workEffortAssocTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="WK_EFFRTASSC_TATR" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortAssocType">
             <key-map field-name="workEffortAssocTypeId"/>
         </relationship>
@@ -299,8 +299,8 @@ under the License.
     <entity entity-name="WorkEffortAttribute" package="org.apache.ofbiz.workeffort.workeffort" group="ofbiz_transactional">
         <field name="workEffortId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="WK_EFFRT_ATTR_WE" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
             <key-map field-name="workEffortId"/>
         </relationship>
@@ -329,7 +329,7 @@ under the License.
         <field name="contactMechId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <relationship type="one" fk-name="WKEFF_CMECH_WKEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
             <key-map field-name="workEffortId"/>
         </relationship>
@@ -359,7 +359,7 @@ under the License.
     <entity entity-name="WorkEffortContentType" package="org.apache.ofbiz.workeffort.workeffort" group="ofbiz_transactional">
         <field name="workEffortContentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="WEFFCTP_TP_PAR" title="Parent" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortContentType">
             <key-map field-name="parentTypeId" related="workEffortContentTypeId"/>
         </relationship>
@@ -404,7 +404,7 @@ under the License.
         <field name="thruDate" type="date-time"></field>
         <field name="availabilityStatusId" type="id"><description>Points to StatusItem value with statusTypeId=&quot;WEFA_AVAILABILITY&quot;</description></field>
         <field name="allocatedCost" type="currency-amount"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <relationship type="one" fk-name="WKEFF_FXDAA_WEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
             <key-map field-name="workEffortId"/>
         </relationship>
@@ -457,7 +457,7 @@ under the License.
         <field name="workEffortGoodStdTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="WKEFF_GDSTD_TPAR" title="Parent" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortGoodStandardType">
             <key-map field-name="parentTypeId" related="workEffortGoodStdTypeId"/>
         </relationship>
@@ -544,7 +544,7 @@ under the License.
         <field name="expectationEnumId" type="id"><description>Point to Enumeration value with enumTypeId=&quot;WORK_EFF_EXPECT&quot;</description></field>
         <field name="delegateReasonEnumId" type="id"><description>Point to Enumeration value with enumTypeId=&quot;WORK_EFF_DEL_REAS&quot;</description></field>
         <field name="facilityId" type="id"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="mustRsvp" type="text-indicator"></field>
         <field name="availabilityStatusId" type="id"><description>Points to StatusItem value with statusTypeId=&quot;WEPA_AVAILABILITY&quot;</description></field>
         <relationship type="one" fk-name="WKEFF_PA_WE" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
@@ -582,7 +582,7 @@ under the License.
     <entity entity-name="WorkEffortPurposeType" package="org.apache.ofbiz.workeffort.workeffort" group="ofbiz_transactional">
         <field name="workEffortPurposeTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="WK_EFFRT_PTYPE_PAR" title="Parent" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortPurposeType">
             <key-map field-name="parentTypeId" related="workEffortPurposeTypeId"/>
         </relationship>
@@ -608,8 +608,8 @@ under the License.
     <entity entity-name="WorkEffortSearchConstraint" package="org.apache.ofbiz.workeffort.workeffort" cache="never" group="ofbiz_transactional">
         <field name="workEffortSearchResultId" type="id" is-pk="true"></field>
         <field name="constraintSeqId" type="id" is-pk="true"></field>
-        <field name="constraintName" type="text-long"></field>
-        <field name="infoString" type="text-long"></field>
+        <field name="constraintName" type="text-medium"></field>
+        <field name="infoString" type="text-medium"></field>
         <field name="includeSubWorkEfforts" type="text-indicator"></field>
         <field name="isAnd" type="text-indicator"></field>
         <field name="anyPrefix" type="text-indicator"></field>
@@ -624,7 +624,7 @@ under the License.
     <entity entity-name="WorkEffortSearchResult" package="org.apache.ofbiz.workeffort.workeffort" cache="never" group="ofbiz_transactional">
         <field name="workEffortSearchResultId" type="id" is-pk="true"></field>
         <field name="visitId" type="id"></field>
-        <field name="orderByName" type="text-long"></field>
+        <field name="orderByName" type="text-medium"></field>
         <field name="isAscending" type="text-indicator"></field>
         <field name="numResults" type="number-integer"></field>
         <field name="secondsTotal" type="number-float"></field>
@@ -639,16 +639,13 @@ under the License.
         <relationship type="one" fk-name="WKEFF_SKLSTD_WEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
             <key-map field-name="workEffortId"/>
         </relationship>
-        <relationship type="one" fk-name="WKEFF_SKLSTD_SKTP" related="org.apache.ofbiz.humanres.ability.SkillType">
-            <key-map field-name="skillTypeId"/>
-        </relationship>
     </entity>
     <entity entity-name="WorkEffortStatus" package="org.apache.ofbiz.workeffort.workeffort" group="ofbiz_transactional">
         <field name="workEffortId" type="id" is-pk="true"></field>
         <field name="statusId" type="id" is-pk="true"></field>
         <field name="statusDatetime" type="date-time" is-pk="true"></field>
         <field name="setByUserLogin" type="id-long"></field>
-        <field name="reason" type="text-long"></field>
+        <field name="reason" type="text-medium"></field>
         <relationship type="one" fk-name="WKEFF_STTS_WE" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
             <key-map field-name="workEffortId"/>
         </relationship>
@@ -671,7 +668,7 @@ under the License.
         <field name="workEffortTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="WK_EFFRT_TYPE_PAR" title="Parent" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortType">
             <key-map field-name="parentTypeId" related="workEffortTypeId"/>
         </relationship>
@@ -679,7 +676,7 @@ under the License.
     <entity entity-name="WorkEffortTypeAttr" package="org.apache.ofbiz.workeffort.workeffort" group="ofbiz_transactional">
         <field name="workEffortTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="WK_EFFRT_TYPE_ATR" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortType">
             <key-map field-name="workEffortTypeId"/>
         </relationship>

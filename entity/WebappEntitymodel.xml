@@ -44,10 +44,10 @@ under the License.
         <field name="runningTimeMillis" type="number-integer"></field>
         <field name="userLoginId" type="id-long"></field>
         <field name="statusId" type="id"></field>
-        <field name="requestUrl" type="text-long"></field>
-        <field name="referrerUrl" type="text-long"></field>
+        <field name="requestUrl" type="text-medium"></field>
+        <field name="referrerUrl" type="text-medium"></field>
         <field name="serverIpAddress" type="id"></field>
-        <field name="serverHostName" type="text-long"></field>
+        <field name="serverHostName" type="text-medium"></field>
         <relationship type="one" fk-name="SERVER_HIT_SHTYP" related="org.apache.ofbiz.webapp.visit.ServerHitType">
             <key-map field-name="hitTypeId"/>
         </relationship>
@@ -60,7 +60,7 @@ under the License.
         <field name="contentId" type="id-long"></field>
         <field name="hitTypeId" type="id"></field>
         <field name="serverIpAddress" type="id"></field>
-        <field name="serverHostName" type="text-long"></field>
+        <field name="serverHostName" type="text-medium"></field>
         <field name="binStartDateTime" type="date-time"></field>
         <field name="binEndDateTime" type="date-time"></field>
         <field name="numberHits" type="number-integer"></field>
@@ -73,7 +73,7 @@ under the License.
     </entity>
     <entity entity-name="ServerHitType" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
         <field name="hitTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="UserAgent" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
         <field name="userAgentId" type="id" is-pk="true"></field>
@@ -100,11 +100,11 @@ under the License.
     </entity>
     <entity entity-name="UserAgentMethodType" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
         <field name="userAgentMethodTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="UserAgentType" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
         <field name="userAgentTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="Visit" package="org.apache.ofbiz.webapp.visit" sequence-bank-size="100" no-update-stamp="true" cache="never" group="ofbiz_transactional">
         <field name="visitId" type="id" is-pk="true"></field>
@@ -113,15 +113,15 @@ under the License.
         <field name="userCreated" type="text-indicator"></field>
         <field name="sessionId" type="id-long"></field>
         <field name="serverIpAddress" type="id"></field>
-        <field name="serverHostName" type="text-long"></field>
+        <field name="serverHostName" type="text-medium"></field>
         <field name="webappName" type="text-medium"></field>
         <field name="initialLocale" type="text-medium"></field>
-        <field name="initialRequest" type="text-long"></field>
-        <field name="initialReferrer" type="text-long"></field>
-        <field name="initialUserAgent" type="text-long"></field>
+        <field name="initialRequest" type="text-medium"></field>
+        <field name="initialReferrer" type="text-medium"></field>
+        <field name="initialUserAgent" type="text-medium"></field>
         <field name="userAgentId" type="id"></field>
         <field name="clientIpAddress" type="text-medium"></field>
-        <field name="clientHostName" type="text-long"></field>
+        <field name="clientHostName" type="text-medium"></field>
         <field name="clientUser" type="text-medium"></field>
         <field name="clientIpIspName" type="text-medium"></field>
         <field name="clientIpPostalCode" type="text-medium"></field>
@@ -153,15 +153,15 @@ under the License.
     <entity entity-name="WebSite" package="org.apache.ofbiz.webapp.website" group="ofbiz_transactional">
         <field name="webSiteId" type="id" is-pk="true"></field>
         <field name="siteName" type="text-medium"></field>
-        <field name="httpHost" type="text-long"></field>
+        <field name="httpHost" type="text-medium"></field>
         <field name="httpPort" type="text-short"></field>
-        <field name="httpsHost" type="text-long"></field>
+        <field name="httpsHost" type="text-medium"></field>
         <field name="httpsPort" type="text-short"></field>
         <field name="enableHttps" type="text-indicator"></field>
-        <field name="webappPath" type="text-long"><description>Set to your webapp for this website if it&apos;s hidden by a httpd frontend; set to / if you have a reverse proxy which hides your website webapp</description></field>
-        <field name="standardContentPrefix" type="text-long"></field>
-        <field name="secureContentPrefix" type="text-long"></field>
-        <field name="cookieDomain" type="text-long"></field>
+        <field name="webappPath" type="text-medium"><description>Set to your webapp for this website if it&apos;s hidden by a httpd frontend; set to / if you have a reverse proxy which hides your website webapp</description></field>
+        <field name="standardContentPrefix" type="text-medium"></field>
+        <field name="secureContentPrefix" type="text-medium"></field>
+        <field name="cookieDomain" type="text-medium"></field>
         <field name="visualThemeSetId" type="id"></field>
         <relationship type="one" fk-name="WEB_SITE_THEME_SET" related="org.apache.ofbiz.common.theme.VisualThemeSet">
             <key-map field-name="visualThemeSetId"/>

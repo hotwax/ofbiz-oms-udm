@@ -23,14 +23,14 @@ under the License.
     <!-- TODO: skipped element version -->
     <entity entity-name="EntityAuditLog" package="org.apache.ofbiz.entity.audit" group="ofbiz_transactional">
         <field name="auditHistorySeqId" type="id" is-pk="true"><description>Sequenced primary key</description></field>
-        <field name="changedEntityName" type="text-long"></field>
-        <field name="changedFieldName" type="text-long"></field>
-        <field name="pkCombinedValueText" type="text-long"></field>
-        <field name="oldValueText" type="text-long"></field>
-        <field name="newValueText" type="text-long"></field>
+        <field name="changedEntityName" type="text-medium"></field>
+        <field name="changedFieldName" type="text-medium"></field>
+        <field name="pkCombinedValueText" type="text-medium"></field>
+        <field name="oldValueText" type="text-medium"></field>
+        <field name="newValueText" type="text-medium"></field>
         <field name="changedDate" type="date-time"></field>
-        <field name="changedByInfo" type="text-long"><description>This should contain whatever information is available about the user or system that changed the value. This could be a userLoginId, but could be something else too, so there is no foreign key.</description></field>
-        <field name="changedSessionInfo" type="text-long"><description>This should contain whatever information is available about the session during which the value was changed. This could be a visitId, but could be something else too, so there is no foreign key.</description></field>
+        <field name="changedByInfo" type="text-medium"><description>This should contain whatever information is available about the user or system that changed the value. This could be a userLoginId, but could be something else too, so there is no foreign key.</description></field>
+        <field name="changedSessionInfo" type="text-medium"><description>This should contain whatever information is available about the session during which the value was changed. This could be a visitId, but could be something else too, so there is no foreign key.</description></field>
         <index name="ENT_AUD_LOG_IDX">
             <index-field name="changedEntityName"/>
             <index-field name="changedFieldName"/>
@@ -40,7 +40,7 @@ under the License.
     </entity>
     <entity entity-name="EntityKeyStore" package="org.apache.ofbiz.entity.crypto" group="ofbiz_transactional">
         <field name="keyName" type="id-long" is-pk="true"></field>
-        <field name="keyText" type="text-long"></field>
+        <field name="keyText" type="text-medium"></field>
     </entity>
     <entity entity-name="SequenceValueItem" package="org.apache.ofbiz.entity.sequence" group="ofbiz_transactional">
         <field name="seqName" type="id-long" is-pk="true"></field>
@@ -53,16 +53,16 @@ under the License.
     <entity entity-name="Tenant" package="org.apache.ofbiz.entity.tenant" group="ofbiz_transactional">
         <field name="tenantId" type="id" is-pk="true"></field>
         <field name="tenantName" type="text-medium"></field>
-        <field name="initialPath" type="text-long"></field>
+        <field name="initialPath" type="text-medium"></field>
         <field name="disabled" type="text-indicator"><description>Disabled if &apos;Y&apos;, defaults to &apos;N&apos; (not disabled).</description></field>
     </entity>
     <entity entity-name="TenantDataSource" package="org.apache.ofbiz.entity.tenant" group="ofbiz_transactional">
 <description>There should be one record for each tenant and each group-map for the active delegator.
             The jdbc fields will override the datasource -&gt; inline-jdbc values for the per-tenant delegator.</description>        <field name="tenantId" type="id" is-pk="true"></field>
         <field name="entityGroupName" type="text-medium" is-pk="true"></field>
-        <field name="jdbcUri" type="text-long"></field>
-        <field name="jdbcUsername" type="text-long"></field>
-        <field name="jdbcPassword" type="text-long"></field>
+        <field name="jdbcUri" type="text-medium"></field>
+        <field name="jdbcUsername" type="text-medium"></field>
+        <field name="jdbcPassword" type="text-medium"></field>
         <relationship type="one" fk-name="TNTDTSRC_TNT" related="org.apache.ofbiz.entity.tenant.Tenant">
             <key-map field-name="tenantId"/>
         </relationship>
@@ -70,14 +70,14 @@ under the License.
     <entity entity-name="TenantKeyEncryptingKey" package="org.apache.ofbiz.entity.tenant" group="ofbiz_transactional">
 <description>There should be one record for each tenant and each group-map for the active delegator.
             The jdbc fields will override the datasource -&gt; inline-jdbc values for the per-tenant delegator.</description>        <field name="tenantId" type="id" is-pk="true"></field>
-        <field name="kekText" type="text-long"></field>
+        <field name="kekText" type="text-medium"></field>
         <relationship type="one" fk-name="TNTKEK_TNT" related="org.apache.ofbiz.entity.tenant.Tenant">
             <key-map field-name="tenantId"/>
         </relationship>
     </entity>
     <entity entity-name="Component" package="org.apache.ofbiz.entity.tenant" group="ofbiz_transactional">
 <description>Component Entity</description>        <field name="componentName" type="text-medium" is-pk="true"></field>
-        <field name="rootLocation" type="text-long"></field>
+        <field name="rootLocation" type="text-medium"></field>
     </entity>
     <entity entity-name="TenantComponent" package="org.apache.ofbiz.entity.tenant" group="ofbiz_transactional">
 <description></description>        <field name="tenantId" type="id" is-pk="true"></field>
@@ -92,7 +92,7 @@ under the License.
     </entity>
     <entity entity-name="TenantDomainName" package="org.apache.ofbiz.entity.tenant" group="ofbiz_transactional">
         <field name="tenantId" type="id"></field>
-        <field name="domainName" type="text-long" is-pk="true"></field>
+        <field name="domainName" type="text-medium" is-pk="true"></field>
         <relationship type="one" fk-name="TNNT_DMNAM" related="org.apache.ofbiz.entity.tenant.Tenant">
             <key-map field-name="tenantId"/>
         </relationship>

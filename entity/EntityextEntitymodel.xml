@@ -27,7 +27,7 @@ under the License.
     </entity>
     <entity entity-name="EntityGroupEntry" package="org.apache.ofbiz.entity.group" group="ofbiz_transactional">
         <field name="entityGroupId" type="id" is-pk="true"></field>
-        <field name="entityOrPackage" type="text-long" is-pk="true"></field>
+        <field name="entityOrPackage" type="text-medium" is-pk="true"></field>
         <field name="applEnumId" type="id"></field>
         <relationship type="one" fk-name="ENTGRP_GRP" related="org.apache.ofbiz.entity.group.EntityGroup">
             <key-map field-name="entityGroupId"/>
@@ -43,8 +43,8 @@ under the License.
         <field name="syncSplitMillis" type="number-integer"></field>
         <field name="syncEndBufferMillis" type="number-integer"></field>
         <field name="maxRunningNoUpdateMillis" type="number-integer"></field>
-        <field name="targetServiceName" type="text-long"></field>
-        <field name="targetDelegatorName" type="text-long"></field>
+        <field name="targetServiceName" type="text-medium"></field>
+        <field name="targetDelegatorName" type="text-medium"></field>
         <field name="keepRemoveInfoHours" type="number-float"></field>
         <field name="forPullOnly" type="text-indicator"></field>
         <field name="forPushOnly" type="text-indicator"></field>
@@ -86,7 +86,7 @@ under the License.
     </entity>
     <entity entity-name="EntitySyncInclude" package="org.apache.ofbiz.entity.synchronization" group="ofbiz_transactional">
         <field name="entitySyncId" type="id" is-pk="true"></field>
-        <field name="entityOrPackage" type="text-long" is-pk="true"></field>
+        <field name="entityOrPackage" type="text-medium" is-pk="true"></field>
         <field name="applEnumId" type="id"></field>
         <relationship type="one" fk-name="ENTSYNC_INCSNC" related="org.apache.ofbiz.entity.synchronization.EntitySync">
             <key-map field-name="entitySyncId"/>
