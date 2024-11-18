@@ -37,10 +37,10 @@ under the License.
         <field name="dataSourceId" type="id"></field>
         <field name="statusId" type="id"></field>
         <field name="privilegeEnumId" type="id"></field>
-        <field name="serviceName" type="text-long"><description>Deprecated : use customMethod pattern instead. Kept for backward compatibility</description></field>
+        <field name="serviceName" type="text-medium"><description>Deprecated : use customMethod pattern instead. Kept for backward compatibility</description></field>
         <field name="customMethodId" type="id"></field>
-        <field name="contentName" type="text-long"></field>
-        <field name="description" type="text-long"></field>
+        <field name="contentName" type="text-medium"></field>
+        <field name="description" type="text-medium"></field>
         <field name="localeString" type="text-short"></field>
         <field name="mimeTypeId" type="id-long"></field>
         <field name="characterSetId" type="id-long"></field>
@@ -109,7 +109,7 @@ under the License.
         <field name="approvalStatusId" type="id"></field>
         <field name="approvalDate" type="date-time"></field>
         <field name="sequenceNum" type="number-integer"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <relationship type="one" fk-name="CNTNTAPPR_CNT" related="org.apache.ofbiz.content.content.Content">
             <key-map field-name="contentId"/>
         </relationship>
@@ -174,19 +174,19 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="ContentAssocPredicate" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="contentAssocPredicateId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="ContentAssocType" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="contentAssocTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="ContentAttribute" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="contentId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="CONTENT_ATTR" related="org.apache.ofbiz.content.content.Content">
             <key-map field-name="contentId"/>
         </relationship>
@@ -198,7 +198,7 @@ under the License.
     <entity entity-name="ContentMetaData" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="contentId" type="id" is-pk="true"></field>
         <field name="metaDataPredicateId" type="id" is-pk="true"></field>
-        <field name="metaDataValue" type="text-long"></field>
+        <field name="metaDataValue" type="text-medium"></field>
         <field name="dataSourceId" type="id"></field>
         <relationship type="one" fk-name="CONTENTMD_CNTNT" related="org.apache.ofbiz.content.content.Content">
             <key-map field-name="contentId"/>
@@ -212,7 +212,7 @@ under the License.
     </entity>
     <entity entity-name="ContentOperation" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="contentOperationId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="ContentPurpose" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="contentId" type="id" is-pk="true"></field>
@@ -249,13 +249,13 @@ under the License.
     </entity>
     <entity entity-name="ContentPurposeType" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="contentPurposeTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="ContentRevision" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="contentId" type="id" is-pk="true"></field>
         <field name="contentRevisionSeqId" type="id" is-pk="true"></field>
         <field name="committedByPartyId" type="id"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <relationship type="one" fk-name="CNTNTREV_CNT" related="org.apache.ofbiz.content.content.Content">
             <key-map field-name="contentId"/>
         </relationship>
@@ -301,7 +301,7 @@ under the License.
         <field name="contentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="CNTNT_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.content.content.ContentType">
             <key-map field-name="parentTypeId" related="contentTypeId"/>
         </relationship>
@@ -309,7 +309,7 @@ under the License.
     <entity entity-name="ContentTypeAttr" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="contentTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="CONTENT_TPAT_TYP" related="org.apache.ofbiz.content.content.ContentType">
             <key-map field-name="contentTypeId"/>
         </relationship>
@@ -330,7 +330,7 @@ under the License.
     </entity>
     <entity entity-name="CharacterSet" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
         <field name="characterSetId" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="DataCategory" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
         <field name="dataCategoryId" type="id" is-pk="true"></field>
@@ -350,11 +350,11 @@ under the License.
         <field name="dataCategoryId" type="id"></field>
         <field name="dataSourceId" type="id"></field>
         <field name="statusId" type="id"></field>
-        <field name="dataResourceName" type="text-long"></field>
+        <field name="dataResourceName" type="text-medium"></field>
         <field name="localeString" type="text-short"></field>
         <field name="mimeTypeId" type="id-long"></field>
         <field name="characterSetId" type="id-long"></field>
-        <field name="objectInfo" type="text-long"><description>For Short Text the text goes here.</description></field>
+        <field name="objectInfo" type="text-medium"><description>For Short Text the text goes here.</description></field>
         <field name="surveyId" type="id"></field>
         <field name="surveyResponseId" type="id"></field>
         <field name="relatedDetailId" type="id"><description>Depending on the dataResourceTypeId this can point to other entities, like: Survey, SurveyResponse, etc.</description></field>
@@ -403,8 +403,8 @@ under the License.
     <entity entity-name="DataResourceAttribute" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
         <field name="dataResourceId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="DATA_REC_ATTR" related="org.apache.ofbiz.content.data.DataResource">
             <key-map field-name="dataResourceId"/>
         </relationship>
@@ -416,7 +416,7 @@ under the License.
     <entity entity-name="DataResourceMetaData" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
         <field name="dataResourceId" type="id" is-pk="true"></field>
         <field name="metaDataPredicateId" type="id" is-pk="true"></field>
-        <field name="metaDataValue" type="text-long"></field>
+        <field name="metaDataValue" type="text-medium"></field>
         <field name="dataSourceId" type="id"></field>
         <relationship type="one" fk-name="DATA_MD_DATREC" related="org.apache.ofbiz.content.data.DataResource">
             <key-map field-name="dataResourceId"/>
@@ -459,7 +459,7 @@ under the License.
         <field name="dataResourceTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="DATA_OBTYPE_PARENT" title="Parent" related="org.apache.ofbiz.content.data.DataResourceType">
             <key-map field-name="parentTypeId" related="dataResourceTypeId"/>
         </relationship>
@@ -467,7 +467,7 @@ under the License.
     <entity entity-name="DataResourceTypeAttr" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
         <field name="dataResourceTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="DATA_OBTYPE_ATTR" related="org.apache.ofbiz.content.data.DataResourceType">
             <key-map field-name="dataResourceTypeId"/>
         </relationship>
@@ -480,7 +480,7 @@ under the License.
     </entity>
     <entity entity-name="DataTemplateType" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
         <field name="dataTemplateTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="extension" type="text-medium"></field>
     </entity>
     <entity entity-name="ElectronicText" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
@@ -506,15 +506,15 @@ under the License.
     </entity>
     <entity entity-name="MetaDataPredicate" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
         <field name="metaDataPredicateId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="MimeType" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
         <field name="mimeTypeId" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="MimeTypeHtmlTemplate" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
         <field name="mimeTypeId" type="id-long" is-pk="true"></field>
-        <field name="templateLocation" type="text-long"></field>
+        <field name="templateLocation" type="text-medium"></field>
         <relationship type="one" fk-name="MIMETYPE_TPL_MT" related="org.apache.ofbiz.content.data.MimeType">
             <key-map field-name="mimeTypeId"/>
         </relationship>
@@ -537,9 +537,9 @@ under the License.
         <field name="documentId" type="id" is-pk="true"></field>
         <field name="documentTypeId" type="id"></field>
         <field name="dateCreated" type="date-time"></field>
-        <field name="comments" type="text-long"></field>
-        <field name="documentLocation" type="text-long"></field>
-        <field name="documentText" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
+        <field name="documentLocation" type="text-medium"></field>
+        <field name="documentText" type="text-medium"></field>
         <field name="imageData" type="binary-very-long"></field>
         <relationship type="one" fk-name="DOCUMENT_TO_TYPE" related="org.apache.ofbiz.content.document.DocumentType">
             <key-map field-name="documentTypeId"/>
@@ -551,8 +551,8 @@ under the License.
     <entity entity-name="DocumentAttribute" package="org.apache.ofbiz.content.document" group="ofbiz_transactional">
         <field name="documentId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="DOCUMENT_ATTR" related="org.apache.ofbiz.content.document.Document">
             <key-map field-name="documentId"/>
         </relationship>
@@ -564,7 +564,7 @@ under the License.
         <field name="documentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="DOC_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.content.document.DocumentType">
             <key-map field-name="parentTypeId" related="documentTypeId"/>
         </relationship>
@@ -572,7 +572,7 @@ under the License.
     <entity entity-name="DocumentTypeAttr" package="org.apache.ofbiz.content.document" group="ofbiz_transactional">
         <field name="documentTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="DOC_TYPE_ATTR" related="org.apache.ofbiz.content.document.DocumentType">
             <key-map field-name="documentTypeId"/>
         </relationship>
@@ -585,14 +585,14 @@ under the License.
     </entity>
     <entity entity-name="WebPreferenceType" package="org.apache.ofbiz.content.preference" group="ofbiz_transactional">
         <field name="webPreferenceTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="WebUserPreference" package="org.apache.ofbiz.content.preference" group="ofbiz_transactional">
         <field name="userLoginId" type="id-long" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="visitId" type="id" is-pk="true"><description>To be able to keep preferences for a non loggin in user for the current session</description></field>
         <field name="webPreferenceTypeId" type="id" is-pk="true"></field>
-        <field name="webPreferenceValue" type="text-long"></field>
+        <field name="webPreferenceValue" type="text-medium"></field>
         <relationship type="one" fk-name="WEB_PREF_TYPE" related="org.apache.ofbiz.content.preference.WebPreferenceType">
             <key-map field-name="webPreferenceTypeId"/>
         </relationship>
@@ -606,10 +606,10 @@ under the License.
     <entity entity-name="Survey" package="org.apache.ofbiz.content.survey" group="ofbiz_transactional">
         <field name="surveyId" type="id" is-pk="true"></field>
         <field name="surveyName" type="text-medium"></field>
-        <field name="description" type="text-long"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="submitCaption" type="text-medium"></field>
-        <field name="responseService" type="text-long"></field>
+        <field name="responseService" type="text-medium"></field>
         <field name="isAnonymous" type="text-indicator"><description>Allow response to the survey without login?</description></field>
         <field name="allowMultiple" type="text-indicator"><description>Allow multiple responses to this survey (if Y), or just a single answer (if N)?</description></field>
         <field name="allowUpdate" type="text-indicator"><description>Allow change to responses?</description></field>
@@ -617,7 +617,7 @@ under the License.
     </entity>
     <entity entity-name="SurveyApplType" package="org.apache.ofbiz.content.survey" group="ofbiz_transactional">
         <field name="surveyApplTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="SurveyMultiResp" package="org.apache.ofbiz.content.survey" group="ofbiz_transactional">
         <field name="surveyId" type="id" is-pk="true"></field>
@@ -651,12 +651,12 @@ under the License.
         <field name="surveyQuestionId" type="id" is-pk="true"></field>
         <field name="surveyQuestionCategoryId" type="id"></field>
         <field name="surveyQuestionTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="question" type="text-very-long"></field>
         <field name="hint" type="text-very-long"></field>
         <field name="enumTypeId" type="id"></field>
         <field name="geoId" type="id"></field>
-        <field name="formatString" type="text-long"></field>
+        <field name="formatString" type="text-medium"></field>
         <relationship type="one" fk-name="SRVYQST_SRVYQTP" related="org.apache.ofbiz.content.survey.SurveyQuestionType">
             <key-map field-name="surveyQuestionTypeId"/>
         </relationship>
@@ -681,7 +681,7 @@ under the License.
         <field name="surveyMultiRespColId" type="id"><description>Used to optionally associate this question to a specific column in the Multi-Response set; with this you can associate a single question to each cell in the question/column grid; this is useful for AcroForm round trips where the target PDF needs a question associated with each cell, or even the same question applied with different externalFieldRef values.</description></field>
         <field name="requiredField" type="text-indicator"></field>
         <field name="sequenceNum" type="number-integer"></field>
-        <field name="externalFieldRef" type="text-long"><description>External field ID/reference; for AcroForms used to track the field ID</description></field>
+        <field name="externalFieldRef" type="text-medium"><description>External field ID/reference; for AcroForms used to track the field ID</description></field>
         <field name="withSurveyQuestionId" type="id"><description>These two with* fields are used to specify that this question should only appear if the with option has been selected for the with question.</description></field>
         <field name="withSurveyOptionSeqId" type="id"></field>
         <relationship type="one" fk-name="SRVYQSTAPL_SRVY" related="org.apache.ofbiz.content.survey.Survey">
@@ -711,7 +711,7 @@ under the License.
     <entity entity-name="SurveyQuestionCategory" package="org.apache.ofbiz.content.survey" group="ofbiz_transactional">
         <field name="surveyQuestionCategoryId" type="id" is-pk="true"></field>
         <field name="parentCategoryId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="SRVYQSTCT_PAR" title="Parent" related="org.apache.ofbiz.content.survey.SurveyQuestionCategory">
             <key-map field-name="parentCategoryId" related="surveyQuestionCategoryId"/>
         </relationship>
@@ -719,7 +719,7 @@ under the License.
     <entity entity-name="SurveyQuestionOption" package="org.apache.ofbiz.content.survey" group="ofbiz_transactional">
         <field name="surveyQuestionId" type="id" is-pk="true"></field>
         <field name="surveyOptionSeqId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="sequenceNum" type="number-integer"></field>
         <field name="amountBase" type="currency-amount"></field>
         <field name="amountBaseUomId" type="id"></field>
@@ -732,7 +732,7 @@ under the License.
     </entity>
     <entity entity-name="SurveyQuestionType" package="org.apache.ofbiz.content.survey" group="ofbiz_transactional">
         <field name="surveyQuestionTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="SurveyResponse" package="org.apache.ofbiz.content.survey" group="ofbiz_transactional">
         <field name="surveyResponseId" type="id" is-pk="true"></field>
@@ -833,7 +833,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="WebSiteContentType" package="org.apache.ofbiz.content.website" group="ofbiz_transactional">
         <field name="webSiteContentTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
         <relationship type="one" fk-name="WSCT_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.content.website.WebSiteContentType">
@@ -845,7 +845,7 @@ under the License.
         <field name="pathAlias" type="id-long" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
-        <field name="aliasTo" type="text-long"></field>
+        <field name="aliasTo" type="text-medium"></field>
         <field name="contentId" type="id"></field>
         <field name="mapKey" type="text-medium"></field>
         <relationship type="one" fk-name="WSPATH_WEBSITE" related="org.apache.ofbiz.webapp.website.WebSite">
@@ -857,11 +857,11 @@ under the License.
     </entity>
     <entity entity-name="WebSitePublishPoint" package="org.apache.ofbiz.content.website" group="ofbiz_transactional">
         <field name="contentId" type="id" is-pk="true"></field>
-        <field name="templateTitle" type="text-long"></field>
-        <field name="styleSheetFile" type="text-long"></field>
-        <field name="logo" type="text-long"></field>
-        <field name="medallionLogo" type="text-long"></field>
-        <field name="lineLogo" type="text-long"></field>
+        <field name="templateTitle" type="text-medium"></field>
+        <field name="styleSheetFile" type="text-medium"></field>
+        <field name="logo" type="text-medium"></field>
+        <field name="medallionLogo" type="text-medium"></field>
+        <field name="lineLogo" type="text-medium"></field>
         <field name="leftBarId" type="id"></field>
         <field name="rightBarId" type="id"></field>
         <field name="contentDept" type="id"></field>
@@ -918,8 +918,8 @@ under the License.
     <entity entity-name="ContentSearchConstraint" package="org.apache.ofbiz.content.content" cache="never" group="ofbiz_transactional">
         <field name="contentSearchResultId" type="id" is-pk="true"></field>
         <field name="constraintSeqId" type="id" is-pk="true"></field>
-        <field name="constraintName" type="text-long"></field>
-        <field name="infoString" type="text-long"></field>
+        <field name="constraintName" type="text-medium"></field>
+        <field name="infoString" type="text-medium"></field>
         <field name="includeSubCategories" type="text-indicator"></field>
         <field name="isAnd" type="text-indicator"></field>
         <field name="anyPrefix" type="text-indicator"></field>
@@ -934,7 +934,7 @@ under the License.
     <entity entity-name="ContentSearchResult" package="org.apache.ofbiz.content.content" cache="never" group="ofbiz_transactional">
         <field name="contentSearchResultId" type="id" is-pk="true"></field>
         <field name="visitId" type="id"></field>
-        <field name="orderByName" type="text-long"></field>
+        <field name="orderByName" type="text-medium"></field>
         <field name="isAscending" type="text-indicator"></field>
         <field name="numResults" type="number-integer"></field>
         <field name="secondsTotal" type="number-float"></field>
@@ -955,7 +955,7 @@ under the License.
         <field name="webAnalyticsTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="WANA_TYP_PARENT" title="Parent" related="org.apache.ofbiz.content.website.WebAnalyticsType">
             <key-map field-name="parentTypeId" related="webAnalyticsTypeId"/>
         </relationship>

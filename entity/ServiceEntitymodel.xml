@@ -46,7 +46,7 @@ under the License.
         <field name="startDateTime" type="date-time"></field>
         <field name="finishDateTime" type="date-time"></field>
         <field name="cancelDateTime" type="date-time"></field>
-        <field name="jobResult" type="text-long"></field>
+        <field name="jobResult" type="text-medium"></field>
         <field name="recurrenceTimeZone" type="id-long"></field>
         <relationship type="one" fk-name="JOB_SNDBX_RECINFO" related="org.apache.ofbiz.service.schedule.RecurrenceInfo">
             <key-map field-name="recurrenceInfoId"/>
@@ -113,7 +113,7 @@ under the License.
     <entity entity-name="TemporalExpression" package="org.apache.ofbiz.service.schedule" group="ofbiz_transactional">
         <field name="tempExprId" type="id" is-pk="true"></field>
         <field name="tempExprTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="date1" type="date-time"></field>
         <field name="date2" type="date-time"></field>
         <field name="integer1" type="number-integer"></field>
@@ -141,7 +141,7 @@ under the License.
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
         <field name="reasonEnumId" type="id"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="createdDate" type="date-time"></field>
         <field name="createdByUserLogin" type="id-long"></field>
         <field name="lastModifiedDate" type="date-time"></field>

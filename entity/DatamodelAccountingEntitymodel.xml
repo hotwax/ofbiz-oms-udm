@@ -25,7 +25,7 @@ under the License.
         <field name="budgetId" type="id" is-pk="true"></field>
         <field name="budgetTypeId" type="id"></field>
         <field name="customTimePeriodId" type="id"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <relationship type="one" fk-name="BUDGET_BGTTYP" related="org.apache.ofbiz.accounting.budget.BudgetType">
             <key-map field-name="budgetTypeId"/>
         </relationship>
@@ -39,8 +39,8 @@ under the License.
     <entity entity-name="BudgetAttribute" package="org.apache.ofbiz.accounting.budget" group="ofbiz_transactional">
         <field name="budgetId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="BUDGET_ATTR_BDGT" related="org.apache.ofbiz.accounting.budget.Budget">
             <key-map field-name="budgetId"/>
         </relationship>
@@ -53,8 +53,8 @@ under the License.
         <field name="budgetItemSeqId" type="id" is-pk="true"></field>
         <field name="budgetItemTypeId" type="id"></field>
         <field name="amount" type="currency-amount"></field>
-        <field name="purpose" type="text-long"></field>
-        <field name="justification" type="text-long"></field>
+        <field name="purpose" type="text-medium"></field>
+        <field name="justification" type="text-medium"></field>
         <relationship type="one" fk-name="BDGTITM_TO_BDGT" related="org.apache.ofbiz.accounting.budget.Budget">
             <key-map field-name="budgetId"/>
         </relationship>
@@ -69,8 +69,8 @@ under the License.
         <field name="budgetId" type="id" is-pk="true"></field>
         <field name="budgetItemSeqId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="BUDGET_ITEM_ATTR" related="org.apache.ofbiz.accounting.budget.BudgetItem">
             <key-map field-name="budgetId"/>
             <key-map field-name="budgetItemSeqId"/>
@@ -83,7 +83,7 @@ under the License.
         <field name="budgetItemTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="BUDGET_ITM_TYPPAR" title="Parent" related="org.apache.ofbiz.accounting.budget.BudgetItemType">
             <key-map field-name="parentTypeId" related="budgetItemTypeId"/>
         </relationship>
@@ -91,7 +91,7 @@ under the License.
     <entity entity-name="BudgetItemTypeAttr" package="org.apache.ofbiz.accounting.budget" group="ofbiz_transactional">
         <field name="budgetItemTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="BUDGET_ITMTYPATTR" related="org.apache.ofbiz.accounting.budget.BudgetItemType">
             <key-map field-name="budgetItemTypeId"/>
         </relationship>
@@ -120,8 +120,8 @@ under the License.
     </entity>
     <entity entity-name="BudgetReviewResultType" package="org.apache.ofbiz.accounting.budget" group="ofbiz_transactional">
         <field name="budgetReviewResultTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
+        <field name="comments" type="text-medium"></field>
     </entity>
     <entity entity-name="BudgetRevision" package="org.apache.ofbiz.accounting.budget" group="ofbiz_transactional">
         <field name="budgetId" type="id" is-pk="true"></field>
@@ -137,7 +137,7 @@ under the License.
         <field name="revisionSeqId" type="id" is-pk="true"></field>
         <field name="revisedAmount" type="currency-amount"></field>
         <field name="addDeleteFlag" type="text-indicator"></field>
-        <field name="revisionReason" type="text-long"></field>
+        <field name="revisionReason" type="text-medium"></field>
         <relationship type="one" fk-name="BUDGET_RNIMP_BDGT" related="org.apache.ofbiz.accounting.budget.Budget">
             <key-map field-name="budgetId"/>
         </relationship>
@@ -167,7 +167,7 @@ under the License.
     </entity>
     <entity entity-name="BudgetScenario" package="org.apache.ofbiz.accounting.budget" group="ofbiz_transactional">
         <field name="budgetScenarioId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="BudgetScenarioApplication" package="org.apache.ofbiz.accounting.budget" group="ofbiz_transactional">
         <field name="budgetScenarioApplicId" type="id" is-pk="true"></field>
@@ -203,7 +203,7 @@ under the License.
         <field name="budgetId" type="id" is-pk="true"></field>
         <field name="statusId" type="id" is-pk="true"></field>
         <field name="statusDate" type="date-time"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="changeByUserLoginId" type="id-long"></field>
         <relationship type="one" fk-name="BUDGET_STTS_BDGT" related="org.apache.ofbiz.accounting.budget.Budget">
             <key-map field-name="budgetId"/>
@@ -219,7 +219,7 @@ under the License.
         <field name="budgetTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="BUDGET_TYPE_PAR" title="Parent" related="org.apache.ofbiz.accounting.budget.BudgetType">
             <key-map field-name="parentTypeId" related="budgetTypeId"/>
         </relationship>
@@ -227,7 +227,7 @@ under the License.
     <entity entity-name="BudgetTypeAttr" package="org.apache.ofbiz.accounting.budget" group="ofbiz_transactional">
         <field name="budgetTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="BUDGET_TPATR_BT" related="org.apache.ofbiz.accounting.budget.BudgetType">
             <key-map field-name="budgetTypeId"/>
         </relationship>
@@ -243,8 +243,8 @@ under the License.
         <field name="finAccountTypeId" type="id"></field>
         <field name="statusId" type="id"></field>
         <field name="finAccountName" type="text-medium"></field>
-        <field name="finAccountCode" type="text-long" encrypt="true"></field>
-        <field name="finAccountPin" type="text-long" encrypt="true"></field>
+        <field name="finAccountCode" type="text-medium" encrypt="true"></field>
+        <field name="finAccountPin" type="text-medium" encrypt="true"></field>
         <field name="currencyUomId" type="id"></field>
         <field name="organizationPartyId" type="id"><description>The internal organization Party that owns (or rather, is liable for) the account.</description></field>
         <field name="ownerPartyId" type="id"><description>The customer or third party that owns the account.</description></field>
@@ -282,8 +282,8 @@ under the License.
     <entity entity-name="FinAccountAttribute" package="org.apache.ofbiz.accounting.finaccount" group="ofbiz_transactional">
         <field name="finAccountId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="FINACCT_ATTR" related="org.apache.ofbiz.accounting.finaccount.FinAccount">
             <key-map field-name="finAccountId"/>
         </relationship>
@@ -353,7 +353,7 @@ under the License.
         <field name="orderItemSeqId" type="id"><description>To be used along with orderId to point to an OrderItem that represents the purchase of a product to add money to the account.</description></field>
         <field name="performedByPartyId" type="id"></field>
         <field name="reasonEnumId" type="id"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="statusId" type="id"></field>
         <relationship type="one" fk-name="FINACCT_TX_TYPE" related="org.apache.ofbiz.accounting.finaccount.FinAccountTransType">
             <key-map field-name="finAccountTransTypeId"/>
@@ -390,8 +390,8 @@ under the License.
     <entity entity-name="FinAccountTransAttribute" package="org.apache.ofbiz.accounting.finaccount" group="ofbiz_transactional">
         <field name="finAccountTransId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="FINACCT_TX_ATTR" related="org.apache.ofbiz.accounting.finaccount.FinAccountTrans">
             <key-map field-name="finAccountTransId"/>
         </relationship>
@@ -403,7 +403,7 @@ under the License.
         <field name="finAccountTransTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="FINACCT_TX_TYPPAR" title="Parent" related="org.apache.ofbiz.accounting.finaccount.FinAccountTransType">
             <key-map field-name="parentTypeId" related="finAccountTransTypeId"/>
         </relationship>
@@ -411,7 +411,7 @@ under the License.
     <entity entity-name="FinAccountTransTypeAttr" package="org.apache.ofbiz.accounting.finaccount" group="ofbiz_transactional">
         <field name="finAccountTransTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="FINACCT_TX_TYPATR" related="org.apache.ofbiz.accounting.finaccount.FinAccountTransType">
             <key-map field-name="finAccountTransTypeId"/>
         </relationship>
@@ -428,7 +428,7 @@ under the License.
         <field name="replenishEnumId" type="id"></field>
         <field name="isRefundable" type="text-indicator"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="FINACCT_TYPE_PAR" title="Parent" related="org.apache.ofbiz.accounting.finaccount.FinAccountType">
             <key-map field-name="parentTypeId" related="finAccountTypeId"/>
         </relationship>
@@ -439,8 +439,8 @@ under the License.
     <entity entity-name="FinAccountTypeAttr" package="org.apache.ofbiz.accounting.finaccount" group="ofbiz_transactional">
         <field name="finAccountTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="description" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="FINACCT_TYPE_ATTR" related="org.apache.ofbiz.accounting.finaccount.FinAccountType">
             <key-map field-name="finAccountTypeId"/>
         </relationship>
@@ -486,7 +486,7 @@ under the License.
         <field name="productionCapacity" type="number-decimal"></field>
         <field name="uomId" type="id"></field>
         <field name="calendarId" type="id"></field>
-        <field name="serialNumber" type="text-long"></field>
+        <field name="serialNumber" type="text-medium"></field>
         <field name="locatedAtFacilityId" type="id"></field>
         <field name="locatedAtLocationSeqId" type="id-long"></field>
         <field name="salvageValue" type="currency-amount"></field>
@@ -542,8 +542,8 @@ under the License.
     <entity entity-name="FixedAssetAttribute" package="org.apache.ofbiz.accounting.fixedasset" group="ofbiz_transactional">
         <field name="fixedAssetId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="FIXEDAST_ATTR" related="org.apache.ofbiz.accounting.fixedasset.FixedAsset">
             <key-map field-name="fixedAssetId"/>
         </relationship>
@@ -579,7 +579,7 @@ under the License.
     <entity entity-name="FixedAssetIdent" package="org.apache.ofbiz.accounting.fixedasset" group="ofbiz_transactional">
         <field name="fixedAssetId" type="id" is-pk="true"></field>
         <field name="fixedAssetIdentTypeId" type="id" is-pk="true"></field>
-        <field name="idValue" type="text-long"></field>
+        <field name="idValue" type="text-medium"></field>
         <relationship type="one" fk-name="FIXDASTID_FXAST" related="org.apache.ofbiz.accounting.fixedasset.FixedAsset">
             <key-map field-name="fixedAssetId"/>
         </relationship>
@@ -589,7 +589,7 @@ under the License.
     </entity>
     <entity entity-name="FixedAssetIdentType" package="org.apache.ofbiz.accounting.fixedasset" group="ofbiz_transactional">
         <field name="fixedAssetIdentTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="FixedAssetMaint" package="org.apache.ofbiz.accounting.fixedasset" group="ofbiz_transactional">
         <field name="fixedAssetId" type="id" is-pk="true"></field>
@@ -646,7 +646,7 @@ under the License.
         <field name="fixedAssetProductTypeId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="sequenceNum" type="number-integer"></field>
         <field name="quantity" type="number-decimal"></field>
         <field name="quantityUomId" type="id"></field>
@@ -665,7 +665,7 @@ under the License.
     </entity>
     <entity entity-name="FixedAssetProductType" package="org.apache.ofbiz.accounting.fixedasset" group="ofbiz_transactional">
         <field name="fixedAssetProductTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="FixedAssetTypeGlAccount" package="org.apache.ofbiz.accounting.fixedasset" group="ofbiz_transactional">
         <field name="fixedAssetTypeId" type="id" is-pk="true"><description>The fixed asset type for the mappings. This field can be set to _NA_ in order to define a mapping for all types or for a specific asset (specified by the id in the fixedAssetId field).</description></field>
@@ -707,8 +707,8 @@ under the License.
         <field name="thruDate" type="date-time"></field>
         <field name="registrationDate" type="date-time"></field>
         <field name="govAgencyPartyId" type="id"></field>
-        <field name="registrationNumber" type="text-long"></field>
-        <field name="licenseNumber" type="text-long"></field>
+        <field name="registrationNumber" type="text-medium"></field>
+        <field name="licenseNumber" type="text-medium"></field>
         <relationship type="one" fk-name="FIXDASTREG_FXAST" related="org.apache.ofbiz.accounting.fixedasset.FixedAsset">
             <key-map field-name="fixedAssetId"/>
         </relationship>
@@ -737,7 +737,7 @@ under the License.
         <field name="fixedAssetStdCostTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="FIXASTCO_TYPPAR" title="Parent" related="org.apache.ofbiz.accounting.fixedasset.FixedAssetStdCostType">
             <key-map field-name="parentTypeId" related="fixedAssetStdCostTypeId"/>
         </relationship>
@@ -746,7 +746,7 @@ under the License.
         <field name="fixedAssetTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="FIXEDAST_TYPPAR" title="Parent" related="org.apache.ofbiz.accounting.fixedasset.FixedAssetType">
             <key-map field-name="parentTypeId" related="fixedAssetTypeId"/>
         </relationship>
@@ -754,7 +754,7 @@ under the License.
     <entity entity-name="FixedAssetTypeAttr" package="org.apache.ofbiz.accounting.fixedasset" group="ofbiz_transactional">
         <field name="fixedAssetTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="FIXEDAST_TYPATTR" related="org.apache.ofbiz.accounting.fixedasset.FixedAssetType">
             <key-map field-name="fixedAssetTypeId"/>
         </relationship>
@@ -773,7 +773,7 @@ under the License.
         <field name="thruDate" type="date-time"></field>
         <field name="allocatedDate" type="date-time"></field>
         <field name="statusId" type="id"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
         </relationship>
@@ -811,7 +811,7 @@ under the License.
     <entity entity-name="AccommodationClass" package="org.apache.ofbiz.accounting.fixedasset" group="ofbiz_transactional">
         <field name="accommodationClassId" type="id" is-pk="true"></field>
         <field name="parentClassId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ACCOMM_CLASS_PAR" title="Parent" related="org.apache.ofbiz.accounting.fixedasset.AccommodationClass">
             <key-map field-name="parentClassId" related="accommodationClassId"/>
         </relationship>
@@ -821,7 +821,7 @@ under the License.
         <field name="accommodationClassId" type="id"></field>
         <field name="fixedAssetId" type="id"></field>
         <field name="numberOfSpaces" type="number-integer"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ACCOM_CLASS" related="org.apache.ofbiz.accounting.fixedasset.AccommodationClass">
             <key-map field-name="accommodationClassId"/>
         </relationship>
@@ -847,7 +847,7 @@ under the License.
     </entity>
     <entity entity-name="AccommodationMapType" package="org.apache.ofbiz.accounting.fixedasset" group="ofbiz_transactional">
         <field name="accommodationMapTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="Invoice" package="org.apache.ofbiz.accounting.invoice" group="ofbiz_transactional">
@@ -863,9 +863,9 @@ under the License.
         <field name="invoiceDate" type="date-time"></field>
         <field name="dueDate" type="date-time"></field>
         <field name="paidDate" type="date-time"></field>
-        <field name="invoiceMessage" type="text-long"></field>
+        <field name="invoiceMessage" type="text-medium"></field>
         <field name="referenceNumber" type="text-medium"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="currencyUomId" type="id"></field>
         <field name="recurrenceInfoId" type="id"></field>
         <relationship type="one" fk-name="INVOICE_INVTYP" related="org.apache.ofbiz.accounting.invoice.InvoiceType">
@@ -906,8 +906,8 @@ under the License.
     <entity entity-name="InvoiceAttribute" package="org.apache.ofbiz.accounting.invoice" group="ofbiz_transactional">
         <field name="invoiceId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="INVOICE_ATTR" related="org.apache.ofbiz.accounting.invoice.Invoice">
             <key-map field-name="invoiceId"/>
         </relationship>
@@ -935,7 +935,7 @@ under the License.
         <field name="invoiceContentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="INVCT_TYP_PARENT" title="Parent" related="org.apache.ofbiz.accounting.invoice.InvoiceContentType">
             <key-map field-name="parentTypeId" related="invoiceContentTypeId"/>
         </relationship>
@@ -969,7 +969,7 @@ under the License.
         <field name="taxableFlag" type="text-indicator"></field>
         <field name="quantity" type="number-decimal"></field>
         <field name="amount" type="currency-precise"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="taxAuthPartyId" type="id"></field>
         <field name="taxAuthGeoId" type="id"></field>
         <field name="taxAuthorityRateSeqId" type="id"></field>
@@ -1018,9 +1018,6 @@ under the License.
         <relationship type="one" fk-name="INVCE_ITM_OVRPTY" title="OverrideOrg" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="overrideOrgPartyId" related="partyId"/>
         </relationship>
-        <relationship type="one" fk-name="INVCE_ITM_SLSOPP" related="org.apache.ofbiz.marketing.opportunity.SalesOpportunity">
-            <key-map field-name="salesOpportunityId"/>
-        </relationship>
     </entity>
     <entity entity-name="InvoiceItemAssoc" package="org.apache.ofbiz.accounting.invoice" group="ofbiz_transactional">
         <field name="invoiceIdFrom" type="id" is-pk="true"></field>
@@ -1056,7 +1053,7 @@ under the License.
         <field name="invoiceItemAssocTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="INITMASCTYP_PRNT" title="Parent" related="org.apache.ofbiz.accounting.invoice.InvoiceItemAssocType">
             <key-map field-name="parentTypeId" related="invoiceItemAssocTypeId"/>
         </relationship>
@@ -1065,8 +1062,8 @@ under the License.
         <field name="invoiceId" type="id" is-pk="true"></field>
         <field name="invoiceItemSeqId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="INVOICE_IMAT_ITM" related="org.apache.ofbiz.accounting.invoice.InvoiceItem">
             <key-map field-name="invoiceId"/>
             <key-map field-name="invoiceItemSeqId"/>
@@ -1079,7 +1076,7 @@ under the License.
         <field name="invoiceItemTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="defaultGlAccountId" type="id"></field>
         <relationship type="one" fk-name="INVOICE_ITEM_TPAR" title="Parent" related="org.apache.ofbiz.accounting.invoice.InvoiceItemType">
             <key-map field-name="parentTypeId" related="invoiceItemTypeId"/>
@@ -1091,7 +1088,7 @@ under the License.
     <entity entity-name="InvoiceItemTypeAttr" package="org.apache.ofbiz.accounting.invoice" group="ofbiz_transactional">
         <field name="invoiceItemTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="INVOICE_ITEM_TATR" related="org.apache.ofbiz.accounting.invoice.InvoiceItemType">
             <key-map field-name="invoiceItemTypeId"/>
         </relationship>
@@ -1172,8 +1169,8 @@ under the License.
         <field name="invoiceItemSeqId" type="id"></field>
         <field name="termValue" type="currency-amount"></field>
         <field name="termDays" type="number-integer"></field>
-        <field name="textValue" type="text-long"></field>
-        <field name="description" type="text-long"></field>
+        <field name="textValue" type="text-medium"></field>
+        <field name="description" type="text-medium"></field>
         <field name="uomId" type="id"></field>
         <relationship type="one" fk-name="INVCE_TRM_TRM" related="org.apache.ofbiz.party.agreement.TermType">
             <key-map field-name="termTypeId"/>
@@ -1189,8 +1186,8 @@ under the License.
     <entity entity-name="InvoiceTermAttribute" package="org.apache.ofbiz.accounting.invoice" group="ofbiz_transactional">
         <field name="invoiceTermId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="INVOICE_TRM_ATTR" related="org.apache.ofbiz.accounting.invoice.InvoiceTerm">
             <key-map field-name="invoiceTermId"/>
         </relationship>
@@ -1202,7 +1199,7 @@ under the License.
         <field name="invoiceTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="INVOICE_TYPE_PAR" title="Parent" related="org.apache.ofbiz.accounting.invoice.InvoiceType">
             <key-map field-name="parentTypeId" related="invoiceTypeId"/>
         </relationship>
@@ -1210,7 +1207,7 @@ under the License.
     <entity entity-name="InvoiceTypeAttr" package="org.apache.ofbiz.accounting.invoice" group="ofbiz_transactional">
         <field name="invoiceTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="INVOICE_TPAT_TYP" related="org.apache.ofbiz.accounting.invoice.InvoiceType">
             <key-map field-name="invoiceTypeId"/>
         </relationship>
@@ -1240,7 +1237,7 @@ under the License.
     <entity entity-name="AcctgTrans" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="acctgTransId" type="id" is-pk="true"></field>
         <field name="acctgTransTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="transactionDate" type="date-time"></field>
         <field name="isPosted" type="text-indicator"></field>
         <field name="postedDate" type="date-time"></field>
@@ -1326,8 +1323,8 @@ under the License.
     <entity entity-name="AcctgTransAttribute" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="acctgTransId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="ACCTTX_ATTR" related="org.apache.ofbiz.accounting.ledger.AcctgTrans">
             <key-map field-name="acctgTransId"/>
         </relationship>
@@ -1339,7 +1336,7 @@ under the License.
         <field name="acctgTransId" type="id" is-pk="true"></field>
         <field name="acctgTransEntrySeqId" type="id" is-pk="true"></field>
         <field name="acctgTransEntryTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="voucherRef" type="text-medium"></field>
         <field name="partyId" type="id"></field>
         <field name="roleTypeId" type="id"></field>
@@ -1409,7 +1406,7 @@ under the License.
         <field name="acctgTransEntryTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ACCTTXE_TYPE_PAR" title="Parent" related="org.apache.ofbiz.accounting.ledger.AcctgTransEntryType">
             <key-map field-name="parentTypeId" related="acctgTransEntryTypeId"/>
         </relationship>
@@ -1418,7 +1415,7 @@ under the License.
         <field name="acctgTransTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ACCTTX_TYPE_PAR" title="Parent" related="org.apache.ofbiz.accounting.ledger.AcctgTransType">
             <key-map field-name="parentTypeId" related="acctgTransTypeId"/>
         </relationship>
@@ -1426,7 +1423,7 @@ under the License.
     <entity entity-name="AcctgTransTypeAttr" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="acctgTransTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ACCTTX_TYPE_ATTR" related="org.apache.ofbiz.accounting.ledger.AcctgTransType">
             <key-map field-name="acctgTransTypeId"/>
         </relationship>
@@ -1446,7 +1443,7 @@ under the License.
         <field name="parentGlAccountId" type="id"></field>
         <field name="accountCode" type="text-medium"></field>
         <field name="accountName" type="text-medium"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="productId" type="id"></field>
         <field name="externalId" type="id-long"><description>id of the account in an external system where the accounts are imported/exported</description></field>
         <relationship type="one" fk-name="GLACCT_TYPE" related="org.apache.ofbiz.accounting.ledger.GlAccountType">
@@ -1471,7 +1468,7 @@ under the License.
     <entity entity-name="GlAccountClass" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glAccountClassId" type="id" is-pk="true"></field>
         <field name="parentClassId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="isAssetClass" type="text-indicator"></field>
         <relationship type="one" fk-name="GLACTCLS_PAR" title="Parent" related="org.apache.ofbiz.accounting.ledger.GlAccountClass">
             <key-map field-name="parentClassId" related="glAccountClassId"/>
@@ -1480,7 +1477,7 @@ under the License.
     <entity entity-name="GlAccountGroup" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glAccountGroupId" type="id" is-pk="true"></field>
         <field name="glAccountGroupTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="GLACT_GRP_TP" related="org.apache.ofbiz.accounting.ledger.GlAccountGroupType">
             <key-map field-name="glAccountGroupTypeId"/>
         </relationship>
@@ -1501,7 +1498,7 @@ under the License.
     </entity>
     <entity entity-name="GlAccountGroupType" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glAccountGroupTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="GlAccountHistory" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glAccountId" type="id" is-pk="true"></field>
@@ -1568,7 +1565,7 @@ under the License.
         <field name="glAccountTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="GLACTTY_PAR" title="Parent" related="org.apache.ofbiz.accounting.ledger.GlAccountType">
             <key-map field-name="parentTypeId" related="glAccountTypeId"/>
         </relationship>
@@ -1602,7 +1599,7 @@ under the License.
     </entity>
     <entity entity-name="GlFiscalType" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glFiscalTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="GlJournal" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glJournalId" type="id" is-pk="true"></field>
@@ -1617,7 +1614,7 @@ under the License.
     <entity entity-name="GlReconciliation" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glReconciliationId" type="id" is-pk="true"></field>
         <field name="glReconciliationName" type="text-medium"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="createdDate" type="date-time"></field>
         <field name="createdByUserLogin" type="id-long"></field>
         <field name="lastModifiedDate" type="date-time"></field>
@@ -1656,11 +1653,11 @@ under the License.
     </entity>
     <entity entity-name="GlResourceType" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glResourceTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="GlXbrlClass" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glXbrlClassId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="PartyAcctgPreference" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="partyId" type="id" is-pk="true"></field>
@@ -1748,7 +1745,7 @@ under the License.
         <field name="productAverageCostTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="AVGCOST_TYPE_PAR" title="Parent" related="org.apache.ofbiz.accounting.ledger.ProductAverageCostType">
             <key-map field-name="parentTypeId" related="productAverageCostTypeId"/>
         </relationship>
@@ -1780,7 +1777,7 @@ under the License.
         <field name="contactMechId" type="id"></field>
         <field name="fromDate" type="date-time"></field>
         <field name="thruDate" type="date-time"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="externalAccountId" type="id"></field>
         <relationship type="one" fk-name="BILLACCT_CMECH" related="org.apache.ofbiz.party.contact.ContactMech">
             <key-map field-name="contactMechId"/>
@@ -1834,7 +1831,7 @@ under the License.
     <entity entity-name="BillingAccountTermAttr" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="billingAccountTermId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
         <relationship type="one" fk-name="BILLACCT_TRM_ATTR" related="org.apache.ofbiz.accounting.payment.BillingAccountTerm">
             <key-map field-name="billingAccountTermId"/>
         </relationship>
@@ -1845,7 +1842,7 @@ under the License.
     <entity entity-name="CreditCard" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentMethodId" type="id" is-pk="true"></field>
         <field name="cardType" type="text-medium"></field>
-        <field name="cardNumber" type="text-long" encrypt="true"></field>
+        <field name="cardNumber" type="text-short" encrypt="true"></field>
         <field name="validFromDate" type="text-short"><description>Not common in some parts of the world.</description></field>
         <field name="expireDate" type="text-short"></field>
         <field name="issueNumber" type="text-short"><description>Single digit number on some Switch and Maestro cards</description></field>
@@ -1891,7 +1888,7 @@ under the License.
         <field name="deductionTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="DEDUCT_TYP_PAR" title="Parent" related="org.apache.ofbiz.accounting.payment.DeductionType">
             <key-map field-name="parentTypeId" related="deductionTypeId"/>
         </relationship>
@@ -1901,7 +1898,7 @@ under the License.
         <field name="bankName" type="text-medium"></field>
         <field name="routingNumber" type="text-medium"><description>See https://en.wikipedia.org/wiki/Bank_code</description></field>
         <field name="accountType" type="text-medium"></field>
-        <field name="accountNumber" type="text-long"></field>
+        <field name="accountNumber" type="text-medium"></field>
         <field name="nameOnAccount" type="text-medium"></field>
         <field name="companyNameOnAccount" type="text-medium"></field>
         <field name="contactMechId" type="id"></field>
@@ -1921,7 +1918,7 @@ under the License.
         <field name="bankName" type="text-medium"></field>
         <field name="routingNumber" type="text-medium"><description>See https://en.wikipedia.org/wiki/Bank_code</description></field>
         <field name="accountType" type="text-medium"></field>
-        <field name="accountNumber" type="text-long"></field>
+        <field name="accountNumber" type="text-medium"></field>
         <field name="nameOnAccount" type="text-medium"></field>
         <field name="companyNameOnAccount" type="text-medium"></field>
         <field name="contactMechId" type="id"></field>
@@ -1938,8 +1935,8 @@ under the License.
     </entity>
     <entity entity-name="GiftCard" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentMethodId" type="id" is-pk="true"></field>
-        <field name="cardNumber" type="text-long" encrypt="true"></field>
-        <field name="pinNumber" type="text-long" encrypt="true"></field>
+        <field name="cardNumber" type="text-medium" encrypt="true"></field>
+        <field name="pinNumber" type="text-medium" encrypt="true"></field>
         <field name="expireDate" type="text-short"></field>
         <field name="contactMechId" type="id"></field>
         <relationship type="one" fk-name="GIFTCARD_PMNTMETH" related="org.apache.ofbiz.accounting.payment.PaymentMethod">
@@ -1960,8 +1957,8 @@ under the License.
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>
         <field name="surveyResponseId" type="id"></field>
-        <field name="cardNumber" type="text-long" encrypt="true"></field>
-        <field name="pinNumber" type="text-long" encrypt="true"></field>
+        <field name="cardNumber" type="text-medium" encrypt="true"></field>
+        <field name="pinNumber" type="text-medium" encrypt="true"></field>
         <field name="amount" type="currency-amount"></field>
         <field name="responseCode" type="text-medium"></field>
         <field name="referenceNum" type="text-medium"></field>
@@ -1999,7 +1996,7 @@ under the License.
         <field name="paymentRefNum" type="text-medium"></field>
         <field name="amount" type="currency-amount"></field>
         <field name="currencyUomId" type="id"></field>
-        <field name="comments" type="text-long"></field>
+        <field name="comments" type="text-medium"></field>
         <field name="finAccountTransId" type="id"></field>
         <field name="overrideGlAccountId" type="id"></field>
         <field name="actualCurrencyAmount" type="currency-amount"></field>
@@ -2100,8 +2097,8 @@ under the License.
     <entity entity-name="PaymentAttribute" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="PAYMENT_ATTR" related="org.apache.ofbiz.accounting.payment.Payment">
             <key-map field-name="paymentId"/>
         </relationship>
@@ -2145,7 +2142,7 @@ under the License.
         <field name="paymentContentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="PAYCT_TYP_PARENT" title="Parent" related="org.apache.ofbiz.accounting.payment.PaymentContentType">
             <key-map field-name="parentTypeId" related="paymentContentTypeId"/>
         </relationship>
@@ -2157,7 +2154,7 @@ under the License.
         <field name="partyId" type="id"></field>
         <field name="glAccountId" type="id"></field>
         <field name="finAccountId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="fromDate" type="date-time"></field>
         <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="PAYMETH_TYPE" related="org.apache.ofbiz.accounting.payment.PaymentMethodType">
@@ -2178,7 +2175,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="PaymentMethodType" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentMethodTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="defaultGlAccountId" type="id"></field>
         <relationship type="one" fk-name="PAYMENT_MTP_DGLAC" title="Default" related="org.apache.ofbiz.accounting.ledger.GlAccount">
             <key-map field-name="defaultGlAccountId" related="glAccountId"/>
@@ -2202,7 +2199,7 @@ under the License.
         <field name="paymentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="PAYMENT_TYPE_PAR" title="Parent" related="org.apache.ofbiz.accounting.payment.PaymentType">
             <key-map field-name="parentTypeId" related="paymentTypeId"/>
         </relationship>
@@ -2210,7 +2207,7 @@ under the License.
     <entity entity-name="PaymentTypeAttr" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="PAYMETH_TYPE_ATTR" related="org.apache.ofbiz.accounting.payment.PaymentType">
             <key-map field-name="paymentTypeId"/>
         </relationship>
@@ -2239,7 +2236,7 @@ under the License.
         <field name="paymentGatewayConfigTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="PGCT_PAR" title="Parent" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfigType">
             <key-map field-name="parentTypeId" related="paymentGatewayConfigTypeId"/>
         </relationship>
@@ -2250,7 +2247,7 @@ under the License.
     <entity entity-name="PaymentGatewayConfig" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
         <field name="paymentGatewayConfigTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="PGC_PGCT" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfigType">
             <key-map field-name="paymentGatewayConfigTypeId" related="paymentGatewayConfigTypeId"/>
         </relationship>
@@ -2263,21 +2260,21 @@ under the License.
         <field name="sagePayMode" type="text-medium"><description>Mode (PRODUCTION/TEST)</description></field>
         <field name="protocolVersion" type="text-short"><description>Protocol Version</description></field>
         <field name="authenticationTransType" type="text-medium"><description>Authentication type (PAYMENT/AUTHENTICATE/DEFERRED)</description></field>
-        <field name="authenticationUrl" type="text-long"><description>Authentication Url</description></field>
+        <field name="authenticationUrl" type="text-medium"><description>Authentication Url</description></field>
         <field name="authoriseTransType" type="text-medium"><description>Authorise type (AUTHORISE/RELEASE)</description></field>
-        <field name="authoriseUrl" type="text-long"><description>Authorise url</description></field>
+        <field name="authoriseUrl" type="text-medium"><description>Authorise url</description></field>
         <field name="releaseTransType" type="text-medium"><description>Release type (CANCEL/ABORT)</description></field>
-        <field name="releaseUrl" type="text-long"><description>Release Url</description></field>
-        <field name="voidUrl" type="text-long"><description>Void Url</description></field>
-        <field name="refundUrl" type="text-long"><description>Refund Url</description></field>
+        <field name="releaseUrl" type="text-medium"><description>Release Url</description></field>
+        <field name="voidUrl" type="text-medium"><description>Void Url</description></field>
+        <field name="refundUrl" type="text-medium"><description>Refund Url</description></field>
         <relationship type="one" fk-name="PGSP_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
             <key-map field-name="paymentGatewayConfigId"/>
         </relationship>
     </entity>
     <entity entity-name="PaymentGatewayAuthorizeNet" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="transactionUrl" type="text-long" enable-audit-log="true"><description>Transaction URL</description></field>
-        <field name="certificateAlias" type="text-long" enable-audit-log="true"><description>Certificate Alias</description></field>
+        <field name="transactionUrl" type="text-medium" enable-audit-log="true"><description>Transaction URL</description></field>
+        <field name="certificateAlias" type="text-medium" enable-audit-log="true"><description>Certificate Alias</description></field>
         <field name="apiVersion" type="text-medium" enable-audit-log="true"><description>Target Authorize Dot Net API version</description></field>
         <field name="delimitedData" type="text-medium" enable-audit-log="true"><description>Delimited data (TRUE|FALSE)</description></field>
         <field name="delimiterChar" type="text-medium" enable-audit-log="true"><description>Delimited Character - the delimiter to use in the response</description></field>
@@ -2289,10 +2286,10 @@ under the License.
         <field name="emailMerchant" type="text-medium" enable-audit-log="true"><description>Email Merchant? - if should send email to the merchant for each transaction (TRUE|FALSE)</description></field>
         <field name="testMode" type="text-medium" enable-audit-log="true"><description>Test Mode - forces the url property to the test url and adds more logging info to the logs (TRUE|FALSE)</description></field>
         <field name="relayResponse" type="text-medium" enable-audit-log="true"><description>Relay Response? - if should relay the reposnse to a different server (TRUE|FALSE)</description></field>
-        <field name="tranKey" type="text-long" encrypt="true" enable-audit-log="true"><description>Transaction Key</description></field>
-        <field name="userId" type="text-long" enable-audit-log="true"><description>Username - your authorize.net userid</description></field>
-        <field name="pwd" type="text-long" encrypt="true" enable-audit-log="true"><description>Password - your authorize.net password</description></field>
-        <field name="transDescription" type="text-long"><description>Default Transaction Description</description></field>
+        <field name="tranKey" type="text-medium" encrypt="true" enable-audit-log="true"><description>Transaction Key</description></field>
+        <field name="userId" type="text-medium" enable-audit-log="true"><description>Username - your authorize.net userid</description></field>
+        <field name="pwd" type="text-medium" encrypt="true" enable-audit-log="true"><description>Password - your authorize.net password</description></field>
+        <field name="transDescription" type="text-medium"><description>Default Transaction Description</description></field>
         <field name="duplicateWindow" type="number-integer" enable-audit-log="true"><description>Check the duplicate transaction in the specified time duration which is specified in seconds. If duplicate transaction occurs in the defined time limit then return error.</description></field>
         <relationship type="one" fk-name="PGAN_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
             <key-map field-name="paymentGatewayConfigId"/>
@@ -2300,8 +2297,8 @@ under the License.
     </entity>
     <entity entity-name="PaymentGatewayEway" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="customerId" type="text-long"></field>
-        <field name="refundPwd" type="text-long" encrypt="true"></field>
+        <field name="customerId" type="text-medium"></field>
+        <field name="refundPwd" type="text-medium" encrypt="true"></field>
         <field name="testMode" type="text-medium"></field>
         <field name="enableCvn" type="text-medium"></field>
         <field name="enableBeagle" type="text-medium"></field>
@@ -2311,71 +2308,71 @@ under the License.
     </entity>
     <entity entity-name="PaymentGatewayCyberSource" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="merchantId" type="text-long"><description>You merchant ID</description></field>
+        <field name="merchantId" type="text-medium"><description>You merchant ID</description></field>
         <field name="apiVersion" type="text-medium"><description>Target CyberSource API version</description></field>
         <field name="production" type="text-medium"><description>Enable production &quot;mode&quot; (true|false)</description></field>
-        <field name="keysDir" type="text-long"><description>Directory of the keys from CyberSource (Generate using online tools)</description></field>
-        <field name="keysFile" type="text-long"><description>Name of the keystore (if different then &quot;merchantID&quot;.p12)</description></field>
+        <field name="keysDir" type="text-medium"><description>Directory of the keys from CyberSource (Generate using online tools)</description></field>
+        <field name="keysFile" type="text-medium"><description>Name of the keystore (if different then &quot;merchantID&quot;.p12)</description></field>
         <field name="logEnabled" type="text-medium"><description>Log transaction information (true|false)</description></field>
-        <field name="logDir" type="text-long"><description>Log directory</description></field>
-        <field name="logFile" type="text-long"><description>Log file name</description></field>
+        <field name="logDir" type="text-medium"><description>Log directory</description></field>
+        <field name="logFile" type="text-medium"><description>Log file name</description></field>
         <field name="logSize" type="number-integer"><description>Max log size (megabytes)</description></field>
-        <field name="merchantDescr" type="text-long"><description>Merchant Description - Shown on credit card statement</description></field>
-        <field name="merchantContact" type="text-long"><description>Merchant Description Contact Information - Shown on credit card statement</description></field>
+        <field name="merchantDescr" type="text-medium"><description>Merchant Description - Shown on credit card statement</description></field>
+        <field name="merchantContact" type="text-medium"><description>Merchant Description Contact Information - Shown on credit card statement</description></field>
         <field name="autoBill" type="text-medium"><description>Auto-Bill In Authorization (true|false)</description></field>
         <field name="enableDav" type="text-indicator"><description>Use DAV In Authorization -- May not be supported any longer</description></field>
         <field name="fraudScore" type="text-indicator"><description>Use Fraud Scoring In Authorization -- May not be supported any longer</description></field>
         <field name="ignoreAvs" type="text-medium"><description>Ignore AVS results (true|false)</description></field>
         <field name="disableBillAvs" type="text-indicator"><description>Disable AVS for Capture -- May not be supported any longer</description></field>
-        <field name="avsDeclineCodes" type="text-long"><description>AVS Decline Codes -- May not be supported any longer</description></field>
+        <field name="avsDeclineCodes" type="text-medium"><description>AVS Decline Codes -- May not be supported any longer</description></field>
         <relationship type="one" fk-name="PGCS_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
             <key-map field-name="paymentGatewayConfigId"/>
         </relationship>
     </entity>
     <entity entity-name="PaymentGatewayPayflowPro" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="certsPath" type="text-long"><description>Path the the VeriSign Certificate</description></field>
-        <field name="hostAddress" type="text-long" enable-audit-log="true"><description>Address of the payment processor</description></field>
+        <field name="certsPath" type="text-medium"><description>Path the the VeriSign Certificate</description></field>
+        <field name="hostAddress" type="text-medium" enable-audit-log="true"><description>Address of the payment processor</description></field>
         <field name="hostPort" type="number-integer" enable-audit-log="true"><description>Port of the payment processor</description></field>
         <field name="timeout" type="number-integer"><description>Timeout</description></field>
-        <field name="proxyAddress" type="text-long"><description>Proxy Address</description></field>
+        <field name="proxyAddress" type="text-medium"><description>Proxy Address</description></field>
         <field name="proxyPort" type="number-integer"><description>Proxy Port</description></field>
-        <field name="proxyLogon" type="text-long"><description>Proxy Logon</description></field>
-        <field name="proxyPassword" type="text-long" encrypt="true"><description>Proxy Password</description></field>
+        <field name="proxyLogon" type="text-medium"><description>Proxy Logon</description></field>
+        <field name="proxyPassword" type="text-medium" encrypt="true"><description>Proxy Password</description></field>
         <field name="vendor" type="text-medium" enable-audit-log="true"><description>Vendor of account information</description></field>
         <field name="userId" type="text-medium" enable-audit-log="true"><description>PayFlow UserID of account information</description></field>
-        <field name="pwd" type="text-long" encrypt="true" enable-audit-log="true"><description>PayFlow Password of account information</description></field>
+        <field name="pwd" type="text-medium" encrypt="true" enable-audit-log="true"><description>PayFlow Password of account information</description></field>
         <field name="partner" type="text-medium" enable-audit-log="true"><description>PayFlow Partner of account information</description></field>
         <field name="checkAvs" type="text-indicator" enable-audit-log="true"><description>Use Address Verification</description></field>
         <field name="checkCvv2" type="text-indicator" enable-audit-log="true"><description>Require CVV2 Verification</description></field>
         <field name="preAuth" type="text-indicator" enable-audit-log="true"><description>Pre-Authorize Payments (if set to N will auto-capture)</description></field>
-        <field name="enableTransmit" type="text-long"><description>Set to false to not transmit anything</description></field>
-        <field name="logFileName" type="text-long"><description>Log file name</description></field>
+        <field name="enableTransmit" type="text-medium"><description>Set to false to not transmit anything</description></field>
+        <field name="logFileName" type="text-medium"><description>Log file name</description></field>
         <field name="loggingLevel" type="number-integer"><description>Logging level</description></field>
         <field name="maxLogFileSize" type="number-integer"><description>Max log file size</description></field>
         <field name="stackTraceOn" type="text-indicator"><description>Stack trace on/off</description></field>
-        <field name="redirectUrl" type="text-long" enable-audit-log="true"><description>Express Checkout Redirect URL</description></field>
-        <field name="returnUrl" type="text-long" enable-audit-log="true"><description>Express Checkout Return URL</description></field>
-        <field name="cancelReturnUrl" type="text-long" enable-audit-log="true"><description>Express Checkout Return On Cancel URL</description></field>
+        <field name="redirectUrl" type="text-medium" enable-audit-log="true"><description>Express Checkout Redirect URL</description></field>
+        <field name="returnUrl" type="text-medium" enable-audit-log="true"><description>Express Checkout Return URL</description></field>
+        <field name="cancelReturnUrl" type="text-medium" enable-audit-log="true"><description>Express Checkout Return On Cancel URL</description></field>
         <relationship type="one" fk-name="PGPF_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
             <key-map field-name="paymentGatewayConfigId"/>
         </relationship>
     </entity>
     <entity entity-name="PaymentGatewayPayPal" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="businessEmail" type="text-long"><description>Business e-mail</description></field>
+        <field name="businessEmail" type="text-medium"><description>Business e-mail</description></field>
         <field name="apiUserName" type="text-medium" enable-audit-log="true"><description>PayPal API UserName</description></field>
         <field name="apiPassword" type="text-medium" enable-audit-log="true"><description>PayPal API Password</description></field>
         <field name="apiSignature" type="text-medium" enable-audit-log="true"><description>PayPal API Signature</description></field>
         <field name="apiEnvironment" type="text-medium" enable-audit-log="true"><description>PayPal API Environment (valid values are: live, sandbox or beta-sandbox)</description></field>
-        <field name="notifyUrl" type="text-long"><description>Notify URL</description></field>
-        <field name="returnUrl" type="text-long" enable-audit-log="true"><description>Return URL</description></field>
-        <field name="cancelReturnUrl" type="text-long" enable-audit-log="true"><description>Return On Cancel URL</description></field>
-        <field name="imageUrl" type="text-long"><description>Image URL to use on PayPal</description></field>
-        <field name="confirmTemplate" type="text-long" enable-audit-log="true"><description>Thank-You / Confirm Order Template (rendered via Freemarker)</description></field>
-        <field name="redirectUrl" type="text-long" enable-audit-log="true"><description>PayPal Redirect URL (Sandbox/Production)</description></field>
-        <field name="confirmUrl" type="text-long" enable-audit-log="true"><description>PayPal Confirm URL Sandbox/Production (JSSE must be configured to use SSL)</description></field>
-        <field name="shippingCallbackUrl" type="text-long" enable-audit-log="true"><description>Specific to Express Checkout which performs callbacks to our server to retrieve shipping estimates</description></field>
+        <field name="notifyUrl" type="text-medium"><description>Notify URL</description></field>
+        <field name="returnUrl" type="text-medium" enable-audit-log="true"><description>Return URL</description></field>
+        <field name="cancelReturnUrl" type="text-medium" enable-audit-log="true"><description>Return On Cancel URL</description></field>
+        <field name="imageUrl" type="text-medium"><description>Image URL to use on PayPal</description></field>
+        <field name="confirmTemplate" type="text-medium" enable-audit-log="true"><description>Thank-You / Confirm Order Template (rendered via Freemarker)</description></field>
+        <field name="redirectUrl" type="text-medium" enable-audit-log="true"><description>PayPal Redirect URL (Sandbox/Production)</description></field>
+        <field name="confirmUrl" type="text-medium" enable-audit-log="true"><description>PayPal Confirm URL Sandbox/Production (JSSE must be configured to use SSL)</description></field>
+        <field name="shippingCallbackUrl" type="text-medium" enable-audit-log="true"><description>Specific to Express Checkout which performs callbacks to our server to retrieve shipping estimates</description></field>
         <field name="requireConfirmedShipping" type="text-indicator" enable-audit-log="true"><description>Indicates that you require that the customer’s shipping address on file with PayPal be a confirmed address.</description></field>
         <relationship type="one" fk-name="PGPP_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
             <key-map field-name="paymentGatewayConfigId"/>
@@ -2387,11 +2384,11 @@ under the License.
         <field name="groupId" type="text-medium"><description>Useful for grouping transactions</description></field>
         <field name="clientId" type="text-medium"><description>Client Id of account information</description></field>
         <field name="username" type="text-medium"><description>User name of account informatio</description></field>
-        <field name="pwd" type="text-long" encrypt="true"><description>Password of account informatio</description></field>
+        <field name="pwd" type="text-medium" encrypt="true"><description>Password of account informatio</description></field>
         <field name="userAlias" type="text-medium"><description>Alias of account informatio</description></field>
         <field name="effectiveAlias" type="text-medium"><description>Effective Alias of account information</description></field>
         <field name="processMode" type="text-indicator"><description>Process mode (Y: approve / N: decline / R: random / P: production)</description></field>
-        <field name="serverURL" type="text-long"><description>Server URL of the payment processor</description></field>
+        <field name="serverURL" type="text-medium"><description>Server URL of the payment processor</description></field>
         <field name="enableCVM" type="text-indicator"><description>Enable Card Verification Methods (CID, CVC, CVV2)</description></field>
         <relationship type="one" fk-name="PGCC_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
             <key-map field-name="paymentGatewayConfigId"/>
@@ -2399,8 +2396,8 @@ under the License.
     </entity>
     <entity entity-name="PaymentGatewayWorldPay" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="redirectUrl" type="text-long"><description>Redirect URL</description></field>
-        <field name="instId" type="text-long" encrypt="true"><description>Worldpay instance Id</description></field>
+        <field name="redirectUrl" type="text-medium"><description>Redirect URL</description></field>
+        <field name="instId" type="text-medium" encrypt="true"><description>Worldpay instance Id</description></field>
         <field name="authMode" type="text-indicator"><description>Authorization Mode (A: Full-Auth / E: Pre-Auth)</description></field>
         <field name="fixContact" type="text-indicator"><description>Will displace contact info on WorldPay in non-editable format</description></field>
         <field name="hideContact" type="text-indicator"><description>Will hide the contact info completely</description></field>
@@ -2416,16 +2413,16 @@ under the License.
     <entity entity-name="PaymentGatewayOrbital" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
         <field name="username" type="text-medium"><description>Orbital Username of account information</description></field>
-        <field name="connectionPassword" type="text-long" encrypt="true"><description>Orbital Password of account information</description></field>
-        <field name="merchantId" type="text-long"><description>You merchant ID</description></field>
-        <field name="engineClass" type="text-long"><description>Class for the Orbital Gateway - Default should be used - HttpsEngine</description></field>
-        <field name="hostName" type="text-long"><description>Address of the payment processor</description></field>
+        <field name="connectionPassword" type="text-medium" encrypt="true"><description>Orbital Password of account information</description></field>
+        <field name="merchantId" type="text-medium"><description>You merchant ID</description></field>
+        <field name="engineClass" type="text-medium"><description>Class for the Orbital Gateway - Default should be used - HttpsEngine</description></field>
+        <field name="hostName" type="text-medium"><description>Address of the payment processor</description></field>
         <field name="port" type="number-integer"><description>Port of the payment processor</description></field>
-        <field name="hostNameFailover" type="text-long"><description>Failover Address of the payment processor</description></field>
+        <field name="hostNameFailover" type="text-medium"><description>Failover Address of the payment processor</description></field>
         <field name="portFailover" type="number-integer"><description>Failover Port of the payment processor</description></field>
         <field name="connectionTimeoutSeconds" type="number-integer"><description>Timeout</description></field>
         <field name="readTimeoutSeconds" type="number-integer"><description>Read Timeout</description></field>
-        <field name="authorizationURI" type="text-long"><description>Authorization URI</description></field>
+        <field name="authorizationURI" type="text-medium"><description>Authorization URI</description></field>
         <field name="sdkVersion" type="text-medium"><description>Target Orbital Gateway API version</description></field>
         <field name="sslSocketFactory" type="text-medium"><description>SSL Socket Factory (default|strict)</description></field>
         <field name="responseType" type="text-medium"><description>Response Type (gateway|host)</description></field>
@@ -2435,9 +2432,9 @@ under the License.
     </entity>
     <entity entity-name="PaymentGatewaySecurePay" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="merchantId" type="text-long"><description>You merchant ID</description></field>
-        <field name="pwd" type="text-long" encrypt="true"><description>SecurePay Password of account information</description></field>
-        <field name="serverURL" type="text-long"><description>Server URL of the payment processor</description></field>
+        <field name="merchantId" type="text-medium"><description>You merchant ID</description></field>
+        <field name="pwd" type="text-medium" encrypt="true"><description>SecurePay Password of account information</description></field>
+        <field name="serverURL" type="text-medium"><description>Server URL of the payment processor</description></field>
         <field name="processTimeout" type="number-integer"><description>Process Timeout</description></field>
         <field name="enableAmountRound" type="text-indicator"><description>Enable rounds the currency amount to .00 (Y / N)</description></field>
         <relationship type="one" fk-name="PGSCP_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
@@ -2446,17 +2443,17 @@ under the License.
     </entity>
     <entity entity-name="PaymentGatewayiDEAL" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="merchantId" type="text-long"><description>The ID of the webshop, received by the acceptor during the registration process</description></field>
-        <field name="merchantSubId" type="text-long"><description>SubID of the webshop, default value = 0 (zero); only to be changed in consultation with the acquirer</description></field>
-        <field name="merchantReturnURL" type="text-long"><description>URL of the page in the webshop to which the consumer is redirected after an iDEAL transaction. This value can be overruled as necessary in the webshop implementation</description></field>
-        <field name="acquirerURL" type="text-long"><description>URL of the acceptor’s acquirer; the following prescribed values apply to ING</description></field>
-        <field name="acquirerTimeout" type="text-long"><description>Number of seconds (default = 10) of waiting time for a response from the iDEAL services. If no response is received during that time, an exception is displayed</description></field>
-        <field name="privateCert" type="text-long"><description>Name of the acceptor’s organization as given during the creation of his or her own certificate. See section 0 for more information about the acceptor’s certificate</description></field>
-        <field name="acquirerKeyStoreFilename" type="text-long"><description>Keystore file and acquirer’s password</description></field>
-        <field name="acquirerKeyStorePassword" type="text-long" encrypt="true"><description>Password of the Acquirer keystore</description></field>
-        <field name="merchantKeyStoreFilename" type="text-long"><description>Keystore file and merchant’s password</description></field>
-        <field name="merchantKeyStorePassword" type="text-long" encrypt="true"><description>Password of the Merchant keystore</description></field>
-        <field name="expirationPeriod" type="text-long"><description>Expiration period of the transaction</description></field>
+        <field name="merchantId" type="text-medium"><description>The ID of the webshop, received by the acceptor during the registration process</description></field>
+        <field name="merchantSubId" type="text-medium"><description>SubID of the webshop, default value = 0 (zero); only to be changed in consultation with the acquirer</description></field>
+        <field name="merchantReturnURL" type="text-medium"><description>URL of the page in the webshop to which the consumer is redirected after an iDEAL transaction. This value can be overruled as necessary in the webshop implementation</description></field>
+        <field name="acquirerURL" type="text-medium"><description>URL of the acceptor’s acquirer; the following prescribed values apply to ING</description></field>
+        <field name="acquirerTimeout" type="text-medium"><description>Number of seconds (default = 10) of waiting time for a response from the iDEAL services. If no response is received during that time, an exception is displayed</description></field>
+        <field name="privateCert" type="text-medium"><description>Name of the acceptor’s organization as given during the creation of his or her own certificate. See section 0 for more information about the acceptor’s certificate</description></field>
+        <field name="acquirerKeyStoreFilename" type="text-medium"><description>Keystore file and acquirer’s password</description></field>
+        <field name="acquirerKeyStorePassword" type="text-medium" encrypt="true"><description>Password of the Acquirer keystore</description></field>
+        <field name="merchantKeyStoreFilename" type="text-medium"><description>Keystore file and merchant’s password</description></field>
+        <field name="merchantKeyStorePassword" type="text-medium" encrypt="true"><description>Password of the Merchant keystore</description></field>
+        <field name="expirationPeriod" type="text-medium"><description>Expiration period of the transaction</description></field>
         <relationship type="one" fk-name="PGID_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
             <key-map field-name="paymentGatewayConfigId"/>
         </relationship>
@@ -2486,7 +2483,7 @@ under the License.
         <field name="gatewayAvsResult" type="text-medium"></field>
         <field name="gatewayCvResult" type="text-medium"></field>
         <field name="gatewayScoreResult" type="text-medium"></field>
-        <field name="gatewayMessage" type="text-long"></field>
+        <field name="gatewayMessage" type="text-medium"></field>
         <field name="transactionDate" type="date-time"></field>
         <field name="resultDeclined" type="text-indicator"></field>
         <field name="resultNsf" type="text-indicator"></field>
@@ -2523,7 +2520,7 @@ under the License.
 <description>Payment Group Type</description>        <field name="paymentGroupTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="PAYMNTGP_TYP_PAR" title="Parent" related="org.apache.ofbiz.accounting.payment.PaymentGroupType">
             <key-map field-name="parentTypeId" related="paymentGroupTypeId"/>
         </relationship>
@@ -2598,7 +2595,7 @@ under the License.
         <field name="taxAuthGeoId" type="id" is-pk="true"></field>
         <field name="taxAuthPartyId" type="id" is-pk="true"></field>
         <field name="requireTaxIdForExemption" type="text-indicator"></field>
-        <field name="taxIdFormatPattern" type="text-long"></field>
+        <field name="taxIdFormatPattern" type="text-medium"></field>
         <field name="includeTaxInPrice" type="text-indicator"></field>
         <relationship type="one" fk-name="TAXAUTH_TAGEO" title="TaxAuth" related="org.apache.ofbiz.common.geo.Geo">
             <key-map field-name="taxAuthGeoId" related="geoId"/>
@@ -2630,7 +2627,7 @@ under the License.
     </entity>
     <entity entity-name="TaxAuthorityAssocType" package="org.apache.ofbiz.accounting.tax" group="ofbiz_transactional">
         <field name="taxAuthorityAssocTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="TaxAuthorityCategory" package="org.apache.ofbiz.accounting.tax" group="ofbiz_transactional">
         <field name="taxAuthGeoId" type="id" is-pk="true"></field>
@@ -2677,7 +2674,7 @@ under the License.
         <field name="taxPromotions" type="text-indicator"></field>
         <field name="fromDate" type="date-time"></field>
         <field name="thruDate" type="date-time"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="isTaxInShippingPrice" type="text-indicator"></field>
         <relationship type="one" fk-name="TAXAUTHRTEP_TXA" related="org.apache.ofbiz.accounting.tax.TaxAuthority">
             <key-map field-name="taxAuthGeoId"/>
@@ -2695,7 +2692,7 @@ under the License.
     </entity>
     <entity entity-name="TaxAuthorityRateType" package="org.apache.ofbiz.accounting.tax" group="ofbiz_transactional">
         <field name="taxAuthorityRateTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="ZipSalesRuleLookup" package="org.apache.ofbiz.accounting.tax" group="ofbiz_transactional">
         <field name="stateCode" type="text-medium" is-pk="true"></field>
@@ -2704,7 +2701,7 @@ under the License.
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="idCode" type="text-medium"></field>
         <field name="taxable" type="text-medium"></field>
-        <field name="shipCond" type="text-long"></field>
+        <field name="shipCond" type="text-medium"></field>
     </entity>
     <entity entity-name="ZipSalesTaxLookup" package="org.apache.ofbiz.accounting.tax" group="ofbiz_transactional">
         <field name="zipCode" type="text-medium" is-pk="true"></field>
@@ -2759,7 +2756,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="RateType" package="org.apache.ofbiz.accounting.rate" group="ofbiz_transactional">
         <field name="rateTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="RateAmount" package="org.apache.ofbiz.accounting.rate" group="ofbiz_transactional">
         <field name="rateTypeId" type="id" is-pk="true"></field>
@@ -2783,9 +2780,6 @@ under the License.
         <relationship type="one" fk-name="RATE_AMOUNT_PTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
         </relationship>
-        <relationship type="one" fk-name="RATE_AMOUNT_EPT" related="org.apache.ofbiz.humanres.position.EmplPositionType">
-            <key-map field-name="emplPositionTypeId"/>
-        </relationship>
         <relationship type="one" fk-name="RATE_AMOUNT_PT" related="org.apache.ofbiz.common.period.PeriodType">
             <key-map field-name="periodTypeId"/>
         </relationship>
@@ -2808,7 +2802,7 @@ under the License.
     <entity entity-name="GlAccountCategory" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glAccountCategoryId" type="id" is-pk="true"></field>
         <field name="glAccountCategoryTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="GLACT_CAT_TP" related="org.apache.ofbiz.accounting.ledger.GlAccountCategoryType">
             <key-map field-name="glAccountCategoryTypeId"/>
         </relationship>
@@ -2828,7 +2822,7 @@ under the License.
     </entity>
     <entity entity-name="GlAccountCategoryType" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="glAccountCategoryTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->

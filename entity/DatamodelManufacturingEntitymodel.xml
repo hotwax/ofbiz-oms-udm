@@ -32,7 +32,7 @@ under the License.
         <field name="productFeature" type="id"></field>
         <field name="ruleOperator" type="id"></field>
         <field name="quantity" type="number-float"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="PRODUCT_PARENT" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
@@ -53,7 +53,7 @@ under the License.
     <entity entity-name="TechDataCalendar" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
 <description>Used to defined the availability of the machines, this entity define the Id and the week definition.
       The Id is used in the exception calendar table as reference</description>        <field name="calendarId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="calendarWeekId" type="id"></field>
         <relationship type="one" fk-name="CALENDAR_WEEK" related="org.apache.ofbiz.manufacturing.techdata.TechDataCalendarWeek">
             <key-map field-name="calendarWeekId"/>
@@ -64,7 +64,7 @@ under the License.
         <field name="exceptionDateStartTime" type="date-time" is-pk="true"></field>
         <field name="exceptionCapacity" type="number-decimal"></field>
         <field name="usedCapacity" type="number-decimal"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="EXC_DAY_CALENDAR" related="org.apache.ofbiz.manufacturing.techdata.TechDataCalendar">
             <key-map field-name="calendarId"/>
         </relationship>
@@ -73,7 +73,7 @@ under the License.
 <description>Used to defined some weeks which differ from the normal week defined in the calendar.</description>        <field name="calendarId" type="id" is-pk="true"></field>
         <field name="exceptionDateStart" type="date" is-pk="true"></field>
         <field name="calendarWeekId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="EXC_WEEK_CALENDAR" related="org.apache.ofbiz.manufacturing.techdata.TechDataCalendar">
             <key-map field-name="calendarId"/>
         </relationship>
@@ -83,7 +83,7 @@ under the License.
     </entity>
     <entity entity-name="TechDataCalendarWeek" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
 <description>Used to defined the week definition disponibility for machine</description>        <field name="calendarWeekId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="mondayStartTime" type="time"></field>
         <field name="mondayCapacity" type="number-float"></field>
         <field name="tuesdayStartTime" type="time"></field>
@@ -101,7 +101,7 @@ under the License.
     </entity>
     <entity entity-name="MrpEventType" package="org.apache.ofbiz.manufacturing.mrp" group="ofbiz_transactional">
 <description></description>        <field name="mrpEventTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="MrpEvent" package="org.apache.ofbiz.manufacturing.mrp" group="ofbiz_transactional">
 <description></description>        <field name="mrpId" type="id" is-pk="true"></field>

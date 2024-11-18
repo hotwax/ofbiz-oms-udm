@@ -28,11 +28,11 @@ under the License.
         <field name="shopId" type="id"><description>Shopify shop id</description></field>
         <field name="webSiteId" type="id"></field>
         <field name="facilityIdenTypeId" type="id"><description>Deprecated filed</description></field>
-        <field name="apiUrl" type="text-long" encrypt="true"></field>
-        <field name="username" type="text-long" encrypt="true"></field>
-        <field name="currentPassword" type="text-long" encrypt="true"></field>
-        <field name="accessToken" type="text-long" encrypt="true"></field>
-        <field name="sharedSecret" type="text-long" encrypt="true"><description>Secrets are used to validate the integrity of webhooks</description></field>
+        <field name="apiUrl" type="text-medium" encrypt="true"></field>
+        <field name="username" type="text-medium" encrypt="true"></field>
+        <field name="currentPassword" type="text-medium" encrypt="true"></field>
+        <field name="accessToken" type="text-medium" encrypt="true"></field>
+        <field name="sharedSecret" type="text-medium" encrypt="true"><description>Secrets are used to validate the integrity of webhooks</description></field>
         <field name="processRefund" type="text-indicator"></field>
         <relationship type="one" fk-name="SHPFY_ACC_SCOPE" title="Access" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="accessScopeEnumId" related="enumId"/>
@@ -84,8 +84,8 @@ under the License.
     </entity>
     <extend-entity entity-name="DataManagerLog" package="co.hotwax.datamanager" group="ofbiz_transactional">
         <field name="shopifyConfigId" type="id"></field>
-        <field name="remoteFilePath" type="text-long"></field>
-        <field name="namespace" type="text-long"></field>
+        <field name="remoteFilePath" type="text-medium"></field>
+        <field name="namespace" type="text-medium"></field>
         <relationship type="one" fk-name="DTMGR_SHPF_CONF" related="co.hotwax.shopify.ShopifyConfig">
             <key-map field-name="shopifyConfigId"/>
         </relationship>
@@ -106,7 +106,7 @@ under the License.
         <field name="shopifyShopId" type="id-long"></field>
         <field name="productStoreId" type="id"></field>
         <field name="name" type="text-medium"></field>
-        <field name="email" type="text-long"></field>
+        <field name="email" type="text-medium"></field>
         <field name="phone" type="id"></field>
         <field name="shopOwner" type="text-medium"></field>
         <field name="timezone" type="id-long"></field>
@@ -148,9 +148,15 @@ under the License.
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="carrierPartyId" type="id"></field>
         <field name="shipmentMethodTypeId" type="id"></field>
-        <field name="shopifyShippingMethod" type="text-long" is-pk="true"></field>
+        <field name="shopifyShippingMethod" type="text-medium" is-pk="true"></field>
         <relationship type="one" fk-name="SHPFY_SPTMD_SHOP" related="co.hotwax.shopify.ShopifyShop">
             <key-map field-name="shopId"/>
+        </relationship>
+        <relationship type="one" fk-name="SHPFY_SHOP_CPRTY" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="carrierPartyId" related="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="SHPFY_SHOP_SMT" related="org.apache.ofbiz.shipment.shipment.ShipmentMethodType">
+            <key-map field-name="shipmentMethodTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="ShopifyShopTypeMapping" package="co.hotwax.shopify" group="ofbiz_transactional">
@@ -173,7 +179,7 @@ under the License.
         <field name="scriptVersion" type="id"></field>
         <field name="scriptTagId" type="id"><description>Shopify script tag id</description></field>
         <field name="eventType" type="id"></field>
-        <field name="templateLocation" type="text-long"></field>
+        <field name="templateLocation" type="text-medium"></field>
         <field name="fromDate" type="date-time"></field>
         <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="SHOP_SCRIPT_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
@@ -189,5 +195,14 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </extend-entity>
+    <entity entity-name="ShopifyProdLocActivation" package="co.hotwax.shopify" group="ofbiz_transactional">
+        <field name="shopId" type="id" is-pk="true"></field>
+        <field name="shopifyProductId" type="id-long" is-pk="true"></field>
+        <field name="shopifyLocationId" type="id-long" is-pk="true"></field>
+        <field name="activated" type="text-indicator"></field>
+        <index name="IDX_PROD_LOC_ACT">
+            <index-field name="activated"/>
+        </index>
+    </entity>
 </entities>
 

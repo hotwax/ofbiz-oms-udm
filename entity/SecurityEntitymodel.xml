@@ -23,18 +23,18 @@ under the License.
     <!-- TODO: skipped element version -->
     <entity entity-name="X509IssuerProvision" package="org.apache.ofbiz.security.cert" cache="never" group="ofbiz_transactional">
         <field name="certProvisionId" type="id" is-pk="true"></field>
-        <field name="commonName" type="text-long"></field>
-        <field name="organizationalUnit" type="text-long"></field>
-        <field name="organizationName" type="text-long"></field>
-        <field name="cityLocality" type="text-long"></field>
-        <field name="stateProvince" type="text-long"></field>
-        <field name="country" type="text-long"></field>
-        <field name="serialNumber" type="text-long"></field>
+        <field name="commonName" type="text-medium"></field>
+        <field name="organizationalUnit" type="text-medium"></field>
+        <field name="organizationName" type="text-medium"></field>
+        <field name="cityLocality" type="text-medium"></field>
+        <field name="stateProvince" type="text-medium"></field>
+        <field name="country" type="text-medium"></field>
+        <field name="serialNumber" type="text-medium"></field>
     </entity>
     <entity entity-name="UserLogin" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
         <field name="userLoginId" type="id-long" is-pk="true"></field>
-        <field name="currentPassword" type="text-long"></field>
-        <field name="passwordHint" type="text-long"></field>
+        <field name="currentPassword" type="text-medium"></field>
+        <field name="passwordHint" type="text-medium"></field>
         <field name="isSystem" type="text-indicator"></field>
         <field name="enabled" type="text-indicator"></field>
         <field name="isExternal" type="text-indicator"></field>
@@ -56,7 +56,7 @@ under the License.
         <field name="userLoginId" type="id-long" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
-        <field name="currentPassword" type="text-long"></field>
+        <field name="currentPassword" type="text-medium"></field>
         <relationship type="one" fk-name="USER_LPH_USER" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="userLoginId"/>
         </relationship>
@@ -66,7 +66,7 @@ under the License.
         <field name="visitId" type="id"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
-        <field name="passwordUsed" type="text-long" encrypt="true"></field>
+        <field name="passwordUsed" type="text-medium" encrypt="true"></field>
         <field name="successfulLogin" type="text-indicator"></field>
         <relationship type="one" fk-name="USER_LH_USER" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="userLoginId"/>
@@ -80,10 +80,26 @@ under the License.
             <key-map field-name="userLoginId"/>
         </relationship>
     </entity>
+    <entity entity-name="UserLoginKey" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
+        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="loginKey" type="text-medium" encrypt="true"></field>
+        <field name="purpose" type="text-medium"></field>
+        <field name="comments" type="text-medium"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="createdDate" type="date-time"></field>
+        <relationship type="one" fk-name="USER_KEY_USER" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="userLoginId"/>
+        </relationship>
+        <relationship type="one" fk-name="CNCT_LST_CBUL" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="createdByUserLogin" related="userLoginId"/>
+        </relationship>
+    </entity>
     <entity entity-name="SecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
         <field name="groupId" type="id" is-pk="true"></field>
-        <field name="groupName" type="text-long"></field>
-        <field name="description" type="text-long"></field>
+        <field name="groupName" type="text-medium"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="SecurityGroupPermission" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
 <description>Defines a permission available to a security group; there is no FK to SecurityPermission because we want to leave open the possibility of ad-hoc permissions, especially for the Entity Data Maintenance pages which have TONS of permissions</description>        <field name="groupId" type="id" is-pk="true"></field>
@@ -99,7 +115,7 @@ under the License.
     </entity>
     <entity entity-name="SecurityPermission" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
         <field name="permissionId" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="UserLoginSecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
@@ -139,7 +155,7 @@ under the License.
     <entity entity-name="UserLoginSecurityQuestion" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
         <field name="questionEnumId" type="id" is-pk="true"></field>
         <field name="userLoginId" type="id-long" is-pk="true"></field>
-        <field name="securityAnswer" type="text-long"></field>
+        <field name="securityAnswer" type="text-medium"></field>
         <relationship type="one" fk-name="SECQ_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="questionEnumId" related="enumId"/>
         </relationship>

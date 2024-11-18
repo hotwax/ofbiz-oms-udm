@@ -85,7 +85,7 @@ under the License.
     <entity entity-name="Picklist" package="org.apache.ofbiz.shipment.picklist" group="ofbiz_transactional">
         <field name="picklistId" type="id" is-pk="true"></field>
         <field name="externalId" type="id-long"><description>This field stores picklist ID of the external system</description></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="facilityId" type="id"></field>
         <field name="shipmentMethodTypeId" type="id"></field>
         <field name="statusId" type="id"></field>
@@ -213,7 +213,7 @@ under the License.
     </entity>
     <entity entity-name="RejectionReason" package="org.apache.ofbiz.shipment.receipt" group="ofbiz_transactional">
         <field name="rejectionId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="ShipmentReceipt" package="org.apache.ofbiz.shipment.receipt" group="ofbiz_transactional">
         <field name="receiptId" type="id" is-pk="true"></field>
@@ -229,7 +229,7 @@ under the License.
         <field name="rejectionId" type="id"></field>
         <field name="receivedByUserLoginId" type="id-long"></field>
         <field name="datetimeReceived" type="date-time"></field>
-        <field name="itemDescription" type="text-long"></field>
+        <field name="itemDescription" type="text-medium"></field>
         <field name="quantityAccepted" type="number-decimal"></field>
         <field name="quantityRejected" type="number-decimal"></field>
         <relationship type="one" fk-name="SHP_RCPT_INVITM" related="org.apache.ofbiz.product.inventory.InventoryItem">
@@ -353,7 +353,7 @@ under the License.
         <field name="latestCancelDate" type="date-time"></field>
         <field name="estimatedShipCost" type="currency-amount"></field>
         <field name="currencyUomId" type="id"></field>
-        <field name="handlingInstructions" type="text-long"></field>
+        <field name="handlingInstructions" type="text-medium"></field>
         <field name="originFacilityId" type="id"></field>
         <field name="destinationFacilityId" type="id"></field>
         <field name="originContactMechId" type="id"></field>
@@ -363,7 +363,7 @@ under the License.
         <field name="partyIdTo" type="id"></field>
         <field name="partyIdFrom" type="id"></field>
         <field name="additionalShippingCharge" type="currency-amount"></field>
-        <field name="addtlShippingChargeDesc" type="text-long"></field>
+        <field name="addtlShippingChargeDesc" type="text-medium"></field>
         <field name="createdDate" type="date-time"></field>
         <field name="createdByUserLogin" type="id-long"></field>
         <field name="lastModifiedDate" type="date-time"></field>
@@ -449,8 +449,8 @@ under the License.
     <entity entity-name="ShipmentAttribute" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-long"></field>
-        <field name="attrDescription" type="text-long"></field>
+        <field name="attrValue" type="text-medium"></field>
+        <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="SHPMNT_ATTR" related="org.apache.ofbiz.shipment.shipment.Shipment">
             <key-map field-name="shipmentId"/>
         </relationship>
@@ -460,7 +460,7 @@ under the License.
     </entity>
     <entity entity-name="ShipmentBoxType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentBoxTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="dimensionUomId" type="id"></field>
         <field name="boxLength" type="number-decimal"></field>
         <field name="boxWidth" type="number-decimal"></field>
@@ -490,7 +490,7 @@ under the License.
     </entity>
     <entity entity-name="ShipmentContactMechType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentContactMechTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
     </entity>
     <entity entity-name="ShipmentCostEstimate" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentCostEstimateId" type="id" is-pk="true"></field>
@@ -568,7 +568,7 @@ under the License.
         <field name="shipmentGatewayConfTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="SGCT_PAR" title="Parent" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfigType">
             <key-map field-name="parentTypeId" related="shipmentGatewayConfTypeId"/>
         </relationship>
@@ -579,79 +579,79 @@ under the License.
     <entity entity-name="ShipmentGatewayConfig" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
         <field name="shipmentGatewayConfTypeId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="SGC_SGCT" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfigType">
             <key-map field-name="shipmentGatewayConfTypeId" related="shipmentGatewayConfTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="ShipmentGatewayDhl" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="connectUrl" type="text-long"><description>DHL Connection URL</description></field>
+        <field name="connectUrl" type="text-medium"><description>DHL Connection URL</description></field>
         <field name="connectTimeout" type="number-integer"><description>Timeout in seconds</description></field>
         <field name="headVersion" type="text-medium"><description>Head version attribute</description></field>
-        <field name="headAction" type="text-long"><description>Head action attribute</description></field>
-        <field name="accessUserId" type="text-long" encrypt="true"><description>Your DHL ShipIT User Id</description></field>
-        <field name="accessPassword" type="text-long" encrypt="true"><description>Your DHL ShipIT Access Password</description></field>
-        <field name="accessAccountNbr" type="text-long" encrypt="true"><description>Your DHL ShipIT Account Number</description></field>
-        <field name="accessShippingKey" type="text-long" encrypt="true"><description>Your DHL ShipIT Shipping Key</description></field>
+        <field name="headAction" type="text-medium"><description>Head action attribute</description></field>
+        <field name="accessUserId" type="text-medium" encrypt="true"><description>Your DHL ShipIT User Id</description></field>
+        <field name="accessPassword" type="text-medium" encrypt="true"><description>Your DHL ShipIT Access Password</description></field>
+        <field name="accessAccountNbr" type="text-medium" encrypt="true"><description>Your DHL ShipIT Account Number</description></field>
+        <field name="accessShippingKey" type="text-medium" encrypt="true"><description>Your DHL ShipIT Shipping Key</description></field>
         <field name="labelImageFormat" type="text-medium"><description>Label image format</description></field>
-        <field name="rateEstimateTemplate" type="text-long"><description>API Schema Templates</description></field>
+        <field name="rateEstimateTemplate" type="text-medium"><description>API Schema Templates</description></field>
         <relationship type="one" fk-name="SGDHL_SGC" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfig">
             <key-map field-name="shipmentGatewayConfigId"/>
         </relationship>
     </entity>
     <entity entity-name="ShipmentGatewayFedex" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="connectUrl" type="text-long"><description>Fedex Connection URL</description></field>
-        <field name="connectSoapUrl" type="text-long"><description>Fedex Soap Connection URL</description></field>
+        <field name="connectUrl" type="text-medium"><description>Fedex Connection URL</description></field>
+        <field name="connectSoapUrl" type="text-medium"><description>Fedex Soap Connection URL</description></field>
         <field name="connectTimeout" type="number-integer"><description>Timeout in seconds</description></field>
-        <field name="accessAccountNbr" type="text-long" encrypt="true"><description>Your Fedex account number</description></field>
-        <field name="accessMeterNumber" type="text-long" encrypt="true"><description>Your Fedex meter number</description></field>
-        <field name="accessUserKey" type="text-long" encrypt="true"><description>Your Fedex user credential key</description></field>
-        <field name="accessUserPwd" type="text-long" encrypt="true"><description>Your Fedex user credential password</description></field>
+        <field name="accessAccountNbr" type="text-medium" encrypt="true"><description>Your Fedex account number</description></field>
+        <field name="accessMeterNumber" type="text-medium" encrypt="true"><description>Your Fedex meter number</description></field>
+        <field name="accessUserKey" type="text-medium" encrypt="true"><description>Your Fedex user credential key</description></field>
+        <field name="accessUserPwd" type="text-medium" encrypt="true"><description>Your Fedex user credential password</description></field>
         <field name="labelImageType" type="text-medium"><description>Label image type</description></field>
-        <field name="defaultDropoffType" type="text-long"><description>Default dropoff type</description></field>
-        <field name="defaultPackagingType" type="text-long"><description>Default packaging type</description></field>
-        <field name="templateShipment" type="text-long"><description>Shipment Template location</description></field>
-        <field name="templateSubscription" type="text-long"><description>Subscription Template location</description></field>
-        <field name="rateEstimateTemplate" type="text-long"><description>FedEx API Rate Estimate Template</description></field>
+        <field name="defaultDropoffType" type="text-medium"><description>Default dropoff type</description></field>
+        <field name="defaultPackagingType" type="text-medium"><description>Default packaging type</description></field>
+        <field name="templateShipment" type="text-medium"><description>Shipment Template location</description></field>
+        <field name="templateSubscription" type="text-medium"><description>Subscription Template location</description></field>
+        <field name="rateEstimateTemplate" type="text-medium"><description>FedEx API Rate Estimate Template</description></field>
         <relationship type="one" fk-name="SGFED_SGC" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfig">
             <key-map field-name="shipmentGatewayConfigId"/>
         </relationship>
     </entity>
     <entity entity-name="ShipmentGatewayUps" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="connectUrl" type="text-long"><description>UPS Connection URL</description></field>
+        <field name="connectUrl" type="text-medium"><description>UPS Connection URL</description></field>
         <field name="connectTimeout" type="number-integer"><description>Timeout in seconds</description></field>
-        <field name="shipperNumber" type="text-long"><description>UPS Shipper Number</description></field>
-        <field name="billShipperAccountNumber" type="text-long"><description>UPS Bill Shipper Account Number</description></field>
-        <field name="accessLicenseNumber" type="text-long" encrypt="true"><description>UPS XPCI Access License Number</description></field>
-        <field name="accessUserId" type="text-long" encrypt="true"><description>UPS XPCI Access User ID</description></field>
-        <field name="accessPassword" type="text-long" encrypt="true"><description>UPS XPCI Access Password</description></field>
+        <field name="shipperNumber" type="text-medium"><description>UPS Shipper Number</description></field>
+        <field name="billShipperAccountNumber" type="text-medium"><description>UPS Bill Shipper Account Number</description></field>
+        <field name="accessLicenseNumber" type="text-medium" encrypt="true"><description>UPS XPCI Access License Number</description></field>
+        <field name="accessUserId" type="text-medium" encrypt="true"><description>UPS XPCI Access User ID</description></field>
+        <field name="accessPassword" type="text-medium" encrypt="true"><description>UPS XPCI Access Password</description></field>
         <field name="saveCertInfo" type="text-medium"><description>Setting to save files needed for UPS certification (true|false)</description></field>
-        <field name="saveCertPath" type="text-long"><description>UPS file certificate path</description></field>
+        <field name="saveCertPath" type="text-medium"><description>UPS file certificate path</description></field>
         <field name="shipperPickupType" type="text-medium"><description>Shipper Default Pickup Type</description></field>
         <field name="customerClassification" type="text-medium"><description>Customer Classification</description></field>
         <field name="maxEstimateWeight" type="number-decimal"><description>Estimate split into packages</description></field>
         <field name="minEstimateWeight" type="number-decimal"><description>Minimum weight for a package</description></field>
-        <field name="codAllowCod" type="text-long"><description>All shipment package items are from orders which have been fully paid via EXT_COD</description></field>
+        <field name="codAllowCod" type="text-medium"><description>All shipment package items are from orders which have been fully paid via EXT_COD</description></field>
         <field name="codSurchargeAmount" type="number-decimal"><description>Surcharge amount</description></field>
         <field name="codSurchargeCurrencyUomId" type="text-medium"><description>Surcharge currency</description></field>
         <field name="codSurchargeApplyToPackage" type="text-medium"><description>Surcharge amount will be applied to each shipment package</description></field>
         <field name="codFundsCode" type="text-medium"><description>The code that indicates the type of funds used for the COD payment</description></field>
-        <field name="defaultReturnLabelMemo" type="text-long"><description>Return label email memo</description></field>
-        <field name="defaultReturnLabelSubject" type="text-long"><description>Return label subject</description></field>
+        <field name="defaultReturnLabelMemo" type="text-medium"><description>Return label email memo</description></field>
+        <field name="defaultReturnLabelSubject" type="text-medium"><description>Return label subject</description></field>
         <relationship type="one" fk-name="SGUPS_SGC" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfig">
             <key-map field-name="shipmentGatewayConfigId"/>
         </relationship>
     </entity>
     <entity entity-name="ShipmentGatewayUsps" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="connectUrl" type="text-long"><description>USPS Connection URL</description></field>
-        <field name="connectUrlLabels" type="text-long"><description>USPS Connection URL for Labels</description></field>
+        <field name="connectUrl" type="text-medium"><description>USPS Connection URL</description></field>
+        <field name="connectUrlLabels" type="text-medium"><description>USPS Connection URL for Labels</description></field>
         <field name="connectTimeout" type="number-integer"><description>Timeout in seconds</description></field>
-        <field name="accessUserId" type="text-long" encrypt="true"><description>USPS Access User ID</description></field>
-        <field name="accessPassword" type="text-long" encrypt="true"><description>USPS Access Password</description></field>
+        <field name="accessUserId" type="text-medium" encrypt="true"><description>USPS Access User ID</description></field>
+        <field name="accessPassword" type="text-medium" encrypt="true"><description>USPS Access Password</description></field>
         <field name="maxEstimateWeight" type="number-integer"><description>Estimate split into packages</description></field>
         <field name="test" type="text-medium"><description>Test/Production mode</description></field>
         <relationship type="one" fk-name="SGUSPS_SGC" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfig">
@@ -663,7 +663,7 @@ under the License.
         <field name="shipmentItemSeqId" type="id" is-pk="true"></field>
         <field name="productId" type="id"></field>
         <field name="quantity" type="number-decimal"></field>
-        <field name="shipmentContentDescription" type="text-long"></field>
+        <field name="shipmentContentDescription" type="text-medium"></field>
         <relationship type="one" fk-name="SHPMNT_ITM_SHPMT" related="org.apache.ofbiz.shipment.shipment.Shipment">
             <key-map field-name="shipmentId"/>
         </relationship>
@@ -709,7 +709,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="ShipmentMethodType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentMethodTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <field name="sequenceNum" type="number-integer"></field>
     </entity>
     <entity entity-name="ShipmentPackage" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
@@ -905,7 +905,7 @@ under the License.
         <field name="shipmentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="SHPMNT_TYPPAR" title="Parent" related="org.apache.ofbiz.shipment.shipment.ShipmentType">
             <key-map field-name="parentTypeId" related="shipmentTypeId"/>
         </relationship>
@@ -913,7 +913,7 @@ under the License.
     <entity entity-name="ShipmentTypeAttr" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentTypeId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="SHPMNT_TYPATR" related="org.apache.ofbiz.shipment.shipment.ShipmentType">
             <key-map field-name="shipmentTypeId"/>
         </relationship>
@@ -929,7 +929,7 @@ under the License.
         <field name="shipmentId" type="id"></field>
         <field name="shipmentItemSeqId" type="id"></field>
         <field name="shipmentPackageSeqId" type="id"></field>
-        <field name="description" type="text-long"></field>
+        <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="SHPNG_DOC_DOC" related="org.apache.ofbiz.content.document.Document">
             <key-map field-name="documentId"/>
         </relationship>
