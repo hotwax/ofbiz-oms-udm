@@ -285,10 +285,6 @@ under the License.
             <key-map field-name="plainTextContentId" related="contentId"/>
         </relationship>
     </extend-entity>
-    <extend-entity entity-name="PaymentGatewayPayPal" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
-        <field name="requireRefTransaction" type="text-indicator"><description>Indicates reference transaction is required or not if yes needs to be enabled on merchant paypal account</description></field>
-        <field name="paymentAction" type="text-medium"><description>Payment Method</description></field>
-    </extend-entity>
     <extend-entity entity-name="ReturnAdjustment" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="orderId" type="id"></field>
         <index name="RTN_ADJ_ORD_ID" unique="false">
