@@ -1625,38 +1625,5 @@ under the License.
         <alias entity-alias="OI" name="cancelQuantity"/>
         <alias entity-alias="OI" name="statusId"/>
     </view-entity>
-
-    <view-entity entity-name="OrderShipmentAndRouteSegment" package="co.hotwax.customerservice.order" group="ofbiz_transactional">
-        <member-entity entity-alias="OH" entity-name="OrderHeader"/>
-        <member-entity entity-alias="OISG" entity-name="OrderItemShipGroup" join-from-alias="OH">
-            <key-map field-name="orderId"/>
-        </member-entity>
-        <member-entity entity-alias="S" entity-name="Shipment" join-from-alias="OISG">
-            <key-map field-name="orderId"  related="primaryOrderId"/>
-            <key-map field-name="shipGroupSeqId" related="primaryShipGroupSeqId"/>
-        </member-entity>
-        <member-entity entity-alias="SRS" entity-name="ShipmentRouteSegment" join-from-alias="S">
-            <key-map field-name="shipmentId" related="shipmentId"/>
-        </member-entity>
-        <alias entity-alias="OH" name="orderId" />
-        <alias entity-alias="OH" name="orderDate"/>
-        <alias entity-alias="OH" name="orderTypeId"/>
-        <alias entity-alias="OH" name="webSiteId"/>
-        <alias entity-alias="OH" name="externalId"/>
-        <alias entity-alias="OH" name="orderName"/>
-        <alias entity-alias="OH" name="statusId"/>
-        <alias entity-alias="OH" field="originFacilityId" name="originFacilityId" />
-        <alias entity-alias="OISG" name="shipGroupSeqId" />
-        <alias entity-alias="OISG" name="orderFacilityId"/>
-        <alias entity-alias="OISG" name="facilityId"/>
-        <alias entity-alias="OISG" name="carrierPartyId"/>
-        <alias entity-alias="OISG" name="shipmentMethodTypeId"/>
-        <alias entity-alias="S" name="shipmentId" />
-        <alias entity-alias="S" name="shipmentTypeId"/>
-        <alias entity-alias="S" field="statusId" name="shipmentStatusId"/>
-        <alias entity-alias="S" field="createdDate" name="shipmentCreatedDate"/>
-        <alias entity-alias="S" field="estimatedShipDate" name="shipmentShippedDate"/>
-        <alias entity-alias="SRS" name="trackingIdNumber"/>
-    </view-entity>
     
 </entities>
