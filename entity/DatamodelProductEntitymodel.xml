@@ -1015,19 +1015,6 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="InventoryItemTempRes" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
-        <field name="visitId" type="id" is-pk="true"></field>
-        <field name="productId" type="id" is-pk="true"></field>
-        <field name="productStoreId" type="id" is-pk="true"></field>
-        <field name="quantity" type="number-decimal"></field>
-        <field name="reservedDate" type="date-time"></field>
-        <relationship type="one" fk-name="INV_ITEM_RS_PROD" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="INV_ITEM_TR_PRDS" related="org.apache.ofbiz.product.store.ProductStore">
-            <key-map field-name="productStoreId"/>
-        </relationship>
-    </entity>
     <entity entity-name="InventoryItemType" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
         <field name="inventoryItemTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
@@ -1329,10 +1316,6 @@ under the License.
         <field name="quantityBreakTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-    <entity entity-name="SaleType" package="org.apache.ofbiz.product.price" group="ofbiz_transactional">
-        <field name="saleTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
     <entity entity-name="GoodIdentification" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
         <field name="goodIdentificationTypeId" type="id" is-pk="true"></field>
         <field name="productId" type="id" is-pk="true"></field>
@@ -1431,9 +1414,6 @@ under the License.
         <field name="lotIdFilledIn" type="text-medium"><description>Indicate if the lotId must be informed</description></field>
         <field name="orderDecimalQuantity" type="text-indicator"><description>use to indicate if decimal quantity can be ordered for this product. Default value is Y</description></field>
         <relationship type="one" fk-name="PROD_TYPE" related="org.apache.ofbiz.product.product.ProductType">
-            <key-map field-name="productTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.product.product.ProductTypeAttr">
             <key-map field-name="productTypeId"/>
         </relationship>
         <relationship type="one" fk-name="PROD_PRIMARY_CAT" title="Primary" related="org.apache.ofbiz.product.category.ProductCategory">
@@ -1564,9 +1544,6 @@ under the License.
         <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="PROD_ATTR" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.product.product.ProductTypeAttr">
-            <key-map field-name="attrName"/>
         </relationship>
     </entity>
     <entity entity-name="ProductCalculatedInfo" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
@@ -1748,18 +1725,6 @@ under the License.
         <field name="removeStems" type="text-indicator"></field>
         <field name="lowValue" type="text-medium"></field>
         <field name="highValue" type="text-medium"></field>
-        <relationship type="one" fk-name="PROD_SCHRSI_RES" related="org.apache.ofbiz.product.product.ProductSearchResult">
-            <key-map field-name="productSearchResultId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ProductSearchResult" package="org.apache.ofbiz.product.product" cache="never" group="ofbiz_transactional">
-        <field name="productSearchResultId" type="id" is-pk="true"></field>
-        <field name="visitId" type="id"></field>
-        <field name="orderByName" type="text-medium"></field>
-        <field name="isAscending" type="text-indicator"></field>
-        <field name="numResults" type="number-integer"></field>
-        <field name="secondsTotal" type="number-float"></field>
-        <field name="searchDate" type="date-time"></field>
     </entity>
     <entity entity-name="ProductType" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
         <field name="productTypeId" type="id" is-pk="true"></field>
@@ -1770,20 +1735,6 @@ under the License.
         <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="PROD_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.product.product.ProductType">
             <key-map field-name="parentTypeId" related="productTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ProductTypeAttr" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
-        <field name="productTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="PROD_TYPE_ATTR" related="org.apache.ofbiz.product.product.ProductType">
-            <key-map field-name="productTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.product.product.ProductAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productTypeId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
@@ -2264,20 +2215,6 @@ under the License.
         <field name="productStoreGroupTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-    <entity entity-name="ProductStoreKeywordOvrd" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
-        <field name="productStoreId" type="id" is-pk="true"></field>
-        <field name="keyword" type="text-medium" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="target" type="text-medium"></field>
-        <field name="targetTypeEnumId" type="id"></field>
-        <relationship type="one" fk-name="PRDSTRKWO_PRDS" related="org.apache.ofbiz.product.store.ProductStore">
-            <key-map field-name="productStoreId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRDSTRKWO_ENM" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="targetTypeEnumId" related="enumId"/>
-        </relationship>
-    </entity>
     <entity entity-name="ProductStorePaymentSetting" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
         <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="paymentMethodTypeId" type="id" is-pk="true"></field>
@@ -2708,30 +2645,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="MARKET_INT_PCGRP" related="org.apache.ofbiz.party.party.PartyClassificationGroup">
             <key-map field-name="partyClassificationGroupId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ReorderGuideline" package="org.apache.ofbiz.product.supplier" group="ofbiz_transactional">
-        <field name="reorderGuidelineId" type="id" is-pk="true"></field>
-        <field name="productId" type="id"></field>
-        <field name="partyId" type="id"></field>
-        <field name="roleTypeId" type="id"></field>
-        <field name="facilityId" type="id"></field>
-        <field name="geoId" type="id"></field>
-        <field name="fromDate" type="date-time"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="reorderQuantity" type="number-decimal"></field>
-        <field name="reorderLevel" type="number-decimal"></field>
-        <relationship type="one" fk-name="REORDER_GD_PROD" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="REORDER_GD_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="REORDER_GD_FAC" related="org.apache.ofbiz.product.facility.Facility">
-            <key-map field-name="facilityId"/>
-        </relationship>
-        <relationship type="one" fk-name="REORDER_GD_GEO" related="org.apache.ofbiz.common.geo.Geo">
-            <key-map field-name="geoId"/>
         </relationship>
     </entity>
     <entity entity-name="SupplierPrefOrder" package="org.apache.ofbiz.product.supplier" group="ofbiz_transactional">

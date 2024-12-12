@@ -263,21 +263,6 @@ under the License.
             <key-map field-name="returnItemSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentReceiptRole" package="org.apache.ofbiz.shipment.receipt" group="ofbiz_transactional">
-        <field name="receiptId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="SHP_RCPTRL_RCPT" related="org.apache.ofbiz.shipment.receipt.ShipmentReceipt">
-            <key-map field-name="receiptId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHP_RCPTRL_PTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHP_RCPTRL_PTRL" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="CarrierShipmentMethod" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">

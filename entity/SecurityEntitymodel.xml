@@ -80,22 +80,6 @@ under the License.
             <key-map field-name="userLoginId"/>
         </relationship>
     </entity>
-    <entity entity-name="UserLoginKey" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
-        <field name="userLoginId" type="id-long" is-pk="true"></field>
-        <field name="loginKey" type="text-medium" encrypt="true"></field>
-        <field name="purpose" type="text-medium"></field>
-        <field name="comments" type="text-medium"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="createdByUserLogin" type="id-long"></field>
-        <field name="createdDate" type="date-time"></field>
-        <relationship type="one" fk-name="USER_KEY_USER" related="org.apache.ofbiz.security.login.UserLogin">
-            <key-map field-name="userLoginId"/>
-        </relationship>
-        <relationship type="one" fk-name="CNCT_LST_CBUL" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
-            <key-map field-name="createdByUserLogin" related="userLoginId"/>
-        </relationship>
-    </entity>
     <entity entity-name="SecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
         <field name="groupId" type="id" is-pk="true"></field>
         <field name="groupName" type="text-medium"></field>

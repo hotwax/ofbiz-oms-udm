@@ -402,9 +402,6 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemGroupSeqId"/>
         </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.order.OrderItemTypeAttr">
-            <key-map field-name="orderItemTypeId"/>
-        </relationship>
         <relationship type="one" fk-name="ORDER_ITEM_PRODUCT" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
         </relationship>
@@ -503,9 +500,6 @@ under the License.
         <relationship type="one" fk-name="ORDER_ITEM_ATTR" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.order.OrderItemTypeAttr">
-            <key-map field-name="attrName"/>
         </relationship>
         <index name="ORDR_ID_ATTR_NAME_IDX">
             <index-field name="orderId"/>
@@ -641,29 +635,6 @@ under the License.
             <key-map field-name="productPriceActionSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemRole" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-        <field name="orderId" type="id" is-pk="true"></field>
-        <field name="orderItemSeqId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="ORDER_ITRL_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
-            <key-map field-name="orderId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_ITRL_OITM" related="org.apache.ofbiz.order.order.OrderItem">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_ITRL_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_ITRL_PTRLE" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-    </entity>
     <entity entity-name="OrderItemShipGroup" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="shipGroupSeqId" type="id" is-pk="true"></field>
@@ -784,36 +755,6 @@ under the License.
         <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="ORDER_ITEM_TYPPAR" title="Parent" related="org.apache.ofbiz.order.order.OrderItemType">
             <key-map field-name="parentTypeId" related="orderItemTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="OrderItemTypeAttr" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-        <field name="orderItemTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="ORDER_ITEM_TYPATR" related="org.apache.ofbiz.order.order.OrderItemType">
-            <key-map field-name="orderItemTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.order.OrderItemAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.order.OrderItem">
-            <key-map field-name="orderItemTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="OrderNotification" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
-        <field name="orderNotificationId" type="id" is-pk="true"></field>
-        <field name="orderId" type="id"></field>
-        <field name="emailType" type="id"></field>
-        <field name="comments" type="text-medium"></field>
-        <field name="notificationDate" type="date-time"></field>
-        <relationship type="one" fk-name="ORD_NOTIFY_ORDHDR" related="org.apache.ofbiz.order.order.OrderHeader">
-            <key-map field-name="orderId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.order.OrderItem">
-            <key-map field-name="orderId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORD_NOTIFY_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="emailType" related="enumId"/>
         </relationship>
     </entity>
     <entity entity-name="OrderPaymentPreference" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
@@ -962,20 +903,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="ORDER_STTS_USER" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="statusUserLogin" related="userLoginId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="OrderSummaryEntry" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
-        <field name="entryDate" type="date" is-pk="true"></field>
-        <field name="productId" type="id" is-pk="true"></field>
-        <field name="facilityId" type="id" is-pk="true"></field>
-        <field name="totalQuantity" type="number-decimal"></field>
-        <field name="grossSales" type="currency-amount"></field>
-        <field name="productCost" type="currency-amount"></field>
-        <relationship type="one" fk-name="ORDER_SMENT_PROD" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_SMENT_FAC" related="org.apache.ofbiz.product.facility.Facility">
-            <key-map field-name="facilityId"/>
         </relationship>
     </entity>
     <entity entity-name="OrderTerm" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
@@ -1235,21 +1162,6 @@ under the License.
             <key-map field-name="noteId"/>
         </relationship>
     </entity>
-    <entity entity-name="CustRequestItemWorkEffort" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-        <field name="custRequestId" type="id" is-pk="true"></field>
-        <field name="custRequestItemSeqId" type="id" is-pk="true"></field>
-        <field name="workEffortId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="WORK_REQFL_CSTRQ" related="org.apache.ofbiz.order.request.CustRequestItem">
-            <key-map field-name="custRequestId"/>
-            <key-map field-name="custRequestItemSeqId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.order.request.CustRequest">
-            <key-map field-name="custRequestId"/>
-        </relationship>
-        <relationship type="one" fk-name="CUST_REQ_WEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
-            <key-map field-name="workEffortId"/>
-        </relationship>
-    </entity>
     <entity entity-name="CustRequestResolution" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
         <field name="custRequestResolutionId" type="id" is-pk="true"></field>
         <field name="custRequestTypeId" type="id"></field>
@@ -1339,22 +1251,6 @@ under the License.
             <key-map field-name="workEffortId"/>
         </relationship>
     </entity>
-    <entity entity-name="RespondingParty" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
-        <field name="respondingPartySeqId" type="id" is-pk="true"></field>
-        <field name="custRequestId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="contactMechId" type="id"></field>
-        <field name="dateSent" type="date-time"></field>
-        <relationship type="one" fk-name="RESP_PTY_CSREQ" related="org.apache.ofbiz.order.request.CustRequest">
-            <key-map field-name="custRequestId"/>
-        </relationship>
-        <relationship type="one" fk-name="RESP_PTY_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="RESP_PTY_CMECH" related="org.apache.ofbiz.party.contact.ContactMech">
-            <key-map field-name="contactMechId"/>
-        </relationship>
-    </entity>
     <entity entity-name="DesiredFeature" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
         <field name="desiredFeatureId" type="id" is-pk="true"></field>
         <field name="requirementId" type="id" is-pk="true"></field>
@@ -1405,9 +1301,6 @@ under the License.
         <relationship type="one" fk-name="REQ_TYPE" related="org.apache.ofbiz.order.requirement.RequirementType">
             <key-map field-name="requirementTypeId"/>
         </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.requirement.RequirementTypeAttr">
-            <key-map field-name="requirementTypeId"/>
-        </relationship>
         <relationship type="one" fk-name="REQ_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
             <key-map field-name="facilityId"/>
         </relationship>
@@ -1425,9 +1318,6 @@ under the License.
         <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="REQ_ATTR" related="org.apache.ofbiz.order.requirement.Requirement">
             <key-map field-name="requirementId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.requirement.RequirementTypeAttr">
-            <key-map field-name="attrName"/>
         </relationship>
     </entity>
     <entity entity-name="RequirementCustRequest" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
@@ -1484,20 +1374,6 @@ under the License.
         <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="REQ_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.order.requirement.RequirementType">
             <key-map field-name="parentTypeId" related="requirementTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="RequirementTypeAttr" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-        <field name="requirementTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="REQ_TYPE_ATTR" related="org.apache.ofbiz.order.requirement.RequirementType">
-            <key-map field-name="requirementTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.requirement.RequirementAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.requirement.Requirement">
-            <key-map field-name="requirementTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="WorkReqFulfType" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
