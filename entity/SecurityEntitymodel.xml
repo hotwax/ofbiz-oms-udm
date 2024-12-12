@@ -42,7 +42,52 @@ under the License.
             <key-map field-name="disabledBy" related="userLoginId"/>
         </relationship>
     </entity>
+    <entity entity-name="UserLoginPasswordHistory" package="org.apache.ofbiz.security.login" cache="never" group="ofbiz_transactional">
+        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
+        <field name="currentPassword" type="text-medium"></field>
+        <relationship type="one" fk-name="USER_LPH_USER" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="userLoginId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+        <field name="groupId" type="id" is-pk="true"></field>
+        <field name="groupName" type="text-medium"></field>
+        <field name="description" type="text-medium"></field>
+    </entity>
+    <entity entity-name="SecurityGroupPermission" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+<description>Defines a permission available to a security group; there is no FK to SecurityPermission because we want to leave open the possibility of ad-hoc permissions, especially for the Entity Data Maintenance pages which have TONS of permissions</description>        <field name="groupId" type="id" is-pk="true"></field>
+        <field name="permissionId" type="id-long" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
+        <relationship type="one" fk-name="SEC_GRP_PERM_GRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
+            <key-map field-name="groupId"/>
+        </relationship>
+        <relationship type="one-nofk" related="org.apache.ofbiz.security.securitygroup.SecurityPermission">
+            <key-map field-name="permissionId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SecurityPermission" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+        <field name="permissionId" type="id-long" is-pk="true"></field>
+        <field name="description" type="text-medium"></field>
+    </entity>
     <!-- TODO: skipped element view-entity -->
+    <entity entity-name="UserLoginSecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+<description>Maps a UserLogin to a security group</description>        <field name="userLoginId" type="id-long" is-pk="true"></field>
+        <field name="groupId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
+        <relationship type="one" fk-name="USER_SECGRP_USER" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="userLoginId"/>
+        </relationship>
+        <relationship type="one" fk-name="USER_SECGRP_GRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
+            <key-map field-name="groupId"/>
+        </relationship>
+        <relationship type="many" related="org.apache.ofbiz.security.securitygroup.SecurityGroupPermission">
+            <key-map field-name="groupId"/>
+        </relationship>
+    </entity>
     <!-- TODO: skipped element view-entity -->
 </entities>
 

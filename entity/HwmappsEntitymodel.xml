@@ -92,6 +92,13 @@ under the License.
         <field name="isShippingWeightRequired" type="text-indicator"></field>
         <field name="isTrackingRequired" type="text-indicator"></field>
     </extend-entity>
+    <extend-entity entity-name="SecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+        <field name="groupName" type="text-medium"></field>
+        <field name="groupTypeEnumId" type="id"></field>
+        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="groupTypeEnumId" related="enumId"/>
+        </relationship>
+    </extend-entity>
     <extend-entity entity-name="EmailTemplateSetting" package="org.apache.ofbiz.common.email" group="ofbiz_transactional">
         <field name="templateContentId" type="id"></field>
         <field name="plainTextContentId" type="id"></field>
@@ -1348,6 +1355,17 @@ under the License.
     </entity>
     <extend-entity entity-name="OrderAdjustment" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="billingShipmentId" type="id"></field>
+    </extend-entity>
+    <extend-entity entity-name="UserLoginSecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
+        <field name="createdDate" type="date-time"></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="changeByUserLoginId" type="id-long"></field>
+        <relationship type="one" fk-name="USR_LOGIN_SEC_GRP_CBUL" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="createdByUserLogin" related="userLoginId"/>
+        </relationship>
+        <relationship type="one" fk-name="USR_LOGIN_SEC_GRP_UL" title="ChangeBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="changeByUserLoginId" related="userLoginId"/>
+        </relationship>
     </extend-entity>
 </entities>
 

@@ -596,6 +596,9 @@ under the License.
         <relationship type="one" fk-name="PARTY_REL_TYPE" related="org.apache.ofbiz.party.party.PartyRelationshipType">
             <key-map field-name="partyRelationshipTypeId"/>
         </relationship>
+        <relationship type="one" fk-name="PARTY_REL_SECGRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
+            <key-map field-name="securityGroupId" related="groupId"/>
+        </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="PartyRelationshipType" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
