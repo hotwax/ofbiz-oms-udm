@@ -21,330 +21,6 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
-    <entity entity-name="Agreement" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="productId" type="id"></field>
-        <field name="partyIdFrom" type="id"></field>
-        <field name="partyIdTo" type="id"></field>
-        <field name="roleTypeIdFrom" type="id"></field>
-        <field name="roleTypeIdTo" type="id"></field>
-        <field name="agreementTypeId" type="id"></field>
-        <field name="agreementDate" type="date-time"></field>
-        <field name="fromDate" type="date-time"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="description" type="text-medium"></field>
-        <field name="textData" type="text-very-long"></field>
-        <relationship type="one" fk-name="AGRMNT_PRODUCT" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one-nofk" title="From" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyIdFrom" related="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" title="From" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeIdFrom" related="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_FPRTYRLE" title="From" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyIdFrom" related="partyId"/>
-            <key-map field-name="roleTypeIdFrom" related="roleTypeId"/>
-        </relationship>
-        <relationship type="one-nofk" title="To" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyIdTo" related="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" title="To" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeIdTo" related="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_TPRTYRLE" title="To" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyIdTo" related="partyId"/>
-            <key-map field-name="roleTypeIdTo" related="roleTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.party.PartyRelationship">
-            <key-map field-name="roleTypeIdFrom"/>
-            <key-map field-name="roleTypeIdTo"/>
-            <key-map field-name="partyIdFrom"/>
-            <key-map field-name="partyIdTo"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_TYPE" related="org.apache.ofbiz.party.agreement.AgreementType">
-            <key-map field-name="agreementTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.AgreementTypeAttr">
-            <key-map field-name="agreementTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementAttribute" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-medium"></field>
-        <field name="attrDescription" type="text-medium"></field>
-        <relationship type="one" fk-name="AGRMNT_ATTR" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.AgreementTypeAttr">
-            <key-map field-name="attrName"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementGeographicalApplic" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="agreementItemSeqId" type="id" is-pk="true"></field>
-        <field name="geoId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="AGRMNT_GEOAP_AGR" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_GEOAP_AGRI" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementId"/>
-            <key-map field-name="agreementItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_GEOAP_GEO" related="org.apache.ofbiz.common.geo.Geo">
-            <key-map field-name="geoId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementItem" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="agreementItemSeqId" type="id" is-pk="true"></field>
-        <field name="agreementItemTypeId" type="id"></field>
-        <field name="currencyUomId" type="id"></field>
-        <field name="agreementText" type="text-very-long"></field>
-        <field name="agreementImage" type="binary-very-long"></field>
-        <relationship type="one" fk-name="AGRMNT_ITEM_AGR" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_ITEM_TYPE" related="org.apache.ofbiz.party.agreement.AgreementItemType">
-            <key-map field-name="agreementItemTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.AgreementItemTypeAttr">
-            <key-map field-name="agreementItemTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementItemAttribute" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="agreementItemSeqId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-medium"></field>
-        <field name="attrDescription" type="text-medium"></field>
-        <relationship type="one" fk-name="AGRMNT_ITEM_ATTR" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementId"/>
-            <key-map field-name="agreementItemSeqId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.AgreementItemTypeAttr">
-            <key-map field-name="attrName"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementItemType" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementItemTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="AGRMNT_TYPEPAR" title="Parent" related="org.apache.ofbiz.party.agreement.AgreementItemType">
-            <key-map field-name="parentTypeId" related="agreementItemTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementItemTypeAttr" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementItemTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="AGRMNT_ITEM_TYPATR" related="org.apache.ofbiz.party.agreement.AgreementItemType">
-            <key-map field-name="agreementItemTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.AgreementItemAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementItemTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementContent" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="agreementItemSeqId" type="id" is-pk="true"></field>
-        <field name="agreementContentTypeId" type="id" is-pk="true"></field>
-        <field name="contentId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="AG_CNT_PROD" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one" fk-name="AG_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
-        </relationship>
-        <relationship type="one" fk-name="AG_CNT_TYPE" related="org.apache.ofbiz.party.agreement.AgreementContentType">
-            <key-map field-name="agreementContentTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementContentType" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementContentTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="AGCT_TYP_PARENT" title="Parent" related="org.apache.ofbiz.party.agreement.AgreementContentType">
-            <key-map field-name="parentTypeId" related="agreementContentTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementPartyApplic" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="agreementItemSeqId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="AGRMNT_PTYA_AGR" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementId"/>
-            <key-map field-name="agreementItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_PTYA_PTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementProductAppl" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="agreementItemSeqId" type="id" is-pk="true"></field>
-        <field name="productId" type="id" is-pk="true"></field>
-        <field name="price" type="currency-precise"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_PRDA_AITM" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementId"/>
-            <key-map field-name="agreementItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_PRDA_PRD" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementPromoAppl" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="agreementItemSeqId" type="id" is-pk="true"></field>
-        <field name="productPromoId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="sequenceNum" type="number-integer"></field>
-        <relationship type="one" fk-name="AGRMNT_PROM_PRO" related="org.apache.ofbiz.product.promo.ProductPromo">
-            <key-map field-name="productPromoId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_PROM_AITM" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementId"/>
-            <key-map field-name="agreementItemSeqId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementRole" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="AGRMNT_ROLE_AGR" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_ROLE_PTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_ROLE_PRLE" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementTerm" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementTermId" type="id" is-pk="true"></field>
-        <field name="termTypeId" type="id"></field>
-        <field name="agreementId" type="id"></field>
-        <field name="agreementItemSeqId" type="id"></field>
-        <field name="invoiceItemTypeId" type="id"></field>
-        <field name="fromDate" type="date-time"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="termValue" type="currency-precise"></field>
-        <field name="termDays" type="number-integer"></field>
-        <field name="textValue" type="text-medium"></field>
-        <field name="minQuantity" type="number-float"></field>
-        <field name="maxQuantity" type="number-float"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="AGRMNT_TERM_TTYP" related="org.apache.ofbiz.party.agreement.TermType">
-            <key-map field-name="termTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_TERM_AGR" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_TERM_AITM" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementId"/>
-            <key-map field-name="agreementItemSeqId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementTermAttribute" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementTermId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-medium"></field>
-        <field name="attrDescription" type="text-medium"></field>
-        <relationship type="one" fk-name="AGRMNT_TERM_ATTR" related="org.apache.ofbiz.party.agreement.AgreementTerm">
-            <key-map field-name="agreementTermId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementType" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="AGRMNT_TYPE_PAR" title="Parent" related="org.apache.ofbiz.party.agreement.AgreementType">
-            <key-map field-name="parentTypeId" related="agreementTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementTypeAttr" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="AGRMNT_TYPE_ATTR" related="org.apache.ofbiz.party.agreement.AgreementType">
-            <key-map field-name="agreementTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.AgreementAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AgreementWorkEffortApplic" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="agreementItemSeqId" type="id" is-pk="true"></field>
-        <field name="workEffortId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="AGRMNT_WEA_AGRMNT" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementId"/>
-            <key-map field-name="agreementItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_WEA_WE" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
-            <key-map field-name="workEffortId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="TermType" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="termTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="TERM_TYPE_PAR" title="Parent" related="org.apache.ofbiz.party.agreement.TermType">
-            <key-map field-name="parentTypeId" related="termTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="TermTypeAttr" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="termTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="TERM_TYPATR_TTYP" related="org.apache.ofbiz.party.agreement.TermType">
-            <key-map field-name="termTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.AgreementTermAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.agreement.AgreementTerm">
-            <key-map field-name="termTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.order.OrderTermAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.order.OrderTerm">
-            <key-map field-name="termTypeId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
@@ -434,9 +110,6 @@ under the License.
         <relationship type="one" fk-name="COM_EVNT_TCM" title="To" related="org.apache.ofbiz.party.contact.ContactMech">
             <key-map field-name="contactMechIdTo" related="contactMechId"/>
         </relationship>
-        <relationship type="one" fk-name="COM_EVNT_MIMETYPE" related="org.apache.ofbiz.content.data.MimeType">
-            <key-map field-name="contentMimeTypeId" related="mimeTypeId"/>
-        </relationship>
         <relationship type="one" fk-name="COM_EVNT_RESENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="reasonEnumId" related="enumId"/>
         </relationship>
@@ -450,16 +123,6 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="CommunicationEventProduct" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
-        <field name="productId" type="id" is-pk="true"></field>
-        <field name="communicationEventId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="COMEV_PROD_PROD" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="COMEV_PROD_CMEV" related="org.apache.ofbiz.party.communication.CommunicationEvent">
-            <key-map field-name="communicationEventId"/>
-        </relationship>
-    </entity>
     <entity entity-name="CommunicationEventPrpTyp" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
         <field name="communicationEventPrpTypId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
@@ -559,14 +222,6 @@ under the License.
         <relationship type="one" fk-name="CONT_MECH_TP_PRPTP" related="org.apache.ofbiz.party.contact.ContactMechPurposeType">
             <key-map field-name="contactMechPurposeTypeId"/>
         </relationship>
-    </entity>
-    <entity entity-name="EmailAddressVerification" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
-<description>Holds hashes for email address verification</description>        <field name="emailAddress" type="id-long" is-pk="true"></field>
-        <field name="verifyHash" type="text-medium"></field>
-        <field name="expireDate" type="date-time"></field>
-        <index name="EMAIL_VERIFY_HASH" unique="true">
-            <index-field name="verifyHash"/>
-        </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="PartyContactMech" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
@@ -699,16 +354,6 @@ under the License.
             <index-field name="postalCode"/>
         </index>
     </entity>
-    <entity entity-name="PostalAddressBoundary" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
-        <field name="contactMechId" type="id" is-pk="true"></field>
-        <field name="geoId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="POST_ADDR_BNDRY" related="org.apache.ofbiz.party.contact.PostalAddress">
-            <key-map field-name="contactMechId"/>
-        </relationship>
-        <relationship type="one" fk-name="POST_ADDR_BNDRYGEO" related="org.apache.ofbiz.common.geo.Geo">
-            <key-map field-name="geoId"/>
-        </relationship>
-    </entity>
     <entity entity-name="TelecomNumber" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
         <field name="contactMechId" type="id" is-pk="true"></field>
         <field name="countryCode" type="text-short"></field>
@@ -728,84 +373,10 @@ under the License.
             <index-field name="contactNumber"/>
         </index>
     </entity>
-    <entity entity-name="ValidContactMechRole" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <field name="contactMechTypeId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="VAL_CMRLE_ROLE" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="VAL_CMRLE_CMTYPE" related="org.apache.ofbiz.party.contact.ContactMechType">
-            <key-map field-name="contactMechTypeId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="NeedType" package="org.apache.ofbiz.party.need" group="ofbiz_transactional">
-        <field name="needTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
-    <entity entity-name="PartyNeed" package="org.apache.ofbiz.party.need" group="ofbiz_transactional">
-        <field name="partyNeedId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <field name="partyTypeId" type="id"></field>
-        <field name="needTypeId" type="id"></field>
-        <field name="communicationEventId" type="id"></field>
-        <field name="productId" type="id"></field>
-        <field name="productCategoryId" type="id"></field>
-        <field name="visitId" type="id"></field>
-        <field name="datetimeRecorded" type="date-time"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="PARTY_NEED_NDTP" related="org.apache.ofbiz.party.need.NeedType">
-            <key-map field-name="needTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_NEED_PTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_NEED_RTYP" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_NEED_PTTP" related="org.apache.ofbiz.party.party.PartyType">
-            <key-map field-name="partyTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_NEED_CMEV" related="org.apache.ofbiz.party.communication.CommunicationEvent">
-            <key-map field-name="communicationEventId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_NEED_PROD" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_NEED_PCAT" related="org.apache.ofbiz.product.category.ProductCategory">
-            <key-map field-name="productCategoryId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="AddressMatchMap" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="mapKey" type="id-long" is-pk="true"></field>
-        <field name="mapValue" type="id-long" is-pk="true"></field>
-        <field name="sequenceNum" type="number-integer"></field>
-    </entity>
-    <entity entity-name="Affiliate" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="affiliateName" type="text-medium"></field>
-        <field name="affiliateDescription" type="text-medium"></field>
-        <field name="yearEstablished" type="text-short"></field>
-        <field name="siteType" type="text-medium"></field>
-        <field name="sitePageViews" type="text-medium"></field>
-        <field name="siteVisitors" type="text-medium"></field>
-        <field name="dateTimeCreated" type="date-time"></field>
-        <field name="dateTimeApproved" type="date-time"></field>
-        <relationship type="one" fk-name="AFFILIATE_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="AFFILIATE_PGRP" related="org.apache.ofbiz.party.party.PartyGroup">
-            <key-map field-name="partyId"/>
-        </relationship>
-    </entity>
     <entity entity-name="Party" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="partyTypeId" type="id"></field>
@@ -833,9 +404,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="PARTY_STATUSITM" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_DATSRC" related="org.apache.ofbiz.common.datasource.DataSource">
-            <key-map field-name="dataSourceId"/>
         </relationship>
         <index name="PARTYEXT_ID_IDX">
             <index-field name="externalId"/>
@@ -869,18 +437,6 @@ under the License.
         <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="PARTY_ID_TYPE_PAR" title="Parent" related="org.apache.ofbiz.party.party.PartyIdentificationType">
             <key-map field-name="parentTypeId" related="partyIdentificationTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PartyGeoPoint" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="geoPointId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="PARTYGEOPT_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTYGEOPT_GEOPT" related="org.apache.ofbiz.common.geo.GeoPoint">
-            <key-map field-name="geoPointId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
@@ -966,20 +522,6 @@ under the License.
             <key-map field-name="parentTypeId" related="partyContentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="PartyDataSource" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="dataSourceId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="visitId" type="id"></field>
-        <field name="comments" type="text-medium"></field>
-        <field name="isCreate" type="text-indicator"></field>
-        <relationship type="one" fk-name="PARTY_DATSRC_PTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_DATSRC_DSC" related="org.apache.ofbiz.common.datasource.DataSource">
-            <key-map field-name="dataSourceId"/>
-        </relationship>
-    </entity>
     <entity entity-name="PartyGroup" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="groupName" type="text-medium"></field>
@@ -997,51 +539,6 @@ under the License.
             <index-field name="groupName"/>
         </index>
     </entity>
-    <entity entity-name="PartyIcsAvsOverride" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="avsDeclineString" type="text-medium"></field>
-        <relationship type="one" fk-name="PARTY_ICSAVS_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PartyInvitation" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyInvitationId" type="id" is-pk="true"></field>
-        <field name="partyIdFrom" type="id"></field>
-        <field name="partyId" type="id"></field>
-        <field name="toName" type="text-medium"></field>
-        <field name="emailAddress" type="text-medium"></field>
-        <field name="statusId" type="id"></field>
-        <field name="lastInviteDate" type="date-time"></field>
-        <relationship type="one" fk-name="PTYINV_PTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyIdFrom" related="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PTYINV_STTS" related="org.apache.ofbiz.common.status.StatusItem">
-            <key-map field-name="statusId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PartyInvitationGroupAssoc" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyInvitationId" type="id" is-pk="true"></field>
-        <field name="partyIdTo" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="PTYINVGA_PTYGRP" title="To" related="org.apache.ofbiz.party.party.PartyGroup">
-            <key-map field-name="partyIdTo" related="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PTYINVGA_PTYTO" title="To" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyIdTo" related="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PTYINVGA_PTYINV" related="org.apache.ofbiz.party.party.PartyInvitation">
-            <key-map field-name="partyInvitationId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PartyInvitationRoleAssoc" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyInvitationId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="PTYINVROLE_ROLET" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PTYINVROLE_PTYINV" related="org.apache.ofbiz.party.party.PartyInvitation">
-            <key-map field-name="partyInvitationId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="PartyNameHistory" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
         <field name="partyId" type="id" is-pk="true"></field>
@@ -1057,31 +554,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyNote" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="noteId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="PARTY_NOTE_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_NOTE_NOTE" related="org.apache.ofbiz.common.note.NoteData">
-            <key-map field-name="noteId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyProfileDefault" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="productStoreId" type="id" is-pk="true"></field>
-        <field name="defaultShipAddr" type="id"></field>
-        <field name="defaultBillAddr" type="id"></field>
-        <field name="defaultPayMeth" type="id"></field>
-        <field name="defaultShipMeth" type="id-long"></field>
-        <relationship type="one" fk-name="PARTY_PROF_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_PROF_PSTORE" related="org.apache.ofbiz.product.store.ProductStore">
-            <key-map field-name="productStoreId"/>
-        </relationship>
-    </entity>
     <entity entity-name="PartyRelationship" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
         <field name="partyIdFrom" type="id" is-pk="true"></field>
         <field name="partyIdTo" type="id" is-pk="true"></field>
@@ -1122,9 +595,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="PARTY_REL_TYPE" related="org.apache.ofbiz.party.party.PartyRelationshipType">
             <key-map field-name="partyRelationshipTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_REL_SECGRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
-            <key-map field-name="securityGroupId" related="groupId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
@@ -1260,44 +730,11 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="Vendor" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="manifestCompanyName" type="text-medium"></field>
-        <field name="manifestCompanyTitle" type="text-medium"></field>
-        <field name="manifestLogoUrl" type="text-medium"></field>
-        <field name="manifestPolicies" type="text-very-long"></field>
-        <relationship type="one" fk-name="VENDOR_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-    </entity>
-    <extend-entity entity-name="CustomTimePeriod" package="org.apache.ofbiz.common.period" group="ofbiz_transactional">
-        <field name="organizationPartyId" type="id"></field>
-        <relationship type="one" fk-name="ORG_PRD_PARTY" title="Organization" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="organizationPartyId" related="partyId"/>
-        </relationship>
-    </extend-entity>
     <extend-entity entity-name="NoteData" package="org.apache.ofbiz.common.note" group="ofbiz_transactional">
         <field name="noteParty" type="id"></field>
         <relationship type="one" fk-name="NOTE_DATA_PTY" title="Note" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="noteParty" related="partyId"/>
         </relationship>
-    </extend-entity>
-    <extend-entity entity-name="ServerHit" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
-        <field name="internalContentId" type="id"></field>
-        <field name="partyId" type="id"></field>
-        <field name="idByIpContactMechId" type="id"></field>
-        <field name="refByWebContactMechId" type="id"></field>
-    </extend-entity>
-    <extend-entity entity-name="ServerHitBin" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
-        <field name="internalContentId" type="id"></field>
-    </extend-entity>
-    <extend-entity entity-name="Visit" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
-        <field name="contactMechId" type="id"></field>
-        <field name="partyId" type="id"></field>
-        <field name="roleTypeId" type="id"></field>
-    </extend-entity>
-    <extend-entity entity-name="Visitor" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
-        <field name="partyId" type="id"></field>
     </extend-entity>
     <extend-entity entity-name="UserLogin" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
         <field name="partyId" type="id"></field>
@@ -1308,12 +745,6 @@ under the License.
             <key-map field-name="partyId"/>
         </relationship>
         <relationship type="one-nofk" related="org.apache.ofbiz.party.party.PartyGroup">
-            <key-map field-name="partyId"/>
-        </relationship>
-    </extend-entity>
-    <extend-entity entity-name="UserLoginHistory" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
-        <field name="partyId" type="id"></field>
-        <relationship type="one" fk-name="USER_LH_PARTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
         </relationship>
     </extend-entity>
