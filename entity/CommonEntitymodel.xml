@@ -172,23 +172,6 @@ under the License.
         <field name="clientIpStateProvGeoId" type="id"></field>
         <field name="clientIpCountryGeoId" type="id"></field>
     </extend-entity>
-    <entity entity-name="KeywordThesaurus" package="org.apache.ofbiz.common.keyword" group="ofbiz_transactional">
-        <field name="enteredKeyword" type="text-medium" is-pk="true"></field>
-        <field name="alternateKeyword" type="text-medium" is-pk="true"></field>
-        <field name="relationshipEnumId" type="id"></field>
-        <relationship type="one" fk-name="KW_THRS_RLENM" title="Relationship" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="relationshipEnumId" related="enumId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="StandardLanguage" package="org.apache.ofbiz.common.language" group="ofbiz_transactional">
-        <field name="standardLanguageId" type="id" is-pk="true"></field>
-        <field name="langCode3t" type="text-short"></field>
-        <field name="langCode3b" type="text-short"></field>
-        <field name="langCode2" type="text-short"></field>
-        <field name="langName" type="text-medium"></field>
-        <field name="langFamily" type="text-medium"></field>
-        <field name="langCharset" type="text-medium"></field>
-    </entity>
     <entity entity-name="CustomMethod" package="org.apache.ofbiz.common.method" group="ofbiz_transactional">
         <field name="customMethodId" type="id" is-pk="true"></field>
         <field name="customMethodTypeId" type="id"></field>

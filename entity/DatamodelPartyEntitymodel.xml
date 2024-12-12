@@ -21,21 +21,6 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
-    <entity entity-name="Addendum" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="addendumId" type="id" is-pk="true"></field>
-        <field name="agreementId" type="id"></field>
-        <field name="agreementItemSeqId" type="id"></field>
-        <field name="addendumCreationDate" type="date-time"></field>
-        <field name="addendumEffectiveDate" type="date-time"></field>
-        <field name="addendumText" type="text-medium"></field>
-        <relationship type="one" fk-name="ADDNDM_AGRMNT" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one" fk-name="ADDNDM_AGRMNT_ITM" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementId"/>
-            <key-map field-name="agreementItemSeqId"/>
-        </relationship>
-    </entity>
     <entity entity-name="Agreement" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
         <field name="agreementId" type="id" is-pk="true"></field>
         <field name="productId" type="id"></field>
@@ -241,21 +226,6 @@ under the License.
             <key-map field-name="agreementItemSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="AgreementFacilityAppl" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="agreementId" type="id" is-pk="true"></field>
-        <field name="agreementItemSeqId" type="id" is-pk="true"></field>
-        <field name="facilityId" type="id" is-pk="true"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.agreement.Agreement">
-            <key-map field-name="agreementId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_FACLT_AITM" related="org.apache.ofbiz.party.agreement.AgreementItem">
-            <key-map field-name="agreementId"/>
-            <key-map field-name="agreementItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="AGRMNT_FACLT_PRD" related="org.apache.ofbiz.product.facility.Facility">
-            <key-map field-name="facilityId"/>
-        </relationship>
-    </entity>
     <entity entity-name="AgreementRole" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
         <field name="agreementId" type="id" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
@@ -375,7 +345,6 @@ under the License.
             <key-map field-name="termTypeId"/>
         </relationship>
     </entity>
-    <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
@@ -561,37 +530,12 @@ under the License.
         <relationship type="one" fk-name="CONT_MECH_TYPE" related="org.apache.ofbiz.party.contact.ContactMechType">
             <key-map field-name="contactMechTypeId"/>
         </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.contact.ContactMechTypeAttr">
-            <key-map field-name="contactMechTypeId"/>
-        </relationship>
         <index name="INFO_STRING_IDX">
             <index-field name="infoString"/>
         </index>
         <index name="EXT_CNTMECH_ID_INDX">
             <index-field name="externalId"/>
         </index>
-    </entity>
-    <entity entity-name="ContactMechAttribute" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
-        <field name="contactMechId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-medium"></field>
-        <field name="attrDescription" type="text-medium"></field>
-        <relationship type="one" fk-name="CONT_MECH_ATTR" related="org.apache.ofbiz.party.contact.ContactMech">
-            <key-map field-name="contactMechId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.contact.ContactMechTypeAttr">
-            <key-map field-name="attrName"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ContactMechLink" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
-        <field name="contactMechIdFrom" type="id" is-pk="true"></field>
-        <field name="contactMechIdTo" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="CONT_MECH_FCMECH" title="From" related="org.apache.ofbiz.party.contact.ContactMech">
-            <key-map field-name="contactMechIdFrom" related="contactMechId"/>
-        </relationship>
-        <relationship type="one" fk-name="CONT_MECH_TCMECH" title="To" related="org.apache.ofbiz.party.contact.ContactMech">
-            <key-map field-name="contactMechIdTo" related="contactMechId"/>
-        </relationship>
     </entity>
     <entity entity-name="ContactMechPurposeType" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
         <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
@@ -604,20 +548,6 @@ under the License.
         <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="CONT_MECH_TYP_PAR" title="Parent" related="org.apache.ofbiz.party.contact.ContactMechType">
             <key-map field-name="parentTypeId" related="contactMechTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ContactMechTypeAttr" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
-        <field name="contactMechTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="CONT_MECH_TYP_ATR" related="org.apache.ofbiz.party.contact.ContactMechType">
-            <key-map field-name="contactMechTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.contact.ContactMechAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.contact.ContactMech">
-            <key-map field-name="contactMechTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="ContactMechTypePurpose" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
@@ -904,9 +834,6 @@ under the License.
         <relationship type="one" fk-name="PARTY_STATUSITM" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.party.PartyTypeAttr">
-            <key-map field-name="partyTypeId"/>
-        </relationship>
         <relationship type="one" fk-name="PARTY_DATSRC" related="org.apache.ofbiz.common.datasource.DataSource">
             <key-map field-name="dataSourceId"/>
         </relationship>
@@ -965,9 +892,6 @@ under the License.
         <field name="attrDescription" type="text-medium"></field>
         <relationship type="one" fk-name="PARTY_ATTR" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.party.PartyTypeAttr">
-            <key-map field-name="attrName"/>
         </relationship>
     </entity>
     <entity entity-name="PartyCarrierAccount" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
@@ -1196,9 +1120,6 @@ under the License.
         <relationship type="one" fk-name="PARTY_REL_STTS" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PARTY_REL_PRTYP" related="org.apache.ofbiz.party.party.PriorityType">
-            <key-map field-name="priorityTypeId"/>
-        </relationship>
         <relationship type="one" fk-name="PARTY_REL_TYPE" related="org.apache.ofbiz.party.party.PartyRelationshipType">
             <key-map field-name="partyRelationshipTypeId"/>
         </relationship>
@@ -1238,9 +1159,6 @@ under the License.
         <relationship type="one" fk-name="PARTY_RLE_ROLE" related="org.apache.ofbiz.party.party.RoleType">
             <key-map field-name="roleTypeId"/>
         </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.party.RoleTypeAttr">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
         <relationship type="many" related="org.apache.ofbiz.party.party.PartyAttribute">
             <key-map field-name="partyId"/>
         </relationship>
@@ -1274,20 +1192,6 @@ under the License.
         </relationship>
         <relationship type="many" title="Sibling" related="org.apache.ofbiz.party.party.PartyType">
             <key-map field-name="parentTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PartyTypeAttr" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="partyTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="PARTY_TYP_ATTR" related="org.apache.ofbiz.party.party.PartyType">
-            <key-map field-name="partyTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.party.PartyAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyTypeId"/>
         </relationship>
     </entity>
     <entity entity-name="Person" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
@@ -1345,10 +1249,6 @@ under the License.
             <index-field name="cardId"/>
         </index>
     </entity>
-    <entity entity-name="PriorityType" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="priorityTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
     <entity entity-name="RoleType" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
         <field name="roleTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
@@ -1360,26 +1260,6 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="RoleTypeAttr" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="ROLE_TYPATR_RTYP" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.party.PartyAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="many" title="ValidFrom" related="org.apache.ofbiz.party.party.PartyRelationshipType">
-            <key-map field-name="roleTypeId" related="roleTypeIdValidFrom"/>
-        </relationship>
-        <relationship type="many" title="ValidTo" related="org.apache.ofbiz.party.party.PartyRelationshipType">
-            <key-map field-name="roleTypeId" related="roleTypeIdValidTo"/>
-        </relationship>
-    </entity>
     <entity entity-name="Vendor" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="manifestCompanyName" type="text-medium"></field>

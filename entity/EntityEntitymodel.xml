@@ -46,10 +46,6 @@ under the License.
         <field name="seqName" type="id-long" is-pk="true"></field>
         <field name="seqId" type="number-integer"></field>
     </entity>
-    <entity entity-name="JavaResource" package="org.apache.ofbiz.entity" group="ofbiz_transactional">
-        <field name="resourceName" type="id-long" is-pk="true"></field>
-        <field name="resourceValue" type="binary-very-long"></field>
-    </entity>
     <entity entity-name="Tenant" package="org.apache.ofbiz.entity.tenant" group="ofbiz_transactional">
         <field name="tenantId" type="id" is-pk="true"></field>
         <field name="tenantName" type="text-medium"></field>

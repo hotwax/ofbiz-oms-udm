@@ -796,18 +796,6 @@ under the License.
             <key-map field-name="contentId"/>
         </relationship>
     </entity>
-    <entity entity-name="SurveyTrigger" package="org.apache.ofbiz.content.survey" group="ofbiz_transactional">
-        <field name="surveyId" type="id" is-pk="true"></field>
-        <field name="surveyApplTypeId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="SRVYTRG_SRVY" related="org.apache.ofbiz.content.survey.Survey">
-            <key-map field-name="surveyId"/>
-        </relationship>
-        <relationship type="one" fk-name="SRVYTRG_SRVYAPT" related="org.apache.ofbiz.content.survey.SurveyApplType">
-            <key-map field-name="surveyApplTypeId"/>
-        </relationship>
-    </entity>
     <extend-entity entity-name="WebPage" package="org.apache.ofbiz.webapp.website" group="ofbiz_transactional">
         <field name="contentId" type="id"></field>
         <relationship type="one" fk-name="WEB_PAGE_CONTENT" related="org.apache.ofbiz.content.content.Content">
