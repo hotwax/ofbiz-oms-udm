@@ -63,21 +63,6 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ItemIssuanceRole" package="org.apache.ofbiz.shipment.issuance" group="ofbiz_transactional">
-        <field name="itemIssuanceId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="ITEM_ISSRL_ITMIS" related="org.apache.ofbiz.shipment.issuance.ItemIssuance">
-            <key-map field-name="itemIssuanceId"/>
-        </relationship>
-        <relationship type="one" fk-name="ITEM_ISSRL_PTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="ITEM_ISSRL_PTRL" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-    </entity>
     <entity entity-name="Picklist" package="org.apache.ofbiz.shipment.picklist" group="ofbiz_transactional">
         <field name="picklistId" type="id" is-pk="true"></field>
         <field name="externalId" type="id-long"><description>This field stores picklist ID of the external system</description></field>
@@ -207,10 +192,6 @@ under the License.
             <key-map field-name="statusIdTo"/>
         </relationship>
     </entity>
-    <entity entity-name="RejectionReason" package="org.apache.ofbiz.shipment.receipt" group="ofbiz_transactional">
-        <field name="rejectionId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
     <entity entity-name="ShipmentReceipt" package="org.apache.ofbiz.shipment.receipt" group="ofbiz_transactional">
         <field name="receiptId" type="id" is-pk="true"></field>
         <field name="inventoryItemId" type="id"></field>
@@ -244,9 +225,6 @@ under the License.
         <relationship type="one" fk-name="SHP_RCPT_ORDITM" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHP_RCPT_REJRSN" related="org.apache.ofbiz.shipment.receipt.RejectionReason">
-            <key-map field-name="rejectionId"/>
         </relationship>
         <relationship type="one" fk-name="SHP_RCPT_USERLGN" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="receivedByUserLoginId" related="userLoginId"/>
@@ -351,12 +329,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="SHPMNT_STTS" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHPMNT_ESHWEFF" title="EstimatedShip" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
-            <key-map field-name="estimatedShipWorkEffId" related="workEffortId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHPMNT_EARRWEFF" title="EstimatedArrival" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
-            <key-map field-name="estimatedArrivalWorkEffId" related="workEffortId"/>
         </relationship>
         <relationship type="one" fk-name="SHPMNT_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
@@ -526,15 +498,6 @@ under the License.
         <relationship type="one" fk-name="SHPMNT_CE_FGEO" title="From" related="org.apache.ofbiz.common.geo.Geo">
             <key-map field-name="geoIdFrom" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_WHT_QB" title="Weight" related="org.apache.ofbiz.product.price.QuantityBreak">
-            <key-map field-name="weightBreakId" related="quantityBreakId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_QNT_QB" title="Quantity" related="org.apache.ofbiz.product.price.QuantityBreak">
-            <key-map field-name="quantityBreakId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_PRC_QB" title="Price" related="org.apache.ofbiz.product.price.QuantityBreak">
-            <key-map field-name="priceBreakId" related="quantityBreakId"/>
-        </relationship>
     </entity>
     <entity entity-name="ShipmentGatewayConfigType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="shipmentGatewayConfTypeId" type="id" is-pk="true"></field>
@@ -554,22 +517,6 @@ under the License.
         <field name="description" type="text-medium"></field>
         <relationship type="one" fk-name="SGC_SGCT" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfigType">
             <key-map field-name="shipmentGatewayConfTypeId" related="shipmentGatewayConfTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ShipmentGatewayDhl" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
-        <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
-        <field name="connectUrl" type="text-medium"><description>DHL Connection URL</description></field>
-        <field name="connectTimeout" type="number-integer"><description>Timeout in seconds</description></field>
-        <field name="headVersion" type="text-medium"><description>Head version attribute</description></field>
-        <field name="headAction" type="text-medium"><description>Head action attribute</description></field>
-        <field name="accessUserId" type="text-medium" encrypt="true"><description>Your DHL ShipIT User Id</description></field>
-        <field name="accessPassword" type="text-medium" encrypt="true"><description>Your DHL ShipIT Access Password</description></field>
-        <field name="accessAccountNbr" type="text-medium" encrypt="true"><description>Your DHL ShipIT Account Number</description></field>
-        <field name="accessShippingKey" type="text-medium" encrypt="true"><description>Your DHL ShipIT Shipping Key</description></field>
-        <field name="labelImageFormat" type="text-medium"><description>Label image format</description></field>
-        <field name="rateEstimateTemplate" type="text-medium"><description>API Schema Templates</description></field>
-        <relationship type="one" fk-name="SGDHL_SGC" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfig">
-            <key-map field-name="shipmentGatewayConfigId"/>
         </relationship>
     </entity>
     <entity entity-name="ShipmentGatewayFedex" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
@@ -641,26 +588,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="SHPMNT_ITM_PROD" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ShipmentItemBilling" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
-        <field name="shipmentId" type="id" is-pk="true"></field>
-        <field name="shipmentItemSeqId" type="id" is-pk="true"></field>
-        <field name="invoiceId" type="id" is-pk="true"></field>
-        <field name="invoiceItemSeqId" type="id" is-pk="true"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.shipment.shipment.Shipment">
-            <key-map field-name="shipmentId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHPMNT_ITBL_SPIM" related="org.apache.ofbiz.shipment.shipment.ShipmentItem">
-            <key-map field-name="shipmentId"/>
-            <key-map field-name="shipmentItemSeqId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.accounting.invoice.Invoice">
-            <key-map field-name="invoiceId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHPMNT_ITBL_INIM" related="org.apache.ofbiz.accounting.invoice.InvoiceItem">
-            <key-map field-name="invoiceId"/>
-            <key-map field-name="invoiceItemSeqId"/>
         </relationship>
     </entity>
     <entity entity-name="ShipmentItemFeature" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">

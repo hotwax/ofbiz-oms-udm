@@ -157,61 +157,6 @@ under the License.
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
         </relationship>
     </entity>
-    <entity entity-name="PartyAcctgPreference" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="fiscalYearStartMonth" type="number-integer"></field>
-        <field name="fiscalYearStartDay" type="number-integer"></field>
-        <field name="taxFormId" type="id"></field>
-        <field name="cogsMethodId" type="id"></field>
-        <field name="baseCurrencyUomId" type="id"></field>
-        <field name="invoiceSeqCustMethId" type="id"></field>
-        <field name="invoiceIdPrefix" type="text-short"></field>
-        <field name="lastInvoiceNumber" type="number-integer"></field>
-        <field name="lastInvoiceRestartDate" type="date-time"></field>
-        <field name="useInvoiceIdForReturns" type="text-indicator"></field>
-        <field name="quoteSeqCustMethId" type="id"></field>
-        <field name="quoteIdPrefix" type="text-short"></field>
-        <field name="lastQuoteNumber" type="number-integer"></field>
-        <field name="orderSeqCustMethId" type="id"></field>
-        <field name="orderIdPrefix" type="text-short"></field>
-        <field name="lastOrderNumber" type="number-integer"></field>
-        <field name="refundPaymentMethodId" type="id"></field>
-        <field name="errorGlJournalId" type="id"><description>Journal to which all the failed automatic transaction are assigned.
-                If the error journal is set, if the GL posting fails for some reason the triggering operation (finalizing an invoice or payment or whatever) would NOT roll back, instead the partial GL post would be placed into the error journal.</description></field>
-        <field name="oldInvoiceSequenceEnumId" type="id" column-name="INVOICE_SEQUENCE_ENUM_ID"></field>
-        <field name="oldOrderSequenceEnumId" type="id" column-name="ORDER_SEQUENCE_ENUM_ID"></field>
-        <field name="oldQuoteSequenceEnumId" type="id" column-name="QUOTE_SEQUENCE_ENUM_ID"></field>
-        <relationship type="one" fk-name="ACTG_PREF_PTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="ACTGPREF_TAXFORM" title="TaxForm" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="taxFormId" related="enumId"/>
-        </relationship>
-        <relationship type="one" fk-name="ACTGPREF_COGS" title="Cogs" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="cogsMethodId" related="enumId"/>
-        </relationship>
-        <relationship type="one" fk-name="ACCTGPREF_CURNCY" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="baseCurrencyUomId" related="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="ACTGPREF_INVCM" title="Invoice" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="invoiceSeqCustMethId" related="customMethodId"/>
-        </relationship>
-        <relationship type="one" fk-name="ACTGPREF_QTECM" title="Quote" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="quoteSeqCustMethId" related="customMethodId"/>
-        </relationship>
-        <relationship type="one" fk-name="ACTGPREF_ODRCM" title="Order" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="orderSeqCustMethId" related="customMethodId"/>
-        </relationship>
-        <relationship type="one" fk-name="ACTGPREF_INVSQ" title="InvoiceSequence" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="oldInvoiceSequenceEnumId" related="enumId"/>
-        </relationship>
-        <relationship type="one" fk-name="ACTGPREF_QTESQ" title="QuoteSequence" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="oldQuoteSequenceEnumId" related="enumId"/>
-        </relationship>
-        <relationship type="one" fk-name="ACTGPREF_ODRSQ" title="OrderSequence" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="oldOrderSequenceEnumId" related="enumId"/>
-        </relationship>
-    </entity>
     <entity entity-name="PaymentMethod" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
         <field name="paymentMethodId" type="id" is-pk="true"></field>
         <field name="paymentMethodTypeId" type="id"></field>
@@ -232,10 +177,6 @@ under the License.
         <field name="paymentMethodTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
         <field name="defaultGlAccountId" type="id"></field>
-    </entity>
-    <entity entity-name="TaxAuthorityRateType" package="org.apache.ofbiz.accounting.tax" group="ofbiz_transactional">
-        <field name="taxAuthorityRateTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
     </entity>
 </entities>
 

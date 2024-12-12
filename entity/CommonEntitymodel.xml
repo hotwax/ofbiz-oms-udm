@@ -21,18 +21,6 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
-    <entity entity-name="DataSource" package="org.apache.ofbiz.common.datasource" group="ofbiz_transactional">
-        <field name="dataSourceId" type="id" is-pk="true"></field>
-        <field name="dataSourceTypeId" type="id"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="DATA_SRC_TYP" related="org.apache.ofbiz.common.datasource.DataSourceType">
-            <key-map field-name="dataSourceTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="DataSourceType" package="org.apache.ofbiz.common.datasource" group="ofbiz_transactional">
-        <field name="dataSourceTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
     <entity entity-name="EmailTemplateSetting" package="org.apache.ofbiz.common.email" group="ofbiz_transactional">
         <field name="emailTemplateSettingId" type="id" is-pk="true"></field>
         <field name="emailType" type="id"></field>
@@ -69,26 +57,6 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="CountryCapital" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
-        <field name="countryCode" type="id" is-pk="true"></field>
-        <field name="countryCapital" type="text-medium"></field>
-        <relationship type="one" fk-name="CNTRY_CAP_TO_CODE" related="org.apache.ofbiz.common.geo.CountryCode">
-            <key-map field-name="countryCode"/>
-        </relationship>
-    </entity>
-    <entity entity-name="CountryCode" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
-        <field name="countryCode" type="id" is-pk="true"></field>
-        <field name="countryAbbr" type="text-medium"></field>
-        <field name="countryNumber" type="text-medium"></field>
-        <field name="countryName" type="text-medium"></field>
-    </entity>
-    <entity entity-name="CountryTeleCode" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
-        <field name="countryCode" type="id" is-pk="true"></field>
-        <field name="teleCode" type="text-medium"></field>
-        <relationship type="one" fk-name="CNTRY_TELE_TO_CODE" related="org.apache.ofbiz.common.geo.CountryCode">
-            <key-map field-name="countryCode"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="CountryAddressFormat" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
         <field name="geoId" type="id" is-pk="true"></field>
@@ -149,9 +117,6 @@ under the License.
         <field name="elevation" type="number-decimal"></field>
         <field name="elevationUomId" type="id"><description>UOM for elevation (feet, meters, etc.)</description></field>
         <field name="information" type="text-medium"><description>To enter any related information</description></field>
-        <relationship type="one" fk-name="GEOPOINT_DTSRC" related="org.apache.ofbiz.common.datasource.DataSource">
-            <key-map field-name="dataSourceId"/>
-        </relationship>
         <relationship type="one" fk-name="GEOPOINT_TYPE" title="GeoPointType" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="geoPointTypeEnumId" related="enumId"/>
         </relationship>
@@ -168,10 +133,6 @@ under the License.
             <key-map field-name="parentTypeId" related="geoTypeId"/>
         </relationship>
     </entity>
-    <extend-entity entity-name="Visit" package="org.apache.ofbiz.webapp.visit" group="ofbiz_transactional">
-        <field name="clientIpStateProvGeoId" type="id"></field>
-        <field name="clientIpCountryGeoId" type="id"></field>
-    </extend-entity>
     <entity entity-name="CustomMethod" package="org.apache.ofbiz.common.method" group="ofbiz_transactional">
         <field name="customMethodId" type="id" is-pk="true"></field>
         <field name="customMethodTypeId" type="id"></field>
@@ -195,31 +156,6 @@ under the License.
         <field name="noteName" type="text-medium"></field>
         <field name="noteInfo" type="text-very-long"></field>
         <field name="noteDateTime" type="date-time"></field>
-    </entity>
-    <entity entity-name="CustomTimePeriod" package="org.apache.ofbiz.common.period" group="ofbiz_transactional">
-        <field name="customTimePeriodId" type="id" is-pk="true"></field>
-        <field name="parentPeriodId" type="id"></field>
-        <field name="periodTypeId" type="id"></field>
-        <field name="periodNum" type="number-integer"></field>
-        <field name="periodName" type="text-medium"></field>
-        <field name="fromDate" type="date-time"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="isClosed" type="text-indicator"></field>
-        <relationship type="one" fk-name="ORG_PRD_PARPER" title="Parent" related="org.apache.ofbiz.common.period.CustomTimePeriod">
-            <key-map field-name="parentPeriodId" related="customTimePeriodId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORG_PRD_PERTYP" related="org.apache.ofbiz.common.period.PeriodType">
-            <key-map field-name="periodTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PeriodType" package="org.apache.ofbiz.common.period" group="ofbiz_transactional">
-        <field name="periodTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <field name="periodLength" type="number-integer"></field>
-        <field name="uomId" type="id"></field>
-        <relationship type="one" fk-name="PER_TYPE_UOM" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="uomId"/>
-        </relationship>
     </entity>
     <entity entity-name="StatusItem" package="org.apache.ofbiz.common.status" group="ofbiz_transactional">
         <field name="statusId" type="id" is-pk="true"></field>
@@ -343,113 +279,8 @@ under the License.
           group type.</description>        <field name="userPrefGroupTypeId" type="id-long" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-    <entity entity-name="VisualThemeSet" package="org.apache.ofbiz.common.theme" group="ofbiz_transactional">
-<description>Groups toghether Visual Themes that can be used for one (or a set of) application.</description>        <field name="visualThemeSetId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
-    <entity entity-name="VisualTheme" package="org.apache.ofbiz.common.theme" group="ofbiz_transactional">
-<description>The VisualTheme entity contains one entry per visual theme.</description>        <field name="visualThemeId" type="id" is-pk="true"></field>
-        <field name="visualThemeSetId" type="id"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="VT_THEME_SET" related="org.apache.ofbiz.common.theme.VisualThemeSet">
-            <key-map field-name="visualThemeSetId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="VisualThemeResource" package="org.apache.ofbiz.common.theme" group="ofbiz_transactional">
-<description>The VisualThemeResource entity contains visual theme
-          resources. Each visual theme can have any number of resources.</description>        <field name="visualThemeId" type="id" is-pk="true"></field>
-        <field name="resourceTypeEnumId" type="id" is-pk="true"></field>
-        <field name="sequenceId" type="id" is-pk="true"><description>Controls the loading order of duplicate resource types</description></field>
-        <field name="resourceValue" type="text-medium"><description>Contains the resource value</description></field>
-        <relationship type="one" fk-name="VT_RES_THEME" related="org.apache.ofbiz.common.theme.VisualTheme">
-            <key-map field-name="visualThemeId"/>
-        </relationship>
-        <relationship type="one" fk-name="VT_RES_TYPE_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="resourceTypeEnumId" related="enumId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PortalPortlet" package="org.apache.ofbiz.common.portal" group="ofbiz_transactional">
-        <field name="portalPortletId" type="id" is-pk="true"></field>
-        <field name="portletName" type="text-medium"></field>
-        <field name="screenName" type="text-medium"></field>
-        <field name="screenLocation" type="text-medium"></field>
-        <field name="editFormName" type="text-medium"></field>
-        <field name="editFormLocation" type="text-medium"></field>
-        <field name="description" type="text-medium"></field>
-        <field name="screenshot" type="text-medium"></field>
-        <field name="securityServiceName" type="text-medium"><description>The service named here is used to see if current user can see the portlet on the list of available portlets; the screen that the portlet calls should also call this service to check permission and not render; the service named here must implement the &quot;permissionInterface&quot; service just like services used for service permissions</description></field>
-        <field name="securityMainAction" type="text-medium"><description>The main action which can be done with this portlet, possible values: CREATE UPDATE VIEW DELETE</description></field>
-    </entity>
-    <entity entity-name="PortletCategory" package="org.apache.ofbiz.common.portal" group="ofbiz_transactional">
-        <field name="portletCategoryId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
-    <entity entity-name="PortletPortletCategory" package="org.apache.ofbiz.common.portal" group="ofbiz_transactional">
-        <field name="portalPortletId" type="id" is-pk="true"></field>
-        <field name="portletCategoryId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="PPTLTCAT_PTPL" related="org.apache.ofbiz.common.portal.PortalPortlet">
-            <key-map field-name="portalPortletId"/>
-        </relationship>
-        <relationship type="one" fk-name="PPTLTCAT_PTLTCAT" related="org.apache.ofbiz.common.portal.PortletCategory">
-            <key-map field-name="portletCategoryId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PortalPage" package="org.apache.ofbiz.common.portal" group="ofbiz_transactional">
-        <field name="portalPageId" type="id" is-pk="true"></field>
-        <field name="portalPageName" type="text-medium"></field>
-        <field name="description" type="text-medium"></field>
-        <field name="ownerUserLoginId" type="id-long"></field>
-        <field name="originalPortalPageId" type="id"><description>The system portal page this page is derived from</description></field>
-        <field name="parentPortalPageId" type="id"><description>the parent this page is belonging to, normally the startpage of the portal page group</description></field>
-        <field name="sequenceNum" type="number-integer"></field>
-        <field name="securityGroupId" type="id"></field>
-        <relationship type="one" fk-name="PortPage_PARENT" title="Parent" related="org.apache.ofbiz.common.portal.PortalPage">
-            <key-map field-name="parentPortalPageId" related="portalPageId"/>
-        </relationship>
-        <relationship type="one" fk-name="PORTPAGE_SECGRP" related="org.apache.ofbiz.security.securitygroup.SecurityGroup">
-            <key-map field-name="securityGroupId" related="groupId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PortalPageColumn" package="org.apache.ofbiz.common.portal" group="ofbiz_transactional">
-        <field name="portalPageId" type="id" is-pk="true"></field>
-        <field name="columnSeqId" type="id" is-pk="true"></field>
-        <field name="columnWidthPixels" type="number-integer"></field>
-        <field name="columnWidthPercentage" type="number-integer"></field>
-        <relationship type="one" fk-name="PRTL_PGCOL_PAGE" related="org.apache.ofbiz.common.portal.PortalPage">
-            <key-map field-name="portalPageId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PortalPagePortlet" package="org.apache.ofbiz.common.portal" group="ofbiz_transactional">
-        <field name="portalPageId" type="id" is-pk="true"></field>
-        <field name="portalPortletId" type="id" is-pk="true"></field>
-        <field name="portletSeqId" type="id" is-pk="true"><description>Identify the portalPortlet instance in case more copy of the same portalPortlet are present in the same portalPage</description></field>
-        <field name="columnSeqId" type="id"></field>
-        <field name="sequenceNum" type="number-integer"></field>
-        <relationship type="one" fk-name="PRTL_PGPTLT_PAGE" related="org.apache.ofbiz.common.portal.PortalPage">
-            <key-map field-name="portalPageId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRTL_PGPTLT_PTLT" related="org.apache.ofbiz.common.portal.PortalPortlet">
-            <key-map field-name="portalPortletId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.common.portal.PortalPageColumn">
-            <key-map field-name="portalPageId"/>
-            <key-map field-name="columnSeqId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PortletAttribute" package="org.apache.ofbiz.common.portal" group="ofbiz_transactional">
-        <field name="portalPageId" type="id" is-pk="true"></field>
-        <field name="portalPortletId" type="id" is-pk="true"></field>
-        <field name="portletSeqId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-medium"></field>
-        <field name="attrDescription" type="text-medium"></field>
-        <field name="attrType" type="text-medium"></field>
-        <relationship type="one" fk-name="PTLT_ATTR_PTLT" related="org.apache.ofbiz.common.portal.PortalPortlet">
-            <key-map field-name="portalPortletId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="SystemProperty" package="org.apache.ofbiz.common.property" group="ofbiz_transactional">
         <field name="systemResourceId" type="id-long" is-pk="true"></field>

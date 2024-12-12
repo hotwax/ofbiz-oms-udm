@@ -189,12 +189,6 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
-    <extend-entity entity-name="JobSandbox" package="org.apache.ofbiz.service.schedule" group="ofbiz_transactional">
-        <field name="shopId" type="id"></field>
-        <relationship type="one" fk-name="JOB_SNDBX_SHPFYSHP" related="co.hotwax.shopify.ShopifyShop">
-            <key-map field-name="shopId"/>
-        </relationship>
-    </extend-entity>
     <entity entity-name="ShopifyProdLocActivation" package="co.hotwax.shopify" group="ofbiz_transactional">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="shopifyProductId" type="id-long" is-pk="true"></field>
