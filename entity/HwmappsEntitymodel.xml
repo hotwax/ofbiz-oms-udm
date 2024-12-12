@@ -205,19 +205,11 @@ under the License.
         <field name="shipmentId" type="id"></field>
         <field name="returnId" type="id"></field>
     </extend-entity>
-    <extend-entity entity-name="CostComponent" package="org.apache.ofbiz.product.cost" group="ofbiz_transactional">
-        <field name="workEffortStartDate" type="date-time"></field>
-        <field name="workEffortEndDate" type="date-time"></field>
-        <field name="totalHours" type="number-decimal"></field>
-    </extend-entity>
     <extend-entity entity-name="ShipmentGatewayFedex" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="requestVersion" type="text-medium"></field>
         <field name="homeDeliveryService" type="text-medium"></field>
         <field name="allowCod" type="text-indicator"></field>
         <field name="smartPostHubId" type="text-medium"></field>
-    </extend-entity>
-    <extend-entity entity-name="PartyTaxAuthInfo" package="org.apache.ofbiz.accounting.tax" group="ofbiz_transactional">
-        <field name="partyTaxId" type="id-long" encrypt="true"><description>This field contains sensitive information, thus encrypted.</description></field>
     </extend-entity>
     <extend-entity entity-name="ShipmentGatewayUps" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="connectSoapUrl" type="text-medium"><description>UPS Soap Connection URL</description></field>
@@ -234,10 +226,6 @@ under the License.
         <field name="isTrackingRequired" type="text-indicator"></field>
         <field name="referenceNumber" type="text-medium"></field>
         <field name="actualCarrierCode" type="id"></field>
-    </extend-entity>
-    <extend-entity entity-name="EftAccount" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
-        <field name="routingNumber" type="text-medium" encrypt="true"><description>This field contains sensitive information, thus encrypted.</description></field>
-        <field name="accountNumber" type="text-medium" encrypt="true"><description>This field contains sensitive information, thus encrypted.</description></field>
     </extend-entity>
     <extend-entity entity-name="ShoppingList" package="org.apache.ofbiz.order.shoppinglist" group="ofbiz_transactional">
         <field name="salesRepPartyId" type="id"></field>
@@ -422,20 +410,8 @@ under the License.
             <key-map field-name="salesChannel" related="enumId"/>
         </relationship>
     </extend-entity>
-    <extend-entity entity-name="Payment" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
-        <field name="isSettled" type="text-indicator"></field>
-    </extend-entity>
-    <extend-entity entity-name="PaymentGatewayResponse" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
-        <field name="batchId" type="text-medium"></field>
-    </extend-entity>
-    <extend-entity entity-name="AgreementTerm" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
-        <field name="sequenceNum" type="number-integer"><description>Added this field in order to get the Terms in a specified order.</description></field>
-    </extend-entity>
     <extend-entity entity-name="OrderTerm" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="sequenceNum" type="number-integer"><description>Added this field in order to get the Terms in a specified order.</description></field>
-    </extend-entity>
-    <extend-entity entity-name="InvoiceTerm" package="org.apache.ofbiz.accounting.invoice" group="ofbiz_transactional">
-        <field name="sequenceNum" type="number-integer"><description>Added this field in invoice to get the Terms in a specified order.</description></field>
     </extend-entity>
     <extend-entity entity-name="ProductPriceType" package="org.apache.ofbiz.product.price" group="ofbiz_transactional">
         <field name="parentTypeId" type="id"><description>This will act as parent product price type Id.</description></field>
@@ -462,9 +438,6 @@ under the License.
     <extend-entity entity-name="Content" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
         <field name="permissionEnumId" type="id-long"><description>It will be used to set permission to access content.</description></field>
     </extend-entity>
-    <extend-entity entity-name="CreditCard" package="org.apache.ofbiz.accounting.payment" group="ofbiz_transactional">
-        <field name="token" type="text-medium" encrypt="true"></field>
-    </extend-entity>
     <extend-entity entity-name="WebSitePathAlias" package="org.apache.ofbiz.content.website" group="ofbiz_transactional">
         <field name="authRequired" type="text-indicator"><description>Added this flag for checking the authentication needed or not for accessing the content via WebSitePathAlias.</description></field>
     </extend-entity>
@@ -488,6 +461,12 @@ under the License.
         <field name="facilityContentTypeEnumId" type="id"></field>
         <relationship type="one" fk-name="FAC_CNT_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="facilityContentTypeEnumId" related="enumId"/>
+        </relationship>
+    </extend-entity>
+    <extend-entity entity-name="OrderStatus" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+        <field name="changeReasonEnumId" type="id"></field>
+        <relationship type="one" fk-name="CHANGE_REASON" title="Change Reason" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="changeReasonEnumId" related="enumId"/>
         </relationship>
     </extend-entity>
     <entity entity-name="ProductStorePaymentNetwork" package="co.hotwax.easyerpadmin" group="ofbiz_transactional">
@@ -584,17 +563,6 @@ under the License.
         </relationship>
         <relationship type="one-nofk" fk-name="DTMGR_CRTED_JOB" title="Initiating" related="org.apache.ofbiz.service.schedule.JobSandbox">
             <key-map field-name="createdByJobId" related="jobId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="PaymentNote" package="co.hotwax.accounting.finaccount" group="ofbiz_transactional">
-        <field name="paymentId" type="id" is-pk="true"></field>
-        <field name="noteId" type="id" is-pk="true"></field>
-        <field name="internalNote" type="text-indicator"></field>
-        <relationship type="one" fk-name="PAYMENT_NOTE_PARTY" related="org.apache.ofbiz.accounting.payment.Payment">
-            <key-map field-name="paymentId"/>
-        </relationship>
-        <relationship type="one" fk-name="PAYMENT_NOTE_NOTE" related="org.apache.ofbiz.common.note.NoteData">
-            <key-map field-name="noteId"/>
         </relationship>
     </entity>
     <entity entity-name="PaymentMethodTypeTerm" package="co.hotwax.financials" cache="never" group="ofbiz_transactional">
@@ -1741,12 +1709,6 @@ under the License.
         </relationship>
     </entity>
     <extend-entity entity-name="InventoryItemVariance" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
-        <field name="reasonEnumId" type="id"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="reasonEnumId" related="enumId"/>
-        </relationship>
-    </extend-entity>
-    <extend-entity entity-name="VarianceReasonGlAccount" package="org.apache.ofbiz.accounting.ledger" group="ofbiz_transactional">
         <field name="reasonEnumId" type="id"></field>
         <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="reasonEnumId" related="enumId"/>
