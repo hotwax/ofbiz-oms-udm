@@ -298,9 +298,6 @@ under the License.
             <key-map field-name="agreementId"/>
             <key-map field-name="agreementItemSeqId"/>
         </relationship>
-        <relationship type="one" fk-name="AGRMNT_TERM_IIT" related="org.apache.ofbiz.accounting.invoice.InvoiceItemType">
-            <key-map field-name="invoiceItemTypeId"/>
-        </relationship>
     </entity>
     <entity entity-name="AgreementTermAttribute" package="org.apache.ofbiz.party.agreement" group="ofbiz_transactional">
         <field name="agreementTermId" type="id" is-pk="true"></field>
@@ -375,18 +372,6 @@ under the License.
             <key-map field-name="attrName"/>
         </relationship>
         <relationship type="many" related="org.apache.ofbiz.order.order.OrderTerm">
-            <key-map field-name="termTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.quote.QuoteTermAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.quote.QuoteTerm">
-            <key-map field-name="termTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.accounting.invoice.InvoiceTermAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.accounting.invoice.InvoiceTerm">
             <key-map field-name="termTypeId"/>
         </relationship>
     </entity>

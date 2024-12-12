@@ -100,16 +100,6 @@ under the License.
         <relationship type="one" fk-name="ORDER_ADJ_SCGEO" title="Secondary" related="org.apache.ofbiz.common.geo.Geo">
             <key-map field-name="secondaryGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_ADJ_TXA" related="org.apache.ofbiz.accounting.tax.TaxAuthority">
-            <key-map field-name="taxAuthGeoId"/>
-            <key-map field-name="taxAuthPartyId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_ADJ_OGLA" title="Override" related="org.apache.ofbiz.accounting.ledger.GlAccount">
-            <key-map field-name="overrideGlAccountId" related="glAccountId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_ADJ_TARP" related="org.apache.ofbiz.accounting.tax.TaxAuthorityRateProduct">
-            <key-map field-name="taxAuthorityRateSeqId"/>
-        </relationship>
         <relationship type="one-nofk" fk-name="ORDER_ADJ_OA" related="org.apache.ofbiz.order.order.OrderAdjustment">
             <key-map field-name="originalAdjustmentId" related="orderAdjustmentId"/>
         </relationship>
@@ -309,9 +299,6 @@ under the License.
         <relationship type="many" related="org.apache.ofbiz.order.order.OrderTypeAttr">
             <key-map field-name="orderTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_HDR_BACCT" related="org.apache.ofbiz.accounting.payment.BillingAccount">
-            <key-map field-name="billingAccountId"/>
-        </relationship>
         <relationship type="one" fk-name="ORDER_HDR_PDSTR" related="org.apache.ofbiz.product.store.ProductStore">
             <key-map field-name="productStoreId"/>
         </relationship>
@@ -442,16 +429,9 @@ under the License.
         <relationship type="one" fk-name="ORDER_ITEM_DCUL" title="DontCancelSet" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="dontCancelSetUserLogin" related="userLoginId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_ITEM_QUIT" related="org.apache.ofbiz.order.quote.QuoteItem">
-            <key-map field-name="quoteId"/>
-            <key-map field-name="quoteItemSeqId"/>
-        </relationship>
         <relationship type="one-nofk" fk-name="ORDER_ITEM_SLI" related="org.apache.ofbiz.order.shoppinglist.ShoppingListItem">
             <key-map field-name="shoppingListId"/>
             <key-map field-name="shoppingListItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_ITEM_OGLA" title="Override" related="org.apache.ofbiz.accounting.ledger.GlAccount">
-            <key-map field-name="overrideGlAccountId" related="glAccountId"/>
         </relationship>
         <relationship type="one" fk-name="ORDER_ITEM_USRLGN" title="ChangeBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
@@ -884,26 +864,11 @@ under the License.
         <relationship type="one" fk-name="ORDER_PMPRF_PMTP" related="org.apache.ofbiz.accounting.payment.PaymentMethodType">
             <key-map field-name="paymentMethodTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_PMPRF_PMETH" related="org.apache.ofbiz.accounting.payment.PaymentMethod">
-            <key-map field-name="paymentMethodId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_PMPRF_FINACT" related="org.apache.ofbiz.accounting.finaccount.FinAccount">
-            <key-map field-name="finAccountId"/>
-        </relationship>
         <relationship type="one" fk-name="ORDER_PMPRF_STTS" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="ORDER_PMPRF_USRL" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="createdByUserLogin" related="userLoginId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.accounting.payment.CreditCard">
-            <key-map field-name="paymentMethodId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.accounting.payment.EftAccount">
-            <key-map field-name="paymentMethodId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.accounting.payment.GiftCard">
-            <key-map field-name="paymentMethodId"/>
         </relationship>
         <index name="NSF_RETRY_CHECK">
             <index-field name="needsNsfRetry"/>
@@ -1115,272 +1080,6 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
             <key-map field-name="shipGroupSeqId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="Quote" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="quoteId" type="id" is-pk="true"></field>
-        <field name="quoteTypeId" type="id"></field>
-        <field name="partyId" type="id"></field>
-        <field name="issueDate" type="date-time"></field>
-        <field name="statusId" type="id"></field>
-        <field name="currencyUomId" type="id"></field>
-        <field name="productStoreId" type="id"></field>
-        <field name="salesChannelEnumId" type="id"></field>
-        <field name="validFromDate" type="date-time"></field>
-        <field name="validThruDate" type="date-time"></field>
-        <field name="quoteName" type="text-medium"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="QUOTE_QTTYP" related="org.apache.ofbiz.order.quote.QuoteType">
-            <key-map field-name="quoteTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.quote.QuoteTypeAttr">
-            <key-map field-name="quoteTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_PRTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_STATUS" related="org.apache.ofbiz.common.status.StatusItem">
-            <key-map field-name="statusId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_CUOM" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="currencyUomId" related="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_PRDS" related="org.apache.ofbiz.product.store.ProductStore">
-            <key-map field-name="productStoreId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_CHANNEL" title="SalesChannel" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="salesChannelEnumId" related="enumId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteAttribute" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="quoteId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-medium"></field>
-        <field name="attrDescription" type="text-medium"></field>
-        <relationship type="one" fk-name="QUOTE_ATTR" related="org.apache.ofbiz.order.quote.Quote">
-            <key-map field-name="quoteId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.quote.QuoteTypeAttr">
-            <key-map field-name="attrName"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteCoefficient" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="quoteId" type="id" is-pk="true"></field>
-        <field name="coeffName" type="id-long" is-pk="true"></field>
-        <field name="coeffValue" type="number-decimal"></field>
-        <relationship type="one" fk-name="QUOTE_COEFF" related="org.apache.ofbiz.order.quote.Quote">
-            <key-map field-name="quoteId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteItem" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="quoteId" type="id" is-pk="true"></field>
-        <field name="quoteItemSeqId" type="id" is-pk="true"></field>
-        <field name="productId" type="id"></field>
-        <field name="productFeatureId" type="id"></field>
-        <field name="deliverableTypeId" type="id"></field>
-        <field name="skillTypeId" type="id"></field>
-        <field name="uomId" type="id"></field>
-        <field name="workEffortId" type="id"></field>
-        <field name="custRequestId" type="id"></field>
-        <field name="custRequestItemSeqId" type="id"></field>
-        <field name="quantity" type="number-decimal"></field>
-        <field name="selectedAmount" type="number-decimal"></field>
-        <field name="quoteUnitPrice" type="currency-amount"></field>
-        <field name="reservStart" type="date-time"></field>
-        <field name="reservLength" type="number-decimal"></field>
-        <field name="reservPersons" type="number-decimal"></field>
-        <field name="configId" type="id"></field>
-        <field name="estimatedDeliveryDate" type="date-time"></field>
-        <field name="comments" type="text-medium"></field>
-        <field name="isPromo" type="text-indicator"></field>
-        <field name="leadTimeDays" type="number-integer"></field>
-        <relationship type="one" fk-name="QUOTE_ITM_QTE" related="org.apache.ofbiz.order.quote.Quote">
-            <key-map field-name="quoteId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ITM_PROD" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ITM_PFEAT" related="org.apache.ofbiz.product.feature.ProductFeature">
-            <key-map field-name="productFeatureId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ITM_DELT" related="org.apache.ofbiz.workeffort.workeffort.DeliverableType">
-            <key-map field-name="deliverableTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ITM_UOM" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ITM_WKEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
-            <key-map field-name="workEffortId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ITM_CSRQ" related="org.apache.ofbiz.order.request.CustRequest">
-            <key-map field-name="custRequestId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ITM_CSRITM" related="org.apache.ofbiz.order.request.CustRequestItem">
-            <key-map field-name="custRequestId"/>
-            <key-map field-name="custRequestItemSeqId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteNote" package="org.apache.ofbiz.order.quote" cache="never" group="ofbiz_transactional">
-        <field name="quoteId" type="id" is-pk="true"></field>
-        <field name="noteId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="QUOTE_NT_QTE" related="org.apache.ofbiz.order.quote.Quote">
-            <key-map field-name="quoteId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_NT_NOTE" related="org.apache.ofbiz.common.note.NoteData">
-            <key-map field-name="noteId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteRole" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="quoteId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time"></field>
-        <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="QUOTE_RL_QUOTE" related="org.apache.ofbiz.order.quote.Quote">
-            <key-map field-name="quoteId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_RL_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_RL_PROLE" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteTerm" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="termTypeId" type="id" is-pk="true"></field>
-        <field name="quoteId" type="id" is-pk="true"></field>
-        <field name="quoteItemSeqId" type="id" is-pk="true"></field>
-        <field name="termValue" type="number-integer"></field>
-        <field name="uomId" type="id"></field>
-        <field name="termDays" type="number-integer"></field>
-        <field name="textValue" type="text-medium"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="QUOTE_TERM_QTE" related="org.apache.ofbiz.order.quote.Quote">
-            <key-map field-name="quoteId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.order.quote.QuoteItem">
-            <key-map field-name="quoteId"/>
-            <key-map field-name="quoteItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_TERM_TTYPE" related="org.apache.ofbiz.party.agreement.TermType">
-            <key-map field-name="termTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteTermAttribute" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="termTypeId" type="id" is-pk="true"></field>
-        <field name="quoteId" type="id" is-pk="true"></field>
-        <field name="quoteItemSeqId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-medium"></field>
-        <field name="attrDescription" type="text-medium"></field>
-        <relationship type="one" fk-name="QUOTE_TERM_ATTR" related="org.apache.ofbiz.order.quote.QuoteTerm">
-            <key-map field-name="termTypeId"/>
-            <key-map field-name="quoteId"/>
-            <key-map field-name="quoteItemSeqId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteType" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="quoteTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="QUOTE_TYPE_PAR" title="Parent" related="org.apache.ofbiz.order.quote.QuoteType">
-            <key-map field-name="parentTypeId" related="quoteTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteTypeAttr" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="quoteTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="QUOTE_TPAT_QTYP" related="org.apache.ofbiz.order.quote.QuoteType">
-            <key-map field-name="quoteTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.quote.QuoteAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.order.quote.Quote">
-            <key-map field-name="quoteTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteWorkEffort" package="org.apache.ofbiz.order.quote" group="ofbiz_transactional">
-        <field name="quoteId" type="id" is-pk="true"></field>
-        <field name="workEffortId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="QUOTE_WE_QUOTE" related="org.apache.ofbiz.order.quote.Quote">
-            <key-map field-name="quoteId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_WE_WEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
-            <key-map field-name="workEffortId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="QuoteAdjustment" package="org.apache.ofbiz.order.quote" cache="never" group="ofbiz_transactional">
-<description>Note that both includeInTax and includeInShipping should default to true, except in the case where this adjustment is a tax or shipping adjustment then should be ignored.</description>        <field name="quoteAdjustmentId" type="id" is-pk="true"></field>
-        <field name="quoteAdjustmentTypeId" type="id"></field>
-        <field name="quoteId" type="id"></field>
-        <field name="quoteItemSeqId" type="id"></field>
-        <field name="comments" type="text-medium"></field>
-        <field name="description" type="text-medium"></field>
-        <field name="amount" type="currency-amount"></field>
-        <field name="productPromoId" type="id"></field>
-        <field name="productPromoRuleId" type="id"></field>
-        <field name="productPromoActionSeqId" type="id"></field>
-        <field name="productFeatureId" type="id"></field>
-        <field name="correspondingProductId" type="id"></field>
-        <field name="sourceReferenceId" type="id-long"></field>
-        <field name="sourcePercentage" type="number-decimal"></field>
-        <field name="customerReferenceId" type="id-long"></field>
-        <field name="primaryGeoId" type="id"></field>
-        <field name="secondaryGeoId" type="id"></field>
-        <field name="exemptAmount" type="currency-amount"></field>
-        <field name="taxAuthGeoId" type="id"></field>
-        <field name="taxAuthPartyId" type="id"></field>
-        <field name="overrideGlAccountId" type="id"></field>
-        <field name="includeInTax" type="text-indicator"></field>
-        <field name="includeInShipping" type="text-indicator"></field>
-        <field name="createdDate" type="date-time"></field>
-        <field name="createdByUserLogin" type="id-long"></field>
-        <field name="lastModifiedDate" type="date-time"></field>
-        <field name="lastModifiedByUserLogin" type="id-long"></field>
-        <relationship type="one" fk-name="QUOTE_ADJ_TYPE" related="org.apache.ofbiz.order.order.OrderAdjustmentType">
-            <key-map field-name="quoteAdjustmentTypeId" related="orderAdjustmentTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ADJ_OHEAD" related="org.apache.ofbiz.order.quote.Quote">
-            <key-map field-name="quoteId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ADJ_USERL" related="org.apache.ofbiz.security.login.UserLogin">
-            <key-map field-name="createdByUserLogin" related="userLoginId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.order.quote.QuoteItem">
-            <key-map field-name="quoteId"/>
-            <key-map field-name="quoteItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ADJ_PROMO" related="org.apache.ofbiz.product.promo.ProductPromo">
-            <key-map field-name="productPromoId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.product.promo.ProductPromoRule">
-            <key-map field-name="productPromoId"/>
-            <key-map field-name="productPromoRuleId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.product.promo.ProductPromoAction">
-            <key-map field-name="productPromoId"/>
-            <key-map field-name="productPromoRuleId"/>
-            <key-map field-name="productPromoActionSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ADJ_PRGEO" title="Primary" related="org.apache.ofbiz.common.geo.Geo">
-            <key-map field-name="primaryGeoId" related="geoId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ADJ_SCGEO" title="Secondary" related="org.apache.ofbiz.common.geo.Geo">
-            <key-map field-name="secondaryGeoId" related="geoId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ADJ_TXA" related="org.apache.ofbiz.accounting.tax.TaxAuthority">
-            <key-map field-name="taxAuthGeoId"/>
-            <key-map field-name="taxAuthPartyId"/>
-        </relationship>
-        <relationship type="one" fk-name="QUOTE_ADJ_OGLA" title="Override" related="org.apache.ofbiz.accounting.ledger.GlAccount">
-            <key-map field-name="overrideGlAccountId" related="glAccountId"/>
         </relationship>
     </entity>
     <entity entity-name="CustRequest" package="org.apache.ofbiz.order.request" group="ofbiz_transactional">
@@ -1712,12 +1411,6 @@ under the License.
         <relationship type="one" fk-name="REQ_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
             <key-map field-name="facilityId"/>
         </relationship>
-        <relationship type="one" fk-name="REQ_DELIVERABLE" related="org.apache.ofbiz.workeffort.workeffort.Deliverable">
-            <key-map field-name="deliverableId"/>
-        </relationship>
-        <relationship type="one" fk-name="REQ_FIXED_ASSET" related="org.apache.ofbiz.accounting.fixedasset.FixedAsset">
-            <key-map field-name="fixedAssetId"/>
-        </relationship>
         <relationship type="one" fk-name="REQ_PRODUCT" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
         </relationship>
@@ -1735,22 +1428,6 @@ under the License.
         </relationship>
         <relationship type="many" related="org.apache.ofbiz.order.requirement.RequirementTypeAttr">
             <key-map field-name="attrName"/>
-        </relationship>
-    </entity>
-    <entity entity-name="RequirementBudgetAllocation" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
-        <field name="budgetId" type="id" is-pk="true"></field>
-        <field name="budgetItemSeqId" type="id" is-pk="true"></field>
-        <field name="requirementId" type="id" is-pk="true"></field>
-        <field name="amount" type="currency-amount"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.accounting.budget.Budget">
-            <key-map field-name="budgetId"/>
-        </relationship>
-        <relationship type="one" fk-name="REQ_BDGTAL_BITM" related="org.apache.ofbiz.accounting.budget.BudgetItem">
-            <key-map field-name="budgetId"/>
-            <key-map field-name="budgetItemSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="REQ_BDGTAL_REQ" related="org.apache.ofbiz.order.requirement.Requirement">
-            <key-map field-name="requirementId"/>
         </relationship>
     </entity>
     <entity entity-name="RequirementCustRequest" package="org.apache.ofbiz.order.requirement" group="ofbiz_transactional">
@@ -1906,21 +1583,11 @@ under the License.
         <relationship type="one" fk-name="RETURN_ADJ_SCGEO" title="Secondary" related="org.apache.ofbiz.common.geo.Geo">
             <key-map field-name="secondaryGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="RETURN_ADJ_TXA" related="org.apache.ofbiz.accounting.tax.TaxAuthority">
-            <key-map field-name="taxAuthGeoId"/>
-            <key-map field-name="taxAuthPartyId"/>
-        </relationship>
-        <relationship type="one" fk-name="RETURN_ADJ_OGLA" title="Override" related="org.apache.ofbiz.accounting.ledger.GlAccount">
-            <key-map field-name="overrideGlAccountId" related="glAccountId"/>
-        </relationship>
         <relationship type="one" fk-name="RET_ADJ_RTN_TYPE" related="org.apache.ofbiz.order.return.ReturnType">
             <key-map field-name="returnTypeId"/>
         </relationship>
         <relationship type="one" fk-name="RETURN_ADJ_ORDADJ" related="org.apache.ofbiz.order.order.OrderAdjustment">
             <key-map field-name="orderAdjustmentId"/>
-        </relationship>
-        <relationship type="one" fk-name="RETURN_ADJ_TARP" related="org.apache.ofbiz.accounting.tax.TaxAuthorityRateProduct">
-            <key-map field-name="taxAuthorityRateSeqId"/>
         </relationship>
     </entity>
     <entity entity-name="ReturnAdjustmentType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
@@ -1958,15 +1625,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="RTN_TO_PARTY" title="To" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="toPartyId" related="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="RTN_TO_BACT" related="org.apache.ofbiz.accounting.payment.BillingAccount">
-            <key-map field-name="billingAccountId"/>
-        </relationship>
-        <relationship type="one" fk-name="RTN_TO_FACT" related="org.apache.ofbiz.accounting.finaccount.FinAccount">
-            <key-map field-name="finAccountId"/>
-        </relationship>
-        <relationship type="one" fk-name="RTN_TO_PAYMETH" related="org.apache.ofbiz.accounting.payment.PaymentMethod">
-            <key-map field-name="paymentMethodId"/>
         </relationship>
         <relationship type="one" fk-name="RTN_TO_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
             <key-map field-name="destinationFacilityId" related="facilityId"/>
@@ -2074,15 +1732,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="RTN_RESP_NEWORD" title="Replacement" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="replacementOrderId" related="orderId"/>
-        </relationship>
-        <relationship type="one" fk-name="RTN_PAY_PAYMENT" related="org.apache.ofbiz.accounting.payment.Payment">
-            <key-map field-name="paymentId"/>
-        </relationship>
-        <relationship type="one" fk-name="RTN_PAY_BACT" related="org.apache.ofbiz.accounting.payment.BillingAccount">
-            <key-map field-name="billingAccountId"/>
-        </relationship>
-        <relationship type="one" fk-name="RTN_PAY_FINACTTX" related="org.apache.ofbiz.accounting.finaccount.FinAccountTrans">
-            <key-map field-name="finAccountTransId"/>
         </relationship>
     </entity>
     <entity entity-name="ReturnItemType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
@@ -2284,9 +1933,6 @@ under the License.
         </relationship>
         <relationship type="one-nofk" related="org.apache.ofbiz.party.contact.PostalAddress">
             <key-map field-name="contactMechId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHLIST_PYMETH" related="org.apache.ofbiz.accounting.payment.PaymentMethod">
-            <key-map field-name="paymentMethodId"/>
         </relationship>
         <relationship type="one" fk-name="SHLIST_RECINFO" related="org.apache.ofbiz.service.schedule.RecurrenceInfo">
             <key-map field-name="recurrenceInfoId"/>

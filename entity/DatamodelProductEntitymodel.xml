@@ -58,46 +58,6 @@ under the License.
             <key-map field-name="parentTypeId" related="prodCatalogCategoryTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProdCatalogInvFacility" package="org.apache.ofbiz.product.catalog" group="ofbiz_transactional">
-        <field name="prodCatalogId" type="id" is-pk="true"></field>
-        <field name="facilityId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="sequenceNum" type="number-integer"></field>
-        <relationship type="one" fk-name="PROD_CIF_CATALOG" related="org.apache.ofbiz.product.catalog.ProdCatalog">
-            <key-map field-name="prodCatalogId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_CIF_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
-            <key-map field-name="facilityId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ProdCatalogRole" package="org.apache.ofbiz.product.catalog" group="ofbiz_transactional">
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <field name="prodCatalogId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="sequenceNum" type="number-integer"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.Person">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.PartyGroup">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PCATRLE_PTYRLE" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PCATRLE_CATALOG" related="org.apache.ofbiz.product.catalog.ProdCatalog">
-            <key-map field-name="prodCatalogId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="ProductCategory" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
         <field name="productCategoryId" type="id" is-pk="true"></field>
@@ -172,45 +132,6 @@ under the License.
             <key-map field-name="parentTypeId" related="prodCatContentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductCategoryGlAccount" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
-        <field name="productCategoryId" type="id" is-pk="true"></field>
-        <field name="organizationPartyId" type="id" is-pk="true"></field>
-        <field name="glAccountTypeId" type="id" is-pk="true"></field>
-        <field name="glAccountId" type="id"></field>
-        <relationship type="one" fk-name="PRD_CT_GLACT_PCAT" related="org.apache.ofbiz.product.category.ProductCategory">
-            <key-map field-name="productCategoryId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRD_CT_GLACT_PRTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="organizationPartyId" related="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRD_CT_GLACT_TYPE" related="org.apache.ofbiz.accounting.ledger.GlAccountType">
-            <key-map field-name="glAccountTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRD_CT_GLACT_GLACT" related="org.apache.ofbiz.accounting.ledger.GlAccount">
-            <key-map field-name="glAccountId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ProductCategoryLink" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
-        <field name="productCategoryId" type="id" is-pk="true"></field>
-        <field name="linkSeqId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="comments" type="text-medium"><description>Internal comments, not for public display.</description></field>
-        <field name="sequenceNum" type="number-integer"><description>This field is used to sort the links. The linkSeqId field is not used because it is part of the primary key and cannot be changed.</description></field>
-        <field name="titleText" type="text-medium"></field>
-        <field name="detailText" type="text-very-long"></field>
-        <field name="imageUrl" type="text-medium"></field>
-        <field name="imageTwoUrl" type="text-medium"></field>
-        <field name="linkTypeEnumId" type="id"></field>
-        <field name="linkInfo" type="text-medium"></field>
-        <field name="detailSubScreen" type="text-medium"><description>This is optional. If not specified a default should be used by the category detail template.</description></field>
-        <relationship type="one" fk-name="PROD_CLNK_CATEGORY" related="org.apache.ofbiz.product.category.ProductCategory">
-            <key-map field-name="productCategoryId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_CLNK_LKTPENM" title="LinkType" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="linkTypeEnumId" related="enumId"/>
-        </relationship>
-    </entity>
     <entity entity-name="ProductCategoryMember" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
         <field name="productCategoryId" type="id" is-pk="true"></field>
         <field name="productId" type="id" is-pk="true"></field>
@@ -228,28 +149,6 @@ under the License.
         <index name="PRD_CMBR_PCT">
             <index-field name="productCategoryId"/>
         </index>
-    </entity>
-    <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductCategoryRole" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
-        <field name="productCategoryId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="comments" type="text-medium"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_CRLE_PTYRLE" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_CRLE_CATEGORY" related="org.apache.ofbiz.product.category.ProductCategory">
-            <key-map field-name="productCategoryId"/>
-        </relationship>
     </entity>
     <entity entity-name="ProductCategoryRollup" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
         <field name="productCategoryId" type="id" is-pk="true"></field>
@@ -276,7 +175,6 @@ under the License.
             <index-field name="parentProductCategoryId"/>
         </index>
     </entity>
-    <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="ProductCategoryType" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
         <field name="productCategoryTypeId" type="id" is-pk="true"></field>
@@ -449,155 +347,6 @@ under the License.
             <key-map field-name="productId"/>
         </relationship>
     </entity>
-    <entity entity-name="CostComponent" package="org.apache.ofbiz.product.cost" group="ofbiz_transactional">
-        <field name="costComponentId" type="id" is-pk="true"></field>
-        <field name="costComponentTypeId" type="id"></field>
-        <field name="productId" type="id"></field>
-        <field name="productFeatureId" type="id"></field>
-        <field name="partyId" type="id"></field>
-        <field name="geoId" type="id"></field>
-        <field name="workEffortId" type="id"></field>
-        <field name="fixedAssetId" type="id"></field>
-        <field name="costComponentCalcId" type="id"></field>
-        <field name="fromDate" type="date-time"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="cost" type="number-decimal"><description>Higher precision in case it is a calculated number</description></field>
-        <field name="costUomId" type="id"></field>
-        <relationship type="one" fk-name="COST_COMP_TYPE" related="org.apache.ofbiz.product.cost.CostComponentType">
-            <key-map field-name="costComponentTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.product.cost.CostComponentTypeAttr">
-            <key-map field-name="costComponentTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COMP_PRODUCT" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COMP_PRODFEAT" related="org.apache.ofbiz.product.feature.ProductFeature">
-            <key-map field-name="productFeatureId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COMP_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COMP_GEO" related="org.apache.ofbiz.common.geo.Geo">
-            <key-map field-name="geoId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COMP_WEFF" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
-            <key-map field-name="workEffortId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COMP_FXADSST" related="org.apache.ofbiz.accounting.fixedasset.FixedAsset">
-            <key-map field-name="fixedAssetId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COMP_CALC" related="org.apache.ofbiz.product.cost.CostComponentCalc">
-            <key-map field-name="costComponentCalcId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COMP_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="costUomId" related="uomId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="CostComponentAttribute" package="org.apache.ofbiz.product.cost" group="ofbiz_transactional">
-        <field name="costComponentId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="attrValue" type="text-medium"></field>
-        <field name="attrDescription" type="text-medium"></field>
-        <relationship type="one" fk-name="COST_COMP_ATTR" related="org.apache.ofbiz.product.cost.CostComponent">
-            <key-map field-name="costComponentId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.product.cost.CostComponentTypeAttr">
-            <key-map field-name="attrName"/>
-        </relationship>
-    </entity>
-    <entity entity-name="CostComponentType" package="org.apache.ofbiz.product.cost" group="ofbiz_transactional">
-        <field name="costComponentTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="COST_COMP_TYPE_PAR" title="Parent" related="org.apache.ofbiz.product.cost.CostComponentType">
-            <key-map field-name="parentTypeId" related="costComponentTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="CostComponentTypeAttr" package="org.apache.ofbiz.product.cost" group="ofbiz_transactional">
-        <field name="costComponentTypeId" type="id" is-pk="true"></field>
-        <field name="attrName" type="id-long" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="COST_COMP_TATTR" related="org.apache.ofbiz.product.cost.CostComponentType">
-            <key-map field-name="costComponentTypeId"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.product.cost.CostComponentAttribute">
-            <key-map field-name="attrName"/>
-        </relationship>
-        <relationship type="many" related="org.apache.ofbiz.product.cost.CostComponent">
-            <key-map field-name="costComponentTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="CostComponentCalc" package="org.apache.ofbiz.product.cost" group="ofbiz_transactional">
-        <field name="costComponentCalcId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-        <field name="costGlAccountTypeId" type="id"></field>
-        <field name="offsettingGlAccountTypeId" type="id"></field>
-        <field name="fixedCost" type="currency-amount"></field>
-        <field name="variableCost" type="currency-amount"></field>
-        <field name="perMilliSecond" type="number-integer"></field>
-        <field name="currencyUomId" type="id"></field>
-        <field name="costCustomMethodId" type="id"></field>
-        <relationship type="one" fk-name="COST_COM_CGLAT" title="Cost" related="org.apache.ofbiz.accounting.ledger.GlAccountType">
-            <key-map field-name="costGlAccountTypeId" related="glAccountTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COM_OGLAT" title="Offsetting" related="org.apache.ofbiz.accounting.ledger.GlAccountType">
-            <key-map field-name="offsettingGlAccountTypeId" related="glAccountTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COM_CUOM" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="currencyUomId" related="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="COST_COM_CMET" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="costCustomMethodId" related="customMethodId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ProductCostComponentCalc" package="org.apache.ofbiz.product.cost" group="ofbiz_transactional">
-        <field name="productId" type="id" is-pk="true"></field>
-        <field name="costComponentTypeId" type="id" is-pk="true"></field>
-        <field name="costComponentCalcId" type="id"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="sequenceNum" type="number-integer"></field>
-        <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="PR_COS_COMPCALC" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="PR_COS_CCT" related="org.apache.ofbiz.product.cost.CostComponentType">
-            <key-map field-name="costComponentTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PR_COS_CCC" related="org.apache.ofbiz.product.cost.CostComponentCalc">
-            <key-map field-name="costComponentCalcId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="Container" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
-        <field name="containerId" type="id" is-pk="true"></field>
-        <field name="containerTypeId" type="id"></field>
-        <field name="facilityId" type="id"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="CONTAINER_CTTYP" related="org.apache.ofbiz.product.facility.ContainerType">
-            <key-map field-name="containerTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="CONTAINER_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
-            <key-map field-name="facilityId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ContainerType" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
-        <field name="containerTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
-    <entity entity-name="ContainerGeoPoint" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
-        <field name="containerId" type="id" is-pk="true"></field>
-        <field name="geoPointId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="CONTNRGEOPT_CONTNR" related="org.apache.ofbiz.product.facility.Container">
-            <key-map field-name="containerId"/>
-        </relationship>
-        <relationship type="one" fk-name="CONTNRGEOPT_GEOPT" related="org.apache.ofbiz.common.geo.GeoPoint">
-            <key-map field-name="geoPointId"/>
-        </relationship>
-    </entity>
-    <!-- TODO: skipped element view-entity -->
     <entity entity-name="Facility" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="facilityTypeId" type="id"></field>
@@ -776,46 +525,6 @@ under the License.
             <key-map field-name="facilityGroupId"/>
         </relationship>
     </entity>
-    <entity entity-name="FacilityGroupRole" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
-        <field name="facilityGroupId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="FGROUP_RLE_FGRP" related="org.apache.ofbiz.product.facility.FacilityGroup">
-            <key-map field-name="facilityGroupId"/>
-        </relationship>
-        <relationship type="one" fk-name="FGROUP_RLE_PTRLE" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="FacilityGroupRollup" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
-        <field name="facilityGroupId" type="id" is-pk="true"></field>
-        <field name="parentFacilityGroupId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="sequenceNum" type="number-integer"></field>
-        <relationship type="one" fk-name="FGRP_FRLP_CURRENT" title="Current" related="org.apache.ofbiz.product.facility.FacilityGroup">
-            <key-map field-name="facilityGroupId"/>
-        </relationship>
-        <relationship type="one" fk-name="FGRP_FRLP_PARENT" title="Parent" related="org.apache.ofbiz.product.facility.FacilityGroup">
-            <key-map field-name="parentFacilityGroupId" related="facilityGroupId"/>
-        </relationship>
-        <relationship type="many" title="Child" related="org.apache.ofbiz.product.facility.FacilityGroupRollup">
-            <key-map field-name="facilityGroupId" related="parentFacilityGroupId"/>
-        </relationship>
-        <relationship type="many" title="Parent" related="org.apache.ofbiz.product.facility.FacilityGroupRollup">
-            <key-map field-name="parentFacilityGroupId" related="facilityGroupId"/>
-        </relationship>
-        <relationship type="many" title="Sibling" related="org.apache.ofbiz.product.facility.FacilityGroupRollup">
-            <key-map field-name="parentFacilityGroupId"/>
-        </relationship>
-    </entity>
     <entity entity-name="FacilityGroupType" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
         <field name="facilityGroupTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
@@ -870,10 +579,10 @@ under the License.
         <relationship type="one" fk-name="FACILITY_RLE_ROL" related="org.apache.ofbiz.party.party.RoleType">
             <key-map field-name="roleTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="FACILITY_PRTY_ROLE" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
+        <index name="FACILITY_PRTY_ROLE">
+            <index-field name="partyId"/>
+            <index-field name="roleTypeId"/>
+        </index>
     </entity>
     <entity entity-name="FacilityContent" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
         <field name="facilityId" type="id" is-pk="true"></field>
@@ -1187,9 +896,6 @@ under the License.
         <relationship type="one" fk-name="INV_ITEM_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
             <key-map field-name="facilityId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_ITEM_CONTAINER" related="org.apache.ofbiz.product.facility.Container">
-            <key-map field-name="containerId"/>
-        </relationship>
         <relationship type="one" fk-name="INV_ITEM_LOT" related="org.apache.ofbiz.product.inventory.Lot">
             <key-map field-name="lotId"/>
         </relationship>
@@ -1211,9 +917,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="INV_ITEM_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="IYIM_FAST" title="FixedAsset" related="org.apache.ofbiz.accounting.fixedasset.FixedAsset">
-            <key-map field-name="fixedAssetId"/>
         </relationship>
         <index name="INVITEM_SOFID" unique="true">
             <index-field name="softIdentifier"/>
@@ -1274,20 +977,8 @@ under the License.
             <key-map field-name="shipGroupSeqId"/>
             <key-map field-name="inventoryItemId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_ITDTL_FAMNT" related="org.apache.ofbiz.accounting.fixedasset.FixedAssetMaint">
-            <key-map field-name="fixedAssetId"/>
-            <key-map field-name="maintHistSeqId"/>
-        </relationship>
         <relationship type="one" fk-name="INV_ITDTL_ITMIS" related="org.apache.ofbiz.shipment.issuance.ItemIssuance">
             <key-map field-name="itemIssuanceId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortInventoryAssign">
-            <key-map field-name="workEffortId"/>
-            <key-map field-name="inventoryItemId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.workeffort.workeffort.WorkEffortInventoryProduced">
-            <key-map field-name="workEffortId"/>
-            <key-map field-name="inventoryItemId"/>
         </relationship>
         <relationship type="one" fk-name="INV_ITDTL_SHRCT" related="org.apache.ofbiz.shipment.receipt.ShipmentReceipt">
             <key-map field-name="receiptId"/>
@@ -1437,18 +1128,12 @@ under the License.
             <key-map field-name="facilityId"/>
             <key-map field-name="locationSeqId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_XFER_CONT" related="org.apache.ofbiz.product.facility.Container">
-            <key-map field-name="containerId"/>
-        </relationship>
         <relationship type="one" fk-name="INV_XFER_TFAC" title="To" related="org.apache.ofbiz.product.facility.Facility">
             <key-map field-name="facilityIdTo" related="facilityId"/>
         </relationship>
         <relationship type="one-nofk" title="To" related="org.apache.ofbiz.product.facility.FacilityLocation">
             <key-map field-name="facilityIdTo" related="facilityId"/>
             <key-map field-name="locationSeqIdTo" related="locationSeqId"/>
-        </relationship>
-        <relationship type="one" fk-name="INV_XFER_TCNT" title="To" related="org.apache.ofbiz.product.facility.Container">
-            <key-map field-name="containerIdTo" related="containerId"/>
         </relationship>
         <relationship type="one" fk-name="INV_XFER_ISSU" related="org.apache.ofbiz.shipment.issuance.ItemIssuance">
             <key-map field-name="itemIssuanceId"/>
@@ -1945,24 +1630,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="PRDGEO_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="productGeoEnumId" related="enumId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ProductGlAccount" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
-        <field name="productId" type="id" is-pk="true"></field>
-        <field name="organizationPartyId" type="id" is-pk="true"></field>
-        <field name="glAccountTypeId" type="id" is-pk="true"></field>
-        <field name="glAccountId" type="id"></field>
-        <relationship type="one" fk-name="PROD_GLACT_PROD" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_GLACT_PARTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="organizationPartyId" related="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_GLACT_TYPE" related="org.apache.ofbiz.accounting.ledger.GlAccountType">
-            <key-map field-name="glAccountTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_GLACT_GLACT" related="org.apache.ofbiz.accounting.ledger.GlAccount">
-            <key-map field-name="glAccountId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
@@ -2479,10 +2146,6 @@ under the License.
         <relationship type="one" fk-name="PROD_STR_ICNSTS" title="ItemCancel" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="itemCancelStatus" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_VATTXA" title="Vat" related="org.apache.ofbiz.accounting.tax.TaxAuthority">
-            <key-map field-name="vatTaxAuthGeoId" related="taxAuthGeoId"/>
-            <key-map field-name="vatTaxAuthPartyId" related="taxAuthPartyId"/>
-        </relationship>
         <relationship type="one" fk-name="PROD_STR_STRCRDACT" title="StoreCreditAccount" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="storeCreditAccountEnumId" related="enumId"/>
         </relationship>
@@ -2515,36 +2178,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="PRDSTREM_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="emailType" related="enumId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ProductStoreFinActSetting" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
-        <field name="productStoreId" type="id" is-pk="true"></field>
-        <field name="finAccountTypeId" type="id" is-pk="true"></field>
-        <field name="requirePinCode" type="text-indicator"></field>
-        <field name="validateGCFinAcct" type="text-indicator"><description>determines whether the store should validate gift card numbers against the gift certificate codes stored in FinAccount.
-              Set to N if using external gift card provider.</description></field>
-        <field name="accountCodeLength" type="number-integer"><description>length of auto-generated account code</description></field>
-        <field name="pinCodeLength" type="number-integer"><description>length of auto-generated pin code, if it is required</description></field>
-        <field name="accountValidDays" type="number-integer"><description>number of days an account of this type would be valid for</description></field>
-        <field name="authValidDays" type="number-integer"><description>number of days an authorization of this type would be valid for</description></field>
-        <field name="purchaseSurveyId" type="id"><description>This survey is typically used to collect information such as name of buyer, recipient, email, message, etc. and is quite flexible</description></field>
-        <field name="purchSurveySendTo" type="id"><description>Field name on the purchase survey with the send to email address</description></field>
-        <field name="purchSurveyCopyMe" type="id"><description>Whether the BCC on ProductStoreEmailSetting should be copied for email notifications</description></field>
-        <field name="allowAuthToNegative" type="text-indicator"></field>
-        <field name="minBalance" type="currency-amount"></field>
-        <field name="replenishThreshold" type="currency-amount"></field>
-        <field name="replenishMethodEnumId" type="id"><description>Replenish Method for Replenish Account. Can be FARP_TOP_OFF or FARP_REPLENISH_LEVEL. Default FARP_TOP_OFF.</description></field>
-        <relationship type="one" fk-name="PRSTFNAC_PRDS" related="org.apache.ofbiz.product.store.ProductStore">
-            <key-map field-name="productStoreId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRSTFNAC_FNACTP" related="org.apache.ofbiz.accounting.finaccount.FinAccountType">
-            <key-map field-name="finAccountTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRSTFNAC_SRVY" related="org.apache.ofbiz.content.survey.Survey">
-            <key-map field-name="purchaseSurveyId" related="surveyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRSTFNAC_FARPMTD" title="ReplenishMethod" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="replenishMethodEnumId" related="enumId"/>
         </relationship>
     </entity>
     <entity entity-name="ProductStoreFacility" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
@@ -2662,9 +2295,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="PRDS_PS_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
             <key-map field-name="paymentServiceTypeEnumId" related="enumId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRDS_PS_PGC" related="org.apache.ofbiz.accounting.payment.PaymentGatewayConfig">
-            <key-map field-name="paymentGatewayConfigId"/>
         </relationship>
         <relationship type="one" fk-name="PRDS_PS_CUS_MET" related="org.apache.ofbiz.common.method.CustomMethod">
             <key-map field-name="paymentCustomMethodId" related="customMethodId"/>

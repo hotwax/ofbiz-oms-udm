@@ -21,35 +21,6 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
-    <entity entity-name="ProductManufacturingRule" package="org.apache.ofbiz.manufacturing.bom" group="ofbiz_transactional">
-        <field name="ruleId" type="id" is-pk="true"></field>
-        <field name="productId" type="id"></field>
-        <field name="productIdFor" type="id"></field>
-        <field name="productIdIn" type="id"></field>
-        <field name="ruleSeqId" type="id"></field>
-        <field name="fromDate" type="date-time"></field>
-        <field name="productIdInSubst" type="id"></field>
-        <field name="productFeature" type="id"></field>
-        <field name="ruleOperator" type="id"></field>
-        <field name="quantity" type="number-float"></field>
-        <field name="description" type="text-medium"></field>
-        <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="PRODUCT_PARENT" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRODUCT_FOR" title="ProductFor" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productIdFor" related="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRODUCT_IN" title="ProductIn" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productIdIn" related="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRODUCT_SUBST" title="ProductSubst" related="org.apache.ofbiz.product.product.Product">
-            <key-map field-name="productIdInSubst" related="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRODUCT_FEAT" related="org.apache.ofbiz.product.feature.ProductFeature">
-            <key-map field-name="productFeature" related="productFeatureId"/>
-        </relationship>
-    </entity>
     <entity entity-name="TechDataCalendar" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
 <description>Used to defined the availability of the machines, this entity define the Id and the week definition.
       The Id is used in the exception calendar table as reference</description>        <field name="calendarId" type="id" is-pk="true"></field>
