@@ -53,6 +53,12 @@ under the License.
         <relationship type="one" fk-name="CONTENT_TO_TYPE" related="org.apache.ofbiz.content.content.ContentType">
             <key-map field-name="contentTypeId"/>
         </relationship>
+        <relationship type="one" fk-name="CONTENT_TO_DATA" related="org.apache.ofbiz.content.data.DataResource">
+            <key-map field-name="dataResourceId"/>
+        </relationship>
+        <relationship type="one" fk-name="CONTENT_TO_TMPDATA" title="Template" related="org.apache.ofbiz.content.data.DataResource">
+            <key-map field-name="templateDataResourceId" related="dataResourceId"/>
+        </relationship>
         <relationship type="one" fk-name="CNT_STATUS" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
@@ -182,7 +188,44 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
+    <entity entity-name="DataResource" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
+        <field name="dataResourceId" type="id" is-pk="true"></field>
+        <field name="dataResourceTypeId" type="id"></field>
+        <field name="dataTemplateTypeId" type="id"></field>
+        <field name="dataCategoryId" type="id"></field>
+        <field name="dataSourceId" type="id"></field>
+        <field name="statusId" type="id"></field>
+        <field name="dataResourceName" type="text-medium"></field>
+        <field name="localeString" type="text-short"></field>
+        <field name="mimeTypeId" type="id-long"></field>
+        <field name="characterSetId" type="id-long"></field>
+        <field name="objectInfo" type="text-medium"><description>For Short Text the text goes here.</description></field>
+        <field name="surveyId" type="id"></field>
+        <field name="surveyResponseId" type="id"></field>
+        <field name="relatedDetailId" type="id"><description>Depending on the dataResourceTypeId this can point to other entities, like: Survey, SurveyResponse, etc.</description></field>
+        <field name="isPublic" type="text-indicator"><description>If this is set to Y then anyone can download it, otherwise the download is restricted.</description></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="lastModifiedDate" type="date-time"></field>
+        <field name="lastModifiedByUserLogin" type="id-long"></field>
+        <relationship type="one" fk-name="DTRSRC_STATUS" related="org.apache.ofbiz.common.status.StatusItem">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one" fk-name="DATA_REC_CB_ULGN" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="createdByUserLogin" related="userLoginId"/>
+        </relationship>
+        <relationship type="one" fk-name="DATA_REC_LMB_ULGN" title="LastModifiedBy" related="org.apache.ofbiz.security.login.UserLogin">
+            <key-map field-name="lastModifiedByUserLogin" related="userLoginId"/>
+        </relationship>
+    </entity>
     <!-- TODO: skipped element view-entity -->
+    <entity entity-name="ElectronicText" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
+        <field name="dataResourceId" type="id" is-pk="true"></field>
+        <field name="textData" type="text-very-long"></field>
+        <relationship type="one" fk-name="DATA_REC_TEXT" related="org.apache.ofbiz.content.data.DataResource">
+            <key-map field-name="dataResourceId"/>
+        </relationship>
+    </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
