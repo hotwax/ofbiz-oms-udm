@@ -25,9 +25,5 @@ under the License.
         <field name="keyName" type="id-long" is-pk="true"></field>
         <field name="keyText" type="text-medium"></field>
     </entity>
-    <entity entity-name="SequenceValueItem" package="org.apache.ofbiz.entity.sequence" group="ofbiz_transactional">
-        <field name="seqName" type="id-long" is-pk="true"></field>
-        <field name="seqId" type="number-integer"></field>
-    </entity>
 </entities>
 
