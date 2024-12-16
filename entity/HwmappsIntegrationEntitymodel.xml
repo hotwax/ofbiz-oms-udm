@@ -26,7 +26,7 @@ under the License.
         <field name="mappingKey" type="text-medium" enable-audit-log="true"><description>The key used for mapping in the integration.</description></field>
         <field name="mappingValue" type="text-medium" enable-audit-log="true"><description>The corresponding value for the mapping key.</description></field>
         <field name="description" type="text-medium"><description>A brief description of the integration type mapping.</description></field>
-        <relationship type="one-nofk" fk-name="INTGR_TYPE_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one-nofk" fk-name="INTGR_TYPE_ENUM" related="moqui.basic.Enumeration">
             <key-map field-name="integrationTypeId" related="enumId"/>
         </relationship>
     </entity>

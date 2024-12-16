@@ -34,7 +34,7 @@ under the License.
         <field name="accessToken" type="text-medium" encrypt="true"></field>
         <field name="sharedSecret" type="text-medium" encrypt="true"><description>Secrets are used to validate the integrity of webhooks</description></field>
         <field name="processRefund" type="text-indicator"></field>
-        <relationship type="one" fk-name="SHPFY_ACC_SCOPE" title="Access" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="SHPFY_ACC_SCOPE" title="Access" related="moqui.basic.Enumeration">
             <key-map field-name="accessScopeEnumId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="SHPFY_PROD_STORE" related="org.apache.ofbiz.product.store.ProductStore">
@@ -43,7 +43,7 @@ under the License.
         <relationship type="one" fk-name="SHPFY_WEBSITE" related="org.apache.ofbiz.webapp.website.WebSite">
             <key-map field-name="webSiteId"/>
         </relationship>
-        <relationship type="one" fk-name="SH_FAC_IDEN_TYPE" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="SH_FAC_IDEN_TYPE" related="moqui.basic.Enumeration">
             <key-map field-name="facilityIdenTypeId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="SHPFY_SHOP" related="co.hotwax.shopify.ShopifyShop">
@@ -164,7 +164,7 @@ under the License.
         <field name="mappedTypeId" type="id"></field>
         <field name="mappedValue" type="id" enable-audit-log="true"></field>
         <field name="mappedKey" type="id-long" is-pk="true"></field>
-        <relationship type="one-nofk" fk-name="SHOP_TYPE_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one-nofk" fk-name="SHOP_TYPE_ENUM" related="moqui.basic.Enumeration">
             <key-map field-name="mappedTypeId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="SHOP_TYPE_SHOP" related="co.hotwax.shopify.ShopifyShop">
@@ -182,7 +182,7 @@ under the License.
         <field name="templateLocation" type="text-medium"></field>
         <field name="fromDate" type="date-time"></field>
         <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="SHOP_SCRIPT_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="SHOP_SCRIPT_ENUM" related="moqui.basic.Enumeration">
             <key-map field-name="scriptTypeId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="SHOP_SCRIPT_SHOP" related="co.hotwax.shopify.ShopifyShop">

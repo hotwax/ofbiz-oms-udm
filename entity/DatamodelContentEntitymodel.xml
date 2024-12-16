@@ -59,10 +59,10 @@ under the License.
         <relationship type="one" fk-name="CONTENT_TO_TMPDATA" title="Template" related="org.apache.ofbiz.content.data.DataResource">
             <key-map field-name="templateDataResourceId" related="dataResourceId"/>
         </relationship>
-        <relationship type="one" fk-name="CNT_STATUS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="CNT_STATUS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="CONTENT_PRIVENM" title="Privilege" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="CONTENT_PRIVENM" title="Privilege" related="moqui.basic.Enumeration">
             <key-map field-name="privilegeEnumId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="CONTENT_CUSTMET" related="org.apache.ofbiz.common.method.CustomMethod">
@@ -104,7 +104,7 @@ under the License.
         <relationship type="one" fk-name="CNTNTAPPR_RLTP" related="org.apache.ofbiz.party.party.RoleType">
             <key-map field-name="roleTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="CNTNTAPPR_APSI" title="Approval" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="CNTNTAPPR_APSI" title="Approval" related="moqui.basic.StatusItem">
             <key-map field-name="approvalStatusId" related="statusId"/>
         </relationship>
     </entity>
@@ -208,7 +208,7 @@ under the License.
         <field name="createdByUserLogin" type="id-long"></field>
         <field name="lastModifiedDate" type="date-time"></field>
         <field name="lastModifiedByUserLogin" type="id-long"></field>
-        <relationship type="one" fk-name="DTRSRC_STATUS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="DTRSRC_STATUS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="DATA_REC_CB_ULGN" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">

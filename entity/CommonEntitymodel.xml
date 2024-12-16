@@ -32,28 +32,8 @@ under the License.
         <field name="bccAddress" type="text-medium"></field>
         <field name="subject" type="text-medium"></field>
         <field name="contentType" type="text-medium"></field>
-        <relationship type="one" fk-name="EMAILSET_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="EMAILSET_ENUM" related="moqui.basic.Enumeration">
             <key-map field-name="emailType" related="enumId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="Enumeration" package="org.apache.ofbiz.common.enum" group="ofbiz_transactional">
-        <field name="enumId" type="id" is-pk="true"></field>
-        <field name="enumTypeId" type="id"></field>
-        <field name="enumCode" type="text-medium"></field>
-        <field name="sequenceId" type="id"></field>
-        <field name="enumName" type="text-medium"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="ENUM_TO_TYPE" related="org.apache.ofbiz.common.enum.EnumerationType">
-            <key-map field-name="enumTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="EnumerationType" package="org.apache.ofbiz.common.enum" group="ofbiz_transactional">
-        <field name="enumTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="ENUM_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.common.enum.EnumerationType">
-            <key-map field-name="parentTypeId" related="enumTypeId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
@@ -67,36 +47,10 @@ under the License.
         <field name="hasPostalCodeExt" type="text-indicator"></field>
         <field name="requirePostalCodeExt" type="text-indicator"></field>
         <field name="addressFormat" type="text-medium"></field>
-        <relationship type="one" fk-name="CNY_ADR_GEO" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="CNY_ADR_GEO" related="moqui.basic.Geo">
             <key-map field-name="geoId"/>
         </relationship>
         <relationship type="one" fk-name="CNY_ADR_GEO_TYPE" related="org.apache.ofbiz.common.geo.GeoAssocType">
-            <key-map field-name="geoAssocTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="Geo" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
-        <field name="geoId" type="id" is-pk="true"></field>
-        <field name="geoTypeId" type="id"></field>
-        <field name="geoName" type="text-medium"></field>
-        <field name="geoCode" type="text-medium"></field>
-        <field name="geoSecCode" type="text-medium"></field>
-        <field name="abbreviation" type="text-medium"></field>
-        <field name="wellKnownText" type="text-very-long"></field>
-        <relationship type="one" fk-name="GEO_TO_TYPE" related="org.apache.ofbiz.common.geo.GeoType">
-            <key-map field-name="geoTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="GeoAssoc" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
-        <field name="geoId" type="id" is-pk="true"><description>The enclosed geo</description></field>
-        <field name="geoIdTo" type="id" is-pk="true"><description>The enclosing geo</description></field>
-        <field name="geoAssocTypeId" type="id"></field>
-        <relationship type="one" fk-name="GEO_ASSC_TO_MAIN" title="Main" related="org.apache.ofbiz.common.geo.Geo">
-            <key-map field-name="geoId"/>
-        </relationship>
-        <relationship type="one" fk-name="GEO_ASSC_TO_ASSC" title="Assoc" related="org.apache.ofbiz.common.geo.Geo">
-            <key-map field-name="geoIdTo" related="geoId"/>
-        </relationship>
-        <relationship type="one" fk-name="GEO_ASSC_TO_TYPE" related="org.apache.ofbiz.common.geo.GeoAssocType">
             <key-map field-name="geoAssocTypeId"/>
         </relationship>
     </entity>
@@ -106,32 +60,6 @@ under the License.
     <entity entity-name="GeoAssocType" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
         <field name="geoAssocTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
-    </entity>
-    <entity entity-name="GeoPoint" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
-        <field name="geoPointId" type="id" is-pk="true"></field>
-        <field name="geoPointTypeEnumId" type="id"></field>
-        <field name="description" type="text-medium"></field>
-        <field name="dataSourceId" type="id"></field>
-        <field name="latitude" type="number-float"></field>
-        <field name="longitude" type="number-float"></field>
-        <field name="elevation" type="number-decimal"></field>
-        <field name="elevationUomId" type="id"><description>UOM for elevation (feet, meters, etc.)</description></field>
-        <field name="information" type="text-medium"><description>To enter any related information</description></field>
-        <relationship type="one" fk-name="GEOPOINT_TYPE" title="GeoPointType" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="geoPointTypeEnumId" related="enumId"/>
-        </relationship>
-        <relationship type="one" fk-name="GPT_ELEV_UOM" title="Elevation" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="elevationUomId" related="uomId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="GeoType" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
-        <field name="geoTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="GEO_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.common.geo.GeoType">
-            <key-map field-name="parentTypeId" related="geoTypeId"/>
-        </relationship>
     </entity>
     <entity entity-name="CustomMethod" package="org.apache.ofbiz.common.method" group="ofbiz_transactional">
         <field name="customMethodId" type="id" is-pk="true"></field>
@@ -157,22 +85,12 @@ under the License.
         <field name="noteInfo" type="text-very-long"></field>
         <field name="noteDateTime" type="date-time"></field>
     </entity>
-    <entity entity-name="StatusItem" package="org.apache.ofbiz.common.status" group="ofbiz_transactional">
-        <field name="statusId" type="id" is-pk="true"></field>
-        <field name="statusTypeId" type="id"></field>
-        <field name="statusCode" type="text-medium"></field>
-        <field name="sequenceId" type="id"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="STATUS_TO_TYPE" related="org.apache.ofbiz.common.status.StatusType">
-            <key-map field-name="statusTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="StatusType" package="org.apache.ofbiz.common.status" group="ofbiz_transactional">
+    <entity entity-name="StatusType" package="moqui.basic" group="ofbiz_transactional">
         <field name="statusTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
         <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="STATUS_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.common.status.StatusType">
+        <relationship type="one" fk-name="STATUS_TYPE_PARENT" title="Parent" related="moqui.basic.StatusType">
             <key-map field-name="parentTypeId" related="statusTypeId"/>
         </relationship>
     </entity>
@@ -181,84 +99,25 @@ under the License.
         <field name="statusIdTo" type="id" is-pk="true"></field>
         <field name="conditionExpression" type="text-medium"></field>
         <field name="transitionName" type="text-medium"></field>
-        <relationship type="one" fk-name="STATUS_CHG_MAIN" title="Main" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="STATUS_CHG_MAIN" title="Main" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="STATUS_CHG_TO" title="To" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="STATUS_CHG_TO" title="To" related="moqui.basic.StatusItem">
             <key-map field-name="statusIdTo" related="statusId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="Uom" package="org.apache.ofbiz.common.uom" group="ofbiz_transactional">
-        <field name="uomId" type="id" is-pk="true"></field>
-        <field name="uomTypeId" type="id"></field>
-        <field name="abbreviation" type="text-medium"></field>
-        <field name="numericCode" type="number-integer"></field>
-        <field name="code" type="text-medium"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="UOM_TO_TYPE" related="org.apache.ofbiz.common.uom.UomType">
-            <key-map field-name="uomTypeId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="UomConversion" package="org.apache.ofbiz.common.uom" group="ofbiz_transactional">
-        <field name="uomId" type="id" is-pk="true"></field>
-        <field name="uomIdTo" type="id" is-pk="true"></field>
-        <field name="conversionFactor" type="number-float"></field>
-        <field name="customMethodId" type="id"></field>
-        <field name="decimalScale" type="number-integer"></field>
-        <field name="roundingMode" type="id"></field>
-        <relationship type="one" fk-name="UOM_CONV_MAIN" title="Main" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="UOM_CONV_TO" title="ConvTo" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="uomIdTo" related="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="UOM_CUSTOM_METHOD" title="UomCustomMethod" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="customMethodId" related="customMethodId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="UomConversionDated" package="org.apache.ofbiz.common.uom" group="ofbiz_transactional">
-        <field name="uomId" type="id" is-pk="true"></field>
-        <field name="uomIdTo" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <field name="conversionFactor" type="number-float"></field>
-        <field name="customMethodId" type="id"></field>
-        <field name="decimalScale" type="number-integer"></field>
-        <field name="roundingMode" type="id"></field>
-        <field name="purposeEnumId" type="id"></field>
-        <relationship type="one" fk-name="DATE_UOM_CONV_MAIN" title="DatedMain" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="DATE_UOM_CONV_TO" title="DatedConvTo" related="org.apache.ofbiz.common.uom.Uom">
-            <key-map field-name="uomIdTo" related="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="UOMD_CUSTOM_METHOD" title="UomCustomMethod" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="customMethodId" related="customMethodId"/>
-        </relationship>
-        <relationship type="one" fk-name="UOMD_PURPOSE_ENUM" title="Purpose" related="org.apache.ofbiz.common.enum.Enumeration">
-            <key-map field-name="purposeEnumId" related="enumId"/>
-        </relationship>
-    </entity>
     <entity entity-name="UomGroup" package="org.apache.ofbiz.common.uom" group="ofbiz_transactional">
         <field name="uomGroupId" type="id" is-pk="true"></field>
         <field name="uomId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="UOM_GROUP_UOM" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="UOM_GROUP_UOM" related="moqui.basic.Uom">
             <key-map field-name="uomId"/>
         </relationship>
     </entity>
-    <entity entity-name="UomType" package="org.apache.ofbiz.common.uom" group="ofbiz_transactional">
-        <field name="uomTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="UOM_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.common.uom.UomType">
-            <key-map field-name="parentTypeId" related="uomTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="UserPreference" package="org.apache.ofbiz.common.user" group="ofbiz_transactional">
+        
+    <entity entity-name="OmsUserPreference" package="org.apache.ofbiz.common.user" table-name="OMS_USER_PREFERENCE" group="ofbiz_transactional">
 <description>The UserPreference entity contains one entry per preference per
           userLogin. User preferences are stored as key/value pairs (userPrefTypeId/userPrefValue).
           All values are stored as strings. Value strings can be converted to

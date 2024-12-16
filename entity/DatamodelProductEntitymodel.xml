@@ -206,19 +206,16 @@ under the License.
         <relationship type="one" fk-name="FAC_INVITM_TYPE" title="Default" related="org.apache.ofbiz.product.inventory.InventoryItemType">
             <key-map field-name="defaultInventoryItemTypeId" related="inventoryItemTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="FAC_DEF_DUOM" title="Dimension" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="FAC_DEF_DUOM" title="Dimension" related="moqui.basic.Uom">
             <key-map field-name="defaultDimensionUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="FAC_DEF_WUOM" title="Weight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="FAC_DEF_WUOM" title="Weight" related="moqui.basic.Uom">
             <key-map field-name="defaultWeightUomId" related="uomId"/>
         </relationship>
         <relationship type="one-nofk" related="org.apache.ofbiz.product.store.ProductStore">
 <description>this was changed from the FK to better handle syncronization; this may be set back to be a FK in the future</description>            <key-map field-name="productStoreId"/>
         </relationship>
-        <relationship type="one" fk-name="FACILITY_GEOPT" related="org.apache.ofbiz.common.geo.GeoPoint">
-            <key-map field-name="geoPointId"/>
-        </relationship>
-        <relationship type="one" fk-name="FACILITY_SUOM" title="FacilitySize" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="FACILITY_SUOM" title="FacilitySize" related="moqui.basic.Uom">
             <key-map field-name="facilitySizeUomId" related="uomId"/>
         </relationship>
         <index name="EXT_FAC_ID_INDX">
@@ -360,11 +357,8 @@ under the License.
         <relationship type="one" fk-name="FACILITY_LOC_FAC" related="org.apache.ofbiz.product.facility.Facility">
             <key-map field-name="facilityId"/>
         </relationship>
-        <relationship type="one" fk-name="FACILITY_LOC_TENM" title="Type" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="FACILITY_LOC_TENM" title="Type" related="moqui.basic.Enumeration">
             <key-map field-name="locationTypeEnumId" related="enumId"/>
-        </relationship>
-        <relationship type="one" fk-name="FACILITY_LOC_GEOPT" related="org.apache.ofbiz.common.geo.GeoPoint">
-            <key-map field-name="geoPointId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
@@ -446,7 +440,7 @@ under the License.
         <relationship type="one" fk-name="PROD_FEAT_TYPE" related="org.apache.ofbiz.product.feature.ProductFeatureType">
             <key-map field-name="productFeatureTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_FEAT_UOM" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_FEAT_UOM" related="moqui.basic.Uom">
             <key-map field-name="uomId"/>
         </relationship>
     </entity>
@@ -533,7 +527,7 @@ under the License.
         <relationship type="one" fk-name="INV_ITEM_OWNPARTY" title="Owner" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="ownerPartyId" related="partyId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_ITEM_STTSITM" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="INV_ITEM_STTSITM" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="INV_ITEM_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
@@ -555,10 +549,10 @@ under the License.
             <key-map field-name="facilityId"/>
             <key-map field-name="locationSeqId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_ITEM_UOM" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="INV_ITEM_UOM" related="moqui.basic.Uom">
             <key-map field-name="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_ITEM_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="INV_ITEM_CUOM" title="Currency" related="moqui.basic.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
         </relationship>
         <index name="INVITEM_SOFID" unique="true">
@@ -614,7 +608,7 @@ under the License.
         <relationship type="one" fk-name="INV_ITDTL_PHINV" related="org.apache.ofbiz.product.inventory.PhysicalInventory">
             <key-map field-name="physicalInventoryId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_ITDTL_REAS" title="Reason" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="INV_ITDTL_REAS" title="Reason" related="moqui.basic.Enumeration">
             <key-map field-name="reasonEnumId" related="enumId"/>
         </relationship>
         <relationship type="one-nofk" related="org.apache.ofbiz.product.inventory.InventoryItemVariance">
@@ -635,7 +629,7 @@ under the License.
         <relationship type="one" fk-name="INV_ITEM_STTS_II" related="org.apache.ofbiz.product.inventory.InventoryItem">
             <key-map field-name="inventoryItemId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_ITEM_STTS_SI" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="INV_ITEM_STTS_SI" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="INV_ITEM_STTS_USER" related="org.apache.ofbiz.security.login.UserLogin">
@@ -687,7 +681,7 @@ under the License.
         <relationship type="one" fk-name="INV_XFER_ITEM" related="org.apache.ofbiz.product.inventory.InventoryItem">
             <key-map field-name="inventoryItemId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_XFER_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="INV_XFER_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="INV_XFER_FAC" related="org.apache.ofbiz.product.facility.Facility">
@@ -750,10 +744,10 @@ under the License.
         <relationship type="one" fk-name="PROD_PRICE_PROD" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_PRICE_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_PRICE_CUOM" title="Currency" related="moqui.basic.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_PRICE_TUOM" title="Term" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_PRICE_TUOM" title="Term" related="moqui.basic.Uom">
             <key-map field-name="termUomId" related="uomId"/>
         </relationship>
         <relationship type="one" fk-name="PROD_PRICE_CMET" related="org.apache.ofbiz.common.method.CustomMethod">
@@ -762,7 +756,7 @@ under the License.
         <relationship type="one" fk-name="PROD_PRC_TAXPTY" title="TaxAuthority" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="taxAuthPartyId" related="partyId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_PRC_TAXGEO" title="TaxAuthority" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="PROD_PRC_TAXGEO" title="TaxAuthority" related="moqui.basic.Geo">
             <key-map field-name="taxAuthGeoId" related="geoId"/>
         </relationship>
         <relationship type="one" fk-name="PROD_PRICE_CBUL" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
@@ -884,37 +878,34 @@ under the License.
         <relationship type="one" fk-name="PROD_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
             <key-map field-name="facilityId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_QUANT_UOM" title="Quantity" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_QUANT_UOM" title="Quantity" related="moqui.basic.Uom">
             <key-map field-name="quantityUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_AMOUNT_UOMT" title="Amount" related="org.apache.ofbiz.common.uom.UomType">
-            <key-map field-name="amountUomTypeId" related="uomTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_WEIGHT_UOM" title="Weight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_WEIGHT_UOM" title="Weight" related="moqui.basic.Uom">
             <key-map field-name="weightUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_HEIGHT_UOM" title="Height" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_HEIGHT_UOM" title="Height" related="moqui.basic.Uom">
             <key-map field-name="heightUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_WIDTH_UOM" title="Width" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_WIDTH_UOM" title="Width" related="moqui.basic.Uom">
             <key-map field-name="widthUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_DEPTH_UOM" title="Depth" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_DEPTH_UOM" title="Depth" related="moqui.basic.Uom">
             <key-map field-name="depthUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_DIAMTR_UOM" title="Diameter" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_DIAMTR_UOM" title="Diameter" related="moqui.basic.Uom">
             <key-map field-name="diameterUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_VVMETHOD_ENUM" title="VirtualVariantMethod" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PROD_VVMETHOD_ENUM" title="VirtualVariantMethod" related="moqui.basic.Enumeration">
             <key-map field-name="virtualVariantMethodEnum" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_RATE_ENUM" title="Rating" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PROD_RATE_ENUM" title="Rating" related="moqui.basic.Enumeration">
             <key-map field-name="ratingTypeEnum" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_RQMT_ENUM" title="RequirementMethod" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PROD_RQMT_ENUM" title="RequirementMethod" related="moqui.basic.Enumeration">
             <key-map field-name="requirementMethodEnumId" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_ORG_GEO" title="Origin" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="PROD_ORG_GEO" title="Origin" related="moqui.basic.Geo">
             <key-map field-name="originGeoId" related="geoId"/>
         </relationship>
         <relationship type="one" fk-name="PROD_CB_USERLOGIN" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
@@ -1005,7 +996,7 @@ under the License.
         <relationship type="one" fk-name="PROD_CNT_URT" title="Use" related="org.apache.ofbiz.party.party.RoleType">
             <key-map field-name="useRoleTypeId" related="roleTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_CNT_UTU" title="UseTime" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_CNT_UTU" title="UseTime" related="moqui.basic.Uom">
             <key-map field-name="useTimeUomId" related="uomId"/>
         </relationship>
     </entity>
@@ -1123,43 +1114,43 @@ under the License.
         <relationship type="one" fk-name="PROD_STR_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
             <key-map field-name="inventoryFacilityId" related="facilityId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_RORDENUM" title="ReserveOrder" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PROD_STR_RORDENUM" title="ReserveOrder" related="moqui.basic.Enumeration">
             <key-map field-name="reserveOrderEnumId" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_RQMTENUM" title="RequirementMethod" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PROD_STR_RQMTENUM" title="RequirementMethod" related="moqui.basic.Enumeration">
             <key-map field-name="requirementMethodEnumId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="PROD_STR_PAYTOPTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="payToPartyId" related="partyId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_CURUOM" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PROD_STR_CURUOM" related="moqui.basic.Uom">
             <key-map field-name="defaultCurrencyUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_SALECHN" title="DefaultSalesChannel" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PROD_STR_SALECHN" title="DefaultSalesChannel" related="moqui.basic.Enumeration">
             <key-map field-name="defaultSalesChannelEnumId" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_HAPSTS" title="HeaderApproved" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PROD_STR_HAPSTS" title="HeaderApproved" related="moqui.basic.StatusItem">
             <key-map field-name="headerApprovedStatus" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_IAPSTS" title="ItemApproved" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PROD_STR_IAPSTS" title="ItemApproved" related="moqui.basic.StatusItem">
             <key-map field-name="itemApprovedStatus" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_DIAPSTS" title="DigitalItemApproved" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PROD_STR_DIAPSTS" title="DigitalItemApproved" related="moqui.basic.StatusItem">
             <key-map field-name="digitalItemApprovedStatus" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_HDCSTS" title="HeaderDeclined" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PROD_STR_HDCSTS" title="HeaderDeclined" related="moqui.basic.StatusItem">
             <key-map field-name="headerDeclinedStatus" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_IDCSTS" title="ItemDeclined" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PROD_STR_IDCSTS" title="ItemDeclined" related="moqui.basic.StatusItem">
             <key-map field-name="itemDeclinedStatus" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_HCNSTS" title="HeaderCancel" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PROD_STR_HCNSTS" title="HeaderCancel" related="moqui.basic.StatusItem">
             <key-map field-name="headerCancelStatus" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_ICNSTS" title="ItemCancel" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PROD_STR_ICNSTS" title="ItemCancel" related="moqui.basic.StatusItem">
             <key-map field-name="itemCancelStatus" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_STR_STRCRDACT" title="StoreCreditAccount" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PROD_STR_STRCRDACT" title="StoreCreditAccount" related="moqui.basic.Enumeration">
             <key-map field-name="storeCreditAccountEnumId" related="enumId"/>
         </relationship>
     </entity>
@@ -1189,7 +1180,7 @@ under the License.
         <relationship type="one" fk-name="PRDSTREM_PRDS" related="org.apache.ofbiz.product.store.ProductStore">
             <key-map field-name="productStoreId"/>
         </relationship>
-        <relationship type="one" fk-name="PRDSTREM_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PRDSTREM_ENUM" related="moqui.basic.Enumeration">
             <key-map field-name="emailType" related="enumId"/>
         </relationship>
     </entity>
@@ -1270,10 +1261,10 @@ under the License.
         <relationship type="one" related="org.apache.ofbiz.shipment.shipment.ShipmentMethodType">
             <key-map field-name="shipmentMethodTypeId"/>
         </relationship>
-        <relationship type="one-nofk" title="Include" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one-nofk" title="Include" related="moqui.basic.Geo">
             <key-map field-name="includeGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one-nofk" title="Exclude" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one-nofk" title="Exclude" related="moqui.basic.Geo">
             <key-map field-name="excludeGeoId" related="geoId"/>
         </relationship>
         <relationship type="one" fk-name="PRDS_SM_SGC" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfig">

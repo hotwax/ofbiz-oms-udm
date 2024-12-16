@@ -79,7 +79,7 @@ under the License.
         <relationship type="one" fk-name="PICKLST_SMTP" related="org.apache.ofbiz.shipment.shipment.ShipmentMethodType">
             <key-map field-name="shipmentMethodTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="PICKLST_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PICKLST_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
     </entity>
@@ -124,7 +124,7 @@ under the License.
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
-        <relationship type="one" fk-name="PICKLST_ITM_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PICKLST_ITM_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="itemStatusId" related="statusId"/>
         </relationship>
         <relationship type="one" fk-name="PCKLST_ITM_INV" related="org.apache.ofbiz.product.inventory.InventoryItem">
@@ -181,10 +181,10 @@ under the License.
         <relationship type="one" fk-name="PCKLST_STHST_CUL" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="createdByUserLogin" related="userLoginId"/>
         </relationship>
-        <relationship type="one" fk-name="PCKLST_STHST_FSI" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PCKLST_STHST_FSI" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PCKLST_STHST_TSI" title="To" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PCKLST_STHST_TSI" title="To" related="moqui.basic.StatusItem">
             <key-map field-name="statusIdTo" related="statusId"/>
         </relationship>
         <relationship type="one" fk-name="PCKLST_STHST_SVC" related="org.apache.ofbiz.common.status.StatusValidChange">
@@ -327,10 +327,10 @@ under the License.
         <relationship type="one" fk-name="SHPMNT_TYPE" related="org.apache.ofbiz.shipment.shipment.ShipmentType">
             <key-map field-name="shipmentTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="SHPMNT_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMNT_CUOM" title="Currency" related="moqui.basic.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
         </relationship>
         <relationship type="one" fk-name="SHPMNT_OFAC" title="Origin" related="org.apache.ofbiz.product.facility.Facility">
@@ -411,10 +411,10 @@ under the License.
         <field name="boxHeight" type="number-decimal"></field>
         <field name="weightUomId" type="id"></field>
         <field name="boxWeight" type="number-decimal"></field>
-        <relationship type="one" fk-name="SHMT_BXTP_DUOM" title="Dimension" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHMT_BXTP_DUOM" title="Dimension" related="moqui.basic.Uom">
             <key-map field-name="dimensionUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHMT_BXTP_WUOM" title="Weight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHMT_BXTP_WUOM" title="Weight" related="moqui.basic.Uom">
             <key-map field-name="weightUomId" related="uomId"/>
         </relationship>
     </entity>
@@ -483,19 +483,19 @@ under the License.
             <key-map field-name="partyId"/>
             <key-map field-name="roleTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_WUOM" title="Weight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMNT_CE_WUOM" title="Weight" related="moqui.basic.Uom">
             <key-map field-name="weightUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_QUOM" title="Quantity" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMNT_CE_QUOM" title="Quantity" related="moqui.basic.Uom">
             <key-map field-name="quantityUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_PUOM" title="Price" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMNT_CE_PUOM" title="Price" related="moqui.basic.Uom">
             <key-map field-name="priceUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_TGEO" title="To" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="SHPMNT_CE_TGEO" title="To" related="moqui.basic.Geo">
             <key-map field-name="geoIdTo" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_FGEO" title="From" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="SHPMNT_CE_FGEO" title="From" related="moqui.basic.Geo">
             <key-map field-name="geoIdFrom" related="geoId"/>
         </relationship>
     </entity>
@@ -632,10 +632,10 @@ under the License.
         <relationship type="many" related="org.apache.ofbiz.shipment.shipment.CarrierShipmentBoxType">
             <key-map field-name="shipmentBoxTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKG_DUOM" title="Dimension" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPKG_DUOM" title="Dimension" related="moqui.basic.Uom">
             <key-map field-name="dimensionUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKG_WUOM" title="Weight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPKG_WUOM" title="Weight" related="moqui.basic.Uom">
             <key-map field-name="weightUomId" related="uomId"/>
         </relationship>
     </entity>
@@ -689,7 +689,7 @@ under the License.
             <key-map field-name="shipmentId"/>
             <key-map field-name="shipmentRouteSegmentId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKRTSG_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPKRTSG_CUOM" title="Currency" related="moqui.basic.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
         </relationship>
     </entity>
@@ -772,13 +772,13 @@ under the License.
         <relationship type="one" fk-name="SHPMT_RTSEG_DTCN" title="Dest" related="org.apache.ofbiz.party.contact.TelecomNumber">
             <key-map field-name="destTelecomNumberId" related="contactMechId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKRTSG_CSSTS" title="CarrierService" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="SHPKRTSG_CSSTS" title="CarrierService" related="moqui.basic.StatusItem">
             <key-map field-name="carrierServiceStatusId" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMT_RTSEG_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMT_RTSEG_CUOM" title="Currency" related="moqui.basic.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKRTSG_BWUOM" title="BillingWeight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPKRTSG_BWUOM" title="BillingWeight" related="moqui.basic.Uom">
             <key-map field-name="billingWeightUomId" related="uomId"/>
         </relationship>
     </entity>
@@ -790,7 +790,7 @@ under the License.
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="statusDate" type="date-time"></field>
         <field name="changeByUserLoginId" type="id-long"></field>
-        <relationship type="one" fk-name="SHPMNT_STTS_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="SHPMNT_STTS_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="SHPMNT_STTS_SHMT" related="org.apache.ofbiz.shipment.shipment.Shipment">

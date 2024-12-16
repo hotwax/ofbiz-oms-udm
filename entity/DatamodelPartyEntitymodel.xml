@@ -98,7 +98,7 @@ under the License.
             <key-map field-name="partyIdFrom" related="partyId"/>
             <key-map field-name="roleTypeIdFrom" related="roleTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="COM_EVNT_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="COM_EVNT_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="COM_EVNT_CMTP" related="org.apache.ofbiz.party.contact.ContactMechType">
@@ -110,7 +110,7 @@ under the License.
         <relationship type="one" fk-name="COM_EVNT_TCM" title="To" related="org.apache.ofbiz.party.contact.ContactMech">
             <key-map field-name="contactMechIdTo" related="contactMechId"/>
         </relationship>
-        <relationship type="one" fk-name="COM_EVNT_RESENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="COM_EVNT_RESENUM" related="moqui.basic.Enumeration">
             <key-map field-name="reasonEnumId" related="enumId"/>
         </relationship>
         <index name="COMMEVT_MSG_ID" unique="true">
@@ -167,7 +167,7 @@ under the License.
         <relationship type="one" fk-name="COM_EVRL_CMCH" related="org.apache.ofbiz.party.contact.ContactMech">
             <key-map field-name="contactMechId"/>
         </relationship>
-        <relationship type="one" fk-name="COM_EVRL_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="COM_EVRL_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
     </entity>
@@ -320,26 +320,23 @@ under the License.
         <relationship type="one" fk-name="POST_ADDR_CMECH" related="org.apache.ofbiz.party.contact.ContactMech">
             <key-map field-name="contactMechId"/>
         </relationship>
-        <relationship type="one" fk-name="POST_ADDR_CGEO" title="Country" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="POST_ADDR_CGEO" title="Country" related="moqui.basic.Geo">
             <key-map field-name="countryGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="POST_ADDR_SPGEO" title="StateProvince" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="POST_ADDR_SPGEO" title="StateProvince" related="moqui.basic.Geo">
             <key-map field-name="stateProvinceGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="POST_ADDR_CNTG" title="County" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="POST_ADDR_CNTG" title="County" related="moqui.basic.Geo">
             <key-map field-name="countyGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="POST_ADDR_MNCP" title="Municipality" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="POST_ADDR_MNCP" title="Municipality" related="moqui.basic.Geo">
             <key-map field-name="municipalityGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="POST_ADDR_CITY" title="City" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="POST_ADDR_CITY" title="City" related="moqui.basic.Geo">
             <key-map field-name="cityGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="POST_ADDR_PCGEO" title="PostalCode" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="POST_ADDR_PCGEO" title="PostalCode" related="moqui.basic.Geo">
             <key-map field-name="postalCodeGeoId" related="geoId"/>
-        </relationship>
-        <relationship type="one" fk-name="POST_ADDR_GEOPT" related="org.apache.ofbiz.common.geo.GeoPoint">
-            <key-map field-name="geoPointId"/>
         </relationship>
         <index name="ADDRESS1_IDX">
             <index-field name="address1"/>
@@ -399,10 +396,10 @@ under the License.
         <relationship type="one" fk-name="PARTY_LMCUL" title="LastModifiedBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="lastModifiedByUserLogin" related="userLoginId"/>
         </relationship>
-        <relationship type="one" fk-name="PARTY_PREF_CRNCY" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="PARTY_PREF_CRNCY" related="moqui.basic.Uom">
             <key-map field-name="preferredCurrencyUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PARTY_STATUSITM" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PARTY_STATUSITM" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <index name="PARTYEXT_ID_IDX">
@@ -590,7 +587,7 @@ under the License.
             <key-map field-name="partyIdTo" related="partyId"/>
             <key-map field-name="roleTypeIdTo" related="roleTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="PARTY_REL_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PARTY_REL_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="PARTY_REL_TYPE" related="org.apache.ofbiz.party.party.PartyRelationshipType">
@@ -645,7 +642,7 @@ under the License.
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="statusDate" type="date-time" is-pk="true"></field>
         <field name="changeByUserLoginId" type="id-long"></field>
-        <relationship type="one" fk-name="PARTY_STS_STSITM" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PARTY_STS_STSITM" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="PARTY_STS_PARTY" related="org.apache.ofbiz.party.party.Party">
@@ -703,13 +700,13 @@ under the License.
         <relationship type="one" fk-name="PERSON_PARTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
         </relationship>
-        <relationship type="one" fk-name="PERSON_EMPS_ENUM" title="EmploymentStatus" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PERSON_EMPS_ENUM" title="EmploymentStatus" related="moqui.basic.Enumeration">
             <key-map field-name="employmentStatusEnumId" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="PERSON_MARITAL" title="MaritalStatus" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PERSON_MARITAL" title="MaritalStatus" related="moqui.basic.Enumeration">
             <key-map field-name="maritalStatus" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="PERSON_RESS_ENUM" title="ResidenceStatus" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PERSON_RESS_ENUM" title="ResidenceStatus" related="moqui.basic.Enumeration">
             <key-map field-name="residenceStatusEnumId" related="enumId"/>
         </relationship>
         <index name="FIRST_NAME_IDX">
@@ -755,7 +752,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <extend-entity entity-name="CommunicationEvent" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
         <field name="systemMessageRemoteId" type="id"></field>
-        <relationship type="one" fk-name="MAIL_SYS_MSG_RMT" related="co.hotwax.service.message.SystemMessageRemote">
+        <relationship type="one" fk-name="MAIL_SYS_MSG_RMT" related="moqui.service.message.SystemMessageRemote">
             <key-map field-name="systemMessageRemoteId" related="systemMessageRemoteId"/>
         </relationship>
     </extend-entity>

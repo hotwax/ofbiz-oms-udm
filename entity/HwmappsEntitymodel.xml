@@ -31,10 +31,10 @@ under the License.
         <field name="localeString" type="text-short"></field>
         <field name="customerClassificationId" type="id"></field>
         <field name="presentmentCurrencyUom" type="id"></field>
-        <relationship type="one-nofk" fk-name="FK_ORD_CUSTCLS_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one-nofk" fk-name="FK_ORD_CUSTCLS_ENUM" related="moqui.basic.Enumeration">
             <key-map field-name="customerClassificationId" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_HDR_PCUOM" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="ORDER_HDR_PCUOM" related="moqui.basic.Uom">
             <key-map field-name="presentmentCurrencyUom" related="uomId"/>
         </relationship>
         <index name="ORD_CUSTCLASS_ENUM">
@@ -92,7 +92,7 @@ under the License.
     <extend-entity entity-name="SecurityGroup" package="org.apache.ofbiz.security.securitygroup" group="ofbiz_transactional">
         <field name="groupName" type="text-medium"></field>
         <field name="groupTypeEnumId" type="id"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one-nofk" related="moqui.basic.Enumeration">
             <key-map field-name="groupTypeEnumId" related="enumId"/>
         </relationship>
     </extend-entity>
@@ -101,7 +101,7 @@ under the License.
         <field name="plainTextContentId" type="id"></field>
         <field name="orgPartyId" type="id"></field>
         <field name="systemMessageRemoteId" type="id"></field>
-        <relationship type="one-nofk" fk-name="ETS_SYS_MSG_RMT" related="co.hotwax.service.message.SystemMessageRemote">
+        <relationship type="one-nofk" fk-name="ETS_SYS_MSG_RMT" related="moqui.service.message.SystemMessageRemote">
             <key-map field-name="systemMessageRemoteId" related="systemMessageRemoteId"/>
         </relationship>
         <relationship type="many" related="org.apache.ofbiz.content.content.Content">
@@ -119,7 +119,7 @@ under the License.
         <field name="wegsReferenceNumber" type="id"></field>
         <field name="locationSeqId" type="id"></field>
         <field name="deliveredToParty" type="id"></field>
-        <relationship type="one" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" related="moqui.basic.StatusItem">
             <key-map field-name="currentStatusId" related="statusId"/>
         </relationship>
         <index name="II_WEGS_REFNUM_IDX">
@@ -128,7 +128,7 @@ under the License.
     </extend-entity>
     <extend-entity entity-name="InventoryItem" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
         <field name="itemCondition" type="id"></field>
-        <relationship type="one" fk-name="INV_ITEM_COND" title="ItemCondition" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="INV_ITEM_COND" title="ItemCondition" related="moqui.basic.Enumeration">
             <key-map field-name="itemCondition" related="enumId"/>
         </relationship>
     </extend-entity>
@@ -182,7 +182,7 @@ under the License.
         <field name="enablePreOrderAutoReleasing" type="text-indicator" enable-audit-log="true"><description>Flag to enable/disable auto preorder releasing on particular store/brand.</description></field>
         <field name="enableBrokering" type="text-indicator" enable-audit-log="true"><description>Flag to enable/disable brokering on particular store/brand.</description></field>
         <field name="storeLogoImageUrl" type="text-medium"><description>Image path for display brand specific logo</description></field>
-        <relationship type="one" fk-name="PROD_UNQ_IDENT" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="PROD_UNQ_IDENT" related="moqui.basic.Enumeration">
             <key-map field-name="productIdentifierEnumId" related="enumId"/>
         </relationship>
     </extend-entity>
@@ -209,7 +209,7 @@ under the License.
         <field name="agreementId" type="id"></field>
         <field name="voucherId" type="id"></field>
     </extend-entity>
-    <extend-entity entity-name="GeoAssoc" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
+    <extend-entity entity-name="GeoAssoc" package="moqui.basic" group="ofbiz_transactional">
         <field name="sequenceNum" type="number-integer"></field>
     </extend-entity>
     <extend-entity entity-name="Product" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
@@ -238,7 +238,7 @@ under the License.
         <relationship type="one" fk-name="WEBSITE_CATALOG" related="org.apache.ofbiz.product.catalog.ProdCatalog">
             <key-map field-name="prodCatalogId"/>
         </relationship>
-        <relationship type="one" fk-name="SALES_CHANNEL" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="SALES_CHANNEL" related="moqui.basic.Enumeration">
             <key-map field-name="salesChannel" related="enumId"/>
         </relationship>
     </extend-entity>
@@ -286,7 +286,7 @@ under the License.
     </extend-entity>
     <extend-entity entity-name="OrderStatus" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="changeReasonEnumId" type="id"></field>
-        <relationship type="one" fk-name="CHANGE_REASON" title="Change Reason" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="CHANGE_REASON" title="Change Reason" related="moqui.basic.Enumeration">
             <key-map field-name="changeReasonEnumId" related="enumId"/>
         </relationship>
     </extend-entity>
@@ -316,7 +316,7 @@ under the License.
         <field name="importPath" type="text-medium"></field>
         <field name="exportPath" type="text-medium"></field>
         <field name="priority" type="number-integer"></field>
-        <relationship type="one" fk-name="DTMGR_CONF_ENM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="DTMGR_CONF_ENM" related="moqui.basic.Enumeration">
             <key-map field-name="executionModeId" related="enumId"/>
         </relationship>
     </entity>
@@ -357,10 +357,10 @@ under the License.
         <relationship type="one" fk-name="DTMGR_LOG_CONT" title="Log" related="org.apache.ofbiz.content.content.Content">
             <key-map field-name="logFileContentId" related="contentId"/>
         </relationship>
-        <relationship type="one" fk-name="DTMGR_ENM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="DTMGR_ENM" related="moqui.basic.Enumeration">
             <key-map field-name="logTypeEnumId" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="DTMGR_LOG_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="DTMGR_LOG_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one-nofk" fk-name="DTMGR_USR_LOGIN" related="org.apache.ofbiz.security.login.UserLogin">
@@ -405,7 +405,7 @@ under the License.
         <field name="statusId" type="id"></field>
         <field name="createdDate" type="date-time"></field>
         <field name="dueDate" type="date-time"></field>
-        <relationship type="one" fk-name="INV_COUNT_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="INV_COUNT_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="INV_COUNT_FACI" related="org.apache.ofbiz.product.facility.Facility">
@@ -422,7 +422,7 @@ under the License.
         <field name="importItemSeqId" type="id"></field>
         <field name="statusDate" type="date-time"></field>
         <field name="changeByUserLoginId" type="id-long"></field>
-        <relationship type="one" fk-name="INV_COUNT_IMP_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="INV_COUNT_IMP_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="INV_COUNT_IMPT" related="co.hotwax.warehouse.InventoryCountImport">
@@ -450,7 +450,7 @@ under the License.
         <relationship type="one" fk-name="INV_COUNT_IMPORT" related="co.hotwax.warehouse.InventoryCountImport">
             <key-map field-name="inventoryCountImportId"/>
         </relationship>
-        <relationship type="one" fk-name="INV_CNT_STTS_ITM" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="INV_CNT_STTS_ITM" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="many" fk-name="INV_CNT_FAC_LOC" related="org.apache.ofbiz.product.facility.FacilityLocation">
@@ -630,7 +630,7 @@ under the License.
         <field name="idValue" type="id-long"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="ORDER_ID_TYPE" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="ORDER_ID_TYPE" related="moqui.basic.Enumeration">
             <key-map field-name="orderIdentificationTypeId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="ORDR_ID_ORDER" related="org.apache.ofbiz.order.order.OrderHeader">
@@ -676,7 +676,7 @@ under the License.
         <field name="idValue" type="id-long"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="RETURN_ID_TYPE" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="RETURN_ID_TYPE" related="moqui.basic.Enumeration">
             <key-map field-name="returnIdentificationTypeId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="RETURN_ID_RETURN" related="org.apache.ofbiz.order.return.ReturnHeader">
@@ -745,7 +745,7 @@ under the License.
         <relationship type="one" fk-name="SHIP_METH_TYPE_ID" related="org.apache.ofbiz.shipment.shipment.ShipmentMethodType">
             <key-map field-name="shipmentMethodTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="CHNG_REASON" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="CHNG_REASON" related="moqui.basic.Enumeration">
             <key-map field-name="changeReasonEnumId" related="enumId"/>
         </relationship>
         <index name="IDX_OID_SID">
@@ -774,7 +774,7 @@ under the License.
         <field name="idValue" type="id-long"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="FAC_IDEN_TYPE" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="FAC_IDEN_TYPE" related="moqui.basic.Enumeration">
             <key-map field-name="facilityIdenTypeId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="FAC_IDEN_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
@@ -829,7 +829,7 @@ under the License.
     <extend-entity entity-name="CarrierShipmentMethod" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
         <field name="deliveryDays" type="number-integer"></field>
     </extend-entity>
-    <entity entity-name="SystemMessageRemote" package="co.hotwax.service.message" group="ofbiz_transactional">
+    <entity entity-name="SystemMessageRemote" package="moqui.service.message" group="ofbiz_transactional">
         <field name="systemMessageRemoteId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
         <field name="sendUrl" type="text-medium"></field>
@@ -861,8 +861,16 @@ under the License.
             message standard.</description></field>
         <field name="usageCode" type="text-medium"><description>Used for production versus test/etc. Possible values
             dependent on message standard.</description></field>
+        <field name="remoteAttributes" type="text-indicator"><description>May be useful for other transports, for SFTP servers
+            that do not support setting file attributes after put/upload set to N</description></field>
+        <field name="password" type="text-medium" encrypt="true" enable-audit-log="true"></field>
+        <field name="segmentTerminator" type="text-indicator"></field>
+        <field name="elementSeparator" type="text-indicator"></field>
+        <field name="componentDelimiter" type="text-indicator"></field>
+        <field name="escapeCharacter" type="text-indicator"></field>
+        <field name="preAuthMessageRemoteId" type="id"><description>Remote system related to this remote system but for pre-auth purposes, like a separate single sign on server</description></field>
     </entity>
-    <entity entity-name="SystemMessageType" package="co.hotwax.service.message" group="ofbiz_transactional">
+    <entity entity-name="SystemMessageType" package="moqui.service.message" group="ofbiz_transactional">
         <field name="systemMessageTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
         <field name="produceServiceName" type="text-medium"><description>Not used in automated processing, but useful
@@ -881,7 +889,7 @@ under the License.
     </entity>
     <extend-entity entity-name="ProductStoreEmailSetting" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
         <field name="systemMessageRemoteId" type="id"></field>
-        <relationship type="one" fk-name="SYS_MSG_RMT" related="co.hotwax.service.message.SystemMessageRemote">
+        <relationship type="one" fk-name="SYS_MSG_RMT" related="moqui.service.message.SystemMessageRemote">
             <key-map field-name="systemMessageRemoteId" related="systemMessageRemoteId"/>
         </relationship>
     </extend-entity>
@@ -1050,7 +1058,7 @@ under the License.
         <field name="fromDate" type="date-time" is-pk="true" enable-audit-log="true"></field>
         <field name="thruDate" type="date-time" enable-audit-log="true"></field>
         <field name="settingValue" type="text-medium" enable-audit-log="true"></field>
-        <relationship type="one" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" related="moqui.basic.Enumeration">
             <key-map field-name="settingTypeEnumId" related="enumId"/>
         </relationship>
         <relationship type="one-nofk" related="org.apache.ofbiz.product.store.ProductStore">
@@ -1107,8 +1115,9 @@ under the License.
             <key-map field-name="primaryParentGroupId" related="enumerationGroupId"/>
         </relationship>
     </entity>
-    <extend-entity entity-name="Enumeration" package="org.apache.ofbiz.common.enum" group="ofbiz_transactional">
+    <extend-entity entity-name="Enumeration" package="moqui.basic" group="ofbiz_transactional">
         <field name="sequenceNum" type="number-integer"></field>
+        <field name="enumName" type="text-medium"></field>
         <field name="primaryEnumerationGroupId" type="id"></field>
         <relationship type="one" fk-name="ENUMERATION_PGRP" related="co.hotwax.common.enum.EnumerationGroup">
             <key-map field-name="primaryEnumerationGroupId" related="enumerationGroupId"/>
@@ -1124,7 +1133,7 @@ under the License.
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
         <field name="sequenceNum" type="number-integer"></field>
-        <relationship type="one" fk-name="ENUMERATION_MEM_FAC" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="ENUMERATION_MEM_FAC" related="moqui.basic.Enumeration">
             <key-map field-name="enumerationId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="ENUMERATION_MEM_FGRP" related="co.hotwax.common.enum.EnumerationGroup">
@@ -1170,7 +1179,7 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
         </relationship>
-        <relationship type="one" fk-name="FUL_STATUS" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="FUL_STATUS" related="moqui.basic.Enumeration">
             <key-map field-name="fulfillmentStatus" related="enumId"/>
         </relationship>
         <index name="IDX_EOID">
@@ -1191,7 +1200,7 @@ under the License.
         <field name="eventTypeEnumId" type="id"></field>
         <field name="createdDate" type="date-time"></field>
         <field name="comments" type="text-medium"></field>
-        <relationship type="one" fk-name="ODR_ENUM" title="EventType" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="ODR_ENUM" title="EventType" related="moqui.basic.Enumeration">
             <key-map field-name="eventTypeEnumId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="ODR_HSTRY_ORD" related="org.apache.ofbiz.order.order.OrderHeader">
@@ -1268,7 +1277,7 @@ under the License.
         <field name="mappingPrefValue" type="text-very-long"></field>
         <field name="fromDate" type="date-time"></field>
         <field name="thruDate" type="date-time"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one-nofk" related="moqui.basic.Enumeration">
             <key-map field-name="mappingPrefTypeEnumId" related="enumId"/>
         </relationship>
     </entity>
@@ -1296,7 +1305,7 @@ under the License.
     </entity>
     <extend-entity entity-name="InventoryItemVariance" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
         <field name="reasonEnumId" type="id"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one-nofk" related="moqui.basic.Enumeration">
             <key-map field-name="reasonEnumId" related="enumId"/>
         </relationship>
     </extend-entity>
@@ -1317,7 +1326,7 @@ under the License.
     </entity>
     <extend-entity entity-name="OrderItemGroup" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
         <field name="orderItemGroupTypeId" type="id"></field>
-        <relationship type="one" fk-name="FK_OIG_ENUM" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="FK_OIG_ENUM" related="moqui.basic.Enumeration">
             <key-map field-name="orderItemGroupTypeId" related="enumId"/>
         </relationship>
     </extend-entity>
@@ -1334,7 +1343,7 @@ under the License.
             <key-map field-name="orderItemSeqId"/>
         </relationship>
     </entity>
-    <extend-entity entity-name="StatusItem" package="org.apache.ofbiz.common.status" group="ofbiz_transactional">
+    <extend-entity entity-name="StatusItem" package="moqui.basic" group="ofbiz_transactional">
         <field name="statusAge" type="number-integer"></field>
     </extend-entity>
     <entity entity-name="ReturnAttribute" package="co.hotwax.order.return" group="ofbiz_transactional">
@@ -1351,7 +1360,7 @@ under the License.
         <field name="topicEnumId" type="id"></field>
         <field name="remoteUrl" type="text-medium"></field>
         <field name="createdDate" type="date-time"></field>
-        <relationship type="one-nofk" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one-nofk" related="moqui.basic.Enumeration">
             <key-map field-name="topicEnumId" related="enumId"/>
         </relationship>
     </entity>
@@ -1368,6 +1377,9 @@ under the License.
         <relationship type="one" fk-name="USR_LOGIN_SEC_GRP_UL" title="ChangeBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
         </relationship>
+    </extend-entity>
+    <extend-entity entity-name="Uom" package="moqui.basic" group="ofbiz_transactional">
+        <field name="numericCode" type="number-integer"></field>
     </extend-entity>
 </entities>
 
