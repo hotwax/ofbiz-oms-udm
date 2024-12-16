@@ -31,4 +31,23 @@ under the License.
         </alias-all>
         <alias name="typeDescription" field="description" entity-alias="TYPE"/>
     </view-entity>
+
+    <view-entity entity-name="UserLoginSecurityGroupAndPermission"
+                 package="co.hotwax.security" >
+        <member-entity entity-alias="SP" entity-name="SecurityPermission"/>
+        <member-entity entity-alias="SGP" entity-name="SecurityGroupPermission" join-from-alias="SP">
+            <key-map field-name="permissionId"/>
+        </member-entity>
+        <member-entity entity-alias="ULSG" entity-name="UserLoginSecurityGroup" join-from-alias="SGP">
+            <key-map field-name="groupId"/>
+        </member-entity>
+        <alias entity-alias="ULSG" name="userLoginId"/>
+        <alias entity-alias="ULSG" name="groupId"/>
+        <alias entity-alias="ULSG" name="fromDate"/>
+        <alias entity-alias="ULSG" name="thruDate"/>
+        <alias entity-alias="SP" name="permissionId"/>
+        <alias entity-alias="SP" name="description"/>
+        <alias entity-alias="SGP" name="sGPFromDate" field="fromDate"/>
+        <alias entity-alias="SGP" name="sGPThruDate" field="thruDate"/>
+    </view-entity>
 </entities>
