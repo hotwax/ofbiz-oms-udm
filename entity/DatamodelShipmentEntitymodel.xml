@@ -187,10 +187,6 @@ under the License.
         <relationship type="one" fk-name="PCKLST_STHST_TSI" title="To" related="moqui.basic.StatusItem">
             <key-map field-name="statusIdTo" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PCKLST_STHST_SVC" related="moqui.basic.StatusValidChange">
-            <key-map field-name="statusId"/>
-            <key-map field-name="statusIdTo"/>
-        </relationship>
     </entity>
     <entity entity-name="ShipmentReceipt" package="org.apache.ofbiz.shipment.receipt" group="ofbiz_transactional">
         <field name="receiptId" type="id" is-pk="true"></field>

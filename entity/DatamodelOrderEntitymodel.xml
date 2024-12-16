@@ -310,9 +310,6 @@ under the License.
         <relationship type="many" related="org.apache.ofbiz.product.facility.ProductFacilityLocation">
             <key-map field-name="productId"/>
         </relationship>
-        <relationship type="many" related="moqui.basic.StatusValidChange">
-            <key-map field-name="statusId"/>
-        </relationship>
         <relationship type="one" fk-name="ORDER_ITEM_SYST" title="Sync" related="moqui.basic.StatusItem">
             <key-map field-name="syncStatusId" related="statusId"/>
         </relationship>

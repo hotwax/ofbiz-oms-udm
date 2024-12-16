@@ -38,44 +38,9 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="CountryAddressFormat" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
-        <field name="geoId" type="id" is-pk="true"></field>
-        <field name="geoAssocTypeId" type="id"></field>
-        <field name="requireStateProvinceId" type="id"></field>
-        <field name="requirePostalCode" type="text-indicator"></field>
-        <field name="postalCodeRegex" type="text-medium"></field>
-        <field name="hasPostalCodeExt" type="text-indicator"></field>
-        <field name="requirePostalCodeExt" type="text-indicator"></field>
-        <field name="addressFormat" type="text-medium"></field>
-        <relationship type="one" fk-name="CNY_ADR_GEO" related="moqui.basic.Geo">
-            <key-map field-name="geoId"/>
-        </relationship>
-        <relationship type="one" fk-name="CNY_ADR_GEO_TYPE" related="moqui.basic.GeoAssocType">
-            <key-map field-name="geoAssocTypeId"/>
-        </relationship>
-    </entity>
-        
-    <entity entity-name="OmsGeoAssoc" package="moqui.basic" table-name="OMS_GEO_ASSOC" group="ofbiz_transactional">
-        <field name="geoId" type="id" is-pk="true"><description>The enclosed geo</description></field>
-        <field name="geoIdTo" type="id" is-pk="true"><description>The enclosing geo</description></field>
-        <field name="geoAssocTypeId" type="id"></field>
-        <relationship type="one" fk-name="GEO_ASSC_TO_MAIN" title="Main" related="moqui.basic.Geo">
-            <key-map field-name="geoId"/>
-        </relationship>
-        <relationship type="one" fk-name="GEO_ASSC_TO_ASSC" title="Assoc" related="moqui.basic.Geo">
-            <key-map field-name="geoIdTo" related="geoId"/>
-        </relationship>
-        <relationship type="one" fk-name="GEO_ASSC_TO_TYPE" related="moqui.basic.GeoAssocType">
-            <key-map field-name="geoAssocTypeId"/>
-        </relationship>
-    </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="GeoAssocType" package="org.apache.ofbiz.common.geo" group="ofbiz_transactional">
-        <field name="geoAssocTypeId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
     <entity entity-name="CustomMethod" package="org.apache.ofbiz.common.method" group="ofbiz_transactional">
         <field name="customMethodId" type="id" is-pk="true"></field>
         <field name="customMethodTypeId" type="id"></field>
@@ -99,18 +64,6 @@ under the License.
         <field name="noteName" type="text-medium"></field>
         <field name="noteInfo" type="text-very-long"></field>
         <field name="noteDateTime" type="date-time"></field>
-    </entity>
-    <entity entity-name="StatusValidChange" package="org.apache.ofbiz.common.status" group="ofbiz_transactional">
-        <field name="statusId" type="id" is-pk="true"></field>
-        <field name="statusIdTo" type="id" is-pk="true"></field>
-        <field name="conditionExpression" type="text-medium"></field>
-        <field name="transitionName" type="text-medium"></field>
-        <relationship type="one" fk-name="STATUS_CHG_MAIN" title="Main" related="moqui.basic.StatusItem">
-            <key-map field-name="statusId"/>
-        </relationship>
-        <relationship type="one" fk-name="STATUS_CHG_TO" title="To" related="moqui.basic.StatusItem">
-            <key-map field-name="statusIdTo" related="statusId"/>
-        </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
