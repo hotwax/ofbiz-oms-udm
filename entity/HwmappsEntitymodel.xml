@@ -1381,5 +1381,11 @@ under the License.
     <extend-entity entity-name="Uom" package="moqui.basic" group="ofbiz_transactional">
         <field name="numericCode" type="number-integer"></field>
     </extend-entity>
+    <extend-entity entity-name="EnumerationType" package="moqui.basic" group="ofbiz_transactional">
+        <field name="parentTypeId" type="id"></field>
+        <relationship type="one" fk-name="ENUM_TYPE_PARENT" title="Parent" related="moqui.basic.EnumerationType">
+            <key-map field-name="parentTypeId" related="enumTypeId"/>
+        </relationship>
+    </extend-entity>
 </entities>
 
