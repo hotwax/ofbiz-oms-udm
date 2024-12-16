@@ -399,12 +399,16 @@ under the License.
     <entity entity-name="InventoryCountImport" package="co.hotwax.warehouse" group="ofbiz_transactional">
         <field name="inventoryCountImportId" type="id" is-pk="true"></field>
         <field name="countImportName" type="text-medium"></field>
+        <field name="countTypeEnumId" type="id"></field>
         <field name="uploadedByUserLogin" type="id-long"></field>
         <field name="facilityId" type="id"></field>
         <field name="parentCountId" type="id"></field>
         <field name="statusId" type="id"></field>
         <field name="createdDate" type="date-time"></field>
         <field name="dueDate" type="date-time"></field>
+        <relationship type="one" fk-name="INV_COUNT_TYPE" related="org.apache.ofbiz.common.enum.Enumeration">
+            <key-map field-name="countTypeEnumId" related="enumId"/>
+        </relationship>
         <relationship type="one" fk-name="INV_COUNT_STTS" related="org.apache.ofbiz.common.status.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
