@@ -215,6 +215,9 @@ under the License.
         <relationship type="one-nofk" related="org.apache.ofbiz.product.store.ProductStore">
 <description>this was changed from the FK to better handle syncronization; this may be set back to be a FK in the future</description>            <key-map field-name="productStoreId"/>
         </relationship>
+        <relationship type="one" fk-name="FACILITY_GEOPT" related="moqui.basic.GeoPoint">
+            <key-map field-name="geoPointId"/>
+        </relationship>
         <relationship type="one" fk-name="FACILITY_SUOM" title="FacilitySize" related="moqui.basic.Uom">
             <key-map field-name="facilitySizeUomId" related="uomId"/>
         </relationship>
@@ -359,6 +362,9 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="FACILITY_LOC_TENM" title="Type" related="moqui.basic.Enumeration">
             <key-map field-name="locationTypeEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="FACILITY_LOC_GEOPT" related="moqui.basic.GeoPoint">
+            <key-map field-name="geoPointId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->

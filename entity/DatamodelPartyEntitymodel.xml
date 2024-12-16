@@ -338,6 +338,9 @@ under the License.
         <relationship type="one" fk-name="POST_ADDR_PCGEO" title="PostalCode" related="moqui.basic.Geo">
             <key-map field-name="postalCodeGeoId" related="geoId"/>
         </relationship>
+        <relationship type="one" fk-name="POST_ADDR_GEOPT" related="moqui.basic.GeoPoint">
+            <key-map field-name="geoPointId"/>
+        </relationship>
         <index name="ADDRESS1_IDX">
             <index-field name="address1"/>
         </index>

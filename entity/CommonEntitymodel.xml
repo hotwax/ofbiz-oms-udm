@@ -85,15 +85,6 @@ under the License.
         <field name="noteInfo" type="text-very-long"></field>
         <field name="noteDateTime" type="date-time"></field>
     </entity>
-    <entity entity-name="StatusType" package="moqui.basic" group="ofbiz_transactional">
-        <field name="statusTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="STATUS_TYPE_PARENT" title="Parent" related="moqui.basic.StatusType">
-            <key-map field-name="parentTypeId" related="statusTypeId"/>
-        </relationship>
-    </entity>
     <entity entity-name="StatusValidChange" package="org.apache.ofbiz.common.status" group="ofbiz_transactional">
         <field name="statusId" type="id" is-pk="true"></field>
         <field name="statusIdTo" type="id" is-pk="true"></field>
