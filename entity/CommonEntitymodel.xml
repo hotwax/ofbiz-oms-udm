@@ -54,6 +54,21 @@ under the License.
             <key-map field-name="geoAssocTypeId"/>
         </relationship>
     </entity>
+        
+    <entity entity-name="OmsGeoAssoc" package="moqui.basic" table-name="OMS_GEO_ASSOC" group="ofbiz_transactional">
+        <field name="geoId" type="id" is-pk="true"><description>The enclosed geo</description></field>
+        <field name="geoIdTo" type="id" is-pk="true"><description>The enclosing geo</description></field>
+        <field name="geoAssocTypeId" type="id"></field>
+        <relationship type="one" fk-name="GEO_ASSC_TO_MAIN" title="Main" related="moqui.basic.Geo">
+            <key-map field-name="geoId"/>
+        </relationship>
+        <relationship type="one" fk-name="GEO_ASSC_TO_ASSC" title="Assoc" related="moqui.basic.Geo">
+            <key-map field-name="geoIdTo" related="geoId"/>
+        </relationship>
+        <relationship type="one" fk-name="GEO_ASSC_TO_TYPE" related="org.apache.ofbiz.common.geo.GeoAssocType">
+            <key-map field-name="geoAssocTypeId"/>
+        </relationship>
+    </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
