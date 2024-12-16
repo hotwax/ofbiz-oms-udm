@@ -45,13 +45,13 @@ under the License.
         <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F" join-optional="true">
             <key-map field-name="facilityTypeId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <member-entity entity-alias="SSO" entity-name="co.hotwax.shopify.ShopifyShopOrder" join-from-alias="OH" join-optional="true">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="OI">
@@ -112,7 +112,7 @@ under the License.
         <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
             <key-map field-name="productStoreId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="RH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="RH" join-optional="true">
             <key-map field-name="currencyUomId" related="uomId"/>
         </member-entity>
 
@@ -161,7 +161,7 @@ under the License.
         <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
             <key-map field-name="productStoreId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="RH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="RH" join-optional="true">
             <key-map field-name="currencyUomId" related="uomId"/>
         </member-entity>
         <alias entity-alias="RI" name="returnId"/>
@@ -239,7 +239,7 @@ under the License.
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
         <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc" join-from-alias="OI">
@@ -280,7 +280,7 @@ under the License.
         <member-entity entity-alias="PD" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="OI">
             <key-map field-name="productId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <alias entity-alias="OH" name="productStoreId"/>
@@ -343,15 +343,15 @@ under the License.
 
     <view-entity entity-name="PostalAddressView" package="co.hotwax.financial" group="ofbiz_transactional">
         <member-entity entity-alias="PA" entity-name="org.apache.ofbiz.party.contact.PostalAddress"/>
-        <member-entity entity-alias="COUNTRYGEO" entity-name="org.apache.ofbiz.common.geo.Geo" join-from-alias="PA" join-optional="true">
+        <member-entity entity-alias="COUNTRYGEO" entity-name="moqui.basic.Geo" join-from-alias="PA" join-optional="true">
             <key-map field-name="countryGeoId" related="geoId"/>
         </member-entity>
-        <member-entity entity-alias="STATEGEO" entity-name="org.apache.ofbiz.common.geo.Geo" join-from-alias="PA" join-optional="true">
+        <member-entity entity-alias="STATEGEO" entity-name="moqui.basic.Geo" join-from-alias="PA" join-optional="true">
             <key-map field-name="stateProvinceGeoId" related="geoId"/>
         </member-entity>
         <alias-all entity-alias="PA"/>
-        <alias entity-alias="COUNTRYGEO" field="geoCode" name="countryGeoCode"/>
-        <alias entity-alias="STATEGEO" field="geoCode" name="stateProvinceGeoCode"/>
+<!--        <alias entity-alias="COUNTRYGEO" field="geoCode" name="countryGeoCode"/>-->
+<!--        <alias entity-alias="STATEGEO" field="geoCode" name="stateProvinceGeoCode"/>-->
         <alias entity-alias="STATEGEO" field="geoName" name="stateProvinceGeoName"/>
         <alias entity-alias="COUNTRYGEO" field="geoName" name="countryGeoName"/>
     </view-entity>
@@ -574,7 +574,7 @@ under the License.
         <member-entity entity-alias="PT" entity-name="org.apache.ofbiz.product.product.ProductType" join-from-alias="P" join-optional="true">
             <key-map field-name="productTypeId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
         <alias entity-alias="OH" name="productStoreId"/>
@@ -631,10 +631,10 @@ under the License.
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="OI">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <member-entity entity-alias="ODR" entity-name="org.apache.ofbiz.order.order.OrderRole" join-from-alias="OI" join-optional="true">
@@ -787,10 +787,10 @@ under the License.
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="OI">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <member-entity entity-alias="ODR" entity-name="org.apache.ofbiz.order.order.OrderRole" join-from-alias="OI" join-optional="true">
@@ -1016,10 +1016,10 @@ under the License.
         <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F" join-optional="true">
             <key-map field-name="facilityTypeId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
 
@@ -1333,10 +1333,10 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <member-entity entity-alias="ODR" entity-name="org.apache.ofbiz.order.order.OrderRole" join-from-alias="OI" join-optional="true">

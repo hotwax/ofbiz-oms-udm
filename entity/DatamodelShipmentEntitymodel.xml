@@ -187,7 +187,7 @@ under the License.
         <relationship type="one" fk-name="PCKLST_STHST_TSI" title="To" related="moqui.basic.StatusItem">
             <key-map field-name="statusIdTo" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PCKLST_STHST_SVC" related="org.apache.ofbiz.common.status.StatusValidChange">
+        <relationship type="one" fk-name="PCKLST_STHST_SVC" related="moqui.basic.StatusValidChange">
             <key-map field-name="statusId"/>
             <key-map field-name="statusIdTo"/>
         </relationship>

@@ -50,7 +50,7 @@ under the License.
         <relationship type="one" fk-name="CNY_ADR_GEO" related="moqui.basic.Geo">
             <key-map field-name="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="CNY_ADR_GEO_TYPE" related="org.apache.ofbiz.common.geo.GeoAssocType">
+        <relationship type="one" fk-name="CNY_ADR_GEO_TYPE" related="moqui.basic.GeoAssocType">
             <key-map field-name="geoAssocTypeId"/>
         </relationship>
     </entity>
@@ -65,7 +65,7 @@ under the License.
         <relationship type="one" fk-name="GEO_ASSC_TO_ASSC" title="Assoc" related="moqui.basic.Geo">
             <key-map field-name="geoIdTo" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="GEO_ASSC_TO_TYPE" related="org.apache.ofbiz.common.geo.GeoAssocType">
+        <relationship type="one" fk-name="GEO_ASSC_TO_TYPE" related="moqui.basic.GeoAssocType">
             <key-map field-name="geoAssocTypeId"/>
         </relationship>
     </entity>
