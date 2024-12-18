@@ -1275,16 +1275,6 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <extend-entity entity-name="WebSite" package="org.apache.ofbiz.webapp.website" group="ofbiz_transactional">
-        <field name="productStoreId" type="id"></field>
-        <field name="allowProductStoreChange" type="text-indicator"><description>Allow change of ProductStore for this WebSite (webapp). Defaults to N (no).</description></field>
-        <field name="hostedPathAlias" type="text-medium"><description>For WebSites hosted on webapp using the WebSiteFilter, indicates the path this WebSite will be hosted on</description></field>
-        <field name="isDefault" type="text-indicator"><description>If Y then it is default WebSite</description></field>
-        <field name="displayMaintenancePage" type="text-indicator"><description>If set to Y, redirect user to site maintenance page</description></field>
-        <relationship type="one" fk-name="WEB_SITE_PRDS" related="org.apache.ofbiz.product.store.ProductStore">
-            <key-map field-name="productStoreId"/>
-        </relationship>
-    </extend-entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
 </entities>

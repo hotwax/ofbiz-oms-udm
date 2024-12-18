@@ -217,9 +217,6 @@ under the License.
         <relationship type="one" fk-name="ORDER_HDR_CUOM" related="moqui.basic.Uom">
             <key-map field-name="currencyUom" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_HDR_WS" related="org.apache.ofbiz.webapp.website.WebSite">
-            <key-map field-name="webSiteId"/>
-        </relationship>
         <index name="ORDEREXT_ID_IDX">
             <index-field name="externalId"/>
         </index>

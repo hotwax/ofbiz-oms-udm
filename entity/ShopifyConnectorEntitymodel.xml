@@ -40,9 +40,6 @@ under the License.
         <relationship type="one" fk-name="SHPFY_PROD_STORE" related="org.apache.ofbiz.product.store.ProductStore">
             <key-map field-name="productStoreId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPFY_WEBSITE" related="org.apache.ofbiz.webapp.website.WebSite">
-            <key-map field-name="webSiteId"/>
-        </relationship>
         <relationship type="one" fk-name="SH_FAC_IDEN_TYPE" related="moqui.basic.Enumeration">
             <key-map field-name="facilityIdenTypeId" related="enumId"/>
         </relationship>
