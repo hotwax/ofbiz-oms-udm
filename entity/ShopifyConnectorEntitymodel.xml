@@ -19,7 +19,7 @@ under the License.
 -->
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
-    <entity entity-name="ShopifyConfig" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyConfig" package="co.hotwax.shopify">
         <field name="shopifyConfigId" type="id" is-pk="true"></field>
         <field name="shopifyConfigName" type="text-medium"></field>
         <field name="accessScopeEnumId" type="id" enable-audit-log="true"></field>
@@ -47,7 +47,7 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyMetafield" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyMetafield" package="co.hotwax.shopify">
         <field name="metafieldId" type="id" is-pk="true"></field>
         <field name="namespace" type="id"></field>
         <field name="metaKey" type="text-medium"></field>
@@ -55,7 +55,7 @@ under the License.
         <field name="metatype" type="text-medium"></field>
         <field name="ownerResource" type="text-medium"></field>
     </entity>
-    <entity entity-name="ShopifyShopProductMetafield" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyShopProductMetafield" package="co.hotwax.shopify">
         <field name="shopifyProductId" type="id-long" is-pk="true"></field>
         <field name="metafieldId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="SSP_META" related="co.hotwax.shopify.ShopifyMetafield">
@@ -65,7 +65,7 @@ under the License.
             <key-map field-name="shopifyProductId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyProductMetafield" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyProductMetafield" package="co.hotwax.shopify">
         <field name="shopifyConfigId" type="id" is-pk="true"></field>
         <field name="productId" type="id" is-pk="true"></field>
         <field name="metafieldId" type="id" is-pk="true"></field>
@@ -79,7 +79,7 @@ under the License.
             <key-map field-name="metafieldId"/>
         </relationship>
     </entity>
-    <extend-entity entity-name="DataManagerLog" package="co.hotwax.datamanager" group="ofbiz_transactional">
+    <extend-entity entity-name="DataManagerLog" package="co.hotwax.datamanager">
         <field name="shopifyConfigId" type="id"></field>
         <field name="remoteFilePath" type="text-medium"></field>
         <field name="namespace" type="text-medium"></field>
@@ -87,7 +87,7 @@ under the License.
             <key-map field-name="shopifyConfigId"/>
         </relationship>
     </extend-entity>
-    <entity entity-name="ShopifyShopLocation" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyShopLocation" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="shopifyLocationId" type="id-long"></field>
@@ -98,7 +98,7 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyShop" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyShop" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="shopifyShopId" type="id-long"></field>
         <field name="productStoreId" type="id"></field>
@@ -118,7 +118,7 @@ under the License.
             <key-map field-name="productStoreId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyShopProduct" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyShopProduct" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="productId" type="id"></field>
         <field name="shopifyProductId" type="id-long" is-pk="true"></field>
@@ -130,7 +130,7 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyShopOrder" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyShopOrder" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="shopifyOrderId" type="id-long"></field>
@@ -141,7 +141,7 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyShopCarrierShipment" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyShopCarrierShipment" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="carrierPartyId" type="id"></field>
         <field name="shipmentMethodTypeId" type="id"></field>
@@ -156,7 +156,7 @@ under the License.
             <key-map field-name="shipmentMethodTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyShopTypeMapping" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyShopTypeMapping" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="mappedTypeId" type="id"></field>
         <field name="mappedValue" type="id" enable-audit-log="true"></field>
@@ -168,7 +168,7 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyShopScript" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyShopScript" package="co.hotwax.shopify">
         <field name="scriptId" type="id" is-pk="true"></field>
         <field name="shopId" type="id"></field>
         <field name="scriptTypeId" type="id"></field>
@@ -186,7 +186,7 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyProdLocActivation" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <entity entity-name="ShopifyProdLocActivation" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="shopifyProductId" type="id-long" is-pk="true"></field>
         <field name="shopifyLocationId" type="id-long" is-pk="true"></field>

@@ -22,7 +22,7 @@ under the License.
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
     <!-- TODO: skipped element default-resource-name -->
-    <entity entity-name="ProdCatalog" package="org.apache.ofbiz.product.catalog" group="ofbiz_transactional">
+    <entity entity-name="ProdCatalog" package="org.apache.ofbiz.product.catalog">
         <field name="prodCatalogId" type="id" is-pk="true"></field>
         <field name="catalogName" type="text-medium"></field>
         <field name="useQuickAdd" type="text-indicator"></field>
@@ -33,7 +33,7 @@ under the License.
         <field name="viewAllowPermReqd" type="text-indicator"></field>
         <field name="purchaseAllowPermReqd" type="text-indicator"></field>
     </entity>
-    <entity entity-name="ProdCatalogCategory" package="org.apache.ofbiz.product.catalog" group="ofbiz_transactional">
+    <entity entity-name="ProdCatalogCategory" package="org.apache.ofbiz.product.catalog">
         <field name="prodCatalogId" type="id" is-pk="true"></field>
         <field name="productCategoryId" type="id" is-pk="true"></field>
         <field name="prodCatalogCategoryTypeId" type="id" is-pk="true"></field>
@@ -50,7 +50,7 @@ under the License.
             <key-map field-name="prodCatalogCategoryTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProdCatalogCategoryType" package="org.apache.ofbiz.product.catalog" group="ofbiz_transactional">
+    <entity entity-name="ProdCatalogCategoryType" package="org.apache.ofbiz.product.catalog">
         <field name="prodCatalogCategoryTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="description" type="text-medium"></field>
@@ -59,7 +59,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductCategory" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
+    <entity entity-name="ProductCategory" package="org.apache.ofbiz.product.category">
         <field name="productCategoryId" type="id" is-pk="true"></field>
         <field name="externalId" type="id-long"><description>This field stores product category ID of the external system</description></field>
         <field name="productCategoryTypeId" type="id"></field>
@@ -83,7 +83,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductCategoryContent" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
+    <entity entity-name="ProductCategoryContent" package="org.apache.ofbiz.product.category">
         <field name="productCategoryId" type="id" is-pk="true"></field>
         <field name="contentId" type="id" is-pk="true"></field>
         <field name="prodCatContentTypeId" type="id" is-pk="true"></field>
@@ -96,6 +96,9 @@ under the License.
         <relationship type="one" fk-name="PRDCAT_CNT_PRDCAT" related="org.apache.ofbiz.product.category.ProductCategory">
             <key-map field-name="productCategoryId"/>
         </relationship>
+        <relationship type="one" fk-name="PRDCAT_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
+            <key-map field-name="contentId"/>
+        </relationship>
         <relationship type="one" fk-name="PRDCAT_CNT_TYPE" related="org.apache.ofbiz.product.category.ProductCategoryContentType">
             <key-map field-name="prodCatContentTypeId"/>
         </relationship>
@@ -105,7 +108,7 @@ under the License.
         </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductCategoryContentType" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
+    <entity entity-name="ProductCategoryContentType" package="org.apache.ofbiz.product.category">
         <field name="prodCatContentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -114,7 +117,7 @@ under the License.
             <key-map field-name="parentTypeId" related="prodCatContentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductCategoryMember" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
+    <entity entity-name="ProductCategoryMember" package="org.apache.ofbiz.product.category">
         <field name="productCategoryId" type="id" is-pk="true"></field>
         <field name="productId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
@@ -132,7 +135,7 @@ under the License.
             <index-field name="productCategoryId"/>
         </index>
     </entity>
-    <entity entity-name="ProductCategoryRollup" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
+    <entity entity-name="ProductCategoryRollup" package="org.apache.ofbiz.product.category">
         <field name="productCategoryId" type="id" is-pk="true"></field>
         <field name="parentProductCategoryId" type="id" is-pk="true"><description>The parent category; it should be one of productCategoryId already setup in ProductCategory or ProductCategoryRollup</description></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
@@ -158,7 +161,7 @@ under the License.
         </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductCategoryType" package="org.apache.ofbiz.product.category" group="ofbiz_transactional">
+    <entity entity-name="ProductCategoryType" package="org.apache.ofbiz.product.category">
         <field name="productCategoryTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -168,7 +171,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="Facility" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="Facility" package="org.apache.ofbiz.product.facility">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="facilityTypeId" type="id"></field>
         <field name="parentFacilityId" type="id"></field>
@@ -223,7 +226,7 @@ under the License.
         </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="FacilityAttribute" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityAttribute" package="org.apache.ofbiz.product.facility">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
         <field name="attrValue" type="text-medium"></field>
@@ -232,7 +235,7 @@ under the License.
             <key-map field-name="facilityId"/>
         </relationship>
     </entity>
-    <entity entity-name="FacilityCalendar" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityCalendar" package="org.apache.ofbiz.product.facility">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="calendarId" type="id" is-pk="true"></field>
         <field name="facilityCalendarTypeId" type="id" is-pk="true"></field>
@@ -248,12 +251,12 @@ under the License.
             <key-map field-name="facilityCalendarTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="FacilityCalendarType" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityCalendarType" package="org.apache.ofbiz.product.facility">
         <field name="facilityCalendarTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-    <entity entity-name="FacilityCarrierShipment" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityCarrierShipment" package="org.apache.ofbiz.product.facility">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="roleTypeId" type="id" is-pk="true"></field>
@@ -273,7 +276,7 @@ under the License.
             <key-map field-name="roleTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="FacilityContactMech" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityContactMech" package="org.apache.ofbiz.product.facility">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="contactMechId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
@@ -294,7 +297,7 @@ under the License.
             <key-map field-name="contactMechId"/>
         </relationship>
     </entity>
-    <entity entity-name="FacilityContactMechPurpose" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityContactMechPurpose" package="org.apache.ofbiz.product.facility">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="contactMechId" type="id" is-pk="true"></field>
         <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
@@ -314,7 +317,7 @@ under the License.
             <key-map field-name="contactMechId"/>
         </relationship>
     </entity>
-    <entity entity-name="FacilityGroup" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityGroup" package="org.apache.ofbiz.product.facility">
         <field name="facilityGroupId" type="id" is-pk="true"></field>
         <field name="facilityGroupTypeId" type="id"></field>
         <field name="primaryParentGroupId" type="id"></field>
@@ -327,7 +330,7 @@ under the License.
             <key-map field-name="primaryParentGroupId" related="facilityGroupId"/>
         </relationship>
     </entity>
-    <entity entity-name="FacilityGroupMember" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityGroupMember" package="org.apache.ofbiz.product.facility">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="facilityGroupId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
@@ -340,11 +343,11 @@ under the License.
             <key-map field-name="facilityGroupId"/>
         </relationship>
     </entity>
-    <entity entity-name="FacilityGroupType" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityGroupType" package="org.apache.ofbiz.product.facility">
         <field name="facilityGroupTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-    <entity entity-name="FacilityLocation" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityLocation" package="org.apache.ofbiz.product.facility">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="locationSeqId" type="id-long" is-pk="true"></field>
         <field name="locationTypeEnumId" type="id"></field>
@@ -365,7 +368,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="FacilityParty" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityParty" package="org.apache.ofbiz.product.facility">
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="roleTypeId" type="id" is-pk="true"></field>
@@ -386,7 +389,7 @@ under the License.
         </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="FacilityType" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="FacilityType" package="org.apache.ofbiz.product.facility">
         <field name="facilityTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -395,7 +398,7 @@ under the License.
             <key-map field-name="parentTypeId" related="facilityTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductFacility" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="ProductFacility" package="org.apache.ofbiz.product.facility">
         <field name="productId" type="id" is-pk="true"></field>
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="minimumStock" type="number-decimal"></field>
@@ -410,7 +413,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductFacilityLocation" package="org.apache.ofbiz.product.facility" group="ofbiz_transactional">
+    <entity entity-name="ProductFacilityLocation" package="org.apache.ofbiz.product.facility">
         <field name="productId" type="id" is-pk="true"></field>
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="locationSeqId" type="id-long" is-pk="true"></field>
@@ -429,7 +432,7 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductFeature" package="org.apache.ofbiz.product.feature" group="ofbiz_transactional">
+    <entity entity-name="ProductFeature" package="org.apache.ofbiz.product.feature">
         <field name="productFeatureId" type="id" is-pk="true"></field>
         <field name="productFeatureTypeId" type="id"></field>
         <field name="productFeatureCategoryId" type="id"></field>
@@ -448,7 +451,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductFeatureAppl" package="org.apache.ofbiz.product.feature" group="ofbiz_transactional">
+    <entity entity-name="ProductFeatureAppl" package="org.apache.ofbiz.product.feature">
         <field name="productId" type="id" is-pk="true"></field>
         <field name="productFeatureId" type="id" is-pk="true"></field>
         <field name="productFeatureApplTypeId" type="id"></field>
@@ -467,7 +470,7 @@ under the License.
             <key-map field-name="productFeatureId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductFeatureApplType" package="org.apache.ofbiz.product.feature" group="ofbiz_transactional">
+    <entity entity-name="ProductFeatureApplType" package="org.apache.ofbiz.product.feature">
         <field name="productFeatureApplTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -479,7 +482,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductFeatureType" package="org.apache.ofbiz.product.feature" group="ofbiz_transactional">
+    <entity entity-name="ProductFeatureType" package="org.apache.ofbiz.product.feature">
         <field name="productFeatureTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -489,7 +492,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="InventoryItem" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+    <entity entity-name="InventoryItem" package="org.apache.ofbiz.product.inventory">
         <field name="inventoryItemId" type="id" is-pk="true"></field>
         <field name="inventoryItemTypeId" type="id"></field>
         <field name="productId" type="id"></field>
@@ -570,7 +573,7 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="InventoryItemDetail" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+    <entity entity-name="InventoryItemDetail" package="org.apache.ofbiz.product.inventory">
         <field name="inventoryItemId" type="id" is-pk="true"></field>
         <field name="inventoryItemDetailSeqId" type="id" is-pk="true"></field>
         <field name="effectiveDate" type="date-time"></field>
@@ -621,7 +624,7 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="InventoryItemStatus" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+    <entity entity-name="InventoryItemStatus" package="org.apache.ofbiz.product.inventory">
         <field name="inventoryItemId" type="id" is-pk="true"></field>
         <field name="statusId" type="id" is-pk="true"></field>
         <field name="statusDatetime" type="date-time" is-pk="true"></field>
@@ -640,7 +643,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="InventoryItemType" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+    <entity entity-name="InventoryItemType" package="org.apache.ofbiz.product.inventory">
         <field name="inventoryItemTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -649,7 +652,7 @@ under the License.
             <key-map field-name="parentTypeId" related="inventoryItemTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="InventoryItemVariance" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+    <entity entity-name="InventoryItemVariance" package="org.apache.ofbiz.product.inventory">
         <field name="inventoryItemId" type="id" is-pk="true"></field>
         <field name="physicalInventoryId" type="id" is-pk="true"></field>
         <field name="varianceReasonId" type="id"></field>
@@ -667,7 +670,7 @@ under the License.
             <key-map field-name="inventoryItemId"/>
         </relationship>
     </entity>
-    <entity entity-name="InventoryTransfer" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+    <entity entity-name="InventoryTransfer" package="org.apache.ofbiz.product.inventory">
         <field name="inventoryTransferId" type="id" is-pk="true"></field>
         <field name="statusId" type="id"></field>
         <field name="inventoryItemId" type="id"></field>
@@ -705,24 +708,24 @@ under the License.
             <key-map field-name="itemIssuanceId"/>
         </relationship>
     </entity>
-    <entity entity-name="Lot" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+    <entity entity-name="Lot" package="org.apache.ofbiz.product.inventory">
         <field name="lotId" type="id" is-pk="true"></field>
         <field name="creationDate" type="date-time"></field>
         <field name="quantity" type="number-decimal"></field>
         <field name="expirationDate" type="date-time"></field>
     </entity>
-    <entity entity-name="PhysicalInventory" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+    <entity entity-name="PhysicalInventory" package="org.apache.ofbiz.product.inventory">
         <field name="physicalInventoryId" type="id" is-pk="true"></field>
         <field name="physicalInventoryDate" type="date-time"></field>
         <field name="partyId" type="id"></field>
         <field name="generalComments" type="text-medium"></field>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="VarianceReason" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
+    <entity entity-name="VarianceReason" package="org.apache.ofbiz.product.inventory">
         <field name="varianceReasonId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-    <entity entity-name="ProductPrice" package="org.apache.ofbiz.product.price" group="ofbiz_transactional">
+    <entity entity-name="ProductPrice" package="org.apache.ofbiz.product.price">
         <field name="productId" type="id" is-pk="true"></field>
         <field name="productPriceTypeId" type="id" is-pk="true"></field>
         <field name="productPricePurposeId" type="id" is-pk="true"></field>
@@ -772,7 +775,7 @@ under the License.
             <index-field name="productStoreGroupId"/>
         </index>
     </entity>
-    <entity entity-name="GoodIdentification" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <entity entity-name="GoodIdentification" package="org.apache.ofbiz.product.product">
         <field name="goodIdentificationTypeId" type="id" is-pk="true"></field>
         <field name="productId" type="id" is-pk="true"></field>
         <field name="idValue" type="id-long" enable-audit-log="true"></field>
@@ -789,7 +792,7 @@ under the License.
         </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="GoodIdentificationType" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <entity entity-name="GoodIdentificationType" package="org.apache.ofbiz.product.product">
         <field name="goodIdentificationTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -798,7 +801,7 @@ under the License.
             <key-map field-name="parentTypeId" related="goodIdentificationTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="Product" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <entity entity-name="Product" package="org.apache.ofbiz.product.product">
         <field name="productId" type="id" is-pk="true"></field>
         <field name="productTypeId" type="id"></field>
         <field name="primaryProductCategoryId" type="id"><description>The primary category ; it should be one of the productCategoryId already setup in ProductCategoryMember</description></field>
@@ -924,7 +927,7 @@ under the License.
             <index-field name="internalName"/>
         </index>
     </entity>
-    <entity entity-name="ProductAssoc" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <entity entity-name="ProductAssoc" package="org.apache.ofbiz.product.product">
         <field name="productId" type="id" is-pk="true"></field>
         <field name="productIdTo" type="id" is-pk="true"></field>
         <field name="productAssocTypeId" type="id" is-pk="true"></field>
@@ -949,7 +952,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductAssocType" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <entity entity-name="ProductAssocType" package="org.apache.ofbiz.product.product">
         <field name="productAssocTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -958,7 +961,7 @@ under the License.
             <key-map field-name="parentTypeId" related="productAssocTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductAttribute" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <entity entity-name="ProductAttribute" package="org.apache.ofbiz.product.product">
         <field name="productId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
         <field name="attrValue" type="text-medium"></field>
@@ -968,7 +971,7 @@ under the License.
             <key-map field-name="productId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductContent" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <entity entity-name="ProductContent" package="org.apache.ofbiz.product.product">
         <field name="productId" type="id" is-pk="true"></field>
         <field name="contentId" type="id" is-pk="true"></field>
         <field name="productContentTypeId" type="id" is-pk="true"></field>
@@ -984,6 +987,9 @@ under the License.
         <relationship type="one" fk-name="PROD_CNT_PROD" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
         </relationship>
+        <relationship type="one" fk-name="PROD_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
+            <key-map field-name="contentId"/>
+        </relationship>
         <relationship type="one" fk-name="PROD_CNT_TYPE" related="org.apache.ofbiz.product.product.ProductContentType">
             <key-map field-name="productContentTypeId"/>
         </relationship>
@@ -995,7 +1001,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductContentType" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <entity entity-name="ProductContentType" package="org.apache.ofbiz.product.product">
         <field name="productContentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -1005,7 +1011,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductType" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <entity entity-name="ProductType" package="org.apache.ofbiz.product.product">
         <field name="productTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="isPhysical" type="text-indicator"></field>
@@ -1021,7 +1027,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductStore" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
+    <entity entity-name="ProductStore" package="org.apache.ofbiz.product.store">
         <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="primaryStoreGroupId" type="id"></field>
         <field name="storeName" type="text-medium"></field>
@@ -1148,7 +1154,7 @@ under the License.
             <key-map field-name="storeCreditAccountEnumId" related="enumId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductStoreCatalog" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
+    <entity entity-name="ProductStoreCatalog" package="org.apache.ofbiz.product.store">
         <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="prodCatalogId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
@@ -1161,7 +1167,7 @@ under the License.
             <key-map field-name="prodCatalogId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductStoreEmailSetting" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
+    <entity entity-name="ProductStoreEmailSetting" package="org.apache.ofbiz.product.store">
         <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="emailType" type="id" is-pk="true"></field>
         <field name="bodyScreenLocation" type="text-medium" enable-audit-log="true"><description>if empty defaults to a screen based on the emailType</description></field>
@@ -1178,7 +1184,7 @@ under the License.
             <key-map field-name="emailType" related="enumId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductStoreFacility" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
+    <entity entity-name="ProductStoreFacility" package="org.apache.ofbiz.product.store">
         <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="facilityId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
@@ -1193,7 +1199,7 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ProductStoreRole" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
+    <entity entity-name="ProductStoreRole" package="org.apache.ofbiz.product.store">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="roleTypeId" type="id" is-pk="true"></field>
         <field name="productStoreId" type="id" is-pk="true"></field>
@@ -1220,7 +1226,7 @@ under the License.
             <key-map field-name="productStoreId"/>
         </relationship>
     </entity>
-    <entity entity-name="ProductStoreShipmentMeth" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
+    <entity entity-name="ProductStoreShipmentMeth" package="org.apache.ofbiz.product.store">
         <field name="productStoreShipMethId" type="id" is-pk="true"></field>
         <field name="productStoreId" type="id"></field>
         <field name="shipmentMethodTypeId" type="id"></field>

@@ -16,7 +16,7 @@
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_QUICK_ADD" description="Quick Add (Many)"/>
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PROMOTIONS" description="Promotions (One)"/>
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_MOST_POPULAR" description="Most Popular (One)"/>
-    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_WHATS_NEW" description="What's New (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_WHATS_NEW" description="What&apos;s New (One)"/>
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_VIEW_ALLW" description="View Allow (One)"/>
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PURCH_ALLW" description="Purchase Allow (One)"/>
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_ADMIN_ALLW" description="Admin Allow (One)"/>

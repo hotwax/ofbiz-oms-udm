@@ -21,7 +21,7 @@
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FAX_SHIPPING" description="Shipping Destination Fax Number"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FAX_BILLING" description="Billing Destination Fax Number"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_MOBILE" description="Main Mobile Phone Number"/>
-    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_ASSISTANT" description="Assistant's Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_ASSISTANT" description="Assistant&apos;s Phone Number"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PRIMARY_PHONE" description="Primary Phone Number"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_QUICK" description="Quick Calls Phone Number"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="MARKETING_EMAIL" description="Primary Marketing Email Address"/>
@@ -180,7 +180,6 @@
     <moqui.basic.StatusItem statusId="PARTYREL_CREATED" statusTypeId="PARTY_REL_STATUS" statusCode="CREATED" description="Created"/>
     <moqui.basic.StatusItem statusId="PARTYREL_EXPIRED" statusTypeId="PARTY_REL_STATUS" statusCode="EXPIRED" description="Expired"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTYREL_CREATED" toStatusId="PARTYREL_CREATED" transitionName="Expired"/>
-    <moqui.security.UserPreference/>
     <moqui.basic.EnumerationType enumTypeId="USER_PREF_GROUPS" description="User preference groups"/>
     <moqui.basic.EnumerationType enumTypeId="GLOBAL_PREFERENCES" description="Global preferences" parentTypeId="USER_PREF_GROUPS"/>
     <moqui.basic.Enumeration enumId="ORGANIZATION_PARTY" enumTypeId="GLOBAL_PREFERENCES" description="Organization party"/>

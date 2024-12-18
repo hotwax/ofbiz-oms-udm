@@ -26,7 +26,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="NoteData" package="org.apache.ofbiz.common.note" group="ofbiz_transactional">
+    <entity entity-name="NoteData" package="org.apache.ofbiz.common.note">
         <field name="noteId" type="id" is-pk="true"></field>
         <field name="noteName" type="text-medium"></field>
         <field name="noteInfo" type="text-very-long"></field>
@@ -35,14 +35,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="UomGroup" package="org.apache.ofbiz.common.uom" group="ofbiz_transactional">
-        <field name="uomGroupId" type="id" is-pk="true"></field>
-        <field name="uomId" type="id" is-pk="true"></field>
-        <relationship type="one" fk-name="UOM_GROUP_UOM" related="moqui.basic.Uom">
-            <key-map field-name="uomId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="OmsUserPreference" package="org.apache.ofbiz.common.user" table-name="OMS_USER_PREFERENCE" group="ofbiz_transactional">
+    <entity entity-name="OmsUserPreference" package="org.apache.ofbiz.common.user" table-name="OMS_USER_PREFERENCE">
 <description>The UserPreference entity contains one entry per preference per
           userLogin. User preferences are stored as key/value pairs (userPrefTypeId/userPrefValue).
           All values are stored as strings. Value strings can be converted to
@@ -58,7 +51,7 @@ under the License.
             <key-map field-name="userPrefGroupTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="UserPrefGroupType" package="org.apache.ofbiz.common.user" group="ofbiz_transactional">
+    <entity entity-name="UserPrefGroupType" package="org.apache.ofbiz.common.user">
 <description>The UserPrefGroupType entity contains one entry per preference
           group type.</description>        <field name="userPrefGroupTypeId" type="id-long" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
@@ -66,7 +59,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="SystemProperty" package="org.apache.ofbiz.common.property" group="ofbiz_transactional">
+    <entity entity-name="SystemProperty" package="org.apache.ofbiz.common.property">
         <field name="systemResourceId" type="id-long" is-pk="true"></field>
         <field name="systemPropertyId" type="text-medium" is-pk="true"></field>
         <field name="systemPropertyValue" type="text-medium"></field>

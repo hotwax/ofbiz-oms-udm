@@ -24,17 +24,20 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="CommContentAssocType" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
+    <entity entity-name="CommContentAssocType" package="org.apache.ofbiz.party.communication">
         <field name="commContentAssocTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-    <entity entity-name="CommEventContentAssoc" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
+    <entity entity-name="CommEventContentAssoc" package="org.apache.ofbiz.party.communication">
         <field name="contentId" type="id" is-pk="true"></field>
         <field name="communicationEventId" type="id" is-pk="true"></field>
         <field name="commContentAssocTypeId" type="id"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
         <field name="sequenceNum" type="number-integer"></field>
+        <relationship type="one" fk-name="COMMEV_CA_FROM" title="From" related="org.apache.ofbiz.content.content.Content">
+            <key-map field-name="contentId"/>
+        </relationship>
         <relationship type="one" fk-name="COMMEV_CA_COMMEV" related="org.apache.ofbiz.party.communication.CommunicationEvent">
             <key-map field-name="communicationEventId"/>
         </relationship>
@@ -43,7 +46,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="CommunicationEvent" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
+    <entity entity-name="CommunicationEvent" package="org.apache.ofbiz.party.communication">
         <field name="communicationEventId" type="id" is-pk="true"></field>
         <field name="communicationEventTypeId" type="id"></field>
         <field name="origCommEventId" type="id"></field>
@@ -120,7 +123,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="CommunicationEventPrpTyp" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
+    <entity entity-name="CommunicationEventPrpTyp" package="org.apache.ofbiz.party.communication">
         <field name="communicationEventPrpTypId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -129,7 +132,7 @@ under the License.
             <key-map field-name="parentTypeId" related="communicationEventPrpTypId"/>
         </relationship>
     </entity>
-    <entity entity-name="CommunicationEventPurpose" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
+    <entity entity-name="CommunicationEventPurpose" package="org.apache.ofbiz.party.communication">
         <field name="communicationEventPrpTypId" type="id" is-pk="true"></field>
         <field name="communicationEventId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
@@ -140,7 +143,7 @@ under the License.
             <key-map field-name="communicationEventPrpTypId"/>
         </relationship>
     </entity>
-    <entity entity-name="CommunicationEventRole" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
+    <entity entity-name="CommunicationEventRole" package="org.apache.ofbiz.party.communication">
         <field name="communicationEventId" type="id" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="roleTypeId" type="id" is-pk="true"></field>
@@ -168,7 +171,7 @@ under the License.
             <key-map field-name="statusId"/>
         </relationship>
     </entity>
-    <entity entity-name="CommunicationEventType" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
+    <entity entity-name="CommunicationEventType" package="org.apache.ofbiz.party.communication">
         <field name="communicationEventTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -182,7 +185,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ContactMech" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
+    <entity entity-name="ContactMech" package="org.apache.ofbiz.party.contact">
         <field name="contactMechId" type="id" is-pk="true"></field>
         <field name="externalId" type="id-long"><description>This field stores contact mech ID of the external system</description></field>
         <field name="contactMechTypeId" type="id"></field>
@@ -197,11 +200,11 @@ under the License.
             <index-field name="externalId"/>
         </index>
     </entity>
-    <entity entity-name="ContactMechPurposeType" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
+    <entity entity-name="ContactMechPurposeType" package="org.apache.ofbiz.party.contact">
         <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-    <entity entity-name="ContactMechType" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
+    <entity entity-name="ContactMechType" package="org.apache.ofbiz.party.contact">
         <field name="contactMechTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -210,7 +213,7 @@ under the License.
             <key-map field-name="parentTypeId" related="contactMechTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ContactMechTypePurpose" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
+    <entity entity-name="ContactMechTypePurpose" package="org.apache.ofbiz.party.contact">
 <description>Defines which ContactMechPurposeType entites apply to which ContactMechType</description>        <field name="contactMechTypeId" type="id" is-pk="true"></field>
         <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="CONT_MECH_TP_TYPE" related="org.apache.ofbiz.party.contact.ContactMechType">
@@ -221,7 +224,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyContactMech" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
+    <entity entity-name="PartyContactMech" package="org.apache.ofbiz.party.contact">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="contactMechId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
@@ -263,7 +266,7 @@ under the License.
             <key-map field-name="contactMechId"/>
         </relationship>
     </entity>
-    <entity entity-name="PartyContactMechPurpose" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
+    <entity entity-name="PartyContactMechPurpose" package="org.apache.ofbiz.party.contact">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="contactMechId" type="id" is-pk="true"></field>
         <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
@@ -295,7 +298,7 @@ under the License.
             <key-map field-name="contactMechId"/>
         </relationship>
     </entity>
-    <entity entity-name="PostalAddress" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
+    <entity entity-name="PostalAddress" package="org.apache.ofbiz.party.contact">
         <field name="contactMechId" type="id" is-pk="true"></field>
         <field name="toName" type="text-medium"></field>
         <field name="attnName" type="text-medium"></field>
@@ -351,7 +354,7 @@ under the License.
             <index-field name="postalCode"/>
         </index>
     </entity>
-    <entity entity-name="TelecomNumber" package="org.apache.ofbiz.party.contact" group="ofbiz_transactional">
+    <entity entity-name="TelecomNumber" package="org.apache.ofbiz.party.contact">
         <field name="contactMechId" type="id" is-pk="true"></field>
         <field name="countryCode" type="text-short"></field>
         <field name="areaCode" type="text-short"></field>
@@ -374,7 +377,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="Party" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="Party" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="partyTypeId" type="id"></field>
         <field name="externalId" type="id-long"></field>
@@ -412,7 +415,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyIdentification" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyIdentification" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="partyIdentificationTypeId" type="id" is-pk="true"></field>
         <field name="idValue" type="id-long"></field>
@@ -427,7 +430,7 @@ under the License.
         </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyIdentificationType" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyIdentificationType" package="org.apache.ofbiz.party.party">
         <field name="partyIdentificationTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -438,7 +441,7 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyAttribute" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyAttribute" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
         <field name="attrValue" type="text-medium"></field>
@@ -447,7 +450,7 @@ under the License.
             <key-map field-name="partyId"/>
         </relationship>
     </entity>
-    <entity entity-name="PartyCarrierAccount" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyCarrierAccount" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="carrierPartyId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
@@ -460,7 +463,7 @@ under the License.
             <key-map field-name="carrierPartyId" related="partyId"/>
         </relationship>
     </entity>
-    <entity entity-name="PartyClassification" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyClassification" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="partyClassificationGroupId" type="id" is-pk="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
@@ -472,7 +475,7 @@ under the License.
             <key-map field-name="partyClassificationGroupId"/>
         </relationship>
     </entity>
-    <entity entity-name="PartyClassificationGroup" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyClassificationGroup" package="org.apache.ofbiz.party.party">
         <field name="partyClassificationGroupId" type="id" is-pk="true"></field>
         <field name="partyClassificationTypeId" type="id"></field>
         <field name="parentGroupId" type="id"></field>
@@ -484,7 +487,7 @@ under the License.
             <key-map field-name="partyClassificationTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="PartyClassificationType" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyClassificationType" package="org.apache.ofbiz.party.party">
         <field name="partyClassificationTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -494,7 +497,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyContent" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyContent" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="contentId" type="id" is-pk="true"></field>
         <field name="partyContentTypeId" type="id" is-pk="true"></field>
@@ -503,12 +506,15 @@ under the License.
         <relationship type="one" fk-name="PARTY_CNT_PARTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
         </relationship>
+        <relationship type="one" fk-name="PARTY_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
+            <key-map field-name="contentId"/>
+        </relationship>
         <relationship type="one" fk-name="PARTY_CNT_TYPE" related="org.apache.ofbiz.party.party.PartyContentType">
             <key-map field-name="partyContentTypeId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyContentType" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyContentType" package="org.apache.ofbiz.party.party">
         <field name="partyContentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="description" type="text-medium"></field>
@@ -516,7 +522,7 @@ under the License.
             <key-map field-name="parentTypeId" related="partyContentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="PartyGroup" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyGroup" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="groupName" type="text-medium"></field>
         <field name="groupNameLocal" type="text-medium"></field>
@@ -534,7 +540,7 @@ under the License.
         </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyNameHistory" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyNameHistory" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="changeDate" type="date-time" is-pk="true"></field>
         <field name="groupName" type="text-medium"><description>For Party Groups only</description></field>
@@ -549,7 +555,7 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyRelationship" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyRelationship" package="org.apache.ofbiz.party.party">
         <field name="partyIdFrom" type="id" is-pk="true"></field>
         <field name="partyIdTo" type="id" is-pk="true"></field>
         <field name="roleTypeIdFrom" type="id" is-pk="true"></field>
@@ -595,7 +601,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyRelationshipType" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyRelationshipType" package="org.apache.ofbiz.party.party">
         <field name="partyRelationshipTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -617,7 +623,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyRole" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyRole" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="roleTypeId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="PARTY_RLE_PARTY" related="org.apache.ofbiz.party.party.Party">
@@ -634,7 +640,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PartyStatus" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyStatus" package="org.apache.ofbiz.party.party">
         <field name="statusId" type="id" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="statusDate" type="date-time" is-pk="true"></field>
@@ -649,7 +655,7 @@ under the License.
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
         </relationship>
     </entity>
-    <entity entity-name="PartyType" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="PartyType" package="org.apache.ofbiz.party.party">
         <field name="partyTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -661,7 +667,7 @@ under the License.
             <key-map field-name="parentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="Person" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="Person" package="org.apache.ofbiz.party.party">
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="salutation" type="text-medium"></field>
         <field name="firstName" type="text-medium"></field>
@@ -716,7 +722,7 @@ under the License.
             <index-field name="cardId"/>
         </index>
     </entity>
-    <entity entity-name="RoleType" package="org.apache.ofbiz.party.party" group="ofbiz_transactional">
+    <entity entity-name="RoleType" package="org.apache.ofbiz.party.party">
         <field name="roleTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -727,13 +733,13 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <extend-entity entity-name="NoteData" package="org.apache.ofbiz.common.note" group="ofbiz_transactional">
+    <extend-entity entity-name="NoteData" package="org.apache.ofbiz.common.note">
         <field name="noteParty" type="id"></field>
         <relationship type="one" fk-name="NOTE_DATA_PTY" title="Note" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="noteParty" related="partyId"/>
         </relationship>
     </extend-entity>
-    <extend-entity entity-name="UserLogin" package="org.apache.ofbiz.security.login" group="ofbiz_transactional">
+    <extend-entity entity-name="UserLogin" package="org.apache.ofbiz.security.login">
         <field name="partyId" type="id"></field>
         <relationship type="one" fk-name="USER_PARTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
@@ -747,7 +753,7 @@ under the License.
     </extend-entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <extend-entity entity-name="CommunicationEvent" package="org.apache.ofbiz.party.communication" group="ofbiz_transactional">
+    <extend-entity entity-name="CommunicationEvent" package="org.apache.ofbiz.party.communication">
         <field name="systemMessageRemoteId" type="id"></field>
         <relationship type="one" fk-name="MAIL_SYS_MSG_RMT" related="moqui.service.message.SystemMessageRemote">
             <key-map field-name="systemMessageRemoteId" related="systemMessageRemoteId"/>
