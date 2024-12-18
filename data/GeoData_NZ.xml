@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="NZ-NTL" geoName="Northland" abbreviation="Ntl" geoCodeAlpha2="NTL" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-AUK" geoName="Auckland" abbreviation="Auk" geoCodeAlpha2="AUK" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-WKO" geoName="Waikato" abbreviation="Wko" geoCodeAlpha2="WKO" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-BOP" geoName="Bay of Plenty" abbreviation="BoP" geoCodeAlpha2="BOP" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-GIS" geoName="Gisborne" abbreviation="Gis" geoCodeAlpha2="GIS" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-HKB" geoName="Hawkes Bay" abbreviation="HkB" geoCodeAlpha2="HKB" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-TKI" geoName="Taranaki" abbreviation="Tki" geoCodeAlpha2="TKI" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-MWT" geoName="Manawatu-Whanganui" abbreviation="Mwt" geoCodeAlpha2="MWT" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-WGN" geoName="Wellington" abbreviation="Wgn" geoCodeAlpha2="WGN" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-MBH" geoName="Marlborough" abbreviation="Mbh" geoCodeAlpha2="MBH" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-NSN" geoName="Nelson" abbreviation="Nsn" geoCodeAlpha2="NSN" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-TAS" geoName="Tasman" abbreviation="Tas" geoCodeAlpha2="TAS" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-CAN" geoName="Canterbury" abbreviation="Can" geoCodeAlpha2="CAN" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-WTC" geoName="West Coast" abbreviation="WtC" geoCodeAlpha2="WTC" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-OTA" geoName="Otago" abbreviation="Ota" geoCodeAlpha2="OTA" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-STL" geoName="Southland" abbreviation="Stl" geoCodeAlpha2="STL" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="NZ-CIT" geoName="Chatham Islands" abbreviation="CIT" geoCodeAlpha2="CIT" geoAssocTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-NTL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-AUK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-WKO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-BOP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-GIS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-HKB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-TKI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-MWT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-WGN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-MBH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-NSN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-TAS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-CAN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-WTC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-OTA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-STL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NZL" toGeoId="NZ-CIT" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

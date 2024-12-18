@@ -26,24 +26,6 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="CustomMethod" package="org.apache.ofbiz.common.method" group="ofbiz_transactional">
-        <field name="customMethodId" type="id" is-pk="true"></field>
-        <field name="customMethodTypeId" type="id"></field>
-        <field name="customMethodName" type="text-medium"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="CME_TO_TYPE" related="org.apache.ofbiz.common.method.CustomMethodType">
-            <key-map field-name="customMethodTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="CustomMethodType" package="org.apache.ofbiz.common.method" group="ofbiz_transactional">
-        <field name="customMethodTypeId" type="id" is-pk="true"></field>
-        <field name="parentTypeId" type="id"></field>
-        <field name="hasTable" type="text-indicator"></field>
-        <field name="description" type="text-medium"></field>
-        <relationship type="one" fk-name="CME_TYPE_PARENT" title="Parent" related="org.apache.ofbiz.common.method.CustomMethodType">
-            <key-map field-name="parentTypeId" related="customMethodTypeId"/>
-        </relationship>
-    </entity>
     <entity entity-name="NoteData" package="org.apache.ofbiz.common.note" group="ofbiz_transactional">
         <field name="noteId" type="id" is-pk="true"></field>
         <field name="noteName" type="text-medium"></field>

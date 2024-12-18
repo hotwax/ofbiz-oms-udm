@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+            <!-- TODO: skipped data preparation for entity GeoType -->
+    <moqui.basic.Geo geoId="_NA_" geoName="Not Applicable" abbreviation="_NA_" geoCodeAlpha2="_NA_" geoAssocTypeEnumId=""/>
+    <moqui.basic.Geo geoId="AFG" geoName="Afghanistan" abbreviation="AFG" geoCodeAlpha2="AF" geoCodeNumeric="004" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ALA" geoName="Åland islands" abbreviation="ALA" geoCodeAlpha2="AX" geoCodeNumeric="248" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ALB" geoName="Albania" abbreviation="ALB" geoCodeAlpha2="AL" geoCodeNumeric="008" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="DZA" geoName="Algeria" abbreviation="DZA" geoCodeAlpha2="DZ" geoCodeNumeric="012" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ASM" geoName="American Samoa" abbreviation="ASM" geoCodeAlpha2="AS" geoCodeNumeric="016" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="AND" geoName="Andorra" abbreviation="AND" geoCodeAlpha2="AD" geoCodeNumeric="020" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="AGO" geoName="Angola" abbreviation="AGO" geoCodeAlpha2="AO" geoCodeNumeric="024" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="AIA" geoName="Anguilla" abbreviation="AIA" geoCodeAlpha2="AI" geoCodeNumeric="660" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ATA" geoName="Antarctica" abbreviation="ATA" geoCodeAlpha2="AQ" geoCodeNumeric="010" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ATG" geoName="Antigua And Barbuda" abbreviation="ATG" geoCodeAlpha2="AG" geoCodeNumeric="028" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ARG" geoName="Argentina" abbreviation="ARG" geoCodeAlpha2="AR" geoCodeNumeric="032" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ARM" geoName="Armenia" abbreviation="ARM" geoCodeAlpha2="AM" geoCodeNumeric="051" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ABW" geoName="Aruba" abbreviation="ABW" geoCodeAlpha2="AW" geoCodeNumeric="533" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="AUS" geoName="Australia" abbreviation="AUS" geoCodeAlpha2="AU" geoCodeNumeric="036" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="AUT" geoName="Austria" abbreviation="AUT" geoCodeAlpha2="AT" geoCodeNumeric="040" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="AZE" geoName="Azerbaijan" abbreviation="AZE" geoCodeAlpha2="AZ" geoCodeNumeric="031" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BHS" geoName="Bahamas" abbreviation="BHS" geoCodeAlpha2="BS" geoCodeNumeric="044" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BHR" geoName="Bahrain" abbreviation="BHR" geoCodeAlpha2="BH" geoCodeNumeric="048" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BGD" geoName="Bangladesh" abbreviation="BGD" geoCodeAlpha2="BD" geoCodeNumeric="050" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BRB" geoName="Barbados" abbreviation="BRB" geoCodeAlpha2="BB" geoCodeNumeric="052" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BLR" geoName="Belarus" abbreviation="BLR" geoCodeAlpha2="BY" geoCodeNumeric="112" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BEL" geoName="Belgium" abbreviation="BEL" geoCodeAlpha2="BE" geoCodeNumeric="056" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BES" geoName="Bonaire, Sint Eustatius and Saba" abbreviation="BES" geoCodeAlpha2="BQ" geoCodeNumeric="535" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BLZ" geoName="Belize" abbreviation="BLZ" geoCodeAlpha2="BZ" geoCodeNumeric="084" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BEN" geoName="Benin" abbreviation="BEN" geoCodeAlpha2="BJ" geoCodeNumeric="204" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BMU" geoName="Bermuda" abbreviation="BMU" geoCodeAlpha2="BM" geoCodeNumeric="060" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BTN" geoName="Bhutan" abbreviation="BTN" geoCodeAlpha2="BT" geoCodeNumeric="064" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BOL" geoName="Bolivia" abbreviation="BOL" geoCodeAlpha2="BO" geoCodeNumeric="068" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BIH" geoName="Bosnia And Herzegowina" abbreviation="BIH" geoCodeAlpha2="BA" geoCodeNumeric="070" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BWA" geoName="Botswana" abbreviation="BWA" geoCodeAlpha2="BW" geoCodeNumeric="072" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BVT" geoName="Bouvet Island" abbreviation="BVT" geoCodeAlpha2="BV" geoCodeNumeric="074" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BRA" geoName="Brazil" abbreviation="BRA" geoCodeAlpha2="BR" geoCodeNumeric="076" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="IOT" geoName="British Indian Ocean Territory" abbreviation="IOT" geoCodeAlpha2="IO" geoCodeNumeric="086" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BRN" geoName="Brunei Darussalam" abbreviation="BRN" geoCodeAlpha2="BN" geoCodeNumeric="096" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BGR" geoName="Bulgaria" abbreviation="BGR" geoCodeAlpha2="BG" geoCodeNumeric="100" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BFA" geoName="Burkina Faso" abbreviation="BFA" geoCodeAlpha2="BF" geoCodeNumeric="854" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BDI" geoName="Burundi" abbreviation="BDI" geoCodeAlpha2="BI" geoCodeNumeric="108" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="KHM" geoName="Cambodia" abbreviation="KHM" geoCodeAlpha2="KH" geoCodeNumeric="116" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CMR" geoName="Cameroon" abbreviation="CMR" geoCodeAlpha2="CM" geoCodeNumeric="120" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CAN" geoName="Canada" abbreviation="CAN" geoCodeAlpha2="CA" geoCodeNumeric="124" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CPV" geoName="Cape Verde" abbreviation="CPV" geoCodeAlpha2="CV" geoCodeNumeric="132" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CYM" geoName="Cayman Islands" abbreviation="CYM" geoCodeAlpha2="KY" geoCodeNumeric="136" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CAF" geoName="Central African Republic" abbreviation="CAF" geoCodeAlpha2="CF" geoCodeNumeric="140" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TCD" geoName="Chad" abbreviation="TCD" geoCodeAlpha2="TD" geoCodeNumeric="148" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CHL" geoName="Chile" abbreviation="CHL" geoCodeAlpha2="CL" geoCodeNumeric="152" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CHN" geoName="China" abbreviation="CHN" geoCodeAlpha2="CN" geoCodeNumeric="156" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CXR" geoName="Christmas Island" abbreviation="CXR" geoCodeAlpha2="CX" geoCodeNumeric="162" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CCK" geoName="Cocos (keeling) Islands" abbreviation="CCK" geoCodeAlpha2="CC" geoCodeNumeric="166" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="COL" geoName="Colombia" abbreviation="COL" geoCodeAlpha2="CO" geoCodeNumeric="170" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="COM" geoName="Comoros" abbreviation="COM" geoCodeAlpha2="KM" geoCodeNumeric="174" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="COG" geoName="Congo" abbreviation="COG" geoCodeAlpha2="CG" geoCodeNumeric="178" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="COD" geoName="Congo, The Democratic Republic Of The" abbreviation="COD" geoCodeAlpha2="CD" geoCodeNumeric="180" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="COK" geoName="Cook Islands" abbreviation="COK" geoCodeAlpha2="CK" geoCodeNumeric="184" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CRI" geoName="Costa Rica" abbreviation="CRI" geoCodeAlpha2="CR" geoCodeNumeric="188" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CIV" geoName="Cote D'ivoire" abbreviation="CIV" geoCodeAlpha2="CI" geoCodeNumeric="384" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="HRV" geoName="Croatia (local Name: Hrvatska)" abbreviation="HRV" geoCodeAlpha2="HR" geoCodeNumeric="191" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CUB" geoName="Cuba" abbreviation="CUB" geoCodeAlpha2="CU" geoCodeNumeric="192" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CUW" geoName="Curaçao" abbreviation="CUW" geoCodeAlpha2="CW" geoCodeNumeric="531" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CYP" geoName="Cyprus" abbreviation="CYP" geoCodeAlpha2="CY" geoCodeNumeric="196" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CZE" geoName="Czech Republic" abbreviation="CZE" geoCodeAlpha2="CZ" geoCodeNumeric="203" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="DNK" geoName="Denmark" abbreviation="DNK" geoCodeAlpha2="DK" geoCodeNumeric="208" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="DJI" geoName="Djibouti" abbreviation="DJI" geoCodeAlpha2="DJ" geoCodeNumeric="262" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="DMA" geoName="Dominica" abbreviation="DMA" geoCodeAlpha2="DM" geoCodeNumeric="212" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="DOM" geoName="Dominican Republic" abbreviation="DOM" geoCodeAlpha2="DO" geoCodeNumeric="214" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TLS" geoName="East Timor" abbreviation="TLS" geoCodeAlpha2="TL" geoCodeNumeric="626" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ECU" geoName="Ecuador" abbreviation="ECU" geoCodeAlpha2="EC" geoCodeNumeric="218" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="EGY" geoName="Egypt" abbreviation="EGY" geoCodeAlpha2="EG" geoCodeNumeric="818" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SLV" geoName="El Salvador" abbreviation="SLV" geoCodeAlpha2="SV" geoCodeNumeric="222" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ENGL" geoName="England" abbreviation="ENGL" geoCodeAlpha2="ENG" geoCodeNumeric="896" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GNQ" geoName="Equatorial Guinea" abbreviation="GNQ" geoCodeAlpha2="GQ" geoCodeNumeric="226" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ERI" geoName="Eritrea" abbreviation="ERI" geoCodeAlpha2="ER" geoCodeNumeric="232" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="EST" geoName="Estonia" abbreviation="EST" geoCodeAlpha2="EE" geoCodeNumeric="233" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ETH" geoName="Ethiopia" abbreviation="ETH" geoCodeAlpha2="ET" geoCodeNumeric="231" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="FLK" geoName="Falkland Islands (malvinas)" abbreviation="FLK" geoCodeAlpha2="FK" geoCodeNumeric="238" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="FRO" geoName="Faroe Islands" abbreviation="FRO" geoCodeAlpha2="FO" geoCodeNumeric="234" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="FJI" geoName="Fiji" abbreviation="FJI" geoCodeAlpha2="FJ" geoCodeNumeric="242" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="FIN" geoName="Finland" abbreviation="FIN" geoCodeAlpha2="FI" geoCodeNumeric="246" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="FXX" geoName="France, Metropolitan" abbreviation="FXX" geoCodeAlpha2="FX" geoCodeNumeric="249" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="FRA" geoName="France" abbreviation="FRA" geoCodeAlpha2="FR" geoCodeNumeric="250" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GUF" geoName="French Guiana" abbreviation="GUF" geoCodeAlpha2="GF" geoCodeNumeric="254" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PYF" geoName="French Polynesia" abbreviation="PYF" geoCodeAlpha2="PF" geoCodeNumeric="258" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ATF" geoName="French Southern Territories" abbreviation="ATF" geoCodeAlpha2="TF" geoCodeNumeric="260" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GAB" geoName="Gabon" abbreviation="GAB" geoCodeAlpha2="GA" geoCodeNumeric="266" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GMB" geoName="Gambia" abbreviation="GMB" geoCodeAlpha2="GM" geoCodeNumeric="270" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GEO" geoName="Georgia" abbreviation="GEO" geoCodeAlpha2="GE" geoCodeNumeric="268" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="DEU" geoName="Germany" abbreviation="DEU" geoCodeAlpha2="DE" geoCodeNumeric="276" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GHA" geoName="Ghana" abbreviation="GHA" geoCodeAlpha2="GH" geoCodeNumeric="288" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GIB" geoName="Gibraltar" abbreviation="GIB" geoCodeAlpha2="GI" geoCodeNumeric="292" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GRC" geoName="Greece" abbreviation="GRC" geoCodeAlpha2="GR" geoCodeNumeric="300" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GRL" geoName="Greenland" abbreviation="GRL" geoCodeAlpha2="GL" geoCodeNumeric="304" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GRD" geoName="Grenada" abbreviation="GRD" geoCodeAlpha2="GD" geoCodeNumeric="308" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GLP" geoName="Guadeloupe" abbreviation="GLP" geoCodeAlpha2="GP" geoCodeNumeric="312" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GUM" geoName="Guam" abbreviation="GUM" geoCodeAlpha2="GU" geoCodeNumeric="316" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GTM" geoName="Guatemala" abbreviation="GTM" geoCodeAlpha2="GT" geoCodeNumeric="320" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GGY" geoName="Guernsey" abbreviation="GGY" geoCodeAlpha2="GG" geoCodeNumeric="831" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GIN" geoName="Guinea" abbreviation="GIN" geoCodeAlpha2="GN" geoCodeNumeric="324" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GNB" geoName="Guinea-bissau" abbreviation="GNB" geoCodeAlpha2="GW" geoCodeNumeric="624" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GUY" geoName="Guyana" abbreviation="GUY" geoCodeAlpha2="GY" geoCodeNumeric="328" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="HTI" geoName="Haiti" abbreviation="HTI" geoCodeAlpha2="HT" geoCodeNumeric="332" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="HMD" geoName="Heard And Mc Donald Islands" abbreviation="HMD" geoCodeAlpha2="HM" geoCodeNumeric="334" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="VAT" geoName="Holy See (vatican City State)" abbreviation="VAT" geoCodeAlpha2="VA" geoCodeNumeric="336" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="HND" geoName="Honduras" abbreviation="HND" geoCodeAlpha2="HN" geoCodeNumeric="340" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="HKG" geoName="Hong Kong" abbreviation="HKG" geoCodeAlpha2="HK" geoCodeNumeric="344" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="HUN" geoName="Hungary" abbreviation="HUN" geoCodeAlpha2="HU" geoCodeNumeric="348" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ISL" geoName="Iceland" abbreviation="ISL" geoCodeAlpha2="IS" geoCodeNumeric="352" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="IND" geoName="India" abbreviation="IND" geoCodeAlpha2="IN" geoCodeNumeric="356" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="IDN" geoName="Indonesia" abbreviation="IDN" geoCodeAlpha2="ID" geoCodeNumeric="360" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="IRN" geoName="Iran (islamic Republic Of)" abbreviation="IRN" geoCodeAlpha2="IR" geoCodeNumeric="364" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="IRQ" geoName="Iraq" abbreviation="IRQ" geoCodeAlpha2="IQ" geoCodeNumeric="368" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="IRL" geoName="Ireland" abbreviation="IRL" geoCodeAlpha2="IE" geoCodeNumeric="372" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="IMN" geoName="Isle of Man" abbreviation="IMN" geoCodeAlpha2="IM" geoCodeNumeric="833" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ISR" geoName="Israel" abbreviation="ISR" geoCodeAlpha2="IL" geoCodeNumeric="376" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ITA" geoName="Italy" abbreviation="ITA" geoCodeAlpha2="IT" geoCodeNumeric="380" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="JAM" geoName="Jamaica" abbreviation="JAM" geoCodeAlpha2="JM" geoCodeNumeric="388" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="JPN" geoName="Japan" abbreviation="JPN" geoCodeAlpha2="JP" geoCodeNumeric="392" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="JEY" geoName="Jersey" abbreviation="JEY" geoCodeAlpha2="JE" geoCodeNumeric="832" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="JOR" geoName="Jordan" abbreviation="JOR" geoCodeAlpha2="JO" geoCodeNumeric="400" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="KAZ" geoName="Kazakhstan" abbreviation="KAZ" geoCodeAlpha2="KZ" geoCodeNumeric="398" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="KEN" geoName="Kenya" abbreviation="KEN" geoCodeAlpha2="KE" geoCodeNumeric="404" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="KIR" geoName="Kiribati" abbreviation="KIR" geoCodeAlpha2="KI" geoCodeNumeric="296" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PRK" geoName="Korea, Democratic People's Republic Of" abbreviation="PRK" geoCodeAlpha2="KP" geoCodeNumeric="408" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="KOR" geoName="Korea, Republic Of" abbreviation="KOR" geoCodeAlpha2="KR" geoCodeNumeric="410" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="KWT" geoName="Kuwait" abbreviation="KWT" geoCodeAlpha2="KW" geoCodeNumeric="414" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="KGZ" geoName="Kyrgyzstan" abbreviation="KGZ" geoCodeAlpha2="KG" geoCodeNumeric="417" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LAO" geoName="Lao People's Democratic Republic" abbreviation="LAO" geoCodeAlpha2="LA" geoCodeNumeric="418" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LVA" geoName="Latvia" abbreviation="LVA" geoCodeAlpha2="LV" geoCodeNumeric="428" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LBN" geoName="Lebanon" abbreviation="LBN" geoCodeAlpha2="LB" geoCodeNumeric="422" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LSO" geoName="Lesotho" abbreviation="LSO" geoCodeAlpha2="LS" geoCodeNumeric="426" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LBR" geoName="Liberia" abbreviation="LBR" geoCodeAlpha2="LR" geoCodeNumeric="430" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LBY" geoName="Libyan Arab Jamahiriya" abbreviation="LBY" geoCodeAlpha2="LY" geoCodeNumeric="434" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LIE" geoName="Liechtenstein" abbreviation="LIE" geoCodeAlpha2="LI" geoCodeNumeric="438" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LTU" geoName="Lithuania" abbreviation="LTU" geoCodeAlpha2="LT" geoCodeNumeric="440" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LUX" geoName="Luxembourg" abbreviation="LUX" geoCodeAlpha2="LU" geoCodeNumeric="442" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MAC" geoName="Macau" abbreviation="MAC" geoCodeAlpha2="MO" geoCodeNumeric="446" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MKD" geoName="Macedonia, The Former Yugoslav Republic Of" abbreviation="MKD" geoCodeAlpha2="MK" geoCodeNumeric="807" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MDG" geoName="Madagascar" abbreviation="MDG" geoCodeAlpha2="MG" geoCodeNumeric="450" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MWI" geoName="Malawi" abbreviation="MWI" geoCodeAlpha2="MW" geoCodeNumeric="454" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MYS" geoName="Malaysia" abbreviation="MYS" geoCodeAlpha2="MY" geoCodeNumeric="458" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MDV" geoName="Maldives" abbreviation="MDV" geoCodeAlpha2="MV" geoCodeNumeric="462" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MLI" geoName="Mali" abbreviation="MLI" geoCodeAlpha2="ML" geoCodeNumeric="466" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MLT" geoName="Malta" abbreviation="MLT" geoCodeAlpha2="MT" geoCodeNumeric="470" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MHL" geoName="Marshall Islands" abbreviation="MHL" geoCodeAlpha2="MH" geoCodeNumeric="584" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MTQ" geoName="Martinique" abbreviation="MTQ" geoCodeAlpha2="MQ" geoCodeNumeric="474" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MRT" geoName="Mauritania" abbreviation="MRT" geoCodeAlpha2="MR" geoCodeNumeric="478" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MUS" geoName="Mauritius" abbreviation="MUS" geoCodeAlpha2="MU" geoCodeNumeric="480" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MYT" geoName="Mayotte" abbreviation="MYT" geoCodeAlpha2="YT" geoCodeNumeric="175" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MEX" geoName="Mexico" abbreviation="MEX" geoCodeAlpha2="MX" geoCodeNumeric="484" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="FSM" geoName="Micronesia, Federated States Of" abbreviation="FSM" geoCodeAlpha2="FM" geoCodeNumeric="583" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MDA" geoName="Moldova, Republic Of" abbreviation="MDA" geoCodeAlpha2="MD" geoCodeNumeric="498" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MCO" geoName="Monaco" abbreviation="MCO" geoCodeAlpha2="MC" geoCodeNumeric="492" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MNG" geoName="Mongolia" abbreviation="MNG" geoCodeAlpha2="MN" geoCodeNumeric="496" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MNE" geoName="Montenegro" abbreviation="MNE" geoCodeAlpha2="ME" geoCodeNumeric="499" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MSR" geoName="Montserrat" abbreviation="MSR" geoCodeAlpha2="MS" geoCodeNumeric="500" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MAR" geoName="Morocco" abbreviation="MAR" geoCodeAlpha2="MA" geoCodeNumeric="504" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MOZ" geoName="Mozambique" abbreviation="MOZ" geoCodeAlpha2="MZ" geoCodeNumeric="508" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MMR" geoName="Myanmar" abbreviation="MMR" geoCodeAlpha2="MM" geoCodeNumeric="104" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NIRL" geoName="N.Ireland" abbreviation="NIRL" geoCodeAlpha2="NIR" geoCodeNumeric="897" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NAM" geoName="Namibia" abbreviation="NAM" geoCodeAlpha2="NA" geoCodeNumeric="516" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NRU" geoName="Nauru" abbreviation="NRU" geoCodeAlpha2="NR" geoCodeNumeric="520" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NPL" geoName="Nepal" abbreviation="NPL" geoCodeAlpha2="NP" geoCodeNumeric="524" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NLD" geoName="Netherlands" abbreviation="NLD" geoCodeAlpha2="NL" geoCodeNumeric="528" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ANT" geoName="Netherlands Antilles" abbreviation="ANT" geoCodeAlpha2="AN" geoCodeNumeric="530" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NCL" geoName="New Caledonia" abbreviation="NCL" geoCodeAlpha2="NC" geoCodeNumeric="540" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NZL" geoName="New Zealand" abbreviation="NZL" geoCodeAlpha2="NZ" geoCodeNumeric="554" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NIC" geoName="Nicaragua" abbreviation="NIC" geoCodeAlpha2="NI" geoCodeNumeric="558" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NER" geoName="Niger" abbreviation="NER" geoCodeAlpha2="NE" geoCodeNumeric="562" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NGA" geoName="Nigeria" abbreviation="NGA" geoCodeAlpha2="NG" geoCodeNumeric="566" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NIU" geoName="Niue" abbreviation="NIU" geoCodeAlpha2="NU" geoCodeNumeric="570" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NFK" geoName="Norfolk Island" abbreviation="NFK" geoCodeAlpha2="NF" geoCodeNumeric="574" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MNP" geoName="Northern Mariana Islands" abbreviation="MNP" geoCodeAlpha2="MP" geoCodeNumeric="580" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="NOR" geoName="Norway" abbreviation="NOR" geoCodeAlpha2="NO" geoCodeNumeric="578" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="OMN" geoName="Oman" abbreviation="OMN" geoCodeAlpha2="OM" geoCodeNumeric="512" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PAK" geoName="Pakistan" abbreviation="PAK" geoCodeAlpha2="PK" geoCodeNumeric="586" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PLW" geoName="Palau" abbreviation="PLW" geoCodeAlpha2="PW" geoCodeNumeric="585" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PSE" geoName="Palestinian Territory, Occupied" abbreviation="PSE" geoCodeAlpha2="PS" geoCodeNumeric="275" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PAN" geoName="Panama" abbreviation="PAN" geoCodeAlpha2="PA" geoCodeNumeric="591" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PNG" geoName="Papua New Guinea" abbreviation="PNG" geoCodeAlpha2="PG" geoCodeNumeric="598" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PRY" geoName="Paraguay" abbreviation="PRY" geoCodeAlpha2="PY" geoCodeNumeric="600" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PER" geoName="Peru" abbreviation="PER" geoCodeAlpha2="PE" geoCodeNumeric="604" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PHL" geoName="Philippines" abbreviation="PHL" geoCodeAlpha2="PH" geoCodeNumeric="608" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PCN" geoName="Pitcairn" abbreviation="PCN" geoCodeAlpha2="PN" geoCodeNumeric="612" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="POL" geoName="Poland" abbreviation="POL" geoCodeAlpha2="PL" geoCodeNumeric="616" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PRT" geoName="Portugal" abbreviation="PRT" geoCodeAlpha2="PT" geoCodeNumeric="620" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="PRI" geoName="Puerto Rico" abbreviation="PRI" geoCodeAlpha2="PR" geoCodeNumeric="630" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="QAT" geoName="Qatar" abbreviation="QAT" geoCodeAlpha2="QA" geoCodeNumeric="634" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="REU" geoName="Reunion" abbreviation="REU" geoCodeAlpha2="RE" geoCodeNumeric="638" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ROU" geoName="Romania" abbreviation="ROU" geoCodeAlpha2="RO" geoCodeNumeric="642" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="RUS" geoName="Russian Federation" abbreviation="RUS" geoCodeAlpha2="RU" geoCodeNumeric="643" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="RWA" geoName="Rwanda" abbreviation="RWA" geoCodeAlpha2="RW" geoCodeNumeric="646" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="KNA" geoName="Saint Kitts And Nevis" abbreviation="KNA" geoCodeAlpha2="KN" geoCodeNumeric="659" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LCA" geoName="Saint Lucia" abbreviation="LCA" geoCodeAlpha2="LC" geoCodeNumeric="662" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="VCT" geoName="Saint Vincent And The Grenadines" abbreviation="VCT" geoCodeAlpha2="VC" geoCodeNumeric="670" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="BLM" geoName="Saint Barthélemy" abbreviation="BLM" geoCodeAlpha2="BL" geoCodeNumeric="652" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="MAF" geoName="Saint Martin (French part)" abbreviation="MAF" geoCodeAlpha2="MF" geoCodeNumeric="663" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="WSM" geoName="Samoa" abbreviation="WSM" geoCodeAlpha2="WS" geoCodeNumeric="882" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SMR" geoName="San Marino" abbreviation="SMR" geoCodeAlpha2="SM" geoCodeNumeric="674" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="STP" geoName="Sao Tome And Principe" abbreviation="STP" geoCodeAlpha2="ST" geoCodeNumeric="678" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SAU" geoName="Saudi Arabia" abbreviation="SAU" geoCodeAlpha2="SA" geoCodeNumeric="682" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SCOT" geoName="Scotland" abbreviation="SCOT" geoCodeAlpha2="SCT" geoCodeNumeric="895" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SEN" geoName="Senegal" abbreviation="SEN" geoCodeAlpha2="SN" geoCodeNumeric="686" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SRB" geoName="Serbia" abbreviation="SRB" geoCodeAlpha2="RS" geoCodeNumeric="688" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SYC" geoName="Seychelles" abbreviation="SYC" geoCodeAlpha2="SC" geoCodeNumeric="690" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SLE" geoName="Sierra Leone" abbreviation="SLE" geoCodeAlpha2="SL" geoCodeNumeric="694" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SGP" geoName="Singapore" abbreviation="SGP" geoCodeAlpha2="SG" geoCodeNumeric="702" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SVK" geoName="Slovakia (slovak Republic)" abbreviation="SVK" geoCodeAlpha2="SK" geoCodeNumeric="703" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SXM" geoName="Sint Maarten (Dutch part)" abbreviation="SXM" geoCodeAlpha2="SX" geoCodeNumeric="534" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SVN" geoName="Slovenia" abbreviation="SVN" geoCodeAlpha2="SI" geoCodeNumeric="705" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SLB" geoName="Solomon Islands" abbreviation="SLB" geoCodeAlpha2="SB" geoCodeNumeric="090" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SOM" geoName="Somalia" abbreviation="SOM" geoCodeAlpha2="SO" geoCodeNumeric="706" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SGS" geoName="South Georgia And The South Sandwich Islands" abbreviation="SGS" geoCodeAlpha2="GS" geoCodeNumeric="239" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ZAF" geoName="South Africa" abbreviation="ZAF" geoCodeAlpha2="ZA" geoCodeNumeric="710" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SSD" geoName="South Sudan" abbreviation="SSD" geoCodeAlpha2="SS" geoCodeNumeric="728" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ESP" geoName="Spain" abbreviation="ESP" geoCodeAlpha2="ES" geoCodeNumeric="724" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="LKA" geoName="Sri Lanka" abbreviation="LKA" geoCodeAlpha2="LK" geoCodeNumeric="144" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SHN" geoName="St. Helena" abbreviation="SHN" geoCodeAlpha2="SH" geoCodeNumeric="654" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SPM" geoName="St. Pierre And Miquelon" abbreviation="SPM" geoCodeAlpha2="PM" geoCodeNumeric="666" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SDN" geoName="Sudan" abbreviation="SDN" geoCodeAlpha2="SD" geoCodeNumeric="736" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SUR" geoName="Suriname" abbreviation="SUR" geoCodeAlpha2="SR" geoCodeNumeric="740" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SJM" geoName="Svalbard And Jan Mayen Islands" abbreviation="SJM" geoCodeAlpha2="SJ" geoCodeNumeric="744" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SWZ" geoName="Swaziland" abbreviation="SWZ" geoCodeAlpha2="SZ" geoCodeNumeric="748" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SWE" geoName="Sweden" abbreviation="SWE" geoCodeAlpha2="SE" geoCodeNumeric="752" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="CHE" geoName="Switzerland" abbreviation="CHE" geoCodeAlpha2="CH" geoCodeNumeric="756" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="SYR" geoName="Syrian Arab Republic" abbreviation="SYR" geoCodeAlpha2="SY" geoCodeNumeric="760" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TWN" geoName="Taiwan" abbreviation="TWN" geoCodeAlpha2="TW" geoCodeNumeric="158" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TJK" geoName="Tajikistan" abbreviation="TJK" geoCodeAlpha2="TJ" geoCodeNumeric="762" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TZA" geoName="Tanzania, United Republic Of" abbreviation="TZA" geoCodeAlpha2="TZ" geoCodeNumeric="834" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="THA" geoName="Thailand" abbreviation="THA" geoCodeAlpha2="TH" geoCodeNumeric="764" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TGO" geoName="Togo" abbreviation="TGO" geoCodeAlpha2="TG" geoCodeNumeric="768" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TKL" geoName="Tokelau" abbreviation="TKL" geoCodeAlpha2="TK" geoCodeNumeric="772" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TON" geoName="Tonga" abbreviation="TON" geoCodeAlpha2="TO" geoCodeNumeric="776" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TTO" geoName="Trinidad And Tobago" abbreviation="TTO" geoCodeAlpha2="TT" geoCodeNumeric="780" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TUN" geoName="Tunisia" abbreviation="TUN" geoCodeAlpha2="TN" geoCodeNumeric="788" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TUR" geoName="Turkey" abbreviation="TUR" geoCodeAlpha2="TR" geoCodeNumeric="792" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TKM" geoName="Turkmenistan" abbreviation="TKM" geoCodeAlpha2="TM" geoCodeNumeric="795" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TCA" geoName="Turks And Caicos Islands" abbreviation="TCA" geoCodeAlpha2="TC" geoCodeNumeric="796" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="TUV" geoName="Tuvalu" abbreviation="TUV" geoCodeAlpha2="TV" geoCodeNumeric="798" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="UGA" geoName="Uganda" abbreviation="UGA" geoCodeAlpha2="UG" geoCodeNumeric="800" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="UKR" geoName="Ukraine" abbreviation="UKR" geoCodeAlpha2="UA" geoCodeNumeric="804" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="USA" geoName="United States" abbreviation="USA" geoCodeAlpha2="US" geoCodeNumeric="840" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="UMI" geoName="United States Minor Outlying Islands" abbreviation="UMI" geoCodeAlpha2="UM" geoCodeNumeric="581" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ARE" geoName="United Arab Emirates" abbreviation="ARE" geoCodeAlpha2="AE" geoCodeNumeric="784" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="GBR" geoName="United Kingdom" abbreviation="GBR" geoCodeAlpha2="GB" geoCodeNumeric="826" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="URY" geoName="Uruguay" abbreviation="URY" geoCodeAlpha2="UY" geoCodeNumeric="858" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="UZB" geoName="Uzbekistan" abbreviation="UZB" geoCodeAlpha2="UZ" geoCodeNumeric="860" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="VUT" geoName="Vanuatu" abbreviation="VUT" geoCodeAlpha2="VU" geoCodeNumeric="548" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="VEN" geoName="Venezuela" abbreviation="VEN" geoCodeAlpha2="VE" geoCodeNumeric="862" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="VNM" geoName="Viet Nam" abbreviation="VNM" geoCodeAlpha2="VN" geoCodeNumeric="704" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="VGB" geoName="Virgin Islands (british)" abbreviation="VGB" geoCodeAlpha2="VG" geoCodeNumeric="092" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="VIR" geoName="Virgin Islands (u.s.)" abbreviation="VIR" geoCodeAlpha2="VI" geoCodeNumeric="850" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="WALS" geoName="Wales" abbreviation="WALS" geoCodeAlpha2="WLS" geoCodeNumeric="898" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="WLF" geoName="Wallis And Futuna Islands" abbreviation="WLF" geoCodeAlpha2="WF" geoCodeNumeric="876" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ESH" geoName="Western Sahara" abbreviation="ESH" geoCodeAlpha2="EH" geoCodeNumeric="732" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="YEM" geoName="Yemen" abbreviation="YEM" geoCodeAlpha2="YE" geoCodeNumeric="887" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="YUG" geoName="Yugoslavia" abbreviation="YUG" geoCodeAlpha2="YU" geoCodeNumeric="891" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ZMB" geoName="Zambia" abbreviation="ZMB" geoCodeAlpha2="ZM" geoCodeNumeric="894" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="ZWE" geoName="Zimbabwe" abbreviation="ZWE" geoCodeAlpha2="ZW" geoCodeNumeric="716" geoAssocTypeEnumId="GEOT_COUNTRY"/>
+    <moqui.basic.Geo geoId="EU" geoName="European Union" abbreviation="EU" geoCodeAlpha2="EU" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="AUT" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="BEL" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="CYP" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="DNK" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="EST" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="FIN" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="GRC" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="HUN" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="HRV" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="ITA" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="LVA" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="LTU" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="LUX" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MLT" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="PRT" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="ROU" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="GBR" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="CZE" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="SVK" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="SVN" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="SWE" toGeoId="EU" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GBR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GBR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="NIRL" toGeoId="GBR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GBR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+</entity-facade-xml>
+

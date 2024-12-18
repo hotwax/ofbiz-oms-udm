@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext-seed">
+    <moqui.basic.EnumerationType enumTypeId="CUST_CLASS_ENUM" description="Order customer classification"/>
+    <moqui.basic.EnumerationType enumTypeId="LOG_TYPE" description="Logging Types"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_FAC_COND_TYPE" description="Product Facility Condition Type"/>
+    <moqui.basic.EnumerationType enumTypeId="INV_ITEM_ATTRIBUTE" description="Inventory Item Attribute"/>
+    <moqui.basic.EnumerationType enumTypeId="PURCHASE_ORDER_VIEW" description="Purchase Order View"/>
+    <moqui.basic.EnumerationType enumTypeId="PRINT_PRP_TYPE" description="Print Purpose Types"/>
+    <moqui.basic.EnumerationType enumTypeId="ODR_EMAIL" description="Order Reject Email"/>
+    <moqui.basic.EnumerationType enumTypeId="PARTY_MAIL" description="Party Mails"/>
+    <moqui.basic.EnumerationType enumTypeId="CONFIG_IACTN" description="Config Iactn"/>
+    <moqui.basic.EnumerationType enumTypeId="SEARCH_PREF" description="Search Preference" parentTypeId="USER_PREF_GROUPS"/>
+    <moqui.basic.EnumerationType enumTypeId="MARITAL_STATUS" description="Marital Status"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_STORE_SMS" description="Product Store SMS Notification"/>
+    <moqui.basic.EnumerationType enumTypeId="ORDER_IDENTITY" description="Order Identifications"/>
+    <moqui.basic.EnumerationType enumTypeId="RETURN_IDENTITY" description="Return Identifications"/>
+    <moqui.basic.EnumerationType enumTypeId="FACILITY_IDENTITY" description="Facility Identifications"/>
+    <moqui.basic.EnumerationType enumTypeId="BROKERING_REASN_TYPE" description="Brokering Reason Type"/>
+    <moqui.basic.EnumerationType enumTypeId="SYSTEM_JOB" description="System Configuration Job"/>
+    <moqui.basic.EnumerationType enumTypeId="EXT_FULFIL_STATUS" description="External Fulfillment Status"/>
+    <moqui.basic.EnumerationType enumTypeId="WEBHOOK_CONFIG_ENUM" description="Webhook Enumerations"/>
+    <moqui.basic.Enumeration enumId="SENT" enumTypeId="EXT_FULFIL_STATUS" enumCode="STATUS" description="Sent"/>
+    <moqui.basic.Enumeration enumId="REJECT" enumTypeId="EXT_FULFIL_STATUS" enumCode="STATUS" description="Reject"/>
+    <moqui.basic.EnumerationType enumTypeId="PRODUCT_SYS_JOB" description="Product Jobs" parentTypeId="SYSTEM_JOB"/>
+    <moqui.basic.EnumerationType enumTypeId="ORDER_SYS_JOB" description="Order Jobs" parentTypeId="SYSTEM_JOB"/>
+    <moqui.basic.EnumerationType enumTypeId="MISC_SYS_JOB" description="Miscellaneous Jobs" parentTypeId="SYSTEM_JOB"/>
+    <moqui.basic.EnumerationType enumTypeId="PRE_ORD_SYS_JOB" description="Preorder/Backorder Jobs" parentTypeId="SYSTEM_JOB"/>
+    <moqui.basic.EnumerationType enumTypeId="INVENTORY_SYS_JOB" description="Inventory Jobs" parentTypeId="SYSTEM_JOB"/>
+    <moqui.basic.EnumerationType enumTypeId="REPORT_SYS_JOB" description="Report System Configuration Job" parentTypeId="SYSTEM_JOB"/>
+    <moqui.basic.EnumerationType enumTypeId="FULFILLMENT_SYS_JOB" description="Fulfillment Jobs" parentTypeId="SYSTEM_JOB"/>
+    <moqui.basic.EnumerationType enumTypeId="FAC_CNT_TYPE" description="Facility Content"/>
+    <moqui.basic.Enumeration enumId="FAC_TRNSMIT_SHIPMENT" enumTypeId="FAC_CNT_TYPE" description="Facility Transmit Shipment"/>
+    <moqui.basic.Enumeration enumId="FAC_DELVER_MANIFEST" enumTypeId="FAC_CNT_TYPE" description="Facility Delivery Manifest"/>
+    <moqui.basic.Enumeration enumId="UNFILLABLE" enumTypeId="BROKERING_REASN_TYPE" enumCode="BROKERING_REASON" description="Unfillable"/>
+    <moqui.basic.Enumeration enumId="BROKERED" enumTypeId="BROKERING_REASN_TYPE" enumCode="BROKERING_REASON" description="Brokered"/>
+    <moqui.basic.Enumeration enumId="RELEASED" enumTypeId="BROKERING_REASN_TYPE" enumCode="BROKERING_REASON" description="Released"/>
+    <moqui.basic.Enumeration enumId="DAMAGED" enumTypeId="BROKERING_REASN_TYPE" enumCode="BROKERING_REASON" description="Damaged"/>
+    <moqui.basic.Enumeration enumId="INV_STOLEN" enumTypeId="BROKERING_REASN_TYPE" enumCode="BROKERING_REASON" description="Inventory Stolen by other order"/>
+    <moqui.basic.Enumeration enumId="INV_NOT_FOUND" enumTypeId="BROKERING_REASN_TYPE" enumCode="BROKERING_REASON" description="Inventory not found"/>
+    <moqui.basic.Enumeration enumId="PARKED" enumTypeId="BROKERING_REASN_TYPE" enumCode="BROKERING_REASON" description="Parked"/>
+    <moqui.basic.Enumeration enumId="MKT_PLACE" enumTypeId="ORDER_IDENTITY" enumCode="MKTPLACE" description="MarketPlace"/>
+    <moqui.basic.Enumeration enumId="RTN_MKT_PLACE" enumTypeId="RETURN_IDENTITY" enumCode="MKTPLACE" description="MarketPlace Return"/>
+    <moqui.basic.Enumeration enumId="SINGLE" enumTypeId="MARITAL_STATUS" description="Single" enumName="Single"/>
+    <moqui.basic.Enumeration enumId="MARRIED" enumTypeId="MARITAL_STATUS" description="Married" enumName="Married"/>
+    <moqui.basic.Enumeration enumId="SEPARATED" enumTypeId="MARITAL_STATUS" description="Separated" enumName="Separated"/>
+    <moqui.basic.Enumeration enumId="DIVORCED" enumTypeId="MARITAL_STATUS" description="Divorced" enumName="Divorced"/>
+    <moqui.basic.Enumeration enumId="WIDOWED" enumTypeId="MARITAL_STATUS" description="Widowed" enumName="Widowed"/>
+    <moqui.basic.Enumeration enumId="POS_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="POS_CHANNEL" description="POS Channel"/>
+    <moqui.basic.Enumeration enumId="MKTP_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="MARKETPLACE_CHANNEL" description="Marketplace Sales Channel"/>
+    <moqui.basic.Enumeration enumId="API" enumTypeId="ORDER_SALES_CHANNEL" description="Website for API"/>
+    <moqui.basic.Enumeration enumId="COMPATIBLE" enumTypeId="CONFIG_IACTN" description="Compatible"/>
+    <moqui.basic.Enumeration enumId="INCOMPATIBLE" enumTypeId="CONFIG_IACTN" description="In-compatible"/>
+    <moqui.basic.Enumeration enumId="IMPORT_LOG" enumTypeId="LOG_TYPE" enumCode="ImportLog" description="Import Log"/>
+    <moqui.basic.Enumeration enumId="EXPORT_LOG" enumTypeId="LOG_TYPE" enumCode="ExportLog" description="Export Log"/>
+    <moqui.basic.Enumeration enumId="PRDS_RTN_SLIP" enumTypeId="PRDS_EMAIL" enumCode="RTN_SLIP" description="Return Slip"/>
+    <moqui.basic.Enumeration enumId="PRINT_PACK_SLIP" enumTypeId="PRINT_PRP_TYPE" enumCode="PACKING" description="Packing Slip"/>
+    <moqui.basic.Enumeration enumId="PRINT_USPS_SHIP_LBL" enumTypeId="PRINT_PRP_TYPE" enumCode="USPS_SHIP_LABEL" description="USPS Shipping Label"/>
+    <moqui.basic.Enumeration enumId="PRINT_FDX_SHIP_LBL" enumTypeId="PRINT_PRP_TYPE" enumCode="FDX_SHIP_LABEL" description="Fedex Shipping Label"/>
+    <moqui.basic.Enumeration enumId="PRINT_UPS_SHIP_LBL" enumTypeId="PRINT_PRP_TYPE" enumCode="UPS_SHIP_LABEL" description="UPS Shipping Label"/>
+    <moqui.basic.Enumeration enumId="PRINT_INVOICE" enumTypeId="PRINT_PRP_TYPE" enumCode="INVOICE" description="Invoice"/>
+    <moqui.basic.Enumeration enumId="PRINT_GENERAL" enumTypeId="PRINT_PRP_TYPE" enumCode="GENERAL_PRINTER" description="Default Printer"/>
+    <moqui.basic.Enumeration enumId="PURCHASE_ODR_CONFIRM" enumTypeId="PRDS_EMAIL" enumCode="PURCHASE_ODR_CONFIRM" description="The Order Confirmation Notification is an email that gets sent to the supplier after they have successfully placed an Order." enumName="Order Confirmation"/>
+    <moqui.basic.Enumeration enumId="INVRO_ALT_SUPL" enumTypeId="INV_RES_ORDER" enumCode="ALT_SUPL" description="Alternate Supplier"/>
+    <moqui.basic.Enumeration enumId="PRDS_FULFLMNT_STRTD" enumTypeId="PRDS_EMAIL" enumCode="PRDS_FULFLMNT_STRTD" description="System sends email to customer when fulfillment is started." enumName="Fulfillment Started"/>
+    <moqui.basic.Enumeration enumId="SEARCH_PREF" enumTypeId="SEARCH_PREF" enumCode="SEARCH_PREF" description="Search Preference"/>
+    <moqui.basic.Enumeration enumId="PRDS_ACC_CREATED" enumTypeId="PRDS_EMAIL" enumCode="APP_USER_CREATED" description="System sends the notification to Application User when his/her account created successfully." enumName="Application User Created"/>
+    <moqui.basic.Enumeration enumId="APP_USER_PWD_RET" enumTypeId="PRDS_EMAIL" enumCode="APP_USER_PWD_RET" description="System sends the password retrieve email to Application User when he/she forgot password." enumName="Reset Application User Password"/>
+    <moqui.basic.Enumeration enumId="PRDS_ODR_ITEM_CAN" enumTypeId="PRDS_EMAIL" enumCode="ODR_ITEM_CAN" description="The Order Item Cancelled Notification is an email that gets sent to the customer when Order item status has been cancelled." enumName="Order Item Cancelled"/>
+    <moqui.basic.Enumeration enumId="PRDS_INVC_NOTI" enumTypeId="PRDS_EMAIL" enumCode="PRDS_INVC_NOTI" description="Invoice Notification" enumName="Invoice Notification"/>
+    <moqui.basic.Enumeration enumId="PRDS_ODR_SHIP_PACKED" enumTypeId="PRDS_EMAIL" enumCode="SHP_PACKED" description="Shipment Packed"/>
+    <moqui.basic.Enumeration enumId="PRDS_READY_TO_PICKUP" enumTypeId="PRDS_EMAIL" enumCode="READY_TO_PICKUP" description="Ready to Pickup Item"/>
+    <moqui.basic.Enumeration enumId="REC_INSPECTION_BAY" enumTypeId="FACLOC_TYPE" description="Receiving Bay"/>
+    <moqui.basic.Enumeration enumId="PROD_SO_DS" enumTypeId="PROD_REQ_METHOD" description="Ship from another facility if ATP available else drop ship"/>
+    <moqui.basic.Enumeration enumId="PRODALT_WH_RES" enumTypeId="PROD_REQ_METHOD" description="Reserve from another facility if ATP is available else drop ship"/>
+    <moqui.basic.Enumeration enumId="ORD_AUTHORIZATION" enumTypeId="PRDS_EMAIL" enumCode="ORDER_AUTH" description="Order Authorization"/>
+    <moqui.basic.Enumeration enumId="STAGING" enumTypeId="FACLOC_TYPE" description="Staging"/>
+    <moqui.basic.Enumeration enumId="TRACKING_NUMBER_SMS" enumTypeId="PROD_STORE_SMS" enumCode="TRACKING_NUMBER" description="Tracking Number SMS"/>
+    <moqui.basic.Enumeration enumId="ODR_APPROVED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="ODR_APPROVED" description="Order Approved"/>
+    <moqui.basic.Enumeration enumId="ODR_CANCELLED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="ODR_CANCELLED" description="Order Cancelled"/>
+    <moqui.basic.Enumeration enumId="ODR_COMPLETED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="ODR_COMPLETED" description="Order Complete"/>
+    <moqui.basic.Enumeration enumId="RETURN_ACCEPTED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="RETURN_ACCEPTED" description="Return Accepted"/>
+    <moqui.basic.Enumeration enumId="RETURN_RECEIVED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="RETURN_RECEIVED" description="Return Received"/>
+    <moqui.basic.Enumeration enumId="RETURN_REQUESTED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="RETURN_REQUESTED" description="Return Requested"/>
+    <moqui.basic.Enumeration enumId="RETURN_CANCELLED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="RETURN_CANCELLED" description="Return Cancelled"/>
+    <moqui.basic.Enumeration enumId="RETURN_COMPLETED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="RETURN_COMPLETED" description="Return Completed"/>
+    <moqui.basic.Enumeration enumId="RETURN_REJECTED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="RETURN_REJECTED" description="Return Rejected"/>
+    <moqui.basic.Enumeration enumId="CUSTOMER_WELCM_SMS" enumTypeId="PROD_STORE_SMS" enumCode="WELCOME_MESSAGE" description="Customer Welcome Message"/>
+    <moqui.basic.Enumeration enumId="PAYMENT_DECLINED_SMS" enumTypeId="PROD_STORE_SMS" enumCode="PAYMENT_DECLINED" description="Order Payment Declined"/>
+    <moqui.basic.EnumerationType enumTypeId="REPORT_AN_ISSUE" description="Report an Issue Reason"/>
+    <moqui.basic.EnumerationType enumTypeId="REPORT_NO_VAR" description="Report an issue with no variance reason"/>
+    <moqui.basic.EnumerationType enumTypeId="REPORT_ALL_VAR" description="Report an issue with all qty variance reason" parentTypeId="REPORT_AN_ISSUE"/>
+    <moqui.basic.EnumerationType enumTypeId="REPORT_VAR" description="Report an issue with particular qty variance reason" parentTypeId="REPORT_AN_ISSUE"/>
+    <moqui.basic.Enumeration enumId="NOT_IN_STOCK" enumTypeId="REPORT_ALL_VAR" enumCode="NOT_IN_STOCK" description="Not in Stock"/>
+    <moqui.basic.Enumeration enumId="WORN_DISPLAY" enumTypeId="REPORT_VAR" enumCode="WORN_DISPLAY" description="Worn Display"/>
+    <moqui.basic.Enumeration enumId="REJ_RSN_DAMAGED" enumTypeId="REPORT_VAR" enumCode="DAMAGED" description="Damaged"/>
+    <moqui.basic.Enumeration enumId="MISMATCH" enumTypeId="REPORT_VAR" enumCode="MISMATCH" description="Mismatch"/>
+    <moqui.basic.Enumeration enumId="INACTIVE_STORE" enumTypeId="REPORT_NO_VAR" enumCode="INACTIVE_STORE" description="Inactive store"/>
+    <moqui.basic.Enumeration enumId="NO_VARIANCE_LOG" enumTypeId="REPORT_NO_VAR" enumCode="NO_VARIANCE_LOG" description="No variance"/>
+    <moqui.basic.Enumeration enumId="REJECT_ENTIRE_ORDER" enumTypeId="REPORT_NO_VAR" enumCode="REJECT_ENTIRE_ORDER" description="Reject entire order"/>
+    <moqui.basic.EnumerationType enumTypeId="RETURN_CHANNEL" description="Return Channel"/>
+    <moqui.basic.Enumeration enumId="ECOM_RTN_CHANNEL" enumTypeId="RETURN_CHANNEL" enumCode="ECOM_RTN_CHANNEL" description="Ecom Return Channel"/>
+    <moqui.basic.Enumeration enumId="POS_RTN_CHANNEL" enumTypeId="RETURN_CHANNEL" enumCode="POS_RTN_CHANNEL" description="Pos Return Channel"/>
+    <moqui.basic.Enumeration enumId="PRM_CLASS_TYPE" description="Enumeration to classify security groups that will only be used to categorize permissions. Not meant to be associated directly with users." enumName="Permission Classification Type"/>
+    <org.apache.ofbiz.common.user.UserPrefGroupType userPrefGroupTypeId="BOPIS" description="BOPIS topic subscriptions"/>
+    <moqui.basic.EnumerationType enumTypeId="PUSH_NOTIFICATION" description="Push Notification"/>
+    <moqui.basic.EnumerationType enumTypeId="NOTIF_BOPIS" description="BOPIS Notification" parentTypeId="PUSH_NOTIFICATION"/>
+    <moqui.basic.Enumeration enumId="NEW_BOPIS_ODR" enumTypeId="NOTIF_BOPIS" description="New order notification" enumName="New Order"/>
+    <moqui.basic.Enumeration enumId="OPEN_BOPIS_ODR" enumTypeId="NOTIF_BOPIS" description="Open order notification" enumName="Open Order"/>
+    <moqui.basic.Enumeration enumId="READYPICK_BOPIS_ODR" enumTypeId="NOTIF_BOPIS" description="Ready to pick order notification" enumName="Ready To Pick Order"/>
+    <moqui.basic.EnumerationType enumTypeId="NOTIF_FULFILLMENT" description="Fulfillment Order Notification" parentTypeId="PUSH_NOTIFICATION"/>
+    <org.apache.ofbiz.common.user.UserPrefGroupType userPrefGroupTypeId="FULFILLMENT" description="Fulfillment topic subscriptions"/>
+    <moqui.basic.Enumeration enumId="OPEN_SHIPPING_ODR" enumTypeId="NOTIF_FULFILLMENT" description="Open shipping order notification" enumName="Open Order"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="NOT_IN_STOCK" description="Not in Stock"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="WORN_DISPLAY" description="Worn Display"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="REJ_RSN_DAMAGED" description="Damaged"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="MISMATCH" description="Mismatch"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="INACTIVE_STORE" description="Inactive store"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="NO_VARIANCE_LOG" description="No variance"/>
+    <moqui.basic.Uom uomId="QTY_CASE" abbreviation="ca" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_DOZEN" abbreviation="dz" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_BOX" abbreviation="bx" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_BAG" abbreviation="bg" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_CARTON" abbreviation="ct" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_GROSS" abbreviation="gr" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_JAR" abbreviation="jr" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_KIT" abbreviation="kt" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_LOT" abbreviation="lt" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_PAIR" abbreviation="pr" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_ROLL" abbreviation="rl" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_SET" abbreviation="st" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_ea" abbreviation="ea" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="QTY_pc" abbreviation="pc" uomTypeEnumId=""/>
+    <moqui.basic.Uom uomId="PTS" abbreviation="PTS" uomTypeEnumId="UT_CURRENCY_MEASURE"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CNTCT_PRSN_CUSTOMER" parentTypeId="CUSTOMER" hasTable="N" description="Contact-Person Customer"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CUSTOMER_REL" hasTable="N" description="Customer group"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="VENDOR_REL" hasTable="N" description="Vendor group"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CONTACT_REL" hasTable="N" description="Contact group"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CUSTOMER" parentTypeId="CUSTOMER_REL" hasTable="N" description="Customer"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="DISTRIBUTOR" parentTypeId="CUSTOMER_REL" hasTable="N" description="Distributor"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="DISTRIBUTION_CHANNEL" parentTypeId="CUSTOMER_REL" hasTable="N" description="Distribution Channel"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="VENDOR" parentTypeId="VENDOR_REL" hasTable="N" description="Vendor"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="SUPPLIER" parentTypeId="VENDOR_REL" hasTable="N" description="Supplier"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CONTACT" parentTypeId="CONTACT_REL" hasTable="N" description="Contact"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="APPLICATION_USER" parentTypeId="CONTACT_REL" hasTable="N" description="User"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="MANAGER_CUSTOMER" hasTable="N" description="Customer's Manager"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="AUTH_ORDER_PARTY" hasTable="N" description="Order Authorization Party"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="ONLINE_DISTRIBUTOR" parentTypeId="CUSTOMER_REL" description="Online Distributor"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="APPLICATION_USER" hasTable="N" description="Application User"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CONTENT_MANAGER" parentTypeId="APPLICATION_USER" hasTable="N" description="Content Manager"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="DEALER_MANAGER" parentTypeId="APPLICATION_USER" hasTable="N" description="Dealer Manager"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CSR" parentTypeId="APPLICATION_USER" hasTable="N" description="CSR"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="WAREHOUSE_PICKER" parentTypeId="APPLICATION_USER" hasTable="N" description="Warehouse Picker"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="WAREHOUSE_MANAGER" parentTypeId="APPLICATION_USER" hasTable="N" description="Warehouse Manager"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="STORE_ASSOCIATE" parentTypeId="APPLICATION_USER" hasTable="N" description="Associate"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CATALOG_MANAGER" parentTypeId="APPLICATION_USER" hasTable="N" description="Catalog Manager"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="REPORTS_MANAGER" parentTypeId="APPLICATION_USER" hasTable="N" description="Reports Manager"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="FINANCIALS_MANAGER" parentTypeId="APPLICATION_USER" hasTable="N" description="Financials Manager"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="BLOGGER" parentTypeId="APPLICATION_USER" description="Blogger"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="ACCOUNTANT" parentTypeId="APPLICATION_USER" hasTable="N" description="Accountant"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="BUSINESS_ADMIN" parentTypeId="APPLICATION_USER" hasTable="N" description="Business Admin"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="DS_ROLE" parentTypeId="APPLICATION_USER" hasTable="N" description="Csr Role"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="DUTY_AUTHORITY" description="Duty Authority"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="PUT_AWAY_OPERATOR" hasTable="N" description="Put Away Operator"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="TASK_ASSIGNEE" hasTable="N" description="Assignee"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="TASK_WATCHER" hasTable="N" description="Watcher"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="TASK_REPORTER" hasTable="N" description="Reporter"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="SALES_REP" parentTypeId="PERSON_ROLE" hasTable="N" description="Sales Rep"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="PICKUP_TRUSTEE" parentTypeId="PERSON_ROLE" hasTable="N" description="Pickup Trustee"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="PRIMARY_CONTACT" hasTable="N" description="Primary Contact"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="SALES_ORDER_QUERY" description="Sales order filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PURCHASE_ORDER_QUERY" description="Purchase order filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PARTY_QUERY" description="Party filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="CUSTOMER_QUERY" description="Customer filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="LEAD_QUERY" description="Lead filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="VENDOR_QUERY" description="Vendor filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="SALES_INVOICE_QUERY" description="Sales Invoice query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PURCHASE_INV_QUERY" description="Purchase Invoice query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="SALES_RETURN_QUERY" description="Sales Return query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="QUOTE_ORDER_QUERY" description="Quote Order query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PAYMENT_QUERY" description="Payment filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="IN_SHIPMENT_QUERY" description="Incoming Shipment filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="OUT_SHIPMENT_QUERY" description="Outgoing Shipment filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PRODUCT_QUERY" description="Product filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PRODUCT_CAL_QUERY" description="Product Calendar filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PRODUCT_CON_QUERY" description="Product Content filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="CATEGORY_QUERY" description="Category filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PQ_QUERY" description="Purchase Quote filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PICKLIST_QUERY" description="Picklist filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="STORE_PICKING_QUERY" description="Store Picking filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="REQUIREMENT_QUERY" description="Requirement filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="WEBPAGE_QUERY" description="Webpage filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="WORKEFFORT_QUERY" description="Workeffort filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="FIND_INV_QUERY" description="Inventory filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="SUPPLIER_QUERY" description="Supplier filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="EMPLOYEE_QUERY" description="Employee filter query"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="PINNED_JOB" description="Pinned jobs for quick access"/>
+    <co.hotwax.party.party.UserSearchPreferenceType userSearchPrefTypeId="THRESHOLD_INV_QUERY" description="Threshold Inventory Query. It will be used to filter products and update threshold."/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="STORE_CREDIT" description="Store Credit"/>
+    <moqui.basic.StatusType statusTypeId="INV_CNT_IMPORT_STTS" description="Inventory Count Import Status"/>
+    <moqui.basic.StatusType statusTypeId="ACCOUNT_STATUS" description="Status of relationship for an account (Party Group)"/>
+    <moqui.basic.StatusItem statusId="INV_BACKORDERED" statusTypeId="INV_SERIALIZED_STTS" statusCode="BACKORDERED" description="Back Ordered"/>
+    <moqui.basic.StatusItem statusId="INV_NS_INSPECTION" statusTypeId="INV_NON_SER_STTS" statusCode="INSPECTION_NS" description="Inspection"/>
+    <moqui.basic.StatusItem statusId="INV_NS_AVAILABLE" statusTypeId="INV_NON_SER_STTS" statusCode="AVAILABLE_NS" description="Available"/>
+    <moqui.basic.StatusItem statusId="INV_INSPECTION" statusTypeId="INV_SERIALIZED_STTS" statusCode="INSPECTION" description="Inspection"/>
+    <moqui.basic.StatusItem statusId="INV_NS_ON_HOLD" statusTypeId="INV_NON_SER_STTS" statusCode="ON_HOLD_NS" description="On Hold"/>
+    <moqui.basic.StatusItem statusId="INV_NS_DEFECTIVE" statusTypeId="INV_NON_SER_STTS" statusCode="DEFECTIVE_NS" description="Defective"/>
+    <moqui.basic.StatusItem statusId="INV_NS_RETURNED" statusTypeId="INV_NON_SER_STTS" statusCode="RETURNED_NS" description="Returned"/>
+    <moqui.basic.StatusItem statusId="RETURN_ACCEPTED" statusTypeId="ORDER_RETURN_STTS" statusCode="ACCEPTED" description="Authorized" statusAge="50"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_REQUESTED" transitionName="Authorize"/>
+    <org.apache.ofbiz.order.order.OrderType orderTypeId="PURCHASE_ORDER" hasTable="N" description="Purchase Order"/>
+    <org.apache.ofbiz.order.order.OrderType orderTypeId="SALES_ORDER" hasTable="N" description="Sales Order"/>
+    <org.apache.ofbiz.order.order.OrderType orderTypeId="TRANSFER_ORDER" hasTable="N" description="Transfer Order"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Inbound Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Outbound Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="SALES_RETURN" parentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Sales Return Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="SALES_SHIPMENT" parentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Sales Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="PURCHASE_SHIPMENT" parentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Purchase Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="PURCHASE_RETURN" parentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Purchase Return Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="DROP_SHIPMENT" hasTable="N" description="Drop Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="OUT_TRANSFER" parentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Outbound Transfer Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="IN_TRANSFER" parentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Inbound Transfer Shipment"/>
+    <org.apache.ofbiz.common.user.UserPrefGroupType userPrefGroupTypeId="SEARCH_PREF" description="Search Preference"/>
+    <org.apache.ofbiz.common.user.UserPrefGroupType userPrefGroupTypeId="MENU_PREFERENCE" description="Menu Preference"/>
+    <org.apache.ofbiz.common.user.UserPrefGroupType userPrefGroupTypeId="PANEL_PREFERENCES" description="Panel Preferences"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="ONLINE_DISTRIBUTOR" hasTable="N" partyRelationshipName="Online Distributor"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="EXT_CONTACT_REL" parentTypeId="CONTACT_REL" hasTable="N" partyRelationshipName="Ext Contact"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="CUSTOMER_ACCOUNT" parentTypeId="ACCOUNT" hasTable="N" partyRelationshipName="Customer Account"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="SUPPLIER_ACCOUNT" parentTypeId="ACCOUNT" hasTable="N" partyRelationshipName="Supplier Account"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="SUB_DIVISION" hasTable="N" partyRelationshipName="Sub Division"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="SHIPPING_CONTACT" hasTable="N" partyRelationshipName="Shipping Contact"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="BILLING_CONTACT" hasTable="N" partyRelationshipName="Billing Contact"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="FRIEND" hasTable="N" partyRelationshipName="Friend"/>
+    <org.apache.ofbiz.order.return.ReturnType returnTypeId="HC_RETURN" description="HC allowed returns" sequenceId="01" parentTypeId=""/>
+    <org.apache.ofbiz.order.return.ReturnType returnTypeId="RTN_REFUND" description="Refund" sequenceId="01" parentTypeId="HC_RETURN"/>
+    <org.apache.ofbiz.order.return.ReturnType returnTypeId="RTN_REPLACE" description="Replacement" sequenceId="02" parentTypeId="HC_RETURN"/>
+    <org.apache.ofbiz.order.return.ReturnType returnTypeId="RTN_EXCHANGE" description="Exchange" sequenceId="03" parentTypeId="HC_RETURN"/>
+    <org.apache.ofbiz.order.return.ReturnType returnTypeId="RTN_CREDIT" description="Store Credit" sequenceId="04" parentTypeId="HC_RETURN"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_RMA_ADJ" hasTable="N" description="RMA Fee Adjustment"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_DUTY_ADJ" hasTable="N" description="RMA Duty"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_DEPOSIT_ADJ" hasTable="N" description="Return Deposit Adjustment"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_SHIPPING_ADJ" hasTable="N" description="Return S&H"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="APPEASEMENT" hasTable="N" description="Appeasement"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DUTY" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_DUTY_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DEPOSIT_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_DEPOSIT_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RET_MAN_ADJ" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_MAN_ADJ"/>
+    <org.apache.ofbiz.order.order.OrderItemAssocType orderItemAssocTypeId="QUOTE_ORDER" hasTable="N" description="Quote Order"/>
+    <org.apache.ofbiz.order.order.OrderItemAssocType orderItemAssocTypeId="PURCHASE_QUOTE" hasTable="N" description="Purchase Quote"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="MISCELLANEOUS_CHARGE" hasTable="N" description="Miscellaneous Charge"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="PYMNT_PROCESS_FEE" parentTypeId="FEE" hasTable="N" description="Payment Processing Fee"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="DUTY" hasTable="N" description="Duty"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="OFF_INV_ADJUSTMENT" parentTypeId="DISCOUNT_ADJUSTMENT" hasTable="N" description="Off Invoice Adjustment"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="VAT_TAX" hasTable="N" description="VAT Tax"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="DEPOSIT_ADJUSTMENT" hasTable="N" description="Deposit"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="DEPOSIT_REFUND" hasTable="N" description="Deposit Refund"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="SHIPPING_CHARGES" hasTable="N" description="S&H"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="EXT_PROMO_ADJUSTMENT" hasTable="N" description="External promotion adjustment"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="SHIPPING_SALES_TAX" hasTable="N" description="S&H Tax "/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="COD_FEE" hasTable="N" description="COD Fee"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="COD_FEE_TAX" hasTable="N" description="COD Fee tax"/>
+    <org.apache.ofbiz.party.party.PartyIdentificationType partyIdentificationTypeId="SCAN_ID" description="Scannable ID"/>
+    <org.apache.ofbiz.party.party.PartyIdentificationType partyIdentificationTypeId="TIN" hasTable="N" description="Taxpayer Identification number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_TOLL_FREE" description="Toll Free Phone Number" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_CSTMR_SRVC" description="Customer Service Phone Number" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FAX_TOLL_FREE" description="Toll Free Fax Number" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FACEBOOK_URL" description="Facebook Url" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="TWITTER_URL" description="Twitter Url" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PINTEREST_URL" description="Pinterest Url" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="INSTAGRAM_URL" description="Instagram Url" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="YOUTUBE_URL" description="Youtube Url" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="CONTACT_US_EMAIL" description="Contact Us Email" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="BLOG_URL" description="Blog Url" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="AUTH_ORDER_EMAIL" description="Authorization Email" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="AUTH_ORDER_PHONE" description="Authorization Phone" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="INSTALL_LOCATION" description="Installation Address" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="SHIPPING_EMAIL" description="Shipping Email" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="OTHER_PHONE" description="Other Phone Number" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PRIMARY_MOBILE" description="Primary Mobile Number" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PRIMARY_FAX" description="Primary Fax Number" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="TAG_LOCATION" description="Tagging" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="HOME_LOCATION" description="Home" parentTypeId="TAG_LOCATION" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="WORK_LOCATION" description="Work" parentTypeId="TAG_LOCATION" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="SPCL_PRPS_SHIPTO_LOC" description="Special Purpose Ship To Location" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="SHIPPING_EMAIL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_TOLL_FREE"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_CSTMR_SRVC"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="FAX_TOLL_FREE"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="FACEBOOK_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="TWITTER_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="PINTEREST_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="INSTAGRAM_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="YOUTUBE_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="CONTACT_US_EMAIL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="BLOG_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="AUTH_ORDER_EMAIL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="AUTH_ORDER_PHONE"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PRIMARY_MOBILE"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PRIMARY_FAX"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="HOME_LOCATION"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="WORK_LOCATION"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="DONATION" isPhysical="N" isDigital="N" hasTable="N" description="Donation Products"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_MODEL" hasTable="N" description="Product Model Assoc type"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_ALTERNATE" hasTable="N" description="A Product Alternate may be used in place of the associated product, given customer/vendor/FAA approval."/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_SUBSTITUTE" hasTable="N" description="Alternate Product Parts"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="BASE_PART_VARIANT" description="Variant (Part Number) of a Base Part"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="MANUF_COMPONENT" parentTypeId="PRODUCT_COMPONENT" hasTable="N" description="Manufacturing"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="ENGINEER_COMPONENT" parentTypeId="PRODUCT_COMPONENT" hasTable="N" description="Engineering"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="INSTALLATION_SERVICE" hasTable="N" description="Installation Service Product Assoc"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="HC_PROD_ASSOC_TYPE" description="HotWax Commerce Product Assoc Type"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_ALTERNATE" parentTypeId="HC_PROD_ASSOC_TYPE"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_COMPLEMENT" parentTypeId="HC_PROD_ASSOC_TYPE" description="Cross Sell"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_SUBSTITUTE" parentTypeId="HC_PROD_ASSOC_TYPE"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="ALSO_BOUGHT" parentTypeId="HC_PROD_ASSOC_TYPE"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_OBSOLESCENCE" parentTypeId="HC_PROD_ASSOC_TYPE"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_UPGRADE" parentTypeId="HC_PROD_ASSOC_TYPE"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="LOOK_SHOP" parentTypeId="HC_PROD_ASSOC_TYPE" hasTable="N" description="Shop the look"/>
+    <org.apache.ofbiz.product.category.ProductCategoryType productCategoryTypeId="FEATURE_CATEGORY" hasTable="N" description="Feature Category"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="GXS_ID" hasTable="N" description="GXS Product Id for virtual products"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="HC_GOOD_ID_TYPE" description="This will act as parent good identification type Id."/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="ISBN" parentTypeId="HC_GOOD_ID_TYPE" hasTable="N" description="ISBN"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="UPCA" parentTypeId="HC_GOOD_ID_TYPE" hasTable="N" description="UPCA"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="UPCE" parentTypeId="HC_GOOD_ID_TYPE" hasTable="N" description="UPCE"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="GTIN" parentTypeId="HC_GOOD_ID_TYPE" hasTable="N" description="GTIN"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="PARTY_COMMUNICATION" hasTable="N" description="Party Communications"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="EMAIL_COMMUNICATION" parentTypeId="PARTY_COMMUNICATION" hasTable="N" description="Email"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="ORDER_COMMUNICATION" hasTable="N" description="Order Communications"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="COMMENT_NOTE" hasTable="N" description="Comment" contactMechTypeId="INTERNAL_PARTYID"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="NOTE" parentTypeId="PARTY_COMMUNICATION" hasTable="N" description="Note" contactMechTypeId="INTERNAL_PARTYID"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="API_COMMUNICATION" hasTable="N" description="API Communication" contactMechTypeId="INTERNAL_PARTYID"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="ORDER_NOTE" parentTypeId="ORDER_COMMUNICATION" hasTable="N" description="Order Note" contactMechTypeId="INTERNAL_PARTYID"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="CHAT_COMMUNICATION" hasTable="N" description="Chatting"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="ORDER_COMPLETE_REQST" hasTable="N" description="Order Complete Request"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="ORDER_CANCEL_REQST" hasTable="N" description="Order Cancel Request"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="GENDER" hasTable="N" description="Gender"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="SEX" hasTable="N" description="Sex"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="FTR_PROD_CATEGORY" description="Featured Product Category (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="FTR_CATEGORY" description="Featured Category (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="FTR_PROMO_CATEGORY" description="Featured Category (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PREORDR_NOT" description="Preorder Not Allow (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PREORDR" description="Preorder (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_BACKORDER" description="Backorder (One)"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="USER_COMMENT" description="User Comment"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="COLLECTION" description="Collection (Album, Gallery, ....)"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="TEXT_CNT" description="Text Content"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="VIDEO" description="Video"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="WEB_PAGE" description="Web Page"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="DIGITAL_ASSET" description="Digital Asset"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="IMAGE" description="Image"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="META_DESCRIPTION" description="Meta Description"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="ORDER_EMAIL_CONTENT" description="Email Content specific to Order"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="ORD_AUTHORIZATION" parentTypeId="ORDER_EMAIL_CONTENT" description="Authorize Order Email Content"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="COMPANY_LOGO" description="Company Logo"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="EXTERNAL_LINK" description="External Link"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="DASHBOARD_CNT" description="Dashboard Content"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="RATE_RQST_TMPLT" description="Rate request template"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="LABEL_RQST_TMPLT" description="Label request template"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="VOID_LBL_RQST_TMPLT" description="Void label request template"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="SHIP_LABEL_TMPLT" description="Shipping label template"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="META" hasTable="N" description="Meta"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="META_TITLE" hasTable="N" description="Meta Title"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="META_KEYWORDS" hasTable="N" description="Meta Keywords"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="META_DESCRIPTION" hasTable="N" description="Meta Description"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="META_ROBOT" hasTable="N" description="Meta Robots"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="PROD_TABBED_CONTENT" hasTable="N" description="Product Tabbed Content"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="FEATURED_IMAGE_F" hasTable="N" description="Featured Image"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_F_SMALL" hasTable="N" description="Featured Image Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_F_MEDIUM" hasTable="N" description="Featured Image Medium"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_F_LARGE" hasTable="N" description="Featured Image Large"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_F_DETAIL" hasTable="N" description="Featured Image Detail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="X_SMALL_IMAGE_URL" hasTable="N" description="Extra Small Image URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="THUMBNAIL_IMAGE_URL" hasTable="N" description="Thumbnail Image URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_1_XSMALL" hasTable="N" description="Image - Additional View 1 Extra Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_1_THUMBNAIL" hasTable="N" description="Image - Additional View 1 Thumbnail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_2_XSMALL" hasTable="N" description="Image - Additional View 2 Extra Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_2_THUMBNAIL" hasTable="N" description="Image - Additional View 2 Thumbnail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_3_XSMALL" hasTable="N" description="Image - Additional View 3 Extra Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_3_THUMBNAIL" hasTable="N" description="Image - Additional View 3 Thumbnail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_4_XSMALL" hasTable="N" description="Image - Additional View 4 Extra Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_4_THUMBNAIL" hasTable="N" description="Image - Additional View 4 Thumbnail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DEFAULT_IMG_THMBNL" hasTable="N" description="Main Thumbnail Image URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DEFAULT_IMG_XSMALL" hasTable="N" description="Main X Small Image URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DEFAULT_IMG_SMALL" hasTable="N" description="Main Small Image URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DEFAULT_IMG_MEDIUM" hasTable="N" description="Main Medium Image URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DEFAULT_IMG_LARGE" hasTable="N" description="Main Large Image URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DEFAULT_IMG_DETAIL" hasTable="N" description="Main Detail Image URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DEFAULT_IMG_ORIG" hasTable="N" description="Main Original Image URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="FEATURED_IMAGE" hasTable="N" description="Featured Image"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DIGITAL_ASSET" hasTable="N" description="Digital Assets"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="PRODUCT_DETAIL" parentTypeId="PROD_TABBED_CONTENT" hasTable="N" description="Product Details"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="VIDEO" hasTable="N" description="Product Video Url"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="SLIDE_IMAGE" hasTable="N" description="Product Slide Image"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="TILE_IMAGE" hasTable="N" description="Product Tile Image"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="WEB_PAGE" hasTable="N" description="Web Page"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="COMPOSITION" hasTable="N" description="Composition"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="INSTRUCTIONS" hasTable="N" description="Instructions"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="SPECIALINSTRUCTIONS" hasTable="N" description="Special Inst"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="META" hasTable="N" description="Meta"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="META_TITLE" hasTable="N" description="Meta Title"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="META_KEYWORDS" hasTable="N" description="Meta Keywords"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="META_DESCRIPTION" hasTable="N" description="Meta Description"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="META_ROBOT" hasTable="N" description="Meta Robots"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="CATEGORY_NAV_TITLE" hasTable="N" description="Category Nav Tilte"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="SLIDE_IMAGE" hasTable="N" description="Category Slide Image"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="TILE_IMAGE" hasTable="N" description="Category Tile Image"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="WEB_PAGE" hasTable="N" description="Category Web Page"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="MKTG_MATERIAL" hasTable="N" description="Marketing Material"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="MKTG_MATERIAL_PDF" parentTypeId="MKTG_MATERIAL" hasTable="N" description="Marketing Material Pdf"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="MKTG_MATERIAL_URL" parentTypeId="MKTG_MATERIAL" hasTable="N" description="Marketing Material Url"/>
+    <moqui.basic.Geo geoId="DBIC" geoName="Doing Business In Countries" abbreviation="DBIC" geoCodeAlpha2="DBIC" geoAssocTypeEnumId="GEOT_GROUP"/>
+            <!-- TODO: skipped data preparation for entity GeoType -->
+    <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="PROFESSIONAL" hasTable="N" description="Professional"/>
+    <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="AMBASSADOR" hasTable="N" description="Ambassador"/>
+    <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="INTERNAL_CLASIFICTN" hasTable="N" description="Internal Classification"/>
+    <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="PRICE_RULE_CLSIFICTN" parentTypeId="INTERNAL_CLASIFICTN" hasTable="N" description="Price Rule Classification"/>
+    <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="PARTY_CLASSIFICATION" hasTable="N" description="Party Classification"/>
+    <org.apache.ofbiz.order.return.ReturnHeaderType returnHeaderTypeId="TRADE_IN" description="Trade In"/>
+    <co.hotwax.customerservice.return.ReturnTypeReasonGroupType returnTypeRsnGroupTypeId="GEN_RTN_SHIP_LAB" description="Generate return shipping label" sequenceId="01"/>
+    <co.hotwax.customerservice.return.ReturnTypeReasonGroupType returnTypeRsnGroupTypeId="ISSUE_REFUND" description="Issue refund once warehouse receives return" sequenceId="02"/>
+    <co.hotwax.customerservice.return.ReturnTypeReasonGroupType returnTypeRsnGroupTypeId="DEDUCT_RESTOCK_FEE" description="Deduct restocking fee from the amount going to be refunded" sequenceId="03"/>
+    <co.hotwax.customerservice.return.ReturnTypeReasonGroupType returnTypeRsnGroupTypeId="REFUND_OUTBOUND_SHIP" description="Refund outbound shipping fee (if paid)" sequenceId="04"/>
+    <co.hotwax.customerservice.return.ReturnTypeReasonGroupType returnTypeRsnGroupTypeId="AUTO_RECEIVE_RTN" description="Mark return received automatically, No need to receive shipment" sequenceId="05"/>
+    <org.apache.ofbiz.product.category.ProductCategoryType productCategoryTypeId="HSN_CATEGORY" hasTable="N" description="Harmonized System Nomenclature"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_EXT_PRM_ADJ" hasTable="N" description="Return External Promotion Adjustment"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="EXT_PROMO_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_EXT_PRM_ADJ"/>
+    <moqui.basic.Enumeration enumId="PRIP_CONFIG_ID" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="CONFIG_ID" description="Product Config"/>
+    <moqui.basic.Enumeration enumId="PRIP_TRCKNG_CODE" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="TRCKNG_CODE" description="Tracking Code"/>
+    <moqui.basic.Enumeration enumId="PPIP_GEO_ID" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="GEO_ID" description="Shipping Destination"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="mail.notifications.redirectTo" description="mail notifications redirectTo"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="mail.address.caseInsensitive" description="mail address caseInsensitive"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="mail.spam.name" description="mail spam name"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="mail.spam.value" description="mail spam value"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="mail.debug.on" description="mail debug on"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="SHIPPING_LABEL" description="Shipping Label"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="PICKUP" description="Store pickup group type"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="PICKING" description="Required Picking Group Type"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="FULFILLMENT" description="Fulfillment group type"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="CHANNEL_FAC_GROUP" description="Online Facility Group"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="FEATURING" description="Featuring facility Group"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="BROKERING_GROUP" description="Order routing facility Group"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="SAME_DAY" description="Same Day Shipping"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="AUTO_CANCEL_CONFIG" description="Auto Cancel Order Items Facility Group"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="ALLOW_NEGATIVE_RES" description="Allow Negative Reservations Group"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="SAMEDAY" facilityGroupTypeId="SAME_DAY" facilityGroupName="Same Day Shipping" description="Facilities which support Same Day Shipping"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="FAC_GRP" facilityGroupTypeId="CHANNEL_FAC_GROUP" facilityGroupName="Online Facility Group" description="Online Facility Group"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="AUTO_SHIPPING_LABEL" facilityGroupTypeId="SHIPPING_LABEL" facilityGroupName="Genarate Shipping Label" description="Generating the shipping label on Picklist Print"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="DO_PICKING" facilityGroupTypeId="PICKING" facilityGroupName="Require Picking" description="Require Picking For Facilities"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="OMS_FULFILLMENT" facilityGroupTypeId="FULFILLMENT" facilityGroupName="OMS Fulfillment" description="Facilities which Supports OMS fulfillment"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="PICKUP" facilityGroupTypeId="PICKUP" facilityGroupName="Pickup" description="Facilities which Supports Pickup"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="AUTO_CNCL_ODR_ITM" facilityGroupTypeId="AUTO_CANCEL_CONFIG" facilityGroupName="Auto Cancel Order Items" description="Facilities which Supports Auto Cancelling of items"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="FAC_ALOW_NEG_INV_RES" facilityGroupTypeId="ALLOW_NEGATIVE_RES" facilityGroupName="Allow Negative Reservation" description="Facilities Which Allow Negative Reservations"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="quantity.uom.id.default" systemPropertyValue="QTY_pc" description="The default quantity uom."/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="VIRTUAL_FACILITY" hasTable="N" description="Virtual Facility"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="NA" parentTypeId="VIRTUAL_FACILITY" hasTable="N" description="Not Available"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="PRE_ORDER" parentTypeId="VIRTUAL_FACILITY" hasTable="N" description="Pre order"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="BACKORDER" parentTypeId="VIRTUAL_FACILITY" hasTable="N" description="Backorder"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="CONFIGURATION" parentTypeId="VIRTUAL_FACILITY" hasTable="N" description="Facility for setting up product level threshold"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="GENERAL_OPERATIONS" parentTypeId="VIRTUAL_FACILITY" hasTable="N" description="Facility for general operations downloaded orders"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="RELEASED_ORD" parentTypeId="VIRTUAL_FACILITY" hasTable="N" description="Parking for  manually released pre orders"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="PHYSICAL_STORE" hasTable="N" description="Physical Store"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="DISTRIBUTION_CENTER" hasTable="N" description="Distribution Center"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="RETAIL_STORE" parentTypeId="PHYSICAL_STORE" hasTable="N" description="Retail Store"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="OUTLET_STORE" parentTypeId="PHYSICAL_STORE" hasTable="N" description="Outlet Store"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="WAREHOUSE" parentTypeId="DISTRIBUTION_CENTER" hasTable="N" description="Warehouse"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="OUTLET_WAREHOUSE" parentTypeId="DISTRIBUTION_CENTER" hasTable="N" description="Outlet Warehouse"/>
+    <moqui.basic.Enumeration enumId="PRDS_DLVRYDATE_CHNGD" enumTypeId="PRDS_EMAIL" enumCode="DLVRYDATE_CHNGD" description="The Order Item's Delivery Date Changed Notification is an email that gets sent to the customer when Order Item's Delivery Date Changed has been cancelled." enumName="Delivery Date Changed"/>
+    <moqui.basic.Enumeration enumId="PRDS_SS_SHIPPD_STORE" enumTypeId="PRDS_EMAIL" enumCode="SS_SHIPPED_STORE" description="SendSale shipped/completed notification to selling store" enumName="SendSale Shipped Store"/>
+    <moqui.basic.Enumeration enumId="PRDS_SS_SHIPPED_CUST" enumTypeId="PRDS_EMAIL" enumCode="SS_SHIPPED_CUST" description="SendSale shipped/completed notification to customer" enumName="SendSale Shipped Customer"/>
+    <moqui.basic.Enumeration enumId="PRDS_SS_CONFRM_CUST" enumTypeId="PRDS_EMAIL" enumCode="SS_CONFRM_CUST" description="SendSale order confirm notification to customer" enumName="SendSale Confirm Customer"/>
+    <moqui.basic.Enumeration enumId="PRDS_SS_CONFRM_STORE" enumTypeId="PRDS_EMAIL" enumCode="SS_CONFRM_STORE" description="SendSale order confirm notification to Store" enumName="SendSale Confirm Store"/>
+    <moqui.basic.Enumeration enumId="PRDS_SS_CANCLD_STORE" enumTypeId="PRDS_EMAIL" enumCode="SS_CANCELLED_STORE" description="SendSale order cancelled notification to Store" enumName="SendSale Cancelled Store"/>
+    <moqui.basic.Enumeration enumId="PRDS_SS_INVADD_STORE" enumTypeId="PRDS_EMAIL" enumCode="SS_INVADD_STORE" description="SendSale invalid address notification to Store" enumName="SendSale Invalid Address Store"/>
+    <moqui.basic.Enumeration enumId="PRDS_SSNOSRVSHIP_STR" enumTypeId="PRDS_EMAIL" enumCode="SS_NOSERVSHIP_STORE" description="SendSale non serviceable shipping method notification to Store" enumName="SendSale Non Servicealble Shipping Method Store"/>
+    <moqui.basic.Enumeration enumId="PRDS_SS_EXPSHIP_NA" enumTypeId="PRDS_EMAIL" enumCode="SS_EXPSHIP_NA" description="Expedited shipping not available" enumName="Expedited shipping not available"/>
+    <moqui.basic.Enumeration enumId="PRDS_RJCTSTORPCK_ORD" enumTypeId="PRDS_EMAIL" enumCode="RJCT_STR_PICKUP_ORD" description="The Order Item's Reject Store Pickup Notification is an email that gets sent to the customer when Order Item's has been rejected from store" enumName="Reject Store Pickup Order"/>
+    <co.hotwax.warehouse.ShipmentContentType shipmentContentTypeId="MANIFEST" description="Shipment Manifest"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="POS_SALE" description="POS Sale"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_LOST" description="Adjustment"/>
+    <moqui.basic.Enumeration enumId="POS_SALE" enumTypeId="IID_REASON" enumCode="POS_SALE" description="POS Sale"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_POS_SALE" enumTypeId="IID_REASON" enumCode="SHOPIFY_POS_SALE" description="POS Sale using Shopify POS" enumName="Shopify POS Sale"/>
+    <moqui.basic.Enumeration enumId="VAR_LOST" enumTypeId="IID_REASON" enumCode="VAR_LOST" description="Adjustment"/>
+    <moqui.basic.Enumeration enumId="VAR_MANUAL" enumTypeId="IID_REASON" enumCode="VAR_MANUAL" description="Variance recorded manually"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_MANUAL" description="Variance recorded manually"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PREORDR_NOT" description="Preorder Not Allow (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PREORDR" description="Preorder (One)"/>
+    <moqui.basic.StatusItem statusId="PICKUP_SCHEDULED" statusTypeId="SHIPMENT_STATUS" statusCode="PICKUP" description="Pickup Scheduled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_PACKED" transitionName="Schedule Pickup" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKUP_SCHEDULED" toStatusId="PICKUP_SCHEDULED" transitionName="Ship"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="EXT_SHIP_ADJUSTMENT" hasTable="N" description="External shipping adjustment"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="EXT_SHIP_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_EXT_PRM_ADJ"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="APPEASEMENT" hasTable="N" description="Appeasement"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="APPEASEMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="APPEASEMENT"/>
+    <org.apache.ofbiz.order.return.ReturnHeaderType returnHeaderTypeId="STORE_CREDIT_RETURN" parentTypeId="CUSTOMER_RETURN" description="Return from Customer for store credit"/>
+    <org.apache.ofbiz.product.facility.FacilityCalendarType facilityCalendarTypeId="OPERATING_HOURS" description="Operating hours of a store"/>
+    <moqui.basic.EnumerationType enumTypeId="SYS_MESAGE_AUTH_TYPE" description="System Message Auth Type"/>
+    <moqui.basic.Enumeration enumId="BASIC_AUTH" enumTypeId="SYS_MESAGE_AUTH_TYPE" description="System Message Type For Basic Auth" enumName="Basic Auth"/>
+            <!-- TODO: skipped data preparation for entity GeoType -->
+    <org.apache.ofbiz.order.order.OrderItemAssocType orderItemAssocTypeId="KIT_COMPONENT" hasTable="N" description="Kit Component"/>
+    <org.apache.ofbiz.order.order.OrderItemAssocType orderItemAssocTypeId="RE_SHIPPED" hasTable="N" description="Re-shipped"/>
+    <moqui.basic.EnumerationType enumTypeId="INTEGRATION" description="Integrations"/>
+    <org.apache.ofbiz.order.order.OrderItemAssocType orderItemAssocTypeId="LINKED_PRODUCT" hasTable="N" description="Linked Product"/>
+    <moqui.basic.EnumerationType enumTypeId="ORD_ITEM_GRP_TYPE" description="Order Item Group Type"/>
+    <moqui.basic.Enumeration enumId="BROKERING_ITEM_GRP" enumTypeId="ORD_ITEM_GRP_TYPE" description="Brokering Item Group" enumName="Brokering Item Group"/>
+    <moqui.basic.Enumeration enumId="PRDS_PICKUP_LOC_CNF" enumTypeId="PRDS_EMAIL" enumCode="PRDS_PICKUP_LOC_CNF" description="New Pickup Location Confirmation"/>
+    <moqui.basic.EnumerationType enumTypeId="COUNT_TYPE" description="Count Type"/>
+    <moqui.basic.Enumeration enumId="SELECTIVE_COUNT" enumTypeId="COUNT_TYPE" description="Selective Count" enumName="Selective Count"/>
+    <moqui.basic.Enumeration enumId="HARD_COUNT" enumTypeId="COUNT_TYPE" description="Hard Count" enumName="Hard Count"/>
+</entity-facade-xml>
+

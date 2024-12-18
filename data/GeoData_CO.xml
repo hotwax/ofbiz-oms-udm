@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="CO-AMA" geoName="Amazonas" abbreviation="AMA" geoCodeAlpha2="AMA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-ANT" geoName="Antioquia" abbreviation="ANT" geoCodeAlpha2="ANT" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-ARA" geoName="Arauca" abbreviation="ARA" geoCodeAlpha2="ARA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-ATL" geoName="Atlántico" abbreviation="ATL" geoCodeAlpha2="ATL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-BOL" geoName="Bolívar" abbreviation="BOL" geoCodeAlpha2="BOL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-BOY" geoName="Boyacá" abbreviation="BOY" geoCodeAlpha2="BOY" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-CAL" geoName="Caldas" abbreviation="CAL" geoCodeAlpha2="CAL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-CAQ" geoName="Caquetá" abbreviation="CAQ" geoCodeAlpha2="CAQ" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-CAS" geoName="Casanare" abbreviation="CAS" geoCodeAlpha2="CAS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-CAU" geoName="Cauca" abbreviation="CAU" geoCodeAlpha2="CAU" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-CES" geoName="Cesar" abbreviation="CES" geoCodeAlpha2="CES" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-CHO" geoName="Chocó" abbreviation="CHO" geoCodeAlpha2="CHO" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-COR" geoName="Córdoba" abbreviation="COR" geoCodeAlpha2="COR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-CUN" geoName="Cundinamarca" abbreviation="CUN" geoCodeAlpha2="CUN" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-DC" geoName="Bogotá D.C." abbreviation="DC" geoCodeAlpha2="DC" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-GUA" geoName="Guainía" abbreviation="GUA" geoCodeAlpha2="GUA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-GUV" geoName="Guaviare" abbreviation="GUV" geoCodeAlpha2="GUV" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-HUI" geoName="Huila" abbreviation="HUI" geoCodeAlpha2="HUI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-LAG" geoName="La Guajira" abbreviation="LAG" geoCodeAlpha2="LAG" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-MAG" geoName="Magdalena" abbreviation="MAG" geoCodeAlpha2="MAG" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-MET" geoName="Meta" abbreviation="MET" geoCodeAlpha2="MET" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-NAR" geoName="Nariño" abbreviation="NAR" geoCodeAlpha2="NAR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-NSA" geoName="Norte de Santander" abbreviation="NSA" geoCodeAlpha2="NSA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-PUT" geoName="Putumayo" abbreviation="PUT" geoCodeAlpha2="PUT" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-QUI" geoName="Quindío" abbreviation="QUI" geoCodeAlpha2="QUI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-RIS" geoName="Risaralda" abbreviation="RIS" geoCodeAlpha2="RIS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-SAN" geoName="Santander" abbreviation="SAN" geoCodeAlpha2="SAN" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-SAP" geoName="San Andrés y Providencia" abbreviation="SAP" geoCodeAlpha2="SAP" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-SUC" geoName="Sucre" abbreviation="SUC" geoCodeAlpha2="SUC" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-TOL" geoName="Tolima" abbreviation="TOL" geoCodeAlpha2="TOL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-VAC" geoName="Valle del Cauca" abbreviation="VAC" geoCodeAlpha2="VAC" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-VAU" geoName="Vaupés" abbreviation="VAU" geoCodeAlpha2="VAU" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO-VID" geoName="Vichada" abbreviation="VID" geoCodeAlpha2="VID" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-AMA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-ANT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-ARA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-ATL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-BOL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-BOY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-CAL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-CAQ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-CAS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-CAU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-CES" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-CHO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-COR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-CUN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-DC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-GUA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-GUV" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-HUI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-LAG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-MAG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-MET" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-NAR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-NSA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-PUT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-QUI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-RIS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-SAN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-SAP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-SUC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-TOL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-VAC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-VAU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="COL" toGeoId="CO-VID" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

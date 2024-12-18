@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="JP-01" geoName="北海道" abbreviation="HK" geoCodeAlpha2="01" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-02" geoName="青森県" abbreviation="AO" geoCodeAlpha2="02" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-03" geoName="岩手県" abbreviation="IT" geoCodeAlpha2="03" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-04" geoName="宮城県" abbreviation="MG" geoCodeAlpha2="04" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-05" geoName="秋田県" abbreviation="AK" geoCodeAlpha2="05" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-06" geoName="山形県" abbreviation="YG" geoCodeAlpha2="06" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-07" geoName="福島県" abbreviation="FS" geoCodeAlpha2="07" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-08" geoName="茨城県" abbreviation="IB" geoCodeAlpha2="08" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-09" geoName="栃木県" abbreviation="TC" geoCodeAlpha2="09" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-10" geoName="群馬県" abbreviation="GU" geoCodeAlpha2="10" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-11" geoName="埼玉県" abbreviation="ST" geoCodeAlpha2="11" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-12" geoName="千葉県" abbreviation="CB" geoCodeAlpha2="12" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-13" geoName="東京都" abbreviation="TY" geoCodeAlpha2="13" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-14" geoName="神奈川県" abbreviation="KN" geoCodeAlpha2="14" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-15" geoName="新潟県" abbreviation="NI" geoCodeAlpha2="15" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-16" geoName="富山県" abbreviation="TM" geoCodeAlpha2="16" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-17" geoName="石川県" abbreviation="IS" geoCodeAlpha2="17" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-18" geoName="福井県" abbreviation="FI" geoCodeAlpha2="18" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-19" geoName="山梨県" abbreviation="YN" geoCodeAlpha2="19" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-20" geoName="長野県" abbreviation="NA" geoCodeAlpha2="20" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-21" geoName="岐阜県" abbreviation="GI" geoCodeAlpha2="21" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-22" geoName="静岡県" abbreviation="SZ" geoCodeAlpha2="22" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-23" geoName="愛知県" abbreviation="AI" geoCodeAlpha2="23" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-24" geoName="三重県" abbreviation="ME" geoCodeAlpha2="24" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-25" geoName="滋賀県" abbreviation="SI" geoCodeAlpha2="25" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-26" geoName="京都府" abbreviation="KY" geoCodeAlpha2="26" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-27" geoName="大阪府" abbreviation="OS" geoCodeAlpha2="27" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-28" geoName="兵庫県" abbreviation="HG" geoCodeAlpha2="28" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-29" geoName="奈良県" abbreviation="NR" geoCodeAlpha2="29" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-30" geoName="和歌山県" abbreviation="WA" geoCodeAlpha2="30" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-31" geoName="鳥取県" abbreviation="TT" geoCodeAlpha2="31" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-32" geoName="島根県" abbreviation="SM" geoCodeAlpha2="32" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-33" geoName="岡山県" abbreviation="OY" geoCodeAlpha2="33" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-34" geoName="広島県" abbreviation="HS" geoCodeAlpha2="34" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-35" geoName="山口県" abbreviation="YA" geoCodeAlpha2="35" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-36" geoName="徳島県" abbreviation="TK" geoCodeAlpha2="36" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-37" geoName="香川県" abbreviation="KA" geoCodeAlpha2="37" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-38" geoName="愛媛県" abbreviation="EH" geoCodeAlpha2="38" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-39" geoName="高知県" abbreviation="KO" geoCodeAlpha2="39" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-40" geoName="福岡県" abbreviation="FO" geoCodeAlpha2="40" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-41" geoName="佐賀県" abbreviation="SG" geoCodeAlpha2="41" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-42" geoName="長崎県" abbreviation="NS" geoCodeAlpha2="42" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-43" geoName="熊本県" abbreviation="KU" geoCodeAlpha2="43" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-44" geoName="大分県" abbreviation="OI" geoCodeAlpha2="44" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-45" geoName="宮崎県" abbreviation="MZ" geoCodeAlpha2="45" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-46" geoName="鹿児島県" abbreviation="KG" geoCodeAlpha2="46" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="JP-47" geoName="沖縄県" abbreviation="OK" geoCodeAlpha2="47" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-01" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-02" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-03" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-04" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-05" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-06" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-07" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-08" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-09" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-10" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-11" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-12" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-13" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-14" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-15" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-16" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-17" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-18" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-19" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-20" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-21" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-22" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-23" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-24" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-25" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-26" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-27" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-28" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-29" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-30" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-31" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-32" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-33" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-34" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-35" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-36" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-37" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-38" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-39" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-40" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-41" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-42" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-43" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-44" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-45" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-46" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="JPN" toGeoId="JP-47" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

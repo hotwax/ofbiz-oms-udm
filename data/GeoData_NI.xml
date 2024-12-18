@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="NI-BO" geoName="Boaco" abbreviation="NI-BO" geoCodeAlpha2="NI-BO" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-CA" geoName="Carazo" abbreviation="NI-CA" geoCodeAlpha2="NI-CA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-CI" geoName="Chinandega" abbreviation="NI-CI" geoCodeAlpha2="NI-CI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-CO" geoName="Chontales" abbreviation="NI-CO" geoCodeAlpha2="NI-CO" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-AN" geoName="Costa Caribe Norte" abbreviation="NI-AN" geoCodeAlpha2="NI-AN" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-AS" geoName="Costa Caribe Sur" abbreviation="NI-AS" geoCodeAlpha2="NI-AS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-ES" geoName="Estelí" abbreviation="NI-ES" geoCodeAlpha2="NI-ES" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-GR" geoName="Granada" abbreviation="NI-GR" geoCodeAlpha2="NI-GR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-JI" geoName="Jinotega" abbreviation="NI-JI" geoCodeAlpha2="NI-JI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-LE" geoName="León" abbreviation="NI-LE" geoCodeAlpha2="NI-LE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-MD" geoName="Madriz" abbreviation="NI-MD" geoCodeAlpha2="NI-MD" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-MN" geoName="Managua" abbreviation="NI-MN" geoCodeAlpha2="NI-MN" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-MS" geoName="Masaya" abbreviation="NI-MS" geoCodeAlpha2="NI-MS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-MT" geoName="Matagalpa" abbreviation="NI-MT" geoCodeAlpha2="NI-MT" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-NS" geoName="Nueva Segovia" abbreviation="NI-NS" geoCodeAlpha2="NI-NS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-RI" geoName="Rivas" abbreviation="NI-RI" geoCodeAlpha2="NI-RI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NI-SJ" geoName="Río San Juan" abbreviation="NI-SJ" geoCodeAlpha2="NI-SJ" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-BO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-CA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-CI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-CO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-AN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-AS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-ES" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-GR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-JI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-LE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-MD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-MN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-MS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-MT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-NS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-RI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIC" toGeoId="NI-SJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

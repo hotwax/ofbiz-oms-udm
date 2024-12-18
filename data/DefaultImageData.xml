@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <org.apache.ofbiz.product.product.Product productId="_NA_"/>
+    <org.apache.ofbiz.product.product.ProductContent productId="_NA_" contentId="DEF_PROD_LRG_IMG" productContentTypeId="IMAGE" fromDate="2017-01-01 00:00:00"/>
+</entity-facade-xml>
+

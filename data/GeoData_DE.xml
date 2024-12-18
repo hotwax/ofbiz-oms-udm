@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="DE-BW" geoName="Baden-Württemberg" abbreviation="BW" geoCodeAlpha2="BW" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-BY" geoName="Bayern" abbreviation="BY" geoCodeAlpha2="BY" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-BE" geoName="Berlin" abbreviation="BE" geoCodeAlpha2="BE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-BB" geoName="Brandenburg" abbreviation="BB" geoCodeAlpha2="BB" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-HB" geoName="Bremen" abbreviation="HB" geoCodeAlpha2="HB" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-HH" geoName="Hamburg" abbreviation="HH" geoCodeAlpha2="HH" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-HE" geoName="Hessen" abbreviation="HE" geoCodeAlpha2="HE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-MV" geoName="Mecklenburg-Vorpommern" abbreviation="MV" geoCodeAlpha2="MV" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-NI" geoName="Niedersachsen" abbreviation="NI" geoCodeAlpha2="NI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-NW" geoName="Nordrhein-Westfalen" abbreviation="NW" geoCodeAlpha2="NW" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-RP" geoName="Rheinland-Pfalz" abbreviation="RP" geoCodeAlpha2="RP" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-SL" geoName="Saarland" abbreviation="SL" geoCodeAlpha2="SL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-SH" geoName="Schleswig-Holstein" abbreviation="SH" geoCodeAlpha2="SH" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-SN" geoName="Sachsen" abbreviation="SN" geoCodeAlpha2="SN" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-ST" geoName="Sachsen-Anhalt" abbreviation="ST" geoCodeAlpha2="ST" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE-TH" geoName="Thüringen" abbreviation="TH" geoCodeAlpha2="TH" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-BW" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-BY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-BE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-BB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-HB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-HH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-HE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-MV" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-NI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-NW" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-RP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-SL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-SH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-SN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-ST" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="DEU" toGeoId="DE-TH" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

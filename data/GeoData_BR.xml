@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="BR-AC" geoName="Acre" abbreviation="AC" geoCodeAlpha2="AC" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-AL" geoName="Alagoas" abbreviation="AL" geoCodeAlpha2="AL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-AM" geoName="Amazonas" abbreviation="AM" geoCodeAlpha2="AM" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-AP" geoName="Amapá" abbreviation="AP" geoCodeAlpha2="AP" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-BA" geoName="Bahia" abbreviation="BA" geoCodeAlpha2="BA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-CE" geoName="Ceará" abbreviation="CE" geoCodeAlpha2="CE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-DF" geoName="Distrito Federal" abbreviation="DF" geoCodeAlpha2="DF" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-ES" geoName="Espírito Santo" abbreviation="ES" geoCodeAlpha2="ES" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-GO" geoName="Goiás" abbreviation="GO" geoCodeAlpha2="GO" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-MA" geoName="Maranhão" abbreviation="MA" geoCodeAlpha2="MA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-MG" geoName="Minas Gerais" abbreviation="MG" geoCodeAlpha2="MG" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-MS" geoName="Mato Grosso do Sul" abbreviation="MS" geoCodeAlpha2="MS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-MT" geoName="Mato Grosso" abbreviation="MT" geoCodeAlpha2="MT" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-PA" geoName="Pará" abbreviation="PA" geoCodeAlpha2="PA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-PB" geoName="Paraíba" abbreviation="PB" geoCodeAlpha2="PB" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-PE" geoName="Pernambuco" abbreviation="PE" geoCodeAlpha2="PE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-PI" geoName="Piauí" abbreviation="PI" geoCodeAlpha2="PI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-PR" geoName="Paraná" abbreviation="PR" geoCodeAlpha2="PR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-RJ" geoName="Rio de Janeiro" abbreviation="RJ" geoCodeAlpha2="RJ" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-RN" geoName="Rio Grande do Norte" abbreviation="RN" geoCodeAlpha2="RN" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-RO" geoName="Rondônia" abbreviation="RO" geoCodeAlpha2="RO" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-RR" geoName="Roraima" abbreviation="RR" geoCodeAlpha2="RR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-RS" geoName="Rio Grande do Sul" abbreviation="RS" geoCodeAlpha2="RS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-SC" geoName="Santa Catarina" abbreviation="SC" geoCodeAlpha2="SC" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-SE" geoName="Sergipe" abbreviation="SE" geoCodeAlpha2="SE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-SP" geoName="São Paulo" abbreviation="SP" geoCodeAlpha2="SP" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="BR-TO" geoName="Tocantins" abbreviation="TO" geoCodeAlpha2="TO" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-AL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-AM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-AP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-BA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-CE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-DF" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-ES" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-GO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-MA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-MG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-MS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-MT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-PA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-PB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-PE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-PI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-PR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-RJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-RN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-RO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-RR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-RS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-SC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-SE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-SP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BRA" toGeoId="BR-TO" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

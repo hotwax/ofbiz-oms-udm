@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="CH-AG" geoName="Aargau" abbreviation="AG" geoCodeAlpha2="AG" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-AI" geoName="Appenzell Innerrhoden" abbreviation="AI" geoCodeAlpha2="AI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-AR" geoName="Appenzell Ausserrhoden" abbreviation="AR" geoCodeAlpha2="AR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-BE" geoName="Bern" abbreviation="BE" geoCodeAlpha2="BE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-BL" geoName="Basel-Landschaft" abbreviation="BL" geoCodeAlpha2="BL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-BS" geoName="Basel-Stadt" abbreviation="BS" geoCodeAlpha2="BS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-FR" geoName="Fribourg" abbreviation="FR" geoCodeAlpha2="FR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-GE" geoName="Genève" abbreviation="GE" geoCodeAlpha2="GE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-GL" geoName="Glarus" abbreviation="GL" geoCodeAlpha2="GL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-GR" geoName="Graubünden" abbreviation="GR" geoCodeAlpha2="GR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-JU" geoName="Jura" abbreviation="JU" geoCodeAlpha2="JU" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-LU" geoName="Luzern" abbreviation="LU" geoCodeAlpha2="LU" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-NE" geoName="Neuchâtel" abbreviation="NE" geoCodeAlpha2="NE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-NW" geoName="Nidwalden" abbreviation="NW" geoCodeAlpha2="NW" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-OW" geoName="Obwalden" abbreviation="OW" geoCodeAlpha2="OW" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-SG" geoName="St. Gallen" abbreviation="SG" geoCodeAlpha2="SG" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-SH" geoName="Schaffhausen" abbreviation="SH" geoCodeAlpha2="SH" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-SO" geoName="Solothurn" abbreviation="SO" geoCodeAlpha2="SO" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-SZ" geoName="Schwyz" abbreviation="SZ" geoCodeAlpha2="SZ" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-TG" geoName="Thurgau" abbreviation="TG" geoCodeAlpha2="TG" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-TI" geoName="Ticino" abbreviation="TI" geoCodeAlpha2="TI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-UR" geoName="Uri" abbreviation="UR" geoCodeAlpha2="UR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-VD" geoName="Vaud" abbreviation="VD" geoCodeAlpha2="VD" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-VS" geoName="Valais" abbreviation="VS" geoCodeAlpha2="VS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-ZG" geoName="Zug" abbreviation="ZG" geoCodeAlpha2="ZG" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CH-ZH" geoName="Zürich" abbreviation="ZH" geoCodeAlpha2="ZH" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-AG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-AI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-AR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-BE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-BL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-BS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-FR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-GE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-GL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-GR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-JU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-LU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-NE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-NW" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-OW" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-SG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-SH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-SO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-SZ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-TG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-TI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-UR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-VD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-VS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-ZG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHE" toGeoId="CH-ZH" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

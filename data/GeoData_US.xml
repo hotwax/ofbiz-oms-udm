@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="AA" geoName="Armed Forces Americas" abbreviation="AA" geoCodeAlpha2="AA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AE" geoName="Armed Forces Europe" abbreviation="AE" geoCodeAlpha2="AE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AP" geoName="Armed Forces Pacific" abbreviation="AP" geoCodeAlpha2="AP" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AK" geoName="Alaska" abbreviation="AK" geoCodeAlpha2="AK" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AL" geoName="Alabama" abbreviation="AL" geoCodeAlpha2="AL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AR" geoName="Arkansas" abbreviation="AR" geoCodeAlpha2="AR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AS" geoName="American Samoa" abbreviation="AS" geoCodeAlpha2="AS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AZ" geoName="Arizona" abbreviation="AZ" geoCodeAlpha2="AZ" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CA" geoName="California" abbreviation="CA" geoCodeAlpha2="CA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CO" geoName="Colorado" abbreviation="CO" geoCodeAlpha2="CO" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="CT" geoName="Connecticut" abbreviation="CT" geoCodeAlpha2="CT" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DC" geoName="District of Columbia" abbreviation="DC" geoCodeAlpha2="DC" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="DE" geoName="Delaware" abbreviation="DE" geoCodeAlpha2="DE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="FL" geoName="Florida" abbreviation="FL" geoCodeAlpha2="FL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="FM" geoName="Federated States of Micronesia" abbreviation="FM" geoCodeAlpha2="FM" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GA" geoName="Georgia" abbreviation="GA" geoCodeAlpha2="GA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GU" geoName="Guam" abbreviation="GU" geoCodeAlpha2="GU" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HI" geoName="Hawaii" abbreviation="HI" geoCodeAlpha2="HI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IA" geoName="Iowa" abbreviation="IA" geoCodeAlpha2="IA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="ID" geoName="Idaho" abbreviation="ID" geoCodeAlpha2="ID" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IL" geoName="Illinois" abbreviation="IL" geoCodeAlpha2="IL" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN" geoName="Indiana" abbreviation="IN" geoCodeAlpha2="IN" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="KS" geoName="Kansas" abbreviation="KS" geoCodeAlpha2="KS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="KY" geoName="Kentucky" abbreviation="KY" geoCodeAlpha2="KY" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="LA" geoName="Louisiana" abbreviation="LA" geoCodeAlpha2="LA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MA" geoName="Massachusetts" abbreviation="MA" geoCodeAlpha2="MA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MD" geoName="Maryland" abbreviation="MD" geoCodeAlpha2="MD" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="ME" geoName="Maine" abbreviation="ME" geoCodeAlpha2="ME" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MH" geoName="Marshall Islands" abbreviation="MH" geoCodeAlpha2="MH" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MI" geoName="Michigan" abbreviation="MI" geoCodeAlpha2="MI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MN" geoName="Minnesota" abbreviation="MN" geoCodeAlpha2="MN" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MP" geoName="Northern Mariana Islands" abbreviation="MP" geoCodeAlpha2="MP" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MO" geoName="Missouri" abbreviation="MO" geoCodeAlpha2="MO" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MS" geoName="Mississippi" abbreviation="MS" geoCodeAlpha2="MS" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MT" geoName="Montana" abbreviation="MT" geoCodeAlpha2="MT" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NC" geoName="North Carolina" abbreviation="NC" geoCodeAlpha2="NC" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="ND" geoName="North Dakota" abbreviation="ND" geoCodeAlpha2="ND" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NE" geoName="Nebraska" abbreviation="NE" geoCodeAlpha2="NE" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NH" geoName="New Hampshire" abbreviation="NH" geoCodeAlpha2="NH" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NJ" geoName="New Jersey" abbreviation="NJ" geoCodeAlpha2="NJ" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NM" geoName="New Mexico" abbreviation="NM" geoCodeAlpha2="NM" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NV" geoName="Nevada" abbreviation="NV" geoCodeAlpha2="NV" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="NY" geoName="New York" abbreviation="NY" geoCodeAlpha2="NY" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="OH" geoName="Ohio" abbreviation="OH" geoCodeAlpha2="OH" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="OK" geoName="Oklahoma" abbreviation="OK" geoCodeAlpha2="OK" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="OR" geoName="Oregon" abbreviation="OR" geoCodeAlpha2="OR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PA" geoName="Pennsylvania" abbreviation="PA" geoCodeAlpha2="PA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PW" geoName="Palau" abbreviation="PW" geoCodeAlpha2="PW" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PR" geoName="Puerto Rico" abbreviation="PR" geoCodeAlpha2="PR" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="RI" geoName="Rhode Island" abbreviation="RI" geoCodeAlpha2="RI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SC" geoName="South Carolina" abbreviation="SC" geoCodeAlpha2="SC" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SD" geoName="South Dakota" abbreviation="SD" geoCodeAlpha2="SD" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="TN" geoName="Tennessee" abbreviation="TN" geoCodeAlpha2="TN" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="TX" geoName="Texas" abbreviation="TX" geoCodeAlpha2="TX" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="UM" geoName="U.S. Minor Outlying Islands" abbreviation="UM" geoCodeAlpha2="UM" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="UT" geoName="Utah" abbreviation="UT" geoCodeAlpha2="UT" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="VA" geoName="Virginia" abbreviation="VA" geoCodeAlpha2="VA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="VT" geoName="Vermont" abbreviation="VT" geoCodeAlpha2="VT" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="WA" geoName="Washington" abbreviation="WA" geoCodeAlpha2="WA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="WI" geoName="Wisconsin" abbreviation="WI" geoCodeAlpha2="WI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="WV" geoName="West Virginia" abbreviation="WV" geoCodeAlpha2="WV" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="WY" geoName="Wyoming" abbreviation="WY" geoCodeAlpha2="WY" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="VI" geoName="Virgin Islands" abbreviation="VI" geoCodeAlpha2="VI" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="AK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="AL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="AR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="AZ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="CA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="CO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="CT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="DC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="DE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="FL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="GA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="GU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="HI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="IA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="ID" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="IL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="IN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="KS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="KY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="LA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="MA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="MD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="ME" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="MI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="MN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="MO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="MS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="MT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="NC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="ND" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="NE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="NH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="NJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="NM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="NV" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="NY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="OH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="OK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="OR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="PA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="PR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="RI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="SC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="SD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="TN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="TX" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="UT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="VA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="VT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="WA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="WI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="WV" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="WY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="VI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="AA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="AE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="AP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.Geo geoId="USAF" geoName="US Armed Forces" abbreviation="USAF" geoCodeAlpha2="USAF" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="AA" toGeoId="USAF" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="AE" toGeoId="USAF" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="AP" toGeoId="USAF" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.Geo geoId="AKHI" geoName="Alaska/Hawaii" abbreviation="AKHI" geoCodeAlpha2="AKHI" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="AK" toGeoId="AKHI" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="HI" toGeoId="AKHI" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.Geo geoId="USTR" geoName="US Territories" abbreviation="USTR" geoCodeAlpha2="USTR" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="AS" toGeoId="USTR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="FM" toGeoId="USTR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="GU" toGeoId="USTR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MH" toGeoId="USTR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MP" toGeoId="USTR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="PW" toGeoId="USTR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="PR" toGeoId="USTR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="UM" toGeoId="USTR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="VI" toGeoId="USTR" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.Geo geoId="AHUST" geoName="Alaska/Hawaii/Territories" abbreviation="AHUST" geoCodeAlpha2="AHUST" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="AKHI" toGeoId="AHUST" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="USTR" toGeoId="AHUST" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.Geo geoId="USCN" geoName="US Continental" abbreviation="USCN" geoCodeAlpha2="USCN" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="AL" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="AR" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="AZ" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="CA" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="CO" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="CT" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="DC" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="DE" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="FL" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="GA" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="IA" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="ID" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="IL" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="IN" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="KS" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="KY" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="LA" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MA" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MD" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="ME" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MI" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MN" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MO" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MS" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MT" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="NC" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="ND" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="NE" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="NH" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="NJ" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="NM" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="NV" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="NY" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="OH" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="OK" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="OR" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="PA" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="RI" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="SC" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="SD" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="TN" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="TX" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="UT" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="VA" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="VT" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="WA" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="WI" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="WV" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="WY" toGeoId="USCN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.Geo geoId="USALL" geoName="US All (w/ APO/FPO)" abbreviation="USALL" geoCodeAlpha2="USALL" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="USCN" toGeoId="USALL" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="USAF" toGeoId="USALL" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="AHUST" toGeoId="USALL" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.Geo geoId="US50" geoName="US 50 (no APO/FPO)" abbreviation="US50" geoCodeAlpha2="US50" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="USCN" toGeoId="US50" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="AHUST" toGeoId="US50" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.Geo geoId="USCAN" geoName="US/Canada" abbreviation="USCAN" geoCodeAlpha2="USCAN" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="USCAN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="USCAN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.Geo geoId="USMEXCAN" geoName="US/Mexico/Canada" abbreviation="USMEXCAN" geoCodeAlpha2="USMEXCAN" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="USMEXCAN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="MEX" toGeoId="USMEXCAN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="USMEXCAN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
+    <moqui.basic.Geo geoId="UT-UTAH" geoName="Utah County" abbreviation="UTAH" geoCodeAlpha2="UTAH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.GeoAssoc geoId="UT" toGeoId="UT-UTAH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.Geo geoId="UT-SANPETE" geoName="Sanpete" abbreviation="SANPETE" geoCodeAlpha2="SANPETE" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.GeoAssoc geoId="UT" toGeoId="UT-SANPETE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.Geo geoId="USA-84057" geoName="84057" abbreviation="84057" geoCodeAlpha2="84057" geoAssocTypeEnumId="GEOT_POSTAL_CODE"/>
+    <moqui.basic.GeoAssoc geoId="UT-UTAH" toGeoId="USA-84057" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="USA" toGeoId="USA-84057" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

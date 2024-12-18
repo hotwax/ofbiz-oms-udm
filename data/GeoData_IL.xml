@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="IL-D" geoName="HaDarom" abbreviation="" geoCodeAlpha2="D" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="IL-M" geoName="HaMerkaz" abbreviation="" geoCodeAlpha2="M" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="IL-Z" geoName="HaZafon" abbreviation="" geoCodeAlpha2="Z" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="IL-HA" geoName="Haifa" abbreviation="" geoCodeAlpha2="HA" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="IL-TA" geoName="Tel Aviv" abbreviation="" geoCodeAlpha2="TA" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="IL-JM" geoName="Jerusalem" abbreviation="" geoCodeAlpha2="JM" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.GeoAssoc geoId="ISR" toGeoId="IL-D" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ISR" toGeoId="IL-M" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ISR" toGeoId="IL-Z" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ISR" toGeoId="IL-HA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ISR" toGeoId="IL-TA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ISR" toGeoId="IL-JM" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

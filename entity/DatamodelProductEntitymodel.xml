@@ -753,9 +753,6 @@ under the License.
         <relationship type="one" fk-name="PROD_PRICE_TUOM" title="Term" related="moqui.basic.Uom">
             <key-map field-name="termUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="PROD_PRICE_CMET" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="customPriceCalcService" related="customMethodId"/>
-        </relationship>
         <relationship type="one" fk-name="PROD_PRC_TAXPTY" title="TaxAuthority" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="taxAuthPartyId" related="partyId"/>
         </relationship>
@@ -949,9 +946,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="PROD_ASSOC_APROD" title="Assoc" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productIdTo" related="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_ASSOC_CUSM" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="estimateCalcMethod" related="customMethodId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
@@ -1269,9 +1263,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="PRDS_SM_SGC" related="org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfig">
             <key-map field-name="shipmentGatewayConfigId"/>
-        </relationship>
-        <relationship type="one" fk-name="PRDS_SM_CUS_MET" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="shipmentCustomMethodId" related="customMethodId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->

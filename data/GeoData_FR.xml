@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="FR-01" geoName="Ain" abbreviation="AIN" geoCodeAlpha2="01" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-02" geoName="Aisne" abbreviation="AIS" geoCodeAlpha2="02" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-03" geoName="Allier" abbreviation="ALL" geoCodeAlpha2="03" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-04" geoName="Alpes de Hautes-Provence" abbreviation="AHP" geoCodeAlpha2="04" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-05" geoName="Hautes-Alpes" abbreviation="HAL" geoCodeAlpha2="05" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-06" geoName="Alpes-Maritimes" abbreviation="ALM" geoCodeAlpha2="06" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-07" geoName="Ardèche" abbreviation="ARD" geoCodeAlpha2="07" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-08" geoName="Ardennes" abbreviation="ARE" geoCodeAlpha2="08" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-09" geoName="Ariège" abbreviation="ARI" geoCodeAlpha2="09" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-10" geoName="Aube" abbreviation="AUB" geoCodeAlpha2="10" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-11" geoName="Aude" abbreviation="AUD" geoCodeAlpha2="11" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-12" geoName="Aveyron" abbreviation="AVE" geoCodeAlpha2="12" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-13" geoName="Bouches-du-Rhône" abbreviation="BDR" geoCodeAlpha2="13" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-14" geoName="Calvados" abbreviation="CAL" geoCodeAlpha2="14" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-15" geoName="Cantal" abbreviation="CAN" geoCodeAlpha2="15" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-16" geoName="Charente" abbreviation="CHA" geoCodeAlpha2="16" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-17" geoName="Charente-Maritime" abbreviation="CHM" geoCodeAlpha2="17" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-18" geoName="Cher" abbreviation="CHE" geoCodeAlpha2="18" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-19" geoName="Corrèze" abbreviation="COR" geoCodeAlpha2="19" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-20" geoName="Corse" abbreviation="COS" geoCodeAlpha2="20" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-2A" geoName="Corse-du-Sud" abbreviation="CDS" geoCodeAlpha2="2A" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-2B" geoName="Haute-Corse" abbreviation="HCO" geoCodeAlpha2="2B" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-21" geoName="Côte-d'Or" abbreviation="COO" geoCodeAlpha2="21" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-22" geoName="Côtes d'Armor" abbreviation="COA" geoCodeAlpha2="22" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-23" geoName="Creuse" abbreviation="CRE" geoCodeAlpha2="23" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-24" geoName="Dordogne" abbreviation="DOR" geoCodeAlpha2="24" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-25" geoName="Doubs" abbreviation="DOU" geoCodeAlpha2="25" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-26" geoName="Drôme" abbreviation="DRO" geoCodeAlpha2="26" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-27" geoName="Eure" abbreviation="EUR" geoCodeAlpha2="27" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-28" geoName="Eure-et-Loir" abbreviation="EUL" geoCodeAlpha2="28" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-29" geoName="Finistère" abbreviation="FIN" geoCodeAlpha2="29" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-30" geoName="Gard" abbreviation="GAR" geoCodeAlpha2="30" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-31" geoName="Haute-Garonne" abbreviation="HAG" geoCodeAlpha2="31" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-32" geoName="Gers" abbreviation="GER" geoCodeAlpha2="32" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-33" geoName="Gironde" abbreviation="GIR" geoCodeAlpha2="33" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-34" geoName="Hérault" abbreviation="HER" geoCodeAlpha2="34" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-35" geoName="Ille-et-Vilaine" abbreviation="ILL" geoCodeAlpha2="35" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-36" geoName="Indre" abbreviation="IND" geoCodeAlpha2="36" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-37" geoName="Indre-et-Loire" abbreviation="IEL" geoCodeAlpha2="37" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-38" geoName="Isère" abbreviation="ISE" geoCodeAlpha2="38" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-39" geoName="Jura" abbreviation="JUR" geoCodeAlpha2="39" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-40" geoName="Landes" abbreviation="LAN" geoCodeAlpha2="40" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-41" geoName="Loir-et-Cher" abbreviation="LEC" geoCodeAlpha2="41" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-42" geoName="Loire" abbreviation="LOI" geoCodeAlpha2="42" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-43" geoName="Haute-Loire" abbreviation="HLO" geoCodeAlpha2="43" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-44" geoName="Loire-Atlantique" abbreviation="LOA" geoCodeAlpha2="44" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-45" geoName="Loiret" abbreviation="LOR" geoCodeAlpha2="45" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-46" geoName="Lot" abbreviation="LOT" geoCodeAlpha2="46" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-47" geoName="Lot-et-Garonne" abbreviation="LOG" geoCodeAlpha2="47" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-48" geoName="Lozère" abbreviation="LOZ" geoCodeAlpha2="48" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-49" geoName="Maine-et-Loire" abbreviation="MEL" geoCodeAlpha2="49" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-50" geoName="Manche" abbreviation="MAN" geoCodeAlpha2="50" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-51" geoName="Marne" abbreviation="MAR" geoCodeAlpha2="51" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-52" geoName="Haute-Marne" abbreviation="HMA" geoCodeAlpha2="52" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-53" geoName="Mayenne" abbreviation="MAY" geoCodeAlpha2="53" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-54" geoName="Meurthe-et-Moselle" abbreviation="MEM" geoCodeAlpha2="54" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-55" geoName="Meuse" abbreviation="MEU" geoCodeAlpha2="55" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-56" geoName="Morbihan" abbreviation="MOR" geoCodeAlpha2="56" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-57" geoName="Moselle" abbreviation="MOS" geoCodeAlpha2="57" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-58" geoName="Nièvre" abbreviation="NIE" geoCodeAlpha2="58" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-59" geoName="Nord" abbreviation="NOR" geoCodeAlpha2="59" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-60" geoName="Oise" abbreviation="OIS" geoCodeAlpha2="60" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-61" geoName="Orne" abbreviation="ORN" geoCodeAlpha2="61" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-62" geoName="Pas-de-Calais" abbreviation="PDC" geoCodeAlpha2="62" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-63" geoName="Puy-de-Dôme" abbreviation="PUY" geoCodeAlpha2="63" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-64" geoName="Pyrénées-Atlantiques" abbreviation="PYA" geoCodeAlpha2="64" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-65" geoName="Hautes-Pyrénées" abbreviation="HPY" geoCodeAlpha2="65" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-66" geoName="Pyrénées-Orientales" abbreviation="PYO" geoCodeAlpha2="66" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-67" geoName="Bas-Rhin" abbreviation="BRH" geoCodeAlpha2="67" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-68" geoName="Haut-Rhin" abbreviation="HRH" geoCodeAlpha2="68" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-69" geoName="Rhône" abbreviation="RHO" geoCodeAlpha2="69" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-70" geoName="Haute-Saône" abbreviation="HAS" geoCodeAlpha2="70" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-71" geoName="Saône-et-Loire" abbreviation="SEL" geoCodeAlpha2="71" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-72" geoName="Sarthe" abbreviation="SAR" geoCodeAlpha2="72" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-73" geoName="Savoie" abbreviation="SAV" geoCodeAlpha2="73" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-74" geoName="Haute-Savoie" abbreviation="HAS" geoCodeAlpha2="74" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-75" geoName="Paris" abbreviation="PAR" geoCodeAlpha2="75" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-76" geoName="Seine-Maritime" abbreviation="SMA" geoCodeAlpha2="76" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-77" geoName="Seine-et-Marne" abbreviation="SEM" geoCodeAlpha2="77" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-78" geoName="Yvelines" abbreviation="YVE" geoCodeAlpha2="78" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-79" geoName="Deux-Sèvres" abbreviation="DSE" geoCodeAlpha2="79" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-80" geoName="Somme" abbreviation="SOM" geoCodeAlpha2="80" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-81" geoName="Tarn" abbreviation="TAR" geoCodeAlpha2="81" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-82" geoName="Tarn-et-Garonne" abbreviation="TAG" geoCodeAlpha2="82" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-83" geoName="Var" abbreviation="VAR" geoCodeAlpha2="83" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-84" geoName="Vaucluse" abbreviation="VAU" geoCodeAlpha2="84" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-85" geoName="Vendée" abbreviation="VEN" geoCodeAlpha2="85" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-86" geoName="Vienne" abbreviation="VIE" geoCodeAlpha2="86" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-87" geoName="Haute-Vienne" abbreviation="HVI" geoCodeAlpha2="87" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-88" geoName="Vosges" abbreviation="VOS" geoCodeAlpha2="88" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-89" geoName="Yonne" abbreviation="YON" geoCodeAlpha2="89" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-90" geoName="Territoire-de-Belfort" abbreviation="TDB" geoCodeAlpha2="90" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-91" geoName="Essonne" abbreviation="ESS" geoCodeAlpha2="91" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-92" geoName="Hauts-de-Seine" abbreviation="HDS" geoCodeAlpha2="92" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-93" geoName="Seine-Saint-Denis" abbreviation="SSD" geoCodeAlpha2="93" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-94" geoName="Val-de-Marne" abbreviation="VDM" geoCodeAlpha2="94" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-95" geoName="Val-d'Oise" abbreviation="VDO" geoCodeAlpha2="95" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-98" geoName="Monaco" abbreviation="MON" geoCodeAlpha2="98" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-GP" geoName="Guadeloupe" abbreviation="GUA" geoCodeAlpha2="GP" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-GF" geoName="Guyane" abbreviation="GUY" geoCodeAlpha2="GF" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-MQ" geoName="Martinique" abbreviation="MAR" geoCodeAlpha2="MQ" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-RE" geoName="La Réunion" abbreviation="REU" geoCodeAlpha2="RE" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-PM" geoName="St Pierre et Miquelon" abbreviation="SPM" geoCodeAlpha2="PM" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-YT" geoName="Mayotte" abbreviation="MAY" geoCodeAlpha2="YT" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-NC" geoName="Nouvelle-Calédonie" abbreviation="NOC" geoCodeAlpha2="NC" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-PF" geoName="Polynésie française" abbreviation="POF" geoCodeAlpha2="PF" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-BL" geoName="Saint-Barthélemy" abbreviation="SBL" geoCodeAlpha2="PF" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-MT" geoName="Saint-Martin" abbreviation="SMT" geoCodeAlpha2="MT" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-TF" geoName="Terres australes françaises" abbreviation="TAF" geoCodeAlpha2="TF" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-WF" geoName="Wallis et Futuna" abbreviation="WEF" geoCodeAlpha2="WF" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="FR-BEB01" geoName="Bourg-en-Bresse" abbreviation="BEB" geoCodeAlpha2="BEB" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-LAO02" geoName="Laon" abbreviation="LAO" geoCodeAlpha2="LAO" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-MOU03" geoName="Moulins" abbreviation="MOU" geoCodeAlpha2="MOU" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-DIG04" geoName="Digne" abbreviation="DIG" geoCodeAlpha2="DIG" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-GAP05" geoName="Gap" abbreviation="GAP" geoCodeAlpha2="GAP" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-NIC06" geoName="Nice" abbreviation="NIC" geoCodeAlpha2="NIC" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-PRI07" geoName="Privas" abbreviation="PRI" geoCodeAlpha2="PRI" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CHM08" geoName="Charleville-Mézières" abbreviation="CHM" geoCodeAlpha2="CHM" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-FOI09" geoName="Foix" abbreviation="FOI" geoCodeAlpha2="FOI" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-TRO10" geoName="Troyes" abbreviation="TRO" geoCodeAlpha2="TRO" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CAR11" geoName="Carcassonne" abbreviation="CAR" geoCodeAlpha2="CAR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ROD12" geoName="Rodez" abbreviation="ROD" geoCodeAlpha2="ROD" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-MAR13" geoName="Marseille" abbreviation="MAR" geoCodeAlpha2="MAR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CAE14" geoName="Caen" abbreviation="CAE" geoCodeAlpha2="CAE" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-AUR15" geoName="Aurillac" abbreviation="AUR" geoCodeAlpha2="AUR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ANG16" geoName="Angoulême" abbreviation="ANG" geoCodeAlpha2="ANG" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-LRO17" geoName="La Rochelle" abbreviation="LRO" geoCodeAlpha2="LRO" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-BOU18" geoName="Bourges" abbreviation="BOU" geoCodeAlpha2="BOU" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-TUL19" geoName="Tulle" abbreviation="TUL" geoCodeAlpha2="TUL" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-AJA2A" geoName="Ajaccio" abbreviation="AJA" geoCodeAlpha2="AJA" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-BAS2B" geoName="Bastia" abbreviation="BAS" geoCodeAlpha2="BAS" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-DIJ21" geoName="Dijon" abbreviation="DIJ" geoCodeAlpha2="DIJ" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-SBR22" geoName="Saint-Brieuc" abbreviation="SBR" geoCodeAlpha2="SBR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-GUE23" geoName="Guéret" abbreviation="GUE" geoCodeAlpha2="GUE" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-PER24" geoName="Périgueux" abbreviation="PER" geoCodeAlpha2="PER" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-BES25" geoName="Besançon" abbreviation="BES" geoCodeAlpha2="BES" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-VAL26" geoName="Valence" abbreviation="VAL" geoCodeAlpha2="VAL" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-EVR27" geoName="Évreux" abbreviation="EVR" geoCodeAlpha2="EVR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CHA28" geoName="Chartres" abbreviation="CHA" geoCodeAlpha2="CHA" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-QUI29" geoName="Quimper" abbreviation="QUI" geoCodeAlpha2="QUI" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-NIM30" geoName="Nîmes" abbreviation="NIM" geoCodeAlpha2="NIM" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-TLS31" geoName="Toulouse" abbreviation="TLS" geoCodeAlpha2="TLS" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-AUC32" geoName="Auch" abbreviation="AUC" geoCodeAlpha2="AUC" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-BOR33" geoName="Bordeaux" abbreviation="BOR" geoCodeAlpha2="BOR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-MON34" geoName="Montpellier" abbreviation="MON" geoCodeAlpha2="MON" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-REN35" geoName="Rennes" abbreviation="REN" geoCodeAlpha2="REN" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CHT36" geoName="Châteauroux" abbreviation="CHT" geoCodeAlpha2="CHT" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-TOU37" geoName="Tours" abbreviation="TOU" geoCodeAlpha2="TOU" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-GRE38" geoName="Grenoble" abbreviation="GRE" geoCodeAlpha2="GRE" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-LON39" geoName="Lons-le-Saunier" abbreviation="LON" geoCodeAlpha2="LON" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-MDM40" geoName="Mont-de-Marsan" abbreviation="MDM" geoCodeAlpha2="MDM" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-BLO41" geoName="Blois" abbreviation="BLO" geoCodeAlpha2="BLO" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-SET42" geoName="Saint-Étienne" abbreviation="SET" geoCodeAlpha2="SET" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-PEV43" geoName="Le Puy-en-Velay" abbreviation="PEV" geoCodeAlpha2="PEV" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-NAN44" geoName="Nantes" abbreviation="NAN" geoCodeAlpha2="NAN" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ORL45" geoName="Orléans" abbreviation="ORL" geoCodeAlpha2="ORL" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CAH46" geoName="Cahors" abbreviation="CAH" geoCodeAlpha2="CAH" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-AGE47" geoName="Agen" abbreviation="AGE" geoCodeAlpha2="AGE" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-MEN48" geoName="Mende" abbreviation="MEN" geoCodeAlpha2="MEN" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ANG49" geoName="Angers" abbreviation="ANG" geoCodeAlpha2="ANG" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-SLO50" geoName="Saint-Lô" abbreviation="SLO" geoCodeAlpha2="SLO" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CEC51" geoName="Châlons-en-Champagne" abbreviation="CEC" geoCodeAlpha2="CEC" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CHM52" geoName="Chaumont" abbreviation="CHM" geoCodeAlpha2="CHM" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-LVL53" geoName="Laval" abbreviation="LVL" geoCodeAlpha2="LVL" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-NCY54" geoName="Nancy" abbreviation="NCY" geoCodeAlpha2="NCY" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-BLD55" geoName="Bar-le-Duc" abbreviation="BLD" geoCodeAlpha2="BLD" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-VAN56" geoName="Vannes" abbreviation="VAN" geoCodeAlpha2="VAN" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-MET57" geoName="Metz" abbreviation="MET" geoCodeAlpha2="MET" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-NEV58" geoName="Nevers" abbreviation="NEV" geoCodeAlpha2="NEV" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-LIL59" geoName="Lille" abbreviation="LIL" geoCodeAlpha2="LIL" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-BVA60" geoName="Beauvais" abbreviation="BVA" geoCodeAlpha2="BVA" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ALE61" geoName="Alençon" abbreviation="ALE" geoCodeAlpha2="ALE" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ARR62" geoName="Arras" abbreviation="ARR" geoCodeAlpha2="ARR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CLF63" geoName="Clermont-Ferrand" abbreviation="CLF" geoCodeAlpha2="CLF" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-PAU64" geoName="Pau" abbreviation="PAU" geoCodeAlpha2="PAU" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-TBS65" geoName="Tarbes" abbreviation="TBS" geoCodeAlpha2="TBS" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-PPG66" geoName="Perpignan" abbreviation="PPG" geoCodeAlpha2="PPG" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-SBG67" geoName="Strasbourg" abbreviation="SBG" geoCodeAlpha2="SBG" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CLM68" geoName="Colmar" abbreviation="CLM" geoCodeAlpha2="CLM" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-LYO69" geoName="Lyon" abbreviation="LYO" geoCodeAlpha2="LYO" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-VSL70" geoName="Vesoul" abbreviation="VSL" geoCodeAlpha2="VSL" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-MCN71" geoName="Mâcon" abbreviation="MCN" geoCodeAlpha2="MCN" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-LMA72" geoName="Le Mans" abbreviation="LMA" geoCodeAlpha2="LMA" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CBY73" geoName="Chambéry" abbreviation="CBY" geoCodeAlpha2="CBY" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ACY74" geoName="Annecy" abbreviation="ACY" geoCodeAlpha2="ACY" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-PAR75" geoName="Paris" abbreviation="PAR" geoCodeAlpha2="PAR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ROU76" geoName="Rouen" abbreviation="ROU" geoCodeAlpha2="ROU" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-MLN77" geoName="Melun" abbreviation="MLN" geoCodeAlpha2="MLN" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-VSS78" geoName="Versailles" abbreviation="VSS" geoCodeAlpha2="VSS" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-NIO79" geoName="Niort" abbreviation="NIO" geoCodeAlpha2="NIO" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-AMI80" geoName="Amiens" abbreviation="AMI" geoCodeAlpha2="AMI" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ALB81" geoName="Albi" abbreviation="ALB" geoCodeAlpha2="ALB" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-MTB82" geoName="Montauban" abbreviation="MTB" geoCodeAlpha2="MTB" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-TLN83" geoName="Toulon" abbreviation="TLN" geoCodeAlpha2="TLN" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-AVG84" geoName="Avignon" abbreviation="AVG" geoCodeAlpha2="AVG" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-RSY85" geoName="La Roche-sur-Yon" abbreviation="RSY" geoCodeAlpha2="RSY" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-POI86" geoName="Poitiers" abbreviation="POI" geoCodeAlpha2="POI" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-LMG87" geoName="Limoges" abbreviation="LMG" geoCodeAlpha2="LMG" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-EPI88" geoName="Épinal" abbreviation="EPI" geoCodeAlpha2="EPI" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-AXR89" geoName="Auxerre" abbreviation="AXR" geoCodeAlpha2="AXR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-BLF90" geoName="Belfort" abbreviation="BLF" geoCodeAlpha2="BLF" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-EVR91" geoName="Évry" abbreviation="EVR" geoCodeAlpha2="EVR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-NTR92" geoName="Nanterre" abbreviation="NTR" geoCodeAlpha2="NTR" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-BBY93" geoName="Bobigny" abbreviation="BBY" geoCodeAlpha2="BBY" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-CTL94" geoName="Créteil" abbreviation="CTL" geoCodeAlpha2="CTL" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-PTO95" geoName="Pontoise" abbreviation="PTO" geoCodeAlpha2="PTO" geoAssocTypeEnumId="GEOT_COUNTY_CITY"/>
+    <moqui.basic.Geo geoId="FR-ARA" geoName="Auvergne-Rhône-Alpes" abbreviation="ARA" geoCodeAlpha2="ARA" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-HDF" geoName="Hauts-de-France" abbreviation="HDF" geoCodeAlpha2="HDF" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-PAC" geoName="Provence-Alpes-Côte d'Azur" abbreviation="PAC" geoCodeAlpha2="PAC" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-OCC" geoName="Occitanie" abbreviation="OCC" geoCodeAlpha2="OCC" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-NOR" geoName="Normandie" abbreviation="NOR" geoCodeAlpha2="NOR" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-CVL" geoName="Centre-Val de Loire" abbreviation="CVL" geoCodeAlpha2="CVL" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-BRE" geoName="Bretagne" abbreviation="BRE" geoCodeAlpha2="BRE" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-NAQ" geoName="Nouvelle-Aquitaine" abbreviation="NAQ" geoCodeAlpha2="NAQ" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-COR" geoName="Corse" abbreviation="COR" geoCodeAlpha2="COR" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-BFC" geoName="Bourgogne-Franche-Comté" abbreviation="BFC" geoCodeAlpha2="BFC" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-PDL" geoName="Pays de la Loire" abbreviation="PDL" geoCodeAlpha2="PDL" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-GES" geoName="Grand-Est" abbreviation="GES" geoCodeAlpha2="GES" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-IDF" geoName="Ile-de-France" abbreviation="IDF" geoCodeAlpha2="IDF" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-GUA" geoName="Guadeloupe" abbreviation="GUA" geoCodeAlpha2="GUA" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-LRE" geoName="La Réunion" abbreviation="LRE" geoCodeAlpha2="LRE" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="FR-MAY" geoName="Mayotte" abbreviation="MAY" geoCodeAlpha2="MAY" geoAssocTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-01" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-HDF" toGeoId="FR-02" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-03" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PAC" toGeoId="FR-04" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PAC" toGeoId="FR-05" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PAC" toGeoId="FR-06" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-07" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-08" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-09" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-10" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-11" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-12" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PAC" toGeoId="FR-13" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NOR" toGeoId="FR-14" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-15" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-16" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-17" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-CVL" toGeoId="FR-18" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-19" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-COR" toGeoId="FR-20" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-COR" toGeoId="FR-2A" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-COR" toGeoId="FR-2B" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BFC" toGeoId="FR-21" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BRE" toGeoId="FR-22" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-23" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-24" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-25" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-26" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NOR" toGeoId="FR-27" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-CVL" toGeoId="FR-28" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BRE" toGeoId="FR-29" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-30" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-31" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-32" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-33" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-34" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BRE" toGeoId="FR-35" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-CVL" toGeoId="FR-36" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-CVL" toGeoId="FR-37" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-38" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-39" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-40" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-CVL" toGeoId="FR-41" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-42" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-43" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PDL" toGeoId="FR-44" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-CVL" toGeoId="FR-45" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-46" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-47" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-48" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PDL" toGeoId="FR-49" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NOR" toGeoId="FR-50" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-51" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-52" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PDL" toGeoId="FR-53" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-54" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-55" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BRE" toGeoId="FR-56" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-57" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BFC" toGeoId="FR-58" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-HDF" toGeoId="FR-59" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-HDF" toGeoId="FR-60" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NOR" toGeoId="FR-61" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-HDF" toGeoId="FR-62" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-63" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-64" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-65" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-66" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-67" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-68" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-69" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-70" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BFC" toGeoId="FR-71" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PDL" toGeoId="FR-72" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-73" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARA" toGeoId="FR-74" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-IDF" toGeoId="FR-75" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NOR" toGeoId="FR-76" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-IDF" toGeoId="FR-77" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-IDF" toGeoId="FR-78" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-79" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-HDF" toGeoId="FR-80" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-81" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-OCC" toGeoId="FR-82" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PAC" toGeoId="FR-83" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PAC" toGeoId="FR-84" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PDL" toGeoId="FR-85" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-86" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAQ" toGeoId="FR-87" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-88" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BFC" toGeoId="FR-89" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GES" toGeoId="FR-90" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-IDF" toGeoId="FR-91" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-IDF" toGeoId="FR-92" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-IDF" toGeoId="FR-93" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-IDF" toGeoId="FR-94" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-IDF" toGeoId="FR-95" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GUA" toGeoId="FR-GP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-GF" toGeoId="FR-GF" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-LRE" toGeoId="FR-RE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-MAY" toGeoId="FR-YT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-MQ" toGeoId="FR-MQ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PM" toGeoId="FR-PM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-YT" toGeoId="FR-YT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-NC" toGeoId="FR-NC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-PF" toGeoId="FR-PF" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BL" toGeoId="FR-BL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-MT" toGeoId="FR-MT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-TF" toGeoId="FR-TF" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-WF" toGeoId="FR-WF" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FR-BEB01" toGeoId="FR-01" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-LAO02" toGeoId="FR-02" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-MOU03" toGeoId="FR-03" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-DIG04" toGeoId="FR-04" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-GAP05" toGeoId="FR-05" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-NIC06" toGeoId="FR-06" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-PRI07" toGeoId="FR-07" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CHM08" toGeoId="FR-08" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-FOI09" toGeoId="FR-09" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-TRO10" toGeoId="FR-10" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CAR11" toGeoId="FR-11" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-ROD12" toGeoId="FR-12" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-MAR13" toGeoId="FR-13" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CAE14" toGeoId="FR-14" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-AUR15" toGeoId="FR-15" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-ANG16" toGeoId="FR-16" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-LRO17" toGeoId="FR-17" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-BOU18" toGeoId="FR-18" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-TUL19" toGeoId="FR-19" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-AJA2A" toGeoId="FR-2A" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-BAS2B" toGeoId="FR-2B" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-DIJ21" toGeoId="FR-21" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-SBR22" toGeoId="FR-22" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-GUE23" toGeoId="FR-23" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-PER24" toGeoId="FR-24" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-BES25" toGeoId="FR-25" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-VAL26" toGeoId="FR-26" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-EVR27" toGeoId="FR-27" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CHA28" toGeoId="FR-28" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-QUI29" toGeoId="FR-29" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-NIM30" toGeoId="FR-30" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-TLS31" toGeoId="FR-31" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-AUC32" toGeoId="FR-32" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-BOR33" toGeoId="FR-33" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-MON34" toGeoId="FR-34" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-REN35" toGeoId="FR-35" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CHT36" toGeoId="FR-36" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-TOU37" toGeoId="FR-37" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-GRE38" toGeoId="FR-38" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-LON39" toGeoId="FR-39" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-MDM40" toGeoId="FR-40" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-BLO41" toGeoId="FR-41" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-SET42" toGeoId="FR-42" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-PEV43" toGeoId="FR-43" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-NAN44" toGeoId="FR-44" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-ORL45" toGeoId="FR-45" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CAH46" toGeoId="FR-46" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-AGE47" toGeoId="FR-47" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-MEN48" toGeoId="FR-48" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-ANG49" toGeoId="FR-49" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-SLO50" toGeoId="FR-50" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CEC51" toGeoId="FR-51" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CHM52" toGeoId="FR-52" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-LVL53" toGeoId="FR-53" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-NCY54" toGeoId="FR-54" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-BLD55" toGeoId="FR-55" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-VAN56" toGeoId="FR-56" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-MET57" toGeoId="FR-57" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-NEV58" toGeoId="FR-58" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-LIL59" toGeoId="FR-59" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-BVA60" toGeoId="FR-60" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-ALE61" toGeoId="FR-61" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-ARR62" toGeoId="FR-62" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CLF63" toGeoId="FR-63" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-PAU64" toGeoId="FR-64" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-TBS65" toGeoId="FR-65" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-PPG66" toGeoId="FR-66" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-SBG67" toGeoId="FR-67" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CLM68" toGeoId="FR-68" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-LYO69" toGeoId="FR-69" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-VSL70" toGeoId="FR-70" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-MCN71" toGeoId="FR-71" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-LMA72" toGeoId="FR-72" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CBY73" toGeoId="FR-73" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-ACY74" toGeoId="FR-74" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-PAR75" toGeoId="FR-75" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-ROU76" toGeoId="FR-76" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-MLN77" toGeoId="FR-77" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-VSS78" toGeoId="FR-78" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-NIO79" toGeoId="FR-79" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-AMI80" toGeoId="FR-80" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-ALB81" toGeoId="FR-81" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-MTB82" toGeoId="FR-82" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-TLN83" toGeoId="FR-83" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-AVG84" toGeoId="FR-84" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-RSY85" toGeoId="FR-85" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-POI86" toGeoId="FR-86" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-LMG87" toGeoId="FR-87" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-EPI88" toGeoId="FR-88" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-AXR89" toGeoId="FR-89" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-BLF90" toGeoId="FR-90" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-EVR91" toGeoId="FR-91" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-NTR92" toGeoId="FR-92" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-BBY93" toGeoId="FR-93" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-CTL94" toGeoId="FR-94" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FR-PTO95" toGeoId="FR-95" geoAssocTypeEnumId="GAT_COUNTY_SEAT"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-ARA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-HDF" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-PAC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-OCC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-NOR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-CVL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-BRE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-NAQ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-COR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-BFC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-PDL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-GES" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-IDF" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-GUA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-LRE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="FRA" toGeoId="FR-MAY" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

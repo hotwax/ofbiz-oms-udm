@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="GB-ABDN" geoName="Aberdeenshire" abbreviation="ABDN" geoCodeAlpha2="ABDN" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-ANGS" geoName="Angus/Forfarshire" abbreviation="ANGS" geoCodeAlpha2="ANGS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-ARGL" geoName="Argyllshire" abbreviation="ARGL" geoCodeAlpha2="ARGL" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-AYRS" geoName="Ayrshire" abbreviation="AYRS" geoCodeAlpha2="AYRS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-BANF" geoName="Banffshire" abbreviation="BANF" geoCodeAlpha2="BANF" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-BDFD" geoName="Bedfordshire" abbreviation="BDFD" geoCodeAlpha2="BDFD" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-BRKS" geoName="Berkshire" abbreviation="BRKS" geoCodeAlpha2="BRKS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-BWKS" geoName="Berwickshire" abbreviation="BWKS" geoCodeAlpha2="BWKS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-BUCKS" geoName="Buckinghamshire" abbreviation="BUCKS" geoCodeAlpha2="BUCKS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-BUTE" geoName="Buteshire" abbreviation="BUTE" geoCodeAlpha2="BUTE" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CTHN" geoName="Caithness" abbreviation="CTHN" geoCodeAlpha2="CTHN" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CAMBS" geoName="Cambridgeshire" abbreviation="CAMBS" geoCodeAlpha2="CAMBS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CDGN" geoName="Cardiganshire/Ceredigion" abbreviation="CDGN" geoCodeAlpha2="CDGN" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CHES" geoName="Cheshire" abbreviation="CHES" geoCodeAlpha2="CHES" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CLAK" geoName="Clackmannanshire" abbreviation="CLAK" geoCodeAlpha2="CLAK" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CNWL" geoName="Cornwall" abbreviation="CNWL" geoCodeAlpha2="CNWL" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CMTY" geoName="Cromartyshire" abbreviation="CMTY" geoCodeAlpha2="CMTY" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CUMB" geoName="Cumberland" abbreviation="CUMB" geoCodeAlpha2="CUMB" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-DRBYS" geoName="Derbyshire" abbreviation="DRBYS" geoCodeAlpha2="DRBYS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-DEVON" geoName="Devon" abbreviation="DEVON" geoCodeAlpha2="DEVON" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-DRST" geoName="Dorset" abbreviation="DRST" geoCodeAlpha2="DRST" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-DMFS" geoName="Dumfriesshire" abbreviation="DMFS" geoCodeAlpha2="DMFS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-DMBR" geoName="Dunbartonshire/Dumbartonshire" abbreviation="DMBR" geoCodeAlpha2="DMBR" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-DRHM" geoName="Durham" abbreviation="DRHM" geoCodeAlpha2="DRHM" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-ESSX" geoName="Essex" abbreviation="ESSX" geoCodeAlpha2="ESSX" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-FIFE" geoName="Fife" abbreviation="FIFE" geoCodeAlpha2="FIFE" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-GLAM" geoName="Glamorgan/Morgannwg" abbreviation="GLAM" geoCodeAlpha2="GLAM" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-GLOU" geoName="Gloucestershire" abbreviation="GLOU" geoCodeAlpha2="GLOU" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-HAMPS" geoName="Hampshire" abbreviation="HAMPS" geoCodeAlpha2="HAMPS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-HRFDS" geoName="Herefordshire" abbreviation="HRFDS" geoCodeAlpha2="HRFDS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-HERTS" geoName="Hertfordshire" abbreviation="HERTS" geoCodeAlpha2="HERTS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-HUNTS" geoName="Huntingdonshire" abbreviation="HUNTS" geoCodeAlpha2="HUNTS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-INVER" geoName="Inverness-shire" abbreviation="INVER" geoCodeAlpha2="INVER" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-KENT" geoName="Kent" abbreviation="KENT" geoCodeAlpha2="KENT" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-KNDN" geoName="Kincardineshire" abbreviation="KNDN" geoCodeAlpha2="KNDN" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-KRSS" geoName="Kinross-shire" abbreviation="KRSS" geoCodeAlpha2="KRSS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-KRCUD" geoName="Kirkcudbrightshire" abbreviation="KRCUD" geoCodeAlpha2="KRCUD" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-LRKS" geoName="Lanarkshire" abbreviation="LRKS" geoCodeAlpha2="LRKS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-LANCS" geoName="Lancashire" abbreviation="LANCS" geoCodeAlpha2="LANCS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-LIECS" geoName="Leicestershire" abbreviation="LIECS" geoCodeAlpha2="LIECS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-LINCS" geoName="Lincolnshire" abbreviation="LINCS" geoCodeAlpha2="LINCS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-MIENT" geoName="Merioneth/Meirionnydd" abbreviation="MIENT" geoCodeAlpha2="MIENT" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-MSEX" geoName="Middlesex" abbreviation="MSEX" geoCodeAlpha2="MSEX" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-MLOTH" geoName="Midlothian/Edinburghshire" abbreviation="MLOTH" geoCodeAlpha2="MLOTH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-MORAY" geoName="Morayshire" abbreviation="MORAY" geoCodeAlpha2="MORAY" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-NAIRN" geoName="Nairnshire" abbreviation="NAIRN" geoCodeAlpha2="NAIRN" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-NFLK" geoName="Norfolk" abbreviation="NFLK" geoCodeAlpha2="NFLK" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-NHANTS" geoName="Northamptonshire" abbreviation="NHANTS" geoCodeAlpha2="NHANTS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-NHUMB" geoName="Northumberland" abbreviation="NHUMB" geoCodeAlpha2="NHUMB" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-NOTTS" geoName="Nottinghamshire" abbreviation="NOTTS" geoCodeAlpha2="NOTTS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-ORK" geoName="Orkney" abbreviation="ORK" geoCodeAlpha2="ORK" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-OXFD" geoName="Oxfordshire" abbreviation="OXFD" geoCodeAlpha2="OXFD" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-PEEBS" geoName="Peeblesshire" abbreviation="PEEBS" geoCodeAlpha2="PEEBS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-PERTH" geoName="Perthshire" abbreviation="PERTH" geoCodeAlpha2="PERTH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-RNFR" geoName="Renfrewshire" abbreviation="RNFR" geoCodeAlpha2="RNFR" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-ROSS" geoName="Ross-shire" abbreviation="ROSS" geoCodeAlpha2="ROSS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-ROXB" geoName="Roxburghshire" abbreviation="ROXB" geoCodeAlpha2="ROXB" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-RUTL" geoName="Rutland" abbreviation="RUTL" geoCodeAlpha2="RUTL" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-SELKS" geoName="Selkirkshire" abbreviation="SELKS" geoCodeAlpha2="SELKS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-SHET" geoName="Shetland" abbreviation="SHET" geoCodeAlpha2="SHET" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-SHROPS" geoName="Shropshire" abbreviation="SHROPS" geoCodeAlpha2="SHROPS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-SOMST" geoName="Somerset" abbreviation="SOMST" geoCodeAlpha2="SOMST" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-STAFFS" geoName="Staffordshire" abbreviation="STAFFS" geoCodeAlpha2="STAFFS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-STLNG" geoName="Stirlingshire" abbreviation="STLNG" geoCodeAlpha2="STLNG" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-SFFK" geoName="Suffolk" abbreviation="SFFK" geoCodeAlpha2="SFFK" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-SURR" geoName="Surrey" abbreviation="SURR" geoCodeAlpha2="SURR" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-SUSX" geoName="Sussex" abbreviation="SUSX" geoCodeAlpha2="SUSX" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-SUTH" geoName="Sutherland" abbreviation="SUTH" geoCodeAlpha2="SUTH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-WWKS" geoName="Warwickshire" abbreviation="WWKS" geoCodeAlpha2="WWKS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-WMLD" geoName="Westmorland" abbreviation="WMLD" geoCodeAlpha2="WMLD" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-WGNSH" geoName="Wigtownshire" abbreviation="WGNSH" geoCodeAlpha2="WGNSH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-WILTS" geoName="Wiltshire" abbreviation="WILTS" geoCodeAlpha2="WILTS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-WORCS" geoName="Worcestershire" abbreviation="WORCS" geoCodeAlpha2="WORCS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-YORKS" geoName="Yorkshire" abbreviation="YORKS" geoCodeAlpha2="YORKS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-AGSY" geoName="Anglesey/Sir Fon" abbreviation="AGSY" geoCodeAlpha2="AGSY" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-BREK" geoName="Brecknockshire/Sir Frycheiniog" abbreviation="BREK" geoCodeAlpha2="BREK" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CNFN" geoName="Caernarfonshire/Sir Gaernarfon" abbreviation="CNFN" geoCodeAlpha2="CNFN" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-CMRN" geoName="Carmarthenshire/Sir Gaerfyrddin" abbreviation="CMRN" geoCodeAlpha2="CMRN" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-DENB" geoName="Denbighshire/Sir Ddinbych" abbreviation="DENB" geoCodeAlpha2="DENB" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-ELOTH" geoName="East Lothian/Haddingtonshire" abbreviation="ELOTH" geoCodeAlpha2="ELOTH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-FTSH" geoName="Flintshire/Sir Fflint" abbreviation="FTSH" geoCodeAlpha2="FTSH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-MMTH" geoName="Monmouthshire/Sir Fynwy" abbreviation="MMTH" geoCodeAlpha2="MMTH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-MNTGS" geoName="Montgomeryshire/Sir Drefaldwyn" abbreviation="MNTGS" geoCodeAlpha2="MNTGS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-PMBRK" geoName="Pembrokeshire/Sir Benfro" abbreviation="PMBRK" geoCodeAlpha2="PMBRK" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-RNRS" geoName="Radnorshire/Sir Faesyfed" abbreviation="RNRS" geoCodeAlpha2="RNRS" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="GB-WLOTH" geoName="West Lothian/Linlithgowshire" abbreviation="WLOTH" geoCodeAlpha2="WLOTH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-ABDN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-ANGS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-ARGL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-AYRS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-BANF" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-BDFD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-BRKS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-BWKS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-BUCKS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-BUTE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-CTHN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-CAMBS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-CDGN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-CHES" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-CLAK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-CNWL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-CMTY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-CUMB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-DRBYS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-DEVON" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-DRST" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-DMFS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-DMBR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-DRHM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-ESSX" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-FIFE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-GLAM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-GLOU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-HAMPS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-HRFDS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-HERTS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-HUNTS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-INVER" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-KENT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-KNDN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-KRSS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-KRCUD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-LRKS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-LANCS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-LIECS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-LINCS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-MIENT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-MSEX" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-MLOTH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-MORAY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-NAIRN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-NFLK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-NHANTS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-NHUMB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-NOTTS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-ORK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-OXFD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-PEEBS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-PERTH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-RNFR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-ROSS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-ROXB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-RUTL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-SELKS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-SHET" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-SHROPS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-SOMST" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-STAFFS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-STLNG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-SFFK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-SURR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-SUSX" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-SUTH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-WWKS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-WMLD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-WGNSH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-WILTS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-WORCS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ENGL" toGeoId="GB-YORKS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-AGSY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-BREK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-CNFN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-CMRN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-DENB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-ELOTH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-FTSH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-MMTH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-MNTGS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-PMBRK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="WALS" toGeoId="GB-RNRS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SCOT" toGeoId="GB-WLOTH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.Geo geoId="NIRL-ATRM" geoName="Antrim" abbreviation="ATRM" geoCodeAlpha2="ATRM" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="NIRL-ARMG" geoName="Armagh" abbreviation="ARMG" geoCodeAlpha2="ARMG" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="NIRL-DOWN" geoName="Down" abbreviation="DOWN" geoCodeAlpha2="DOWN" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="NIRL-FMNH" geoName="Fermanagh" abbreviation="FMNH" geoCodeAlpha2="FMNH" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="NIRL-LDRY" geoName="Londonderry" abbreviation="LDRY" geoCodeAlpha2="LDRY" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="NIRL-TYR" geoName="Tyrone" abbreviation="TYR" geoCodeAlpha2="TYR" geoAssocTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.GeoAssoc geoId="NIRL" toGeoId="NIRL-ATRM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIRL" toGeoId="NIRL-ARMG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIRL" toGeoId="NIRL-DOWN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIRL" toGeoId="NIRL-FMNH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIRL" toGeoId="NIRL-LDRY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NIRL" toGeoId="NIRL-TYR" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+
