@@ -96,15 +96,6 @@ under the License.
             <key-map field-name="groupTypeEnumId" related="enumId"/>
         </relationship>
     </extend-entity>
-    <extend-entity entity-name="EmailTemplateSetting" package="org.apache.ofbiz.common.email" group="ofbiz_transactional">
-        <field name="templateContentId" type="id"></field>
-        <field name="plainTextContentId" type="id"></field>
-        <field name="orgPartyId" type="id"></field>
-        <field name="systemMessageRemoteId" type="id"></field>
-        <relationship type="one-nofk" fk-name="ETS_SYS_MSG_RMT" related="moqui.service.message.SystemMessageRemote">
-            <key-map field-name="systemMessageRemoteId" related="systemMessageRemoteId"/>
-        </relationship>
-    </extend-entity>
     <extend-entity entity-name="ItemIssuance" package="org.apache.ofbiz.shipment.issuance" group="ofbiz_transactional">
         <field name="issuanceTypeId" type="id"></field>
         <field name="workEffortId" type="id"></field>
