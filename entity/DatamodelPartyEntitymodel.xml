@@ -35,9 +35,6 @@ under the License.
         <field name="fromDate" type="date-time" is-pk="true"></field>
         <field name="thruDate" type="date-time"></field>
         <field name="sequenceNum" type="number-integer"></field>
-        <relationship type="one" fk-name="COMMEV_CA_FROM" title="From" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
-        </relationship>
         <relationship type="one" fk-name="COMMEV_CA_COMMEV" related="org.apache.ofbiz.party.communication.CommunicationEvent">
             <key-map field-name="communicationEventId"/>
         </relationship>
@@ -505,9 +502,6 @@ under the License.
         <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="PARTY_CNT_PARTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="PARTY_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
         </relationship>
         <relationship type="one" fk-name="PARTY_CNT_TYPE" related="org.apache.ofbiz.party.party.PartyContentType">
             <key-map field-name="partyContentTypeId"/>

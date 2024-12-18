@@ -75,7 +75,6 @@ under the License.
             <key-map field-name="uomId"/>
         </relationship>
     </entity>
-        
     <entity entity-name="OmsUserPreference" package="org.apache.ofbiz.common.user" table-name="OMS_USER_PREFERENCE" group="ofbiz_transactional">
 <description>The UserPreference entity contains one entry per preference per
           userLogin. User preferences are stored as key/value pairs (userPrefTypeId/userPrefValue).

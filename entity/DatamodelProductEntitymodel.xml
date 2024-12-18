@@ -96,9 +96,6 @@ under the License.
         <relationship type="one" fk-name="PRDCAT_CNT_PRDCAT" related="org.apache.ofbiz.product.category.ProductCategory">
             <key-map field-name="productCategoryId"/>
         </relationship>
-        <relationship type="one" fk-name="PRDCAT_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
-        </relationship>
         <relationship type="one" fk-name="PRDCAT_CNT_TYPE" related="org.apache.ofbiz.product.category.ProductCategoryContentType">
             <key-map field-name="prodCatContentTypeId"/>
         </relationship>
@@ -992,9 +989,6 @@ under the License.
         <field name="sequenceNum" type="number-integer"></field>
         <relationship type="one" fk-name="PROD_CNT_PROD" related="org.apache.ofbiz.product.product.Product">
             <key-map field-name="productId"/>
-        </relationship>
-        <relationship type="one" fk-name="PROD_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
         </relationship>
         <relationship type="one" fk-name="PROD_CNT_TYPE" related="org.apache.ofbiz.product.product.ProductContentType">
             <key-map field-name="productContentTypeId"/>

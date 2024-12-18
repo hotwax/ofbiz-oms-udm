@@ -150,9 +150,6 @@ under the License.
         <relationship type="one" fk-name="ORD_CNT_PROD" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
-        <relationship type="one" fk-name="ORD_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
-        </relationship>
         <relationship type="one" fk-name="ORD_CNT_TYPE" related="org.apache.ofbiz.order.order.OrderContentType">
             <key-map field-name="orderContentTypeId"/>
         </relationship>

@@ -104,9 +104,6 @@ under the License.
         <relationship type="one-nofk" fk-name="ETS_SYS_MSG_RMT" related="moqui.service.message.SystemMessageRemote">
             <key-map field-name="systemMessageRemoteId" related="systemMessageRemoteId"/>
         </relationship>
-        <relationship type="many" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="templateContentId" related="contentId"/>
-        </relationship>
     </extend-entity>
     <extend-entity entity-name="ItemIssuance" package="org.apache.ofbiz.shipment.issuance" group="ofbiz_transactional">
         <field name="issuanceTypeId" type="id"></field>
@@ -189,12 +186,6 @@ under the License.
     <extend-entity entity-name="ProductStoreEmailSetting" package="org.apache.ofbiz.product.store" group="ofbiz_transactional">
         <field name="templateContentId" type="id"></field>
         <field name="plainTextContentId" type="id"></field>
-        <relationship type="one-nofk" fk-name="PSES_TEMPLATE_CNTN" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="templateContentId" related="contentId"/>
-        </relationship>
-        <relationship type="one-nofk" fk-name="PSES_PLAIN_CNTN" title="Plain" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="plainTextContentId" related="contentId"/>
-        </relationship>
     </extend-entity>
     <extend-entity entity-name="ReturnAdjustment" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
         <field name="orderId" type="id"></field>
@@ -264,9 +255,6 @@ under the License.
         <relationship type="one" fk-name="PROD_FAC_II" related="org.apache.ofbiz.product.inventory.InventoryItem">
             <key-map field-name="inventoryItemId"/>
         </relationship>
-    </extend-entity>
-    <extend-entity entity-name="Content" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
-        <field name="permissionEnumId" type="id-long"><description>It will be used to set permission to access content.</description></field>
     </extend-entity>
     <extend-entity entity-name="InventoryTransfer" package="org.apache.ofbiz.product.inventory" group="ofbiz_transactional">
         <field name="orderId" type="id"></field>
@@ -344,18 +332,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="DTMGR_CONFG_PTY" title="Owner" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="ownerPartyId" related="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="DTMGR_UPLOAD_CONT" title="Upload" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="uploadFileContentId" related="contentId"/>
-        </relationship>
-        <relationship type="one" fk-name="DTMGR_EXPORT_CONT" title="Export" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="exportFileContentId" related="contentId"/>
-        </relationship>
-        <relationship type="one" fk-name="DTMGR_ERROR_CONT" title="Error" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="errorRecordContentId" related="contentId"/>
-        </relationship>
-        <relationship type="one" fk-name="DTMGR_LOG_CONT" title="Log" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="logFileContentId" related="contentId"/>
         </relationship>
         <relationship type="one" fk-name="DTMGR_ENM" related="moqui.basic.Enumeration">
             <key-map field-name="logTypeEnumId" related="enumId"/>
@@ -663,9 +639,6 @@ under the License.
         <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="SHIPMENT_CNT" related="org.apache.ofbiz.shipment.shipment.Shipment">
             <key-map field-name="shipmentId"/>
-        </relationship>
-        <relationship type="one" fk-name="SHIPMENT_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
         </relationship>
         <relationship type="one" fk-name="SHIPMENT_CNT_TYPE" related="co.hotwax.warehouse.ShipmentContentType">
             <key-map field-name="shipmentContentTypeId"/>
