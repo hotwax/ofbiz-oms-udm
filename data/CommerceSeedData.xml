@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext-seed">
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_MIDDLE" productFeatureTypeId="SIZE" productFeatureCategoryId="TEXT" description="Medium" defaultSequenceNum="2"/>
+    <moqui.basic.Enumeration enumId="ITM_DLVRYDATE_CHNGD" enumTypeId="ODR_ITM_CHANGE_TYPE" enumCode="DLVRYDATE_CHNGD" description="Order item delivery date change"/>
+    <moqui.basic.EnumerationType enumTypeId="ORDER_EVENT_TYPE" description="Order Event Type"/>
+    <moqui.basic.Enumeration enumId="ITEM_BROKERED" enumTypeId="ORDER_EVENT_TYPE" enumCode="BROKERED" description="Brokered"/>
+    <moqui.basic.Enumeration enumId="ITEM_BKD_REJECTED" enumTypeId="ORDER_EVENT_TYPE" enumCode="REJECTED" description="Brokering Rejected"/>
+    <moqui.basic.Enumeration enumId="ITEM_SHIPPED" enumTypeId="ORDER_EVENT_TYPE" enumCode="SHIPPED" description="Shipped"/>
+    <moqui.basic.Enumeration enumId="ITEM_CANCELLED" enumTypeId="ORDER_EVENT_TYPE" enumCode="CANCELLED" description="Cancelled"/>
+    <moqui.basic.Enumeration enumId="JOB_PRC_PND_DML" enumTypeId="MISC_SYS_JOB" description="Process bulk imported files" enumName="Process bulk imported files"/>
+    <moqui.basic.EnumerationType enumTypeId="DMC_EXEC_MODE" description="DataManagerConfig execution mode type"/>
+    <moqui.basic.Enumeration enumId="DMC_QUEUE" enumTypeId="DMC_EXEC_MODE" enumCode="QUEUE" description="Queue"/>
+    <moqui.basic.Enumeration enumId="DMC_ASYNC" enumTypeId="DMC_EXEC_MODE" enumCode="ASYNC" description="Async"/>
+    <moqui.basic.Enumeration enumId="DMC_SYNC" enumTypeId="DMC_EXEC_MODE" enumCode="SYNC" description="Sync"/>
+</entity-facade-xml>
+

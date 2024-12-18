@@ -27,7 +27,7 @@ under the License.
         <member-entity entity-alias="IIV" entity-name="org.apache.ofbiz.product.inventory.InventoryItemVariance" join-from-alias="PI">
             <key-map field-name="physicalInventoryId"/>
         </member-entity>
-        <member-entity entity-alias="VRENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="IIV">
+        <member-entity entity-alias="VRENM" entity-name="moqui.basic.Enumeration" join-from-alias="IIV">
             <key-map field-name="reasonEnumId" related="enumId"/>
         </member-entity>
         <member-entity entity-alias="II" entity-name="org.apache.ofbiz.product.inventory.InventoryItem" join-from-alias="IIV">

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.DataSource dataSourceId="ECOMMERCE_SITE" description="eCommerce Site Profile Maintenance" dataSourceTypeEnumId=""/>
+    <moqui.basic.DataSource dataSourceId="MY_PORTAL" description="My Portal Registration" dataSourceTypeEnumId=""/>
+    <moqui.basic.DataSource dataSourceId="GENERAL_MAILING" description="General Interest Mailing List Signup" dataSourceTypeEnumId="DST_MAILING_SIGNUP"/>
+    <moqui.basic.DataSource dataSourceId="CSR_ENTRY" description="Customer Service Rep Data Entry" dataSourceTypeEnumId=""/>
+    <moqui.basic.DataSource dataSourceId="GEN_ADMIN" description="General Administrative Data Entry" dataSourceTypeEnumId=""/>
+    <moqui.basic.DataSource dataSourceId="USER_ENTRY" description="User Entry" dataSourceTypeEnumId=""/>
+    <moqui.basic.DataSource dataSourceId="CONTEXT_INDUCTION" description="Context Induction" dataSourceTypeEnumId=""/>
+    <moqui.basic.DataSource dataSourceId="GEOPT_GOOGLE" description="Google as GeoPoint supplier" dataSourceTypeEnumId=""/>
+    <moqui.basic.DataSource dataSourceId="GEOPT_YAHOO" description="Yahoo as GeoPoint supplier" dataSourceTypeEnumId=""/>
+    <moqui.basic.DataSource dataSourceId="GEOPT_MICROSOFT" description="Microsoft as GeoPoint supplier" dataSourceTypeEnumId=""/>
+    <moqui.basic.DataSource dataSourceId="GEOPT_MAPTP" description="MapTP a GeoPoint supplier" dataSourceTypeEnumId=""/>
+    <moqui.basic.StatusType statusTypeId="_NA_" description="Not Applicable"/>
+    <moqui.basic.StatusItem statusId="_NA_" statusTypeId="_NA_" statusCode="_NA_" description="Not Applicable"/>
+    <moqui.basic.EnumerationType enumTypeId="_NA_" description="Not Applicable"/>
+    <moqui.basic.Enumeration enumId="_NA_" enumTypeId="_NA_" enumCode="_NA_" description="Not Applicable"/>
+    <moqui.basic.Enumeration enumId="_00_" enumTypeId="_NA_" enumCode="_00_" description="Not Applicable"/>
+    <moqui.basic.EnumerationType enumTypeId="KW_THES_REL" description="Thesaurus Relationship Type"/>
+    <moqui.basic.Enumeration enumId="KWTR_UF" enumTypeId="KW_THES_REL" enumCode="UF" description="Used For"/>
+    <moqui.basic.Enumeration enumId="KWTR_USE" enumTypeId="KW_THES_REL" enumCode="USE" description="Use Instead"/>
+    <moqui.basic.Enumeration enumId="KWTR_CS" enumTypeId="KW_THES_REL" enumCode="CS" description="Correct Spelling"/>
+    <moqui.basic.Enumeration enumId="KWTR_NT" enumTypeId="KW_THES_REL" enumCode="NT" description="Narrower Term"/>
+    <moqui.basic.Enumeration enumId="KWTR_BT" enumTypeId="KW_THES_REL" enumCode="BT" description="Broader Term"/>
+    <moqui.basic.Enumeration enumId="KWTR_MT" enumTypeId="KW_THES_REL" enumCode="MT" description="Micro-thesaurus Term"/>
+    <moqui.basic.Enumeration enumId="KWTR_RT" enumTypeId="KW_THES_REL" enumCode="RT" description="Related Term"/>
+    <moqui.basic.Enumeration enumId="KWTR_SN" enumTypeId="KW_THES_REL" enumCode="SN" description="Scope Notes"/>
+    <moqui.basic.Enumeration enumId="KWTR_LANG_SP" enumTypeId="KW_THES_REL" enumCode="LANG_SP" description="Lang: Spanish"/>
+    <moqui.basic.Enumeration enumId="KWTR_LANG_FR" enumTypeId="KW_THES_REL" enumCode="LANG_FR" description="Lang: French"/>
+    <moqui.basic.StatusType statusTypeId="SYNCHRONIZE_STATUS" description="Synchronize"/>
+    <moqui.basic.StatusItem statusId="NOT_SYNCHRONIZED" statusTypeId="SYNCHRONIZE_STATUS" statusCode="NOT_SYNCHRONIZED" description="Not-Synchronized"/>
+    <moqui.basic.StatusItem statusId="SYNCHRONIZED" statusTypeId="SYNCHRONIZE_STATUS" statusCode="SYNCHRONIZED" description="Synchronized"/>
+    <org.apache.ofbiz.common.user.UserPrefGroupType userPrefGroupTypeId="GLOBAL_PREFERENCES" description="Global preferences"/>
+    <moqui.basic.EnumerationType enumTypeId="VT_RES_TYPE" description="Visual Theme Resource Type (stylesheet, javascript file, etc)"/>
+    <moqui.basic.Enumeration enumId="VT_NAME" enumTypeId="VT_RES_TYPE" description="Visual Theme name"/>
+    <moqui.basic.Enumeration enumId="VT_STYLESHEET" enumTypeId="VT_RES_TYPE" description="Style Sheet URL"/>
+    <moqui.basic.Enumeration enumId="VT_HELPSTYLESHEET" enumTypeId="VT_RES_TYPE" description="Help Style Sheet URL"/>
+    <moqui.basic.Enumeration enumId="VT_DOCBOOKSTYLESHEET" enumTypeId="VT_RES_TYPE" description="Docbook Style Sheet URL"/>
+    <moqui.basic.Enumeration enumId="VT_RTL_STYLESHEET" enumTypeId="VT_RES_TYPE" description="Right-to-Left (RTL) Style Sheet URL"/>
+    <moqui.basic.Enumeration enumId="VT_SHORTCUT_ICON" enumTypeId="VT_RES_TYPE" description="Shortcut Icon URL"/>
+    <moqui.basic.Enumeration enumId="VT_EXTRA_HEAD" enumTypeId="VT_RES_TYPE" description="Additional &lt;tt&gt;&lt;head&gt;&lt;/tt&gt; Element Markup"/>
+    <moqui.basic.Enumeration enumId="VT_HDR_IMAGE_URL" enumTypeId="VT_RES_TYPE" description="Masthead/Branding Logo Image URL"/>
+    <moqui.basic.Enumeration enumId="VT_HDR_TMPLT_LOC" enumTypeId="VT_RES_TYPE" description="Header Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_HDR_JAVASCRIPT" enumTypeId="VT_RES_TYPE" description="Header JavaScript File URL"/>
+    <moqui.basic.Enumeration enumId="VT_FTR_TMPLT_LOC" enumTypeId="VT_RES_TYPE" description="Footer Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_FTR_JAVASCRIPT" enumTypeId="VT_RES_TYPE" description="Footer JavaScript File URL"/>
+    <moqui.basic.Enumeration enumId="VT_NAV_TMPLT_LOC" enumTypeId="VT_RES_TYPE" description="Main Navigation Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_NAV_OPEN_TMPLT" enumTypeId="VT_RES_TYPE" description="Opening Navigation Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_NAV_CLOSE_TMPLT" enumTypeId="VT_RES_TYPE" description="Closing Navigation Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_MSG_TMPLT_LOC" enumTypeId="VT_RES_TYPE" description="Main Messages Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_SCREENSHOT" enumTypeId="VT_RES_TYPE" description="Theme Preview Screenshot"/>
+    <moqui.basic.Enumeration enumId="VT_SCRN_MACRO_LIB" enumTypeId="VT_RES_TYPE" description="Theme Screen Macro Library Location"/>
+    <moqui.basic.Enumeration enumId="VT_FORM_MACRO_LIB" enumTypeId="VT_RES_TYPE" description="Theme Form Macro Library Location"/>
+    <moqui.basic.Enumeration enumId="VT_TREE_MACRO_LIB" enumTypeId="VT_RES_TYPE" description="Theme Tree Macro Library Location"/>
+    <moqui.basic.Enumeration enumId="VT_MENU_MACRO_LIB" enumTypeId="VT_RES_TYPE" description="Theme Menu Macro Library Location"/>
+    <moqui.basic.Enumeration enumId="VT_LOGIN_TMPLT_LOC" enumTypeId="VT_RES_TYPE" description="Login Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_CHPWD_TMPLT_LOC" enumTypeId="VT_RES_TYPE" description="Change Password Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_FGPWD_TMPLT_LOC" enumTypeId="VT_RES_TYPE" description="Forget Password Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_GSQUE_TMPLT_LOC" enumTypeId="VT_RES_TYPE" description="Security Question Template Location"/>
+    <moqui.basic.Enumeration enumId="VT_STYLESHEET_LESS" enumTypeId="VT_RES_TYPE" description="Style Sheet Less URL"/>
+    <moqui.basic.EnumerationType enumTypeId="CONVERSION_PURPOSE" description="Conversion Purpose"/>
+    <moqui.basic.Enumeration enumId="INTERNAL_CONVERSION" enumTypeId="CONVERSION_PURPOSE" enumCode="INTERNAL" description="Internal Conversion"/>
+    <moqui.basic.Enumeration enumId="EXTERNAL_CONVERSION" enumTypeId="CONVERSION_PURPOSE" enumCode="EXTERNAL" description="External Conversion"/>
+    <moqui.basic.EnumerationType enumTypeId="KEYWORD_TYPE" description="Keyword Type"/>
+    <moqui.basic.Enumeration enumId="KWT_KEYWORD" enumTypeId="KEYWORD_TYPE" enumCode="KEYWORD" description="Keyword"/>
+    <moqui.basic.Enumeration enumId="KWT_TAG" enumTypeId="KEYWORD_TYPE" enumCode="TAG" description="Tag"/>
+    <moqui.basic.StatusType statusTypeId="KEYWORD_STATUS" description="Keyword"/>
+    <moqui.basic.StatusItem statusId="KW_APPROVED" statusTypeId="KEYWORD_STATUS" statusCode="APPROVED" description="Approved"/>
+    <moqui.basic.StatusItem statusId="KW_PENDING" statusTypeId="KEYWORD_STATUS" statusCode="PENDING" description="Pending"/>
+    <moqui.basic.StatusItem statusId="KW_DISAPPROVED" statusTypeId="KEYWORD_STATUS" statusCode="DISAPPROVED" description="Disapproved"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="KW_PENDING" toStatusId="KW_PENDING" transitionName="Review Approved"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="KW_PENDING" toStatusId="KW_PENDING" transitionName="Review Disapproved"/>
+    <moqui.basic.EnumerationType enumTypeId="JM_OFBIZ_INSTANCE" description="OFBiz Instance"/>
+    <moqui.basic.Enumeration enumId="JM_OFBIZ_INS_0" enumTypeId="JM_OFBIZ_INSTANCE" enumCode="_NA_" description="ALL instance"/>
+    <moqui.basic.Enumeration enumId="JM_OFBIZ_INS_1" enumTypeId="JM_OFBIZ_INSTANCE" enumCode="ofbiz1" description="OFBiz instance 1"/>
+</entity-facade-xml>
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="CN-BJ" geoName="北京" geoCodeAlpha3="京" geoCodeAlpha2="BJ" wellKnownText="Beijing" geoTypeEnumId="GEOT_MUNICIPALITY"/>
+    <moqui.basic.Geo geoId="CN-CQ" geoName="重庆" geoCodeAlpha3="渝" geoCodeAlpha2="CQ" wellKnownText="Chongqing" geoTypeEnumId="GEOT_MUNICIPALITY"/>
+    <moqui.basic.Geo geoId="CN-SH" geoName="上海" geoCodeAlpha3="沪" geoCodeAlpha2="SH" wellKnownText="Shanghai" geoTypeEnumId="GEOT_MUNICIPALITY"/>
+    <moqui.basic.Geo geoId="CN-TJ" geoName="天津" geoCodeAlpha3="津" geoCodeAlpha2="TJ" wellKnownText="Tianjin" geoTypeEnumId="GEOT_MUNICIPALITY"/>
+    <moqui.basic.Geo geoId="CN-HL" geoName="黑龙江" geoCodeAlpha3="黑" geoCodeAlpha2="HL" wellKnownText="Heilongjiang" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-JL" geoName="吉林" geoCodeAlpha3="吉" geoCodeAlpha2="JL" wellKnownText="Jilin" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-LN" geoName="辽宁" geoCodeAlpha3="辽" geoCodeAlpha2="LN" wellKnownText="Liaoning" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-QH" geoName="青海" geoCodeAlpha3="青" geoCodeAlpha2="QH" wellKnownText="Qinghai" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-GS" geoName="甘肃" geoCodeAlpha3="甘" geoCodeAlpha2="GS" wellKnownText="Gansu" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-SN" geoName="陕西" geoCodeAlpha3="陕" geoCodeAlpha2="SN" wellKnownText="Shaanxi" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-SX" geoName="山西" geoCodeAlpha3="晋" geoCodeAlpha2="SX" wellKnownText="Shanxi" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-HE" geoName="河北" geoCodeAlpha3="冀" geoCodeAlpha2="HE" wellKnownText="Hebei" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-SC" geoName="四川" geoCodeAlpha3="川" geoCodeAlpha2="SC" wellKnownText="Sichuan" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-HB" geoName="湖北" geoCodeAlpha3="鄂" geoCodeAlpha2="HB" wellKnownText="Hubei" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-HA" geoName="河南" geoCodeAlpha3="豫" geoCodeAlpha2="HA" wellKnownText="Henan" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-SD" geoName="山东" geoCodeAlpha3="鲁" geoCodeAlpha2="SD" wellKnownText="Shandong" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-AH" geoName="安徽" geoCodeAlpha3="皖" geoCodeAlpha2="AH" wellKnownText="Anhui" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-JS" geoName="江苏" geoCodeAlpha3="苏" geoCodeAlpha2="JS" wellKnownText="Jiangsu" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-YN" geoName="云南" geoCodeAlpha3="滇" geoCodeAlpha2="YN" wellKnownText="Yunnan" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-GZ" geoName="贵州" geoCodeAlpha3="黔" geoCodeAlpha2="GZ" wellKnownText="Guizhou" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-HN" geoName="湖南" geoCodeAlpha3="湘" geoCodeAlpha2="HN" wellKnownText="Hunan" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-JX" geoName="江西" geoCodeAlpha3="赣" geoCodeAlpha2="JX" wellKnownText="Jiangxi" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-ZJ" geoName="浙江" geoCodeAlpha3="浙" geoCodeAlpha2="ZJ" wellKnownText="Zhejiang" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-HI" geoName="海南" geoCodeAlpha3="琼" geoCodeAlpha2="HI" wellKnownText="Hainan" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-GD" geoName="广东" geoCodeAlpha3="粤" geoCodeAlpha2="GD" wellKnownText="Guangdong" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-FJ" geoName="福建" geoCodeAlpha3="闽" geoCodeAlpha2="FJ" wellKnownText="Fujian" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-TW" geoName="台湾" geoCodeAlpha3="台" geoCodeAlpha2="TW" wellKnownText="Taiwan" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CN-GX" geoName="广西" geoCodeAlpha3="桂" geoCodeAlpha2="GX" wellKnownText="Guangxi" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="CN-NM" geoName="内蒙古" geoCodeAlpha3="内蒙古" geoCodeAlpha2="NM" wellKnownText="Inner Mongolia" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="CN-NX" geoName="宁夏" geoCodeAlpha3="宁" geoCodeAlpha2="NX" wellKnownText="Ningxia" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="CN-XJ" geoName="新疆" geoCodeAlpha3="新" geoCodeAlpha2="XJ" wellKnownText="Xinjiang" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="CN-XZ" geoName="西藏" geoCodeAlpha3="藏" geoCodeAlpha2="XZ" wellKnownText="Tibet" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="CN-HK" geoName="香港" geoCodeAlpha3="香港" geoCodeAlpha2="HK" wellKnownText="Hong Kong" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="CN-MO" geoName="澳门" geoCodeAlpha3="澳门" geoCodeAlpha2="MO" wellKnownText="Macau" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-BJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-CQ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-SH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-TJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-HL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-JL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-LN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-QH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-GS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-SN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-SX" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-HE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-SC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-HB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-HA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-SD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-AH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-JS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-YN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-GZ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-HN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-JX" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-ZJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-HI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-GD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-FJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-TW" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-GX" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-NM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-NX" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-XJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-XZ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-HK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CHN" toGeoId="CN-MO" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

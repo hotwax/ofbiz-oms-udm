@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="SHOPIFY_OMS_APP" description="Shopify OMS APP Configuration Data" publicKey="" sharedSecret=""/>
+    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="SHOPIFY_PREORDER_APP" description="Shopify Preorder APP Configuration Data" sendServiceName="initialiseShopifyPreorderApp" publicKey="" sharedSecret=""/>
+    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="SHPFY_BOPIS_PDP_APP" description="Shopify Bopis PDP APP Configuration Data" sendServiceName="initialiseShopifyBopisPdpApp" publicKey="" sharedSecret=""/>
+    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="SHOPIFY_POS_BPS_APP" description="Shopify Bopis embedded APP Configuration Data" publicKey="" sharedSecret=""/>
+    <moqui.basic.EnumerationType enumTypeId="SHOP_SCRIPT_TYPE" description="Shopify script tag"/>
+    <moqui.basic.Enumeration enumId="BOPIS_JS_SCRPT_TAG" enumTypeId="SHOP_SCRIPT_TYPE" enumCode="BOPIS.js" sequenceNum="01" description="BOPIS JS"/>
+    <moqui.basic.Enumeration enumId="PREORD_JS_SCRPT_TAG" enumTypeId="SHOP_SCRIPT_TYPE" enumCode="PRE_ORDER.js" sequenceNum="02" description="Pre-order JS"/>
+    <moqui.basic.Enumeration enumId="BOPIS_CSS_SCRPT_TAG" enumTypeId="SHOP_SCRIPT_TYPE" enumCode="BOPIS_CSS.css" sequenceNum="03" description="BOPIS CSS"/>
+    <moqui.basic.Enumeration enumId="PREORD_CSS_SCRPT_TAG" enumTypeId="SHOP_SCRIPT_TYPE" enumCode="PRE_ORDER_CSS.css" sequenceNum="04" description="Pre-order CSS"/>
+</entity-facade-xml>
+

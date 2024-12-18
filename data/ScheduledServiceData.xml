@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.StatusType statusTypeId="SERVICE_STATUS" description="Scheduled Service"/>
+    <moqui.basic.StatusItem statusId="SERVICE_PENDING" statusTypeId="SERVICE_STATUS" statusCode="PENDING" description="Pending" statusAge="50"/>
+    <moqui.basic.StatusItem statusId="SERVICE_QUEUED" statusTypeId="SERVICE_STATUS" statusCode="QUEUED" description="Queued" statusAge="25"/>
+    <moqui.basic.StatusItem statusId="SERVICE_RUNNING" statusTypeId="SERVICE_STATUS" statusCode="RUNNING" description="Running" statusAge="75"/>
+    <moqui.basic.StatusItem statusId="SERVICE_FINISHED" statusTypeId="SERVICE_STATUS" statusCode="FINISHED" description="Finished" statusAge="100"/>
+    <moqui.basic.StatusItem statusId="SERVICE_FAILED" statusTypeId="SERVICE_STATUS" statusCode="FAILED" description="Failed" statusAge="101"/>
+    <moqui.basic.StatusItem statusId="SERVICE_CRASHED" statusTypeId="SERVICE_STATUS" statusCode="CRASHED" description="Crashed" statusAge="101"/>
+    <moqui.basic.StatusItem statusId="SERVICE_CANCELLED" statusTypeId="SERVICE_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
+    <moqui.basic.StatusItem statusId="SERVICE_DRAFT" statusTypeId="SERVICE_STATUS" statusCode="DRAFT" description="Draft" statusAge="0"/>
+</entity-facade-xml>
+

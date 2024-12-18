@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PICKED" toStatusId="PICKITEM_PICKED" transitionName="Pending" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PICKED" toStatusId="PICKLIST_PICKED" transitionName="Input" conditionExpression="directStatusChange == false"/>
+</entity-facade-xml>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <org.apache.ofbiz.party.party.Party partyId="HOTWAX_USER" partyTypeId="PERSON"/>
+    <org.apache.ofbiz.party.party.Person partyId="HOTWAX_USER" firstName="HotWax" lastName="User"/>
+    <org.apache.ofbiz.party.party.PartyRole partyId="HOTWAX_USER" roleTypeId="CONTACT"/>
+    <org.apache.ofbiz.party.party.PartyRole partyId="HOTWAX_USER" roleTypeId="APPLICATION_USER"/>
+    <org.apache.ofbiz.party.contact.ContactMech contactMechId="HC_USER" contactMechTypeId="EMAIL_ADDRESS" infoString="support@hotwax.co"/>
+    <org.apache.ofbiz.party.contact.ContactMech contactMechId="HC_USER_TN" contactMechTypeId="TELECOM_NUMBER"/>
+    <org.apache.ofbiz.party.contact.TelecomNumber contactMechId="HC_USER_TN" countryCode="1" areaCode="732" contactNumber="724-0104"/>
+    <org.apache.ofbiz.party.contact.PartyContactMech partyId="HOTWAX_USER" contactMechId="HC_USER" fromDate="2018-01-01 12:00:00.000" allowSolicitation="Y"/>
+    <org.apache.ofbiz.party.contact.PartyContactMech partyId="HOTWAX_USER" contactMechId="HC_USER_TN" fromDate="2018-01-01 12:00:00.000"/>
+    <org.apache.ofbiz.party.contact.PartyContactMechPurpose partyId="HOTWAX_USER" contactMechId="HC_USER" contactMechPurposeTypeId="PRIMARY_EMAIL" fromDate="2018-01-01 12:00:00.000"/>
+    <org.apache.ofbiz.party.contact.PartyContactMechPurpose partyId="HOTWAX_USER" contactMechId="HC_USER_TN" contactMechPurposeTypeId="PRIMARY_PHONE" fromDate="2018-01-01 12:00:00.000"/>
+    <org.apache.ofbiz.party.party.PartyRelationship partyIdFrom="COMPANY" partyIdTo="HOTWAX_USER" roleTypeIdFrom="INTERNAL_ORGANIZATIO" roleTypeIdTo="CONTACT" fromDate="2018-01-01 12:00:00.000" partyRelationshipTypeId="CONTACT_REL"/>
+    <org.apache.ofbiz.party.party.PartyRelationship partyIdFrom="COMPANY" partyIdTo="HOTWAX_USER" roleTypeIdFrom="INTERNAL_ORGANIZATIO" roleTypeIdTo="APPLICATION_USER" fromDate="2018-01-01 12:00:00.000" securityGroupId="SUPER" partyRelationshipTypeId="OWNER"/>
+    <org.apache.ofbiz.product.store.ProductStoreRole partyId="HOTWAX_USER" roleTypeId="APPLICATION_USER" productStoreId="STORE" fromDate="2023-05-02 00:00:00.0"/>
+</entity-facade-xml>
+

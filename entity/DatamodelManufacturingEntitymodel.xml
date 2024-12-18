@@ -21,7 +21,7 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
-    <entity entity-name="TechDataCalendar" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
+    <entity entity-name="TechDataCalendar" package="org.apache.ofbiz.manufacturing.techdata">
 <description>Used to defined the availability of the machines, this entity define the Id and the week definition.
       The Id is used in the exception calendar table as reference</description>        <field name="calendarId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
@@ -30,7 +30,7 @@ under the License.
             <key-map field-name="calendarWeekId"/>
         </relationship>
     </entity>
-    <entity entity-name="TechDataCalendarExcDay" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
+    <entity entity-name="TechDataCalendarExcDay" package="org.apache.ofbiz.manufacturing.techdata">
 <description>Used to defined some days which differ from the normal day definition in the weekId associated in the calendar.</description>        <field name="calendarId" type="id" is-pk="true"></field>
         <field name="exceptionDateStartTime" type="date-time" is-pk="true"></field>
         <field name="exceptionCapacity" type="number-decimal"></field>
@@ -40,7 +40,7 @@ under the License.
             <key-map field-name="calendarId"/>
         </relationship>
     </entity>
-    <entity entity-name="TechDataCalendarExcWeek" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
+    <entity entity-name="TechDataCalendarExcWeek" package="org.apache.ofbiz.manufacturing.techdata">
 <description>Used to defined some weeks which differ from the normal week defined in the calendar.</description>        <field name="calendarId" type="id" is-pk="true"></field>
         <field name="exceptionDateStart" type="date" is-pk="true"></field>
         <field name="calendarWeekId" type="id"></field>
@@ -52,7 +52,7 @@ under the License.
             <key-map field-name="calendarWeekId"/>
         </relationship>
     </entity>
-    <entity entity-name="TechDataCalendarWeek" package="org.apache.ofbiz.manufacturing.techdata" group="ofbiz_transactional">
+    <entity entity-name="TechDataCalendarWeek" package="org.apache.ofbiz.manufacturing.techdata">
 <description>Used to defined the week definition disponibility for machine</description>        <field name="calendarWeekId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
         <field name="mondayStartTime" type="time"></field>

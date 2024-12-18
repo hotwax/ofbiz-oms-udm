@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="AE-AZ" geoName="Abū Z̧aby" geoCodeAlpha3="AZ" geoCodeAlpha2="AZ" wellKnownText="Abu Dhabi" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="AE-FU" geoName="Al Fujayrah" geoCodeAlpha3="FU" geoCodeAlpha2="FU" wellKnownText="Fujairah" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="AE-SH" geoName="Ash Shāriqah" geoCodeAlpha3="SH" geoCodeAlpha2="SH" wellKnownText="Sharjah" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="AE-DU" geoName="Dubayy" geoCodeAlpha3="DU" geoCodeAlpha2="DU" wellKnownText="Dubai" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="AE-RK" geoName="Ra’s al Khaymah" geoCodeAlpha3="RK" geoCodeAlpha2="RK" wellKnownText="Ras Al Khaimah" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="AE-UQ" geoName="Umm al Qaywayn" geoCodeAlpha3="UQ" geoCodeAlpha2="UQ" wellKnownText="Umm Al Quwain" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="AE-AJ" geoName="‘Ajmān" geoCodeAlpha3="AJ" geoCodeAlpha2="AJ" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.GeoAssoc geoId="ARE" toGeoId="AE-AZ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ARE" toGeoId="AE-FU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ARE" toGeoId="AE-SH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ARE" toGeoId="AE-DU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ARE" toGeoId="AE-RK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ARE" toGeoId="AE-UQ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ARE" toGeoId="AE-AJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

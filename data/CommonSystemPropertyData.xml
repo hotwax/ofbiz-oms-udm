@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowConfig" systemPropertyId="buynow.checkout.shipping.dbic" systemPropertyValue="USA"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowConfig" systemPropertyId="buynow.checkout.shipping.ebis"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowConfig" systemPropertyId="buynow.checkout.billing.ebis"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowConfig" systemPropertyId="buynow.doing.business.in.countries.groupname" systemPropertyValue="DBIC"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowConfig" systemPropertyId="buynow.product.checkViewAllow" systemPropertyValue="true"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowConfig" systemPropertyId="buynow.admin.mail.sendTo"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="security" systemPropertyId="security.login.usePrimaryEmailUsername" systemPropertyValue="N"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="security" systemPropertyId="security.login.useUniquePrimaryPhone" systemPropertyValue="N"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="default.productstoreid" systemPropertyValue="9000"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="export.file.output.location" systemPropertyValue="runtime/datamanager/export/"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="export.data.csv.file.output.location" systemPropertyValue="runtime/datamanager/exportDataCsv"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="default.weight.uom"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="default.height.uom"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="default.width.uom"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="default.depth.uom"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="default.currency.uom"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="default.weight.uom" systemPropertyValue="WT_lb"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="import" systemPropertyId="file.upload.location" systemPropertyValue="runtime/datamanager/imported"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="import" systemPropertyId="file.output.location" systemPropertyValue="runtime/datamanager/created"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="import" systemPropertyId="error.file.output.location" systemPropertyValue="runtime/datamanager/error"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="import" systemPropertyId="blank.csv.file.output.location" systemPropertyValue="runtime/datamanager/blankCsv"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="import" systemPropertyId="entity.data.csv.file.output.location" systemPropertyValue="runtime/datamanager/entityDataCsv"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="import" systemPropertyId="image.source.path" systemPropertyValue="/framework/images/webapp"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="import" systemPropertyId="asset.path.prefix" systemPropertyValue="component://hwmapps/webapp"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="import" systemPropertyId="order.payment.status" systemPropertyValue="PAYMENT_NOT_RECEIVED"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="ledger.decimals" systemPropertyValue="4"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="ledger.rounding" systemPropertyValue="HalfUp"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="invoice.decimals" systemPropertyValue="2"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="invoice.SALES_INVOICE.decimals" systemPropertyValue="2"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="invoice.PURCHASE_INVOICE.decimals" systemPropertyValue="4"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="invoice.rounding" systemPropertyValue="ROUND_HALF_UP"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="order.decimals" systemPropertyValue="2"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="order.rounding" systemPropertyValue="ROUND_HALF_UP"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="finaccount.decimals" systemPropertyValue="2"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="finaccount.rounding" systemPropertyValue="ROUND_HALF_UP"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="finaccount.roundingSimpleMethod" systemPropertyValue="HalfUp"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="salestax.calc.decimals" systemPropertyValue="3"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="salestax.final.decimals" systemPropertyValue="2"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="salestax.rounding" systemPropertyValue="ROUND_HALF_UP"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="arithmetic" systemPropertyId="accounting-number.format" systemPropertyValue="#,##0.00;(#,##0.00)"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="image.server.path" systemPropertyValue="component://hwmapps/webapp/resources/uploads/${tenantId}"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="content.upload.path" systemPropertyValue="component://hwmapps/webapp/resources/uploads/${tenantId}"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="image.url.prefix" systemPropertyValue="/images/${tenantId}"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="image.filename.format" systemPropertyValue="${location}/${id}/${type}"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="image.filename.additionalviewsize.format" systemPropertyValue="${location}/${id}/${viewtype}/${sizetype}"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="top.category.default" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="all.product.category" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="reactivate.product.from.receipt" systemPropertyValue="Y"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="image.management.path" systemPropertyValue="${sys:getProperty('ofbiz.home')}/framework/images/webapp/images/products/management"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="image.management.url" systemPropertyValue="/images/products/management"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="image.management.nameofthumbnail" systemPropertyValue="-100"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="content.scale.image" systemPropertyValue="N"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="owner.content.id" systemPropertyValue="CONTENT_ROOT"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="img.request" systemPropertyValue="/content/control/img/"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="img.request.param.name" systemPropertyValue="imgId"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="stream.permission.service" systemPropertyValue="genericContentPermission"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="disable.ftl.template.cache" systemPropertyValue="true"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="permissionRecorderOn" systemPropertyValue="true"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="allowedHasRoleOperations" systemPropertyValue="HAS_USER_ROLE|HAS_AUTHOR_ROLE|HAS_EDITOR_ROLE|HAS_ADMIN_ROLE|HAS_PUBLISHER_ROLE"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="viewSize" systemPropertyValue="10"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="freemarker.showTemplateId" systemPropertyValue="Y"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="freemarker.templateIdPrefix" systemPropertyValue="[system]"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="content.upload.path.prefix" systemPropertyValue="runtime/uploads"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="content.upload.max.files" systemPropertyValue="250"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="content.upload.always.local.file" systemPropertyValue="true"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="content" systemPropertyId="content.output.path" systemPropertyValue="runtime/datamanager/output"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="shipment" systemPropertyId="shipment.default.weight.uom" systemPropertyValue="WT_lb"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="shipment" systemPropertyId="shipment.default.dimension.uom" systemPropertyValue="LEN_in"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="shipment" systemPropertyId="shipment.default.weight.value" systemPropertyValue="1"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="shipment" systemPropertyId="shipment.default.cost_actual_over_estimated_percent_allowed" systemPropertyValue="10"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="shipment" systemPropertyId="shipment.lineitem.per.quantity" systemPropertyValue="N" description="Enable shipment line item creation per quantity"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="shipment" systemPropertyId="purge.shipment.package.label.last.purge.time" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="emailMacro" systemPropertyValue="csrEmails"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="emailTemplate" systemPropertyValue="component://hwmapps/template/commerce/templates/EmailTemplatePreviewMacros.ftl"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="verification.token.expireTime" systemPropertyValue="1440"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="preorder.inventory.releasing.email.send.to.addresses" systemPropertyValue="" description="List of email addresses to which preorder inventory release notification would be sent."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="datamanager" systemPropertyId="error.file.sendTo.email.addresses" systemPropertyValue="" description="List of email addresses to which data manager error files would be sent."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="datamanager" systemPropertyId="error.file.sendTo.config" systemPropertyValue="" description="Configuration to send the error file to FTP/Email"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="datamanager" systemPropertyId="log.before.days" systemPropertyValue="15"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="FTPConfig" systemPropertyId="ftp.put.file.fail.sendTo.email.addresses" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="CommerceDateTimeFormats" systemPropertyId="default.commerce.date.format" systemPropertyValue="MM/dd/yyyy" description="Default date format used in commerce for validation, user input, output"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="CommerceDateTimeFormats" systemPropertyId="default.commerce.date.time.format" systemPropertyValue="yyyy-MM-dd HH:mm:ss" description="Default datetime format used in commerce for validation, user input, output"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="report.csv.file.output.location" systemPropertyValue="runtime/datamanager/report" description="Path for the output file location of all reports."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="unfillable.items.report.send.to.config" systemPropertyValue="EMAIL" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="preordered.items.report.send.to.config" systemPropertyValue="EMAIL" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="backordered.items.report.send.to.config" systemPropertyValue="EMAIL" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="safety.stock.report.send.to.config" systemPropertyValue="EMAIL" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="variance.record.report.send.to.config" systemPropertyValue="EMAIL" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="releasedPreOrderItem.report.send.to.config" systemPropertyValue="EMAIL" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="unfillable.hold.report.send.to.config" systemPropertyValue="EMAIL" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="ftp.export.ftpResourceName" systemPropertyValue="" description="Ftp configuration data for all reports."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="unfillable.items.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="preordered.items.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="backordered.items.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="preorder.shipment.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="safety.stock.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="variance.record.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="releasedPreOrderItem.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="unfillable.hold.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="preordered.items.report.send.to.email.addresses" systemPropertyValue="" description="List of email addresses to which the Preordered Items Reports would be sent."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="backordered.items.report.send.to.email.addresses" systemPropertyValue="" description="List of email addresses to which the Backordered Items Reports would be sent."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="safety.stock.report.send.to.email.addresses" systemPropertyValue="" description="List of email addresses to which the Safety Stock Reports would be sent."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="variance.record.report.send.to.email.addresses" systemPropertyValue="" description="List of email addresses to which the variance record report would be sent."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="releasedPreOrderItem.items.report.send.to.email.addresses" systemPropertyValue="" description="List of email addresses to which the released pre order Items Reports would be sent."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="active.preorder.report.send.to.config" systemPropertyValue="" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="active.preorder.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="inactive.preorder.report.send.to.config" systemPropertyValue="" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="inactive.preorder.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="updated.preorder.report.send.to.config" systemPropertyValue="" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="updated.preorder.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="active.backorder.report.send.to.config" systemPropertyValue="" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="active.backorder.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="inactive.backorder.report.send.to.config" systemPropertyValue="" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="inactive.backorder.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="updated.backorder.report.send.to.config" systemPropertyValue="" description="Can be either FTP or EMAIL"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="updated.backorder.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="googleChat" systemPropertyId="google.chat.webhook.file.missing.uri" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="buynow.productStore.productStoreName" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="order.brokered.email.trigger.last.sync.time" systemPropertyValue="" description="Record last sync time for broker order email."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="order.packed.email.trigger.last.sync.time" systemPropertyValue="" description="Record last sync time for packed order email."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="order.completed.email.trigger.last.sync.time" systemPropertyValue="" description="Record last sync time for completed order email."/>
+</entity-facade-xml>
+
