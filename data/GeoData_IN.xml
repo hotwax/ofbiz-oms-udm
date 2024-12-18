@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="seed">
-    <moqui.basic.Geo geoId="IN-AN" geoName="Andaman and Nicobar Islands" abbreviation="AN" geoCodeAlpha2="AN" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="IN-AP" geoName="Andhra Pradesh" abbreviation="AP" geoCodeAlpha2="AP" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-AR" geoName="Arunachal Pradesh" abbreviation="AR" geoCodeAlpha2="AR" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-AS" geoName="Assam" abbreviation="AS" geoCodeAlpha2="AS" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-BR" geoName="Bihar" abbreviation="BR" geoCodeAlpha2="BR" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-CH" geoName="Chandigarh" abbreviation="CH" geoCodeAlpha2="CH" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="IN-CT" geoName="Chhattisgarh" abbreviation="CT" geoCodeAlpha2="CT" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-DN" geoName="Dadra and Nagar Haveli" abbreviation="DN" geoCodeAlpha2="DN" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="IN-DD" geoName="Daman and Diu" abbreviation="DD" geoCodeAlpha2="DD" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="IN-DL" geoName="Delhi" abbreviation="DL" geoCodeAlpha2="DL" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="IN-GA" geoName="Goa" abbreviation="GA" geoCodeAlpha2="GA" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-GJ" geoName="Gujarat" abbreviation="GJ" geoCodeAlpha2="GJ" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-HR" geoName="Haryana" abbreviation="HR" geoCodeAlpha2="HR" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-HP" geoName="Himachal Pradesh" abbreviation="HP" geoCodeAlpha2="HP" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-JK" geoName="Jammu and Kashmir" abbreviation="JK" geoCodeAlpha2="JK" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="IN-JH" geoName="Jharkhand" abbreviation="JH" geoCodeAlpha2="JH" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-KA" geoName="Karnataka" abbreviation="KA" geoCodeAlpha2="KA" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-KL" geoName="Kerala" abbreviation="KL" geoCodeAlpha2="KL" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-LA" geoName="Ladakh" abbreviation="LA" geoCodeAlpha2="LA" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="IN-LD" geoName="Lakshadweep" abbreviation="LD" geoCodeAlpha2="LD" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="IN-MP" geoName="Madhya Pradesh" abbreviation="MP" geoCodeAlpha2="MP" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-MH" geoName="Maharashtra" abbreviation="MH" geoCodeAlpha2="MH" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-MN" geoName="Manipur" abbreviation="MN" geoCodeAlpha2="MN" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-ML" geoName="Meghalaya" abbreviation="ML" geoCodeAlpha2="ML" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-MZ" geoName="Mizoram" abbreviation="MZ" geoCodeAlpha2="MZ" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-NL" geoName="Nagaland" abbreviation="NL" geoCodeAlpha2="NL" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-OR" geoName="Odisha" abbreviation="OR" geoCodeAlpha2="OR" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-PY" geoName="Puducherry" abbreviation="PY" geoCodeAlpha2="PY" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="IN-PB" geoName="Punjab" abbreviation="PB" geoCodeAlpha2="PB" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-RJ" geoName="Rajasthan" abbreviation="RJ" geoCodeAlpha2="RJ" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-SK" geoName="Sikkim" abbreviation="SK" geoCodeAlpha2="SK" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-TN" geoName="Tamil Nadu" abbreviation="TN" geoCodeAlpha2="TN" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-TG" geoName="Telangana" abbreviation="TG" geoCodeAlpha2="TG" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-TR" geoName="Tripura" abbreviation="TR" geoCodeAlpha2="TR" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-UP" geoName="Uttar Pradesh" abbreviation="UP" geoCodeAlpha2="UP" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-UT" geoName="Uttarakhand" abbreviation="UT" geoCodeAlpha2="UT" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="IN-WB" geoName="West Bengal" abbreviation="WB" geoCodeAlpha2="WB" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-AN" geoName="Andaman and Nicobar Islands" geoCodeAlpha3="AN" geoCodeAlpha2="AN" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="IN-AP" geoName="Andhra Pradesh" geoCodeAlpha3="AP" geoCodeAlpha2="AP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-AR" geoName="Arunachal Pradesh" geoCodeAlpha3="AR" geoCodeAlpha2="AR" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-AS" geoName="Assam" geoCodeAlpha3="AS" geoCodeAlpha2="AS" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-BR" geoName="Bihar" geoCodeAlpha3="BR" geoCodeAlpha2="BR" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-CH" geoName="Chandigarh" geoCodeAlpha3="CH" geoCodeAlpha2="CH" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="IN-CT" geoName="Chhattisgarh" geoCodeAlpha3="CT" geoCodeAlpha2="CT" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-DN" geoName="Dadra and Nagar Haveli" geoCodeAlpha3="DN" geoCodeAlpha2="DN" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="IN-DD" geoName="Daman and Diu" geoCodeAlpha3="DD" geoCodeAlpha2="DD" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="IN-DL" geoName="Delhi" geoCodeAlpha3="DL" geoCodeAlpha2="DL" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="IN-GA" geoName="Goa" geoCodeAlpha3="GA" geoCodeAlpha2="GA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-GJ" geoName="Gujarat" geoCodeAlpha3="GJ" geoCodeAlpha2="GJ" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-HR" geoName="Haryana" geoCodeAlpha3="HR" geoCodeAlpha2="HR" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-HP" geoName="Himachal Pradesh" geoCodeAlpha3="HP" geoCodeAlpha2="HP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-JK" geoName="Jammu and Kashmir" geoCodeAlpha3="JK" geoCodeAlpha2="JK" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="IN-JH" geoName="Jharkhand" geoCodeAlpha3="JH" geoCodeAlpha2="JH" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-KA" geoName="Karnataka" geoCodeAlpha3="KA" geoCodeAlpha2="KA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-KL" geoName="Kerala" geoCodeAlpha3="KL" geoCodeAlpha2="KL" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-LA" geoName="Ladakh" geoCodeAlpha3="LA" geoCodeAlpha2="LA" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="IN-LD" geoName="Lakshadweep" geoCodeAlpha3="LD" geoCodeAlpha2="LD" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="IN-MP" geoName="Madhya Pradesh" geoCodeAlpha3="MP" geoCodeAlpha2="MP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-MH" geoName="Maharashtra" geoCodeAlpha3="MH" geoCodeAlpha2="MH" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-MN" geoName="Manipur" geoCodeAlpha3="MN" geoCodeAlpha2="MN" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-ML" geoName="Meghalaya" geoCodeAlpha3="ML" geoCodeAlpha2="ML" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-MZ" geoName="Mizoram" geoCodeAlpha3="MZ" geoCodeAlpha2="MZ" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-NL" geoName="Nagaland" geoCodeAlpha3="NL" geoCodeAlpha2="NL" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-OR" geoName="Odisha" geoCodeAlpha3="OR" geoCodeAlpha2="OR" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-PY" geoName="Puducherry" geoCodeAlpha3="PY" geoCodeAlpha2="PY" wellKnownText="Pondicherry" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="IN-PB" geoName="Punjab" geoCodeAlpha3="PB" geoCodeAlpha2="PB" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-RJ" geoName="Rajasthan" geoCodeAlpha3="RJ" geoCodeAlpha2="RJ" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-SK" geoName="Sikkim" geoCodeAlpha3="SK" geoCodeAlpha2="SK" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-TN" geoName="Tamil Nadu" geoCodeAlpha3="TN" geoCodeAlpha2="TN" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-TG" geoName="Telangana" geoCodeAlpha3="TG" geoCodeAlpha2="TG" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-TR" geoName="Tripura" geoCodeAlpha3="TR" geoCodeAlpha2="TR" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-UP" geoName="Uttar Pradesh" geoCodeAlpha3="UP" geoCodeAlpha2="UP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-UT" geoName="Uttarakhand" geoCodeAlpha3="UT" geoCodeAlpha2="UT" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="IN-WB" geoName="West Bengal" geoCodeAlpha3="WB" geoCodeAlpha2="WB" geoTypeEnumId="GEOT_STATE"/>
     <moqui.basic.GeoAssoc geoId="IND" toGeoId="IN-AN" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="IND" toGeoId="IN-AP" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="IND" toGeoId="IN-AR" geoAssocTypeEnumId="GAT_REGIONS"/>

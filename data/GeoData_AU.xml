@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="seed">
-    <moqui.basic.Geo geoId="AU-ACT" geoName="Australian Capital Territory" abbreviation="ACT" geoCodeAlpha2="ACT" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="AU-NSW" geoName="New South Wales" abbreviation="NSW" geoCodeAlpha2="NSW" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="AU-NT" geoName="Northern Territory" abbreviation="NT" geoCodeAlpha2="NT" geoAssocTypeEnumId="GEOT_TERRITORY"/>
-    <moqui.basic.Geo geoId="AU-QLD" geoName="Queensland" abbreviation="QLD" geoCodeAlpha2="QLD" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="AU-SA" geoName="South Australia" abbreviation="SA" geoCodeAlpha2="SA" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="AU-TAS" geoName="Tasmania" abbreviation="TAS" geoCodeAlpha2="TAS" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="AU-VIC" geoName="Victoria" abbreviation="VIC" geoCodeAlpha2="VIC" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="AU-WA" geoName="Western Australia" abbreviation="WA" geoCodeAlpha2="WA" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AU-ACT" geoName="Australian Capital Territory" geoCodeAlpha3="ACT" geoCodeAlpha2="ACT" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="AU-NSW" geoName="New South Wales" geoCodeAlpha3="NSW" geoCodeAlpha2="NSW" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AU-NT" geoName="Northern Territory" geoCodeAlpha3="NT" geoCodeAlpha2="NT" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="AU-QLD" geoName="Queensland" geoCodeAlpha3="QLD" geoCodeAlpha2="QLD" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AU-SA" geoName="South Australia" geoCodeAlpha3="SA" geoCodeAlpha2="SA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AU-TAS" geoName="Tasmania" geoCodeAlpha3="TAS" geoCodeAlpha2="TAS" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AU-VIC" geoName="Victoria" geoCodeAlpha3="VIC" geoCodeAlpha2="VIC" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="AU-WA" geoName="Western Australia" geoCodeAlpha3="WA" geoCodeAlpha2="WA" geoTypeEnumId="GEOT_STATE"/>
     <moqui.basic.GeoAssoc geoId="AUS" toGeoId="AU-ACT" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="AUS" toGeoId="AU-NSW" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="AUS" toGeoId="AU-NT" geoAssocTypeEnumId="GAT_REGIONS"/>

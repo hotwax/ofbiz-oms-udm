@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="seed">
-    <moqui.basic.Geo geoId="MX-AG" geoName="Aguascalientes" abbreviation="AGU" geoCodeAlpha2="AGU" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-BN" geoName="Baja California" abbreviation="BCN" geoCodeAlpha2="BCN" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-BS" geoName="Baja California Sur" abbreviation="BCS" geoCodeAlpha2="BCS" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-CM" geoName="Campeche" abbreviation="CAM" geoCodeAlpha2="CAM" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-CP" geoName="Chiapas" abbreviation="CHP" geoCodeAlpha2="CHP" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-CH" geoName="Chihuahua" abbreviation="CHH" geoCodeAlpha2="CHH" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-CA" geoName="Coahuila" abbreviation="COA" geoCodeAlpha2="COA" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-CL" geoName="Colima" abbreviation="COL" geoCodeAlpha2="COL" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-DF" geoName="Distrito Federal" abbreviation="DIF" geoCodeAlpha2="DIF" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-DU" geoName="Durango" abbreviation="DUR" geoCodeAlpha2="DUR" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-GJ" geoName="Guanajuato" abbreviation="GUA" geoCodeAlpha2="GUA" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-GR" geoName="Guerrero" abbreviation="GRO" geoCodeAlpha2="GRO" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-HI" geoName="Hidalgo" abbreviation="HID" geoCodeAlpha2="HID" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-JA" geoName="Jalisco" abbreviation="JAL" geoCodeAlpha2="JAL" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-MX" geoName="México" abbreviation="MEX" geoCodeAlpha2="MEX" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-MC" geoName="Michoacán" abbreviation="MIC" geoCodeAlpha2="MIC" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-MR" geoName="Morelos" abbreviation="MOR" geoCodeAlpha2="MOR" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-NA" geoName="Nayarit" abbreviation="NAY" geoCodeAlpha2="NAY" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-NL" geoName="Nuevo León" abbreviation="NLE" geoCodeAlpha2="NLE" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-OA" geoName="Oaxaca" abbreviation="OAX" geoCodeAlpha2="OAX" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-PU" geoName="Puebla" abbreviation="PUE" geoCodeAlpha2="PUE" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-QE" geoName="Querétaro" abbreviation="QUE" geoCodeAlpha2="QUE" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-QR" geoName="Quintana Roo" abbreviation="ROO" geoCodeAlpha2="ROO" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-SL" geoName="San Luis Potosí" abbreviation="SLP" geoCodeAlpha2="SLP" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-SI" geoName="Sinaloa" abbreviation="SIN" geoCodeAlpha2="SIN" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-SO" geoName="Sonora" abbreviation="SON" geoCodeAlpha2="SON" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-TB" geoName="Tabasco" abbreviation="TAB" geoCodeAlpha2="TAB" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-TM" geoName="Tamaulipas" abbreviation="TAM" geoCodeAlpha2="TAM" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-TL" geoName="Tlaxcala" abbreviation="TLA" geoCodeAlpha2="TLA" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-VE" geoName="Veracruz" abbreviation="VER" geoCodeAlpha2="VER" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-YU" geoName="Yucatán" abbreviation="YUC" geoCodeAlpha2="YUC" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="MX-ZA" geoName="Zacatecas" abbreviation="ZAC" geoCodeAlpha2="ZAC" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-AG" geoName="Aguascalientes" geoCodeAlpha3="AGU" geoCodeAlpha2="AGU" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-BN" geoName="Baja California" geoCodeAlpha3="BCN" geoCodeAlpha2="BCN" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-BS" geoName="Baja California Sur" geoCodeAlpha3="BCS" geoCodeAlpha2="BCS" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-CM" geoName="Campeche" geoCodeAlpha3="CAM" geoCodeAlpha2="CAM" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-CP" geoName="Chiapas" geoCodeAlpha3="CHP" geoCodeAlpha2="CHP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-CH" geoName="Chihuahua" geoCodeAlpha3="CHH" geoCodeAlpha2="CHH" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-CA" geoName="Coahuila" geoCodeAlpha3="COA" geoCodeAlpha2="COA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-CL" geoName="Colima" geoCodeAlpha3="COL" geoCodeAlpha2="COL" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-DF" geoName="Distrito Federal" geoCodeAlpha3="DIF" geoCodeAlpha2="DIF" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-DU" geoName="Durango" geoCodeAlpha3="DUR" geoCodeAlpha2="DUR" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-GJ" geoName="Guanajuato" geoCodeAlpha3="GUA" geoCodeAlpha2="GUA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-GR" geoName="Guerrero" geoCodeAlpha3="GRO" geoCodeAlpha2="GRO" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-HI" geoName="Hidalgo" geoCodeAlpha3="HID" geoCodeAlpha2="HID" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-JA" geoName="Jalisco" geoCodeAlpha3="JAL" geoCodeAlpha2="JAL" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-MX" geoName="México" geoCodeAlpha3="MEX" geoCodeAlpha2="MEX" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-MC" geoName="Michoacán" geoCodeAlpha3="MIC" geoCodeAlpha2="MIC" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-MR" geoName="Morelos" geoCodeAlpha3="MOR" geoCodeAlpha2="MOR" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-NA" geoName="Nayarit" geoCodeAlpha3="NAY" geoCodeAlpha2="NAY" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-NL" geoName="Nuevo León" geoCodeAlpha3="NLE" geoCodeAlpha2="NLE" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-OA" geoName="Oaxaca" geoCodeAlpha3="OAX" geoCodeAlpha2="OAX" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-PU" geoName="Puebla" geoCodeAlpha3="PUE" geoCodeAlpha2="PUE" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-QE" geoName="Querétaro" geoCodeAlpha3="QUE" geoCodeAlpha2="QUE" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-QR" geoName="Quintana Roo" geoCodeAlpha3="ROO" geoCodeAlpha2="ROO" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-SL" geoName="San Luis Potosí" geoCodeAlpha3="SLP" geoCodeAlpha2="SLP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-SI" geoName="Sinaloa" geoCodeAlpha3="SIN" geoCodeAlpha2="SIN" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-SO" geoName="Sonora" geoCodeAlpha3="SON" geoCodeAlpha2="SON" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-TB" geoName="Tabasco" geoCodeAlpha3="TAB" geoCodeAlpha2="TAB" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-TM" geoName="Tamaulipas" geoCodeAlpha3="TAM" geoCodeAlpha2="TAM" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-TL" geoName="Tlaxcala" geoCodeAlpha3="TLA" geoCodeAlpha2="TLA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-VE" geoName="Veracruz" geoCodeAlpha3="VER" geoCodeAlpha2="VER" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-YU" geoName="Yucatán" geoCodeAlpha3="YUC" geoCodeAlpha2="YUC" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MX-ZA" geoName="Zacatecas" geoCodeAlpha3="ZAC" geoCodeAlpha2="ZAC" geoTypeEnumId="GEOT_STATE"/>
     <moqui.basic.GeoAssoc geoId="MEX" toGeoId="MX-AG" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="MEX" toGeoId="MX-BN" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="MEX" toGeoId="MX-BS" geoAssocTypeEnumId="GAT_REGIONS"/>
@@ -64,7 +64,7 @@
     <moqui.basic.GeoAssoc geoId="MEX" toGeoId="MX-VE" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="MEX" toGeoId="MX-YU" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="MEX" toGeoId="MX-ZA" geoAssocTypeEnumId="GAT_REGIONS"/>
-    <moqui.basic.Geo geoId="MEXCAN" geoName="Mexico/Canada" abbreviation="MEXCAN" geoCodeAlpha2="MEXCAN" geoAssocTypeEnumId="GEOT_GROUP"/>
+    <moqui.basic.Geo geoId="MEXCAN" geoName="Mexico/Canada" geoCodeAlpha3="MEXCAN" geoCodeAlpha2="MEXCAN" geoTypeEnumId="GEOT_GROUP"/>
     <moqui.basic.GeoAssoc geoId="MEX" toGeoId="MEXCAN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
     <moqui.basic.GeoAssoc geoId="CAN" toGeoId="MEXCAN" geoAssocTypeEnumId="GAT_GROUP_MEMBER"/>
 </entity-facade-xml>

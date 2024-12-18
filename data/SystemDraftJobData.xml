@@ -4,7 +4,7 @@
     <moqui.basic.Enumeration enumId="JOB_UL_PRMS_DTE" enumTypeId="PRE_ORD_SYS_JOB" description="Add notes on new orders that have promise dates." enumName="Upload promise dates on new orders"/>
     <moqui.basic.Enumeration enumId="JOB_UL_PRMS_DTE_UPD" enumTypeId="PRE_ORD_SYS_JOB" description="Add notes on orders with items that have new promise dates." enumName="Update promise dates on orders"/>
     <moqui.basic.Enumeration enumId="JOB_REL_PREODR_CAT" enumTypeId="PRE_ORD_SYS_JOB" description="Check if new products have become eligible for pre-order/backorder and add them to the pre-order catalog." enumName="Refresh preorder/backorder catalog"/>
-    <moqui.basic.Enumeration enumId="JOB_PREORDER_CAT_SYC" enumTypeId="PRE_ORD_SYS_JOB" description="Push preorder catalog 'Ship from' and inventory policies for SKUs to eCommerce." enumName="Preorder catalog sync"/>
+    <moqui.basic.Enumeration enumId="JOB_PREORDER_CAT_SYC" enumTypeId="PRE_ORD_SYS_JOB" description="Push preorder catalog &apos;Ship from&apos; and inventory policies for SKUs to eCommerce." enumName="Preorder catalog sync"/>
     <moqui.basic.Enumeration enumId="JOB_ADD_BACKORD_VRT" enumTypeId="PRE_ORD_SYS_JOB" description="Add backorder tags to parent products on eCommerce." enumName="Add backorder tags"/>
     <moqui.basic.Enumeration enumId="JOB_RMV_BACKORD_VRT" enumTypeId="PRE_ORD_SYS_JOB" description="Remove backorder tags from parent products on eCommerce." enumName="Remove backorder tags"/>
     <moqui.basic.Enumeration enumId="JOB_ADD_PREORD_VRT" enumTypeId="PRE_ORD_SYS_JOB" description="Add pre-order tags to parent products on eCommerce." enumName="Add pre-order tags"/>
@@ -43,7 +43,7 @@
     <moqui.basic.Enumeration enumId="JOB_IMP_CSTMR" enumTypeId="ORDER_SYS_JOB" description="Import customers" enumName="Import customers"/>
     <moqui.basic.Enumeration enumId="JOB_UL_CMPLT_ORD" enumTypeId="ORDER_SYS_JOB" description="Update the order status of fulfilled orders to eCommerce." enumName="Upload completed orders"/>
     <moqui.basic.Enumeration enumId="JOB_UL_CNCLD_ORD" enumTypeId="ORDER_SYS_JOB" description="Update the order status of canceled orders to eCommerce." enumName="Upload canceled orders"/>
-    <moqui.basic.Enumeration enumId="JOB_CNCL_ORD_DTE" enumTypeId="ORDER_SYS_JOB" description="Cancel orders that haven't been fulfilled yet and have passed their auto cancel date." enumName="Cancel orders past their auto cancellation date"/>
+    <moqui.basic.Enumeration enumId="JOB_CNCL_ORD_DTE" enumTypeId="ORDER_SYS_JOB" description="Cancel orders that haven&apos;t been fulfilled yet and have passed their auto cancel date." enumName="Cancel orders past their auto cancellation date"/>
     <moqui.basic.Enumeration enumId="JOB_UPD_TAG_ORD" enumTypeId="ORDER_SYS_JOB" description="Bulk update order tags on eCommerce" enumName="Update order tags"/>
     <moqui.basic.Enumeration enumId="JOB_UPD_TAG_ORD" enumTypeId="ORDER_SYS_JOB" description="Bulk update order tags on eCommerce" enumName="Update order tags"/>
     <moqui.basic.Enumeration enumId="IMP_ORD_META_FIELD" enumTypeId="ORDER_SYS_JOB" description="Schedule a job for order meta field download" enumName="Import Order Metafield"/>

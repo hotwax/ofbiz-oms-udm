@@ -142,7 +142,7 @@
     <org.apache.ofbiz.party.party.RoleType roleTypeId="SUPPLIER" parentTypeId="VENDOR_REL" hasTable="N" description="Supplier"/>
     <org.apache.ofbiz.party.party.RoleType roleTypeId="CONTACT" parentTypeId="CONTACT_REL" hasTable="N" description="Contact"/>
     <org.apache.ofbiz.party.party.RoleType roleTypeId="APPLICATION_USER" parentTypeId="CONTACT_REL" hasTable="N" description="User"/>
-    <org.apache.ofbiz.party.party.RoleType roleTypeId="MANAGER_CUSTOMER" hasTable="N" description="Customer's Manager"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="MANAGER_CUSTOMER" hasTable="N" description="Customer&apos;s Manager"/>
     <org.apache.ofbiz.party.party.RoleType roleTypeId="AUTH_ORDER_PARTY" hasTable="N" description="Order Authorization Party"/>
     <org.apache.ofbiz.party.party.RoleType roleTypeId="ONLINE_DISTRIBUTOR" parentTypeId="CUSTOMER_REL" description="Online Distributor"/>
     <org.apache.ofbiz.party.party.RoleType roleTypeId="APPLICATION_USER" hasTable="N" description="Application User"/>
@@ -238,7 +238,7 @@
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_RMA_ADJ" hasTable="N" description="RMA Fee Adjustment"/>
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_DUTY_ADJ" hasTable="N" description="RMA Duty"/>
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_DEPOSIT_ADJ" hasTable="N" description="Return Deposit Adjustment"/>
-    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_SHIPPING_ADJ" hasTable="N" description="Return S&H"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_SHIPPING_ADJ" hasTable="N" description="Return S&amp;H"/>
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="APPEASEMENT" hasTable="N" description="Appeasement"/>
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DUTY" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_DUTY_ADJ"/>
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DEPOSIT_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_DEPOSIT_ADJ"/>
@@ -252,9 +252,9 @@
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="VAT_TAX" hasTable="N" description="VAT Tax"/>
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="DEPOSIT_ADJUSTMENT" hasTable="N" description="Deposit"/>
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="DEPOSIT_REFUND" hasTable="N" description="Deposit Refund"/>
-    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="SHIPPING_CHARGES" hasTable="N" description="S&H"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="SHIPPING_CHARGES" hasTable="N" description="S&amp;H"/>
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="EXT_PROMO_ADJUSTMENT" hasTable="N" description="External promotion adjustment"/>
-    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="SHIPPING_SALES_TAX" hasTable="N" description="S&H Tax "/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="SHIPPING_SALES_TAX" hasTable="N" description="S&amp;H Tax "/>
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="COD_FEE" hasTable="N" description="COD Fee"/>
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="COD_FEE_TAX" hasTable="N" description="COD Fee tax"/>
     <org.apache.ofbiz.party.party.PartyIdentificationType partyIdentificationTypeId="SCAN_ID" description="Scannable ID"/>
@@ -405,8 +405,7 @@
     <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="MKTG_MATERIAL" hasTable="N" description="Marketing Material"/>
     <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="MKTG_MATERIAL_PDF" parentTypeId="MKTG_MATERIAL" hasTable="N" description="Marketing Material Pdf"/>
     <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="MKTG_MATERIAL_URL" parentTypeId="MKTG_MATERIAL" hasTable="N" description="Marketing Material Url"/>
-    <moqui.basic.Geo geoId="DBIC" geoName="Doing Business In Countries" abbreviation="DBIC" geoCodeAlpha2="DBIC" geoAssocTypeEnumId="GEOT_GROUP"/>
-            <!-- TODO: skipped data preparation for entity GeoType -->
+    <moqui.basic.Geo geoId="DBIC" geoName="Doing Business In Countries" geoCodeAlpha3="DBIC" geoCodeAlpha2="DBIC" geoTypeEnumId="GEOT_GROUP"/>
     <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="PROFESSIONAL" hasTable="N" description="Professional"/>
     <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="AMBASSADOR" hasTable="N" description="Ambassador"/>
     <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="INTERNAL_CLASIFICTN" hasTable="N" description="Internal Classification"/>
@@ -461,7 +460,7 @@
     <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="OUTLET_STORE" parentTypeId="PHYSICAL_STORE" hasTable="N" description="Outlet Store"/>
     <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="WAREHOUSE" parentTypeId="DISTRIBUTION_CENTER" hasTable="N" description="Warehouse"/>
     <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="OUTLET_WAREHOUSE" parentTypeId="DISTRIBUTION_CENTER" hasTable="N" description="Outlet Warehouse"/>
-    <moqui.basic.Enumeration enumId="PRDS_DLVRYDATE_CHNGD" enumTypeId="PRDS_EMAIL" enumCode="DLVRYDATE_CHNGD" description="The Order Item's Delivery Date Changed Notification is an email that gets sent to the customer when Order Item's Delivery Date Changed has been cancelled." enumName="Delivery Date Changed"/>
+    <moqui.basic.Enumeration enumId="PRDS_DLVRYDATE_CHNGD" enumTypeId="PRDS_EMAIL" enumCode="DLVRYDATE_CHNGD" description="The Order Item&apos;s Delivery Date Changed Notification is an email that gets sent to the customer when Order Item&apos;s Delivery Date Changed has been cancelled." enumName="Delivery Date Changed"/>
     <moqui.basic.Enumeration enumId="PRDS_SS_SHIPPD_STORE" enumTypeId="PRDS_EMAIL" enumCode="SS_SHIPPED_STORE" description="SendSale shipped/completed notification to selling store" enumName="SendSale Shipped Store"/>
     <moqui.basic.Enumeration enumId="PRDS_SS_SHIPPED_CUST" enumTypeId="PRDS_EMAIL" enumCode="SS_SHIPPED_CUST" description="SendSale shipped/completed notification to customer" enumName="SendSale Shipped Customer"/>
     <moqui.basic.Enumeration enumId="PRDS_SS_CONFRM_CUST" enumTypeId="PRDS_EMAIL" enumCode="SS_CONFRM_CUST" description="SendSale order confirm notification to customer" enumName="SendSale Confirm Customer"/>
@@ -470,7 +469,7 @@
     <moqui.basic.Enumeration enumId="PRDS_SS_INVADD_STORE" enumTypeId="PRDS_EMAIL" enumCode="SS_INVADD_STORE" description="SendSale invalid address notification to Store" enumName="SendSale Invalid Address Store"/>
     <moqui.basic.Enumeration enumId="PRDS_SSNOSRVSHIP_STR" enumTypeId="PRDS_EMAIL" enumCode="SS_NOSERVSHIP_STORE" description="SendSale non serviceable shipping method notification to Store" enumName="SendSale Non Servicealble Shipping Method Store"/>
     <moqui.basic.Enumeration enumId="PRDS_SS_EXPSHIP_NA" enumTypeId="PRDS_EMAIL" enumCode="SS_EXPSHIP_NA" description="Expedited shipping not available" enumName="Expedited shipping not available"/>
-    <moqui.basic.Enumeration enumId="PRDS_RJCTSTORPCK_ORD" enumTypeId="PRDS_EMAIL" enumCode="RJCT_STR_PICKUP_ORD" description="The Order Item's Reject Store Pickup Notification is an email that gets sent to the customer when Order Item's has been rejected from store" enumName="Reject Store Pickup Order"/>
+    <moqui.basic.Enumeration enumId="PRDS_RJCTSTORPCK_ORD" enumTypeId="PRDS_EMAIL" enumCode="RJCT_STR_PICKUP_ORD" description="The Order Item&apos;s Reject Store Pickup Notification is an email that gets sent to the customer when Order Item&apos;s has been rejected from store" enumName="Reject Store Pickup Order"/>
     <co.hotwax.warehouse.ShipmentContentType shipmentContentTypeId="MANIFEST" description="Shipment Manifest"/>
     <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="POS_SALE" description="POS Sale"/>
     <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_LOST" description="Adjustment"/>
@@ -492,7 +491,6 @@
     <org.apache.ofbiz.product.facility.FacilityCalendarType facilityCalendarTypeId="OPERATING_HOURS" description="Operating hours of a store"/>
     <moqui.basic.EnumerationType enumTypeId="SYS_MESAGE_AUTH_TYPE" description="System Message Auth Type"/>
     <moqui.basic.Enumeration enumId="BASIC_AUTH" enumTypeId="SYS_MESAGE_AUTH_TYPE" description="System Message Type For Basic Auth" enumName="Basic Auth"/>
-            <!-- TODO: skipped data preparation for entity GeoType -->
     <org.apache.ofbiz.order.order.OrderItemAssocType orderItemAssocTypeId="KIT_COMPONENT" hasTable="N" description="Kit Component"/>
     <org.apache.ofbiz.order.order.OrderItemAssocType orderItemAssocTypeId="RE_SHIPPED" hasTable="N" description="Re-shipped"/>
     <moqui.basic.EnumerationType enumTypeId="INTEGRATION" description="Integrations"/>

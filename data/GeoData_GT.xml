@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="seed">
-    <moqui.basic.Geo geoId="GT-16" geoName="Alta Verapaz" abbreviation="AV" geoCodeAlpha2="GT-16" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-15" geoName="Baja Verapaz" abbreviation="BV" geoCodeAlpha2="GT-15" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-04" geoName="Chimaltenango" abbreviation="SJ" geoCodeAlpha2="GT-04" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-20" geoName="Chiquimula" abbreviation="CQ" geoCodeAlpha2="GT-20" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-02" geoName="El Progreso" abbreviation="PR" geoCodeAlpha2="GT-02" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-05" geoName="Escuintla" abbreviation="ES" geoCodeAlpha2="GT-05" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-01" geoName="Guatemala" abbreviation="GU" geoCodeAlpha2="GT-01" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-13" geoName="Huehuetenango" abbreviation="HU" geoCodeAlpha2="GT-13" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-18" geoName="Izabal" abbreviation="IZ" geoCodeAlpha2="GT-18" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-21" geoName="Jalapa" abbreviation="JA" geoCodeAlpha2="GT-21" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-22" geoName="Jutiapa" abbreviation="JU" geoCodeAlpha2="GT-22" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-17" geoName="Petén" abbreviation="PE" geoCodeAlpha2="GT-17" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-09" geoName="Quetzaltenango" abbreviation="QZ" geoCodeAlpha2="GT-09" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-14" geoName="Quiché" abbreviation="QC" geoCodeAlpha2="GT-14" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-11" geoName="Retalhuleu" abbreviation="RE" geoCodeAlpha2="GT-11" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-03" geoName="Sacatepéquez" abbreviation="SA" geoCodeAlpha2="GT-03" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-12" geoName="San Marcos" abbreviation="SM" geoCodeAlpha2="GT-12" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-06" geoName="Santa Rosa" abbreviation="SR" geoCodeAlpha2="GT-06" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-07" geoName="Sololá" abbreviation="SO" geoCodeAlpha2="GT-07" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-10" geoName="Suchitepéquez" abbreviation="SU" geoCodeAlpha2="GT-10" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-08" geoName="Totonicapán" abbreviation="TO" geoCodeAlpha2="GT-08" geoAssocTypeEnumId="GEOT_STATE"/>
-    <moqui.basic.Geo geoId="GT-19" geoName="Zacapa" abbreviation="ZA" geoCodeAlpha2="GT-19" geoAssocTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-16" geoName="Alta Verapaz" geoCodeAlpha3="AV" geoCodeAlpha2="GT-16" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-15" geoName="Baja Verapaz" geoCodeAlpha3="BV" geoCodeAlpha2="GT-15" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-04" geoName="Chimaltenango" geoCodeAlpha3="SJ" geoCodeAlpha2="GT-04" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-20" geoName="Chiquimula" geoCodeAlpha3="CQ" geoCodeAlpha2="GT-20" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-02" geoName="El Progreso" geoCodeAlpha3="PR" geoCodeAlpha2="GT-02" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-05" geoName="Escuintla" geoCodeAlpha3="ES" geoCodeAlpha2="GT-05" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-01" geoName="Guatemala" geoCodeAlpha3="GU" geoCodeAlpha2="GT-01" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-13" geoName="Huehuetenango" geoCodeAlpha3="HU" geoCodeAlpha2="GT-13" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-18" geoName="Izabal" geoCodeAlpha3="IZ" geoCodeAlpha2="GT-18" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-21" geoName="Jalapa" geoCodeAlpha3="JA" geoCodeAlpha2="GT-21" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-22" geoName="Jutiapa" geoCodeAlpha3="JU" geoCodeAlpha2="GT-22" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-17" geoName="Petén" geoCodeAlpha3="PE" geoCodeAlpha2="GT-17" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-09" geoName="Quetzaltenango" geoCodeAlpha3="QZ" geoCodeAlpha2="GT-09" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-14" geoName="Quiché" geoCodeAlpha3="QC" geoCodeAlpha2="GT-14" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-11" geoName="Retalhuleu" geoCodeAlpha3="RE" geoCodeAlpha2="GT-11" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-03" geoName="Sacatepéquez" geoCodeAlpha3="SA" geoCodeAlpha2="GT-03" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-12" geoName="San Marcos" geoCodeAlpha3="SM" geoCodeAlpha2="GT-12" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-06" geoName="Santa Rosa" geoCodeAlpha3="SR" geoCodeAlpha2="GT-06" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-07" geoName="Sololá" geoCodeAlpha3="SO" geoCodeAlpha2="GT-07" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-10" geoName="Suchitepéquez" geoCodeAlpha3="SU" geoCodeAlpha2="GT-10" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-08" geoName="Totonicapán" geoCodeAlpha3="TO" geoCodeAlpha2="GT-08" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="GT-19" geoName="Zacapa" geoCodeAlpha3="ZA" geoCodeAlpha2="GT-19" geoTypeEnumId="GEOT_STATE"/>
     <moqui.basic.GeoAssoc geoId="GTM" toGeoId="GT-16" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="GTM" toGeoId="GT-15" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="GTM" toGeoId="GT-04" geoAssocTypeEnumId="GAT_REGIONS"/>

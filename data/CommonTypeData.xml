@@ -31,7 +31,6 @@
     <moqui.basic.StatusItem statusId="NOT_SYNCHRONIZED" statusTypeId="SYNCHRONIZE_STATUS" statusCode="NOT_SYNCHRONIZED" description="Not-Synchronized"/>
     <moqui.basic.StatusItem statusId="SYNCHRONIZED" statusTypeId="SYNCHRONIZE_STATUS" statusCode="SYNCHRONIZED" description="Synchronized"/>
     <org.apache.ofbiz.common.user.UserPrefGroupType userPrefGroupTypeId="GLOBAL_PREFERENCES" description="Global preferences"/>
-    <moqui.security.UserPreference/>
     <moqui.basic.EnumerationType enumTypeId="VT_RES_TYPE" description="Visual Theme Resource Type (stylesheet, javascript file, etc)"/>
     <moqui.basic.Enumeration enumId="VT_NAME" enumTypeId="VT_RES_TYPE" description="Visual Theme name"/>
     <moqui.basic.Enumeration enumId="VT_STYLESHEET" enumTypeId="VT_RES_TYPE" description="Style Sheet URL"/>
@@ -39,7 +38,7 @@
     <moqui.basic.Enumeration enumId="VT_DOCBOOKSTYLESHEET" enumTypeId="VT_RES_TYPE" description="Docbook Style Sheet URL"/>
     <moqui.basic.Enumeration enumId="VT_RTL_STYLESHEET" enumTypeId="VT_RES_TYPE" description="Right-to-Left (RTL) Style Sheet URL"/>
     <moqui.basic.Enumeration enumId="VT_SHORTCUT_ICON" enumTypeId="VT_RES_TYPE" description="Shortcut Icon URL"/>
-    <moqui.basic.Enumeration enumId="VT_EXTRA_HEAD" enumTypeId="VT_RES_TYPE" description="Additional <tt><head></tt> Element Markup"/>
+    <moqui.basic.Enumeration enumId="VT_EXTRA_HEAD" enumTypeId="VT_RES_TYPE" description="Additional &lt;tt&gt;&lt;head&gt;&lt;/tt&gt; Element Markup"/>
     <moqui.basic.Enumeration enumId="VT_HDR_IMAGE_URL" enumTypeId="VT_RES_TYPE" description="Masthead/Branding Logo Image URL"/>
     <moqui.basic.Enumeration enumId="VT_HDR_TMPLT_LOC" enumTypeId="VT_RES_TYPE" description="Header Template Location"/>
     <moqui.basic.Enumeration enumId="VT_HDR_JAVASCRIPT" enumTypeId="VT_RES_TYPE" description="Header JavaScript File URL"/>

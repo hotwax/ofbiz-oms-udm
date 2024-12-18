@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="seed">
-    <moqui.basic.Geo geoId="TH-10" geoName="Bangkok" abbreviation="BKK" geoCodeAlpha2="10" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-37" geoName="Amnat Charoen" abbreviation="ACR" geoCodeAlpha2="37" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-15" geoName="Ang Thong" abbreviation="ATG" geoCodeAlpha2="15" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-38" geoName="Bueng Kan" abbreviation="BK" geoCodeAlpha2="38" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-31" geoName="Buriram" abbreviation="BRM" geoCodeAlpha2="31" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-24" geoName="Chachoengsao" abbreviation="CCO" geoCodeAlpha2="24" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-18" geoName="Chainat" abbreviation="CNT" geoCodeAlpha2="18" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-36" geoName="Chaiyaphum" abbreviation="CPM" geoCodeAlpha2="36" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-22" geoName="Chanthaburi" abbreviation="CTI" geoCodeAlpha2="22" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-50" geoName="Chiang Mai" abbreviation="CMI" geoCodeAlpha2="50" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-57" geoName="Chiang Rai" abbreviation="CRI" geoCodeAlpha2="57" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-20" geoName="Chonburi" abbreviation="CBI" geoCodeAlpha2="20" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-86" geoName="Chumphon" abbreviation="CPN" geoCodeAlpha2="86" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-46" geoName="Kalasin" abbreviation="KSN" geoCodeAlpha2="46" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-62" geoName="Kamphaeng Phet" abbreviation="KPT" geoCodeAlpha2="62" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-71" geoName="Kanchanaburi" abbreviation="KRI" geoCodeAlpha2="71" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-40" geoName="Khon Kaen" abbreviation="KKN" geoCodeAlpha2="40" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-81" geoName="Krabi" abbreviation="KBI" geoCodeAlpha2="81" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-52" geoName="Lampang" abbreviation="LPG" geoCodeAlpha2="52" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-51" geoName="Lamphun" abbreviation="LPN" geoCodeAlpha2="51" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-42" geoName="Loei" abbreviation="LEI" geoCodeAlpha2="42" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-16" geoName="Lopburi" abbreviation="LRI" geoCodeAlpha2="16" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-58" geoName="Mae Hong Son" abbreviation="MSN" geoCodeAlpha2="58" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-44" geoName="Maha Sarakham" abbreviation="MKM" geoCodeAlpha2="44" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-49" geoName="Mukdahan" abbreviation="MDH" geoCodeAlpha2="49" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-26" geoName="Nakhon Nayok" abbreviation="NYK" geoCodeAlpha2="26" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-73" geoName="Nakhon Pathom" abbreviation="NPT" geoCodeAlpha2="73" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-48" geoName="Nakhon Phanom" abbreviation="NPM" geoCodeAlpha2="48" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-30" geoName="Nakhon Ratchasima" abbreviation="NMA" geoCodeAlpha2="30" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-60" geoName="Nakhon Sawan" abbreviation="NSN" geoCodeAlpha2="60" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-80" geoName="Nakhon Si Thammarat" abbreviation="NRT" geoCodeAlpha2="80" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-55" geoName="Nan" abbreviation="NAN" geoCodeAlpha2="55" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-96" geoName="Narathiwat" abbreviation="NWT" geoCodeAlpha2="96" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-39" geoName="Nong Bua Lamphu" abbreviation="NBP" geoCodeAlpha2="39" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-43" geoName="Nong Khai" abbreviation="NKI" geoCodeAlpha2="43" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-12" geoName="Nonthaburi" abbreviation="NBI" geoCodeAlpha2="12" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-13" geoName="Pathum Thani" abbreviation="PTE" geoCodeAlpha2="13" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-94" geoName="Pattani" abbreviation="PTN" geoCodeAlpha2="94" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-82" geoName="Phang Nga" abbreviation="PNA" geoCodeAlpha2="82" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-93" geoName="Phatthalung" abbreviation="PLG" geoCodeAlpha2="93" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-56" geoName="Phayao" abbreviation="PYO" geoCodeAlpha2="56" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-67" geoName="Phetchabun" abbreviation="PNB" geoCodeAlpha2="67" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-76" geoName="Phetchaburi" abbreviation="PBI" geoCodeAlpha2="76" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-66" geoName="Phichit" abbreviation="PCT" geoCodeAlpha2="66" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-65" geoName="Phitsanulok" abbreviation="PLK" geoCodeAlpha2="65" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-14" geoName="Phra Nakhon Si Ayutthaya" abbreviation="AYA" geoCodeAlpha2="14" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-54" geoName="Phrae" abbreviation="PRE" geoCodeAlpha2="54" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-83" geoName="Phuket" abbreviation="PKT" geoCodeAlpha2="83" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-25" geoName="Prachinburi" abbreviation="PRI" geoCodeAlpha2="25" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-77" geoName="Prachuap Khiri Khan" abbreviation="PKN" geoCodeAlpha2="77" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-85" geoName="Ranong" abbreviation="RNG" geoCodeAlpha2="85" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-70" geoName="Ratchaburi" abbreviation="RBR" geoCodeAlpha2="70" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-21" geoName="Rayong" abbreviation="RYG" geoCodeAlpha2="21" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-45" geoName="Roi Et" abbreviation="RET" geoCodeAlpha2="45" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-27" geoName="Sa Kaeo" abbreviation="SKW" geoCodeAlpha2="27" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-47" geoName="Sakon Nakhon" abbreviation="SNK" geoCodeAlpha2="47" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-11" geoName="Samut Prakan" abbreviation="SPK" geoCodeAlpha2="11" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-74" geoName="Samut Sakhon" abbreviation="SKN" geoCodeAlpha2="74" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-75" geoName="Samut Songkhram" abbreviation="SKM" geoCodeAlpha2="75" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-19" geoName="Saraburi" abbreviation="SRI" geoCodeAlpha2="19" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-91" geoName="Satun" abbreviation="STN" geoCodeAlpha2="91" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-17" geoName="Sing Buri" abbreviation="SBR" geoCodeAlpha2="17" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-33" geoName="Sisaket" abbreviation="SSK" geoCodeAlpha2="33" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-90" geoName="Songkhla" abbreviation="SKA" geoCodeAlpha2="90" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-64" geoName="Sukhothai" abbreviation="STI" geoCodeAlpha2="64" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-72" geoName="Suphan Buri" abbreviation="SPB" geoCodeAlpha2="72" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-84" geoName="Surat Thani" abbreviation="SNI" geoCodeAlpha2="84" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-32" geoName="Surin" abbreviation="SRN" geoCodeAlpha2="32" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-63" geoName="Tak" abbreviation="TAK" geoCodeAlpha2="63" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-92" geoName="Trang" abbreviation="TRG" geoCodeAlpha2="92" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-23" geoName="Trat" abbreviation="TRT" geoCodeAlpha2="23" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-34" geoName="Ubon Ratchathani" abbreviation="UBN" geoCodeAlpha2="34" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-41" geoName="Udon Thani" abbreviation="UDN" geoCodeAlpha2="41" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-61" geoName="Uthai Thani" abbreviation="UTI" geoCodeAlpha2="61" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-53" geoName="Uttaradit" abbreviation="UTD" geoCodeAlpha2="53" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-95" geoName="Yala" abbreviation="YLA" geoCodeAlpha2="95" geoAssocTypeEnumId="GEOT_PROVINCE"/>
-    <moqui.basic.Geo geoId="TH-35" geoName="Yasothon" abbreviation="YST" geoCodeAlpha2="35" geoAssocTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-10" geoName="Bangkok" geoCodeAlpha3="BKK" geoCodeAlpha2="10" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-37" geoName="Amnat Charoen" geoCodeAlpha3="ACR" geoCodeAlpha2="37" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-15" geoName="Ang Thong" geoCodeAlpha3="ATG" geoCodeAlpha2="15" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-38" geoName="Bueng Kan" geoCodeAlpha3="BK" geoCodeAlpha2="38" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-31" geoName="Buriram" geoCodeAlpha3="BRM" geoCodeAlpha2="31" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-24" geoName="Chachoengsao" geoCodeAlpha3="CCO" geoCodeAlpha2="24" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-18" geoName="Chainat" geoCodeAlpha3="CNT" geoCodeAlpha2="18" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-36" geoName="Chaiyaphum" geoCodeAlpha3="CPM" geoCodeAlpha2="36" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-22" geoName="Chanthaburi" geoCodeAlpha3="CTI" geoCodeAlpha2="22" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-50" geoName="Chiang Mai" geoCodeAlpha3="CMI" geoCodeAlpha2="50" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-57" geoName="Chiang Rai" geoCodeAlpha3="CRI" geoCodeAlpha2="57" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-20" geoName="Chonburi" geoCodeAlpha3="CBI" geoCodeAlpha2="20" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-86" geoName="Chumphon" geoCodeAlpha3="CPN" geoCodeAlpha2="86" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-46" geoName="Kalasin" geoCodeAlpha3="KSN" geoCodeAlpha2="46" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-62" geoName="Kamphaeng Phet" geoCodeAlpha3="KPT" geoCodeAlpha2="62" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-71" geoName="Kanchanaburi" geoCodeAlpha3="KRI" geoCodeAlpha2="71" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-40" geoName="Khon Kaen" geoCodeAlpha3="KKN" geoCodeAlpha2="40" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-81" geoName="Krabi" geoCodeAlpha3="KBI" geoCodeAlpha2="81" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-52" geoName="Lampang" geoCodeAlpha3="LPG" geoCodeAlpha2="52" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-51" geoName="Lamphun" geoCodeAlpha3="LPN" geoCodeAlpha2="51" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-42" geoName="Loei" geoCodeAlpha3="LEI" geoCodeAlpha2="42" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-16" geoName="Lopburi" geoCodeAlpha3="LRI" geoCodeAlpha2="16" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-58" geoName="Mae Hong Son" geoCodeAlpha3="MSN" geoCodeAlpha2="58" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-44" geoName="Maha Sarakham" geoCodeAlpha3="MKM" geoCodeAlpha2="44" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-49" geoName="Mukdahan" geoCodeAlpha3="MDH" geoCodeAlpha2="49" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-26" geoName="Nakhon Nayok" geoCodeAlpha3="NYK" geoCodeAlpha2="26" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-73" geoName="Nakhon Pathom" geoCodeAlpha3="NPT" geoCodeAlpha2="73" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-48" geoName="Nakhon Phanom" geoCodeAlpha3="NPM" geoCodeAlpha2="48" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-30" geoName="Nakhon Ratchasima" geoCodeAlpha3="NMA" geoCodeAlpha2="30" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-60" geoName="Nakhon Sawan" geoCodeAlpha3="NSN" geoCodeAlpha2="60" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-80" geoName="Nakhon Si Thammarat" geoCodeAlpha3="NRT" geoCodeAlpha2="80" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-55" geoName="Nan" geoCodeAlpha3="NAN" geoCodeAlpha2="55" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-96" geoName="Narathiwat" geoCodeAlpha3="NWT" geoCodeAlpha2="96" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-39" geoName="Nong Bua Lamphu" geoCodeAlpha3="NBP" geoCodeAlpha2="39" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-43" geoName="Nong Khai" geoCodeAlpha3="NKI" geoCodeAlpha2="43" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-12" geoName="Nonthaburi" geoCodeAlpha3="NBI" geoCodeAlpha2="12" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-13" geoName="Pathum Thani" geoCodeAlpha3="PTE" geoCodeAlpha2="13" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-94" geoName="Pattani" geoCodeAlpha3="PTN" geoCodeAlpha2="94" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-82" geoName="Phang Nga" geoCodeAlpha3="PNA" geoCodeAlpha2="82" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-93" geoName="Phatthalung" geoCodeAlpha3="PLG" geoCodeAlpha2="93" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-56" geoName="Phayao" geoCodeAlpha3="PYO" geoCodeAlpha2="56" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-67" geoName="Phetchabun" geoCodeAlpha3="PNB" geoCodeAlpha2="67" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-76" geoName="Phetchaburi" geoCodeAlpha3="PBI" geoCodeAlpha2="76" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-66" geoName="Phichit" geoCodeAlpha3="PCT" geoCodeAlpha2="66" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-65" geoName="Phitsanulok" geoCodeAlpha3="PLK" geoCodeAlpha2="65" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-14" geoName="Phra Nakhon Si Ayutthaya" geoCodeAlpha3="AYA" geoCodeAlpha2="14" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-54" geoName="Phrae" geoCodeAlpha3="PRE" geoCodeAlpha2="54" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-83" geoName="Phuket" geoCodeAlpha3="PKT" geoCodeAlpha2="83" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-25" geoName="Prachinburi" geoCodeAlpha3="PRI" geoCodeAlpha2="25" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-77" geoName="Prachuap Khiri Khan" geoCodeAlpha3="PKN" geoCodeAlpha2="77" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-85" geoName="Ranong" geoCodeAlpha3="RNG" geoCodeAlpha2="85" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-70" geoName="Ratchaburi" geoCodeAlpha3="RBR" geoCodeAlpha2="70" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-21" geoName="Rayong" geoCodeAlpha3="RYG" geoCodeAlpha2="21" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-45" geoName="Roi Et" geoCodeAlpha3="RET" geoCodeAlpha2="45" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-27" geoName="Sa Kaeo" geoCodeAlpha3="SKW" geoCodeAlpha2="27" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-47" geoName="Sakon Nakhon" geoCodeAlpha3="SNK" geoCodeAlpha2="47" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-11" geoName="Samut Prakan" geoCodeAlpha3="SPK" geoCodeAlpha2="11" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-74" geoName="Samut Sakhon" geoCodeAlpha3="SKN" geoCodeAlpha2="74" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-75" geoName="Samut Songkhram" geoCodeAlpha3="SKM" geoCodeAlpha2="75" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-19" geoName="Saraburi" geoCodeAlpha3="SRI" geoCodeAlpha2="19" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-91" geoName="Satun" geoCodeAlpha3="STN" geoCodeAlpha2="91" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-17" geoName="Sing Buri" geoCodeAlpha3="SBR" geoCodeAlpha2="17" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-33" geoName="Sisaket" geoCodeAlpha3="SSK" geoCodeAlpha2="33" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-90" geoName="Songkhla" geoCodeAlpha3="SKA" geoCodeAlpha2="90" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-64" geoName="Sukhothai" geoCodeAlpha3="STI" geoCodeAlpha2="64" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-72" geoName="Suphan Buri" geoCodeAlpha3="SPB" geoCodeAlpha2="72" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-84" geoName="Surat Thani" geoCodeAlpha3="SNI" geoCodeAlpha2="84" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-32" geoName="Surin" geoCodeAlpha3="SRN" geoCodeAlpha2="32" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-63" geoName="Tak" geoCodeAlpha3="TAK" geoCodeAlpha2="63" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-92" geoName="Trang" geoCodeAlpha3="TRG" geoCodeAlpha2="92" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-23" geoName="Trat" geoCodeAlpha3="TRT" geoCodeAlpha2="23" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-34" geoName="Ubon Ratchathani" geoCodeAlpha3="UBN" geoCodeAlpha2="34" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-41" geoName="Udon Thani" geoCodeAlpha3="UDN" geoCodeAlpha2="41" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-61" geoName="Uthai Thani" geoCodeAlpha3="UTI" geoCodeAlpha2="61" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-53" geoName="Uttaradit" geoCodeAlpha3="UTD" geoCodeAlpha2="53" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-95" geoName="Yala" geoCodeAlpha3="YLA" geoCodeAlpha2="95" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="TH-35" geoName="Yasothon" geoCodeAlpha3="YST" geoCodeAlpha2="35" geoTypeEnumId="GEOT_PROVINCE"/>
     <moqui.basic.GeoAssoc geoId="THA" toGeoId="TH-10" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="THA" toGeoId="TH-37" geoAssocTypeEnumId="GAT_REGIONS"/>
     <moqui.basic.GeoAssoc geoId="THA" toGeoId="TH-15" geoAssocTypeEnumId="GAT_REGIONS"/>
