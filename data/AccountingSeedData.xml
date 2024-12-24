@@ -26,17 +26,17 @@
     <moqui.basic.StatusItem statusId="PMNT_CONFIRMED" statusTypeId="PMNT_STATUS" statusCode="CONFIRMED" description="Confirmed"/>
     <moqui.basic.StatusItem statusId="PMNT_CANCELLED" statusTypeId="PMNT_STATUS" statusCode="CANCELLED" description="Cancelled"/>
     <moqui.basic.StatusItem statusId="PMNT_VOID" statusTypeId="PMNT_STATUS" statusCode="VOID" description="Voided"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_NOT_PAID" transitionName="Payment Send"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_NOT_PAID" transitionName="Payment Received"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_NOT_PAID" transitionName="Payment Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_SENT" transitionName="Payment Confirmed"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_RECEIVED" transitionName="Payment Confirmed"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_SENT" transitionName="Payment Voided"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_RECEIVED" transitionName="Payment Voided"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_NOT_PAID" transitionName="Payment Voided"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_SENT" transitionName="Payment Not Paid"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_RECEIVED" transitionName="Payment Not Paid"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_CONFIRMED" transitionName="Payment Confirmed to Sent"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_CONFIRMED" transitionName="Payment Confirmed to Received"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_SENT" transitionName="Payment Send"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_RECEIVED" transitionName="Payment Received"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_CANCELLED" transitionName="Payment Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_CONFIRMED" transitionName="Payment Confirmed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_CONFIRMED" transitionName="Payment Confirmed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_VOID" transitionName="Payment Voided"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_VOID" transitionName="Payment Voided"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_VOID" transitionName="Payment Voided"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_NOT_PAID" transitionName="Payment Not Paid"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_NOT_PAID" transitionName="Payment Not Paid"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_SENT" transitionName="Payment Confirmed to Sent"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_RECEIVED" transitionName="Payment Confirmed to Received"/>
 </entity-facade-xml>
 

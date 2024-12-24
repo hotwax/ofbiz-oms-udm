@@ -68,8 +68,8 @@
     <moqui.basic.StatusItem statusId="KW_APPROVED" statusTypeId="KEYWORD_STATUS" statusCode="APPROVED" description="Approved"/>
     <moqui.basic.StatusItem statusId="KW_PENDING" statusTypeId="KEYWORD_STATUS" statusCode="PENDING" description="Pending"/>
     <moqui.basic.StatusItem statusId="KW_DISAPPROVED" statusTypeId="KEYWORD_STATUS" statusCode="DISAPPROVED" description="Disapproved"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="KW_PENDING" toStatusId="KW_PENDING" transitionName="Review Approved"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="KW_PENDING" toStatusId="KW_PENDING" transitionName="Review Disapproved"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="KW_PENDING" toStatusId="KW_APPROVED" transitionName="Review Approved"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="KW_PENDING" toStatusId="KW_DISAPPROVED" transitionName="Review Disapproved"/>
     <moqui.basic.EnumerationType enumTypeId="JM_OFBIZ_INSTANCE" description="OFBiz Instance"/>
     <moqui.basic.Enumeration enumId="JM_OFBIZ_INS_0" enumTypeId="JM_OFBIZ_INSTANCE" enumCode="_NA_" description="ALL instance"/>
     <moqui.basic.Enumeration enumId="JM_OFBIZ_INS_1" enumTypeId="JM_OFBIZ_INSTANCE" enumCode="ofbiz1" description="OFBiz instance 1"/>

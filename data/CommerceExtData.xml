@@ -22,7 +22,7 @@
     <moqui.basic.StatusItem statusId="SHIPMENT_IN_TRANSIT" statusTypeId="SHIPMENT_STATUS" statusCode="IN_TRANSIT" description="In-Transit"/>
     <moqui.basic.StatusItem statusId="SHIPMENT_EXCEPTION" statusTypeId="SHIPMENT_STATUS" statusCode="EXCEPTION" description="Exception"/>
     <moqui.basic.StatusItem statusId="PICKLIST_INPUT" statusTypeId="PICKLIST_STATUS" statusCode="INPUT" description="Created" statusAge="0"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_PRINTED" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_COMPLETED" transitionName="Complete"/>
     <co.hotwax.datamanager.DataManagerConfig configId="INV_COUNT_IMPRT_ITEM" importServiceName="createInventoryCountImportItem" scriptTitle="InventoryCountImportItem"/>
     <co.hotwax.datamanager.DataManagerConfig configId="MDM_PARTY_PROFILE" importServiceName="partyProfileDataSetup" exportServiceName="exportPartyProfileDataSetup" exportServiceScreenName="WebSiteList" exportServiceScreenLocation="component://hwmapps/widget/merchandising/MerchandisingScreens.xml" description="Party Profile" scriptTitle="Party profile data" fileNamePattern="Party_${sequence}"/>
     <co.hotwax.datamanager.DataManagerConfig configId="MDM_PRTY_SHP_TO_ADD" importServiceName="createNewPartyShipToAddress" exportServiceName="exportPartyShipToAddress" description="Party Ship To Address" scriptTitle="Party shipping address data" fileNamePattern="Party_${sequence}"/>
@@ -178,9 +178,9 @@
     <moqui.basic.StatusItem statusId="SHIPMENT_APPROVED" statusTypeId="SHIPMENT_STATUS" statusCode="APPROVED" description="Approved" statusAge="50"/>
     <moqui.basic.StatusItem statusId="PURCH_SHIP_CANCELLED" statusTypeId="PURCH_SHIP_STATUS" statusCode="CANCELLED" description="Cancelled"/>
     <moqui.basic.StatusItem statusId="ITEM_REQ_CANCELATN" statusTypeId="ORDER_ITEM_STATUS" statusCode="REQUESTCANCELLATION" description="Cancellation Requested"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_APPROVED" transitionName="Cancellation Requested"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_REQ_CANCELATN" toStatusId="ITEM_REQ_CANCELATN" transitionName="Approved"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_REQ_CANCELATN" toStatusId="ITEM_REQ_CANCELATN" transitionName="Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_REQ_CANCELATN" transitionName="Cancellation Requested"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_REQ_CANCELATN" toStatusId="ITEM_APPROVED" transitionName="Approved"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_REQ_CANCELATN" toStatusId="ITEM_CANCELLED" transitionName="Cancelled"/>
     <moqui.basic.EnumerationType enumTypeId="ORDER_CANCEL_REASON" description="Order Cancellation Reason"/>
     <moqui.basic.Enumeration enumId="CHANGED_MIND" enumTypeId="ORDER_CANCEL_REASON" enumCode="CHANGED_MIND" description="Changed my mind"/>
     <moqui.basic.Enumeration enumId="NOT_REQUIRED" enumTypeId="ORDER_CANCEL_REASON" enumCode="NOT_REQUIRED" description="Product not required anymore"/>
@@ -221,11 +221,11 @@
     <co.hotwax.customerservice.return.ReturnTypeReasonGrpMember returnTypeReasonGroupId="9030" returnTypeReasonId="9020" fromDate="2020-01-17 12:25:51" sequenceId="55"/>
     <co.hotwax.customerservice.return.ReturnTypeReasonGrpMember returnTypeReasonGroupId="9030" returnTypeReasonId="9060" fromDate="2020-01-17 12:25:51" sequenceId="65"/>
     <moqui.basic.StatusItem statusId="ITEM_HOLD" statusTypeId="ORDER_ITEM_STATUS" statusCode="HOLD" description="Hold"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_CREATED" transitionName="Hold"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_APPROVED" transitionName="Hold"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_HOLD" toStatusId="ITEM_HOLD" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_HOLD" toStatusId="ITEM_HOLD" transitionName="Approve"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_CREATED" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_HOLD" transitionName="Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_HOLD" transitionName="Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_HOLD" toStatusId="ITEM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_HOLD" toStatusId="ITEM_APPROVED" transitionName="Approve"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_COMPLETED" transitionName="Complete"/>
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="security" systemPropertyId="security.jwt.token.expireTime" systemPropertyValue="86400" description="jwt token expireTime in seconds"/>
     <org.apache.ofbiz.party.party.Party partyId="NO_BUY_SUPPLIER" partyTypeId="PARTY_GROUP" statusId="PARTY_ENABLED"/>
     <org.apache.ofbiz.party.party.PartyGroup partyId="NO_BUY_SUPPLIER" groupName="No Buy Supplier"/>

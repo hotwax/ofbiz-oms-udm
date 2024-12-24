@@ -137,8 +137,8 @@
     <moqui.basic.StatusType statusTypeId="PARTY_STATUS" description="Party"/>
     <moqui.basic.StatusItem statusId="PARTY_ENABLED" statusTypeId="PARTY_STATUS" statusCode="ENABLED" description="Enabled"/>
     <moqui.basic.StatusItem statusId="PARTY_DISABLED" statusTypeId="PARTY_STATUS" statusCode="DISABLED" description="Disabled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTY_ENABLED" toStatusId="PARTY_ENABLED" transitionName="Disable"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTY_DISABLED" toStatusId="PARTY_DISABLED" transitionName="Re-Enable"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTY_ENABLED" toStatusId="PARTY_DISABLED" transitionName="Disable"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTY_DISABLED" toStatusId="PARTY_ENABLED" transitionName="Re-Enable"/>
     <moqui.basic.StatusType statusTypeId="COM_EVENT_STATUS" description="Communication Event"/>
     <moqui.basic.StatusItem statusId="COM_PENDING" statusTypeId="COM_EVENT_STATUS" statusCode="PENDING" description="Pending"/>
     <moqui.basic.StatusItem statusId="COM_ENTERED" statusTypeId="COM_EVENT_STATUS" statusCode="ENTERED" description="Entered"/>
@@ -149,37 +149,37 @@
     <moqui.basic.StatusItem statusId="COM_REFERRED" statusTypeId="COM_EVENT_STATUS" statusCode="REFERRED" description="Referred"/>
     <moqui.basic.StatusItem statusId="COM_BOUNCED" statusTypeId="COM_EVENT_STATUS" statusCode="BOUNCED" description="Bounced"/>
     <moqui.basic.StatusItem statusId="COM_CANCELLED" statusTypeId="COM_EVENT_STATUS" statusCode="CANCELLED" description="Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_ENTERED" transitionName="Set Pending, only visible to originator"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_ENTERED" transitionName="Set In Progress, waiting to be send"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_ENTERED" transitionName="Complete"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_PENDING" transitionName="Entered,visible to all participants"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_PENDING" transitionName="Set In Progress, waiting to be send"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_IN_PROGRESS" toStatusId="COM_IN_PROGRESS" transitionName="Complete"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_IN_PROGRESS" toStatusId="COM_IN_PROGRESS" transitionName="Bounced"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_COMPLETE" transitionName="Resolve"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_COMPLETE" transitionName="Refer"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_COMPLETE" transitionName="Bounced"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_UNKNOWN_PARTY" toStatusId="COM_UNKNOWN_PARTY" transitionName="Complete"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_UNKNOWN_PARTY" toStatusId="COM_UNKNOWN_PARTY" transitionName="Corrected"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_PENDING" transitionName="Complete"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_ENTERED" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_PENDING" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_IN_PROGRESS" toStatusId="COM_IN_PROGRESS" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_COMPLETE" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_RESOLVED" toStatusId="COM_RESOLVED" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_REFERRED" toStatusId="COM_REFERRED" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_UNKNOWN_PARTY" toStatusId="COM_UNKNOWN_PARTY" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_PENDING" transitionName="Set Pending, only visible to originator"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_IN_PROGRESS" transitionName="Set In Progress, waiting to be send"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_COMPLETE" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_ENTERED" transitionName="Entered,visible to all participants"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_IN_PROGRESS" transitionName="Set In Progress, waiting to be send"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_IN_PROGRESS" toStatusId="COM_COMPLETE" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_IN_PROGRESS" toStatusId="COM_BOUNCED" transitionName="Bounced"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_RESOLVED" transitionName="Resolve"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_REFERRED" transitionName="Refer"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_BOUNCED" transitionName="Bounced"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_UNKNOWN_PARTY" toStatusId="COM_COMPLETE" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_UNKNOWN_PARTY" toStatusId="COM_ENTERED" transitionName="Corrected"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_COMPLETE" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_IN_PROGRESS" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_RESOLVED" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_REFERRED" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_UNKNOWN_PARTY" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
     <moqui.basic.StatusType statusTypeId="COM_EVENT_ROL_STATUS" parentTypeId="COM_EVENT_STATUS" description="Communication Event Role"/>
     <moqui.basic.StatusItem statusId="COM_ROLE_CREATED" statusTypeId="COM_EVENT_ROL_STATUS" statusCode="ENTERED" description="Created"/>
     <moqui.basic.StatusItem statusId="COM_ROLE_READ" statusTypeId="COM_EVENT_ROL_STATUS" statusCode="PENDING" description="Read"/>
     <moqui.basic.StatusItem statusId="COM_ROLE_COMPLETED" statusTypeId="COM_EVENT_ROL_STATUS" statusCode="READ" description="Closed"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ROLE_CREATED" toStatusId="COM_ROLE_CREATED" transitionName="Read"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ROLE_CREATED" toStatusId="COM_ROLE_CREATED" transitionName="Completed"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ROLE_READ" toStatusId="COM_ROLE_READ" transitionName="Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ROLE_CREATED" toStatusId="COM_ROLE_READ" transitionName="Read"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ROLE_CREATED" toStatusId="COM_ROLE_COMPLETED" transitionName="Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ROLE_READ" toStatusId="COM_ROLE_COMPLETED" transitionName="Completed"/>
     <moqui.basic.StatusType statusTypeId="PARTY_REL_STATUS" description="Party Relationship"/>
     <moqui.basic.StatusItem statusId="PARTYREL_CREATED" statusTypeId="PARTY_REL_STATUS" statusCode="CREATED" description="Created"/>
     <moqui.basic.StatusItem statusId="PARTYREL_EXPIRED" statusTypeId="PARTY_REL_STATUS" statusCode="EXPIRED" description="Expired"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTYREL_CREATED" toStatusId="PARTYREL_CREATED" transitionName="Expired"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTYREL_CREATED" toStatusId="PARTYREL_EXPIRED" transitionName="Expired"/>
     <moqui.basic.EnumerationType enumTypeId="USER_PREF_GROUPS" description="User preference groups"/>
     <moqui.basic.EnumerationType enumTypeId="GLOBAL_PREFERENCES" description="Global preferences" parentTypeId="USER_PREF_GROUPS"/>
     <moqui.basic.Enumeration enumId="ORGANIZATION_PARTY" enumTypeId="GLOBAL_PREFERENCES" description="Organization party"/>

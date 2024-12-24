@@ -40,27 +40,27 @@
     <moqui.basic.StatusItem statusId="ITEM_COMPLETED" statusTypeId="ORDER_ITEM_STATUS" statusCode="COMPLETED" description="Completed" statusAge="100"/>
     <moqui.basic.StatusItem statusId="ITEM_REJECTED" statusTypeId="ORDER_ITEM_STATUS" statusCode="REJECTED" description="Rejected"/>
     <moqui.basic.StatusItem statusId="ITEM_CANCELLED" statusTypeId="ORDER_ITEM_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_CREATED" transitionName="Approve Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_CREATED" transitionName="Hold Order" conditionExpression="directStatusChange == false"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_CREATED" transitionName="Reject Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_CREATED" transitionName="Cancel Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_PROCESSING" transitionName="Hold Order" conditionExpression="directStatusChange == false"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_PROCESSING" transitionName="Approve Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_PROCESSING" transitionName="Reject Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_PROCESSING" transitionName="Cancel Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_APPROVED" transitionName="Complete Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_APPROVED" transitionName="Cancel Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_APPROVED" transitionName="Hold Order" conditionExpression="directStatusChange == false"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_HOLD" toStatusId="ORDER_HOLD" transitionName="Approve Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_HOLD" toStatusId="ORDER_HOLD" transitionName="Cancel Order"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_SENT" toStatusId="ORDER_SENT" transitionName="Order Completed"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_SENT" toStatusId="ORDER_SENT" transitionName="Order Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_CREATED" transitionName="Approve Item"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_CREATED" transitionName="Reject Item"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_CREATED" transitionName="Cancel Item"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_APPROVED" transitionName="Complete Item"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_APPROVED" transitionName="Cancel Item"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_COMPLETED" toStatusId="ITEM_COMPLETED" transitionName="Approve Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_APPROVED" transitionName="Approve Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_HOLD" transitionName="Hold Order" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_REJECTED" transitionName="Reject Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_CANCELLED" transitionName="Cancel Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_HOLD" transitionName="Hold Order" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_APPROVED" transitionName="Approve Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_REJECTED" transitionName="Reject Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_CANCELLED" transitionName="Cancel Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_COMPLETED" transitionName="Complete Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_CANCELLED" transitionName="Cancel Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_HOLD" transitionName="Hold Order" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_HOLD" toStatusId="ORDER_APPROVED" transitionName="Approve Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_HOLD" toStatusId="ORDER_CANCELLED" transitionName="Cancel Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_SENT" toStatusId="ORDER_COMPLETED" transitionName="Order Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_SENT" toStatusId="ORDER_CANCELLED" transitionName="Order Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_APPROVED" transitionName="Approve Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_REJECTED" transitionName="Reject Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_CANCELLED" transitionName="Cancel Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_COMPLETED" transitionName="Complete Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_CANCELLED" transitionName="Cancel Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_COMPLETED" toStatusId="ITEM_APPROVED" transitionName="Approve Item"/>
     <moqui.basic.StatusType statusTypeId="PAYMENT_PREF_STATUS" description="Payment Preference"/>
     <moqui.basic.StatusItem statusId="PAYMENT_NOT_RECEIVED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="NOT_RECEIVED" description="Not-Received" statusAge="0"/>
     <moqui.basic.StatusItem statusId="PAYMENT_RECEIVED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="RECEIVED" description="Received" statusAge="20"/>
@@ -70,13 +70,13 @@
     <moqui.basic.StatusItem statusId="PAYMENT_DECLINED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="DECLINED" description="Declined" statusAge="101"/>
     <moqui.basic.StatusItem statusId="PAYMENT_REFUNDED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="REFUNDED" description="Refunded" statusAge="110"/>
     <moqui.basic.StatusItem statusId="PAYMENT_CANCELLED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_RECEIVED" toStatusId="PAYMENT_NOT_RECEIVED" transitionName="Payment Received"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_RECEIVED" toStatusId="PAYMENT_NOT_RECEIVED" transitionName="Payment Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_AUTH" toStatusId="PAYMENT_NOT_AUTH" transitionName="Payment Authorized"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_AUTH" toStatusId="PAYMENT_NOT_AUTH" transitionName="Payment Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_AUTHORIZED" toStatusId="PAYMENT_AUTHORIZED" transitionName="Payment Settled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_AUTHORIZED" toStatusId="PAYMENT_AUTHORIZED" transitionName="Payment Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_SETTLED" toStatusId="PAYMENT_SETTLED" transitionName="Payment Refunded"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_RECEIVED" toStatusId="PAYMENT_RECEIVED" transitionName="Payment Received"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_RECEIVED" toStatusId="PAYMENT_CANCELLED" transitionName="Payment Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_AUTH" toStatusId="PAYMENT_AUTHORIZED" transitionName="Payment Authorized"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_AUTH" toStatusId="PAYMENT_CANCELLED" transitionName="Payment Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_AUTHORIZED" toStatusId="PAYMENT_SETTLED" transitionName="Payment Settled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_AUTHORIZED" toStatusId="PAYMENT_CANCELLED" transitionName="Payment Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_SETTLED" toStatusId="PAYMENT_REFUNDED" transitionName="Payment Refunded"/>
     <moqui.basic.StatusType statusTypeId="ORDER_RETURN_STTS" description="Order Return Status For Customer Returns"/>
     <moqui.basic.StatusItem statusId="RETURN_REQUESTED" statusTypeId="ORDER_RETURN_STTS" statusCode="REQUESTED" description="Requested" statusAge="0"/>
     <moqui.basic.StatusItem statusId="RETURN_ACCEPTED" statusTypeId="ORDER_RETURN_STTS" statusCode="ACCEPTED" description="Accepted" statusAge="50"/>
@@ -84,25 +84,25 @@
     <moqui.basic.StatusItem statusId="RETURN_COMPLETED" statusTypeId="ORDER_RETURN_STTS" statusCode="COMPLETED" description="Completed" statusAge="100"/>
     <moqui.basic.StatusItem statusId="RETURN_MAN_REFUND" statusTypeId="ORDER_RETURN_STTS" statusCode="MANUAL_REFUND" description="Manual Refund Required"/>
     <moqui.basic.StatusItem statusId="RETURN_CANCELLED" statusTypeId="ORDER_RETURN_STTS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_REQUESTED" transitionName="Requested Return Accepted"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_REQUESTED" transitionName="Requested Return Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_ACCEPTED" toStatusId="RETURN_ACCEPTED" transitionName="Accepted Return Received"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_ACCEPTED" toStatusId="RETURN_ACCEPTED" transitionName="Accepted Return Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_RECEIVED" transitionName="Received Return Completed"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_RECEIVED" transitionName="Received Return Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_RECEIVED" transitionName="Received Return Requires Manual Refund"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_ACCEPTED" transitionName="Requested Return Accepted"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_CANCELLED" transitionName="Requested Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_ACCEPTED" toStatusId="RETURN_RECEIVED" transitionName="Accepted Return Received"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_ACCEPTED" toStatusId="RETURN_CANCELLED" transitionName="Accepted Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_COMPLETED" transitionName="Received Return Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_CANCELLED" transitionName="Received Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_MAN_REFUND" transitionName="Received Return Requires Manual Refund"/>
     <moqui.basic.StatusType statusTypeId="PORDER_RETURN_STTS" description="Order Return Status For Supplier Returns"/>
     <moqui.basic.StatusItem statusId="SUP_RETURN_REQUESTED" statusTypeId="PORDER_RETURN_STTS" statusCode="REQUESTED" description="Requested"/>
     <moqui.basic.StatusItem statusId="SUP_RETURN_ACCEPTED" statusTypeId="PORDER_RETURN_STTS" statusCode="ACCEPTED" description="Accepted"/>
     <moqui.basic.StatusItem statusId="SUP_RETURN_SHIPPED" statusTypeId="PORDER_RETURN_STTS" statusCode="SHIPPED" description="Shipped"/>
     <moqui.basic.StatusItem statusId="SUP_RETURN_COMPLETED" statusTypeId="PORDER_RETURN_STTS" statusCode="COMPLETED" description="Completed"/>
     <moqui.basic.StatusItem statusId="SUP_RETURN_CANCELLED" statusTypeId="PORDER_RETURN_STTS" statusCode="CANCELLED" description="Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_REQUESTED" toStatusId="SUP_RETURN_REQUESTED" transitionName="Requested Return Accepted"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_REQUESTED" toStatusId="SUP_RETURN_REQUESTED" transitionName="Requested Return Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_ACCEPTED" toStatusId="SUP_RETURN_ACCEPTED" transitionName="Accepted Return Shipped"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_ACCEPTED" toStatusId="SUP_RETURN_ACCEPTED" transitionName="Accepted Return Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_SHIPPED" toStatusId="SUP_RETURN_SHIPPED" transitionName="Shipped Return Completed"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_SHIPPED" toStatusId="SUP_RETURN_SHIPPED" transitionName="Shipped Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_REQUESTED" toStatusId="SUP_RETURN_ACCEPTED" transitionName="Requested Return Accepted"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_REQUESTED" toStatusId="SUP_RETURN_CANCELLED" transitionName="Requested Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_ACCEPTED" toStatusId="SUP_RETURN_SHIPPED" transitionName="Accepted Return Shipped"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_ACCEPTED" toStatusId="SUP_RETURN_CANCELLED" transitionName="Accepted Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_SHIPPED" toStatusId="SUP_RETURN_COMPLETED" transitionName="Shipped Return Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_SHIPPED" toStatusId="SUP_RETURN_CANCELLED" transitionName="Shipped Return Cancelled"/>
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_PROMOTION_ADJ" hasTable="N" description="Return Promotion"/>
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_REPLACE_ADJ" hasTable="N" description="Return Replacement"/>
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_DISCOUNT_ADJ" hasTable="N" description="Return Discount"/>
