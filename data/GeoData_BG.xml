@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="BG-01" geoName="Blagoevgrad" geoCodeAlpha3="E" geoCodeAlpha2="01" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-02" geoName="Burgas" geoCodeAlpha3="A" geoCodeAlpha2="02" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-03" geoName="Varna" geoCodeAlpha3="B" geoCodeAlpha2="03" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-04" geoName="Veliko Tarnovo" geoCodeAlpha3="BT" geoCodeAlpha2="04" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-05" geoName="Vidin" geoCodeAlpha3="BH" geoCodeAlpha2="05" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-06" geoName="Vratsa" geoCodeAlpha3="BP" geoCodeAlpha2="06" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-07" geoName="Gabrovo" geoCodeAlpha3="EB" geoCodeAlpha2="07" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-08" geoName="Dobrich" geoCodeAlpha3="TX" geoCodeAlpha2="08" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-09" geoName="Kardzhali" geoCodeAlpha3="K" geoCodeAlpha2="09" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-10" geoName="Kyustendil" geoCodeAlpha3="KH" geoCodeAlpha2="10" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-11" geoName="Lovech" geoCodeAlpha3="OB" geoCodeAlpha2="11" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-12" geoName="Montana" geoCodeAlpha3="M" geoCodeAlpha2="12" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-13" geoName="Pazardzhik" geoCodeAlpha3="PA" geoCodeAlpha2="13" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-14" geoName="Pernik" geoCodeAlpha3="PK" geoCodeAlpha2="14" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-15" geoName="Pleven" geoCodeAlpha3="EH" geoCodeAlpha2="15" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-16" geoName="Plovdiv" geoCodeAlpha3="PB" geoCodeAlpha2="16" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-17" geoName="Razgrad" geoCodeAlpha3="PP" geoCodeAlpha2="17" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-18" geoName="Ruse" geoCodeAlpha3="P" geoCodeAlpha2="18" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-19" geoName="Silistra" geoCodeAlpha3="CC" geoCodeAlpha2="19" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-20" geoName="Sliven" geoCodeAlpha3="CH" geoCodeAlpha2="20" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-21" geoName="Smolyan" geoCodeAlpha3="CM" geoCodeAlpha2="21" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-22" geoName="Sofia" geoCodeAlpha3="C" geoCodeAlpha2="22" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-23" geoName="Sofia Province" geoCodeAlpha3="CO" geoCodeAlpha2="23" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-24" geoName="Stara Zagora" geoCodeAlpha3="CT" geoCodeAlpha2="24" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-25" geoName="Targovishte" geoCodeAlpha3="T" geoCodeAlpha2="25" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-26" geoName="Haskovo" geoCodeAlpha3="X" geoCodeAlpha2="26" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-27" geoName="Shumen" geoCodeAlpha3="H" geoCodeAlpha2="27" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BG-28" geoName="Yambol" geoCodeAlpha3="Y" geoCodeAlpha2="28" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-01" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-02" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-03" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-04" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-05" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-06" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-07" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-08" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-09" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-10" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-11" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-12" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-13" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-14" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-15" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-16" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-17" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-18" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-19" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-20" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-21" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-22" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-23" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-24" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-25" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-26" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-27" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="BGR" toGeoId="BG-28" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

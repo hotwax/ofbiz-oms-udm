@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="ISBN" hasTable="N" description="ISBN"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="MANUFACTURER_ID_NO" hasTable="N" description="Manufacturer (Model) Number"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="MODEL_YEAR" hasTable="N" description="Model Year"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="OTHER_ID" hasTable="N" description="Other"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="SKU" hasTable="N" description="SKU"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="UPCA" hasTable="N" description="UPCA"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="UPCE" hasTable="N" description="UPCE"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="EAN" hasTable="N" description="EAN"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="LOC" hasTable="N" description="Library of Congress"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="HS_CODE" hasTable="N" description="Harmonized System Codes (HS Code)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_BROWSE_ROOT" description="Browse Root (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_SEARCH" description="Default Search (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_OTHER_SEARCH" description="Other Search (Many)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_QUICK_ADD" description="Quick Add (Many)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PROMOTIONS" description="Promotions (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_MOST_POPULAR" description="Most Popular (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_WHATS_NEW" description="What&apos;s New (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_VIEW_ALLW" description="View Allow (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PURCH_ALLW" description="Purchase Allow (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_ADMIN_ALLW" description="Admin Allow (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_EBAY_ROOT" description="Ebay Root (One)"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_BEST_SELL" description="Best Selling (One)"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="ALSO_BOUGHT" hasTable="N" description="Also Bought"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_UPGRADE" hasTable="N" description="Upgrade or Up-Sell"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_COMPLEMENT" hasTable="N" description="Complementary or Cross-Sell"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_INCOMPATABLE" hasTable="N" description="Incompatible"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_OBSOLESCENCE" hasTable="N" description="New Version, Replacement"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_COMPONENT" hasTable="N" description="Actual Product Component"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_SUBSTITUTE" hasTable="N" description="Equivalent or Substitute"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_VARIANT" hasTable="N" description="Product Variant"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="UNIQUE_ITEM" hasTable="N" description="Unique Item"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_ACCESSORY" hasTable="N" description="Accessory"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_REFURB" hasTable="N" description="Refurbished Equivalent"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_REPAIR_SRV" hasTable="N" description="Repair Service"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_AUTORO" hasTable="N" description="Auto Reorder (needs recurrenceInfoId)"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_REVISION" hasTable="N" description="Revision"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="MANUF_COMPONENT" parentTypeId="PRODUCT_COMPONENT" hasTable="N" description="Manufacturing Bill of Materials"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="ENGINEER_COMPONENT" parentTypeId="PRODUCT_COMPONENT" hasTable="N" description="Engineering Bill of Materials"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_MANUFACTURED" hasTable="N" description="Product Manufactured As"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="PRODUCT_CONF" hasTable="N" description="Configurable product instance"/>
+    <org.apache.ofbiz.product.product.ProductAssocType productAssocTypeId="ALTERNATIVE_PACKAGE" hasTable="N" description="Alternative Packaging"/>
+    <org.apache.ofbiz.product.category.ProductCategoryType productCategoryTypeId="CATALOG_CATEGORY" hasTable="N" description="Catalog"/>
+    <org.apache.ofbiz.product.category.ProductCategoryType productCategoryTypeId="INTERNAL_CATEGORY" hasTable="N" description="Internal"/>
+    <org.apache.ofbiz.product.category.ProductCategoryType productCategoryTypeId="SEARCH_CATEGORY" hasTable="N" description="Search"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="CATEGORY_NAME" hasTable="N" description="Category Name"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="DESCRIPTION" hasTable="N" description="Description"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="LONG_DESCRIPTION" hasTable="N" description="Description - Long"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="ALTERNATIVE_URL" hasTable="N" description="Alternative URL"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="CATEGORY_IMAGE" hasTable="N" description="Category Image"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="CATEGORY_IMAGE_URL" hasTable="N" description="Category Image URL"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="CATEGORY_IMAGE_ALT" hasTable="N" description="Category Image Alt Text"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="LINK1_ALT_TEXT" hasTable="N" description="Link 1 Alt Text"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="LINK2_ALT_TEXT" hasTable="N" description="Link 2 Alt Text"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="FOOTER" hasTable="N" description="Footer"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="PAGE_TITLE" hasTable="N" description="Page Title"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="META_KEYWORD" hasTable="N" description="Meta Keyword"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="META_DESCRIPTION" hasTable="N" description="Meta Description"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="RELATED_URL" hasTable="N" description="Related URL"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="VIDEO" hasTable="N" description="Video"/>
+    <org.apache.ofbiz.product.category.ProductCategoryContentType prodCatContentTypeId="VIDEO_URL" hasTable="N" description="Video URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="ONLINE_ACCESS" hasTable="N" description="Online Access"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DIGITAL_DOWNLOAD" hasTable="N" description="Digital Download"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="FULFILLMENT_EMAIL" hasTable="N" description="Fulfillment Email"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="FULFILLMENT_EXTASYNC" hasTable="N" description="Fulfillment External (Async)"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="FULFILLMENT_EXTSYNC" hasTable="N" description="Fulfillment External (Sync)"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="PRODUCT_NAME" hasTable="N" description="Product Name"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DESCRIPTION" hasTable="N" description="Description"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="LONG_DESCRIPTION" hasTable="N" description="Description - Long"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="ALTERNATIVE_URL" hasTable="N" description="Alternative URL"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="PRICE_DETAIL_TEXT" hasTable="N" description="Price Detail Text"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="INGREDIENTS" hasTable="N" description="Ingredients"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="UNIQUE_INGREDIENTS" hasTable="N" description="Unique Ingredients"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="SPECIALINSTRUCTIONS" hasTable="N" description="Special Instructions"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="WARNINGS" hasTable="N" description="Warnings"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DIRECTIONS" hasTable="N" description="Directions"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="TERMS_AND_CONDS" hasTable="N" description="Terms and Conditions"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DELIVERY_INFO" hasTable="N" description="Delivery Info"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="SMALL_IMAGE_URL" hasTable="N" description="Image - Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="MEDIUM_IMAGE_URL" hasTable="N" description="Image - Medium"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="LARGE_IMAGE_URL" hasTable="N" description="Image - Large"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DETAIL_IMAGE_URL" hasTable="N" description="Image - Detail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="ORIGINAL_IMAGE_URL" hasTable="N" description="Image - Original"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="SMALL_IMAGE_ALT" hasTable="N" description="Image Alt Text - Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="MEDIUM_IMAGE_ALT" hasTable="N" description="Image Alt Text - Medium"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="LARGE_IMAGE_ALT" hasTable="N" description="Image Alt Text - Large"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DETAIL_IMAGE_ALT" hasTable="N" description="Image Alt Text - Detail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="ADDITIONAL_IMAGE_1" hasTable="N" description="Image - Additional View 1"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="ADDITIONAL_IMAGE_2" hasTable="N" description="Image - Additional View 2"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="ADDITIONAL_IMAGE_3" hasTable="N" description="Image - Additional View 3"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="ADDITIONAL_IMAGE_4" hasTable="N" description="Image - Additional View 4"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_1_SMALL" hasTable="N" description="Image - Additional View 1 Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_1_MEDIUM" hasTable="N" description="Image - Additional View 1 Medium"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_1_LARGE" hasTable="N" description="Image - Additional View 1 Large"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_1_DETAIL" hasTable="N" description="Image - Additional View 1 Detail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_2_SMALL" hasTable="N" description="Image - Additional View 2 Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_2_MEDIUM" hasTable="N" description="Image - Additional View 2 Medium"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_2_LARGE" hasTable="N" description="Image - Additional View 2 Large"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_2_DETAIL" hasTable="N" description="Image - Additional View 2 Detail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_3_SMALL" hasTable="N" description="Image - Additional View 3 Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_3_MEDIUM" hasTable="N" description="Image - Additional View 3 Medium"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_3_LARGE" hasTable="N" description="Image - Additional View 3 Large"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_3_DETAIL" hasTable="N" description="Image - Additional View 3 Detail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_4_SMALL" hasTable="N" description="Image - Additional View 4 Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_4_MEDIUM" hasTable="N" description="Image - Additional View 4 Medium"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_4_LARGE" hasTable="N" description="Image - Additional View 4 Large"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_4_DETAIL" hasTable="N" description="Image - Additional View 4 Detail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_L_SMALL" hasTable="N" description="Image - Additional View Small"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_L_MEDIUM" hasTable="N" description="Image - Additional View Medium"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_L_LARGE" hasTable="N" description="Image - Additional View Large"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="XTRA_IMG_L_DETAIL" hasTable="N" description="Image - Additional View Detail"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="ADDTOCART_LABEL" hasTable="N" description="Add To Cart Label"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="ADDTOCART_IMAGE" hasTable="N" description="Add To Cart Image"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="SHORT_SALES_PITCH" hasTable="N" description="Short Sales Pitch"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="INSTALLATION" parentTypeId="DIGITAL_DOWNLOAD" hasTable="N" description="Installation"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="SPECIFICATION" parentTypeId="DIGITAL_DOWNLOAD" hasTable="N" description="Specification"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="WARRANTY" parentTypeId="DIGITAL_DOWNLOAD" hasTable="N" description="Warranty"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="PAGE_TITLE" hasTable="N" description="Page Title"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="META_KEYWORD" hasTable="N" description="Meta Keyword"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="META_DESCRIPTION" hasTable="N" description="Meta Description"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureApplType productFeatureApplTypeId="OPTIONAL_FEATURE" hasTable="N" description="Optional"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureApplType productFeatureApplTypeId="REQUIRED_FEATURE" hasTable="N" description="Required"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureApplType productFeatureApplTypeId="SELECTABLE_FEATURE" hasTable="N" description="Selectable"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureApplType productFeatureApplTypeId="STANDARD_FEATURE" hasTable="N" description="Standard"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureApplType productFeatureApplTypeId="DISTINGUISHING_FEAT" hasTable="N" description="Distinguishing"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="ACCESSORY" hasTable="N" description="Accessory"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="AMOUNT" hasTable="N" description="Amount"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="NET_WEIGHT" parentTypeId="AMOUNT" hasTable="N" description="Net Weight"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="ARTIST" hasTable="N" description="Artist"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="BILLING_FEATURE" hasTable="N" description="Billing Feature"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="BRAND" hasTable="N" description="Brand"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="CARE" hasTable="N" description="Care"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="COLOR" hasTable="N" description="Color"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="DIMENSION" hasTable="N" description="Dimension"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="EQUIP_CLASS" hasTable="N" description="Equipment Class"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="FABRIC" hasTable="N" description="Fabric"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="GENRE" hasTable="N" description="Genre"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="GIFT_WRAP" hasTable="N" description="Gift Wrap"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="HARDWARE_FEATURE" hasTable="N" description="Hardware Feature"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="HAZMAT" hasTable="N" description="Hazmat"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="LICENSE" hasTable="N" description="License"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="ORIGIN" hasTable="N" description="Origin"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="OTHER_FEATURE" hasTable="N" description="Other Feature"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="PRODUCT_QUALITY" hasTable="N" description="Product Quality"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="SIZE" hasTable="N" description="Size"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="SOFTWARE_FEATURE" hasTable="N" description="Software Feature"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="STYLE" hasTable="N" description="Style"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="SYMPTOM" hasTable="N" description="Symptom"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="TOPIC" hasTable="N" description="Topic"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="TYPE" hasTable="N" description="Type"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="WARRANTY" hasTable="N" description="Warranty"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="MODEL_YEAR" hasTable="N" description="Model Year"/>
+    <org.apache.ofbiz.product.feature.ProductFeatureType productFeatureTypeId="YEAR_MADE" hasTable="N" description="Year Made"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="ASSET_USAGE" isPhysical="Y" isDigital="N" hasTable="N" description="Fixed Asset Usage"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="SERVICE" isPhysical="N" isDigital="N" hasTable="N" description="Service"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="GOOD" isPhysical="Y" isDigital="N" hasTable="N" description="Good"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="RAW_MATERIAL" parentTypeId="GOOD" isPhysical="Y" isDigital="N" hasTable="N" description="Raw Material"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="SUBASSEMBLY" parentTypeId="GOOD" isPhysical="Y" isDigital="N" hasTable="N" description="Subassembly"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="FINISHED_GOOD" parentTypeId="GOOD" isPhysical="Y" isDigital="N" hasTable="N" description="Finished Good"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="DIGITAL_GOOD" parentTypeId="GOOD" isPhysical="N" isDigital="Y" hasTable="N" description="Digital Good"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="FINDIG_GOOD" parentTypeId="GOOD" isPhysical="Y" isDigital="Y" hasTable="N" description="Finished/Digital Good"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="AGGREGATED" parentTypeId="GOOD" isPhysical="Y" isDigital="N" hasTable="N" description="Configurable Good"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="MARKETING_PKG" parentTypeId="GOOD" isPhysical="Y" isDigital="N" hasTable="N" description="Marketing Package"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="MARKETING_PKG_AUTO" parentTypeId="MARKETING_PKG" isPhysical="Y" isDigital="N" hasTable="N" description="Marketing Package: Auto Manufactured"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="MARKETING_PKG_PICK" parentTypeId="MARKETING_PKG" isPhysical="Y" isDigital="N" hasTable="N" description="Marketing Package: Pick Assembly"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="WIP" parentTypeId="GOOD" isPhysical="Y" isDigital="N" hasTable="N" description="Work In Process"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="AGGREGATED_CONF" parentTypeId="AGGREGATED" isPhysical="Y" isDigital="N" hasTable="N" description="Configurable Good Configuration"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="ASSET_USAGE_OUT_IN" isPhysical="Y" isDigital="N" hasTable="N" description="Fixed Asset Usage For Rental of an asset which is shipped from and returned to inventory"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="SERVICE_PRODUCT" isPhysical="Y" isDigital="N" hasTable="N" description="Service a product using inventory"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="AGGREGATED_SERVICE" parentTypeId="SERVICE_PRODUCT" isPhysical="Y" isDigital="N" hasTable="N" description="Configurable Service using inventory"/>
+    <org.apache.ofbiz.product.product.ProductType productTypeId="AGGREGATEDSERV_CONF" parentTypeId="AGGREGATED" isPhysical="Y" isDigital="N" hasTable="N" description="Configurable Service Configuration"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="IMAGE" hasTable="N" description="Image"/>
+    <org.apache.ofbiz.product.product.ProductContentType productContentTypeId="DEFAULT_IMAGE" hasTable="N" description="Default Image"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_PRICE" description="Product Price Parent Enum Type"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_PRICE_IN_PARAM" description="Product Price Input Parameter" parentTypeId="PROD_PRICE"/>
+    <moqui.basic.Enumeration enumId="PRIP_PRODUCT_ID" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="PRODUCT_ID" description="Product"/>
+    <moqui.basic.Enumeration enumId="PRIP_PROD_CAT_ID" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="PRODUCT_CATEGORY_ID" description="Product Category"/>
+    <moqui.basic.Enumeration enumId="PRIP_PROD_CLG_ID" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="PROD_CATALOG_ID" description="Product Catalog"/>
+    <moqui.basic.Enumeration enumId="PRIP_PROD_FEAT_ID" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="PRODUCT_FEATURE_ID" description="Product Feature"/>
+    <moqui.basic.Enumeration enumId="PRIP_PROD_SGRP_ID" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="PROD_STORE_GRP_ID" description="Product Store Group"/>
+    <moqui.basic.Enumeration enumId="PRIP_WEBSITE_ID" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="WEBSITE_ID" description="Website"/>
+    <moqui.basic.Enumeration enumId="PRIP_QUANTITY" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="QUANTITY" description="Quantity"/>
+    <moqui.basic.Enumeration enumId="PRIP_PARTY_ID" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="PARTY_ID" description="Party"/>
+    <moqui.basic.Enumeration enumId="PRIP_PARTY_GRP_MEM" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="PARTY_GROUP_MEMBER" description="Party Group Member"/>
+    <moqui.basic.Enumeration enumId="PRIP_PARTY_CLASS" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="PARTY_CLASS" description="Party Classification"/>
+    <moqui.basic.Enumeration enumId="PRIP_ROLE_TYPE" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="ROLE_TYPE" description="Role Type"/>
+    <moqui.basic.Enumeration enumId="PRIP_LIST_PRICE" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="LIST_PRICE" description="List Price"/>
+    <moqui.basic.Enumeration enumId="PRIP_CURRENCY_UOMID" enumTypeId="PROD_PRICE_IN_PARAM" enumCode="CURRENCY_UOMID" description="Currency UomId"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_PRICE_COND" description="Product Price Condition" parentTypeId="PROD_PRICE"/>
+    <moqui.basic.Enumeration enumId="PRC_EQ" enumTypeId="PROD_PRICE_COND" enumCode="EQ" description="Is"/>
+    <moqui.basic.Enumeration enumId="PRC_NEQ" enumTypeId="PROD_PRICE_COND" enumCode="NEQ" description="Is Not"/>
+    <moqui.basic.Enumeration enumId="PRC_LT" enumTypeId="PROD_PRICE_COND" enumCode="LT" description="Is Less Than"/>
+    <moqui.basic.Enumeration enumId="PRC_LTE" enumTypeId="PROD_PRICE_COND" enumCode="LTE" description="Is Less Than or Equal To"/>
+    <moqui.basic.Enumeration enumId="PRC_GT" enumTypeId="PROD_PRICE_COND" enumCode="GT" description="Is Greater Than"/>
+    <moqui.basic.Enumeration enumId="PRC_GTE" enumTypeId="PROD_PRICE_COND" enumCode="GTE" description="Is Greater Than or Equal To"/>
+    <moqui.basic.EnumerationType enumTypeId="INV_RES_ORDER" description="Inventory Reservation Order"/>
+    <moqui.basic.Enumeration enumId="INVRO_FIFO_REC" enumTypeId="INV_RES_ORDER" enumCode="FIFO_REC" description="FIFO Received"/>
+    <moqui.basic.Enumeration enumId="INVRO_LIFO_REC" enumTypeId="INV_RES_ORDER" enumCode="LIFO_REC" description="LIFO Received"/>
+    <moqui.basic.Enumeration enumId="INVRO_FIFO_EXP" enumTypeId="INV_RES_ORDER" enumCode="FIFO_EXP" description="FIFO Expire"/>
+    <moqui.basic.Enumeration enumId="INVRO_LIFO_EXP" enumTypeId="INV_RES_ORDER" enumCode="LIFO_EXP" description="LIFO Expire"/>
+    <moqui.basic.Enumeration enumId="INVRO_GUNIT_COST" enumTypeId="INV_RES_ORDER" enumCode="GUNIT_COST" description="Greater Unit Cost"/>
+    <moqui.basic.Enumeration enumId="INVRO_LUNIT_COST" enumTypeId="INV_RES_ORDER" enumCode="LUNIT_COST" description="Less Unit Cost"/>
+    <moqui.basic.EnumerationType enumTypeId="IID_REASON" description="Inventory Item Detail Reason"/>
+    <moqui.basic.Enumeration enumId="CYCLE_COUNT" enumTypeId="IID_REASON" enumCode="CYCLE_COUNT" description="Cycle count" enumName="Cycle count"/>
+    <moqui.basic.Enumeration enumId="POS_SALE" enumTypeId="IID_REASON" enumCode="POS_SALE" description="POS Sale" enumName="POS Sale"/>
+    <moqui.basic.Enumeration enumId="VAR_DAMAGED" enumTypeId="IID_REASON" enumCode="VAR_DAMAGED" description="Damaged" enumName="Damaged"/>
+    <moqui.basic.Enumeration enumId="VAR_FOUND" enumTypeId="IID_REASON" enumCode="VAR_FOUND" description="Found" enumName="Found"/>
+    <moqui.basic.Enumeration enumId="VAR_INTEGR" enumTypeId="IID_REASON" enumCode="VAR_INTEGR" description="Integration" enumName="Integration"/>
+    <moqui.basic.Enumeration enumId="VAR_LOST" enumTypeId="IID_REASON" enumCode="VAR_LOST" description="Adjustment" enumName="Adjustment"/>
+    <moqui.basic.Enumeration enumId="VAR_MANUAL" enumTypeId="IID_REASON" enumCode="VAR_MANUAL" description="Variance recorded manually" enumName="Variance recorded manually"/>
+    <moqui.basic.Enumeration enumId="VAR_MISSHIP_ORDERED" enumTypeId="IID_REASON" enumCode="VAR_MISSHIP_ORDERED" description="Mis-shipped Item Ordered (+)" enumName="Mis-shipped Item Ordered"/>
+    <moqui.basic.Enumeration enumId="VAR_MISSHIP_SHIPPED" enumTypeId="IID_REASON" enumCode="VAR_MISSHIP_SHIPPED" description="Mis-shipped Item Shipped (-)" enumName="Mis-shipped Item Shipped"/>
+    <moqui.basic.Enumeration enumId="VAR_SAMPLE" enumTypeId="IID_REASON" enumCode="VAR_SAMPLE" description="Sample (Giveaway)" enumName="Sample (Giveaway)"/>
+    <moqui.basic.Enumeration enumId="VAR_STOLEN" enumTypeId="IID_REASON" enumCode="VAR_STOLEN" description="Stolen" enumName="Stolen"/>
+    <moqui.basic.Enumeration enumId="VAR_SCH_SHIP_RECV" enumTypeId="IID_REASON" enumCode="VAR_SCH_SHIP_RECV" description="Scheduled Incoming Shipment Received" enumName="Scheduled Shipment Received"/>
+    <moqui.basic.Enumeration enumId="VAR_SHIP_RECV" enumTypeId="IID_REASON" enumCode="VAR_SHIP_RECV" description="Incoming Shipment Received" enumName="Shipment Received"/>
+    <moqui.basic.Enumeration enumId="VAR_EXT_RESET" enumTypeId="IID_REASON" enumCode="VAR_EXT_RESET" description="Reset by External System" enumName="Reset By External System"/>
+    <moqui.basic.Enumeration enumId="VAR_TRFR_ORD_SHIPPED" enumTypeId="IID_REASON" enumCode="VAR_TRFR_ORD_SHIPPED" description="Transfer Order Shipped" enumName="TO Shipment Shipped"/>
+    <moqui.basic.EnumerationType enumTypeId="PRDS_PAYSVC" description="Product Store Payment Service Type"/>
+    <moqui.basic.Enumeration enumId="PRDS_PAY_AUTH" enumTypeId="PRDS_PAYSVC" enumCode="PAY_AUTH" description="Payment Authorization Service"/>
+    <moqui.basic.Enumeration enumId="PRDS_PAY_AUTH_VERIFY" enumTypeId="PRDS_PAYSVC" enumCode="PAY_AUTH_VERIFY" description="Payment Auth Verification Service"/>
+    <moqui.basic.Enumeration enumId="PRDS_PAY_REAUTH" enumTypeId="PRDS_PAYSVC" enumCode="PAY_REAUTH" description="Payment Re-Authorization Service"/>
+    <moqui.basic.Enumeration enumId="PRDS_PAY_RELEASE" enumTypeId="PRDS_PAYSVC" enumCode="PAY_RELEASE" description="Payment Release Authorization Service"/>
+    <moqui.basic.Enumeration enumId="PRDS_PAY_CAPTURE" enumTypeId="PRDS_PAYSVC" enumCode="PAY_CAPTURE" description="Payment Capture Service"/>
+    <moqui.basic.Enumeration enumId="PRDS_PAY_REFUND" enumTypeId="PRDS_PAYSVC" enumCode="PAY_REFUND" description="Payment Refund Service"/>
+    <moqui.basic.Enumeration enumId="PRDS_PAY_CREDIT" enumTypeId="PRDS_PAYSVC" enumCode="PAY_CREDIT" description="Payment Credit Service"/>
+    <moqui.basic.Enumeration enumId="PRDS_PAY_EXTERNAL" enumTypeId="PRDS_PAYSVC" enumCode="PAY_EXTERNAL" description="External Payment (No Service)"/>
+    <moqui.basic.EnumerationType enumTypeId="PRDS_EMAIL" description="Product Store Email Notification"/>
+    <moqui.basic.Enumeration enumId="PRDS_CUST_REGISTER" enumTypeId="PRDS_EMAIL" enumCode="CUST_REGISTER" description="Registration"/>
+    <moqui.basic.Enumeration enumId="PRDS_ODR_CONFIRM" enumTypeId="PRDS_EMAIL" enumCode="ODR_CONFIRM" description="Confirmation"/>
+    <moqui.basic.Enumeration enumId="PRDS_ODR_COMPLETE" enumTypeId="PRDS_EMAIL" enumCode="ODR_COMPLETE" description="Complete"/>
+    <moqui.basic.Enumeration enumId="PRDS_ODR_BACKORDER" enumTypeId="PRDS_EMAIL" enumCode="ODR_BACKORDER" description="Back-Order"/>
+    <moqui.basic.Enumeration enumId="PRDS_ODR_CHANGE" enumTypeId="PRDS_EMAIL" enumCode="ODR_CHANGE" description="Order Change"/>
+    <moqui.basic.Enumeration enumId="PRDS_ODR_PAYRETRY" enumTypeId="PRDS_EMAIL" enumCode="ODR_PAYRETRY" description="Payment Retry"/>
+    <moqui.basic.Enumeration enumId="PRDS_RTN_ACCEPT" enumTypeId="PRDS_EMAIL" enumCode="RTN_ACCEPT" description="Return Accepted"/>
+    <moqui.basic.Enumeration enumId="PRDS_RTN_COMPLETE" enumTypeId="PRDS_EMAIL" enumCode="RTN_COMPLETE" description="Return Completed"/>
+    <moqui.basic.Enumeration enumId="PRDS_RTN_CANCEL" enumTypeId="PRDS_EMAIL" enumCode="RTN_CANCEL" description="Return Cancelled"/>
+    <moqui.basic.Enumeration enumId="PRDS_PWD_RETRIEVE" enumTypeId="PRDS_EMAIL" enumCode="PWD_RETRIEVE" description="Retrieve Password"/>
+    <moqui.basic.Enumeration enumId="PRDS_TELL_FRIEND" enumTypeId="PRDS_EMAIL" enumCode="TELL_FRIEND" description="Tell-A-Friend"/>
+    <moqui.basic.Enumeration enumId="PRDS_GC_PURCHASE" enumTypeId="PRDS_EMAIL" enumCode="GC_PURCHASE" description="Gift-Card Purchase"/>
+    <moqui.basic.Enumeration enumId="PRDS_GC_RELOAD" enumTypeId="PRDS_EMAIL" enumCode="GC_RELOAD" description="Gift-Card Reload"/>
+    <moqui.basic.Enumeration enumId="PRDS_QUO_CREATED" enumTypeId="PRDS_EMAIL" enumCode="QUO_CREATED" description="Quote Created"/>
+    <moqui.basic.Enumeration enumId="PRDS_QUO_CONFIRM" enumTypeId="PRDS_EMAIL" enumCode="QUO_CONFIRM" description="Quote Confirmation"/>
+    <moqui.basic.Enumeration enumId="PRDS_ODR_SHIP_COMPLT" enumTypeId="PRDS_EMAIL" enumCode="SHP_COMPLETE" description="Shipment Complete"/>
+    <moqui.basic.EnumerationType enumTypeId="FACLOC_TYPE" description="Facility Location Type"/>
+    <moqui.basic.Enumeration enumId="FLT_PICKLOC" enumTypeId="FACLOC_TYPE" enumCode="PICKLOC" description="Pick/Primary"/>
+    <moqui.basic.Enumeration enumId="FLT_BULK" enumTypeId="FACLOC_TYPE" enumCode="BULK" description="Bulk"/>
+    <moqui.basic.EnumerationType enumTypeId="KWOVRD_TRGT_TYPE" description="Keyword Override Target Type"/>
+    <moqui.basic.Enumeration enumId="KOTT_PRODCAT" enumTypeId="KWOVRD_TRGT_TYPE" enumCode="PRODCAT" description="Product Category"/>
+    <moqui.basic.Enumeration enumId="KOTT_PRODUCT" enumTypeId="KWOVRD_TRGT_TYPE" enumCode="PRODUCT" description="Product"/>
+    <moqui.basic.Enumeration enumId="KOTT_OFBURL" enumTypeId="KWOVRD_TRGT_TYPE" enumCode="OFBURL" description="OFBiz URL"/>
+    <moqui.basic.Enumeration enumId="KOTT_AURL" enumTypeId="KWOVRD_TRGT_TYPE" enumCode="AURL" description="Absolute URL"/>
+    <moqui.basic.EnumerationType enumTypeId="PCAT_LINK_TYPE" description="Product Category Link Type"/>
+    <moqui.basic.Enumeration enumId="PCLT_SEARCH_PARAM" enumTypeId="PCAT_LINK_TYPE" enumCode="SEARCH_PARAM" description="Search Parameters"/>
+    <moqui.basic.Enumeration enumId="PCLT_ABS_URL" enumTypeId="PCAT_LINK_TYPE" enumCode="ABS_URL" description="Absolute URL"/>
+    <moqui.basic.Enumeration enumId="PCLT_CAT_ID" enumTypeId="PCAT_LINK_TYPE" enumCode="CAT_ID" description="Category ID"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="RETAIL_STORE" hasTable="N" description="Retail Store"/>
+    <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="WAREHOUSE" hasTable="N" description="Warehouse"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="_NA_" facilityGroupName="Not Applicable" description="Not Applicable"/>
+    <org.apache.ofbiz.product.inventory.InventoryItemType inventoryItemTypeId="SERIALIZED_INV_ITEM" hasTable="N" description="Serialized"/>
+    <org.apache.ofbiz.product.inventory.InventoryItemType inventoryItemTypeId="NON_SERIAL_INV_ITEM" hasTable="N" description="Non-Serialized"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_GEO" description="Product Geo Data"/>
+    <moqui.basic.Enumeration enumId="PG_PURCH_INCLUDE" enumTypeId="PROD_GEO" enumCode="PURCHASE_INCLUDE" description="Purchase Include Geo"/>
+    <moqui.basic.Enumeration enumId="PG_PURCH_EXCLUDE" enumTypeId="PROD_GEO" enumCode="PURCHASE_EXCLUDE" description="Purchase Exclude Geo"/>
+    <moqui.basic.Enumeration enumId="PG_SHIP_INCLUDE" enumTypeId="PROD_GEO" enumCode="SHIPMENT_INCLUDE" description="Shipment Include Geo"/>
+    <moqui.basic.Enumeration enumId="PG_SHIP_EXCLUDE" enumTypeId="PROD_GEO" enumCode="SHIPMENT_EXCLUDE" description="Shipment Exclude Geo"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_PROMO" description="Product Promotion Parent Enum Type"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_PROMO_IN_PARAM" description="Product Promotion Input Parameter" parentTypeId="PROD_PROMO"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORDER_TOTAL" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="ORDER_TOTAL" description="Cart Sub-total"/>
+    <moqui.basic.Enumeration enumId="PPIP_PRODUCT_TOTAL" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="PRODUCT_TOTAL" description="Total Amount of Product"/>
+    <moqui.basic.Enumeration enumId="PPIP_PRODUCT_AMOUNT" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="PRODUCT_AMOUNT" description="X Amount of Product"/>
+    <moqui.basic.Enumeration enumId="PPIP_PRODUCT_QUANT" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="PRODUCT_QUANT" description="X Quantity of Product"/>
+    <moqui.basic.Enumeration enumId="PPIP_NEW_ACCT" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="NEW_ACCT" description="Account Days Since Created"/>
+    <moqui.basic.Enumeration enumId="PPIP_PARTY_ID" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="PARTY_ID" description="Party"/>
+    <moqui.basic.Enumeration enumId="PPIP_PARTY_GRP_MEM" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="PARTY_GROUP_MEMBER" description="Party Group Member"/>
+    <moqui.basic.Enumeration enumId="PPIP_PARTY_CLASS" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="PARTY_CLASS" description="Party Classification"/>
+    <moqui.basic.Enumeration enumId="PPIP_ROLE_TYPE" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="ROLE_TYPE" description="Role Type"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORST_HIST" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="ORST_HIST" description="Order sub-total X in last Y Months"/>
+    <moqui.basic.Enumeration enumId="PPIP_RECURRENCE" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="PROMO_RECURRENCE" description="Promotion Recurrence"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORST_YEAR" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="ORST_YEAR" description="Order sub-total X since beginning of current year"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORST_LAST_YEAR" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="ORST_LAST_YEAR" description="Order sub-total X last year"/>
+    <moqui.basic.Enumeration enumId="PPIP_LPMUP_AMT" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="LPMUP_AMT" description="List Price minus Unit Price (Amount)"/>
+    <moqui.basic.Enumeration enumId="PPIP_LPMUP_PER" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="LPMUP_PER" description="List Price minus Unit Price (Percent)"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORDER_SHIPTOTAL" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="ORDER_SHIP_TOTAL" description="Shipping Total"/>
+    <moqui.basic.Enumeration enumId="PPIP_SERVICE" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="SERVICE" description="Call Service"/>
+    <moqui.basic.Enumeration enumId="PPIP_GEO_ID" enumTypeId="PROD_PROMO_IN_PARAM" enumCode="GEO_ID" description="Shipping Destination"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_PROMO_COND" description="Product Promotion Condition" parentTypeId="PROD_PROMO"/>
+    <moqui.basic.Enumeration enumId="PPC_EQ" enumTypeId="PROD_PROMO_COND" enumCode="EQ" description="Is"/>
+    <moqui.basic.Enumeration enumId="PPC_NEQ" enumTypeId="PROD_PROMO_COND" enumCode="NEQ" description="Is Not"/>
+    <moqui.basic.Enumeration enumId="PPC_LT" enumTypeId="PROD_PROMO_COND" enumCode="LT" description="Is Less Than"/>
+    <moqui.basic.Enumeration enumId="PPC_LTE" enumTypeId="PROD_PROMO_COND" enumCode="LTE" description="Is Less Than or Equal To"/>
+    <moqui.basic.Enumeration enumId="PPC_GT" enumTypeId="PROD_PROMO_COND" enumCode="GT" description="Is Greater Than"/>
+    <moqui.basic.Enumeration enumId="PPC_GTE" enumTypeId="PROD_PROMO_COND" enumCode="GTE" description="Is Greater Than or Equal To"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_PROMO_PCAPPL" description="Product Promotion Product/Category Application Type" parentTypeId="PROD_PROMO"/>
+    <moqui.basic.Enumeration enumId="PPPA_INCLUDE" enumTypeId="PROD_PROMO_PCAPPL" enumCode="INCLUDE" description="Include"/>
+    <moqui.basic.Enumeration enumId="PPPA_EXCLUDE" enumTypeId="PROD_PROMO_PCAPPL" enumCode="EXCLUDE" description="Exclude"/>
+    <moqui.basic.Enumeration enumId="PPPA_ALWAYS" enumTypeId="PROD_PROMO_PCAPPL" enumCode="ALWAYS" description="Always Include"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_PROMO_ACTION" description="Product Promotion Action" parentTypeId="PROD_PROMO"/>
+    <moqui.basic.Enumeration enumId="PROMO_GWP" enumTypeId="PROD_PROMO_ACTION" enumCode="GWP" description="Gift With Purchase"/>
+    <moqui.basic.Enumeration enumId="PROMO_PROD_DISC" enumTypeId="PROD_PROMO_ACTION" enumCode="PROD_DISC" description="X Product for Y% Discount"/>
+    <moqui.basic.Enumeration enumId="PROMO_PROD_AMDISC" enumTypeId="PROD_PROMO_ACTION" enumCode="PROD_AMDISC" description="X Product for Y Discount"/>
+    <moqui.basic.Enumeration enumId="PROMO_PROD_PRICE" enumTypeId="PROD_PROMO_ACTION" enumCode="PROD_PRICE" description="X Product for Y Price"/>
+    <moqui.basic.Enumeration enumId="PROMO_ORDER_PERCENT" enumTypeId="PROD_PROMO_ACTION" enumCode="ORDER_PERCENT" description="Order Percent Discount"/>
+    <moqui.basic.Enumeration enumId="PROMO_ORDER_AMOUNT" enumTypeId="PROD_PROMO_ACTION" enumCode="ORDER_AMOUNT" description="Order Amount Flat"/>
+    <moqui.basic.Enumeration enumId="PROMO_PROD_SPPRC" enumTypeId="PROD_PROMO_ACTION" enumCode="PROD_SPPRC" description="Product for [Special Promo] Price"/>
+    <moqui.basic.Enumeration enumId="PROMO_SHIP_CHARGE" enumTypeId="PROD_PROMO_ACTION" enumCode="SHIP_CHARGE" description="Shipping X% discount"/>
+    <moqui.basic.Enumeration enumId="PROMO_SERVICE" enumTypeId="PROD_PROMO_ACTION" enumCode="SERVICE" description="Call Service"/>
+    <moqui.basic.Enumeration enumId="PROMO_TAX_PERCENT" enumTypeId="PROD_PROMO_ACTION" enumCode="TAX_PERCENT" description="Tax % Discount"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_RATING_TYPE" description="Product Rating Field Type"/>
+    <moqui.basic.Enumeration enumId="PRDR_MIN" enumTypeId="PROD_RATING_TYPE" enumCode="MIN" description="Min Rating"/>
+    <moqui.basic.Enumeration enumId="PRDR_MAX" enumTypeId="PROD_RATING_TYPE" enumCode="MAX" description="Max Rating"/>
+    <moqui.basic.Enumeration enumId="PRDR_FLAT" enumTypeId="PROD_RATING_TYPE" enumCode="FLAT" description="Rating Override"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_VVMETHOD" description="Virtual Variant Method"/>
+    <moqui.basic.Enumeration enumId="VV_FEATURETREE" enumTypeId="PROD_VVMETHOD" enumCode="FEATURETREE" description="Feature tree Generation"/>
+    <moqui.basic.Enumeration enumId="VV_VARIANTTREE" enumTypeId="PROD_VVMETHOD" enumCode="VARIANTTREE" description="Variant Tree generation"/>
+    <moqui.basic.EnumerationType enumTypeId="PROD_REQ_METHOD" description="Product Requirement Method"/>
+    <moqui.basic.Enumeration enumId="PRODRQM_NONE" enumTypeId="PROD_REQ_METHOD" enumCode="NONE" description="No Requirement Created"/>
+    <moqui.basic.Enumeration enumId="PRODRQM_AUTO" enumTypeId="PROD_REQ_METHOD" enumCode="AUTO" description="Automatic For Every Sales Order"/>
+    <moqui.basic.Enumeration enumId="PRODRQM_STOCK" enumTypeId="PROD_REQ_METHOD" enumCode="STOCK_QOH" description="When QOH Reaches Minimum Stock for Product-Facility"/>
+    <moqui.basic.Enumeration enumId="PRODRQM_STOCK_ATP" enumTypeId="PROD_REQ_METHOD" enumCode="STOCK_ATP" description="When ATP Reaches Minimum Stock for Product-Facility"/>
+    <moqui.basic.Enumeration enumId="PRODRQM_ATP" enumTypeId="PROD_REQ_METHOD" enumCode="ATP" description="Requirement for order when ATP Reaches Minimum Stock for Product-Facility"/>
+    <moqui.basic.Enumeration enumId="PRODRQM_DS" enumTypeId="PROD_REQ_METHOD" enumCode="DROPS" description="Drop-ship only"/>
+    <moqui.basic.Enumeration enumId="PRODRQM_DSATP" enumTypeId="PROD_REQ_METHOD" enumCode="DROPS_ATP" description="Auto drop-ship on low quantity"/>
+    <moqui.basic.StatusType statusTypeId="INVENTORY_ITEM_STTS" description="Inventory Item"/>
+    <moqui.basic.StatusType statusTypeId="INV_SERIALIZED_STTS" parentTypeId="INVENTORY_ITEM_STTS" description="Serialized Inventory Item"/>
+    <moqui.basic.StatusType statusTypeId="INV_NON_SER_STTS" parentTypeId="INVENTORY_ITEM_STTS" description="Non-Serialized Inventory Item"/>
+    <moqui.basic.StatusItem statusId="INV_ON_ORDER" statusTypeId="INV_SERIALIZED_STTS" statusCode="ON_ORDER" description="On Order"/>
+    <moqui.basic.StatusItem statusId="INV_AVAILABLE" statusTypeId="INV_SERIALIZED_STTS" statusCode="AVAILABLE" description="Available"/>
+    <moqui.basic.StatusItem statusId="INV_PROMISED" statusTypeId="INV_SERIALIZED_STTS" statusCode="PROMISED" description="Promised"/>
+    <moqui.basic.StatusItem statusId="INV_DELIVERED" statusTypeId="INV_SERIALIZED_STTS" statusCode="DELIVERED" description="Delivered"/>
+    <moqui.basic.StatusItem statusId="INV_ACTIVATED" statusTypeId="INV_SERIALIZED_STTS" statusCode="ACTIVATED" description="Activated"/>
+    <moqui.basic.StatusItem statusId="INV_DEACTIVATED" statusTypeId="INV_SERIALIZED_STTS" statusCode="DEACTIVATED" description="Deactivated"/>
+    <moqui.basic.StatusItem statusId="INV_ON_HOLD" statusTypeId="INV_SERIALIZED_STTS" statusCode="ON_HOLD" description="On Hold"/>
+    <moqui.basic.StatusItem statusId="INV_BEING_TRANSFERED" statusTypeId="INV_SERIALIZED_STTS" statusCode="BEING_TRANSFERED" description="Being Transfered"/>
+    <moqui.basic.StatusItem statusId="INV_BEING_TRANS_PRM" statusTypeId="INV_SERIALIZED_STTS" statusCode="BEING_TRANS_PRM" description="Being Transfered (Promised)"/>
+    <moqui.basic.StatusItem statusId="INV_RETURNED" statusTypeId="INV_SERIALIZED_STTS" statusCode="RETURNED" description="Returned"/>
+    <moqui.basic.StatusItem statusId="INV_DEFECTIVE" statusTypeId="INV_SERIALIZED_STTS" statusCode="DEFECTIVE" description="Defective"/>
+    <moqui.basic.StatusItem statusId="INV_NS_ON_HOLD" statusTypeId="INV_NON_SER_STTS" statusCode="ON_HOLD_NS" description="On Hold (Non-Serialized)"/>
+    <moqui.basic.StatusItem statusId="INV_NS_DEFECTIVE" statusTypeId="INV_NON_SER_STTS" statusCode="DEFECTIVE_NS" description="Defective (Non-Serialized)"/>
+    <moqui.basic.StatusItem statusId="INV_NS_RETURNED" statusTypeId="INV_NON_SER_STTS" statusCode="RETURNED_NS" description="Returned (Non-Serialized)"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ON_ORDER" toStatusId="INV_ON_ORDER" transitionName="Order Arrived"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_AVAILABLE" transitionName="Promise"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_AVAILABLE" transitionName="Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_AVAILABLE" transitionName="Mark As Defective"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_AVAILABLE" transitionName="Being Transfered"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ON_HOLD" toStatusId="INV_ON_HOLD" transitionName="Release Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ON_HOLD" toStatusId="INV_ON_HOLD" transitionName="Mark Held Defective"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_BEING_TRANSFERED" toStatusId="INV_BEING_TRANSFERED" transitionName="Transfer Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_PROMISED" transitionName="Cancel Promise"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_PROMISED" transitionName="Deliver"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_PROMISED" transitionName="Mark As Defective"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_PROMISED" transitionName="Being Transfered (Promised)"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_BEING_TRANS_PRM" toStatusId="INV_BEING_TRANS_PRM" transitionName="Transfer Complete (Promised)"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DELIVERED" toStatusId="INV_DELIVERED" transitionName="Return Status Pending"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_RETURNED" toStatusId="INV_RETURNED" transitionName="Make Return Available"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_RETURNED" toStatusId="INV_RETURNED" transitionName="Make Return Held"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_RETURNED" toStatusId="INV_RETURNED" transitionName="Mark Return Defective"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DELIVERED" toStatusId="INV_DELIVERED" transitionName="Activate"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ACTIVATED" toStatusId="INV_ACTIVATED" transitionName="Deactivate"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ACTIVATED" toStatusId="INV_ACTIVATED" transitionName="Return Status Pending"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DEACTIVATED" toStatusId="INV_DEACTIVATED" transitionName="Hold Inactive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DEACTIVATED" toStatusId="INV_DEACTIVATED" transitionName="Return Inactive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_NS_RETURNED" toStatusId="INV_NS_RETURNED" transitionName="Make Return Held"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_NS_RETURNED" toStatusId="INV_NS_RETURNED" transitionName="Mark Return Defective"/>
+    <moqui.basic.StatusType statusTypeId="INVENTORY_XFER_STTS" description="Inventory Transfer"/>
+    <moqui.basic.StatusItem statusId="IXF_REQUESTED" statusTypeId="INVENTORY_XFER_STTS" statusCode="REQUESTED" description="Requested"/>
+    <moqui.basic.StatusItem statusId="IXF_SCHEDULED" statusTypeId="INVENTORY_XFER_STTS" statusCode="SCHEDULED" description="Scheduled"/>
+    <moqui.basic.StatusItem statusId="IXF_EN_ROUTE" statusTypeId="INVENTORY_XFER_STTS" statusCode="EN_ROUTE" description="En-Route"/>
+    <moqui.basic.StatusItem statusId="IXF_COMPLETE" statusTypeId="INVENTORY_XFER_STTS" statusCode="COMPLETE" description="Complete"/>
+    <moqui.basic.StatusItem statusId="IXF_CANCELLED" statusTypeId="INVENTORY_XFER_STTS" statusCode="CANCELLED" description="Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_REQUESTED" transitionName="Inventory Request Scheduled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_REQUESTED" transitionName="Inventory Request In Route"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_REQUESTED" transitionName="Inventory Request Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_REQUESTED" transitionName="Inventory Request Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_SCHEDULED" toStatusId="IXF_SCHEDULED" transitionName="Scheduled Inventory In Route"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_SCHEDULED" toStatusId="IXF_SCHEDULED" transitionName="Scheduled Inventory Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_SCHEDULED" toStatusId="IXF_SCHEDULED" transitionName="Scheduled Inventory Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_EN_ROUTE" toStatusId="IXF_EN_ROUTE" transitionName="In Route Transfer Completed"/>
+    <moqui.basic.StatusType statusTypeId="PRODUCT_REVIEW_STTS" description="Product Review"/>
+    <moqui.basic.StatusItem statusId="PRR_PENDING" statusTypeId="PRODUCT_REVIEW_STTS" statusCode="PENDING" description="Pending"/>
+    <moqui.basic.StatusItem statusId="PRR_APPROVED" statusTypeId="PRODUCT_REVIEW_STTS" statusCode="APPROVED" description="Approved"/>
+    <moqui.basic.StatusItem statusId="PRR_DELETED" statusTypeId="PRODUCT_REVIEW_STTS" statusCode="DELETED" description="Deleted"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PRR_PENDING" toStatusId="PRR_PENDING" transitionName="Review Approved"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PRR_PENDING" toStatusId="PRR_PENDING" transitionName="Review Deleted"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PRR_APPROVED" toStatusId="PRR_APPROVED" transitionName="Review Deleted"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_LOST" description="Lost"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_STOLEN" description="Stolen"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_FOUND" description="Found"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_DAMAGED" description="Damaged"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_INTEGR" description="Integration"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_SAMPLE" description="Sample (Giveaway)"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_MISSHIP_ORDERED" description="Mis-shipped Item Ordered (+)"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_MISSHIP_SHIPPED" description="Mis-shipped Item Shipped (-)"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="IMAGEAPPROVER" hasTable="N" description="Image Approver"/>
+    <moqui.basic.StatusType statusTypeId="IMAGE_MANAGEMENT_ST" description="Image Management"/>
+    <moqui.basic.StatusItem statusId="IM_PENDING" statusTypeId="IMAGE_MANAGEMENT_ST" statusCode="PENDING" description="Pending"/>
+    <moqui.basic.StatusItem statusId="IM_APPROVED" statusTypeId="IMAGE_MANAGEMENT_ST" statusCode="APPROVED" description="Approved"/>
+    <moqui.basic.StatusItem statusId="IM_REJECTED" statusTypeId="IMAGE_MANAGEMENT_ST" statusCode="REJECTED" description="Rejected"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="IMAGE_AVATAR" productFeatureTypeId="SIZE" productFeatureCategoryId="IMAGE" description="100 X 75 (avatar)" defaultSequenceNum="1" abbrev="100x75"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="IMAGE_THUMBNAIL" productFeatureTypeId="SIZE" productFeatureCategoryId="IMAGE" description="150 X 112 (thumbnail)" defaultSequenceNum="2" abbrev="150x112"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="IMAGE_WEBSITE" productFeatureTypeId="SIZE" productFeatureCategoryId="IMAGE" description="320 X 240 (for websites and email)" defaultSequenceNum="3" abbrev="320x240"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="IMAGE_BOARD" productFeatureTypeId="SIZE" productFeatureCategoryId="IMAGE" description="640 X 480 (for message boards)" defaultSequenceNum="4" abbrev="640x480"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="IMAGE_MONITOR15" productFeatureTypeId="SIZE" productFeatureCategoryId="IMAGE" description="800 X 600 (15-inch monitor)" defaultSequenceNum="5" abbrev="800x600"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="IMAGE_MONITOR17" productFeatureTypeId="SIZE" productFeatureCategoryId="IMAGE" description="1024 X 768 (17-inch monitor)" defaultSequenceNum="6" abbrev="1024x768"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="IMAGE_MONITOR19" productFeatureTypeId="SIZE" productFeatureCategoryId="IMAGE" description="1280 X 1024 (19-inch monitor)" defaultSequenceNum="7" abbrev="1280x1024"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="IMAGE_MONITOR21" productFeatureTypeId="SIZE" productFeatureCategoryId="IMAGE" description="1600 X 1200 (21-inch monitor)" defaultSequenceNum="8" abbrev="1600x1200"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_SMALL" productFeatureTypeId="SIZE" productFeatureCategoryId="TEXT" description="Small" defaultSequenceNum="1"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_MIDDLE" productFeatureTypeId="SIZE" productFeatureCategoryId="TEXT" description="Middle" defaultSequenceNum="2"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_LARGE" productFeatureTypeId="SIZE" productFeatureCategoryId="TEXT" description="Large" defaultSequenceNum="3"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_VERYLARGE" productFeatureTypeId="SIZE" productFeatureCategoryId="TEXT" description="Very Large" defaultSequenceNum="4"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_WHITE" productFeatureTypeId="COLOR" productFeatureCategoryId="TEXT" description="White" defaultSequenceNum="1"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_GRAY" productFeatureTypeId="COLOR" productFeatureCategoryId="TEXT" description="Gray" defaultSequenceNum="2"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_BLACK" productFeatureTypeId="COLOR" productFeatureCategoryId="TEXT" description="Black" defaultSequenceNum="3"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_RED" productFeatureTypeId="COLOR" productFeatureCategoryId="TEXT" description="Red" defaultSequenceNum="4"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_GREEN" productFeatureTypeId="COLOR" productFeatureCategoryId="TEXT" description="Green" defaultSequenceNum="5"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_BLUE" productFeatureTypeId="COLOR" productFeatureCategoryId="TEXT" description="Blue" defaultSequenceNum="6"/>
+    <org.apache.ofbiz.product.feature.ProductFeature productFeatureId="TEXT_YELLOW" productFeatureTypeId="COLOR" productFeatureCategoryId="TEXT" description="Yellow" defaultSequenceNum="7"/>
+    <moqui.basic.EnumerationType enumTypeId="IMAGE_REJECT_REASON" description="Image Reject Reason"/>
+    <moqui.basic.Enumeration enumId="RETAKE_PHOTO" enumTypeId="IMAGE_REJECT_REASON" enumCode="RETAKE_PHOTO" description="Re-take Photo"/>
+    <moqui.basic.Enumeration enumId="REMOVE_LOGO" enumTypeId="IMAGE_REJECT_REASON" enumCode="REMOVE_LOGO" description="Remove Logo"/>
+    <moqui.basic.Enumeration enumId="OTHER" enumTypeId="IMAGE_REJECT_REASON" enumCode="OTHER" description="Other"/>
+    <moqui.basic.StatusType statusTypeId="GROUP_ORDER_STATUS" description="Group Order Status"/>
+    <moqui.basic.StatusItem statusId="GO_CREATED" statusTypeId="GROUP_ORDER_STATUS" statusCode="CREATED" description="Created"/>
+    <moqui.basic.StatusItem statusId="GO_SUCCESS" statusTypeId="GROUP_ORDER_STATUS" statusCode="SUCCESS" description="Success"/>
+    <moqui.basic.StatusItem statusId="GO_CANCELLED" statusTypeId="GROUP_ORDER_STATUS" statusCode="CANCELLED" description="Cancelled"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentContactMechType shipmentContactMechTypeId="SHIP_TO_ADDRESS" description="Ship-To Address"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentContactMechType shipmentContactMechTypeId="SHIP_FROM_ADDRESS" description="Ship-From Address"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentContactMechType shipmentContactMechTypeId="SHIP_TO_TELECOM" description="Ship-To Telecom Number"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentContactMechType shipmentContactMechTypeId="SHIP_FROM_TELECOM" description="Ship-From Telecom Number"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentContactMechType shipmentContactMechTypeId="SHIP_TO_EMAIL" description="Ship-To E-Mail"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentContactMechType shipmentContactMechTypeId="SHIP_FROM_EMAIL" description="Ship-From E-Mail"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Incoming"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Outgoing"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="SALES_RETURN" parentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Sales Return"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="SALES_SHIPMENT" parentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Sales Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="PURCHASE_SHIPMENT" parentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Purchase Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="PURCHASE_RETURN" parentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Purchase Return"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="DROP_SHIPMENT" hasTable="N" description="Drop Shipment"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentType shipmentTypeId="TRANSFER" hasTable="N" description="Transfer"/>
+    <moqui.basic.StatusType statusTypeId="SHIPMENT_STATUS" description="Shipment"/>
+    <moqui.basic.StatusItem statusId="SHIPMENT_INPUT" statusTypeId="SHIPMENT_STATUS" statusCode="INPUT" description="Input"/>
+    <moqui.basic.StatusItem statusId="SHIPMENT_SCHEDULED" statusTypeId="SHIPMENT_STATUS" statusCode="SCHEDULED" description="Scheduled"/>
+    <moqui.basic.StatusItem statusId="SHIPMENT_PICKED" statusTypeId="SHIPMENT_STATUS" statusCode="PICKED" description="Picked" statusAge="60"/>
+    <moqui.basic.StatusItem statusId="SHIPMENT_PACKED" statusTypeId="SHIPMENT_STATUS" statusCode="PACKED" description="Packed" statusAge="80"/>
+    <moqui.basic.StatusItem statusId="SHIPMENT_SHIPPED" statusTypeId="SHIPMENT_STATUS" statusCode="SHIPPED" description="Shipped" statusAge="100"/>
+    <moqui.basic.StatusItem statusId="SHIPMENT_DELIVERED" statusTypeId="SHIPMENT_STATUS" statusCode="DELIVERED" description="Delivered"/>
+    <moqui.basic.StatusItem statusId="SHIPMENT_CANCELLED" statusTypeId="SHIPMENT_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_INPUT" transitionName="Schedule"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_INPUT" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_INPUT" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_SCHEDULED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_SCHEDULED" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PICKED" toStatusId="SHIPMENT_PICKED" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_PACKED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SHIPPED" toStatusId="SHIPMENT_SHIPPED" transitionName="Deliver"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_INPUT" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_SCHEDULED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PICKED" toStatusId="SHIPMENT_PICKED" transitionName="Cancel"/>
+    <moqui.basic.StatusType statusTypeId="PURCH_SHIP_STATUS" description="Purchase Shipment"/>
+    <moqui.basic.StatusItem statusId="PURCH_SHIP_CREATED" statusTypeId="PURCH_SHIP_STATUS" statusCode="CREATED" description="Created"/>
+    <moqui.basic.StatusItem statusId="PURCH_SHIP_SHIPPED" statusTypeId="PURCH_SHIP_STATUS" statusCode="SHIPPED" description="Shipped"/>
+    <moqui.basic.StatusItem statusId="PURCH_SHIP_RECEIVED" statusTypeId="PURCH_SHIP_STATUS" statusCode="RECEIVED" description="Received"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_CREATED" toStatusId="PURCH_SHIP_CREATED" transitionName="Receive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_CREATED" toStatusId="PURCH_SHIP_CREATED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_SHIPPED" toStatusId="PURCH_SHIP_SHIPPED" transitionName="Receive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_RECEIVED" toStatusId="PURCH_SHIP_RECEIVED" transitionName="Ship"/>
+    <moqui.basic.StatusType statusTypeId="SHPRTSG_CS_STATUS" description="ShipmentRouteSegment:CarrierService"/>
+    <moqui.basic.StatusItem statusId="SHRSCS_NOT_STARTED" statusTypeId="SHPRTSG_CS_STATUS" statusCode="NOT_STARTED" description="Not Started"/>
+    <moqui.basic.StatusItem statusId="SHRSCS_CONFIRMED" statusTypeId="SHPRTSG_CS_STATUS" statusCode="CONFIRMED" description="Confirmed"/>
+    <moqui.basic.StatusItem statusId="SHRSCS_ACCEPTED" statusTypeId="SHPRTSG_CS_STATUS" statusCode="ACCEPTED" description="Accepted"/>
+    <moqui.basic.StatusItem statusId="SHRSCS_VOIDED" statusTypeId="SHPRTSG_CS_STATUS" statusCode="VOIDED" description="Voided"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_NOT_STARTED" toStatusId="SHRSCS_NOT_STARTED" transitionName="Confirm"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_CONFIRMED" toStatusId="SHRSCS_CONFIRMED" transitionName="Accept"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_CONFIRMED" toStatusId="SHRSCS_CONFIRMED" transitionName="Void"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_ACCEPTED" toStatusId="SHRSCS_ACCEPTED" transitionName="Void"/>
+    <moqui.basic.StatusType statusTypeId="PICKLIST_STATUS" description="Picklist"/>
+    <moqui.basic.StatusItem statusId="PICKLIST_INPUT" statusTypeId="PICKLIST_STATUS" statusCode="INPUT" description="Input"/>
+    <moqui.basic.StatusItem statusId="PICKLIST_ASSIGNED" statusTypeId="PICKLIST_STATUS" statusCode="ASSIGNED" description="Assigned" statusAge="25"/>
+    <moqui.basic.StatusItem statusId="PICKLIST_PRINTED" statusTypeId="PICKLIST_STATUS" statusCode="PRINTED" description="Printed" statusAge="50"/>
+    <moqui.basic.StatusItem statusId="PICKLIST_PICKED" statusTypeId="PICKLIST_STATUS" statusCode="PICKED" description="Picked" statusAge="80"/>
+    <moqui.basic.StatusItem statusId="PICKLIST_CANCELLED" statusTypeId="PICKLIST_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_INPUT" transitionName="Assign"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_INPUT" transitionName="Print"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_INPUT" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_INPUT" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_ASSIGNED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_ASSIGNED" transitionName="Print"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_ASSIGNED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_PRINTED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_PRINTED" transitionName="Cancel"/>
+    <moqui.basic.StatusType statusTypeId="PICKITEM_STATUS" description="Picklist Item"/>
+    <moqui.basic.StatusItem statusId="PICKITEM_PENDING" statusTypeId="PICKITEM_STATUS" statusCode="PENDING" description="Pending" statusAge="0"/>
+    <moqui.basic.StatusItem statusId="PICKITEM_COMPLETED" statusTypeId="PICKITEM_STATUS" statusCode="COMPLETED" description="Completed" statusAge="100"/>
+    <moqui.basic.StatusItem statusId="PICKITEM_CANCELLED" statusTypeId="PICKITEM_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PENDING" toStatusId="PICKITEM_PENDING" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PENDING" toStatusId="PICKITEM_PENDING" transitionName="Cancel"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfigType shipmentGatewayConfTypeId="SHIP_GATEWAY_FEDEX" hasTable="Y" description="Shipment Gateway Fedex"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfig shipmentGatewayConfigId="FEDEX_CONFIG" shipmentGatewayConfTypeId="SHIP_GATEWAY_FEDEX" description="Fedex Config"/>
+    <org.apache.ofbiz.shipment.shipment.ShipmentGatewayFedex shipmentGatewayConfigId="FEDEX_CONFIG" connectUrl="https://gatewaybeta.fedex.com/GatewayDC" connectSoapUrl="https://gatewaybeta.fedex.com:443/web-services" connectTimeout="60" labelImageType="PNG" defaultDropoffType="REGULARPICKUP" defaultPackagingType="YOURPACKNG" templateShipment="component://product/template/shipment/FedexShipRequestTemplate.xml.ftl" templateSubscription="component://product/template/shipment/FedexSubscriptionRequestTemplate.xml.ftl" rateEstimateTemplate="component://product/template/shipment/FedexRateEstimateRequestTemplate.xml.ftl"/>
+</entity-facade-xml>
+

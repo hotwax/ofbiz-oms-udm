@@ -21,7 +21,7 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
-    <entity entity-name="OrderAdjustment" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderAdjustment" package="org.apache.ofbiz.order.order" cache="never">
 <description>Note that both includeInTax and includeInShipping should default to true, except in the case where this adjustment is a tax or shipping adjustment then should be ignored.</description>        <field name="orderAdjustmentId" type="id" is-pk="true"></field>
         <field name="orderAdjustmentTypeId" type="id"></field>
         <field name="orderId" type="id"></field>
@@ -79,17 +79,17 @@ under the License.
             <key-map field-name="orderItemSeqId"/>
             <key-map field-name="shipGroupSeqId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_ADJ_PRGEO" title="Primary" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="ORDER_ADJ_PRGEO" title="Primary" related="moqui.basic.Geo">
             <key-map field-name="primaryGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_ADJ_SCGEO" title="Secondary" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="ORDER_ADJ_SCGEO" title="Secondary" related="moqui.basic.Geo">
             <key-map field-name="secondaryGeoId" related="geoId"/>
         </relationship>
         <relationship type="one-nofk" fk-name="ORDER_ADJ_OA" related="org.apache.ofbiz.order.order.OrderAdjustment">
             <key-map field-name="originalAdjustmentId" related="orderAdjustmentId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderAdjustmentAttribute" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderAdjustmentAttribute" package="org.apache.ofbiz.order.order">
         <field name="orderAdjustmentId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
         <field name="attrValue" type="text-medium"></field>
@@ -98,7 +98,7 @@ under the License.
             <key-map field-name="orderAdjustmentId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderAdjustmentType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderAdjustmentType" package="org.apache.ofbiz.order.order">
         <field name="orderAdjustmentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -107,7 +107,7 @@ under the License.
             <key-map field-name="parentTypeId" related="orderAdjustmentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderAttribute" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderAttribute" package="org.apache.ofbiz.order.order">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
         <field name="attrValue" type="text-medium"></field>
@@ -116,7 +116,7 @@ under the License.
             <key-map field-name="orderId"/>
         </relationship>
     </entity>
-    <entity entity-name="CommunicationEventOrder" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="CommunicationEventOrder" package="org.apache.ofbiz.order.order">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="communicationEventId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="COMEV_ORDER_ORDER" related="org.apache.ofbiz.order.order.OrderHeader">
@@ -126,7 +126,7 @@ under the License.
             <key-map field-name="communicationEventId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderContactMech" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderContactMech" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
         <field name="contactMechId" type="id" is-pk="true"></field>
@@ -140,7 +140,7 @@ under the License.
             <key-map field-name="contactMechPurposeTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderContent" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderContent" package="org.apache.ofbiz.order.order">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="contentId" type="id" is-pk="true"></field>
@@ -157,7 +157,7 @@ under the License.
             <key-map field-name="orderContentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderContentType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderContentType" package="org.apache.ofbiz.order.order">
         <field name="orderContentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -166,7 +166,7 @@ under the License.
             <key-map field-name="parentTypeId" related="orderContentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderHeader" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderHeader" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderTypeId" type="id"></field>
         <field name="orderName" type="text-medium"></field>
@@ -199,7 +199,7 @@ under the License.
         <relationship type="one" fk-name="ORDER_HDR_TYPE" related="org.apache.ofbiz.order.order.OrderType">
             <key-map field-name="orderTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_HDR_SCENUM" title="SalesChannel" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="ORDER_HDR_SCENUM" title="SalesChannel" related="moqui.basic.Enumeration">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="ORDER_HDR_OFAC" title="Origin" related="org.apache.ofbiz.product.facility.Facility">
@@ -211,23 +211,20 @@ under the License.
         <relationship type="one" fk-name="ORDER_HDR_CBUL" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="createdBy" related="userLoginId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_HDR_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="ORDER_HDR_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_HDR_SYST" title="Sync" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="ORDER_HDR_SYST" title="Sync" related="moqui.basic.StatusItem">
             <key-map field-name="syncStatusId" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_HDR_CUOM" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="ORDER_HDR_CUOM" related="moqui.basic.Uom">
             <key-map field-name="currencyUom" related="uomId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_HDR_WS" related="org.apache.ofbiz.webapp.website.WebSite">
-            <key-map field-name="webSiteId"/>
         </relationship>
         <index name="ORDEREXT_ID_IDX">
             <index-field name="externalId"/>
         </index>
     </entity>
-    <entity entity-name="OrderHeaderNote" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderHeaderNote" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="noteId" type="id" is-pk="true"></field>
         <field name="internalNote" type="text-indicator"></field>
@@ -238,7 +235,7 @@ under the License.
             <key-map field-name="noteId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItem" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderItem" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="externalId" type="id-long"></field>
@@ -301,19 +298,16 @@ under the License.
         <relationship type="one" fk-name="ORDER_ITEM_FMINV" title="From" related="org.apache.ofbiz.product.inventory.InventoryItem">
             <key-map field-name="fromInventoryItemId" related="inventoryItemId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_ITEM_RFUOM" title="RecurringFreq" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="ORDER_ITEM_RFUOM" title="RecurringFreq" related="moqui.basic.Uom">
             <key-map field-name="recurringFreqUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_ITEM_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="ORDER_ITEM_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="many" related="org.apache.ofbiz.product.facility.ProductFacilityLocation">
             <key-map field-name="productId"/>
         </relationship>
-        <relationship type="many" related="org.apache.ofbiz.common.status.StatusValidChange">
-            <key-map field-name="statusId"/>
-        </relationship>
-        <relationship type="one" fk-name="ORDER_ITEM_SYST" title="Sync" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="ORDER_ITEM_SYST" title="Sync" related="moqui.basic.StatusItem">
             <key-map field-name="syncStatusId" related="statusId"/>
         </relationship>
         <relationship type="one" fk-name="ORDER_ITEM_DCUL" title="DontCancelSet" related="org.apache.ofbiz.security.login.UserLogin">
@@ -326,7 +320,7 @@ under the License.
             <index-field name="externalId"/>
         </index>
     </entity>
-    <entity entity-name="OrderItemAssoc" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderItemAssoc" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="shipGroupSeqId" type="id" is-pk="true"></field>
@@ -371,7 +365,7 @@ under the License.
             <key-map field-name="toShipGroupSeqId" related="shipGroupSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemAssocType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderItemAssocType" package="org.apache.ofbiz.order.order">
         <field name="orderItemAssocTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -380,7 +374,7 @@ under the License.
             <key-map field-name="parentTypeId" related="orderItemAssocTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemAttribute" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderItemAttribute" package="org.apache.ofbiz.order.order">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
@@ -395,7 +389,7 @@ under the License.
             <index-field name="attrName"/>
         </index>
     </entity>
-    <entity entity-name="OrderItemBilling" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderItemBilling" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="invoiceId" type="id" is-pk="true"></field>
@@ -425,7 +419,7 @@ under the License.
             <key-map field-name="itemIssuanceId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemChange" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderItemChange" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderItemChangeId" type="id" is-pk="true"></field>
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>
@@ -446,17 +440,17 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_ITCH_TYPE" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="ORDER_ITCH_TYPE" related="moqui.basic.Enumeration">
             <key-map field-name="changeTypeEnumId" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_ITCH_REAS" title="Reason" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="ORDER_ITCH_REAS" title="Reason" related="moqui.basic.Enumeration">
             <key-map field-name="reasonEnumId" related="enumId"/>
         </relationship>
         <relationship type="one" fk-name="ORDER_ITCH_USER" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="changeUserLogin" related="userLoginId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemContactMech" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderItemContactMech" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
@@ -475,7 +469,7 @@ under the License.
             <key-map field-name="contactMechPurposeTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemGroup" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderItemGroup" package="org.apache.ofbiz.order.order">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemGroupSeqId" type="id" is-pk="true"></field>
         <field name="parentGroupSeqId" type="id"></field>
@@ -488,7 +482,7 @@ under the License.
             <key-map field-name="parentGroupSeqId" related="orderItemGroupSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemGroupOrder" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderItemGroupOrder" package="org.apache.ofbiz.order.order">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="groupOrderId" type="id" is-pk="true"></field>
@@ -497,7 +491,7 @@ under the License.
             <key-map field-name="orderItemSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemShipGroup" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderItemShipGroup" package="org.apache.ofbiz.order.order">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="shipGroupSeqId" type="id" is-pk="true"></field>
         <field name="shipmentMethodTypeId" type="id" enable-audit-log="true"></field>
@@ -557,7 +551,7 @@ under the License.
             <key-map field-name="telecomContactMechId" related="contactMechId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemShipGroupAssoc" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderItemShipGroupAssoc" package="org.apache.ofbiz.order.order">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="shipGroupSeqId" type="id" is-pk="true"></field>
@@ -575,7 +569,7 @@ under the License.
             <key-map field-name="shipGroupSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemShipGrpInvRes" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderItemShipGrpInvRes" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="shipGroupSeqId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
@@ -610,7 +604,7 @@ under the License.
             <key-map field-name="inventoryItemId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderItemType" package="org.apache.ofbiz.order.order">
         <field name="orderItemTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -619,7 +613,7 @@ under the License.
             <key-map field-name="parentTypeId" related="orderItemTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderPaymentPreference" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderPaymentPreference" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderPaymentPreferenceId" type="id" is-pk="true"></field>
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>
@@ -664,7 +658,7 @@ under the License.
         <relationship type="one" fk-name="ORDER_PMPRF_PMTP" related="org.apache.ofbiz.accounting.payment.PaymentMethodType">
             <key-map field-name="paymentMethodTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="ORDER_PMPRF_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="ORDER_PMPRF_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="ORDER_PMPRF_USRL" related="org.apache.ofbiz.security.login.UserLogin">
@@ -678,7 +672,7 @@ under the License.
             <index-field name="manualRefNum"/>
         </index>
     </entity>
-    <entity entity-name="OrderRole" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderRole" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="roleTypeId" type="id" is-pk="true"></field>
@@ -701,7 +695,7 @@ under the License.
             <key-map field-name="orderId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderShipment" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderShipment" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="shipGroupSeqId" type="id" is-pk="true"></field>
@@ -728,7 +722,7 @@ under the License.
             <key-map field-name="shipGroupSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderStatus" package="org.apache.ofbiz.order.order" cache="never" group="ofbiz_transactional">
+    <entity entity-name="OrderStatus" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderStatusId" type="id" is-pk="true"></field>
         <field name="statusId" type="id"></field>
         <field name="orderId" type="id"></field>
@@ -737,7 +731,7 @@ under the License.
         <field name="statusDatetime" type="date-time"></field>
         <field name="statusUserLogin" type="id-long"></field>
         <field name="changeReason" type="text-medium"></field>
-        <relationship type="one" fk-name="ORDER_STTS_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="ORDER_STTS_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="ORDER_STTS_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
@@ -754,7 +748,7 @@ under the License.
             <key-map field-name="statusUserLogin" related="userLoginId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderTerm" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderTerm" package="org.apache.ofbiz.order.order">
         <field name="termTypeId" type="id" is-pk="true"></field>
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
@@ -763,7 +757,7 @@ under the License.
         <field name="textValue" type="text-medium"></field>
         <field name="description" type="text-medium"></field>
         <field name="uomId" type="id"></field>
-        <relationship type="one" fk-name="ORDER_TERM_UOM" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="ORDER_TERM_UOM" related="moqui.basic.Uom">
             <key-map field-name="uomId"/>
         </relationship>
         <relationship type="one" fk-name="ORDER_TERM_OHDR" related="org.apache.ofbiz.order.order.OrderHeader">
@@ -774,7 +768,7 @@ under the License.
             <key-map field-name="orderItemSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderType" package="org.apache.ofbiz.order.order" group="ofbiz_transactional">
+    <entity entity-name="OrderType" package="org.apache.ofbiz.order.order">
         <field name="orderTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -783,7 +777,7 @@ under the License.
             <key-map field-name="parentTypeId" related="orderTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnAdjustment" package="org.apache.ofbiz.order.return" cache="never" group="ofbiz_transactional">
+    <entity entity-name="ReturnAdjustment" package="org.apache.ofbiz.order.return" cache="never">
 <description>Tax, shipping, and promotional adjustments which are carried over from the order to the return.
         Note that both includeInTax and includeInShipping should default to true, except in the case where this adjustment is a tax or shipping adjustment
         then should be ignored.</description>        <field name="returnAdjustmentId" type="id" is-pk="true"></field>
@@ -830,10 +824,10 @@ under the License.
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
         </relationship>
-        <relationship type="one" fk-name="RETURN_ADJ_PRGEO" title="Primary" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="RETURN_ADJ_PRGEO" title="Primary" related="moqui.basic.Geo">
             <key-map field-name="primaryGeoId" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="RETURN_ADJ_SCGEO" title="Secondary" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="RETURN_ADJ_SCGEO" title="Secondary" related="moqui.basic.Geo">
             <key-map field-name="secondaryGeoId" related="geoId"/>
         </relationship>
         <relationship type="one" fk-name="RET_ADJ_RTN_TYPE" related="org.apache.ofbiz.order.return.ReturnType">
@@ -843,7 +837,7 @@ under the License.
             <key-map field-name="orderAdjustmentId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnAdjustmentType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnAdjustmentType" package="org.apache.ofbiz.order.return">
         <field name="returnAdjustmentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -852,7 +846,7 @@ under the License.
             <key-map field-name="parentTypeId" related="returnAdjustmentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnHeader" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnHeader" package="org.apache.ofbiz.order.return">
         <field name="returnId" type="id" is-pk="true"></field>
         <field name="externalId" type="id-long"><description>This field stores return ID of the external system</description></field>
         <field name="returnHeaderTypeId" type="id"></field>
@@ -888,16 +882,16 @@ under the License.
         <relationship type="one-nofk" related="org.apache.ofbiz.party.contact.PostalAddress">
             <key-map field-name="originContactMechId" related="contactMechId"/>
         </relationship>
-        <relationship type="one" fk-name="RTN_STTS_ITEM" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="RTN_STTS_ITEM" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="RTN_HDR_CUOM" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="RTN_HDR_CUOM" related="moqui.basic.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
         </relationship>
         <relationship type="one-nofk" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="createdBy" related="userLoginId"/>
         </relationship>
-        <relationship type="one" fk-name="RTN_CHNL" title="ReturnChannel" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="RTN_CHNL" title="ReturnChannel" related="moqui.basic.Enumeration">
             <key-map field-name="returnChannelEnumId" related="enumId"/>
         </relationship>
         <index name="RTN_CHNL_INDX">
@@ -907,7 +901,7 @@ under the License.
             <index-field name="externalId"/>
         </index>
     </entity>
-    <entity entity-name="ReturnHeaderType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnHeaderType" package="org.apache.ofbiz.order.return">
         <field name="returnHeaderTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="description" type="text-medium"></field>
@@ -915,7 +909,7 @@ under the License.
             <key-map field-name="parentTypeId" related="returnHeaderTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnItem" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnItem" package="org.apache.ofbiz.order.return">
         <field name="returnId" type="id" is-pk="true"></field>
         <field name="returnItemSeqId" type="id" is-pk="true"></field>
         <field name="returnReasonId" type="id" enable-audit-log="true"><description>why item is returned: did not like, wrong item, damaged, etc. etc.</description></field>
@@ -953,10 +947,10 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </relationship>
-        <relationship type="one" fk-name="RTN_ITEM_STTSIT" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="RTN_ITEM_STTSIT" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="RTN_ITEM_ITSTT" title="Inventory" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="RTN_ITEM_ITSTT" title="Inventory" related="moqui.basic.StatusItem">
             <key-map field-name="expectedItemStatus" related="statusId"/>
         </relationship>
         <relationship type="one" fk-name="RTN_ITEM_PROD" related="org.apache.ofbiz.product.product.Product">
@@ -971,7 +965,7 @@ under the License.
             <index-field name="orderItemSeqId"/>
         </index>
     </entity>
-    <entity entity-name="ReturnItemResponse" package="org.apache.ofbiz.order.return" cache="never" group="ofbiz_transactional">
+    <entity entity-name="ReturnItemResponse" package="org.apache.ofbiz.order.return" cache="never">
 <description>Records what was done with a return: whether a replacement order, a payment, or a billing account credit was issued</description>        <field name="returnItemResponseId" type="id" is-pk="true"></field>
         <field name="orderPaymentPreferenceId" type="id"></field>
         <field name="replacementOrderId" type="id"></field>
@@ -987,7 +981,7 @@ under the License.
             <key-map field-name="replacementOrderId" related="orderId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnItemType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnItemType" package="org.apache.ofbiz.order.return">
 <description>ReturnItemType records the type of a ReturnItem</description>        <field name="returnItemTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="description" type="text-medium"></field>
@@ -995,7 +989,7 @@ under the License.
             <key-map field-name="parentTypeId" related="returnItemTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnItemTypeMap" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnItemTypeMap" package="org.apache.ofbiz.order.return">
 <description>Mapping between productTypeId and returnItemTypeId for product order items, orderItemTypeId and returnItemTypeId for other
           order items, or orderAdjustmentTypeId and returnAdjustmentTypeId.  Separate mappings for different types of returns (customer vs. vendor)</description>        <field name="returnItemMapKey" type="id" is-pk="true"></field>
         <field name="returnHeaderTypeId" type="id" is-pk="true"></field>
@@ -1010,19 +1004,19 @@ under the License.
             <key-map field-name="returnItemTypeId" related="returnAdjustmentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnReason" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnReason" package="org.apache.ofbiz.order.return">
         <field name="returnReasonId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
         <field name="sequenceId" type="id"></field>
     </entity>
-    <entity entity-name="ReturnStatus" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnStatus" package="org.apache.ofbiz.order.return">
         <field name="returnStatusId" type="id" is-pk="true"></field>
         <field name="statusId" type="id"></field>
         <field name="returnId" type="id"></field>
         <field name="returnItemSeqId" type="id"></field>
         <field name="changeByUserLoginId" type="id-long"></field>
         <field name="statusDatetime" type="date-time"></field>
-        <relationship type="one" fk-name="RTN_STTS_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="RTN_STTS_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="RTN_STTS_RTN" related="org.apache.ofbiz.order.return.ReturnHeader">
@@ -1036,12 +1030,12 @@ under the License.
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnType" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnType" package="org.apache.ofbiz.order.return">
         <field name="returnTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
         <field name="sequenceId" type="id"></field>
     </entity>
-    <entity entity-name="ReturnItemShipment" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="ReturnItemShipment" package="org.apache.ofbiz.order.return">
         <field name="returnId" type="id" is-pk="true"></field>
         <field name="returnItemSeqId" type="id" is-pk="true"></field>
         <field name="shipmentId" type="id" is-pk="true"></field>
@@ -1062,7 +1056,7 @@ under the License.
             <key-map field-name="shipmentItemSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="CommunicationEventReturn" package="org.apache.ofbiz.order.return" group="ofbiz_transactional">
+    <entity entity-name="CommunicationEventReturn" package="org.apache.ofbiz.order.return">
         <field name="returnId" type="id" is-pk="true"></field>
         <field name="communicationEventId" type="id" is-pk="true"></field>
         <relationship type="one" fk-name="COMEV_RTN_RETURN" related="org.apache.ofbiz.order.return.ReturnHeader">
@@ -1072,7 +1066,7 @@ under the License.
             <key-map field-name="communicationEventId"/>
         </relationship>
     </entity>
-    <entity entity-name="ReturnContactMech" package="org.apache.ofbiz.order.return" cache="never" group="ofbiz_transactional">
+    <entity entity-name="ReturnContactMech" package="org.apache.ofbiz.order.return" cache="never">
         <field name="returnId" type="id" is-pk="true"></field>
         <field name="contactMechPurposeTypeId" type="id" is-pk="true"></field>
         <field name="contactMechId" type="id" is-pk="true"></field>

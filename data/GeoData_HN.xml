@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="HN-AT" geoName="Atlántida" geoCodeAlpha3="HN-AT" geoCodeAlpha2="HN-AT" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-CH" geoName="Choluteca" geoCodeAlpha3="HN-CH" geoCodeAlpha2="HN-CH" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-CL" geoName="Colón" geoCodeAlpha3="HN-CL" geoCodeAlpha2="HN-CL" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-CM" geoName="Comayagua" geoCodeAlpha3="HN-CM" geoCodeAlpha2="HN-CM" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-CP" geoName="Copán" geoCodeAlpha3="HN-CP" geoCodeAlpha2="HN-CP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-CR" geoName="Cortés" geoCodeAlpha3="HN-CR" geoCodeAlpha2="HN-CR" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-EP" geoName="El Paraíso" geoCodeAlpha3="HN-EP" geoCodeAlpha2="HN-EP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-FM" geoName="Francisco Morazán" geoCodeAlpha3="HN-FM" geoCodeAlpha2="HN-FM" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-GD" geoName="Gracias a Dios" geoCodeAlpha3="HN-GD" geoCodeAlpha2="HN-GD" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-IN" geoName="Intibucá" geoCodeAlpha3="HN-IN" geoCodeAlpha2="HN-IN" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-IB" geoName="Islas de la Bahía" geoCodeAlpha3="HN-IB" geoCodeAlpha2="HN-IB" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-LP" geoName="La Paz" geoCodeAlpha3="HN-LP" geoCodeAlpha2="HN-LP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-LE" geoName="Lempira" geoCodeAlpha3="HN-LE" geoCodeAlpha2="HN-LE" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-OC" geoName="Ocotepeque" geoCodeAlpha3="HN-OC" geoCodeAlpha2="HN-OC" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-OL" geoName="Olancho" geoCodeAlpha3="HN-OL" geoCodeAlpha2="HN-OL" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-SB" geoName="Santa Bárbara" geoCodeAlpha3="HN-SB" geoCodeAlpha2="HN-SB" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-VA" geoName="Valle" geoCodeAlpha3="HN-VA" geoCodeAlpha2="HN-VA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="HN-YO" geoName="Yoro" geoCodeAlpha3="HN-YO" geoCodeAlpha2="HN-YO" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-AT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-CH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-CL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-CM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-CP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-CR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-EP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-FM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-GD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-IN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-IB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-LP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-LE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-OC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-OL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-SB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-VA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="HND" toGeoId="HN-YO" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

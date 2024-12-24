@@ -21,7 +21,7 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
-    <entity entity-name="ItemIssuance" package="org.apache.ofbiz.shipment.issuance" group="ofbiz_transactional">
+    <entity entity-name="ItemIssuance" package="org.apache.ofbiz.shipment.issuance">
         <field name="itemIssuanceId" type="id" is-pk="true"></field>
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>
@@ -63,7 +63,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="Picklist" package="org.apache.ofbiz.shipment.picklist" group="ofbiz_transactional">
+    <entity entity-name="Picklist" package="org.apache.ofbiz.shipment.picklist">
         <field name="picklistId" type="id" is-pk="true"></field>
         <field name="externalId" type="id-long"><description>This field stores picklist ID of the external system</description></field>
         <field name="description" type="text-medium"></field>
@@ -79,13 +79,13 @@ under the License.
         <relationship type="one" fk-name="PICKLST_SMTP" related="org.apache.ofbiz.shipment.shipment.ShipmentMethodType">
             <key-map field-name="shipmentMethodTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="PICKLST_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PICKLST_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PicklistBin" package="org.apache.ofbiz.shipment.picklist" group="ofbiz_transactional">
+    <entity entity-name="PicklistBin" package="org.apache.ofbiz.shipment.picklist">
         <field name="picklistBinId" type="id" is-pk="true"></field>
         <field name="picklistId" type="id"></field>
         <field name="binLocationNumber" type="number-integer"></field>
@@ -102,7 +102,7 @@ under the License.
             <key-map field-name="primaryOrderId" related="orderId"/>
         </relationship>
     </entity>
-    <entity entity-name="PicklistItem" package="org.apache.ofbiz.shipment.picklist" group="ofbiz_transactional">
+    <entity entity-name="PicklistItem" package="org.apache.ofbiz.shipment.picklist">
         <field name="picklistBinId" type="id" is-pk="true"></field>
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
@@ -124,7 +124,7 @@ under the License.
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderHeader">
             <key-map field-name="orderId"/>
         </relationship>
-        <relationship type="one" fk-name="PICKLST_ITM_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PICKLST_ITM_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="itemStatusId" related="statusId"/>
         </relationship>
         <relationship type="one" fk-name="PCKLST_ITM_INV" related="org.apache.ofbiz.product.inventory.InventoryItem">
@@ -144,7 +144,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="PicklistRole" package="org.apache.ofbiz.shipment.picklist" group="ofbiz_transactional">
+    <entity entity-name="PicklistRole" package="org.apache.ofbiz.shipment.picklist">
         <field name="picklistId" type="id" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="roleTypeId" type="id" is-pk="true"></field>
@@ -169,7 +169,7 @@ under the License.
             <index-field name="roleTypeId"/>
         </index>
     </entity>
-    <entity entity-name="PicklistStatusHistory" package="org.apache.ofbiz.shipment.picklist" group="ofbiz_transactional">
+    <entity entity-name="PicklistStatusHistory" package="org.apache.ofbiz.shipment.picklist">
         <field name="picklistId" type="id" is-pk="true"></field>
         <field name="createdDate" type="date-time" is-pk="true"></field>
         <field name="createdByUserLogin" type="id-long"></field>
@@ -181,18 +181,14 @@ under the License.
         <relationship type="one" fk-name="PCKLST_STHST_CUL" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="createdByUserLogin" related="userLoginId"/>
         </relationship>
-        <relationship type="one" fk-name="PCKLST_STHST_FSI" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PCKLST_STHST_FSI" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PCKLST_STHST_TSI" title="To" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="PCKLST_STHST_TSI" title="To" related="moqui.basic.StatusItem">
             <key-map field-name="statusIdTo" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="PCKLST_STHST_SVC" related="org.apache.ofbiz.common.status.StatusValidChange">
-            <key-map field-name="statusId"/>
-            <key-map field-name="statusIdTo"/>
-        </relationship>
     </entity>
-    <entity entity-name="ShipmentReceipt" package="org.apache.ofbiz.shipment.receipt" group="ofbiz_transactional">
+    <entity entity-name="ShipmentReceipt" package="org.apache.ofbiz.shipment.receipt">
         <field name="receiptId" type="id" is-pk="true"></field>
         <field name="inventoryItemId" type="id"></field>
         <field name="productId" type="id"></field>
@@ -243,7 +239,7 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="CarrierShipmentMethod" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="CarrierShipmentMethod" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentMethodTypeId" type="id" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="roleTypeId" type="id" is-pk="true"></field>
@@ -260,7 +256,7 @@ under the License.
             <key-map field-name="roleTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="CarrierShipmentBoxType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="CarrierShipmentBoxType" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentBoxTypeId" type="id" is-pk="true"></field>
         <field name="partyId" type="id" is-pk="true"></field>
         <field name="packagingTypeCode" type="id"></field>
@@ -272,7 +268,7 @@ under the License.
             <key-map field-name="partyId"/>
         </relationship>
     </entity>
-    <entity entity-name="Delivery" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="Delivery" package="org.apache.ofbiz.shipment.shipment">
         <field name="deliveryId" type="id" is-pk="true"></field>
         <field name="originFacilityId" type="id"></field>
         <field name="destFacilityId" type="id"></field>
@@ -292,7 +288,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="Shipment" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="Shipment" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="externalId" type="id-long"><description>This field stores product category ID of the external system</description></field>
         <field name="shipmentTypeId" type="id"></field>
@@ -327,10 +323,10 @@ under the License.
         <relationship type="one" fk-name="SHPMNT_TYPE" related="org.apache.ofbiz.shipment.shipment.ShipmentType">
             <key-map field-name="shipmentTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="SHPMNT_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMNT_CUOM" title="Currency" related="moqui.basic.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
         </relationship>
         <relationship type="one" fk-name="SHPMNT_OFAC" title="Origin" related="org.apache.ofbiz.product.facility.Facility">
@@ -393,7 +389,7 @@ under the License.
         </index>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ShipmentAttribute" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentAttribute" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="attrName" type="id-long" is-pk="true"></field>
         <field name="attrValue" type="text-medium"></field>
@@ -402,7 +398,7 @@ under the License.
             <key-map field-name="shipmentId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentBoxType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentBoxType" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentBoxTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
         <field name="dimensionUomId" type="id"></field>
@@ -411,14 +407,14 @@ under the License.
         <field name="boxHeight" type="number-decimal"></field>
         <field name="weightUomId" type="id"></field>
         <field name="boxWeight" type="number-decimal"></field>
-        <relationship type="one" fk-name="SHMT_BXTP_DUOM" title="Dimension" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHMT_BXTP_DUOM" title="Dimension" related="moqui.basic.Uom">
             <key-map field-name="dimensionUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHMT_BXTP_WUOM" title="Weight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHMT_BXTP_WUOM" title="Weight" related="moqui.basic.Uom">
             <key-map field-name="weightUomId" related="uomId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentContactMech" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentContactMech" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="shipmentContactMechTypeId" type="id" is-pk="true"></field>
         <field name="contactMechId" type="id"></field>
@@ -432,11 +428,11 @@ under the License.
             <key-map field-name="shipmentContactMechTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentContactMechType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentContactMechType" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentContactMechTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-    <entity entity-name="ShipmentCostEstimate" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentCostEstimate" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentCostEstimateId" type="id" is-pk="true"></field>
         <field name="shipmentMethodTypeId" type="id"></field>
         <field name="carrierPartyId" type="id"></field>
@@ -483,23 +479,23 @@ under the License.
             <key-map field-name="partyId"/>
             <key-map field-name="roleTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_WUOM" title="Weight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMNT_CE_WUOM" title="Weight" related="moqui.basic.Uom">
             <key-map field-name="weightUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_QUOM" title="Quantity" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMNT_CE_QUOM" title="Quantity" related="moqui.basic.Uom">
             <key-map field-name="quantityUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_PUOM" title="Price" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMNT_CE_PUOM" title="Price" related="moqui.basic.Uom">
             <key-map field-name="priceUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_TGEO" title="To" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="SHPMNT_CE_TGEO" title="To" related="moqui.basic.Geo">
             <key-map field-name="geoIdTo" related="geoId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMNT_CE_FGEO" title="From" related="org.apache.ofbiz.common.geo.Geo">
+        <relationship type="one" fk-name="SHPMNT_CE_FGEO" title="From" related="moqui.basic.Geo">
             <key-map field-name="geoIdFrom" related="geoId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentGatewayConfigType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentGatewayConfigType" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentGatewayConfTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -511,7 +507,7 @@ under the License.
             <key-map field-name="parentTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentGatewayConfig" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentGatewayConfig" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
         <field name="shipmentGatewayConfTypeId" type="id"></field>
         <field name="description" type="text-medium"></field>
@@ -519,7 +515,7 @@ under the License.
             <key-map field-name="shipmentGatewayConfTypeId" related="shipmentGatewayConfTypeId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentGatewayFedex" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentGatewayFedex" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
         <field name="connectUrl" type="text-medium"><description>Fedex Connection URL</description></field>
         <field name="connectSoapUrl" type="text-medium"><description>Fedex Soap Connection URL</description></field>
@@ -538,7 +534,7 @@ under the License.
             <key-map field-name="shipmentGatewayConfigId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentGatewayUps" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentGatewayUps" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
         <field name="connectUrl" type="text-medium"><description>UPS Connection URL</description></field>
         <field name="connectTimeout" type="number-integer"><description>Timeout in seconds</description></field>
@@ -564,7 +560,7 @@ under the License.
             <key-map field-name="shipmentGatewayConfigId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentGatewayUsps" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentGatewayUsps" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentGatewayConfigId" type="id" is-pk="true"></field>
         <field name="connectUrl" type="text-medium"><description>USPS Connection URL</description></field>
         <field name="connectUrlLabels" type="text-medium"><description>USPS Connection URL for Labels</description></field>
@@ -577,7 +573,7 @@ under the License.
             <key-map field-name="shipmentGatewayConfigId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentItem" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentItem" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="shipmentItemSeqId" type="id" is-pk="true"></field>
         <field name="productId" type="id"></field>
@@ -590,7 +586,7 @@ under the License.
             <key-map field-name="productId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentItemFeature" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentItemFeature" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="shipmentItemSeqId" type="id" is-pk="true"></field>
         <field name="productFeatureId" type="id" is-pk="true"></field>
@@ -606,12 +602,12 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ShipmentMethodType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentMethodType" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentMethodTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
         <field name="sequenceNum" type="number-integer"></field>
     </entity>
-    <entity entity-name="ShipmentPackage" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentPackage" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="shipmentPackageSeqId" type="id" is-pk="true"></field>
         <field name="shipmentBoxTypeId" type="id"></field>
@@ -632,14 +628,14 @@ under the License.
         <relationship type="many" related="org.apache.ofbiz.shipment.shipment.CarrierShipmentBoxType">
             <key-map field-name="shipmentBoxTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKG_DUOM" title="Dimension" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPKG_DUOM" title="Dimension" related="moqui.basic.Uom">
             <key-map field-name="dimensionUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKG_WUOM" title="Weight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPKG_WUOM" title="Weight" related="moqui.basic.Uom">
             <key-map field-name="weightUomId" related="uomId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentPackageContent" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentPackageContent" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="shipmentPackageSeqId" type="id" is-pk="true"></field>
         <field name="shipmentItemSeqId" type="id" is-pk="true"></field>
@@ -661,7 +657,7 @@ under the License.
             <key-map field-name="subProductId" related="productId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentPackageRouteSeg" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentPackageRouteSeg" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="shipmentPackageSeqId" type="id" is-pk="true"></field>
         <field name="shipmentRouteSegmentId" type="id" is-pk="true"></field>
@@ -689,11 +685,11 @@ under the License.
             <key-map field-name="shipmentId"/>
             <key-map field-name="shipmentRouteSegmentId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKRTSG_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPKRTSG_CUOM" title="Currency" related="moqui.basic.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentRouteSegment" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentRouteSegment" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="shipmentRouteSegmentId" type="id" is-pk="true"></field>
         <field name="deliveryId" type="id"></field>
@@ -772,25 +768,25 @@ under the License.
         <relationship type="one" fk-name="SHPMT_RTSEG_DTCN" title="Dest" related="org.apache.ofbiz.party.contact.TelecomNumber">
             <key-map field-name="destTelecomNumberId" related="contactMechId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKRTSG_CSSTS" title="CarrierService" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="SHPKRTSG_CSSTS" title="CarrierService" related="moqui.basic.StatusItem">
             <key-map field-name="carrierServiceStatusId" related="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMT_RTSEG_CUOM" title="Currency" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPMT_RTSEG_CUOM" title="Currency" related="moqui.basic.Uom">
             <key-map field-name="currencyUomId" related="uomId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPKRTSG_BWUOM" title="BillingWeight" related="org.apache.ofbiz.common.uom.Uom">
+        <relationship type="one" fk-name="SHPKRTSG_BWUOM" title="BillingWeight" related="moqui.basic.Uom">
             <key-map field-name="billingWeightUomId" related="uomId"/>
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ShipmentStatus" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentStatus" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentStatusId" type="id" is-pk="true"></field>
         <field name="statusId" type="id" is-pk="true"></field>
         <field name="shipmentId" type="id" is-pk="true"></field>
         <field name="statusDate" type="date-time"></field>
         <field name="changeByUserLoginId" type="id-long"></field>
-        <relationship type="one" fk-name="SHPMNT_STTS_STTS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="SHPMNT_STTS_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="SHPMNT_STTS_SHMT" related="org.apache.ofbiz.shipment.shipment.Shipment">
@@ -800,7 +796,7 @@ under the License.
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShipmentType" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <entity entity-name="ShipmentType" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>

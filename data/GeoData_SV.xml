@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="SV-AH" geoName="Ahuachapán" geoCodeAlpha3="SV-AH" geoCodeAlpha2="SV-AH" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-CA" geoName="Cabañas" geoCodeAlpha3="SV-CA" geoCodeAlpha2="SV-CA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-CH" geoName="Chalatenango" geoCodeAlpha3="SV-CH" geoCodeAlpha2="SV-CH" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-CU" geoName="Cuscatlán" geoCodeAlpha3="SV-CU" geoCodeAlpha2="SV-CU" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-LI" geoName="La Libertad" geoCodeAlpha3="SV-LI" geoCodeAlpha2="SV-LI" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-PA" geoName="La Paz" geoCodeAlpha3="SV-PA" geoCodeAlpha2="SV-PA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-UN" geoName="La Unión" geoCodeAlpha3="SV-UN" geoCodeAlpha2="SV-UN" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-MO" geoName="Morazán" geoCodeAlpha3="SV-MO" geoCodeAlpha2="SV-MO" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-SM" geoName="San Miguel" geoCodeAlpha3="SV-SM" geoCodeAlpha2="SV-SM" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-SS" geoName="San Salvador" geoCodeAlpha3="SV-SS" geoCodeAlpha2="SV-SS" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-SV" geoName="San Vicente" geoCodeAlpha3="SV-SV" geoCodeAlpha2="SV-SV" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-SA" geoName="Santa Ana" geoCodeAlpha3="SV-SA" geoCodeAlpha2="SV-SA" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-SO" geoName="Sonsonate" geoCodeAlpha3="SV-SO" geoCodeAlpha2="SV-SO" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="SV-US" geoName="Usulután" geoCodeAlpha3="SV-US" geoCodeAlpha2="SV-US" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-AH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-CA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-CH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-CU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-LI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-PA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-UN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-MO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-SM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-SS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-SV" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-SA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-SO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="SLV" toGeoId="SV-US" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

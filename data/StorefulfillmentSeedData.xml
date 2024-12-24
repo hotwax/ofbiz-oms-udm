@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext-seed">
+    <moqui.basic.EnumerationType enumTypeId="REPORT_AN_ISSUE" description="Report an Issue Reason"/>
+    <moqui.basic.EnumerationType enumTypeId="RPRT_NO_VAR_LOG" description="Report an issue with no variance log"/>
+    <moqui.basic.EnumerationType enumTypeId="REPORT_NO_VAR" description="Report an issue with no variance reason" parentTypeId="RPRT_NO_VAR_LOG"/>
+    <moqui.basic.EnumerationType enumTypeId="REPORT_ALL_VAR" description="Report an issue with all qty variance reason" parentTypeId="REPORT_AN_ISSUE"/>
+    <moqui.basic.EnumerationType enumTypeId="REPORT_VAR" description="Report an issue with particular qty variance reason" parentTypeId="REPORT_AN_ISSUE"/>
+    <moqui.basic.Enumeration enumId="NOT_IN_STOCK" enumTypeId="REPORT_ALL_VAR" enumCode="NOT_IN_STOCK" description="Not in Stock"/>
+    <moqui.basic.Enumeration enumId="WORN_DISPLAY" enumTypeId="REPORT_VAR" enumCode="WORN_DISPLAY" description="Worn Display"/>
+    <moqui.basic.Enumeration enumId="REJ_RSN_DAMAGED" enumTypeId="REPORT_VAR" enumCode="DAMAGED" description="Damaged"/>
+    <moqui.basic.Enumeration enumId="MISMATCH" enumTypeId="REPORT_VAR" enumCode="MISMATCH" description="Mismatch"/>
+    <moqui.basic.Enumeration enumId="INACTIVE_STORE" enumTypeId="REPORT_NO_VAR" enumCode="INACTIVE_STORE" description="Inactive store"/>
+    <moqui.basic.Enumeration enumId="NO_VARIANCE_LOG" enumTypeId="REPORT_NO_VAR" enumCode="NO_VARIANCE_LOG" description="No variance"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="NOT_IN_STOCK" description="Not in Stock"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="WORN_DISPLAY" description="Worn Display"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="REJ_RSN_DAMAGED" description="Damaged"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="MISMATCH" description="Mismatch"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="INACTIVE_STORE" description="Inactive store"/>
+    <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="NO_VARIANCE_LOG" description="No variance"/>
+</entity-facade-xml>
+

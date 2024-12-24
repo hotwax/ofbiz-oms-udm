@@ -26,7 +26,7 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="Content" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
+    <entity entity-name="Content" package="org.apache.ofbiz.content.content">
         <field name="contentId" type="id" is-pk="true"></field>
         <field name="contentTypeId" type="id"></field>
         <field name="ownerContentId" type="id"><description>Used for permissions checking</description></field>
@@ -59,14 +59,11 @@ under the License.
         <relationship type="one" fk-name="CONTENT_TO_TMPDATA" title="Template" related="org.apache.ofbiz.content.data.DataResource">
             <key-map field-name="templateDataResourceId" related="dataResourceId"/>
         </relationship>
-        <relationship type="one" fk-name="CNT_STATUS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="CNT_STATUS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
-        <relationship type="one" fk-name="CONTENT_PRIVENM" title="Privilege" related="org.apache.ofbiz.common.enum.Enumeration">
+        <relationship type="one" fk-name="CONTENT_PRIVENM" title="Privilege" related="moqui.basic.Enumeration">
             <key-map field-name="privilegeEnumId" related="enumId"/>
-        </relationship>
-        <relationship type="one" fk-name="CONTENT_CUSTMET" related="org.apache.ofbiz.common.method.CustomMethod">
-            <key-map field-name="customMethodId"/>
         </relationship>
         <relationship type="one" fk-name="CONTENT_CB_ULGN" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="createdByUserLogin" related="userLoginId"/>
@@ -85,30 +82,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ContentApproval" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
-        <field name="contentApprovalId" type="id" is-pk="true"></field>
-        <field name="contentId" type="id"></field>
-        <field name="contentRevisionSeqId" type="id"></field>
-        <field name="partyId" type="id"></field>
-        <field name="roleTypeId" type="id"></field>
-        <field name="approvalStatusId" type="id"></field>
-        <field name="approvalDate" type="date-time"></field>
-        <field name="sequenceNum" type="number-integer"></field>
-        <field name="comments" type="text-medium"></field>
-        <relationship type="one" fk-name="CNTNTAPPR_CNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
-        </relationship>
-        <relationship type="one" fk-name="CNTNTAPPR_PTY" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="CNTNTAPPR_RLTP" related="org.apache.ofbiz.party.party.RoleType">
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-        <relationship type="one" fk-name="CNTNTAPPR_APSI" title="Approval" related="org.apache.ofbiz.common.status.StatusItem">
-            <key-map field-name="approvalStatusId" related="statusId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ContentAssoc" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
+    <entity entity-name="ContentAssoc" package="org.apache.ofbiz.content.content">
         <field name="contentId" type="id" is-pk="true"><description>&quot;parent&quot; content</description></field>
         <field name="contentIdTo" type="id" is-pk="true"><description>&quot;child&quot; or &quot;sub&quot; content</description></field>
         <field name="contentAssocTypeId" type="id" is-pk="true"></field>
@@ -139,9 +113,6 @@ under the License.
         <relationship type="one" fk-name="CONTENTASSC_LMBUR" title="LastModifiedBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="lastModifiedByUserLogin" related="userLoginId"/>
         </relationship>
-        <relationship type="one" fk-name="CONTENTASSC_PRED" related="org.apache.ofbiz.content.content.ContentAssocPredicate">
-            <key-map field-name="contentAssocPredicateId"/>
-        </relationship>
         <index name="CONTENTASSC_TOQRY">
             <index-field name="contentIdTo"/>
             <index-field name="contentAssocTypeId"/>
@@ -150,35 +121,14 @@ under the License.
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ContentAssocPredicate" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
-        <field name="contentAssocPredicateId" type="id" is-pk="true"></field>
-        <field name="description" type="text-medium"></field>
-    </entity>
-    <entity entity-name="ContentAssocType" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
+    <entity entity-name="ContentAssocType" package="org.apache.ofbiz.content.content">
         <field name="contentAssocTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ContentRole" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
-        <field name="contentId" type="id" is-pk="true"></field>
-        <field name="partyId" type="id" is-pk="true"></field>
-        <field name="roleTypeId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
-        <relationship type="one" fk-name="CNTNT_RL_CNTNT" related="org.apache.ofbiz.content.content.Content">
-            <key-map field-name="contentId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="CNTNT_RL_PTRL" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyId"/>
-            <key-map field-name="roleTypeId"/>
-        </relationship>
-    </entity>
-    <entity entity-name="ContentType" package="org.apache.ofbiz.content.content" group="ofbiz_transactional">
+    <entity entity-name="ContentType" package="org.apache.ofbiz.content.content">
         <field name="contentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
         <field name="hasTable" type="text-indicator"></field>
@@ -188,7 +138,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="DataResource" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
+    <entity entity-name="DataResource" package="org.apache.ofbiz.content.data">
         <field name="dataResourceId" type="id" is-pk="true"></field>
         <field name="dataResourceTypeId" type="id"></field>
         <field name="dataTemplateTypeId" type="id"></field>
@@ -208,7 +158,7 @@ under the License.
         <field name="createdByUserLogin" type="id-long"></field>
         <field name="lastModifiedDate" type="date-time"></field>
         <field name="lastModifiedByUserLogin" type="id-long"></field>
-        <relationship type="one" fk-name="DTRSRC_STATUS" related="org.apache.ofbiz.common.status.StatusItem">
+        <relationship type="one" fk-name="DTRSRC_STATUS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one" fk-name="DATA_REC_CB_ULGN" title="CreatedBy" related="org.apache.ofbiz.security.login.UserLogin">
@@ -219,7 +169,7 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
-    <entity entity-name="ElectronicText" package="org.apache.ofbiz.content.data" group="ofbiz_transactional">
+    <entity entity-name="ElectronicText" package="org.apache.ofbiz.content.data">
         <field name="dataResourceId" type="id" is-pk="true"></field>
         <field name="textData" type="text-very-long"></field>
         <relationship type="one" fk-name="DATA_REC_TEXT" related="org.apache.ofbiz.content.data.DataResource">

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="MY-01" geoName="Johor" geoCodeAlpha3="JHR" geoCodeAlpha2="01" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-02" geoName="Kedah" geoCodeAlpha3="KDH" geoCodeAlpha2="02" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-03" geoName="Kelantan" geoCodeAlpha3="KTN" geoCodeAlpha2="03" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-04" geoName="Malacca" geoCodeAlpha3="MLK" geoCodeAlpha2="04" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-05" geoName="Negeri Sembilan" geoCodeAlpha3="NSN" geoCodeAlpha2="05" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-06" geoName="Pahang" geoCodeAlpha3="PHG" geoCodeAlpha2="06" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-07" geoName="Penang" geoCodeAlpha3="PNG" geoCodeAlpha2="07" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-08" geoName="Perak" geoCodeAlpha3="PRK" geoCodeAlpha2="08" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-09" geoName="Perlis" geoCodeAlpha3="PLS" geoCodeAlpha2="09" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-10" geoName="Selangor" geoCodeAlpha3="SGR" geoCodeAlpha2="10" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-11" geoName="Terengganu" geoCodeAlpha3="TRG" geoCodeAlpha2="11" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-12" geoName="Sabah" geoCodeAlpha3="SBH" geoCodeAlpha2="12" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-13" geoName="Sarawak" geoCodeAlpha3="SRW" geoCodeAlpha2="13" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="MY-14" geoName="Federal Territory of Kuala Lumpur" geoCodeAlpha3="KUL" geoCodeAlpha2="14" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="MY-15" geoName="Federal Territory of Labuan" geoCodeAlpha3="LBN" geoCodeAlpha2="15" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.Geo geoId="MY-16" geoName="Federal Territory of Putrajaya" geoCodeAlpha3="PJY" geoCodeAlpha2="16" geoTypeEnumId="GEOT_TERRITORY"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-01" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-02" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-03" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-04" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-05" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-06" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-07" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-08" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-09" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-10" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-11" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-12" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-13" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-14" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-15" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="MYS" toGeoId="MY-16" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+
