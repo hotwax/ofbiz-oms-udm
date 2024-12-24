@@ -25,5 +25,9 @@ under the License.
         <field name="keyName" type="id-long" is-pk="true"></field>
         <field name="keyText" type="text-medium"></field>
     </entity>
+    <entity entity-name="OmsSequenceValueItem" package="org.apache.ofbiz.entity.sequence" table-name="OMS_SEQUENCE_VALUE_ITEM">
+        <field name="seqName" type="id-long" is-pk="true"></field>
+        <field name="seqId" type="number-integer"></field>
+    </entity>
 </entities>
 

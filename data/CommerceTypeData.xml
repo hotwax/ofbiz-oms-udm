@@ -476,6 +476,7 @@
     <moqui.basic.Enumeration enumId="POS_SALE" enumTypeId="IID_REASON" enumCode="POS_SALE" description="POS Sale"/>
     <moqui.basic.Enumeration enumId="SHOPIFY_POS_SALE" enumTypeId="IID_REASON" enumCode="SHOPIFY_POS_SALE" description="POS Sale using Shopify POS" enumName="Shopify POS Sale"/>
     <moqui.basic.Enumeration enumId="VAR_LOST" enumTypeId="IID_REASON" enumCode="VAR_LOST" description="Adjustment"/>
+    <moqui.basic.Enumeration enumId="NEG_VAR_ITEM_CANCEL" enumTypeId="IID_REASON" enumCode="NEG_VAR_ITEM_CANCEL" description="Variance On Item Cancellation" enumName="Variance On Item Cancellation"/>
     <moqui.basic.Enumeration enumId="VAR_MANUAL" enumTypeId="IID_REASON" enumCode="VAR_MANUAL" description="Variance recorded manually"/>
     <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_MANUAL" description="Variance recorded manually"/>
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PREORDR_NOT" description="Preorder Not Allow (One)"/>

@@ -586,10 +586,6 @@ under the License.
             <key-map field-name="partyIdFrom" related="partyId"/>
             <key-map field-name="roleTypeIdFrom" related="roleTypeId"/>
         </relationship>
-        <relationship type="one" fk-name="PARTY_REL_TPROLE" title="To" related="org.apache.ofbiz.party.party.PartyRole">
-            <key-map field-name="partyIdTo" related="partyId"/>
-            <key-map field-name="roleTypeIdTo" related="roleTypeId"/>
-        </relationship>
         <relationship type="one" fk-name="PARTY_REL_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
