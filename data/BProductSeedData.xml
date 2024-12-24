@@ -339,51 +339,51 @@
     <moqui.basic.StatusItem statusId="INV_NS_ON_HOLD" statusTypeId="INV_NON_SER_STTS" statusCode="ON_HOLD_NS" description="On Hold (Non-Serialized)"/>
     <moqui.basic.StatusItem statusId="INV_NS_DEFECTIVE" statusTypeId="INV_NON_SER_STTS" statusCode="DEFECTIVE_NS" description="Defective (Non-Serialized)"/>
     <moqui.basic.StatusItem statusId="INV_NS_RETURNED" statusTypeId="INV_NON_SER_STTS" statusCode="RETURNED_NS" description="Returned (Non-Serialized)"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ON_ORDER" toStatusId="INV_ON_ORDER" transitionName="Order Arrived"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_AVAILABLE" transitionName="Promise"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_AVAILABLE" transitionName="Hold"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_AVAILABLE" transitionName="Mark As Defective"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_AVAILABLE" transitionName="Being Transfered"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ON_HOLD" toStatusId="INV_ON_HOLD" transitionName="Release Hold"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ON_HOLD" toStatusId="INV_ON_HOLD" transitionName="Mark Held Defective"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_BEING_TRANSFERED" toStatusId="INV_BEING_TRANSFERED" transitionName="Transfer Complete"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_PROMISED" transitionName="Cancel Promise"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_PROMISED" transitionName="Deliver"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_PROMISED" transitionName="Mark As Defective"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_PROMISED" transitionName="Being Transfered (Promised)"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_BEING_TRANS_PRM" toStatusId="INV_BEING_TRANS_PRM" transitionName="Transfer Complete (Promised)"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DELIVERED" toStatusId="INV_DELIVERED" transitionName="Return Status Pending"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_RETURNED" toStatusId="INV_RETURNED" transitionName="Make Return Available"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_RETURNED" toStatusId="INV_RETURNED" transitionName="Make Return Held"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_RETURNED" toStatusId="INV_RETURNED" transitionName="Mark Return Defective"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DELIVERED" toStatusId="INV_DELIVERED" transitionName="Activate"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ACTIVATED" toStatusId="INV_ACTIVATED" transitionName="Deactivate"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ACTIVATED" toStatusId="INV_ACTIVATED" transitionName="Return Status Pending"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DEACTIVATED" toStatusId="INV_DEACTIVATED" transitionName="Hold Inactive"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DEACTIVATED" toStatusId="INV_DEACTIVATED" transitionName="Return Inactive"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_NS_RETURNED" toStatusId="INV_NS_RETURNED" transitionName="Make Return Held"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_NS_RETURNED" toStatusId="INV_NS_RETURNED" transitionName="Mark Return Defective"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ON_ORDER" toStatusId="INV_AVAILABLE" transitionName="Order Arrived"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_PROMISED" transitionName="Promise"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_ON_HOLD" transitionName="Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_DEFECTIVE" transitionName="Mark As Defective"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_AVAILABLE" toStatusId="INV_BEING_TRANSFERED" transitionName="Being Transfered"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ON_HOLD" toStatusId="INV_AVAILABLE" transitionName="Release Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ON_HOLD" toStatusId="INV_DEFECTIVE" transitionName="Mark Held Defective"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_BEING_TRANSFERED" toStatusId="INV_AVAILABLE" transitionName="Transfer Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_AVAILABLE" transitionName="Cancel Promise"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_DELIVERED" transitionName="Deliver"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_DEFECTIVE" transitionName="Mark As Defective"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_PROMISED" toStatusId="INV_BEING_TRANS_PRM" transitionName="Being Transfered (Promised)"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_BEING_TRANS_PRM" toStatusId="INV_PROMISED" transitionName="Transfer Complete (Promised)"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DELIVERED" toStatusId="INV_RETURNED" transitionName="Return Status Pending"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_RETURNED" toStatusId="INV_AVAILABLE" transitionName="Make Return Available"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_RETURNED" toStatusId="INV_ON_HOLD" transitionName="Make Return Held"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_RETURNED" toStatusId="INV_DEFECTIVE" transitionName="Mark Return Defective"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DELIVERED" toStatusId="INV_ACTIVATED" transitionName="Activate"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ACTIVATED" toStatusId="INV_DEACTIVATED" transitionName="Deactivate"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_ACTIVATED" toStatusId="INV_RETURNED" transitionName="Return Status Pending"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DEACTIVATED" toStatusId="INV_ON_HOLD" transitionName="Hold Inactive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_DEACTIVATED" toStatusId="INV_RETURNED" transitionName="Return Inactive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_NS_RETURNED" toStatusId="INV_NS_ON_HOLD" transitionName="Make Return Held"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_NS_RETURNED" toStatusId="INV_NS_DEFECTIVE" transitionName="Mark Return Defective"/>
     <moqui.basic.StatusType statusTypeId="INVENTORY_XFER_STTS" description="Inventory Transfer"/>
     <moqui.basic.StatusItem statusId="IXF_REQUESTED" statusTypeId="INVENTORY_XFER_STTS" statusCode="REQUESTED" description="Requested"/>
     <moqui.basic.StatusItem statusId="IXF_SCHEDULED" statusTypeId="INVENTORY_XFER_STTS" statusCode="SCHEDULED" description="Scheduled"/>
     <moqui.basic.StatusItem statusId="IXF_EN_ROUTE" statusTypeId="INVENTORY_XFER_STTS" statusCode="EN_ROUTE" description="En-Route"/>
     <moqui.basic.StatusItem statusId="IXF_COMPLETE" statusTypeId="INVENTORY_XFER_STTS" statusCode="COMPLETE" description="Complete"/>
     <moqui.basic.StatusItem statusId="IXF_CANCELLED" statusTypeId="INVENTORY_XFER_STTS" statusCode="CANCELLED" description="Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_REQUESTED" transitionName="Inventory Request Scheduled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_REQUESTED" transitionName="Inventory Request In Route"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_REQUESTED" transitionName="Inventory Request Completed"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_REQUESTED" transitionName="Inventory Request Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_SCHEDULED" toStatusId="IXF_SCHEDULED" transitionName="Scheduled Inventory In Route"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_SCHEDULED" toStatusId="IXF_SCHEDULED" transitionName="Scheduled Inventory Completed"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_SCHEDULED" toStatusId="IXF_SCHEDULED" transitionName="Scheduled Inventory Cancelled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_EN_ROUTE" toStatusId="IXF_EN_ROUTE" transitionName="In Route Transfer Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_SCHEDULED" transitionName="Inventory Request Scheduled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_EN_ROUTE" transitionName="Inventory Request In Route"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_COMPLETE" transitionName="Inventory Request Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_REQUESTED" toStatusId="IXF_CANCELLED" transitionName="Inventory Request Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_SCHEDULED" toStatusId="IXF_EN_ROUTE" transitionName="Scheduled Inventory In Route"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_SCHEDULED" toStatusId="IXF_COMPLETE" transitionName="Scheduled Inventory Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_SCHEDULED" toStatusId="IXF_CANCELLED" transitionName="Scheduled Inventory Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="IXF_EN_ROUTE" toStatusId="IXF_COMPLETE" transitionName="In Route Transfer Completed"/>
     <moqui.basic.StatusType statusTypeId="PRODUCT_REVIEW_STTS" description="Product Review"/>
     <moqui.basic.StatusItem statusId="PRR_PENDING" statusTypeId="PRODUCT_REVIEW_STTS" statusCode="PENDING" description="Pending"/>
     <moqui.basic.StatusItem statusId="PRR_APPROVED" statusTypeId="PRODUCT_REVIEW_STTS" statusCode="APPROVED" description="Approved"/>
     <moqui.basic.StatusItem statusId="PRR_DELETED" statusTypeId="PRODUCT_REVIEW_STTS" statusCode="DELETED" description="Deleted"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PRR_PENDING" toStatusId="PRR_PENDING" transitionName="Review Approved"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PRR_PENDING" toStatusId="PRR_PENDING" transitionName="Review Deleted"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PRR_APPROVED" toStatusId="PRR_APPROVED" transitionName="Review Deleted"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PRR_PENDING" toStatusId="PRR_APPROVED" transitionName="Review Approved"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PRR_PENDING" toStatusId="PRR_DELETED" transitionName="Review Deleted"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PRR_APPROVED" toStatusId="PRR_DELETED" transitionName="Review Deleted"/>
     <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_LOST" description="Lost"/>
     <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_STOLEN" description="Stolen"/>
     <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_FOUND" description="Found"/>
@@ -446,55 +446,55 @@
     <moqui.basic.StatusItem statusId="SHIPMENT_SHIPPED" statusTypeId="SHIPMENT_STATUS" statusCode="SHIPPED" description="Shipped" statusAge="100"/>
     <moqui.basic.StatusItem statusId="SHIPMENT_DELIVERED" statusTypeId="SHIPMENT_STATUS" statusCode="DELIVERED" description="Delivered"/>
     <moqui.basic.StatusItem statusId="SHIPMENT_CANCELLED" statusTypeId="SHIPMENT_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_INPUT" transitionName="Schedule"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_INPUT" transitionName="Pick"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_INPUT" transitionName="Pack"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_SCHEDULED" transitionName="Pick"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_SCHEDULED" transitionName="Pack"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PICKED" toStatusId="SHIPMENT_PICKED" transitionName="Pack"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_PACKED" transitionName="Ship"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SHIPPED" toStatusId="SHIPMENT_SHIPPED" transitionName="Deliver"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_INPUT" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_SCHEDULED" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PICKED" toStatusId="SHIPMENT_PICKED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_SCHEDULED" transitionName="Schedule"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_PICKED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_PACKED" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_PICKED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_PACKED" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PICKED" toStatusId="SHIPMENT_PACKED" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_SHIPPED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SHIPPED" toStatusId="SHIPMENT_DELIVERED" transitionName="Deliver"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PICKED" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
     <moqui.basic.StatusType statusTypeId="PURCH_SHIP_STATUS" description="Purchase Shipment"/>
     <moqui.basic.StatusItem statusId="PURCH_SHIP_CREATED" statusTypeId="PURCH_SHIP_STATUS" statusCode="CREATED" description="Created"/>
     <moqui.basic.StatusItem statusId="PURCH_SHIP_SHIPPED" statusTypeId="PURCH_SHIP_STATUS" statusCode="SHIPPED" description="Shipped"/>
     <moqui.basic.StatusItem statusId="PURCH_SHIP_RECEIVED" statusTypeId="PURCH_SHIP_STATUS" statusCode="RECEIVED" description="Received"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_CREATED" toStatusId="PURCH_SHIP_CREATED" transitionName="Receive"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_CREATED" toStatusId="PURCH_SHIP_CREATED" transitionName="Ship"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_SHIPPED" toStatusId="PURCH_SHIP_SHIPPED" transitionName="Receive"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_RECEIVED" toStatusId="PURCH_SHIP_RECEIVED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_CREATED" toStatusId="PURCH_SHIP_RECEIVED" transitionName="Receive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_CREATED" toStatusId="PURCH_SHIP_SHIPPED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_SHIPPED" toStatusId="PURCH_SHIP_RECEIVED" transitionName="Receive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_RECEIVED" toStatusId="PURCH_SHIP_SHIPPED" transitionName="Ship"/>
     <moqui.basic.StatusType statusTypeId="SHPRTSG_CS_STATUS" description="ShipmentRouteSegment:CarrierService"/>
     <moqui.basic.StatusItem statusId="SHRSCS_NOT_STARTED" statusTypeId="SHPRTSG_CS_STATUS" statusCode="NOT_STARTED" description="Not Started"/>
     <moqui.basic.StatusItem statusId="SHRSCS_CONFIRMED" statusTypeId="SHPRTSG_CS_STATUS" statusCode="CONFIRMED" description="Confirmed"/>
     <moqui.basic.StatusItem statusId="SHRSCS_ACCEPTED" statusTypeId="SHPRTSG_CS_STATUS" statusCode="ACCEPTED" description="Accepted"/>
     <moqui.basic.StatusItem statusId="SHRSCS_VOIDED" statusTypeId="SHPRTSG_CS_STATUS" statusCode="VOIDED" description="Voided"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_NOT_STARTED" toStatusId="SHRSCS_NOT_STARTED" transitionName="Confirm"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_CONFIRMED" toStatusId="SHRSCS_CONFIRMED" transitionName="Accept"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_CONFIRMED" toStatusId="SHRSCS_CONFIRMED" transitionName="Void"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_ACCEPTED" toStatusId="SHRSCS_ACCEPTED" transitionName="Void"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_NOT_STARTED" toStatusId="SHRSCS_CONFIRMED" transitionName="Confirm"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_CONFIRMED" toStatusId="SHRSCS_ACCEPTED" transitionName="Accept"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_CONFIRMED" toStatusId="SHRSCS_VOIDED" transitionName="Void"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHRSCS_ACCEPTED" toStatusId="SHRSCS_VOIDED" transitionName="Void"/>
     <moqui.basic.StatusType statusTypeId="PICKLIST_STATUS" description="Picklist"/>
     <moqui.basic.StatusItem statusId="PICKLIST_INPUT" statusTypeId="PICKLIST_STATUS" statusCode="INPUT" description="Input"/>
     <moqui.basic.StatusItem statusId="PICKLIST_ASSIGNED" statusTypeId="PICKLIST_STATUS" statusCode="ASSIGNED" description="Assigned" statusAge="25"/>
     <moqui.basic.StatusItem statusId="PICKLIST_PRINTED" statusTypeId="PICKLIST_STATUS" statusCode="PRINTED" description="Printed" statusAge="50"/>
     <moqui.basic.StatusItem statusId="PICKLIST_PICKED" statusTypeId="PICKLIST_STATUS" statusCode="PICKED" description="Picked" statusAge="80"/>
     <moqui.basic.StatusItem statusId="PICKLIST_CANCELLED" statusTypeId="PICKLIST_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_INPUT" transitionName="Assign"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_INPUT" transitionName="Print"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_INPUT" transitionName="Pick"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_INPUT" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_ASSIGNED" transitionName="Pick"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_ASSIGNED" transitionName="Print"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_ASSIGNED" transitionName="Cancel"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_PRINTED" transitionName="Pick"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_PRINTED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_ASSIGNED" transitionName="Assign"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_PRINTED" transitionName="Print"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_PICKED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_PICKED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_PRINTED" transitionName="Print"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_PICKED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_CANCELLED" transitionName="Cancel"/>
     <moqui.basic.StatusType statusTypeId="PICKITEM_STATUS" description="Picklist Item"/>
     <moqui.basic.StatusItem statusId="PICKITEM_PENDING" statusTypeId="PICKITEM_STATUS" statusCode="PENDING" description="Pending" statusAge="0"/>
     <moqui.basic.StatusItem statusId="PICKITEM_COMPLETED" statusTypeId="PICKITEM_STATUS" statusCode="COMPLETED" description="Completed" statusAge="100"/>
     <moqui.basic.StatusItem statusId="PICKITEM_CANCELLED" statusTypeId="PICKITEM_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PENDING" toStatusId="PICKITEM_PENDING" transitionName="Complete"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PENDING" toStatusId="PICKITEM_PENDING" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PENDING" toStatusId="PICKITEM_COMPLETED" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PENDING" toStatusId="PICKITEM_CANCELLED" transitionName="Cancel"/>
     <org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfigType shipmentGatewayConfTypeId="SHIP_GATEWAY_FEDEX" hasTable="Y" description="Shipment Gateway Fedex"/>
     <org.apache.ofbiz.shipment.shipment.ShipmentGatewayConfig shipmentGatewayConfigId="FEDEX_CONFIG" shipmentGatewayConfTypeId="SHIP_GATEWAY_FEDEX" description="Fedex Config"/>
     <org.apache.ofbiz.shipment.shipment.ShipmentGatewayFedex shipmentGatewayConfigId="FEDEX_CONFIG" connectUrl="https://gatewaybeta.fedex.com/GatewayDC" connectSoapUrl="https://gatewaybeta.fedex.com:443/web-services" connectTimeout="60" labelImageType="PNG" defaultDropoffType="REGULARPICKUP" defaultPackagingType="YOURPACKNG" templateShipment="component://product/template/shipment/FedexShipRequestTemplate.xml.ftl" templateSubscription="component://product/template/shipment/FedexSubscriptionRequestTemplate.xml.ftl" rateEstimateTemplate="component://product/template/shipment/FedexRateEstimateRequestTemplate.xml.ftl"/>

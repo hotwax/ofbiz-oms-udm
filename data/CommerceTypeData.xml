@@ -206,7 +206,7 @@
     <moqui.basic.StatusItem statusId="INV_NS_DEFECTIVE" statusTypeId="INV_NON_SER_STTS" statusCode="DEFECTIVE_NS" description="Defective"/>
     <moqui.basic.StatusItem statusId="INV_NS_RETURNED" statusTypeId="INV_NON_SER_STTS" statusCode="RETURNED_NS" description="Returned"/>
     <moqui.basic.StatusItem statusId="RETURN_ACCEPTED" statusTypeId="ORDER_RETURN_STTS" statusCode="ACCEPTED" description="Authorized" statusAge="50"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_REQUESTED" transitionName="Authorize"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_ACCEPTED" transitionName="Authorize"/>
     <org.apache.ofbiz.order.order.OrderType orderTypeId="PURCHASE_ORDER" hasTable="N" description="Purchase Order"/>
     <org.apache.ofbiz.order.order.OrderType orderTypeId="SALES_ORDER" hasTable="N" description="Sales Order"/>
     <org.apache.ofbiz.order.order.OrderType orderTypeId="TRANSFER_ORDER" hasTable="N" description="Transfer Order"/>
@@ -482,8 +482,8 @@
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PREORDR_NOT" description="Preorder Not Allow (One)"/>
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PREORDR" description="Preorder (One)"/>
     <moqui.basic.StatusItem statusId="PICKUP_SCHEDULED" statusTypeId="SHIPMENT_STATUS" statusCode="PICKUP" description="Pickup Scheduled"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_PACKED" transitionName="Schedule Pickup" conditionExpression="directStatusChange == false"/>
-    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKUP_SCHEDULED" toStatusId="PICKUP_SCHEDULED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="PICKUP_SCHEDULED" transitionName="Schedule Pickup" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKUP_SCHEDULED" toStatusId="SHIPMENT_SHIPPED" transitionName="Ship"/>
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="EXT_SHIP_ADJUSTMENT" hasTable="N" description="External shipping adjustment"/>
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="EXT_SHIP_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_EXT_PRM_ADJ"/>
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="APPEASEMENT" hasTable="N" description="Appeasement"/>
