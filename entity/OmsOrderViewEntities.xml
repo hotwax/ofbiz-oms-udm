@@ -1584,5 +1584,5 @@ under the License.
         <alias entity-alias="OI" name="cancelQuantity"/>
         <alias entity-alias="OI" name="statusId"/>
     </view-entity>
-
+    
 </entities>
