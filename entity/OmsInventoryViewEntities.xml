@@ -88,6 +88,7 @@ under the License.
         </member-entity>
         <alias entity-alias="ICI" name="inventoryCountImportId"/>
         <alias entity-alias="ICI" name="facilityId"/>
+        <alias entity-alias="ICI" name="countImportName"/>
         <!-- This is the current statusId from InventoryCountImport -->
         <alias entity-alias="ICI" name="statusId"/>
         <alias entity-alias="ICII" field="statusId" name="inventoryCountItemStatusId"/>
