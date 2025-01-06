@@ -350,8 +350,8 @@ under the License.
             <key-map field-name="stateProvinceGeoId" related="geoId"/>
         </member-entity>
         <alias-all entity-alias="PA"/>
-<!--        <alias entity-alias="COUNTRYGEO" field="geoCode" name="countryGeoCode"/>-->
-<!--        <alias entity-alias="STATEGEO" field="geoCode" name="stateProvinceGeoCode"/>-->
+        <alias entity-alias="COUNTRYGEO" field="geoCodeAlpha2" name="countryGeoCode"/>
+        <alias entity-alias="STATEGEO" field="geoCodeAlpha2" name="stateProvinceGeoCode"/>
         <alias entity-alias="STATEGEO" field="geoName" name="stateProvinceGeoName"/>
         <alias entity-alias="COUNTRYGEO" field="geoName" name="countryGeoName"/>
     </view-entity>
