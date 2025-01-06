@@ -1044,6 +1044,7 @@ under the License.
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
         <alias entity-alias="OI" name="productId"/>
         <alias entity-alias="OI" name="taxCode"/>
+        <alias entity-alias="OI" name="promisedDatetime"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
 
         <alias entity-alias="OISG" name="facilityId"/>
