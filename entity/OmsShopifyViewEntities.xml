@@ -176,8 +176,8 @@ under the License.
     </view-entity>
 
     <view-entity entity-name="ShopifyShopLocationView" package="co.hotwax.shopify">
-        <member-entity entity-alias="SHS" entity-name="ShopifyShop"/>
-        <member-entity entity-alias="SHL" entity-name="ShopifyShopLocation" join-from-alias="SHS">
+        <member-entity entity-alias="SHS" entity-name="co.hotwax.shopify.ShopifyShop"/>
+        <member-entity entity-alias="SHL" entity-name="co.hotwax.shopify.ShopifyShopLocation" join-from-alias="SHS">
             <key-map field-name="shopId"/>
         </member-entity>
         <alias-all entity-alias="SHS"/>
