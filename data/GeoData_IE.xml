@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="IE-CRLW" geoName="Carlow" geoCodeAlpha3="CRLW" geoCodeAlpha2="CW" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-CAVN" geoName="Cavan" geoCodeAlpha3="CAVN" geoCodeAlpha2="CN" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-CLARE" geoName="Clare" geoCodeAlpha3="CLARE" geoCodeAlpha2="CE" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-CORK" geoName="Cork" geoCodeAlpha3="CORK" geoCodeAlpha2="CO" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-DNGL" geoName="Donegal" geoCodeAlpha3="DNGL" geoCodeAlpha2="DL" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-DBLN" geoName="Dublin" geoCodeAlpha3="DBLN" geoCodeAlpha2="D" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-GALW" geoName="Galway" geoCodeAlpha3="GALW" geoCodeAlpha2="G" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-KERRY" geoName="Kerry" geoCodeAlpha3="KERRY" geoCodeAlpha2="KY" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-KLDR" geoName="Kildare" geoCodeAlpha3="KLDR" geoCodeAlpha2="KE" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-KLKNY" geoName="Kilkenny" geoCodeAlpha3="KLKNY" geoCodeAlpha2="KK" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-LAOIS" geoName="Laois" geoCodeAlpha3="LAOIS" geoCodeAlpha2="LS" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-L" geoName="Leinster" geoCodeAlpha3="LTRM" geoCodeAlpha2="L" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-LTRM" geoName="Leitrim" geoCodeAlpha3="LTRM" geoCodeAlpha2="LM" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-LMRK" geoName="Limerick" geoCodeAlpha3="LMRK" geoCodeAlpha2="LK" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-LGFD" geoName="Longford" geoCodeAlpha3="LGFD" geoCodeAlpha2="LD" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-LOUTH" geoName="Louth" geoCodeAlpha3="LOUTH" geoCodeAlpha2="LH" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-MAYO" geoName="Mayo" geoCodeAlpha3="MAYO" geoCodeAlpha2="MO" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-MEATH" geoName="Meath" geoCodeAlpha3="MEATH" geoCodeAlpha2="MH" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-MNGHN" geoName="Monaghan" geoCodeAlpha3="MNGHN" geoCodeAlpha2="MN" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-M" geoName="Munster" geoCodeAlpha3="MNGHN" geoCodeAlpha2="M" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-OFLY" geoName="Offaly" geoCodeAlpha3="OFLY" geoCodeAlpha2="OY" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-RSCMN" geoName="Roscommon" geoCodeAlpha3="RSCMN" geoCodeAlpha2="RN" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-SLIGO" geoName="Sligo" geoCodeAlpha3="SLIGO" geoCodeAlpha2="SO" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-TPRY" geoName="Tipperary" geoCodeAlpha3="TPRY" geoCodeAlpha2="TA" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-U" geoName="Ulster" geoCodeAlpha3="TPRY" geoCodeAlpha2="U" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-WTFD" geoName="Waterford" geoCodeAlpha3="WTFD" geoCodeAlpha2="WD" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-WMETH" geoName="Westmeath" geoCodeAlpha3="WMETH" geoCodeAlpha2="WH" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-WXFD" geoName="Wexford" geoCodeAlpha3="WXFD" geoCodeAlpha2="WX" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.Geo geoId="IE-WKLW" geoName="Wicklow" geoCodeAlpha3="WKLW" geoCodeAlpha2="WW" geoTypeEnumId="GEOT_COUNTY"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-L" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-M" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-U" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-CRLW" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-CAVN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-CLARE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-CORK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-DNGL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-DBLN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-GALW" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-KERRY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-KLDR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-KLKNY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-LAOIS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-LTRM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-LMRK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-LGFD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-LOUTH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-MAYO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-MEATH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-MNGHN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-OFLY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-RSCMN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-SLIGO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-TPRY" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-WTFD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-WMETH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-WXFD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="IRL" toGeoId="IE-WKLW" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

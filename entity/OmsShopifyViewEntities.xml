@@ -27,7 +27,7 @@ under the License.
          If there is a requirement to fetch the inventory for the specific channel i.e. Shopify, it will be a separate Facility Group, and so a parameter 'facilityGroupId' is added to the corresponding service 
           to fetch the inventory to be sent to Shopify. -->
 
-    <view-entity entity-name="ShopifyProductInventory" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <view-entity entity-name="ShopifyProductInventory" package="co.hotwax.shopify">
         <description>
             View entity for Product Inventory details for Shopify in HotWax.
         </description>
@@ -91,7 +91,7 @@ under the License.
         <alias entity-alias="PT" name="isDigital"/>
     </view-entity>
 
-    <view-entity entity-name="ProductFacilityAndType" package="co.hotwax.product.facility" group="ofbiz_transactional">
+    <view-entity entity-name="ProductFacilityAndType" package="co.hotwax.product.facility">
         <description>
             View entity for Product Facility and Facility Type details.
         </description>
@@ -109,7 +109,7 @@ under the License.
         To join with ProductStoreFacility we need to map productStoreId and facilityId both, it was not possible in ShopifyProductInventory view
         as no member entity had both productStoreId and facilityId. Hence in this view we use the ShopifyProductInventory view as member entity with sub-select=true,
         this allows us to join the ProductStoreFacility with the result of ShopifyProductInventory on productStoreId and facilityId fields. -->
-    <view-entity entity-name="ProductStoreFacilityAndShopifyInventory" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <view-entity entity-name="ProductStoreFacilityAndShopifyInventory" package="co.hotwax.shopify">
         <description>View entity to get Products associated with the respective facilities of a Product Store</description>
         <member-entity entity-alias="PSF" entity-name="org.apache.ofbiz.product.store.ProductStoreFacility"/>
         <!-- NOTE: Using sub-select here to use the result of ShopifyProductInventory view while joining it with ProductStoreFacility -->
@@ -138,7 +138,7 @@ under the License.
         </entity-condition>
    </view-entity>
 
-    <view-entity entity-name="FacilityGroupAndMember" package="co.hotwax.facility" group="ofbiz_transactional">
+    <view-entity entity-name="FacilityGroupAndMember" package="co.hotwax.facility">
         <description>
             View entity for Facility and Facility Group Member details.
         </description>
@@ -164,7 +164,7 @@ under the License.
         <entity-condition><date-filter entity-alias="FGM"/></entity-condition>
     </view-entity>
 
-    <view-entity entity-name="ShopifyShopAndConfig" package="co.hotwax.shopify" group="ofbiz_transactional">
+    <view-entity entity-name="ShopifyShopAndConfig" package="co.hotwax.shopify">
         <member-entity entity-alias="SHS" entity-name="co.hotwax.shopify.ShopifyShop"/>
         <member-entity entity-alias="SHC" entity-name="co.hotwax.shopify.ShopifyConfig" join-from-alias="SHS">
             <key-map field-name="shopId"/>
@@ -173,5 +173,14 @@ under the License.
         <alias-all entity-alias="SHC">
             <exclude field="productStoreId"/>
         </alias-all>
+    </view-entity>
+
+    <view-entity entity-name="ShopifyShopLocationView" package="co.hotwax.shopify">
+        <member-entity entity-alias="SHS" entity-name="co.hotwax.shopify.ShopifyShop"/>
+        <member-entity entity-alias="SHL" entity-name="co.hotwax.shopify.ShopifyShopLocation" join-from-alias="SHS">
+            <key-map field-name="shopId"/>
+        </member-entity>
+        <alias-all entity-alias="SHS"/>
+        <alias-all entity-alias="SHL"/>
     </view-entity>
 </entities>

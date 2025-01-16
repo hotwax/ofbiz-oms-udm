@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <org.apache.ofbiz.party.party.Party partyId="system" partyTypeId="PERSON" statusId="PARTY_ENABLED"/>
+    <org.apache.ofbiz.party.party.Person partyId="system" firstName="System" lastName="Account"/>
+    <org.apache.ofbiz.party.party.PartyStatus statusId="PARTY_ENABLED" partyId="system" statusDate="2001-01-01 12:00:00.0"/>
+    <org.apache.ofbiz.party.party.PartyRole partyId="system" roleTypeId="PACKER"/>
+</entity-facade-xml>
+

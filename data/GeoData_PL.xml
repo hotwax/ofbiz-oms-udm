@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="PL-DŚ" geoName="dolnośląskie" geoCodeAlpha3="DŚ" geoCodeAlpha2="DŚ" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-KP" geoName="kujawsko-pomorskie" geoCodeAlpha3="KP" geoCodeAlpha2="KP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-LB" geoName="lubelskie" geoCodeAlpha3="LB" geoCodeAlpha2="LB" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-LS" geoName="lubuskie" geoCodeAlpha3="LS" geoCodeAlpha2="LS" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-ŁD" geoName="łódzkie" geoCodeAlpha3="ŁD" geoCodeAlpha2="ŁD" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-MP" geoName="małopolskie" geoCodeAlpha3="MP" geoCodeAlpha2="MP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-MZ" geoName="mazowieckie" geoCodeAlpha3="MZ" geoCodeAlpha2="MZ" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-OP" geoName="opolskie" geoCodeAlpha3="OP" geoCodeAlpha2="OP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-PK" geoName="podkarpackie" geoCodeAlpha3="PK" geoCodeAlpha2="PK" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-PL" geoName="podlaskie" geoCodeAlpha3="PL" geoCodeAlpha2="PL" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-PM" geoName="pomorskie" geoCodeAlpha3="PM" geoCodeAlpha2="PM" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-ŚL" geoName="śląskie" geoCodeAlpha3="ŚL" geoCodeAlpha2="ŚL" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-ŚK" geoName="świętokrzyskie" geoCodeAlpha3="ŚK" geoCodeAlpha2="ŚK" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-WM" geoName="warmińsko-mazurskie" geoCodeAlpha3="WM" geoCodeAlpha2="WM" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-WP" geoName="wielkopolskie" geoCodeAlpha3="WP" geoCodeAlpha2="WP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.Geo geoId="PL-ZP" geoName="zachodniopomorskie" geoCodeAlpha3="ZP" geoCodeAlpha2="ZP" geoTypeEnumId="GEOT_STATE"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-DŚ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-KP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-LB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-LS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-ŁD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-MP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-MZ" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-OP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-PK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-PL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-PM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-ŚL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-ŚK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-WM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-WP" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="POL" toGeoId="PL-ZP" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+
