@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Enumeration enumId="PPIP_PRODUCT_AMOUNT" enumCode="PPC_PRODUCT_AMOUNT"/>
+    <moqui.basic.Enumeration enumId="PPIP_PRODUCT_TOTAL" enumCode="PPC_PRODUCT_TOTAL"/>
+    <moqui.basic.Enumeration enumId="PPIP_PRODUCT_QUANT" enumCode="PPC_PRODUCT_QUANT"/>
+    <moqui.basic.Enumeration enumId="PPIP_NEW_ACCT" enumCode="PPC_NEW_ACCT"/>
+    <moqui.basic.Enumeration enumId="PPIP_PARTY_ID" enumCode="PPC_PARTY_ID"/>
+    <moqui.basic.Enumeration enumId="PPIP_PARTY_GRP_MEM" enumCode="PPC_PARTY_GRP_MEM"/>
+    <moqui.basic.Enumeration enumId="PPIP_PARTY_CLASS" enumCode="PPC_PARTY_CLASS"/>
+    <moqui.basic.Enumeration enumId="PPIP_ROLE_TYPE" enumCode="PPC_ROLE_TYPE"/>
+    <moqui.basic.Enumeration enumId="PPIP_GEO_ID" enumCode="PPC_GEO_ID"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORDER_TOTAL" enumCode="PPC_ORDER_TOTAL"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORST_HIST" enumCode="PPC_ORST_HIST"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORST_YEAR" enumCode="PPC_ORST_YEAR"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORST_LAST_YEAR" enumCode="PPC_ORST_LAST_YEAR"/>
+    <moqui.basic.Enumeration enumId="PPIP_RECURRENCE" enumCode="PPC_RECURRENCE"/>
+    <moqui.basic.Enumeration enumId="PPIP_ORDER_SHIPTOTAL" enumCode="PPC_ORDER_SHIPTOTAL"/>
+    <moqui.basic.Enumeration enumId="PPIP_LPMUP_AMT" enumCode="PPC_LPMUP_AMT"/>
+    <moqui.basic.Enumeration enumId="PPIP_LPMUP_PER" enumCode="PPC_LPMUP_PER"/>
+    <moqui.basic.Enumeration enumId="PROMO_GWP" enumCode="PPA_GWP"/>
+    <moqui.basic.Enumeration enumId="PROMO_FREE_SHIPPING" enumCode="PPA_FREE_SHIPPING"/>
+    <moqui.basic.Enumeration enumId="PROMO_PROD_DISC" enumCode="PPA_PROD_DISC"/>
+    <moqui.basic.Enumeration enumId="PROMO_PROD_AMDISC" enumCode="PPA_PROD_AMDISC"/>
+    <moqui.basic.Enumeration enumId="PROMO_PROD_PRICE" enumCode="PPA_PROD_PRICE"/>
+    <moqui.basic.Enumeration enumId="PROMO_ORDER_PERCENT" enumCode="PPA_ORDER_PERCENT"/>
+    <moqui.basic.Enumeration enumId="PROMO_ORDER_AMOUNT" enumCode="PPA_ORDER_AMOUNT"/>
+    <moqui.basic.Enumeration enumId="PROMO_PROD_SPPRC" enumCode="PPA_PROD_SPPRC"/>
+    <moqui.basic.Enumeration enumId="PROMO_TAX_PERCENT" enumCode="PPA_TAX_PERCENT"/>
+    <moqui.basic.Enumeration enumId="PROMO_SHIP_CHARGE" enumCode="PPA_SHIP_CHARGE"/>
+</entity-facade-xml>
+

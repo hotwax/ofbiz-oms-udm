@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="NL-DR" geoName="Drenthe" geoCodeAlpha3="DR" geoCodeAlpha2="DR" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-FL" geoName="Flevoland" geoCodeAlpha3="FL" geoCodeAlpha2="FL" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-FR" geoName="Friesland" geoCodeAlpha3="FR" geoCodeAlpha2="FR" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-GL" geoName="Gelderland" geoCodeAlpha3="GL" geoCodeAlpha2="GL" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-GR" geoName="Groningen" geoCodeAlpha3="GR" geoCodeAlpha2="GR" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-LB" geoName="Limburg" geoCodeAlpha3="LB" geoCodeAlpha2="LB" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-NB" geoName="Noord-Brabant" geoCodeAlpha3="NB" geoCodeAlpha2="NB" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-NH" geoName="Noord-Holland" geoCodeAlpha3="NH" geoCodeAlpha2="NH" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-OV" geoName="Overijssel" geoCodeAlpha3="OV" geoCodeAlpha2="OV" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-UT" geoName="Utrecht" geoCodeAlpha3="UT" geoCodeAlpha2="UT" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-ZE" geoName="Zeeland" geoCodeAlpha3="ZE" geoCodeAlpha2="ZE" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-ZH" geoName="Zuid-Holland" geoCodeAlpha3="ZH" geoCodeAlpha2="ZH" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL-ZL" geoName="Zeeland" geoCodeAlpha3="ZL" geoCodeAlpha2="ZL" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-DR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-FL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-FR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-GL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-GR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-LB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-NB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-NH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-OV" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-UT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-ZE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-ZH" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="NLD" toGeoId="NL-ZL" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

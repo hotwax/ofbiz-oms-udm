@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="ES-AN" geoName="Andalucía" geoCodeAlpha3="AN" geoCodeAlpha2="AN" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-AR" geoName="Aragón" geoCodeAlpha3="AR" geoCodeAlpha2="AR" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-AS" geoName="Oviedo" geoCodeAlpha3="O" geoCodeAlpha2="O" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-CN" geoName="Canarias" geoCodeAlpha3="CN" geoCodeAlpha2="CN" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-CAN" geoName="Cantabria" geoCodeAlpha3="S" geoCodeAlpha2="S" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-CM" geoName="Castilla-La Mancha" geoCodeAlpha3="CM" geoCodeAlpha2="CM" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-CL" geoName="Castilla y León" geoCodeAlpha3="CL" geoCodeAlpha2="CL" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-CT" geoName="Cataluña" geoCodeAlpha3="CT" geoCodeAlpha2="CT" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-EX" geoName="Extremadura" geoCodeAlpha3="EX" geoCodeAlpha2="EX" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-GA" geoName="Galicia" geoCodeAlpha3="GA" geoCodeAlpha2="GA" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-IB" geoName="Islas Baleares" geoCodeAlpha3="IB" geoCodeAlpha2="IB" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-LR" geoName="La Rioja" geoCodeAlpha3="LO" geoCodeAlpha2="LO" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-MAD" geoName="Madrid" geoCodeAlpha3="M" geoCodeAlpha2="M" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-MUR" geoName="Región de Murcia" geoCodeAlpha3="MU" geoCodeAlpha2="MU" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-NAV" geoName="Navarra" geoCodeAlpha3="NA" geoCodeAlpha2="NA" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-VC" geoName="Comunidad Valenciana" geoCodeAlpha3="VC" geoCodeAlpha2="VC" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-PV" geoName="País Vasco" geoCodeAlpha3="PV" geoCodeAlpha2="PV" geoTypeEnumId="GEOT_REGION"/>
+    <moqui.basic.Geo geoId="ES-VI" geoName="Álava" geoCodeAlpha3="VI" geoCodeAlpha2="VI" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-AB" geoName="Albacete" geoCodeAlpha3="AB" geoCodeAlpha2="AB" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-A" geoName="Alicante" geoCodeAlpha3="A" geoCodeAlpha2="A" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-AL" geoName="Almería" geoCodeAlpha3="AL" geoCodeAlpha2="AL" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-O" geoName="Asturias" geoCodeAlpha3="O" geoCodeAlpha2="O" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-AV" geoName="Ávila" geoCodeAlpha3="AV" geoCodeAlpha2="AV" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-BA" geoName="Badajoz" geoCodeAlpha3="BA" geoCodeAlpha2="BA" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-PM" geoName="Islas Baleares" geoCodeAlpha3="PM" geoCodeAlpha2="PM" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-B" geoName="Barcelona" geoCodeAlpha3="B" geoCodeAlpha2="B" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-BU" geoName="Burgos" geoCodeAlpha3="BU" geoCodeAlpha2="BU" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-CC" geoName="Cáceres" geoCodeAlpha3="CC" geoCodeAlpha2="CC" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-CA" geoName="Cádiz" geoCodeAlpha3="CA" geoCodeAlpha2="CA" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-S" geoName="Cantabria" geoCodeAlpha3="S" geoCodeAlpha2="S" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-CS" geoName="Castellón" geoCodeAlpha3="CS" geoCodeAlpha2="CS" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-CE" geoName="Ceuta" geoCodeAlpha3="CE" geoCodeAlpha2="CE" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-CR" geoName="Ciudad Real" geoCodeAlpha3="CR" geoCodeAlpha2="CR" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-CO" geoName="Córdoba" geoCodeAlpha3="CO" geoCodeAlpha2="CO" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-CU" geoName="Cuenca" geoCodeAlpha3="CU" geoCodeAlpha2="CU" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-GI" geoName="Gerona" geoCodeAlpha3="GI" geoCodeAlpha2="GI" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-GR" geoName="Granada" geoCodeAlpha3="GR" geoCodeAlpha2="GR" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-GU" geoName="Guadalajara" geoCodeAlpha3="GU" geoCodeAlpha2="GU" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-SS" geoName="Guipúzcoa" geoCodeAlpha3="SS" geoCodeAlpha2="SS" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-H" geoName="Huelva" geoCodeAlpha3="H" geoCodeAlpha2="H" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-HU" geoName="Huesca" geoCodeAlpha3="HU" geoCodeAlpha2="HU" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-J" geoName="Jaén" geoCodeAlpha3="J" geoCodeAlpha2="J" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-C" geoName="La Coruña" geoCodeAlpha3="C" geoCodeAlpha2="C" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-LO" geoName="Logroño" geoCodeAlpha3="LO" geoCodeAlpha2="LO" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-GC" geoName="Las Palmas" geoCodeAlpha3="GC" geoCodeAlpha2="GC" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-LE" geoName="León" geoCodeAlpha3="LE" geoCodeAlpha2="LE" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-L" geoName="Lérida" geoCodeAlpha3="L" geoCodeAlpha2="L" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-LU" geoName="Lugo" geoCodeAlpha3="LU" geoCodeAlpha2="LU" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-M" geoName="Madrid" geoCodeAlpha3="M" geoCodeAlpha2="M" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-MA" geoName="Málaga" geoCodeAlpha3="MA" geoCodeAlpha2="MA" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-ML" geoName="Melilla" geoCodeAlpha3="ML" geoCodeAlpha2="ML" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-MU" geoName="Murcia" geoCodeAlpha3="MU" geoCodeAlpha2="MU" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-NA" geoName="Navarra" geoCodeAlpha3="NA" geoCodeAlpha2="NA" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-OR" geoName="Orense" geoCodeAlpha3="OR" geoCodeAlpha2="OR" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-P" geoName="Palencia" geoCodeAlpha3="P" geoCodeAlpha2="P" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-PO" geoName="Pontevedra" geoCodeAlpha3="PO" geoCodeAlpha2="PO" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-SA" geoName="Salamanca" geoCodeAlpha3="SA" geoCodeAlpha2="SA" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-TF" geoName="Santa Cruz de Tenerife" geoCodeAlpha3="TF" geoCodeAlpha2="TF" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-SG" geoName="Segovia" geoCodeAlpha3="SG" geoCodeAlpha2="SG" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-SE" geoName="Sevilla" geoCodeAlpha3="SE" geoCodeAlpha2="SE" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-SO" geoName="Soria" geoCodeAlpha3="SO" geoCodeAlpha2="SO" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-T" geoName="Tarragona" geoCodeAlpha3="T" geoCodeAlpha2="T" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-TE" geoName="Teruel" geoCodeAlpha3="TE" geoCodeAlpha2="TE" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-TO" geoName="Toledo" geoCodeAlpha3="TO" geoCodeAlpha2="TO" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-V" geoName="Valencia" geoCodeAlpha3="V" geoCodeAlpha2="V" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-VA" geoName="Valladolid" geoCodeAlpha3="VA" geoCodeAlpha2="VA" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-BI" geoName="Vizcaya" geoCodeAlpha3="BI" geoCodeAlpha2="BI" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-ZA" geoName="Zamora" geoCodeAlpha3="ZA" geoCodeAlpha2="ZA" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ES-Z" geoName="Zaragoza" geoCodeAlpha3="Z" geoCodeAlpha2="Z" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.GeoAssoc geoId="ES-PV" toGeoId="ES-VI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-PV" toGeoId="ES-SS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-PV" toGeoId="ES-BI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CM" toGeoId="ES-AB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CM" toGeoId="ES-GU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CM" toGeoId="ES-CU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CM" toGeoId="ES-TO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-VC" toGeoId="ES-A" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-VC" toGeoId="ES-CS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-VC" toGeoId="ES-V" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AN" toGeoId="ES-AL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AN" toGeoId="ES-CA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AN" toGeoId="ES-GR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AN" toGeoId="ES-MA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AN" toGeoId="ES-CO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AN" toGeoId="ES-H" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AN" toGeoId="ES-SE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AN" toGeoId="ES-J" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AS" toGeoId="ES-O" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-AV" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-CR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-LE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-SA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-SO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-SG" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-ZA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-VA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-P" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CL" toGeoId="ES-BU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-EX" toGeoId="ES-BA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-EX" toGeoId="ES-CC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-IB" toGeoId="ES-PM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CT" toGeoId="ES-B" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CT" toGeoId="ES-GI" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CT" toGeoId="ES-L" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CT" toGeoId="ES-T" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CAN" toGeoId="ES-S" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-CE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-ML" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AR" toGeoId="ES-HU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AR" toGeoId="ES-TE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-AR" toGeoId="ES-Z" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-GA" toGeoId="ES-C" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-GA" toGeoId="ES-LU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-GA" toGeoId="ES-OR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-GA" toGeoId="ES-PO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-LR" toGeoId="ES-LO" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CN" toGeoId="ES-GC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-CN" toGeoId="ES-TF" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-MAD" toGeoId="ES-M" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-MUR" toGeoId="ES-MU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ES-NAV" toGeoId="ES-NA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-AN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-AR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-AS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-CN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-CAN" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-CM" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-CL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-CT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-EX" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-GA" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-IB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-LR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-MAD" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-MUR" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-NAV" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-VC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="ESP" toGeoId="ES-PV" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

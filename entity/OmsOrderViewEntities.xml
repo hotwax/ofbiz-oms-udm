@@ -22,7 +22,7 @@ under the License.
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
 
     <!-- NOTE: Not adding the billing details as they are not stored in OMS -->
-    <view-entity entity-name="SalesOrderView" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="SalesOrderView" package="co.hotwax.financial">
         <description>View to get Order details for Financial Feed processing.</description>
         <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc"></member-entity>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="OISGA">
@@ -45,13 +45,13 @@ under the License.
         <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F" join-optional="true">
             <key-map field-name="facilityTypeId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <member-entity entity-alias="SSO" entity-name="co.hotwax.shopify.ShopifyShopOrder" join-from-alias="OH" join-optional="true">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="OI">
@@ -100,7 +100,7 @@ under the License.
         <alias entity-alias="PT" name="isDigital"/>
     </view-entity>
 
-    <view-entity entity-name="AppeasementView" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="AppeasementView" package="co.hotwax.financial">
         <description>View to get Appeasement order details</description>
         <member-entity entity-alias="RH" entity-name="org.apache.ofbiz.order.return.ReturnHeader"/>
         <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment" join-from-alias="RH">
@@ -112,7 +112,7 @@ under the License.
         <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
             <key-map field-name="productStoreId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="RH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="RH" join-optional="true">
             <key-map field-name="currencyUomId" related="uomId"/>
         </member-entity>
 
@@ -139,7 +139,7 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="ReturnItemView" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="ReturnItemView" package="co.hotwax.financial">
         <description>View to get the Return Item Details.</description>
         <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem"/>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="RI">
@@ -161,7 +161,7 @@ under the License.
         <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
             <key-map field-name="productStoreId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="RH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="RH" join-optional="true">
             <key-map field-name="currencyUomId" related="uomId"/>
         </member-entity>
         <alias entity-alias="RI" name="returnId"/>
@@ -195,7 +195,7 @@ under the License.
         <alias entity-alias="RI" name="receivedQuantity"/>
     </view-entity>
 
-    <view-entity entity-name="OrderItemAndHistory" package="co.hotwax.oms" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAndHistory" package="co.hotwax.oms">
         <member-entity entity-alias="OH" entity-name="co.hotwax.customerservice.order.OrderHistory"/>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
             <key-map field-name="orderId"/>
@@ -233,13 +233,13 @@ under the License.
         <alias name="facilityTypeId" entity-alias="FAC"/>
     </view-entity>
     <!-- View entity to fetch the Order Items for BrokeredOrder Reporting, using member entities of OFBiz -->
-    <view-entity entity-name="BrokeredOrderItemsSyncQueue" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="BrokeredOrderItemsSyncQueue" package="co.hotwax.warehouse">
         <description>View to get details for the Brokered Order Items.</description>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
         <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc" join-from-alias="OI">
@@ -280,7 +280,7 @@ under the License.
         <member-entity entity-alias="PD" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="OI">
             <key-map field-name="productId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <alias entity-alias="OH" name="productStoreId"/>
@@ -341,17 +341,17 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="PostalAddressView" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="PostalAddressView" package="co.hotwax.financial">
         <member-entity entity-alias="PA" entity-name="org.apache.ofbiz.party.contact.PostalAddress"/>
-        <member-entity entity-alias="COUNTRYGEO" entity-name="org.apache.ofbiz.common.geo.Geo" join-from-alias="PA" join-optional="true">
+        <member-entity entity-alias="COUNTRYGEO" entity-name="moqui.basic.Geo" join-from-alias="PA" join-optional="true">
             <key-map field-name="countryGeoId" related="geoId"/>
         </member-entity>
-        <member-entity entity-alias="STATEGEO" entity-name="org.apache.ofbiz.common.geo.Geo" join-from-alias="PA" join-optional="true">
+        <member-entity entity-alias="STATEGEO" entity-name="moqui.basic.Geo" join-from-alias="PA" join-optional="true">
             <key-map field-name="stateProvinceGeoId" related="geoId"/>
         </member-entity>
         <alias-all entity-alias="PA"/>
-        <alias entity-alias="COUNTRYGEO" field="geoCode" name="countryGeoCode"/>
-        <alias entity-alias="STATEGEO" field="geoCode" name="stateProvinceGeoCode"/>
+        <alias entity-alias="COUNTRYGEO" field="geoCodeAlpha2" name="countryGeoCode"/>
+        <alias entity-alias="STATEGEO" field="geoCodeAlpha2" name="stateProvinceGeoCode"/>
         <alias entity-alias="STATEGEO" field="geoName" name="stateProvinceGeoName"/>
         <alias entity-alias="COUNTRYGEO" field="geoName" name="countryGeoName"/>
     </view-entity>
@@ -359,7 +359,7 @@ under the License.
     <!-- This View can be used to fetch Order level adjustments which are not sent to external systems.
         Note: This is not used to fetch Item level adjustments history -->
 
-    <view-entity entity-name="ReturnAdjustmentAndHistory" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="ReturnAdjustmentAndHistory" package="co.hotwax.financial">
         <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment"/>
         <member-entity entity-alias="RAH" entity-name="co.hotwax.integration.order.return.ReturnAdjustmentHistory" join-from-alias="RA" join-optional="true">
             <key-map field-name="returnAdjustmentId"/>
@@ -377,7 +377,7 @@ under the License.
             <econdition entity-alias="RAH" field-name="returnAdjustmentId" value=""/>
         </entity-condition>
     </view-entity>
-    <view-entity entity-name="OrderAdjustmentAndHistory" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="OrderAdjustmentAndHistory" package="co.hotwax.financial">
         <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment"/>
         <member-entity entity-alias="OAH" entity-name="co.hotwax.integration.order.OrderAdjustmentHistory" join-from-alias="OA" join-optional="true">
             <key-map field-name="orderAdjustmentId"/>
@@ -395,7 +395,7 @@ under the License.
             <econdition entity-alias="OAH" field-name="orderAdjustmentId" value=""/>
         </entity-condition>
     </view-entity>
-    <view-entity entity-name="FulfilledOrderAdjustmentAndHistory" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="FulfilledOrderAdjustmentAndHistory" package="co.hotwax.financial">
         <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment"/>
         <member-entity entity-alias="FOAH" entity-name="co.hotwax.integration.order.FulfilledOrderAdjustmentHistory" join-from-alias="OA" join-optional="true">
             <key-map field-name="orderAdjustmentId"/>
@@ -413,7 +413,7 @@ under the License.
             <econdition entity-alias="FOAH" field-name="orderAdjustmentId" value=""/>
         </entity-condition>
     </view-entity>
-    <view-entity entity-name="ReturnItemAndAdjustment" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="ReturnItemAndAdjustment" package="co.hotwax.financial">
         <description>View to get the Return Items and their Adjustments.</description>
         <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem"/>
         <member-entity entity-alias="RS" entity-name="org.apache.ofbiz.order.return.ReturnStatus" join-from-alias="RI">
@@ -444,7 +444,7 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="OrderItemAndAdjustment" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAndAdjustment" package="co.hotwax.financial">
         <description>View to get the Order Items and their Adjustments.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
@@ -531,7 +531,7 @@ under the License.
     1. It is being used to prepare the Feed for Fulfilled Order Items.
     2. This includes the use of OrderFulfillmentHistory entity to get only those fulfilled order items for which history is not created.
     3. This is required so that when the view is used in the feed, the same order items is not included multiple times in the feeds. -->
-    <view-entity entity-name="FulfilledOrderItemsSyncQueue" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="FulfilledOrderItemsSyncQueue" package="co.hotwax.warehouse">
         <description>View to get details for the Order Item.</description>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
@@ -574,7 +574,7 @@ under the License.
         <member-entity entity-alias="PT" entity-name="org.apache.ofbiz.product.product.ProductType" join-from-alias="P" join-optional="true">
             <key-map field-name="productTypeId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
         <alias entity-alias="OH" name="productStoreId"/>
@@ -623,7 +623,7 @@ under the License.
     1. It is being used to prepare the Feed for Fulfilled Order Items along with the view FulfilledOrderItemsSyncQueue.
     2. This includes the use of OrderFulfillmentHistory entity to get only those fulfilled order items for which history is not created.
     3. The Shipment entities are included with left join to have optional Shipment details to include digital type goods also. -->
-    <view-entity entity-name="OrderItemAndShipment" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAndShipment" package="co.hotwax.warehouse">
         <description>View to get Order Item and Shipment Details. The Shipment entities are added
             using left join to get fulfilled order item details for both finished as well digital type goods.
         </description>
@@ -631,10 +631,10 @@ under the License.
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="OI">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <member-entity entity-alias="ODR" entity-name="org.apache.ofbiz.order.order.OrderRole" join-from-alias="OI" join-optional="true">
@@ -779,7 +779,7 @@ under the License.
     3. It is used to handle the scenario of explode-off in which an item can be included in multiple Shipments if its quantity is greater than 1.
        Here, Order Item Ship Group Assoc is removed and ship group seq id is directly fetched from Order Item.
        IMP: Included Shipment id check to fetch Fulfilled Order Items from History to exclude order items for a shipment which are already sent. -->
-    <view-entity entity-name="TransferOrderItemAndShipment" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="TransferOrderItemAndShipment" package="co.hotwax.warehouse">
         <description>View to get Order Item and Shipment Details. The Shipment entities are added
             using left join to get fulfilled order item details for both finished as well digital type goods.
         </description>
@@ -787,10 +787,10 @@ under the License.
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="OI">
             <key-map field-name="orderId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <member-entity entity-alias="ODR" entity-name="org.apache.ofbiz.order.order.OrderRole" join-from-alias="OI" join-optional="true">
@@ -919,7 +919,7 @@ under the License.
     </view-entity>
 
     <!-- View entity to fetch the shipment details of the associated order items -->
-    <view-entity entity-name="OrderItemAssocAndShipment" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAssocAndShipment" package="co.hotwax.warehouse">
         <member-entity entity-alias="OIA" entity-name="org.apache.ofbiz.order.order.OrderItemAssoc"/>
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderShipment" join-from-alias="OIA">
             <key-map field-name="toOrderId" related="orderId"/>
@@ -954,7 +954,7 @@ under the License.
     </view-entity>
 
     <!-- View entity to fetch order item and return item details -->
-    <view-entity entity-name="OrderItemAndReturnItemView" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAndReturnItemView" package="co.hotwax.financial">
         <description>View to fetch the Order Item and Return Item Details.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem" join-from-alias="OI" join-optional="true">
@@ -977,7 +977,7 @@ under the License.
     </view-entity>
 
     <!-- View entity to fetch Order Item and Attribute details. -->
-    <view-entity entity-name="OrderItemAndAttribute" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAndAttribute" package="co.hotwax.financial">
         <description>View to fetch the Order Item and Item Attribute Details.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <member-entity entity-alias="OIA" entity-name="org.apache.ofbiz.order.order.OrderItemAttribute" join-from-alias="OI" join-optional="true">
@@ -997,7 +997,7 @@ under the License.
         </alias-all>
     </view-entity>
 
-    <view-entity entity-name="OrderItemDetail" package="co.hotwax.order" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemDetail" package="co.hotwax.order">
         <description>View to get Order details for Sales Order Item</description>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
@@ -1016,10 +1016,10 @@ under the License.
         <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="F" join-optional="true">
             <key-map field-name="facilityTypeId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
 
@@ -1044,6 +1044,7 @@ under the License.
         <alias entity-alias="OI" field="statusId" name="itemStatusId"/>
         <alias entity-alias="OI" name="productId"/>
         <alias entity-alias="OI" name="taxCode"/>
+        <alias entity-alias="OI" name="promisedDatetime"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
 
         <alias entity-alias="OISG" name="facilityId"/>
@@ -1060,54 +1061,13 @@ under the License.
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
     </view-entity>
 
-    <!-- View entity to fetch Return Item Adjustments. -->
-    <!-- NOTE: ReturnItemAndAdjustment view entity is already exist to fetch the Return Item Adjustments, but in the Get Orders API there is a requirement to prepare the
-         Return Item Adjustments as per the product instead of the items. Hence, a new entity ReturnedItemAndAdjustment is created for this purpose.
-         This is required to prevent issues with existing code, as the ReturnedItemAndAdjustment view is already used to fetch the Return Item Adjustments in the feeds. -->
-    <!-- TODO: Check if necessary fields can be added to the existing view and verify the feeds, if everything looks good then use the existing ReturnedItemAndAdjustment view to simplify things. -->
-
-    <view-entity entity-name="ReturnAdjustmentAndItem" package="co.hotwax.order" group="ofbiz_transactional">
-        <description>View to get the Return Items and their Adjustments.</description>
-        <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment"/>
-        <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem" join-from-alias="RA">
-            <key-map field-name="returnId"/>
-            <key-map field-name="returnItemSeqId"/>
-        </member-entity>
-        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="RI">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-        </member-entity>
-        <member-entity entity-alias="RH" entity-name="org.apache.ofbiz.order.return.ReturnHeader" join-from-alias="RI">
-            <key-map field-name="returnId"/>
-        </member-entity>
-
-        <alias entity-alias="RI" name="returnId"/>
-        <alias entity-alias="RI" name="returnItemSeqId"/>
-        <alias entity-alias="RI" name="orderId"/>
-        <alias entity-alias="RI" name="orderItemSeqId"/>
-        <alias entity-alias="RI" name="returnPrice"/>
-        <alias entity-alias="RI" name="returnQuantity"/>
-        <alias entity-alias="RI" name="productId"/>
-        <alias entity-alias="RI" name="statusId" />
-
-        <alias entity-alias="RA" name="returnAdjustmentId"/>
-        <alias entity-alias="RA" name="returnAdjustmentTypeId"/>
-        <alias entity-alias="RA" name="comments"/>
-        <alias entity-alias="RA" name="description"/>
-        <alias entity-alias="RA" name="amount" function="sum"/>
-
-        <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
-
-        <alias entity-alias="RH" field="destinationFacilityId" name="returnFacilityId"/>
-    </view-entity>
-
     <!-- View entity to fetch Order Item Adjustments and Attributes. -->
     <!-- NOTE: OrderItemAndAdjustment view entity is already exist to fetch the Order Item Adjustments, but in the Get Orders API there is a requirement to prepare the
          Order Item Adjustments along with Order Adjustments Attributes. Hence, a new entity OrderItemAdjustmentAndAttribute is created for this purpose.
          This is required to prevent issues with existing code, as the OrderItemAndAdjustment view is already used to fetch the Order Item Adjustments in the feeds. -->
     <!-- TODO: Check if necessary fields can be added to the existing view and verify the feeds, if everything looks good then use the existing OrderItemAndAdjustment view to simplify things. -->
 
-    <view-entity entity-name="OrderItemAdjustmentAndAttribute" package="co.hotwax.order" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAdjustmentAndAttribute" package="co.hotwax.order">
         <description>View to get the Order Items and their Adjustments.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
@@ -1153,7 +1113,7 @@ under the License.
     </view-entity>
 
     <!-- View entity to fetch Order Item and Order Item Change details. -->
-    <view-entity entity-name="OrderItemAndChange" package="co.hotwax.order" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAndChange" package="co.hotwax.order">
         <description>View to fetch the Order Item and Order Item Change Details.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <member-entity entity-alias="OIC" entity-name="org.apache.ofbiz.order.order.OrderItemChange" join-from-alias="OI">
@@ -1176,7 +1136,7 @@ under the License.
         <alias entity-alias="OISG" name="facilityId"/>
     </view-entity>
 
-    <view-entity entity-name="OrderItemAndShipGroup" package="co.hotwax.order" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemAndShipGroup" package="co.hotwax.order">
         <description>View to get Order Item and Ship Group details.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
@@ -1202,7 +1162,7 @@ under the License.
     <!-- NOTE: In the Get Orders API for integration with PS, there is a requirement to prepare the
          Order Item Adjustments per product. This new entity is created for this purpose.
          Facility ID is also required, so included OISG also -->
-    <view-entity entity-name="OrderAdjustmentAndItem" package="co.hotwax.order" group="ofbiz_transactional">
+    <view-entity entity-name="OrderAdjustmentAndItem" package="co.hotwax.order">
         <description>View to get the Order Item Adjustments and and item details.</description>
         <member-entity entity-alias="OA" entity-name="org.apache.ofbiz.order.order.OrderAdjustment"/>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OA" join-optional="true">
@@ -1238,7 +1198,7 @@ under the License.
          This is required to prevent issues with existing code, as the ReturnedItemAndAdjustment view is already used to fetch the Return Item Adjustments in the feeds. -->
     <!-- TODO: Check if necessary fields can be added to the existing view and verify the feeds, if everything looks good then use the existing ReturnedItemAndAdjustment view to simplify things. -->
 
-    <view-entity entity-name="ReturnAdjustmentAndItem" package="co.hotwax.order" group="ofbiz_transactional">
+    <view-entity entity-name="ReturnAdjustmentAndItem" package="co.hotwax.order">
         <description>View to get the Return Items and their Adjustments.</description>
         <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment"/>
         <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem" join-from-alias="RA">
@@ -1278,7 +1238,7 @@ under the License.
     1. It is being used to prepare the Feed for Fulfilled Order Items.
     2. This includes the use of OrderFulfillmentErpHistory entity to get only those fulfilled order items for which history is not created.
     3. This is required so that when the view is used in the feed, the same order items is not included multiple times in the feeds. -->
-    <view-entity entity-name="FulfilledOrderItemsForErp" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="FulfilledOrderItemsForErp" package="co.hotwax.warehouse">
         <description>View to get order item details using OrderFulfillmentErpHistory.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
@@ -1321,7 +1281,7 @@ under the License.
     <!-- This view is used for fetching the Shipment Details for the Order Items.
     NOTE:
     1. The Shipment entities are included with left join to have optional Shipment details to include digital type goods also. -->
-    <view-entity entity-name="OrderItemShipmentDetail" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemShipmentDetail" package="co.hotwax.warehouse">
         <description>View to get Order Item and Shipment Details. The Shipment entities are added
             using left join to get fulfilled order item details for both finished as well digital type goods.
         </description>
@@ -1333,10 +1293,10 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
-        <member-entity entity-alias="UOM" entity-name="org.apache.ofbiz.common.uom.Uom" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="UOM" entity-name="moqui.basic.Uom" join-from-alias="OH" join-optional="true">
             <key-map field-name="currencyUom" related="uomId"/>
         </member-entity>
         <member-entity entity-alias="ODR" entity-name="org.apache.ofbiz.order.order.OrderRole" join-from-alias="OI" join-optional="true">
@@ -1460,7 +1420,7 @@ under the License.
     1. It is being used to prepare the Feed for Fulfilled Order Items.
     2. This includes the use of OrderFulfillmentErpHistory entity to get only those fulfilled order items for which history is not created.
     3. This is required so that when the view is used in the feed, the same order items is not included multiple times in the feeds. -->
-    <view-entity entity-name="OrderItemShipmentForErp" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemShipmentForErp" package="co.hotwax.warehouse">
         <description>View to get order item and shipment details using OrderFulfillmentErpHistory.</description>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
@@ -1498,7 +1458,7 @@ under the License.
 
     <!-- New view is added to fetch the eligible orders to be send in the fulfilment feed for Shopify
      -->
-    <view-entity entity-name="FulfilledOrdersItemsForShopify" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="FulfilledOrdersItemsForShopify" package="co.hotwax.warehouse">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
         <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
@@ -1532,7 +1492,7 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="OrderItemShipmentForShopify" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemShipmentForShopify" package="co.hotwax.warehouse">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
         <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI">
@@ -1599,7 +1559,7 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="OrderItemShipGroupAndAssoc" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="OrderItemShipGroupAndAssoc" package="co.hotwax.warehouse">
         <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup"/>
         <member-entity entity-alias="OISGA" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc" join-from-alias="OISG">
             <key-map field-name="orderId"/>

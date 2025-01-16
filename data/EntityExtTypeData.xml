@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.EnumerationType enumTypeId="ENTSYNC_INC_APPL" description="Entity Sync Include Application Type"/>
+    <moqui.basic.Enumeration enumId="ESIA_INCLUDE" enumTypeId="ENTSYNC_INC_APPL" enumCode="INCLUDE" description="Include"/>
+    <moqui.basic.Enumeration enumId="ESIA_EXCLUDE" enumTypeId="ENTSYNC_INC_APPL" enumCode="EXCLUDE" description="Exclude"/>
+    <moqui.basic.Enumeration enumId="ESIA_ALWAYS" enumTypeId="ENTSYNC_INC_APPL" enumCode="ALWAYS" description="Always Include"/>
+    <moqui.basic.StatusType statusTypeId="ENTSYNC_RUN" description="Entity Sync Run"/>
+    <moqui.basic.StatusItem statusId="ESR_NOT_STARTED" statusTypeId="ENTSYNC_RUN" statusCode="NOT_STARTED" description="Not Started"/>
+    <moqui.basic.StatusItem statusId="ESR_RUNNING" statusTypeId="ENTSYNC_RUN" statusCode="RUNNING" description="Running"/>
+    <moqui.basic.StatusItem statusId="ESR_PENDING" statusTypeId="ENTSYNC_RUN" statusCode="PENDING" description="Offline Pending"/>
+    <moqui.basic.StatusItem statusId="ESR_COMPLETE" statusTypeId="ENTSYNC_RUN" statusCode="COMPLETE" description="Complete"/>
+    <moqui.basic.StatusItem statusId="ESR_OTHER_ERROR" statusTypeId="ENTSYNC_RUN" statusCode="OTHER_ERROR" description="Other Error"/>
+    <moqui.basic.StatusItem statusId="ESR_SERVICE_ERROR" statusTypeId="ENTSYNC_RUN" statusCode="SERVICE_ERROR" description="Service Call Error"/>
+    <moqui.basic.StatusItem statusId="ESR_DATA_ERROR" statusTypeId="ENTSYNC_RUN" statusCode="DATA_ERROR" description="Data Error"/>
+</entity-facade-xml>
+

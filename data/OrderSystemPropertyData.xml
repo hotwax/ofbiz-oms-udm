@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed-initial">
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="daysTillCancelReplacementOrder" systemPropertyValue="30" description="Days until replacement order is cancelled."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="autosave.max.age" systemPropertyValue="14" description="Maximum age of auto-save shopping list for anonymous users (in days)."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="order.item.attr.prefix" systemPropertyValue="order_item_attr_" description="Prefix for Order Item Attribute."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="order.item.comment.enable" systemPropertyValue="Y" description="Allow comment on Order Item. Choices are: Y or N."/>
+</entity-facade-xml>
+

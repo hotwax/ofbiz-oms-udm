@@ -21,9 +21,13 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
-    <entity entity-name="EntityKeyStore" package="org.apache.ofbiz.entity.crypto" group="ofbiz_transactional">
+    <entity entity-name="EntityKeyStore" package="org.apache.ofbiz.entity.crypto">
         <field name="keyName" type="id-long" is-pk="true"></field>
         <field name="keyText" type="text-medium"></field>
+    </entity>
+    <entity entity-name="OmsSequenceValueItem" package="org.apache.ofbiz.entity.sequence" table-name="OMS_SEQUENCE_VALUE_ITEM">
+        <field name="seqName" type="id-long" is-pk="true"></field>
+        <field name="seqId" type="number-integer"></field>
     </entity>
 </entities>
 
