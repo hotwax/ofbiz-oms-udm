@@ -37,7 +37,10 @@ under the License.
         <member-entity entity-alias="ENUM" entity-name="moqui.basic.Enumeration" join-from-alias="ITM">
             <key-map field-name="integrationTypeId"/>
         </member-entity>
-        <alias-all entity-alias="ITM"/>
+        <alias-all entity-alias="ITM">
+            <exclude field="description"/>
+        </alias-all>
         <alias-all entity-alias="ENUM"/>
+        <alias name="integrationDescription" field="description" entity-alias="ITM"/>
     </view-entity>
 </entities>
