@@ -41,6 +41,6 @@ under the License.
             <exclude field="description"/>
         </alias-all>
         <alias-all entity-alias="ENUM"/>
-        <alias name="integrationDescription" field="description" entity-alias="ITM"/>
+        <alias name="mappingDescription" field="description" entity-alias="ITM"/>
     </view-entity>
 </entities>
