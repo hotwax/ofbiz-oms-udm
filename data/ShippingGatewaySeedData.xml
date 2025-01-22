@@ -4,26 +4,21 @@
     <org.apache.ofbiz.party.party.Person partyId="_NA_"/>
     <org.apache.ofbiz.party.party.PartyGroup partyId="_NA_" groupName="Default"/>
     <org.apache.ofbiz.party.party.PartyRole partyId="_NA_" roleTypeId="CARRIER"/>
+
     <org.apache.ofbiz.shipment.shipment.ShipmentMethodType shipmentMethodTypeId="STANDARD" description="Standard" sequenceNum="1"/>
     <org.apache.ofbiz.shipment.shipment.ShipmentMethodType shipmentMethodTypeId="SECOND_DAY" description="Two Day" sequenceNum="2"/>
     <org.apache.ofbiz.shipment.shipment.ShipmentMethodType shipmentMethodTypeId="THIRD_DAY" description="Third Day" sequenceNum="3"/>
     <org.apache.ofbiz.shipment.shipment.ShipmentMethodType shipmentMethodTypeId="NEXT_DAY" description="Next Day" sequenceNum="4"/>
+
     <org.apache.ofbiz.shipment.shipment.ShipmentMethodType shipmentMethodTypeId="NO_SHIPPING" description="No Shipping" sequenceNum="5"/>
     <org.apache.ofbiz.shipment.shipment.ShipmentMethodType shipmentMethodTypeId="STOREPICKUP" description="Store Pickup" sequenceNum="6"/>
     <org.apache.ofbiz.shipment.shipment.ShipmentMethodType shipmentMethodTypeId="POS_COMPLETED" description="POS Completed"/>
-    <org.apache.ofbiz.shipment.shipment.CarrierShipmentMethod shipmentMethodTypeId="NEXT_DAY" partyId="_NA_" roleTypeId="CARRIER" sequenceNumber="10"/>
-    <org.apache.ofbiz.shipment.shipment.CarrierShipmentMethod shipmentMethodTypeId="SECOND_DAY" partyId="_NA_" roleTypeId="CARRIER" sequenceNumber="20"/>
-    <org.apache.ofbiz.shipment.shipment.CarrierShipmentMethod shipmentMethodTypeId="THIRD_DAY" partyId="_NA_" roleTypeId="CARRIER" sequenceNumber="30"/>
-    <org.apache.ofbiz.shipment.shipment.CarrierShipmentMethod shipmentMethodTypeId="STANDARD" partyId="_NA_" roleTypeId="CARRIER" sequenceNumber="40"/>
+
     <org.apache.ofbiz.shipment.shipment.CarrierShipmentMethod shipmentMethodTypeId="NO_SHIPPING" partyId="_NA_" roleTypeId="CARRIER" sequenceNumber="50"/>
     <org.apache.ofbiz.shipment.shipment.CarrierShipmentMethod shipmentMethodTypeId="STOREPICKUP" partyId="_NA_" roleTypeId="CARRIER" sequenceNumber="60"/>
     <org.apache.ofbiz.shipment.shipment.CarrierShipmentMethod shipmentMethodTypeId="POS_COMPLETED" partyId="_NA_" roleTypeId="CARRIER" sequenceNumber="70"/>
+
     <org.apache.ofbiz.shipment.shipment.ShipmentBoxType shipmentBoxTypeId="YOURPACKNG" description="Your Packaging" dimensionUomId="LEN_in" boxLength="15" boxWidth="10" boxHeight="5"/>
     <org.apache.ofbiz.shipment.shipment.ShipmentBoxType shipmentBoxTypeId="BOPISPACKNG" description="BOPIS Store Packaging" dimensionUomId="LEN_in"/>
-    <co.hotwax.warehouse.packing.CarrierShipmentMethBoxType partyId="_NA_" shipmentBoxTypeId="YOURPACKNG" shipmentMethodTypeId="NO_SHIPPING"/>
-    <co.hotwax.warehouse.packing.CarrierShipmentMethBoxType partyId="_NA_" shipmentBoxTypeId="YOURPACKNG" shipmentMethodTypeId="STANDARD"/>
-    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="shipment" systemPropertyId="shipment.default.weight.uom" systemPropertyValue="WT_lb" description="The shipment weight to use for shipment, etc"/>
-    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="shipment" systemPropertyId="shipment.default.dimension.uom" systemPropertyValue="LEN_in" description="The shipment dimension to use for shipment, etc"/>
-    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="shipment" systemPropertyId="shipment.default.boxtype" systemPropertyValue="YOURPACKNG" description="The default shipment box type to be used"/>
 </entity-facade-xml>
 
