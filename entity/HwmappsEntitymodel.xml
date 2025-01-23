@@ -847,6 +847,9 @@ under the License.
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
         </relationship>
     </entity>
+    <extend-entity entity-name="ProductKeyword" package="org.apache.ofbiz.product.product">
+        <field name="keyword" type="text-medium"></field>
+    </extend-entity>
     <extend-entity entity-name="CarrierShipmentBoxType" package="org.apache.ofbiz.shipment.shipment">
         <field name="pickupContainerCode" type="id"></field>
     </extend-entity>
@@ -1303,5 +1306,25 @@ under the License.
             <key-map field-name="parentTypeId" related="enumTypeId"/>
         </relationship>
     </extend-entity>
+    <entity entity-name="ProductStoreTaxSettingType" package="org.apache.ofbiz.product.store">
+        <field name="prodStoreTaxSettingTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-medium"></field>
+        <relationship type="one-nofk" fk-name="PSTS_TYPPAR" title="Parent" related="org.apache.ofbiz.product.store.ProductStoreTaxSettingType">
+            <key-map field-name="parentTypeId" related="prodStoreTaxSettingTypeId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ProductStoreTaxSetting" package="org.apache.ofbiz.product.store">
+        <field name="productStoreId" type="id" is-pk="true"></field>
+        <field name="prodStoreTaxSettingTypeId" type="id" is-pk="true"></field>
+        <field name="taxServiceName" type="text-medium"></field>
+        <relationship type="one" fk-name="PSTS_TYPE" related="org.apache.ofbiz.product.store.ProductStoreTaxSettingType">
+            <key-map field-name="prodStoreTaxSettingTypeId"/>
+        </relationship>
+        <relationship type="one" fk-name="PSTS_PS_PRDS" related="org.apache.ofbiz.product.store.ProductStore">
+            <key-map field-name="productStoreId"/>
+        </relationship>
+    </entity>
 </entities>
 
