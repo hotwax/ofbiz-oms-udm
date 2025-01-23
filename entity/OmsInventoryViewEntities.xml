@@ -93,6 +93,7 @@ under the License.
         <alias entity-alias="ICI" name="statusId"/>
         <alias entity-alias="ICII" field="statusId" name="inventoryCountItemStatusId"/>
         <alias entity-alias="ICI" name="createdDate"/>
+        <alias entity-alias="ICI" name="countTypeEnumId"/>
         <alias entity-alias="ICIS" name="statusDate" function="max"/>
         <alias entity-alias="ICIV" name="invCountImportItemSeqId"/>
         <alias entity-alias="ICIV" name="productId"/>
