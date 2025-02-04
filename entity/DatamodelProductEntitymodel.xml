@@ -1011,6 +1011,25 @@ under the License.
         </relationship>
     </entity>
     <!-- TODO: skipped element view-entity -->
+    <entity entity-name="ProductKeyword" package="org.apache.ofbiz.product.product" table-name="PRODUCT_KEYWORD_NEW" cache="never">
+        <field name="productId" type="id" is-pk="true"></field>
+        <field name="keyword" type="text-medium" is-pk="true"></field>
+        <field name="keywordTypeId" type="id" is-pk="true"></field>
+        <field name="relevancyWeight" type="number-integer"></field>
+        <field name="statusId" type="id"></field>
+        <relationship type="one" fk-name="PROD_KWD_PROD_NEW" related="org.apache.ofbiz.product.product.Product">
+            <key-map field-name="productId"/>
+        </relationship>
+        <relationship type="one" fk-name="PROD_KWD_TYPE" related="moqui.basic.Enumeration">
+            <key-map field-name="keywordTypeId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="PROD_KWD_STTS" related="moqui.basic.StatusItem">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <index name="PROD_KWD_KWD_NEW">
+            <index-field name="keyword"/>
+        </index>
+    </entity>
     <entity entity-name="ProductType" package="org.apache.ofbiz.product.product">
         <field name="productTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>
