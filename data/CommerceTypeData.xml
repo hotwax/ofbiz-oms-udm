@@ -502,5 +502,6 @@
     <moqui.basic.EnumerationType enumTypeId="COUNT_TYPE" description="Count Type"/>
     <moqui.basic.Enumeration enumId="SELECTIVE_COUNT" enumTypeId="COUNT_TYPE" description="Selective Count" enumName="Selective Count"/>
     <moqui.basic.Enumeration enumId="HARD_COUNT" enumTypeId="COUNT_TYPE" description="Hard Count" enumName="Hard Count"/>
+    <moqui.basic.Enumeration enumId="DYNAMIC_COUNT" enumTypeId="COUNT_TYPE" description="Dynamic Count" enumName="Dynamic Count"/>
 </entity-facade-xml>
 
