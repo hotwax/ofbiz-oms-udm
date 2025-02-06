@@ -48,7 +48,7 @@
     <org.apache.ofbiz.party.contact.PartyContactMechPurpose partyId="HOTWAX_USER" contactMechId="HC_USER" contactMechPurposeTypeId="PRIMARY_EMAIL" fromDate="2018-01-01 12:00:00.000"/>
     <org.apache.ofbiz.party.contact.PartyContactMechPurpose partyId="HOTWAX_USER" contactMechId="HC_USER_TN" contactMechPurposeTypeId="PRIMARY_PHONE" fromDate="2018-01-01 12:00:00.000"/>
     <org.apache.ofbiz.party.party.PartyRelationship partyIdFrom="COMPANY" partyIdTo="HOTWAX_USER" roleTypeIdFrom="INTERNAL_ORGANIZATIO" roleTypeIdTo="CONTACT" fromDate="2018-01-01 12:00:00.000" partyRelationshipTypeId="CONTACT_REL"/>
-    <org.apache.ofbiz.party.party.PartyRelationship partyIdFrom="COMPANY" partyIdTo="HOTWAX_USER" roleTypeIdFrom="INTERNAL_ORGANIZATIO" roleTypeIdTo="APPLICATION_USER" fromDate="2018-01-01 12:00:00.000" securityGroupId="SUPER" partyRelationshipTypeId="OWNER"/>
+    <org.apache.ofbiz.party.party.PartyRelationship partyIdFrom="COMPANY" partyIdTo="HOTWAX_USER" roleTypeIdFrom="INTERNAL_ORGANIZATIO" roleTypeIdTo="APPLICATION_USER" fromDate="2018-01-01 12:00:00.000" partyRelationshipTypeId="OWNER"/>
     <org.apache.ofbiz.product.store.ProductStoreRole partyId="HOTWAX_USER" roleTypeId="APPLICATION_USER" productStoreId="STORE" fromDate="2023-05-02 00:00:00.0"/>
 </entity-facade-xml>
 

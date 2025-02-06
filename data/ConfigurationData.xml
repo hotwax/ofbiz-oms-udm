@@ -27,9 +27,5 @@
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="PreorderConfig" systemPropertyId="STORE.is.backorder.enabled" systemPropertyValue=""/>
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="InventoryConfig" systemPropertyId="compute.reserved.inventory" systemPropertyValue="false"/>
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="notification" systemPropertyId="notification.enabled" systemPropertyValue="Y"/>
-    <moqui.basic.GeoAssoc geoId="GBR" toGeoId="ENGL" geoAssocTypeEnumId="GAT_REGIONS"/>
-    <moqui.basic.GeoAssoc geoId="GBR" toGeoId="NIRL" geoAssocTypeEnumId="GAT_REGIONS"/>
-    <moqui.basic.GeoAssoc geoId="GBR" toGeoId="SCOT" geoAssocTypeEnumId="GAT_REGIONS"/>
-    <moqui.basic.GeoAssoc geoId="GBR" toGeoId="WALS" geoAssocTypeEnumId="GAT_REGIONS"/>
 </entity-facade-xml>
 

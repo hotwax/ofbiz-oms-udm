@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <moqui.basic.GeoAssoc geoId="GBR" toGeoId="ENGL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="GBR" toGeoId="NIRL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="GBR" toGeoId="SCOT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="GBR" toGeoId="WALS" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+
