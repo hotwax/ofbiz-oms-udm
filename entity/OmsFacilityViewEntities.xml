@@ -89,5 +89,5 @@ under the License.
         <alias name="facilityTypeId" entity-alias="FC"/>
         <alias name="facilityName" entity-alias="FC"/>
         <alias name="parentTypeId" entity-alias="FT"/>
-    </view-entity
+    </view-entity>
 </entities>
