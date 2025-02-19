@@ -782,8 +782,8 @@ under the License.
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="ShipmentStatus" package="org.apache.ofbiz.shipment.shipment">
         <field name="shipmentStatusId" type="id" is-pk="true"></field>
-        <field name="statusId" type="id" is-pk="true"></field>
-        <field name="shipmentId" type="id" is-pk="true"></field>
+        <field name="statusId" type="id"></field>
+        <field name="shipmentId" type="id"></field>
         <field name="statusDate" type="date-time"></field>
         <field name="changeByUserLoginId" type="id-long"></field>
         <relationship type="one" fk-name="SHPMNT_STTS_STTS" related="moqui.basic.StatusItem">
