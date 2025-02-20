@@ -118,8 +118,5 @@
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="updated.backorder.report.ftp.export.folder.name" systemPropertyValue="" description="FTP folder name in the export path"/>
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="googleChat" systemPropertyId="google.chat.webhook.file.missing.uri" systemPropertyValue=""/>
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="buynow.productStore.productStoreName" systemPropertyValue=""/>
-    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="order.brokered.email.trigger.last.sync.time" systemPropertyValue="" description="Record last sync time for broker order email."/>
-    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="order.packed.email.trigger.last.sync.time" systemPropertyValue="" description="Record last sync time for packed order email."/>
-    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="order" systemPropertyId="order.completed.email.trigger.last.sync.time" systemPropertyValue="" description="Record last sync time for completed order email."/>
 </entity-facade-xml>
 

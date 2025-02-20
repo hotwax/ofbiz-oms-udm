@@ -157,6 +157,65 @@ under the License.
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
         </relationship>
     </entity>
+    <entity entity-name="ProductAverageCost" package="org.apache.ofbiz.accounting.ledger">
+<description>Running tally of a product&apos;s average cost in a particular company and facility</description>        <field name="productAverageCostTypeId" type="id" is-pk="true"></field>
+        <field name="organizationPartyId" type="id" is-pk="true"></field>
+        <field name="productId" type="id" is-pk="true"></field>
+        <field name="facilityId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
+        <field name="averageCost" type="number-decimal"></field>
+        <relationship type="one" fk-name="AVG_COST_TYPE" related="org.apache.ofbiz.accounting.ledger.ProductAverageCostType">
+            <key-map field-name="productAverageCostTypeId"/>
+        </relationship>
+        <relationship type="one" fk-name="AVG_COST_PARTY" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="organizationPartyId" related="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="AVG_COST_PROD" related="org.apache.ofbiz.product.product.Product">
+            <key-map field-name="productId"/>
+        </relationship>
+        <relationship type="one" fk-name="AVG_COST_FACI" related="org.apache.ofbiz.product.facility.Facility">
+            <key-map field-name="facilityId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ProductAverageCostType" package="org.apache.ofbiz.accounting.ledger">
+        <field name="productAverageCostTypeId" type="id" is-pk="true"></field>
+        <field name="parentTypeId" type="id"></field>
+        <field name="hasTable" type="text-indicator"></field>
+        <field name="description" type="text-medium"></field>
+        <relationship type="one" fk-name="AVGCOST_TYPE_PAR" title="Parent" related="org.apache.ofbiz.accounting.ledger.ProductAverageCostType">
+            <key-map field-name="parentTypeId" related="productAverageCostTypeId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="GiftCardFulfillment" package="org.apache.ofbiz.accounting.payment">
+        <field name="fulfillmentId" type="id" is-pk="true"></field>
+        <field name="typeEnumId" type="id"></field>
+        <field name="merchantId" type="id-long"></field>
+        <field name="partyId" type="id"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="surveyResponseId" type="id"></field>
+        <field name="cardNumber" type="text-medium" encrypt="true"></field>
+        <field name="pinNumber" type="text-medium" encrypt="true"></field>
+        <field name="amount" type="currency-amount"></field>
+        <field name="responseCode" type="text-medium"></field>
+        <field name="referenceNum" type="text-medium"></field>
+        <field name="authCode" type="text-medium"></field>
+        <field name="fulfillmentDate" type="date-time"></field>
+        <relationship type="one" fk-name="GC_FILL_ENUM" related="moqui.basic.Enumeration">
+            <key-map field-name="typeEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="GC_FILL_PARTY" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="partyId"/>
+        </relationship>
+        <relationship type="one" fk-name="GC_FILL_ODRH" related="org.apache.ofbiz.order.order.OrderHeader">
+            <key-map field-name="orderId"/>
+        </relationship>
+        <relationship type="one" fk-name="GC_FILL_ODRI" related="org.apache.ofbiz.order.order.OrderItem">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </relationship>
+    </entity>
     <entity entity-name="PaymentMethod" package="org.apache.ofbiz.accounting.payment">
         <field name="paymentMethodId" type="id" is-pk="true"></field>
         <field name="paymentMethodTypeId" type="id"></field>

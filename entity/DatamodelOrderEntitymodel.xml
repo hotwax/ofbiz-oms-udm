@@ -1080,35 +1080,5 @@ under the License.
             <key-map field-name="contactMechPurposeTypeId"/>
         </relationship>
     </entity>
-
-    <entity entity-name="GiftCardFulfillment" package="org.apache.ofbiz.order.order">
-        <field name="fulfillmentId" type="id" is-pk="true"></field>
-        <field name="typeEnumId" type="id"></field>
-        <field name="merchantId" type="id-long"></field>
-        <field name="partyId" type="id"></field>
-        <field name="orderId" type="id"></field>
-        <field name="orderItemSeqId" type="id"></field>
-        <field name="surveyResponseId" type="id"></field>
-        <field name="cardNumber" type="text-medium" encrypt="true"></field>
-        <field name="pinNumber" type="text-medium" encrypt="true"></field>
-        <field name="amount" type="currency-amount"></field>
-        <field name="responseCode" type="text-medium"></field>
-        <field name="referenceNum" type="text-medium"></field>
-        <field name="authCode" type="text-medium"></field>
-        <field name="fulfillmentDate" type="date-time"></field>
-        <relationship type="one" fk-name="GC_FILL_ENUM" related="Enumeration">
-            <key-map field-name="typeEnumId" related="enumId"/>
-        </relationship>
-        <relationship type="one" fk-name="GC_FILL_PARTY" related="Party">
-            <key-map field-name="partyId"/>
-        </relationship>
-        <relationship type="one" fk-name="GC_FILL_ODRH" related="OrderHeader">
-            <key-map field-name="orderId"/>
-        </relationship>
-        <relationship type="one" fk-name="GC_FILL_ODRI" related="OrderItem">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-        </relationship>
-    </entity>
 </entities>
 

@@ -38,6 +38,7 @@
     <moqui.basic.Enumeration enumId="JOB_IMP_ORD_UPD" enumTypeId="ORDER_SYS_JOB" description="Import order updates from eCommerce." enumName="Import order updates from Shopify"/>
     <moqui.basic.Enumeration enumId="JOB_IMP_ORD_CNCL" enumTypeId="ORDER_SYS_JOB" description="Check eCommerce for orders that have been canceled and cancel them in HotWax Commerce." enumName="Import canceled orders"/>
     <moqui.basic.Enumeration enumId="JOB_IMP_ITM_CNCL" enumTypeId="ORDER_SYS_JOB" description="Check eCommerce for order items that have been canceled and cancel them in HotWax Commerce without canceling the entire order." enumName="Import canceled items"/>
+    <moqui.basic.Enumeration enumId="CRT_SHOP_APPE_RETURN" enumTypeId="ORDER_SYS_JOB" description="Check eCommerce for orders that have adjustments created against them and create those adjustments in HotWax commerce" enumName="Import appeasements from Shopify Store"/>
     <moqui.basic.Enumeration enumId="JOB_APR_SALES_ORD" enumTypeId="ORDER_SYS_JOB" description="Approve Sales Order" enumName="Approve Sales Order"/>
     <moqui.basic.Enumeration enumId="JOB_IMP_RTN" enumTypeId="ORDER_SYS_JOB" description="Check eCommerce for orders that have been returned and create a return for them in HotWax Commerce. Returned orders are also restocked if inventory is damaged, make sure to log a Damaged variance." enumName="Import order returns"/>
     <moqui.basic.Enumeration enumId="JOB_IMP_CSTMR" enumTypeId="ORDER_SYS_JOB" description="Import customers" enumName="Import customers"/>
@@ -87,5 +88,6 @@
     <moqui.basic.Enumeration enumId="JOB_SND_ML_COMM" enumTypeId="FULFILLMENT_SYS_JOB" description="Send notification from communication event" enumName="Notification using Communication events"/>
     <moqui.basic.Enumeration enumId="JOB_ACT_PROD_SHPFY" enumTypeId="PRODUCT_SYS_JOB" description="Activate Products on Shopify" enumName="Activate products on Shopify"/>
     <moqui.basic.Enumeration enumId="RST_NEWLNCH_PROD_INV" enumTypeId="PRODUCT_SYS_JOB" description="Reset Newly Launched Product Inventory To Shopify" enumName="Reset Newly Launched Product Inventory To Shopify"/>
+    <moqui.basic.Enumeration enumId="JOB_AUTO_REJ_IDL_ORD" enumTypeId="ORDER_SYS_JOB" description="Cancel order items that have exceeded their idle duration and whose fulfillment has not yet begun" enumName="Auto Reject Idle Order Items"/>
 </entity-facade-xml>
 

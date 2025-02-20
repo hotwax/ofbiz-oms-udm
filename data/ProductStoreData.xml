@@ -31,11 +31,17 @@
     <org.apache.ofbiz.product.catalog.ProdCatalogCategory prodCatalogId="CATALOG" productCategoryId="PREORDR_NOT_ALLW" prodCatalogCategoryTypeId="PCCT_PREORDR_NOT" fromDate="2018-01-01 12:00:00.000" sequenceNum="6"/>
     <org.apache.ofbiz.product.facility.Facility facilityId="CONFIGURATION" facilityTypeId="CONFIGURATION" defaultInventoryItemTypeId="NON_SERIAL_INV_ITEM" facilityName="Configuration Facility" description="Configuration Facility" externalId="CONFIGURATION"/>
     <org.apache.ofbiz.product.store.ProductStoreFacility productStoreId="STORE" facilityId="CONFIGURATION" fromDate="2001-05-13 12:00:00.0"/>
+    <org.apache.ofbiz.product.store.ProductStoreShipmentMeth productStoreShipMethId="STANDARD_SHIP" productStoreId="STORE" shipmentMethodTypeId="STANDARD" partyId="_NA_" roleTypeId="CARRIER"/>
+    <org.apache.ofbiz.product.store.ProductStoreShipmentMeth productStoreShipMethId="SECOND_DAY_SHIP" productStoreId="STORE" shipmentMethodTypeId="SECOND_DAY" partyId="_NA_" roleTypeId="CARRIER"/>
+    <org.apache.ofbiz.product.store.ProductStoreShipmentMeth productStoreShipMethId="THIRD_DAY_SHIP" productStoreId="STORE" shipmentMethodTypeId="THIRD_DAY" partyId="_NA_" roleTypeId="CARRIER"/>
+    <org.apache.ofbiz.product.store.ProductStoreShipmentMeth productStoreShipMethId="NEXT_DAY_SHIP" productStoreId="STORE" shipmentMethodTypeId="NEXT_DAY" partyId="_NA_" roleTypeId="CARRIER"/>
+    <org.apache.ofbiz.product.store.ProductStoreShipmentMeth productStoreShipMethId="STOREPICKUP_SHIP" productStoreId="STORE" shipmentMethodTypeId="STOREPICKUP" partyId="_NA_" roleTypeId="CARRIER"/>
     <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="PRDT_IDEN_PREF" fromDate="2022-04-15 00:00:00.0" settingValue=""/>
     <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="INV_CNT_VIEW_QOH" fromDate="2022-04-15 00:00:00.0" settingValue="false"/>
     <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="SAVE_BILL_TO_INF" fromDate="2023-07-12 00:00:00.0" settingValue="N"/>
     <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="DEFULT_PKG_BOPIS_ORD" fromDate="2024-01-01 12:00:00.000" settingValue="BOPISPACKNG"/>
     <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="DIS_REJ_NOTI_ON_CNCL" fromDate="2024-01-01 00:00:00.0" settingValue="N"/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="AFFECT_QOH_ON_REJ" fromDate="2024-01-01 00:00:00" settingValue="N"/>
     <org.apache.ofbiz.party.party.Party partyId="HOTWAX_USER" partyTypeId="PERSON"/>
     <org.apache.ofbiz.party.party.Person partyId="HOTWAX_USER" firstName="HotWax" lastName="User"/>
     <org.apache.ofbiz.party.party.PartyRole partyId="HOTWAX_USER" roleTypeId="CONTACT"/>
