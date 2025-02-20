@@ -116,6 +116,7 @@ under the License.
     </extend-entity>
     <extend-entity entity-name="InventoryItem" package="org.apache.ofbiz.product.inventory">
         <field name="itemCondition" type="id"></field>
+        <field name="lastReceivedUnitCost" type="number-decimal"></field>
         <relationship type="one" fk-name="INV_ITEM_COND" title="ItemCondition" related="moqui.basic.Enumeration">
             <key-map field-name="itemCondition" related="enumId"/>
         </relationship>
@@ -237,6 +238,8 @@ under the License.
         <relationship type="one" fk-name="PROD_FAC_II" related="org.apache.ofbiz.product.inventory.InventoryItem">
             <key-map field-name="inventoryItemId"/>
         </relationship>
+        <field name="reorderPoint" type="number-decimal"></field>
+        <field name="maximumStock" type="number-decimal"></field>
     </extend-entity>
     <extend-entity entity-name="Content" package="org.apache.ofbiz.content.content">
         <field name="permissionEnumId" type="id-long"><description>It will be used to set permission to access content.</description></field>
@@ -1296,6 +1299,16 @@ under the License.
         <relationship type="one" fk-name="USR_LOGIN_SEC_GRP_UL" title="ChangeBy" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="changeByUserLoginId" related="userLoginId"/>
         </relationship>
+    </extend-entity>
+    <extend-entity entity-name="ProductAverageCost" package="org.apache.ofbiz.accounting.ledger">
+        <field name="affectedQuantity" type="number-decimal"></field>
+        <field name="quantityOnHand" type="number-decimal"></field>
+        <field name="orderId" type="id"></field>
+        <field name="orderItemSeqId" type="id"></field>
+        <field name="shipGroupSeqId" type="id"></field>
+        <field name="shipmentId" type="id"></field>
+        <field name="shipmentItemSeqId" type="id"></field>
+        <field name="receiptId" type="id"></field>
     </extend-entity>
     <extend-entity entity-name="Uom" package="moqui.basic">
         <field name="numericCode" type="number-integer"></field>

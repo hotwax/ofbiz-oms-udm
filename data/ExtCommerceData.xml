@@ -11,6 +11,10 @@
     <org.apache.ofbiz.product.facility.Facility facilityId="RELEASED_ORD_PARKING" facilityTypeId="RELEASED_ORD" defaultInventoryItemTypeId="NON_SERIAL_INV_ITEM" facilityName="Released Order Parking" description="Released Order Parking" externalId="RELEASED_ORD_PARKING"/>
     <org.apache.ofbiz.product.facility.FacilityGroupMember facilityId="_NA_" facilityGroupId="AUTO_CNCL_ODR_ITM" fromDate="2024-08-27 13:06:07.0"/>
     <org.apache.ofbiz.product.facility.FacilityGroupMember facilityId="UNFILLABLE_PARKING" facilityGroupId="AUTO_CNCL_ODR_ITM" fromDate="2024-08-27 13:06:07.0"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupMember facilityId="UNFILLABLE_PARKING" facilityGroupId="EX_FAC_RSTCK_ON_CAN" fromDate="2025-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupMember facilityId="PRE_ORDER_PARKING" facilityGroupId="EX_FAC_RSTCK_ON_CAN" fromDate="2025-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupMember facilityId="BACKORDER_PARKING" facilityGroupId="EX_FAC_RSTCK_ON_CAN" fromDate="2025-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupMember facilityId="UNF_HOLD_PARKING" facilityGroupId="EX_FAC_RSTCK_ON_CAN" fromDate="2025-01-01 00:00:00.0"/>
     <moqui.basic.StatusItem statusId="PICKLIST_COMPLETED" statusTypeId="PICKLIST_STATUS" statusCode="COMPLETED" description="Completed" statusAge="100"/>
     <moqui.basic.StatusItem statusId="INV_COUNT_CREATED" statusTypeId="INV_CNT_IMPORT_STTS" statusCode="CREATED" description="Created" statusAge="0"/>
     <moqui.basic.StatusItem statusId="INV_COUNT_ASSIGNED" statusTypeId="INV_CNT_IMPORT_STTS" statusCode="ASSIGNED" description="Assigned" statusAge="30"/>
@@ -120,6 +124,7 @@
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_ORDER_ITM_ATTR" importServiceName="createUpdateOrderItemAttribute" description="Add or update order item attribute" scriptTitle="Add or update order item attribute" importPath="/home/{SFTP-USER}/{FOLDER}"/>
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_ODR_ITM_FLFLMNT" importServiceName="processOrderCompleteRequest" description="Complete order item using Json file in MDM" scriptTitle="Complete order item using Json file in MDM" importPath="/home/{SFTP-USER}/{FOLDER}"/>
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_APR_SALES_ORD" importServiceName="approveSalesOrder" description="Approve Sales Order" scriptTitle="Approve Sales Order" importPath="/home/{SFTP-USER}/{FOLDER}"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="CRT_SHOP_APPE_RETURN" importServiceName="createAndReceiveShopifyReturnAppeasement" scriptTitle="Create Shopify Appeasement Return"/>
     <co.hotwax.datamanager.DataManagerConfig configId="MDM_PACKED_SHIPMENT" exportServiceName="exportPackedShipment" description="Packed Shipment" scriptTitle="Packed Shipment Data" fileNamePattern="packed_shipment_${sequence}"/>
     <co.hotwax.datamanager.DataManagerConfig configId="MDM_RST_FULFD_ORD" importServiceName="refreshExportedFulfillment" description="Reset order fulfillment history to resend order on external system for fulfillment." scriptTitle="Reset order fulfillment history to resend order on external system for fulfillment." importPath="/home/{SFTP-USER}/{FOLDER}"/>
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_INCOMING_SHPMNT" importServiceName="createIncomingShipment" description="Create incoming shipment" scriptTitle="Create incoming shipment" fileNamePattern="CREAT_INCOMING_SHIPMNT_${sequence}" importPath="/home/{SFTP-USER}/{FOLDER}"/>
@@ -254,7 +259,6 @@
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_CRT_EXCHG_ORD" importServiceName="createSalesOrder" description="Create Exchange Order" scriptTitle="Create Exchange Order" importPath="/home/{SFTP-USER}/hotwax/oms/CreateExhangeOrder"/>
     <co.hotwax.common.enum.EnumerationGroupType enumerationGroupTypeId="SYS_REJ" description="System rejection reasons"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="SYS_REJ_RES" enumerationGroupTypeId="SYS_REJ" enumerationGroupName="System rejection reasons" description="System rejection reasons"/>
-    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="REJECT_ENTIRE_ORDER" enumerationGroupId="SYS_REJ_RES" fromDate="2024-09-03 00:00:00"/>
     <co.hotwax.common.enum.EnumerationGroupMember enumerationId="INACTIVE_STORE" enumerationGroupId="SYS_REJ_RES" fromDate="2024-09-03 00:00:00"/>
     <co.hotwax.common.enum.EnumerationGroupType enumerationGroupTypeId="BOPIS_REJ" description="BOPIS rejection reasons"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="BOPIS_REJ_RES" enumerationGroupTypeId="BOPIS_REJ" enumerationGroupName="BOPIS rejection reasons" description="BOPIS rejection reasons"/>
@@ -277,5 +281,7 @@
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="FF_REJ_RSN_GRP" enumerationGroupTypeId="REJ_RSN_GRP" enumerationGroupName="Fulfillment rejection reasons" description="Fulfillment rejection reasons"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="BOPIS_REJ_RSN_GRP" enumerationGroupTypeId="REJ_RSN_GRP" enumerationGroupName="BOPIS rejection reasons" description="BOPIS rejection reasons"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="CSR_REJ_RSN_GRP" enumerationGroupTypeId="REJ_RSN_GRP" enumerationGroupName="BOPIS rejection reasons" description="CSR rejection reasons"/>
+    <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="TO_REJ_RSN_GRP" enumerationGroupTypeId="REJ_RSN_GRP" enumerationGroupName="Transfer Order rejection reasons" description="Fulfillment rejection reasons"/>
+    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="REJ_RSN_DAMAGED" enumerationGroupId="TO_REJ_RSN_GRP" fromDate="2025-02-01 00:00:00.000"/>
 </entity-facade-xml>
 

@@ -209,6 +209,7 @@
     <moqui.basic.Enumeration enumId="VAR_INTEGR" enumTypeId="IID_REASON" enumCode="VAR_INTEGR" description="Integration" enumName="Integration"/>
     <moqui.basic.Enumeration enumId="VAR_LOST" enumTypeId="IID_REASON" enumCode="VAR_LOST" description="Adjustment" enumName="Adjustment"/>
     <moqui.basic.Enumeration enumId="VAR_MANUAL" enumTypeId="IID_REASON" enumCode="VAR_MANUAL" description="Variance recorded manually" enumName="Variance recorded manually"/>
+    <moqui.basic.Enumeration enumId="VAR_EQUAL_QOH_ATP" enumTypeId="IID_REASON" enumCode="VAR_EQUAL_QOH_ATP" description="Equal ATP And QoH" enumName="Equal ATP And QoH"/>
     <moqui.basic.Enumeration enumId="VAR_MISSHIP_ORDERED" enumTypeId="IID_REASON" enumCode="VAR_MISSHIP_ORDERED" description="Mis-shipped Item Ordered (+)" enumName="Mis-shipped Item Ordered"/>
     <moqui.basic.Enumeration enumId="VAR_MISSHIP_SHIPPED" enumTypeId="IID_REASON" enumCode="VAR_MISSHIP_SHIPPED" description="Mis-shipped Item Shipped (-)" enumName="Mis-shipped Item Shipped"/>
     <moqui.basic.Enumeration enumId="VAR_SAMPLE" enumTypeId="IID_REASON" enumCode="VAR_SAMPLE" description="Sample (Giveaway)" enumName="Sample (Giveaway)"/>

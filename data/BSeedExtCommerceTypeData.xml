@@ -96,7 +96,8 @@
     <moqui.basic.Enumeration enumId="MISMATCH" enumTypeId="REPORT_VAR" enumCode="MISMATCH" description="Mismatch"/>
     <moqui.basic.Enumeration enumId="INACTIVE_STORE" enumTypeId="REPORT_NO_VAR" enumCode="INACTIVE_STORE" description="Inactive store"/>
     <moqui.basic.Enumeration enumId="NO_VARIANCE_LOG" enumTypeId="REPORT_NO_VAR" enumCode="NO_VARIANCE_LOG" description="No variance"/>
-    <moqui.basic.Enumeration enumId="REJECT_ENTIRE_ORDER" enumTypeId="REPORT_NO_VAR" enumCode="REJECT_ENTIRE_ORDER" description="Reject entire order"/>
+    <moqui.basic.Enumeration enumId="SYS_REJ_IDLE_ORD" enumTypeId="REPORT_NO_VAR" enumCode="SYS_REJ_IDLE_ORD" description="Idle Time Exceeded At Facility" enumName="Order remained idle at facility past threshold set in Product Store setting (AUTO_REJ_IDLE_ORD)"/>
+    <moqui.basic.Enumeration enumId="REJ_AVOID_ORD_SPLIT" enumTypeId="REPORT_NO_VAR" enumCode="REJ_AVOID_ORD_SPLIT" description="Reject to avoid order split (no variance)"/>
     <moqui.basic.EnumerationType enumTypeId="RETURN_CHANNEL" description="Return Channel"/>
     <moqui.basic.Enumeration enumId="ECOM_RTN_CHANNEL" enumTypeId="RETURN_CHANNEL" enumCode="ECOM_RTN_CHANNEL" description="Ecom Return Channel"/>
     <moqui.basic.Enumeration enumId="POS_RTN_CHANNEL" enumTypeId="RETURN_CHANNEL" enumCode="POS_RTN_CHANNEL" description="Pos Return Channel"/>
@@ -279,6 +280,7 @@
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="TAG_LOCATION" description="Tagging" hasTable="N"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="HOME_LOCATION" description="Home" parentTypeId="TAG_LOCATION" hasTable="N"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="WORK_LOCATION" description="Work" parentTypeId="TAG_LOCATION" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PICKUP_LOCATION" description="Pickup" parentTypeId="TAG_LOCATION" hasTable="N"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="SPCL_PRPS_SHIPTO_LOC" description="Special Purpose Ship To Location" hasTable="N"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="SHIPPING_EMAIL"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_TOLL_FREE"/>
@@ -438,6 +440,7 @@
     <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="SAME_DAY" description="Same Day Shipping"/>
     <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="AUTO_CANCEL_CONFIG" description="Auto Cancel Order Items Facility Group"/>
     <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="ALLOW_NEGATIVE_RES" description="Allow Negative Reservations Group"/>
+    <org.apache.ofbiz.product.facility.FacilityGroupType facilityGroupTypeId="ORD_CANCEL_CONFIG" description="Cancel Order Or Items Facility Group"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="SAMEDAY" facilityGroupTypeId="SAME_DAY" facilityGroupName="Same Day Shipping" description="Facilities which support Same Day Shipping"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="FAC_GRP" facilityGroupTypeId="CHANNEL_FAC_GROUP" facilityGroupName="Online Facility Group" description="Online Facility Group"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="AUTO_SHIPPING_LABEL" facilityGroupTypeId="SHIPPING_LABEL" facilityGroupName="Genarate Shipping Label" description="Generating the shipping label on Picklist Print"/>
@@ -446,6 +449,7 @@
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="PICKUP" facilityGroupTypeId="PICKUP" facilityGroupName="Pickup" description="Facilities which Supports Pickup"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="AUTO_CNCL_ODR_ITM" facilityGroupTypeId="AUTO_CANCEL_CONFIG" facilityGroupName="Auto Cancel Order Items" description="Facilities which Supports Auto Cancelling of items"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="FAC_ALOW_NEG_INV_RES" facilityGroupTypeId="ALLOW_NEGATIVE_RES" facilityGroupName="Allow Negative Reservation" description="Facilities Which Allow Negative Reservations"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="EX_FAC_RSTCK_ON_CAN" facilityGroupTypeId="ORD_CANCEL_CONFIG" facilityGroupName="Facilities Excluded from Restocking Inventory to Shopify on Cancellation" description="Facilities Excluded from Restocking Inventory to Shopify on Cancellation"/>
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="quantity.uom.id.default" systemPropertyValue="QTY_pc" description="The default quantity uom."/>
     <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="VIRTUAL_FACILITY" hasTable="N" description="Virtual Facility"/>
     <org.apache.ofbiz.product.facility.FacilityType facilityTypeId="NA" parentTypeId="VIRTUAL_FACILITY" hasTable="N" description="Not Available"/>
@@ -478,12 +482,15 @@
     <moqui.basic.Enumeration enumId="VAR_LOST" enumTypeId="IID_REASON" enumCode="VAR_LOST" description="Adjustment"/>
     <moqui.basic.Enumeration enumId="NEG_VAR_ITEM_CANCEL" enumTypeId="IID_REASON" enumCode="NEG_VAR_ITEM_CANCEL" description="Variance On Item Cancellation" enumName="Variance On Item Cancellation"/>
     <moqui.basic.Enumeration enumId="VAR_MANUAL" enumTypeId="IID_REASON" enumCode="VAR_MANUAL" description="Variance recorded manually"/>
+    <moqui.basic.Enumeration enumId="INV_ROLLOVER" enumCode="INV_ROLLOVER" description="Inventory rollover"/>
     <org.apache.ofbiz.product.inventory.VarianceReason varianceReasonId="VAR_MANUAL" description="Variance recorded manually"/>
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PREORDR_NOT" description="Preorder Not Allow (One)"/>
     <org.apache.ofbiz.product.catalog.ProdCatalogCategoryType prodCatalogCategoryTypeId="PCCT_PREORDR" description="Preorder (One)"/>
     <moqui.basic.StatusItem statusId="PICKUP_SCHEDULED" statusTypeId="SHIPMENT_STATUS" statusCode="PICKUP" description="Pickup Scheduled"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="PICKUP_SCHEDULED" transitionName="Schedule Pickup" conditionExpression="directStatusChange == false"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKUP_SCHEDULED" toStatusId="SHIPMENT_SHIPPED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SHIPPED" toStatusId="PICKUP_SCHEDULED" transitionName="Schedule Pickup" conditionExpression="directStatusChange == true"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKUP_SCHEDULED" toStatusId="SHIPMENT_DELIVERED" transitionName="Deliver" conditionExpression="directStatusChange == true"/>
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="EXT_SHIP_ADJUSTMENT" hasTable="N" description="External shipping adjustment"/>
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="EXT_SHIP_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_EXT_PRM_ADJ"/>
     <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="APPEASEMENT" hasTable="N" description="Appeasement"/>
