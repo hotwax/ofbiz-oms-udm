@@ -43,4 +43,23 @@ under the License.
         <alias-all entity-alias="ENUM"/>
         <alias name="mappingDescription" field="description" entity-alias="ITM"/>
     </view-entity>
+
+    <view-entity entity-name="EnumerationGroupAndMember" package="co.hotwax.common.enum">
+        <member-entity entity-alias="EG" entity-name="co.hotwax.common.enum.EnumerationGroup"/>
+        <member-entity entity-alias="EGM" entity-name="co.hotwax.common.enum.EnumerationGroupMember" join-from-alias="EG">
+            <key-map field-name="enumerationGroupId"/>
+        </member-entity>
+        <member-entity entity-alias="ENUM" entity-name="moqui.basic.Enumeration" join-from-alias="EGM">
+            <key-map field-name="enumerationId" related="enumId"/>
+        </member-entity>
+        <alias-all entity-alias="EG"/>
+        <alias entity-alias="ENUM" name="enumId"/>
+        <alias entity-alias="ENUM" name="enumTypeId"/>
+        <alias entity-alias="ENUM" name="enumCode"/>
+        <alias entity-alias="ENUM" name="enumName"/>
+        <alias entity-alias="ENUM" name="enumDescription" field="description"/>
+        <alias entity-alias="EGM" name="sequenceNum"/>
+        <alias entity-alias="EGM" name="fromDate"/>
+        <alias entity-alias="EGM" name="thruDate"/>
+    </view-entity>
 </entities>
