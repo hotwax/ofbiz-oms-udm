@@ -79,15 +79,16 @@ under the License.
         <alias entity-alias="CM" name="contactMechExtId" field="externalId"/>
         <alias entity-alias="GP" field="description" name="geoPointDescription"/>
     </view-entity>
-    <view-entity entity-name="FacilityAndType" package="org.apache.ofbiz.product.facility">
-        <member-entity entity-alias="FC" entity-name="org.apache.ofbiz.product.facility.Facility"/>
-        <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="FC">
+    <view-entity entity-name="FacilityAndType" package="co.hotwax.facility">
+        <member-entity entity-alias="FAC" entity-name="org.apache.ofbiz.product.facility.Facility"/>
+        <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="FAC" join-optional="true">
             <key-map field-name="facilityTypeId"/>
         </member-entity>
-        <alias name="facilityId" entity-alias="FC"/>
-        <alias name="externalId" entity-alias="FC"/>
-        <alias name="facilityTypeId" entity-alias="FC"/>
-        <alias name="facilityName" entity-alias="FC"/>
-        <alias name="parentTypeId" entity-alias="FT"/>
+        <alias-all entity-alias="FAC"/>
+        <alias-all entity-alias="FT">
+            <exclude field="description"/>
+            <exclude field="facilityTypeId"/>
+        </alias-all>
+        <alias name="typeDescription" field="description" entity-alias="FT"/>
     </view-entity>
 </entities>

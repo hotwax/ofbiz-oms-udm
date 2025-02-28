@@ -1152,6 +1152,10 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
         </member-entity>
+        <alias-all entity-alias="OISG">
+            <exclude field="orderId"/>
+            <exclude field="shipGroupSeqId"/>
+        </alias-all>
         <alias entity-alias="OI" name="orderId"/>
         <alias entity-alias="OI" name="orderItemSeqId"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
@@ -1161,10 +1165,6 @@ under the License.
         <alias entity-alias="OI" name="cancelQuantity"/>
         <alias entity-alias="OI" name="unitPrice"/>
         <alias entity-alias="OI" name="shipGroupSeqId"/>
-        <alias-all entity-alias="OISG">
-            <exclude field="orderId"/>
-            <exclude field="shipGroupSeqId"/>
-        </alias-all>
     </view-entity>
 
     <!-- View entity to fetch Order Adjustment and Item Details -->
