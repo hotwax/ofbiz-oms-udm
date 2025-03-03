@@ -1080,5 +1080,21 @@ under the License.
             <key-map field-name="contactMechPurposeTypeId"/>
         </relationship>
     </entity>
+    <entity entity-name="OrderPaymentPreferenceIdentification" package="org.apache.ofbiz.order.order">
+        <field name="orderPaymentIdentificationTypeId" type="id" is-pk="true"/>
+        <field name="orderPaymentPreferenceId" type="id" is-pk="true"/>
+        <field name="idValue" type="id-long" enable-audit-log="true"/>
+        <field name="fromDate" type="date-time" is-pk="true"/>
+        <field name="thruDate" type="date-time"/>
+        <relationship type="one" fk-name="OPP_ID_TYPE" title="OrderPaymentIdentificationType" related="moqui.basic.Enumeration">
+            <key-map field-name="orderPaymentIdentificationTypeId"/>
+        </relationship>
+        <relationship type="one" fk-name="IDEN_ID_OPP" related="org.apache.ofbiz.order.order.OrderPaymentPreference">
+            <key-map field-name="orderPaymentPreferenceId"/>
+        </relationship>
+        <index name="OPP_ID_VALIDX" unique="false">
+            <index-field name="idValue"/>
+        </index>
+    </entity>
 </entities>
 
