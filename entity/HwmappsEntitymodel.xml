@@ -31,6 +31,7 @@ under the License.
         <field name="localeString" type="text-short"></field>
         <field name="customerClassificationId" type="id"></field>
         <field name="presentmentCurrencyUom" type="id"></field>
+        <field name="statusFlowId" type="id"></field>
         <relationship type="one-nofk" fk-name="FK_ORD_CUSTCLS_ENUM" related="moqui.basic.Enumeration">
             <key-map field-name="customerClassificationId" related="enumId"/>
         </relationship>
