@@ -73,5 +73,6 @@
     <moqui.basic.EnumerationType enumTypeId="JM_OFBIZ_INSTANCE" description="OFBiz Instance"/>
     <moqui.basic.Enumeration enumId="JM_OFBIZ_INS_0" enumTypeId="JM_OFBIZ_INSTANCE" enumCode="_NA_" description="ALL instance"/>
     <moqui.basic.Enumeration enumId="JM_OFBIZ_INS_1" enumTypeId="JM_OFBIZ_INSTANCE" enumCode="ofbiz1" description="OFBiz instance 1"/>
+    <moqui.basic.Enumeration enumId="UgtServiceJob" description="ServiceJob Actions Group" enumTypeId="UserGroupType"/>
 </entity-facade-xml>
 
