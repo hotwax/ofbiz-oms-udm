@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<entity-facade-xml type="seed">
   <enums enumId="UgtServiceJob" description="ServiceJob Actions Group" enumTypeId="UserGroupType"/>
   
   <userPermissions description="ServiceJob: Run Now" userPermissionId="SJ_RUN_NOW"/>
