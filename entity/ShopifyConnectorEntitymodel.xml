@@ -87,6 +87,9 @@ under the License.
             <key-map field-name="shopifyConfigId"/>
         </relationship>
     </extend-entity>
+    <extend-entity entity-name="DataManagerConfig" package="co.hotwax.datamanager">
+        <field name="notifyOnFailure" type="text-indicator"></field>
+    </extend-entity>
     <entity entity-name="ShopifyShopLocation" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="facilityId" type="id" is-pk="true"></field>

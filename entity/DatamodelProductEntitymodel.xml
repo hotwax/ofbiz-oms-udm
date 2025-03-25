@@ -580,6 +580,8 @@ under the License.
         <field name="quantityOnHandDiff" type="number-decimal"></field>
         <field name="availableToPromiseDiff" type="number-decimal"></field>
         <field name="accountingQuantityDiff" type="number-decimal"></field>
+        <field name="lastQuantityOnHand" type="number-decimal"></field>
+        <field name="lastAvailableToPromise" type="number-decimal"></field>
         <field name="unitCost" type="number-decimal"></field>
         <field name="orderId" type="id"></field>
         <field name="orderItemSeqId" type="id"></field>

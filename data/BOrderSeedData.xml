@@ -119,6 +119,7 @@
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_MAN_ADJ" hasTable="N" description="Return Manual Adjustment"/>
     <org.apache.ofbiz.order.return.ReturnHeaderType returnHeaderTypeId="CUSTOMER_RETURN" description="Return from Customer"/>
     <org.apache.ofbiz.order.return.ReturnHeaderType returnHeaderTypeId="VENDOR_RETURN" description="Return to Vendor"/>
+    <org.apache.ofbiz.order.return.ReturnHeaderType returnHeaderTypeId="APPEASEMENT" description="Appeasement"/>
     <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_NPROD_ITEM" description="Return Non-Product Item"/>
     <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_PROD_ITEM" description="Return Product Item"/>
     <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_FPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Finished Good Item"/>
@@ -154,6 +155,30 @@
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SERVICE_PRODUCT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_SPROD_ITEM"/>
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SERVICE" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_SPROD_ITEM"/>
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RAW_MATERIAL" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_MPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="FINISHED_GOOD" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="MARKETING_PKG_AUTO" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="MARKETING_PKG_PICK" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="AGGREGATED_CONF" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DIGITAL_GOOD" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_DPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="FINDIG_GOOD" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FDPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RAW_MATERIAL" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_RPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="PROMOTION_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_PROMOTION_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="REPLACE_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_REPLACE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DISCOUNT_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_DISCOUNT_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="FEE" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FEE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="MISCELLANEOUS_CHARGE" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_MISC_CHARGE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SALES_TAX" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SALES_TAX_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="VAT_TAX" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_VAT_TAX_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="VAT_PRICE_CORRECT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_VAT_PC_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SHIPPING_CHARGES" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SHIPPING_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SURCHARGE_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SURCHARGE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="ADDITIONAL_FEATURE" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_ADD_FEATURE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="WARRANTY_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_WARRANTY_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RENTAL_ORDER_ITEM" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="ASSET_USAGE_OUT_IN" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SERVICE_PRODUCT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SERVICE" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RAW_MATERIAL" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_MPROD_ITEM"/>
     <org.apache.ofbiz.order.return.ReturnReason returnReasonId="RTN_NOT_WANT" description="Did Not Want Item" sequenceId="01"/>
     <org.apache.ofbiz.order.return.ReturnReason returnReasonId="RTN_DEFECTIVE_ITEM" description="Defective Item" sequenceId="02"/>
     <org.apache.ofbiz.order.return.ReturnReason returnReasonId="RTN_MISSHIP_ITEM" description="Mis-Shipped Item" sequenceId="03"/>

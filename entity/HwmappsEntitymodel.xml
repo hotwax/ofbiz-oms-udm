@@ -31,6 +31,7 @@ under the License.
         <field name="localeString" type="text-short"></field>
         <field name="customerClassificationId" type="id"></field>
         <field name="presentmentCurrencyUom" type="id"></field>
+        <field name="autoApprove" type="text-indicator"></field>
         <field name="statusFlowId" type="id"></field>
         <relationship type="one-nofk" fk-name="FK_ORD_CUSTCLS_ENUM" related="moqui.basic.Enumeration">
             <key-map field-name="customerClassificationId" related="enumId"/>
@@ -299,6 +300,7 @@ under the License.
     </entity>
     <entity entity-name="DataManagerLog" package="co.hotwax.datamanager">
         <field name="logId" type="id" is-pk="true"></field>
+        <field name="parentLogId" type="id"></field>
         <field name="configId" type="id"></field>
         <field name="ownerPartyId" type="id"></field>
         <field name="uploadFileContentId" type="id"></field>
@@ -316,6 +318,7 @@ under the License.
         <field name="runtimeDataId" type="id"></field>
         <field name="createdByJobId" type="id"></field>
         <field name="productStoreId" type="id"></field>
+        <field name="runByInstanceId" type="id"></field>
         <relationship type="one" fk-name="DM_LOG_DM_CONFG" related="co.hotwax.datamanager.DataManagerConfig">
             <key-map field-name="configId"/>
         </relationship>
@@ -343,6 +346,11 @@ under the License.
         <relationship type="one-nofk" fk-name="DTMGR_USR_LOGIN" related="org.apache.ofbiz.security.login.UserLogin">
             <key-map field-name="createdByUserLogin" related="userLoginId"/>
         </relationship>
+        <index name="DML_RUNSTAT">
+            <index-field name="runByInstanceId"/>
+            <index-field name="statusId"/>
+            <index-field name="jobId"/>
+        </index>
     </entity>
     <entity entity-name="ShipmentGatewayFieldMapping" package="co.hotwax.shippinggateway">
         <field name="carrierPartyId" type="id" is-pk="true"></field>

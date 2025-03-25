@@ -34,6 +34,7 @@ under the License.
             <key-map field-name="partyId"/>
         </member-entity>
         <alias entity-alias="USR" name="userLoginId"/>
+        <alias entity-alias="PTY" name="partyId"/>
         <alias entity-alias="PTY" name="statusId"/>
         <alias entity-alias="PER" name="firstName"/>
         <alias entity-alias="PER" name="middleName"/>

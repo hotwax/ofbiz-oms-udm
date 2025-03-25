@@ -40,6 +40,7 @@
     <moqui.basic.Enumeration enumId="PARKED" enumTypeId="BROKERING_REASN_TYPE" enumCode="BROKERING_REASON" description="Parked"/>
     <moqui.basic.Enumeration enumId="MKT_PLACE" enumTypeId="ORDER_IDENTITY" enumCode="MKTPLACE" description="MarketPlace"/>
     <moqui.basic.Enumeration enumId="RTN_MKT_PLACE" enumTypeId="RETURN_IDENTITY" enumCode="MKTPLACE" description="MarketPlace Return"/>
+    <moqui.basic.Enumeration enumId="OLD_RTN_MKT_PLACE" enumTypeId="RETURN_IDENTITY" enumCode="OLD_MKTPLACE" description="Old MarketPlace Return"/>
     <moqui.basic.Enumeration enumId="SINGLE" enumTypeId="MARITAL_STATUS" description="Single" enumName="Single"/>
     <moqui.basic.Enumeration enumId="MARRIED" enumTypeId="MARITAL_STATUS" description="Married" enumName="Married"/>
     <moqui.basic.Enumeration enumId="SEPARATED" enumTypeId="MARITAL_STATUS" description="Separated" enumName="Separated"/>
@@ -509,5 +510,9 @@
     <moqui.basic.EnumerationType enumTypeId="COUNT_TYPE" description="Count Type"/>
     <moqui.basic.Enumeration enumId="SELECTIVE_COUNT" enumTypeId="COUNT_TYPE" description="Selective Count" enumName="Selective Count"/>
     <moqui.basic.Enumeration enumId="HARD_COUNT" enumTypeId="COUNT_TYPE" description="Hard Count" enumName="Hard Count"/>
+    <moqui.basic.EnumerationType enumTypeId="TO_STATUS_FLOW" description="Transfer Order Status Flow"/>
+    <moqui.basic.Enumeration enumId="FULFILL_ONLY" enumTypeId="TO_STATUS_FLOW" enumCode="FULFILL_ONLY" description="Fulfill Only"/>
+    <moqui.basic.Enumeration enumId="RECEIVE_ONLY" enumTypeId="TO_STATUS_FLOW" enumCode="RECEIVE_ONLY" description="Receive Only"/>
+    <moqui.basic.Enumeration enumId="FULFILL_AND_RECEIVE" enumTypeId="TO_STATUS_FLOW" enumCode="FULFILL_AND_RECEIVE" description="Fulfill and Receive"/>
 </entity-facade-xml>
 
