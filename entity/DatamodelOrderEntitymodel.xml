@@ -476,7 +476,7 @@ under the License.
             <key-map field-name="orderItemSeqId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemShipGroup" package="org.apache.ofbiz.order.order">
+    <entity entity-name="OrderItemShipGroup" package="org.apache.ofbiz.order.order" sequence-secondary-padded-length="5">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="shipGroupSeqId" type="id" is-pk="true"></field>
         <field name="shipmentMethodTypeId" type="id" enable-audit-log="true"></field>
