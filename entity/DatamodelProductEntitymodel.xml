@@ -388,6 +388,18 @@ under the License.
             <index-field name="roleTypeId"/>
         </index>
     </entity>
+    <entity entity-name="FacilityContent" package="org.apache.ofbiz.product.facility">
+        <field name="facilityId" type="id" is-pk="true"></field>
+        <field name="contentId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
+        <relationship type="one" fk-name="FAC_CNT_FAC" related="org.apache.ofbiz.product.facility.Facility">
+            <key-map field-name="facilityId"/>
+        </relationship>
+        <relationship type="one" fk-name="FAC_CNT_CNT" related="org.apache.ofbiz.content.content.Content">
+            <key-map field-name="contentId"/>
+        </relationship>
+    </entity>
     <!-- TODO: skipped element view-entity -->
     <entity entity-name="FacilityType" package="org.apache.ofbiz.product.facility">
         <field name="facilityTypeId" type="id" is-pk="true"></field>

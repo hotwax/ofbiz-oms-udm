@@ -262,6 +262,12 @@ under the License.
             <key-map field-name="productId"/>
         </relationship>
     </extend-entity>
+    <extend-entity entity-name="FacilityContent" package="org.apache.ofbiz.product.facility">
+        <field name="facilityContentTypeEnumId" type="id"></field>
+        <relationship type="one" fk-name="FAC_CNT_ENUM" related="moqui.basic.Enumeration">
+            <key-map field-name="facilityContentTypeEnumId" related="enumId"/>
+        </relationship>
+    </extend-entity>
     <extend-entity entity-name="OrderStatus" package="org.apache.ofbiz.order.order">
         <field name="changeReasonEnumId" type="id"></field>
         <relationship type="one" fk-name="CHANGE_REASON" title="Change Reason" related="moqui.basic.Enumeration">
