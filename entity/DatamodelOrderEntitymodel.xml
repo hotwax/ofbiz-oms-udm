@@ -74,11 +74,6 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
         </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-            <key-map field-name="shipGroupSeqId"/>
-        </relationship>
         <relationship type="one" fk-name="ORDER_ADJ_PRGEO" title="Primary" related="moqui.basic.Geo">
             <key-map field-name="primaryGeoId" related="geoId"/>
         </relationship>
@@ -339,11 +334,6 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </relationship>
-        <relationship type="one-nofk" title="From" related="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-            <key-map field-name="shipGroupSeqId"/>
-        </relationship>
         <relationship type="one-nofk" title="From" related="org.apache.ofbiz.order.order.OrderItemShipGroup">
             <key-map field-name="orderId"/>
             <key-map field-name="shipGroupSeqId"/>
@@ -354,11 +344,6 @@ under the License.
         <relationship type="one-nofk" title="To" related="org.apache.ofbiz.order.order.OrderItem">
             <key-map field-name="toOrderId" related="orderId"/>
             <key-map field-name="toOrderItemSeqId" related="orderItemSeqId"/>
-        </relationship>
-        <relationship type="one-nofk" title="To" related="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc">
-            <key-map field-name="toOrderId" related="orderId"/>
-            <key-map field-name="toOrderItemSeqId" related="orderItemSeqId"/>
-            <key-map field-name="toShipGroupSeqId" related="shipGroupSeqId"/>
         </relationship>
         <relationship type="one-nofk" title="To" related="org.apache.ofbiz.order.order.OrderItemShipGroup">
             <key-map field-name="toOrderId" related="orderId"/>
@@ -551,7 +536,7 @@ under the License.
             <key-map field-name="telecomContactMechId" related="contactMechId"/>
         </relationship>
     </entity>
-    <entity entity-name="OrderItemShipGroupAssoc" package="org.apache.ofbiz.order.order">
+    <entity entity-name="OldOrderItemShipGroupAssoc" package="org.apache.ofbiz.order.order" table-name="ORDER_ITEM_SHIP_GROUP_ASSOC">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="orderItemSeqId" type="id" is-pk="true"></field>
         <field name="shipGroupSeqId" type="id" is-pk="true"></field>
@@ -569,6 +554,7 @@ under the License.
             <key-map field-name="shipGroupSeqId"/>
         </relationship>
     </entity>
+    <!-- TODO: skipped element view-entity -->
     <entity entity-name="OrderItemShipGrpInvRes" package="org.apache.ofbiz.order.order" cache="never">
         <field name="orderId" type="id" is-pk="true"></field>
         <field name="shipGroupSeqId" type="id" is-pk="true"></field>
@@ -593,11 +579,6 @@ under the License.
         </relationship>
         <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderItemShipGroup">
             <key-map field-name="orderId"/>
-            <key-map field-name="shipGroupSeqId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
             <key-map field-name="shipGroupSeqId"/>
         </relationship>
         <relationship type="one" fk-name="ORDER_ITIR_INVITM" related="org.apache.ofbiz.product.inventory.InventoryItem">
@@ -715,11 +696,6 @@ under the License.
         <relationship type="one-nofk" related="org.apache.ofbiz.shipment.shipment.ShipmentItem">
             <key-map field-name="shipmentId"/>
             <key-map field-name="shipmentItemSeqId"/>
-        </relationship>
-        <relationship type="one-nofk" related="org.apache.ofbiz.order.order.OrderItemShipGroupAssoc">
-            <key-map field-name="orderId"/>
-            <key-map field-name="orderItemSeqId"/>
-            <key-map field-name="shipGroupSeqId"/>
         </relationship>
     </entity>
     <entity entity-name="OrderStatus" package="org.apache.ofbiz.order.order" cache="never">
