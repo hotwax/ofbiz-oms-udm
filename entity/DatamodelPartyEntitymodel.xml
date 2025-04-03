@@ -531,7 +531,7 @@ under the License.
         <field name="numEmployees" type="number-integer"></field>
         <field name="tickerSymbol" type="text-short"></field>
         <field name="comments" type="text-medium"></field>
-        <field name="logoImageUrl" type="text-medium"></field>
+        <field name="logoImageUrl" type="text-long"></field>
         <relationship type="one" fk-name="PARTY_GRP_PARTY" related="org.apache.ofbiz.party.party.Party">
             <key-map field-name="partyId"/>
         </relationship>

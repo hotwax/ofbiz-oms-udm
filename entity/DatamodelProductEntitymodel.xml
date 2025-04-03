@@ -26,8 +26,8 @@ under the License.
         <field name="prodCatalogId" type="id" is-pk="true"></field>
         <field name="catalogName" type="text-medium"></field>
         <field name="useQuickAdd" type="text-indicator"></field>
-        <field name="styleSheet" type="text-medium"></field>
-        <field name="headerLogo" type="text-medium"></field>
+        <field name="styleSheet" type="text-long"></field>
+        <field name="headerLogo" type="text-long"></field>
         <field name="contentPathPrefix" type="text-medium"></field>
         <field name="templatePathPrefix" type="text-medium"></field>
         <field name="viewAllowPermReqd" type="text-indicator"></field>
@@ -67,9 +67,9 @@ under the License.
         <field name="categoryName" type="text-medium"></field>
         <field name="description" type="text-medium"></field>
         <field name="longDescription" type="text-very-long"></field>
-        <field name="categoryImageUrl" type="text-medium"></field>
-        <field name="linkOneImageUrl" type="text-medium"></field>
-        <field name="linkTwoImageUrl" type="text-medium"></field>
+        <field name="categoryImageUrl" type="text-long"></field>
+        <field name="linkOneImageUrl" type="text-long"></field>
+        <field name="linkTwoImageUrl" type="text-long"></field>
         <field name="detailScreen" type="text-medium"></field>
         <field name="showInSelect" type="text-indicator"></field>
         <relationship type="one" fk-name="PROD_CTGRY_TYPE" related="org.apache.ofbiz.product.category.ProductCategoryType">
@@ -832,11 +832,11 @@ under the License.
         <field name="description" type="text-medium"></field>
         <field name="longDescription" type="text-very-long"></field>
         <field name="priceDetailText" type="text-medium"></field>
-        <field name="smallImageUrl" type="text-medium"></field>
-        <field name="mediumImageUrl" type="text-medium"></field>
-        <field name="largeImageUrl" type="text-medium"></field>
-        <field name="detailImageUrl" type="text-medium"></field>
-        <field name="originalImageUrl" type="text-medium"></field>
+        <field name="smallImageUrl" type="text-long"></field>
+        <field name="mediumImageUrl" type="text-long"></field>
+        <field name="largeImageUrl" type="text-long"></field>
+        <field name="detailImageUrl" type="text-long"></field>
+        <field name="originalImageUrl" type="text-long"></field>
         <field name="detailScreen" type="text-medium"></field>
         <field name="inventoryMessage" type="text-medium"></field>
         <field name="inventoryItemTypeId" type="id"></field>
@@ -1140,10 +1140,10 @@ under the License.
         <field name="showOutOfStockProducts" type="text-indicator"><description>Default Y. If N then out of stock products will not be displayed on site</description></field>
         <field name="orderDecimalQuantity" type="text-indicator"><description>use to indicate if decimal quantity can be ordered for this producStore. Default value is Y</description></field>
         <field name="allowComment" type="text-indicator"><description>Allow comments for order line items per store</description></field>
-        <field name="oldStyleSheet" type="text-medium" column-name="STYLE_SHEET"></field>
-        <field name="oldHeaderLogo" type="text-medium" column-name="HEADER_LOGO"></field>
-        <field name="oldHeaderMiddleBackground" type="text-medium" column-name="HEADER_MIDDLE_BACKGROUND"></field>
-        <field name="oldHeaderRightBackground" type="text-medium" column-name="HEADER_RIGHT_BACKGROUND"></field>
+        <field name="oldStyleSheet" type="text-long" column-name="STYLE_SHEET"></field>
+        <field name="oldHeaderLogo" type="text-long" column-name="HEADER_LOGO"></field>
+        <field name="oldHeaderMiddleBackground" type="text-long" column-name="HEADER_MIDDLE_BACKGROUND"></field>
+        <field name="oldHeaderRightBackground" type="text-long" column-name="HEADER_RIGHT_BACKGROUND"></field>
         <relationship type="one" fk-name="PROD_STR_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
             <key-map field-name="inventoryFacilityId" related="facilityId"/>
         </relationship>
