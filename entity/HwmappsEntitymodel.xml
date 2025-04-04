@@ -1354,5 +1354,11 @@ under the License.
             <key-map field-name="productStoreId"/>
         </relationship>
     </entity>
+    <extend-entity entity-name="UserAccount" package="moqui.security">
+        <field name="partyId" type="id"/>
+        <!--<relationship type="one" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="partyId"/>
+        </relationship>-->
+    </extend-entity>
 </entities>
 
