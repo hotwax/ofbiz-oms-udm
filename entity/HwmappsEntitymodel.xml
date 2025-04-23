@@ -99,6 +99,8 @@ under the License.
         </relationship>
     </extend-entity>
     <extend-entity entity-name="ItemIssuance" package="org.apache.ofbiz.shipment.issuance">
+        <field name="returnId" type="id"/>
+        <field name="returnItemSeqId" type="id"/>
         <field name="issuanceTypeId" type="id"></field>
         <field name="workEffortId" type="id"></field>
         <field name="currentStatusId" type="id"></field>
@@ -111,6 +113,13 @@ under the License.
         <field name="deliveredToParty" type="id"></field>
         <relationship type="one" related="moqui.basic.StatusItem">
             <key-map field-name="currentStatusId" related="statusId"/>
+        </relationship>
+        <relationship type="one-nofk" related="org.apache.ofbiz.order.return.ReturnHeader">
+            <key-map field-name="returnId"/>
+        </relationship>
+        <relationship type="one" related="org.apache.ofbiz.order.return.ReturnItem">
+            <key-map field-name="returnId" related="returnId"/>
+            <key-map field-name="returnItemSeqId" related="returnItemSeqId"/>
         </relationship>
         <index name="II_WEGS_REFNUM_IDX">
             <index-field name="wegsReferenceNumber"/>
