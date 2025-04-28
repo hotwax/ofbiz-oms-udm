@@ -118,4 +118,16 @@ under the License.
             <econdition entity-alias="SIH" field-name="receiptId" operator="equals" value=""/>
         </entity-condition>
     </view-entity>
+
+    <view-entity entity-name="ItemIssuanceSummary" package="co.hotwax.shipment">
+        <member-entity entity-alias="II" entity-name="org.apache.ofbiz.shipment.issuance.ItemIssuance"/>
+        <alias-all entity-alias="II">
+            <exclude field="quantity"/>
+            <exclude field="cancelQuantity"/>
+            <exclude field="issuedDateTime"/>
+        </alias-all>
+        <alias name="quantity" entity-alias="II" function="sum"/>
+        <alias name="cancelQuantity" entity-alias="II" function="sum"/>
+        <alias name="issuedDateTime" entity-alias="II" function="max"/>
+    </view-entity>
 </entities>
