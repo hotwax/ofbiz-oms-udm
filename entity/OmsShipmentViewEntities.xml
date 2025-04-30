@@ -130,4 +130,16 @@ under the License.
         <alias name="cancelQuantity" entity-alias="II" function="sum"/>
         <alias name="issuedDateTime" entity-alias="II" function="max"/>
     </view-entity>
+
+    <view-entity entity-name="ShipmentReceiptSummary" package="co.hotwax.shipment">
+        <member-entity entity-alias="SR" entity-name="org.apache.ofbiz.shipment.receipt.ShipmentReceipt"/>
+        <alias-all entity-alias="SR">
+            <exclude field="quantityAccepted"/>
+            <exclude field="quantityRejected"/>
+            <exclude field="datetimeReceived"/>
+        </alias-all>
+        <alias name="quantityAccepted" entity-alias="SR" function="sum"/>
+        <alias name="quantityRejected" entity-alias="SR" function="sum"/>
+        <alias name="datetimeReceived" entity-alias="SR" function="max"/>
+    </view-entity>
 </entities>
