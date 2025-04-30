@@ -117,7 +117,7 @@ under the License.
         <relationship type="one-nofk" related="org.apache.ofbiz.order.return.ReturnHeader">
             <key-map field-name="returnId"/>
         </relationship>
-        <relationship type="one" related="org.apache.ofbiz.order.return.ReturnItem">
+        <relationship type="one" related="org.apache.ofbiz.order.return.ReturnItem" fk-name="ITEM_ISS_RTN_ITEM">
             <key-map field-name="returnId" related="returnId"/>
             <key-map field-name="returnItemSeqId" related="returnItemSeqId"/>
         </relationship>
