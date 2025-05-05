@@ -260,18 +260,6 @@
     <co.hotwax.common.enum.EnumerationGroupType enumerationGroupTypeId="SYS_REJ" description="System rejection reasons"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="SYS_REJ_RES" enumerationGroupTypeId="SYS_REJ" enumerationGroupName="System rejection reasons" description="System rejection reasons"/>
     <co.hotwax.common.enum.EnumerationGroupMember enumerationId="INACTIVE_STORE" enumerationGroupId="SYS_REJ_RES" fromDate="2024-09-03 00:00:00"/>
-    <co.hotwax.common.enum.EnumerationGroupType enumerationGroupTypeId="BOPIS_REJ" description="BOPIS rejection reasons"/>
-    <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="BOPIS_REJ_RES" enumerationGroupTypeId="BOPIS_REJ" enumerationGroupName="BOPIS rejection reasons" description="BOPIS rejection reasons"/>
-    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="NOT_IN_STOCK" enumerationGroupId="BOPIS_REJ_RES" fromDate="2024-09-02 00:00:0"/>
-    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="MISMATCH" enumerationGroupId="BOPIS_REJ_RES" fromDate="2024-09-02 00:00:0"/>
-    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="REJ_RSN_DAMAGED" enumerationGroupId="BOPIS_REJ_RES" fromDate="2024-09-02 00:00:00"/>
-    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="WORN_DISPLAY" enumerationGroupId="BOPIS_REJ_RES" fromDate="2024-09-02 00:00:00"/>
-    <co.hotwax.common.enum.EnumerationGroupType enumerationGroupTypeId="FULFILL_REJ" description="Fulfillment rejection reasons"/>
-    <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="FULFILL_REJ_RES" enumerationGroupTypeId="FULFILL_REJ" enumerationGroupName="Fulfillment rejection reasons" description="Fulfillment rejection reasons"/>
-    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="NOT_IN_STOCK" enumerationGroupId="FULFILL_REJ_RES" fromDate="2024-09-02 00:00:0"/>
-    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="MISMATCH" enumerationGroupId="FULFILL_REJ_RES" fromDate="2024-09-02 00:00:0"/>
-    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="REJ_RSN_DAMAGED" enumerationGroupId="FULFILL_REJ_RES" fromDate="2024-09-02 00:00:00"/>
-    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="WORN_DISPLAY" enumerationGroupId="FULFILL_REJ_RES" fromDate="2024-09-02 00:00:00"/>
     <co.hotwax.common.enum.EnumerationGroupType enumerationGroupTypeId="INV_DELTA_SYNC" description="Inventory Delta Sync reasons from OMS to Shopify"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="SHPFY_INV_DLT_REASON" enumerationGroupTypeId="INV_DELTA_SYNC" enumerationGroupName="Shopify Inventory Delta Sync Reasons" description="Reasons which are sent to Shopify as a part of Inventory Delta"/>
     <co.hotwax.common.enum.EnumerationGroupMember enumerationId="CYCLE_COUNT" enumerationGroupId="SHPFY_INV_DLT_REASON" fromDate="2024-08-21 00:00:00"/>
@@ -279,7 +267,15 @@
     <co.hotwax.common.enum.EnumerationGroupMember enumerationId="POS_SALE" enumerationGroupId="SHPFY_INV_DLT_REASON" fromDate="2024-08-21 00:00:00"/>
     <co.hotwax.common.enum.EnumerationGroupType enumerationGroupTypeId="REJ_RSN_GRP" description="Rejection reason groups"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="FF_REJ_RSN_GRP" enumerationGroupTypeId="REJ_RSN_GRP" enumerationGroupName="Fulfillment rejection reasons" description="Fulfillment rejection reasons"/>
+    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="NOT_IN_STOCK" enumerationGroupId="FF_REJ_RSN_GRP" fromDate="2024-09-02 00:00:0"/>
+    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="MISMATCH" enumerationGroupId="FF_REJ_RSN_GRP" fromDate="2024-09-02 00:00:0"/>
+    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="REJ_RSN_DAMAGED" enumerationGroupId="FF_REJ_RSN_GRP" fromDate="2024-09-02 00:00:00"/>
+    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="WORN_DISPLAY" enumerationGroupId="FF_REJ_RSN_GRP" fromDate="2024-09-02 00:00:00"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="BOPIS_REJ_RSN_GRP" enumerationGroupTypeId="REJ_RSN_GRP" enumerationGroupName="BOPIS rejection reasons" description="BOPIS rejection reasons"/>
+    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="NOT_IN_STOCK" enumerationGroupId="BOPIS_REJ_RSN_GRP" fromDate="2024-09-02 00:00:0"/>
+    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="MISMATCH" enumerationGroupId="BOPIS_REJ_RSN_GRP" fromDate="2024-09-02 00:00:0"/>
+    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="REJ_RSN_DAMAGED" enumerationGroupId="BOPIS_REJ_RSN_GRP" fromDate="2024-09-02 00:00:00"/>
+    <co.hotwax.common.enum.EnumerationGroupMember enumerationId="WORN_DISPLAY" enumerationGroupId="BOPIS_REJ_RSN_GRP" fromDate="2024-09-02 00:00:00"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="CSR_REJ_RSN_GRP" enumerationGroupTypeId="REJ_RSN_GRP" enumerationGroupName="BOPIS rejection reasons" description="CSR rejection reasons"/>
     <co.hotwax.common.enum.EnumerationGroup enumerationGroupId="TO_REJ_RSN_GRP" enumerationGroupTypeId="REJ_RSN_GRP" enumerationGroupName="Transfer Order rejection reasons" description="Fulfillment rejection reasons"/>
     <co.hotwax.common.enum.EnumerationGroupMember enumerationId="REJ_RSN_DAMAGED" enumerationGroupId="TO_REJ_RSN_GRP" fromDate="2025-02-01 00:00:00.000"/>

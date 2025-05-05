@@ -91,14 +91,14 @@
     <moqui.basic.EnumerationType enumTypeId="REPORT_NO_VAR" description="Report an issue with no variance reason"/>
     <moqui.basic.EnumerationType enumTypeId="REPORT_ALL_VAR" description="Report an issue with all qty variance reason" parentTypeId="REPORT_AN_ISSUE"/>
     <moqui.basic.EnumerationType enumTypeId="REPORT_VAR" description="Report an issue with particular qty variance reason" parentTypeId="REPORT_AN_ISSUE"/>
-    <moqui.basic.Enumeration enumId="NOT_IN_STOCK" enumTypeId="REPORT_ALL_VAR" enumCode="NOT_IN_STOCK" description="Not in Stock"/>
-    <moqui.basic.Enumeration enumId="WORN_DISPLAY" enumTypeId="REPORT_VAR" enumCode="WORN_DISPLAY" description="Worn Display"/>
-    <moqui.basic.Enumeration enumId="REJ_RSN_DAMAGED" enumTypeId="REPORT_VAR" enumCode="DAMAGED" description="Damaged"/>
-    <moqui.basic.Enumeration enumId="MISMATCH" enumTypeId="REPORT_VAR" enumCode="MISMATCH" description="Mismatch"/>
-    <moqui.basic.Enumeration enumId="INACTIVE_STORE" enumTypeId="REPORT_NO_VAR" enumCode="INACTIVE_STORE" description="Inactive store"/>
-    <moqui.basic.Enumeration enumId="NO_VARIANCE_LOG" enumTypeId="REPORT_NO_VAR" enumCode="NO_VARIANCE_LOG" description="No variance"/>
-    <moqui.basic.Enumeration enumId="SYS_REJ_IDLE_ORD" enumTypeId="REPORT_NO_VAR" enumCode="SYS_REJ_IDLE_ORD" description="Idle Time Exceeded At Facility" enumName="Order remained idle at facility past threshold set in Product Store setting (AUTO_REJ_IDLE_ORD)"/>
-    <moqui.basic.Enumeration enumId="REJ_AVOID_ORD_SPLIT" enumTypeId="REPORT_NO_VAR" enumCode="REJ_AVOID_ORD_SPLIT" description="Reject to avoid order split (no variance)"/>
+    <moqui.basic.Enumeration enumId="NOT_IN_STOCK" enumTypeId="REPORT_ALL_VAR" enumCode="NOT_IN_STOCK" sequenceNum="10" description="Not in Stock"/>
+    <moqui.basic.Enumeration enumId="WORN_DISPLAY" enumTypeId="REPORT_VAR" enumCode="WORN_DISPLAY" sequenceNum="20" description="Worn Display"/>
+    <moqui.basic.Enumeration enumId="REJ_RSN_DAMAGED" enumTypeId="REPORT_VAR" enumCode="DAMAGED" sequenceNum="30" description="Damaged"/>
+    <moqui.basic.Enumeration enumId="MISMATCH" enumTypeId="REPORT_VAR" enumCode="MISMATCH" sequenceNum="40" description="Mismatch"/>
+    <moqui.basic.Enumeration enumId="INACTIVE_STORE" enumTypeId="REPORT_NO_VAR" enumCode="INACTIVE_STORE" sequenceNum="50" description="Inactive store"/>
+    <moqui.basic.Enumeration enumId="NO_VARIANCE_LOG" enumTypeId="REPORT_NO_VAR" enumCode="NO_VARIANCE_LOG" sequenceNum="60" description="No variance"/>
+    <moqui.basic.Enumeration enumId="SYS_REJ_IDLE_ORD" enumTypeId="REPORT_NO_VAR" enumCode="SYS_REJ_IDLE_ORD" sequenceNum="70" description="Idle Time Exceeded At Facility" enumName="Order remained idle at facility past threshold set in Product Store setting (AUTO_REJ_IDLE_ORD)"/>
+    <moqui.basic.Enumeration enumId="REJ_AVOID_ORD_SPLIT" enumTypeId="REPORT_NO_VAR" enumCode="REJ_AVOID_ORD_SPLIT" sequenceNum="80" description="Reject to avoid order split (no variance)"/>
     <moqui.basic.EnumerationType enumTypeId="RETURN_CHANNEL" description="Return Channel"/>
     <moqui.basic.Enumeration enumId="ECOM_RTN_CHANNEL" enumTypeId="RETURN_CHANNEL" enumCode="ECOM_RTN_CHANNEL" description="Ecom Return Channel"/>
     <moqui.basic.Enumeration enumId="POS_RTN_CHANNEL" enumTypeId="RETURN_CHANNEL" enumCode="POS_RTN_CHANNEL" description="Pos Return Channel"/>
@@ -264,6 +264,7 @@
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_TOLL_FREE" description="Toll Free Phone Number" hasTable="N"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_CSTMR_SRVC" description="Customer Service Phone Number" hasTable="N"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FAX_TOLL_FREE" description="Toll Free Fax Number" hasTable="N"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="GOOGLE_MAP_URL" description="Google Map Location URL"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FACEBOOK_URL" description="Facebook Url" hasTable="N"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="TWITTER_URL" description="Twitter Url" hasTable="N"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PINTEREST_URL" description="Pinterest Url" hasTable="N"/>
@@ -287,6 +288,7 @@
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_TOLL_FREE"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_CSTMR_SRVC"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="FAX_TOLL_FREE"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="MAP_URL" contactMechPurposeTypeId="GOOGLE_MAP_URL"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="FACEBOOK_URL"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="TWITTER_URL"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="PINTEREST_URL"/>
@@ -445,6 +447,7 @@
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="SAMEDAY" facilityGroupTypeId="SAME_DAY" facilityGroupName="Same Day Shipping" description="Facilities which support Same Day Shipping"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="FAC_GRP" facilityGroupTypeId="CHANNEL_FAC_GROUP" facilityGroupName="Online Facility Group" description="Online Facility Group"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="AUTO_SHIPPING_LABEL" facilityGroupTypeId="SHIPPING_LABEL" facilityGroupName="Genarate Shipping Label" description="Generating the shipping label on Picklist Print"/>
+    <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="ZPL_SHIPPING_LABEL" facilityGroupTypeId="SHIPPING_LABEL" facilityGroupName="ZPL Shipping Label" description="Facilities which require ZPL format for shipping label"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="DO_PICKING" facilityGroupTypeId="PICKING" facilityGroupName="Require Picking" description="Require Picking For Facilities"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="OMS_FULFILLMENT" facilityGroupTypeId="FULFILLMENT" facilityGroupName="OMS Fulfillment" description="Facilities which Supports OMS fulfillment"/>
     <org.apache.ofbiz.product.facility.FacilityGroup facilityGroupId="PICKUP" facilityGroupTypeId="PICKUP" facilityGroupName="Pickup" description="Facilities which Supports Pickup"/>

@@ -277,10 +277,10 @@ under the License.
         </relationship>
     </entity>
     <entity entity-name="FacilityContactMech" package="org.apache.ofbiz.product.facility">
-        <field name="facilityId" type="id" is-pk="true"></field>
-        <field name="contactMechId" type="id" is-pk="true"></field>
+        <field name="facilityId" type="id" is-pk="true" enable-audit-log="true"></field>
+        <field name="contactMechId" type="id" is-pk="true" enable-audit-log="true"></field>
         <field name="fromDate" type="date-time" is-pk="true"></field>
-        <field name="thruDate" type="date-time"></field>
+        <field name="thruDate" type="date-time" enable-audit-log="true"></field>
         <field name="extension" type="text-short"></field>
         <field name="comments" type="text-medium"></field>
         <relationship type="one" fk-name="FACIL_CMECH_FACIL" related="org.apache.ofbiz.product.facility.Facility">

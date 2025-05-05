@@ -31,6 +31,7 @@
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="OTHER_EMAIL" description="Other Email Address"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="SUPPORT_EMAIL" description="Support Email"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="ORDER_EMAIL" description="Order Notification Email Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="GOOGLE_MAP_URL" description="Google Map Location URL"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PRIMARY_WEB_URL" description="Primary Website URL"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="TWITTER_URL" description="Twitter Website URL"/>
     <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FACEBOOK_URL" description="Facebook Website URL"/>
@@ -39,6 +40,7 @@
     <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="POSTAL_ADDRESS" hasTable="Y" description="Postal Address"/>
     <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="TELECOM_NUMBER" hasTable="Y" description="Phone Number"/>
     <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="EMAIL_ADDRESS" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Email Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="MAP_URL" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Map Location URL"/>
     <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="IP_ADDRESS" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Internet IP Address"/>
     <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="DOMAIN_NAME" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Internet Domain Name"/>
     <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="WEB_ADDRESS" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Web URL/Address"/>
@@ -73,6 +75,7 @@
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="FAX_SHIPPING"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="FAX_BILLING"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_ASSISTANT"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="MAP_URL" contactMechPurposeTypeId="GOOGLE_MAP_URL"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="PRIMARY_WEB_URL"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="TWITTER_URL"/>
     <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="FACEBOOK_URL"/>
