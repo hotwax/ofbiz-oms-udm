@@ -50,7 +50,7 @@ under the License.
         <field name="integratedFormType" type="text-medium"></field>
         <field name="defaultPackagingType" type="text-medium"><description>Default packaging type</description></field>
     </extend-entity>
-    <extend-entity entity-name="OrderItemShipGroup" package="org.apache.ofbiz.order.order" sequence-secondary >
+    <extend-entity entity-name="OrderItemShipGroup" package="org.apache.ofbiz.order.order">
         <field name="carrierAccountNumber" type="id"></field>
         <field name="carrierService" type="text-medium"></field>
         <field name="orderFacilityId" type="id"><description>This field contains sensitive information, thus encrypted.</description></field>
