@@ -59,13 +59,13 @@ under the License.
         </relationship>
     </extend-entity>
     <extend-entity entity-name="ProductFeature" package="org.apache.ofbiz.product.feature">
-        <field name="imageUrl" type="text-long"></field>
+        <field name="imageUrl" type="text-intermediate"></field>
     </extend-entity>
     <extend-entity entity-name="ProductFeatureAppl" package="org.apache.ofbiz.product.feature">
         <field name="contentId" type="id"></field>
     </extend-entity>
     <extend-entity entity-name="PartyGroup" package="org.apache.ofbiz.party.party">
-        <field name="pdfLogoImageUrl" type="text-long"></field>
+        <field name="pdfLogoImageUrl" type="text-intermediate"></field>
     </extend-entity>
     <extend-entity entity-name="Person" package="org.apache.ofbiz.party.party">
         <field name="anniversaryDate" type="date"></field>
@@ -181,7 +181,7 @@ under the License.
         <field name="productIdentifierEnumId" type="id"><description>Product identifier to identify unique product</description></field>
         <field name="enablePreOrderAutoReleasing" type="text-indicator" enable-audit-log="true"><description>Flag to enable/disable auto preorder releasing on particular store/brand.</description></field>
         <field name="enableBrokering" type="text-indicator" enable-audit-log="true"><description>Flag to enable/disable brokering on particular store/brand.</description></field>
-        <field name="storeLogoImageUrl" type="text-long"><description>Image path for display brand specific logo</description></field>
+        <field name="storeLogoImageUrl" type="text-intermediate"><description>Image path for display brand specific logo</description></field>
         <relationship type="one" fk-name="PROD_UNQ_IDENT" related="moqui.basic.Enumeration">
             <key-map field-name="productIdentifierEnumId" related="enumId"/>
         </relationship>
@@ -213,7 +213,7 @@ under the License.
         <field name="sequenceNum" type="number-integer"></field>
     </extend-entity>
     <extend-entity entity-name="Product" package="org.apache.ofbiz.product.product">
-        <field name="productUrlName" type="text-long"><description>Product name to be used in URL on store front</description></field>
+        <field name="productUrlName" type="text-intermediate"><description>Product name to be used in URL on store front</description></field>
         <field name="xSmallImageUrl" type="text-medium"><description>Extra small image URL for product</description></field>
         <field name="thumbnailImageUrl" type="text-medium"><description>Thumbnail image URL for product</description></field>
         <field name="alwaysNewLineItem" type="text-indicator"><description>If Y then the product will be added in the cart as a new line item even if it is already present in the cart.</description></field>
@@ -847,8 +847,8 @@ under the License.
         </relationship>
     </extend-entity>
     <extend-entity entity-name="ShipmentPackageRouteSeg" package="org.apache.ofbiz.shipment.shipment">
-        <field name="labelImageUrl" type="text-long"></field>
-        <field name="internationalInvoiceUrl" type="text-long"></field>
+        <field name="labelImageUrl" type="text-intermediate"></field>
+        <field name="internationalInvoiceUrl" type="text-intermediate"></field>
         <field name="packagePickupPrn" type="id"></field>
         <field name="packagePickupDate" type="date-time"></field>
     </extend-entity>
@@ -1305,7 +1305,7 @@ under the License.
     <entity entity-name="WebhookConfig" package="co.hotwax.common">
         <field name="webhookConfigId" type="id" is-pk="true"></field>
         <field name="topicEnumId" type="id"></field>
-        <field name="remoteUrl" type="text-long"></field>
+        <field name="remoteUrl" type="text-intermediate"></field>
         <field name="createdDate" type="date-time"></field>
         <relationship type="one-nofk" related="moqui.basic.Enumeration">
             <key-map field-name="topicEnumId" related="enumId"/>
