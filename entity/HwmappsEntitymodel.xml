@@ -1370,5 +1370,15 @@ under the License.
             <key-map field-name="partyId"/>
         </relationship>-->
     </extend-entity>
+
+    <entity entity-name="ShipmentReceiptHistory" package="co.hotwax.integration.shipment">
+        <field name="shipmentReceiptHistoryId" type="id" is-pk="true"></field>
+        <field name="receiptId" type="id"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="comments" type="text-medium"></field>
+        <relationship type="one" related="org.apache.ofbiz.shipment.receipt.ShipmentReceipt">
+            <key-map field-name="receiptId"/>
+        </relationship>
+    </entity>
 </entities>
 
