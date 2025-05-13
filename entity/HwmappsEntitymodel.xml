@@ -1372,7 +1372,7 @@ under the License.
     </extend-entity>
 
     <entity entity-name="ShipmentReceiptHistory" package="co.hotwax.integration.shipment">
-        <field name="shipmentReceiptHistoryId" type="id" is-pk="true"></field>
+        <field name="historyId" type="id" is-pk="true"></field>
         <field name="receiptId" type="id"></field>
         <field name="createdDate" type="date-time"></field>
         <field name="comments" type="text-medium"></field>
