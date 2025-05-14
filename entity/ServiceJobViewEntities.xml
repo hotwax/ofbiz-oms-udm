@@ -12,4 +12,17 @@
         <alias entity-alias="ENUM" name="enumName"/>
         <alias entity-alias="ENUM" name="enumDescription" field="description"/>
     </view-entity>
+    <!-- View entity to replicate the behavior of ServiceJobAndEnum view and use Product fields instead of Enumeration fields -->
+    <view-entity entity-name="ServiceJobAndProduct" package="moqui.service.job">
+        <description>View entity for Service Job And Enumeration.</description>
+        <member-entity entity-alias="SJOB" entity-name="moqui.service.job.ServiceJob"/>
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="SJOB" join-optional="true">
+            <key-map field-name="jobTypeEnumId" related="productId"/>
+        </member-entity>
+        <alias-all entity-alias="SJOB"/>
+        <alias entity-alias="P" name="enumId" field="productId"/>
+        <alias entity-alias="P" name="enumTypeId" field="primaryProductCategoryId"/>
+        <alias entity-alias="P" name="enumName" field="productName"/>
+        <alias entity-alias="P" name="enumDescription" field="description"/>
+    </view-entity>
 </entities>
