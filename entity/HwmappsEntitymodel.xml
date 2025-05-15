@@ -1002,8 +1002,6 @@ under the License.
     <entity entity-name="ProductStoreSetting" package="org.apache.ofbiz.product.store">
         <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="settingTypeEnumId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true" enable-audit-log="true"></field>
-        <field name="thruDate" type="date-time" enable-audit-log="true"></field>
         <field name="settingValue" type="text-medium" enable-audit-log="true"></field>
         <relationship type="one" related="moqui.basic.Enumeration">
             <key-map field-name="settingTypeEnumId" related="enumId"/>
