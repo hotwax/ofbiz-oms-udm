@@ -99,6 +99,7 @@
     <moqui.basic.Enumeration enumId="NO_VARIANCE_LOG" enumTypeId="REPORT_NO_VAR" enumCode="NO_VARIANCE_LOG" sequenceNum="60" description="No variance"/>
     <moqui.basic.Enumeration enumId="SYS_REJ_IDLE_ORD" enumTypeId="REPORT_NO_VAR" enumCode="SYS_REJ_IDLE_ORD" sequenceNum="70" description="Idle Time Exceeded At Facility" enumName="Order remained idle at facility past threshold set in Product Store setting (AUTO_REJ_IDLE_ORD)"/>
     <moqui.basic.Enumeration enumId="REJ_AVOID_ORD_SPLIT" enumTypeId="REPORT_NO_VAR" enumCode="REJ_AVOID_ORD_SPLIT" sequenceNum="80" description="Reject to avoid order split (no variance)"/>
+    <moqui.basic.Enumeration enumId="REJ_CASCADE_BY_PROD" enumTypeId="REPORT_NO_VAR" enumCode="REJ_CASCADE_BY_PROD" sequenceNum="90" description="Cascade rejection by product (no variance)"/>
     <moqui.basic.EnumerationType enumTypeId="RETURN_CHANNEL" description="Return Channel"/>
     <moqui.basic.Enumeration enumId="ECOM_RTN_CHANNEL" enumTypeId="RETURN_CHANNEL" enumCode="ECOM_RTN_CHANNEL" description="Ecom Return Channel"/>
     <moqui.basic.Enumeration enumId="POS_RTN_CHANNEL" enumTypeId="RETURN_CHANNEL" enumCode="POS_RTN_CHANNEL" description="Pos Return Channel"/>
