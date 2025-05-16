@@ -11,7 +11,7 @@
     <org.apache.ofbiz.party.party.PartyRole partyId="COMPANY" roleTypeId="CONTACT"/>
     <org.apache.ofbiz.party.party.PartyRole partyId="COMPANY" roleTypeId="_NA_"/>
     <org.apache.ofbiz.product.store.ProductStore productStoreId="STORE" primaryStoreGroupId="STORE_GROUP" storeName="Demo Store" companyName="Company" title="Company" subtitle="Company" payToPartyId="COMPANY" prorateShipping="Y" prorateTaxes="Y" viewCartOnAdd="N" autoSaveCart="N" inventoryFacilityId="_NA_" oneInventoryFacility="N" checkInventory="N" reserveInventory="Y" reserveOrderEnumId="INVRO_FIFO_REC" requireInventory="Y" balanceResOnOrderCreation="N" orderNumberPrefix="" defaultLocaleString="en_US" defaultCurrencyUomId="USD" defaultSalesChannelEnumId="WEB_SALES_CHANNEL" allowPassword="Y" explodeOrderItems="Y" retryFailedAuths="Y" headerApprovedStatus="ORDER_APPROVED" itemApprovedStatus="ITEM_APPROVED" digitalItemApprovedStatus="ITEM_APPROVED" headerDeclinedStatus="ORDER_REJECTED" itemDeclinedStatus="ITEM_REJECTED" headerCancelStatus="ORDER_CANCELLED" itemCancelStatus="ITEM_CANCELLED" authDeclinedMessage="There has been a problem with your method of payment. Please try a different method or call customer service." authFraudMessage="Your order has been rejected and your account has been disabled due to fraud." authErrorMessage="Problem connecting to payment processor; we will continue to retry and notify you by email." usePrimaryEmailUsername="Y" prodSearchExcludeVariants="Y" storeCreditValidDays="90" autoApproveInvoice="Y" autoApproveOrder="N" shipIfCaptureFails="N" reqReturnInventoryReceive="N" catalogUrlMountPoint="products" autoSetFacility="Y" allowSplit="Y"/>
-    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="RATE_SHOPPING" fromDate="2001-01-01 12:00:00.000" settingValue="Y"/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="RATE_SHOPPING" settingValue="Y"/>
     <org.apache.ofbiz.product.catalog.ProdCatalog prodCatalogId="CATALOG" catalogName="Company Catalog" useQuickAdd="Y"/>
     <org.apache.ofbiz.product.store.ProductStoreCatalog productStoreId="STORE" prodCatalogId="CATALOG" fromDate="2018-01-01 12:00:00.000" sequenceNum="2"/>
     <org.apache.ofbiz.product.category.ProductCategory productCategoryId="BROWSE_ROOT" productCategoryTypeId="CATALOG_CATEGORY" categoryName="Browse Root" description="Browse Root" longDescription="Demo Catalog Primary Browse Root Category"/>
@@ -36,13 +36,13 @@
     <org.apache.ofbiz.product.store.ProductStoreShipmentMeth productStoreShipMethId="THIRD_DAY_SHIP" productStoreId="STORE" shipmentMethodTypeId="THIRD_DAY" partyId="_NA_" roleTypeId="CARRIER"/>
     <org.apache.ofbiz.product.store.ProductStoreShipmentMeth productStoreShipMethId="NEXT_DAY_SHIP" productStoreId="STORE" shipmentMethodTypeId="NEXT_DAY" partyId="_NA_" roleTypeId="CARRIER"/>
     <org.apache.ofbiz.product.store.ProductStoreShipmentMeth productStoreShipMethId="STOREPICKUP_SHIP" productStoreId="STORE" shipmentMethodTypeId="STOREPICKUP" partyId="_NA_" roleTypeId="CARRIER"/>
-    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="PRDT_IDEN_PREF" fromDate="2022-04-15 00:00:00.0" settingValue=""/>
-    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="INV_CNT_VIEW_QOH" fromDate="2022-04-15 00:00:00.0" settingValue="false"/>
-    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="SAVE_BILL_TO_INF" fromDate="2023-07-12 00:00:00.0" settingValue="N"/>
-    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="DEFULT_PKG_BOPIS_ORD" fromDate="2024-01-01 12:00:00.000" settingValue="BOPISPACKNG"/>
-    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="DIS_REJ_NOTI_ON_CNCL" fromDate="2024-01-01 00:00:00.0" settingValue="N"/>
-    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="AFFECT_QOH_ON_REJ" fromDate="2024-01-01 00:00:00" settingValue="N"/>
-    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="REJ_ITM_CC_CRT" fromDate="2024-06-23 05:32:24.482" settingValue="false"/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="PRDT_IDEN_PREF" settingValue=""/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="INV_CNT_VIEW_QOH" settingValue="false"/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="SAVE_BILL_TO_INF" settingValue="N"/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="DEFULT_PKG_BOPIS_ORD" settingValue="BOPISPACKNG"/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="DIS_REJ_NOTI_ON_CNCL" settingValue="N"/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="AFFECT_QOH_ON_REJ" settingValue="N"/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="REJ_ITM_CC_CRT" settingValue="false"/>
     <org.apache.ofbiz.party.party.Party partyId="HOTWAX_USER" partyTypeId="PERSON"/>
     <org.apache.ofbiz.party.party.Person partyId="HOTWAX_USER" firstName="HotWax" lastName="User"/>
     <org.apache.ofbiz.party.party.PartyRole partyId="HOTWAX_USER" roleTypeId="CONTACT"/>
