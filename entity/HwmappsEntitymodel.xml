@@ -1378,5 +1378,15 @@ under the License.
             <key-map field-name="receiptId"/>
         </relationship>
     </entity>
+
+    <entity entity-name="TransferOrderExportHistory" package="co.hotwax.integration.order">
+        <field name="historyId" type="id" is-pk="true"/>
+        <field name="orderId" type="id"/>
+        <field name="createdDate" type="date-time"/>
+        <field name="comments" type="text-medium"/>
+        <relationship type="one" related="org.apache.ofbiz.order.order.OrderHeader">
+            <key-map field-name="orderId"/>
+        </relationship>
+    </entity>
 </entities>
 
