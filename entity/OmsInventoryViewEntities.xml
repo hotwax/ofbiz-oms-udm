@@ -179,6 +179,7 @@ under the License.
         <alias entity-alias="F" name="defaultDaysToShip"/>
         <alias entity-alias="F" name="maximumOrderLimit"/>
         <alias entity-alias="P" name="internalName"/>
+        <alias entity-alias="P" name="productTypeId"/>
         <alias entity-alias="FT" name="parentFacilityTypeId" field="parentTypeId"/>
     </view-entity>
 </entities>

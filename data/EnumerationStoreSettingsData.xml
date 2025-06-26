@@ -46,5 +46,6 @@
     <moqui.basic.Enumeration enumId="FF_USE_NEW_REJ_API" enumTypeId="PROD_STR_STNG" enumCode="FF_USE_NEW_REJ_API" description="Fulfillment Use New Rejection API" enumName="Fulfillment Use New Rejection API"/>
     <moqui.basic.Enumeration enumId="FULFILL_PART_ODR_REJ" enumTypeId="PROD_STR_STNG" enumCode="FULFILL_PART_ODR_REJ" description="Fulfillment Partial Order Rejection" enumName="Fulfillment Partial Order Rejection"/>
     <moqui.basic.Enumeration enumId="AUTO_REJ_IDLE_ORD" enumTypeId="PROD_STR_STNG" enumName="Auto Reject Idle Orders"/>
+    <moqui.basic.Enumeration enumId="REJ_ITM_CC_CRT" enumTypeId="PROD_STR_STNG" enumName="Create cycle count for rejected items"/>
 </entity-facade-xml>
 

@@ -59,13 +59,13 @@ under the License.
         </relationship>
     </extend-entity>
     <extend-entity entity-name="ProductFeature" package="org.apache.ofbiz.product.feature">
-        <field name="imageUrl" type="text-long"></field>
+        <field name="imageUrl" type="text-intermediate"></field>
     </extend-entity>
     <extend-entity entity-name="ProductFeatureAppl" package="org.apache.ofbiz.product.feature">
         <field name="contentId" type="id"></field>
     </extend-entity>
     <extend-entity entity-name="PartyGroup" package="org.apache.ofbiz.party.party">
-        <field name="pdfLogoImageUrl" type="text-long"></field>
+        <field name="pdfLogoImageUrl" type="text-intermediate"></field>
     </extend-entity>
     <extend-entity entity-name="Person" package="org.apache.ofbiz.party.party">
         <field name="anniversaryDate" type="date"></field>
@@ -99,6 +99,8 @@ under the License.
         </relationship>
     </extend-entity>
     <extend-entity entity-name="ItemIssuance" package="org.apache.ofbiz.shipment.issuance">
+        <field name="returnId" type="id"></field>
+        <field name="returnItemSeqId" type="id"></field>
         <field name="issuanceTypeId" type="id"></field>
         <field name="workEffortId" type="id"></field>
         <field name="currentStatusId" type="id"></field>
@@ -111,6 +113,13 @@ under the License.
         <field name="deliveredToParty" type="id"></field>
         <relationship type="one" related="moqui.basic.StatusItem">
             <key-map field-name="currentStatusId" related="statusId"/>
+        </relationship>
+        <relationship type="one-nofk" related="org.apache.ofbiz.order.return.ReturnHeader">
+            <key-map field-name="returnId" related="returnId"/>
+        </relationship>
+        <relationship type="one" fk-name="ITEM_ISS_RTN_ITEM" related="org.apache.ofbiz.order.return.ReturnItem">
+            <key-map field-name="returnId" related="returnId"/>
+            <key-map field-name="returnItemSeqId" related="returnItemSeqId"/>
         </relationship>
         <index name="II_WEGS_REFNUM_IDX">
             <index-field name="wegsReferenceNumber"/>
@@ -172,7 +181,7 @@ under the License.
         <field name="productIdentifierEnumId" type="id"><description>Product identifier to identify unique product</description></field>
         <field name="enablePreOrderAutoReleasing" type="text-indicator" enable-audit-log="true"><description>Flag to enable/disable auto preorder releasing on particular store/brand.</description></field>
         <field name="enableBrokering" type="text-indicator" enable-audit-log="true"><description>Flag to enable/disable brokering on particular store/brand.</description></field>
-        <field name="storeLogoImageUrl" type="text-long"><description>Image path for display brand specific logo</description></field>
+        <field name="storeLogoImageUrl" type="text-intermediate"><description>Image path for display brand specific logo</description></field>
         <relationship type="one" fk-name="PROD_UNQ_IDENT" related="moqui.basic.Enumeration">
             <key-map field-name="productIdentifierEnumId" related="enumId"/>
         </relationship>
@@ -204,7 +213,7 @@ under the License.
         <field name="sequenceNum" type="number-integer"></field>
     </extend-entity>
     <extend-entity entity-name="Product" package="org.apache.ofbiz.product.product">
-        <field name="productUrlName" type="text-long"><description>Product name to be used in URL on store front</description></field>
+        <field name="productUrlName" type="text-intermediate"><description>Product name to be used in URL on store front</description></field>
         <field name="xSmallImageUrl" type="text-medium"><description>Extra small image URL for product</description></field>
         <field name="thumbnailImageUrl" type="text-medium"><description>Thumbnail image URL for product</description></field>
         <field name="alwaysNewLineItem" type="text-indicator"><description>If Y then the product will be added in the cart as a new line item even if it is already present in the cart.</description></field>
@@ -287,18 +296,18 @@ under the License.
     <entity entity-name="DataManagerConfig" package="co.hotwax.datamanager">
         <field name="configId" type="id" is-pk="true"></field>
         <field name="exportContentId" type="id"></field>
-        <field name="importServiceName" type="text-medium"></field>
-        <field name="exportServiceName" type="text-medium"></field>
+        <field name="importServiceName" type="text-medium" enable-audit-log="true"></field>
+        <field name="exportServiceName" type="text-medium" enable-audit-log="true"></field>
         <field name="exportServiceScreenName" type="text-medium"></field>
         <field name="exportServiceScreenLocation" type="text-medium"></field>
         <field name="description" type="text-medium"></field>
         <field name="scriptTitle" type="text-medium"></field>
         <field name="delimiter" type="text-medium"></field>
-        <field name="fileNamePattern" type="text-medium"></field>
-        <field name="executionModeId" type="id"></field>
-        <field name="multiThreading" type="text-indicator"></field>
-        <field name="importPath" type="text-medium"></field>
-        <field name="exportPath" type="text-medium"></field>
+        <field name="fileNamePattern" type="text-medium" enable-audit-log="true"></field>
+        <field name="executionModeId" type="id" enable-audit-log="true"></field>
+        <field name="multiThreading" type="text-indicator" enable-audit-log="true"></field>
+        <field name="importPath" type="text-medium" enable-audit-log="true"></field>
+        <field name="exportPath" type="text-medium" enable-audit-log="true"></field>
         <field name="priority" type="number-integer"></field>
         <relationship type="one" fk-name="DTMGR_CONF_ENM" related="moqui.basic.Enumeration">
             <key-map field-name="executionModeId" related="enumId"/>
@@ -325,6 +334,7 @@ under the License.
         <field name="createdByJobId" type="id"></field>
         <field name="productStoreId" type="id"></field>
         <field name="runByInstanceId" type="id"></field>
+        <field name="runThread" type="text-medium"></field>
         <relationship type="one" fk-name="DM_LOG_DM_CONFG" related="co.hotwax.datamanager.DataManagerConfig">
             <key-map field-name="configId"/>
         </relationship>
@@ -837,8 +847,8 @@ under the License.
         </relationship>
     </extend-entity>
     <extend-entity entity-name="ShipmentPackageRouteSeg" package="org.apache.ofbiz.shipment.shipment">
-        <field name="labelImageUrl" type="text-long"></field>
-        <field name="internationalInvoiceUrl" type="text-long"></field>
+        <field name="labelImageUrl" type="text-intermediate"></field>
+        <field name="internationalInvoiceUrl" type="text-intermediate"></field>
         <field name="packagePickupPrn" type="id"></field>
         <field name="packagePickupDate" type="date-time"></field>
     </extend-entity>
@@ -992,8 +1002,6 @@ under the License.
     <entity entity-name="ProductStoreSetting" package="org.apache.ofbiz.product.store">
         <field name="productStoreId" type="id" is-pk="true"></field>
         <field name="settingTypeEnumId" type="id" is-pk="true"></field>
-        <field name="fromDate" type="date-time" is-pk="true" enable-audit-log="true"></field>
-        <field name="thruDate" type="date-time" enable-audit-log="true"></field>
         <field name="settingValue" type="text-medium" enable-audit-log="true"></field>
         <relationship type="one" related="moqui.basic.Enumeration">
             <key-map field-name="settingTypeEnumId" related="enumId"/>
@@ -1295,7 +1303,7 @@ under the License.
     <entity entity-name="WebhookConfig" package="co.hotwax.common">
         <field name="webhookConfigId" type="id" is-pk="true"></field>
         <field name="topicEnumId" type="id"></field>
-        <field name="remoteUrl" type="text-long"></field>
+        <field name="remoteUrl" type="text-intermediate"></field>
         <field name="createdDate" type="date-time"></field>
         <relationship type="one-nofk" related="moqui.basic.Enumeration">
             <key-map field-name="topicEnumId" related="enumId"/>
@@ -1360,5 +1368,15 @@ under the License.
             <key-map field-name="partyId"/>
         </relationship>-->
     </extend-entity>
+
+    <entity entity-name="ShipmentReceiptHistory" package="co.hotwax.integration.shipment">
+        <field name="historyId" type="id" is-pk="true"></field>
+        <field name="receiptId" type="id"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="comments" type="text-medium"></field>
+        <relationship type="one" related="org.apache.ofbiz.shipment.receipt.ShipmentReceipt">
+            <key-map field-name="receiptId"/>
+        </relationship>
+    </entity>
 </entities>
 

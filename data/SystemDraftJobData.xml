@@ -44,7 +44,7 @@
     <moqui.basic.Enumeration enumId="JOB_IMP_CSTMR" enumTypeId="ORDER_SYS_JOB" description="Import customers" enumName="Import customers"/>
     <moqui.basic.Enumeration enumId="JOB_UL_CMPLT_ORD" enumTypeId="ORDER_SYS_JOB" description="Update the order status of fulfilled orders to eCommerce." enumName="Upload completed orders"/>
     <moqui.basic.Enumeration enumId="JOB_UL_CNCLD_ORD" enumTypeId="ORDER_SYS_JOB" description="Update the order status of canceled orders to eCommerce." enumName="Upload canceled orders"/>
-    <moqui.basic.Enumeration enumId="JOB_CNCL_ORD_DTE" enumTypeId="ORDER_SYS_JOB" description="Cancel orders that haven&apos;t been fulfilled yet and have passed their auto cancel date." enumName="Cancel orders past their auto cancellation date"/>
+    <moqui.basic.Enumeration enumId="JOB_CNCL_ORD_DTE" enumTypeId="FULFILLMENT_SYS_JOB" description="Cancel orders that haven&apos;t been fulfilled yet and have passed their auto cancel date." enumName="Cancel orders past their auto cancellation date"/>
     <moqui.basic.Enumeration enumId="JOB_UPD_TAG_ORD" enumTypeId="ORDER_SYS_JOB" description="Bulk update order tags on eCommerce" enumName="Update order tags"/>
     <moqui.basic.Enumeration enumId="JOB_UPD_TAG_ORD" enumTypeId="ORDER_SYS_JOB" description="Bulk update order tags on eCommerce" enumName="Update order tags"/>
     <moqui.basic.Enumeration enumId="IMP_ORD_META_FIELD" enumTypeId="ORDER_SYS_JOB" description="Schedule a job for order meta field download" enumName="Import Order Metafield"/>
@@ -89,5 +89,7 @@
     <moqui.basic.Enumeration enumId="JOB_ACT_PROD_SHPFY" enumTypeId="PRODUCT_SYS_JOB" description="Activate Products on Shopify" enumName="Activate products on Shopify"/>
     <moqui.basic.Enumeration enumId="RST_NEWLNCH_PROD_INV" enumTypeId="PRODUCT_SYS_JOB" description="Reset Newly Launched Product Inventory To Shopify" enumName="Reset Newly Launched Product Inventory To Shopify"/>
     <moqui.basic.Enumeration enumId="JOB_AUTO_REJ_IDL_ORD" enumTypeId="ORDER_SYS_JOB" description="Cancel order items that have exceeded their idle duration and whose fulfillment has not yet begun" enumName="Auto Reject Idle Order Items"/>
+    <moqui.basic.Enumeration enumId="JOB_UPD_SHPY_FUL_LOC" enumTypeId="ORDER_SYS_JOB" description="Send Fulfillment Order Location To Shopify" enumName="Update Shopify Fulfillment Order Location"/>
+    <moqui.basic.Enumeration enumId="JOB_CNCL_ORD_N_ITEM" enumTypeId="ORDER_SYS_JOB" description="Update the order status of canceled orders and order Item to eCommerce." enumName="Upload canceled orders and order items"/>
 </entity-facade-xml>
 
