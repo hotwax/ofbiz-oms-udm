@@ -1378,5 +1378,24 @@ under the License.
             <key-map field-name="receiptId"/>
         </relationship>
     </entity>
+
+    <entity entity-name="ShopifyFulfillmentHistory" package="co.hotwax.shopify">
+        <field name="fulfillmentLogId" type="id" is-pk="true"/>
+        <field name="orderId" type="id"/>
+        <field name="orderItemSeqId" type="id"/>
+        <field name="shipGroupSeqId" type="id"/>
+        <field name="shopId" type="id"/>
+        <field name="fulfillmentId" type="id"/>
+        <field name="createdDate" type="date-time"/>
+        <field name="comments" type="text-medium"/>
+
+        <relationship type="one" related="org.apache.ofbiz.order.order.OrderItem">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </relationship>
+        <relationship type="one" related="org.apache.ofbiz.order.order.OrderItemShipGroup"/>
+        <relationship type="one" related="co.hotwax.shopify.ShopifyShop"/>
+        <relationship type="one" related="co.hotwax.shopify.ShopifyShopOrder"/>
+    </entity>
 </entities>
 
