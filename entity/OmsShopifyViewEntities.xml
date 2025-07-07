@@ -183,4 +183,15 @@ under the License.
         <alias-all entity-alias="SHS"/>
         <alias-all entity-alias="SHL"/>
     </view-entity>
+
+    <view-entity entity-name="ShopifyShopAndProductStoreSetting" package="co.hotwax.shopify">
+        <member-entity entity-alias="SS" entity-name="co.hotwax.shopify.ShopifyShop"/>
+        <member-entity entity-alias="PSS" entity-name="org.apache.ofbiz.product.store.ProductStoreSetting" join-from-alias="SS">
+            <key-map field-name="productStoreId"/>
+        </member-entity>
+        <alias entity-alias="SS" name="shopId"/>
+        <alias entity-alias="SS" name="productStoreId"/>
+        <alias entity-alias="PSS" name="settingTypeEnumId"/>
+        <alias entity-alias="PSS" name="settingValue"/>
+    </view-entity>
 </entities>
