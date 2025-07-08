@@ -121,6 +121,20 @@ under the License.
             <key-map field-name="productStoreId"/>
         </relationship>
     </entity>
+    <entity entity-name="ShopifyShopUser" package="co.hotwax.shopify">
+        <field name="shopId" type="id" is-pk="true"/>
+        <field name="userLoginId" type="id" is-pk="true"/>
+        <field name="shopifyUserId" type="id-long"/>
+        <relationship type="one" related="org.apache.ofbiz.security.login.UserLogin" fk-name="SHPFY_USER_UL">
+            <key-map field-name="userLoginId" related="userLoginId"/>
+        </relationship>
+        <relationship type="one" related="co.hotwax.shopify.ShopifyShop" fk-name="SHPFY_USER_SHOP">
+            <key-map field-name="shopId" related="shopId"/>
+        </relationship>
+        <index name="SHPFY_USER_ID">
+            <index-field name="shopifyOrderId"/>
+        </index>
+    </entity>
     <entity entity-name="ShopifyShopProduct" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="productId" type="id"></field>
