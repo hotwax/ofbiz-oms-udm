@@ -132,7 +132,7 @@ under the License.
             <key-map field-name="shopId" related="shopId"/>
         </relationship>
         <index name="SHPFY_USER_ID">
-            <index-field name="shopifyOrderId"/>
+            <index-field name="shopifyUserId"/>
         </index>
     </entity>
     <entity entity-name="ShopifyShopProduct" package="co.hotwax.shopify">
