@@ -176,6 +176,8 @@ under the License.
         <alias entity-alias="RI" name="productId"/>
         <alias entity-alias="RI" name="returnReasonNote" field="reason"/>
         <alias entity-alias="RI" field="statusId" name="returnItemStatusId"/>
+        <alias entity-alias="RI" field="statusId" name="returnItemTypeId"/>
+        <alias entity-alias="RI" field="statusId" name="expectedItemStatus"/>
         <alias entity-alias="OI" name="orderItemRequestedShipMethTypeId" field="requestedShipMethTypeId"/>
         <alias entity-alias="OI" name="taxCode"/>
         <alias entity-alias="OI" field="externalId" name="orderItemExternalId"/>
