@@ -124,7 +124,7 @@ under the License.
     <entity entity-name="ShopifyShopUser" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"/>
         <field name="userLoginId" type="id" is-pk="true"/>
-        <field name="shopifyUserId" type="id-long"/>
+        <field name="shopifyUserId" type="id"/>
         <relationship type="one" related="org.apache.ofbiz.security.login.UserLogin" fk-name="SHPFY_USER_UL">
             <key-map field-name="userLoginId" related="userLoginId"/>
         </relationship>
