@@ -123,6 +123,7 @@
     <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_NPROD_ITEM" description="Return Non-Product Item"/>
     <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_PROD_ITEM" description="Return Product Item"/>
     <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_FPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Finished Good Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_LOST_ITEM" parentTypeId="RET_PROD_ITEM" description="Lost in Shipment"/>
     <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_DPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Digital Good Item"/>
     <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_FDPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Finished/Digital Good Item"/>
     <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_RPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Raw Material Good Item"/>

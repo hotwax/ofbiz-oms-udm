@@ -246,11 +246,11 @@ under the License.
                 if availableToPromiseTotal &lt;= minimumStock it will set as 0</description></field>
         <field name="allowBrokering" type="text-indicator"></field>
         <field name="inventoryItemId" type="id"></field>
+        <field name="reorderPoint" type="number-decimal"></field>
+        <field name="maximumStock" type="number-decimal"></field>
         <relationship type="one" fk-name="PROD_FAC_II" related="org.apache.ofbiz.product.inventory.InventoryItem">
             <key-map field-name="inventoryItemId"/>
         </relationship>
-        <field name="reorderPoint" type="number-decimal"></field>
-        <field name="maximumStock" type="number-decimal"></field>
     </extend-entity>
     <extend-entity entity-name="Content" package="org.apache.ofbiz.content.content">
         <field name="permissionEnumId" type="id-long"><description>It will be used to set permission to access content.</description></field>
@@ -991,8 +991,13 @@ under the License.
     <extend-entity entity-name="ReturnItemResponse" package="org.apache.ofbiz.order.return">
         <field name="returnId" type="id"></field>
         <field name="returnItemSeqId" type="id"></field>
+        <field name="responseReasonEnumId" type="id"></field>
+        <field name="comments" type="text-medium"></field>
         <relationship type="one" fk-name="RET_ITM_RES_RH" related="org.apache.ofbiz.order.return.ReturnHeader">
             <key-map field-name="returnId"/>
+        </relationship>
+        <relationship type="one" fk-name="CREDIT_RSN" related="moqui.basic.Enumeration">
+            <key-map field-name="responseReasonEnumId" related="enumId"/>
         </relationship>
         <index name="RET_ITM_RES_RHDR" unique="false">
             <index-field name="returnId"/>
@@ -1360,22 +1365,6 @@ under the License.
         </relationship>
         <relationship type="one" fk-name="PSTS_PS_PRDS" related="org.apache.ofbiz.product.store.ProductStore">
             <key-map field-name="productStoreId"/>
-        </relationship>
-    </entity>
-    <extend-entity entity-name="UserAccount" package="moqui.security">
-        <field name="partyId" type="id"/>
-        <!--<relationship type="one" related="org.apache.ofbiz.party.party.Party">
-            <key-map field-name="partyId"/>
-        </relationship>-->
-    </extend-entity>
-
-    <entity entity-name="ShipmentReceiptHistory" package="co.hotwax.integration.shipment">
-        <field name="historyId" type="id" is-pk="true"></field>
-        <field name="receiptId" type="id"></field>
-        <field name="createdDate" type="date-time"></field>
-        <field name="comments" type="text-medium"></field>
-        <relationship type="one" related="org.apache.ofbiz.shipment.receipt.ShipmentReceipt">
-            <key-map field-name="receiptId"/>
         </relationship>
     </entity>
 </entities>

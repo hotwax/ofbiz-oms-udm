@@ -125,13 +125,15 @@ under the License.
         <field name="contentAssocTypeId" type="id" is-pk="true"></field>
         <field name="description" type="text-medium"></field>
     </entity>
-
+    <!-- TODO: skipped element view-entity -->
+    <!-- TODO: skipped element view-entity -->
+    <!-- TODO: skipped element view-entity -->
     <entity entity-name="ContentRole" package="org.apache.ofbiz.content.content">
-        <field name="contentId" type="id" is-pk="true"/>
-        <field name="partyId" type="id" is-pk="true"/>
-        <field name="roleTypeId" type="id" is-pk="true"/>
-        <field name="fromDate" type="date-time" is-pk="true"/>
-        <field name="thruDate" type="date-time"/>
+        <field name="contentId" type="id" is-pk="true"></field>
+        <field name="partyId" type="id" is-pk="true"></field>
+        <field name="roleTypeId" type="id" is-pk="true"></field>
+        <field name="fromDate" type="date-time" is-pk="true"></field>
+        <field name="thruDate" type="date-time"></field>
         <relationship type="one" fk-name="CNTNT_RL_CNTNT" related="org.apache.ofbiz.content.content.Content">
             <key-map field-name="contentId"/>
         </relationship>
@@ -143,10 +145,6 @@ under the License.
             <key-map field-name="roleTypeId"/>
         </relationship>
     </entity>
-
-    <!-- TODO: skipped element view-entity -->
-    <!-- TODO: skipped element view-entity -->
-    <!-- TODO: skipped element view-entity -->
     <entity entity-name="ContentType" package="org.apache.ofbiz.content.content">
         <field name="contentTypeId" type="id" is-pk="true"></field>
         <field name="parentTypeId" type="id"></field>

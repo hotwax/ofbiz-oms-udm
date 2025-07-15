@@ -218,6 +218,7 @@
     <moqui.basic.Enumeration enumId="VAR_SHIP_RECV" enumTypeId="IID_REASON" enumCode="VAR_SHIP_RECV" description="Incoming Shipment Received" enumName="Shipment Received"/>
     <moqui.basic.Enumeration enumId="VAR_EXT_RESET" enumTypeId="IID_REASON" enumCode="VAR_EXT_RESET" description="Reset by External System" enumName="Reset By External System"/>
     <moqui.basic.Enumeration enumId="VAR_TRFR_ORD_SHIPPED" enumTypeId="IID_REASON" enumCode="VAR_TRFR_ORD_SHIPPED" description="Transfer Order Shipped" enumName="TO Shipment Shipped"/>
+    <moqui.basic.Enumeration enumId="RTN_ITM_RCPT" enumTypeId="IID_REASON" enumCode="RTN_ITM_RCPT" description="Inventory received against return" enumName="Return Item Receipt"/>
     <moqui.basic.EnumerationType enumTypeId="PRDS_PAYSVC" description="Product Store Payment Service Type"/>
     <moqui.basic.Enumeration enumId="PRDS_PAY_AUTH" enumTypeId="PRDS_PAYSVC" enumCode="PAY_AUTH" description="Payment Authorization Service"/>
     <moqui.basic.Enumeration enumId="PRDS_PAY_AUTH_VERIFY" enumTypeId="PRDS_PAYSVC" enumCode="PAY_AUTH_VERIFY" description="Payment Auth Verification Service"/>
@@ -336,6 +337,7 @@
     <moqui.basic.StatusItem statusId="INV_BEING_TRANSFERED" statusTypeId="INV_SERIALIZED_STTS" statusCode="BEING_TRANSFERED" description="Being Transfered"/>
     <moqui.basic.StatusItem statusId="INV_BEING_TRANS_PRM" statusTypeId="INV_SERIALIZED_STTS" statusCode="BEING_TRANS_PRM" description="Being Transfered (Promised)"/>
     <moqui.basic.StatusItem statusId="INV_RETURNED" statusTypeId="INV_SERIALIZED_STTS" statusCode="RETURNED" description="Returned"/>
+    <moqui.basic.StatusItem statusId="INV_NOT_RETURNED" statusTypeId="INV_SERIALIZED_STTS" statusCode="RETURNED" description="Inventory Not Returned"/>
     <moqui.basic.StatusItem statusId="INV_DEFECTIVE" statusTypeId="INV_SERIALIZED_STTS" statusCode="DEFECTIVE" description="Defective"/>
     <moqui.basic.StatusItem statusId="INV_NS_ON_HOLD" statusTypeId="INV_NON_SER_STTS" statusCode="ON_HOLD_NS" description="On Hold (Non-Serialized)"/>
     <moqui.basic.StatusItem statusId="INV_NS_DEFECTIVE" statusTypeId="INV_NON_SER_STTS" statusCode="DEFECTIVE_NS" description="Defective (Non-Serialized)"/>

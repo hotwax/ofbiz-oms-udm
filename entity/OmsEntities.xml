@@ -19,10 +19,20 @@ under the License.
 -->
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
-    <!-- TODO: skipped element title -->
-    <!-- TODO: skipped element version -->
-    <!-- TODO: skipped element view-entity -->
-    <!-- TODO: skipped element view-entity -->
-    <!-- TODO: skipped element view-entity -->
-</entities>
+    <extend-entity entity-name="UserAccount" package="moqui.security">
+        <field name="partyId" type="id"/>
+        <!--<relationship type="one" related="org.apache.ofbiz.party.party.Party">
+            <key-map field-name="partyId"/>
+        </relationship>-->
+    </extend-entity>
 
+    <entity entity-name="ShipmentReceiptHistory" package="co.hotwax.integration.shipment">
+        <field name="historyId" type="id" is-pk="true"></field>
+        <field name="receiptId" type="id"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="comments" type="text-medium"></field>
+        <relationship type="one" related="org.apache.ofbiz.shipment.receipt.ShipmentReceipt">
+            <key-map field-name="receiptId"/>
+        </relationship>
+    </entity>
+</entities>

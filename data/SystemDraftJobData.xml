@@ -65,6 +65,7 @@
     <moqui.basic.Enumeration enumId="JOB_IMP_PROD_FAC" enumTypeId="INVENTORY_SYS_JOB" description="Import a list of product facility records based on tags and categories" enumName="Import product facility"/>
     <moqui.basic.Enumeration enumId="JOB_IMP_PROD_THRSHLD" enumTypeId="INVENTORY_SYS_JOB" description="Import a list of product thresholds based on tags and categories" enumName="Import product thresholds"/>
     <moqui.basic.Enumeration enumId="JOB_EXP_PROD_THRSHLD" enumTypeId="INVENTORY_SYS_JOB" description="Export a list of product thresholds based on tags and categories" enumName="Export product thresholds"/>
+    <moqui.basic.Enumeration enumId="JOB_SYNC_INV_SHPFY" enumTypeId="INVENTORY_SYS_JOB" description="Sync Inventory From Shopify" enumName="Sync Inventory From Shopify"/>
     <moqui.basic.Enumeration enumId="JOB_SNC_INV_SHPF_THD" enumTypeId="INVENTORY_SYS_JOB" description="Sync Inventory From Shopify multi-threading" enumName="Sync Inventory From Shopify in multi-threading"/>
     <moqui.basic.Enumeration enumId="JOB_BOPIS_RALC" enumTypeId="INVENTORY_SYS_JOB" description="Automatically adjust POS inventory used from stores for BOPIS orders." enumName="BOPIS reallocation"/>
     <moqui.basic.Enumeration enumId="JOB_IMP_PROD_NEW_BLK" enumTypeId="PRODUCT_SYS_JOB" description="Import products from eCommerce or PIM." enumName="Import new products in bulk"/>
@@ -91,5 +92,6 @@
     <moqui.basic.Enumeration enumId="JOB_AUTO_REJ_IDL_ORD" enumTypeId="ORDER_SYS_JOB" description="Cancel order items that have exceeded their idle duration and whose fulfillment has not yet begun" enumName="Auto Reject Idle Order Items"/>
     <moqui.basic.Enumeration enumId="JOB_UPD_SHPY_FUL_LOC" enumTypeId="ORDER_SYS_JOB" description="Send Fulfillment Order Location To Shopify" enumName="Update Shopify Fulfillment Order Location"/>
     <moqui.basic.Enumeration enumId="JOB_CNCL_ORD_N_ITEM" enumTypeId="ORDER_SYS_JOB" description="Update the order status of canceled orders and order Item to eCommerce." enumName="Upload canceled orders and order items"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="IMP_CRT_RTN_APS" importServiceName="createShopifyReturn" description="Create Return And Appeasement" executionModeId="DMC_QUEUE" importPath="/home/{SFTP-USER}/hotwax/shopify/TransformedReturnsAndAppeasementsFeed"/>
 </entity-facade-xml>
 
