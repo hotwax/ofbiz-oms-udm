@@ -38,5 +38,8 @@
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_NOT_PAID" transitionName="Payment Not Paid"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_SENT" transitionName="Payment Confirmed to Sent"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_RECEIVED" transitionName="Payment Confirmed to Received"/>
+    <org.apache.ofbiz.accounting.ledger.ProductAverageCostType productAverageCostTypeId="SIMPLE_AVG_COST" hasTable="N" description="Simple Average Cost"/>
+    <org.apache.ofbiz.accounting.ledger.ProductAverageCostType productAverageCostTypeId="WEIGHTED_AVG_COST" hasTable="N" description="Weighted Average Cost"/>
+    <org.apache.ofbiz.accounting.ledger.ProductAverageCostType productAverageCostTypeId="MOVING_AVG_COST" hasTable="N" description="Moving Average Cost"/>
 </entity-facade-xml>
 

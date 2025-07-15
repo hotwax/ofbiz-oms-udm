@@ -21,6 +21,7 @@
     <moqui.basic.Enumeration enumId="SHOPIFY_FAC_ID" enumTypeId="FACILITY_IDENTITY" enumCode="SHOP_FAC_ID" description="Shopify Facility Id"/>
     <moqui.basic.Enumeration enumId="SHOPIFY_RTN_ID" enumTypeId="RETURN_IDENTITY" enumCode="SHOPIFY_RTN_ID" description="Shopify Return Id"/>
     <moqui.basic.Enumeration enumId="OLD_SHOPIFY_RTN_ID" enumTypeId="RETURN_IDENTITY" enumCode="OLD_SHOPIFY_RTN_ID" description="Old Shopify Return Id"/>
+    <moqui.basic.Enumeration enumId="SHPY_ORPN_RTN_ORD_ID" enumTypeId="RETURN_IDENTITY" enumCode="SHPY_ORPN_RTN_ORD_ID" description="Shopify retruns with no Order Id"/>
     <org.apache.ofbiz.party.party.PartyIdentificationType partyIdentificationTypeId="SHOPIFY_CUST_ID" hasTable="N" description="Shopify Customer Id"/>
     <moqui.basic.EnumerationType enumTypeId="SHOPIFY_SHOP_ACCESS" description="Shopify shop access"/>
     <moqui.basic.Enumeration enumId="SHOP_NO_ACCESS" enumTypeId="SHOPIFY_SHOP_ACCESS" enumCode="SHOP_NO" description="Shopify shop no access"/>
