@@ -7,8 +7,6 @@
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_SHOPIFY_CUST" importServiceName="createShopifyCustomer" description="Import Shopify customer data" scriptTitle="Shopify Customer"/>
     <co.hotwax.datamanager.DataManagerConfig configId="CRT_SHOPIFY_ORDER" importServiceName="createShopifyOrder" description="Import Shopify Orders" scriptTitle="CreateShopifyOrder"/>
     <co.hotwax.datamanager.DataManagerConfig configId="CRT_SH_DUMMY_ORDER" importServiceName="createShopifyDummyOrder" scriptTitle="createShopifyDummyOrder"/>
-    <co.hotwax.datamanager.DataManagerConfig configId="IMP_SHOPIFY_PROD" importServiceName="createUpdateShopifyProduct" description="Import Shopify product data" scriptTitle="Shopify product"/>
-    <co.hotwax.datamanager.DataManagerConfig configId="IMP_SHPFY_SHOP_PROD" importServiceName="createUpdateShopifyShopProduct" description="Create Shopify shop product data" scriptTitle="Shopify shop product"/>
     <co.hotwax.datamanager.DataManagerConfig configId="CRT_RCV_SHOP_RETURN" importServiceName="createAndReceiveShopifyReturn" scriptTitle="Create Shopify Return Shipment"/>
     <co.hotwax.datamanager.DataManagerConfig configId="SYNC_SHOPIFY_INV" importServiceName="syncShopifyInventory" description="Sync shopify inventory" scriptTitle="Shopify Inventory"/>
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_INV_VAR_SHOPIFY" importServiceName="createVarianceAndUpdateOnShopify" description="Create Inventory Variance and Update on shopify" scriptTitle="Inventory Variance"/>
@@ -17,7 +15,6 @@
     <co.hotwax.datamanager.DataManagerConfig configId="CRT_SHOP_APPE_RETURN" importServiceName="createAndReceiveShopifyReturnAppeasement" scriptTitle="Create Shopify Appeasement Return"/>
     <co.hotwax.datamanager.DataManagerConfig configId="COMP_SHPF_FULFIL_ITM" importServiceName="fulfillmentUpdateFromShopify" description="Sync Shopify fulfilled items" scriptTitle="Complete Shopify fulfilled items"/>
     <co.hotwax.datamanager.DataManagerConfig configId="SOP_IMPORT_ORDER" exportServiceName="importShopifyOrdersByIds" description="Import Shopify Orders by Id" scriptTitle="Shopify Orders" fileNamePattern="Shopify_${sequence}"/>
-    <co.hotwax.datamanager.DataManagerConfig configId="SOP_CRT_UPDATE_PRODS" exportServiceName="createUpdateShopifyProductsByIds" description="Import Shopify Products" scriptTitle="Shopify Products" fileNamePattern="Shopify_${sequence}"/>
     <co.hotwax.datamanager.DataManagerConfig configId="SOP_CANCL_ODR_ITMS" exportServiceName="cancelShopifyOrderItemsByIds" description="Cancel Shopify Order Items" scriptTitle="Cancel Shopify Order Items" fileNamePattern="Shopify_${sequence}"/>
     <co.hotwax.datamanager.DataManagerConfig configId="SOP_IMPORT_RETURNS" exportServiceName="importShopifyReturnsByIds" description="Import Shopify Returns" scriptTitle="Shopify Returns" fileNamePattern="Shopify_${sequence}"/>
     <co.hotwax.datamanager.DataManagerConfig configId="SOP_COM_ORD_IMPORT" exportServiceName="importShopifyFulfilledItemsByIds" description="Sync Shopify fulfilled orders" scriptTitle="Sync shopify fulfilled orders" fileNamePattern="Shopify_${sequence}"/>

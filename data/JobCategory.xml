@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext-seed">
+    <org.apache.ofbiz.product.catalog.ProdCatalog prodCatalogId="SYS_CONFIG_CATALOG" catalogName="System Job Catalog"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="SYSTEM_JOB" productCategoryTypeId="CATALOG_CATEGORY" categoryName="System Job" description="Parent category for all system configuration jobs"/>
+    <org.apache.ofbiz.product.catalog.ProdCatalogCategory prodCatalogId="SYS_CONFIG_CATALOG" productCategoryId="SYSTEM_JOB" prodCatalogCategoryTypeId="PCCT_BROWSE_ROOT" fromDate="2024-01-01 00:00:00"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="BROKER_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Brokering Jobs" description="Brokering Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="FULFILLMENT_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Fulfillment Jobs" description="Fulfillment Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="INVENTORY_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Inventory Jobs" description="Inventory Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="MISC_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Miscellaneous Jobs" description="Miscellaneous Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="ORDER_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Order Jobs" description="Order Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="PRE_ORD_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Preorder/Backorder Jobs" description="Preorder/Backorder Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="PRODUCT_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Product Jobs" description="Product Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="IMPORT_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Import" description="Import Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="UPLOAD_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Upload" description="Upload Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="NOTIFY_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Notification" description="Notification Jobs"/>
+    <org.apache.ofbiz.product.category.ProductCategory productCategoryId="REPORT_SYS_JOB" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="SYSTEM_JOB" categoryName="Report" description="Reporting Jobs"/>
+</entity-facade-xml>
+

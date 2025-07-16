@@ -32,7 +32,9 @@ under the License.
         <field name="username" type="text-medium" encrypt="true"></field>
         <field name="currentPassword" type="text-medium" encrypt="true"></field>
         <field name="accessToken" type="text-medium" encrypt="true"></field>
+        <field name="clientId" type="text-medium"></field>
         <field name="sharedSecret" type="text-medium" encrypt="true"><description>Secrets are used to validate the integrity of webhooks</description></field>
+        <field name="oldSharedSecret" type="text-medium" encrypt="true"><description>Old Secrets are used to validate the integrity of webhooks</description></field>
         <field name="processRefund" type="text-indicator"></field>
         <relationship type="one" fk-name="SHPFY_ACC_SCOPE" title="Access" related="moqui.basic.Enumeration">
             <key-map field-name="accessScopeEnumId" related="enumId"/>
