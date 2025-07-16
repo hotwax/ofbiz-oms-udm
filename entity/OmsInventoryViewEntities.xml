@@ -184,15 +184,12 @@ under the License.
     </view-entity>
 
     <view-entity entity-name="ShopifyInvAndProductFacilityView" package="co.hotwax.shopify">
-        <member-entity entity-alias="SSP" entity-name="co.hotwax.shopify.ShopifyShopProduct"/>
-        <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility" join-from-alias="SSP">
-            <key-map field-name="productId"/>
-        </member-entity>
+        <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility"/>
         <member-entity entity-alias="II" entity-name="org.apache.ofbiz.product.inventory.InventoryItem" join-from-alias="PF">
             <key-map field-name="inventoryItemId" />
         </member-entity>
-        <member-entity entity-alias="IID" entity-name="org.apache.ofbiz.product.inventory.InventoryItemDetail" join-from-alias="PF">
-            <key-map field-name="inventoryItemId" />
+        <member-entity entity-alias="SSP" entity-name="co.hotwax.shopify.ShopifyShopProduct" join-from-alias="PF">
+            <key-map field-name="productId"/>
         </member-entity>
 
         <alias name="shopId" entity-alias="SSP"/>
@@ -200,10 +197,6 @@ under the License.
         <alias name="facilityId" entity-alias="PF"/>
         <alias name="productId" entity-alias="PF"/>
         <alias name="quantityOnHandTotal" entity-alias="II"/>
-        <alias name="availableToPromiseTotal" entity-alias="II"/>
-        <alias name="qohDiff" entity-alias="IID" field="quantityOnHandDiff" function="sum"/>
-        <alias name="atpDiff" entity-alias="IID" field="availableToPromiseDiff" function="sum"/>
-        <alias name="iidLastUpdatedStamp" entity-alias="IID" field="lastUpdatedStamp"/>
-        <alias name="iiLastUpdatedStamp" entity-alias="II" field="lastUpdatedStamp"/>
+        <alias name="pfLastUpdatedStamp" entity-alias="PF" field="lastUpdatedStamp"/>
     </view-entity>
 </entities>
