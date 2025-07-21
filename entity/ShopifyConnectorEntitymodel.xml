@@ -125,10 +125,10 @@ under the License.
     </entity>
     <entity entity-name="ShopifyShopUser" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"/>
-        <field name="userLoginId" type="id" is-pk="true"/>
+        <field name="userId" type="id" is-pk="true"/>
         <field name="shopifyUserId" type="id"/>
-        <relationship type="one" related="org.apache.ofbiz.security.login.UserLogin" fk-name="SHPFY_USER_UL">
-            <key-map field-name="userLoginId" related="userLoginId"/>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="SHPFY_USER_ACCT">
+            <key-map field-name="userId" related="userId"/>
         </relationship>
         <relationship type="one" related="co.hotwax.shopify.ShopifyShop" fk-name="SHPFY_USER_SHOP">
             <key-map field-name="shopId" related="shopId"/>
