@@ -127,6 +127,7 @@ under the License.
         <field name="shopId" type="id" is-pk="true"/>
         <field name="userId" type="id" is-pk="true"/>
         <field name="shopifyUserId" type="id"/>
+        <field name="createdDate" type="date-time"/>
         <relationship type="one" related="moqui.security.UserAccount" fk-name="SHPFY_USER_ACCT">
             <key-map field-name="userId" related="userId"/>
         </relationship>
