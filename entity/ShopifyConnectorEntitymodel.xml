@@ -123,6 +123,21 @@ under the License.
             <key-map field-name="productStoreId"/>
         </relationship>
     </entity>
+    <entity entity-name="ShopifyShopUser" package="co.hotwax.shopify">
+        <field name="shopId" type="id" is-pk="true"/>
+        <field name="userId" type="id" is-pk="true"/>
+        <field name="shopifyUserId" type="id"/>
+        <field name="createdDate" type="date-time"/>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="SHPFY_USER_ACCT">
+            <key-map field-name="userId" related="userId"/>
+        </relationship>
+        <relationship type="one" related="co.hotwax.shopify.ShopifyShop" fk-name="SHPFY_USER_SHOP">
+            <key-map field-name="shopId" related="shopId"/>
+        </relationship>
+        <index name="SHPFY_USER_ID">
+            <index-field name="shopifyUserId"/>
+        </index>
+    </entity>
     <entity entity-name="ShopifyShopProduct" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="productId" type="id"></field>
