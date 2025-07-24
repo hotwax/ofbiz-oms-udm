@@ -56,4 +56,14 @@ under the License.
             <moqui.basic.Enumeration description="Log file"  enumId="DmcntLog" enumTypeId="DataManagerContentType"/>
         </seed-data>
     </entity>
+
+    <entity entity-name="DataManagerParameter" package="co.hotwax.datamanager" use="configuration" cache="true">
+        <description>Parameters automatically added when the DataManager log is created. Always stored as a String and will
+            be converted based on the corresponding service in-parameter.parameter.@type attribute (just as with any
+            service call).</description>
+        <field name="logId" type="id" is-pk="true"/>
+        <field name="parameterName" type="text-short" is-pk="true"/>
+        <field name="parameterValue" type="text-medium"/>
+        <relationship type="one" related="co.hotwax.datamanager.DataManagerLog"/>
+    </entity>
 </entities>
