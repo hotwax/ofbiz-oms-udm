@@ -44,7 +44,7 @@ under the License.
         <field name="contentDate" type="date-time" default="ec.user.nowTimestamp"/>
         <field name="userId" type="id" default="ec.user.userId"/>
         <relationship type="one" related="co.hotwax.datamanager.DataManagerLog" short-alias="log"/>
-        <relationship type="one" title="LogContentType" related="moqui.basic.Enumeration" short-alias="type">
+        <relationship type="one" title="DataManagerContentType" related="moqui.basic.Enumeration" short-alias="type">
             <key-map field-name="logContentTypeEnumId"/></relationship>
         <relationship type="one" related="moqui.security.UserAccount"/>
         <seed-data>
