@@ -51,6 +51,7 @@ under the License.
             <!-- Party Content Type -->
             <moqui.basic.EnumerationType description="DataManager Log content type" enumTypeId="DataManagerContentType"/>
             <moqui.basic.Enumeration description="Uploaded file" enumId="DmcntImported" enumTypeId="DataManagerContentType"/>
+            <moqui.basic.Enumeration description="Exported file" enumId="DmcntExported" enumTypeId="DataManagerContentType"/>
             <moqui.basic.Enumeration description="Error file"  enumId="DmcntError" enumTypeId="DataManagerContentType"/>
             <moqui.basic.Enumeration description="Log file"  enumId="DmcntLog" enumTypeId="DataManagerContentType"/>
         </seed-data>
