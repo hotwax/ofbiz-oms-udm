@@ -35,4 +35,24 @@ under the License.
             <key-map field-name="receiptId"/>
         </relationship>
     </entity>
+    <entity entity-name="DataManagerContent" package="co.hotwax.datamanager">
+        <field name="logContentId" type="id" is-pk="true"/>
+        <field name="logId" type="id"/>
+        <field name="contentLocation" type="text-medium"/>
+        <field name="logContentTypeEnumId" type="id"/>
+        <field name="description" type="text-long"/>
+        <field name="contentDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="userId" type="id" default="ec.user.userId"/>
+        <relationship type="one" related="co.hotwax.datamanager.DataManagerLog" short-alias="log"/>
+        <relationship type="one" title="LogContentType" related="moqui.basic.Enumeration" short-alias="type">
+            <key-map field-name="logContentTypeEnumId"/></relationship>
+        <relationship type="one" related="moqui.security.UserAccount"/>
+        <seed-data>
+            <!-- Party Content Type -->
+            <moqui.basic.EnumerationType description="DataManager Log content type" enumTypeId="DataManagerContentType"/>
+            <moqui.basic.Enumeration description="Uploaded file" enumId="DmcntImported" enumTypeId="DataManagerContentType"/>
+            <moqui.basic.Enumeration description="Error file"  enumId="DmcntError" enumTypeId="DataManagerContentType"/>
+            <moqui.basic.Enumeration description="Log file"  enumId="DmcntLog" enumTypeId="DataManagerContentType"/>
+        </seed-data>
+    </entity>
 </entities>
