@@ -38,6 +38,7 @@ under the License.
     <entity entity-name="DataManagerContent" package="co.hotwax.datamanager">
         <field name="logContentId" type="id" is-pk="true"/>
         <field name="logId" type="id"/>
+        <field name="fileName" type="text-medium"/>
         <field name="contentLocation" type="text-medium"/>
         <field name="logContentTypeEnumId" type="id"/>
         <field name="description" type="text-long"/>
