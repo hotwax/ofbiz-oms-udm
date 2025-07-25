@@ -184,12 +184,12 @@ under the License.
     </view-entity>
 
     <view-entity entity-name="ShopifyInvAndProductFacilityView" package="co.hotwax.shopify">
-        <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility"/>
+        <member-entity entity-alias="SSP" entity-name="co.hotwax.shopify.ShopifyShopProduct"/>
+        <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility" join-from-alias="SSP">
+            <key-map field-name="productId"/>
+        </member-entity>
         <member-entity entity-alias="II" entity-name="org.apache.ofbiz.product.inventory.InventoryItem" join-from-alias="PF">
             <key-map field-name="inventoryItemId" />
-        </member-entity>
-        <member-entity entity-alias="SSP" entity-name="co.hotwax.shopify.ShopifyShopProduct" join-from-alias="PF">
-            <key-map field-name="productId"/>
         </member-entity>
 
         <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="PF">
