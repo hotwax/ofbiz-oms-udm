@@ -21,6 +21,7 @@
     <moqui.basic.StatusItem statusId="INV_COUNT_REVIEW" statusTypeId="INV_CNT_IMPORT_STTS" statusCode="REVIEW" description="Pending Review" statusAge="60"/>
     <moqui.basic.StatusItem statusId="INV_COUNT_COMPLETED" statusTypeId="INV_CNT_IMPORT_STTS" statusCode="COMPLETED" description="Completed" statusAge="100"/>
     <moqui.basic.StatusItem statusId="INV_COUNT_REJECTED" statusTypeId="INV_CNT_IMPORT_STTS" statusCode="REJECTED" description="Rejected" statusAge="101"/>
+    <moqui.basic.StatusItem statusId="INV_COUNT_VOIDED" statusTypeId="INV_CNT_IMPORT_STTS" statusCode="VOIDED" description="Voided" statusAge="110"/>
     <moqui.basic.StatusItem statusId="RETURN_REJECTED" statusTypeId="ORDER_RETURN_STTS" statusCode="REJECTED" description="Rejected" statusAge="101"/>
     <moqui.basic.StatusItem statusId="SHIPMENT_INPUT" statusTypeId="SHIPMENT_STATUS" statusCode="INPUT" description="Created" statusAge="0"/>
     <moqui.basic.StatusItem statusId="SHIPMENT_IN_TRANSIT" statusTypeId="SHIPMENT_STATUS" statusCode="IN_TRANSIT" description="In-Transit"/>
