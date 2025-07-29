@@ -14,6 +14,7 @@
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_REVIEW" toStatusId="INV_COUNT_ASSIGNED" transitionName="Assign Inventory Import to recount"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_REVIEW" toStatusId="INV_COUNT_REJECTED" transitionName="Reject Inventory Import"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_REVIEW" toStatusId="INV_COUNT_COMPLETED" transitionName="Completing Inventory Import"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_CREATED" toStatusId="INV_COUNT_VOIDED" transitionName="Voiding Inventory Import"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_INPUT" transitionName="Created"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PENDING" toStatusId="PICKITEM_PICKED" transitionName="Picked"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PICKED" toStatusId="PICKITEM_COMPLETED" transitionName="Completed"/>
