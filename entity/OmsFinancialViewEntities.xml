@@ -50,7 +50,7 @@ under the License.
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
+        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH" join-optional="true">
             <key-map field-name="productStoreId"/>
         </member-entity>
         <alias entity-alias="RI" name="returnId"/>
