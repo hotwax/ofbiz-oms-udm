@@ -39,6 +39,7 @@ under the License.
         <field name="logContentId" type="id" is-pk="true"/>
         <field name="logId" type="id"/>
         <field name="fileName" type="text-medium"/>
+        <field name="fileSize" type="number-integer"/>
         <field name="contentLocation" type="text-medium"/>
         <field name="logContentTypeEnumId" type="id"/>
         <field name="description" type="text-long"/>
