@@ -138,7 +138,7 @@ under the License.
     <view-entity entity-name="ReturnItemView" package="co.hotwax.financial">
         <description>View to get the Return Item Details.</description>
         <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem"/>
-        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="RI">
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="RI" join-optional="true">
             <key-map field-name="orderId"/>
         </member-entity>
         <member-entity entity-alias="SSO" entity-name="co.hotwax.shopify.ShopifyShopOrder" join-from-alias="OH" join-optional="true">
