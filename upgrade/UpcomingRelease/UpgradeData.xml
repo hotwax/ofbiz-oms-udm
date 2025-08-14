@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <!-- New CommunicationEventType to segregate the communication events created from OFBiz, as the notifications are triggered
+    using scheduled job for existing CommunicationEventType -->
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="SYS_MSG_EMAIL_COMM" parentTypeId="EMAIL_COMMUNICATION" hasTable="N" description="Email Communication as a part of SystemMessage flow" contactMechTypeId="EMAIL_ADDRESS"/>
+
+    <!-- Reroute fulfillment data migrated from OFBiz -->
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="HWCApp" systemPropertyId="order.update.url.jwt.token.expireTime" systemPropertyValue="172800" description="Expire time for the token generated for alternate fulfillment in seconds"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="HWCApp" systemPropertyId="reRouteOrder.baseUrl" systemPropertyValue="https://reroute-fulfillment.hotwax.io" description="Reroute fulfullment application url"/>
+
+</entity-engine-xml>

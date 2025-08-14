@@ -13,5 +13,7 @@
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="image.management.autoApproveImage" systemPropertyValue="Y" description="Auto approve image. Choices are Y or N."/>
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="image.management.multipleApproval" systemPropertyValue="N" description="Auto approve multiple images. Choices are Y or N."/>
     <org.apache.ofbiz.common.property.SystemProperty systemResourceId="catalog" systemPropertyId="convertProductPriceCurrency" systemPropertyValue="false" description="Automatic product price currency conversion. Choices are boolean."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="HWCApp" systemPropertyId="order.update.url.jwt.token.expireTime" systemPropertyValue="172800" description="Expire time for the token generated for alternate fulfillment in seconds"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="HWCApp" systemPropertyId="reRouteOrder.baseUrl" systemPropertyValue="https://reroute-fulfillment.hotwax.io" description="Reroute fulfullment application url"/>
 </entity-facade-xml>
 
