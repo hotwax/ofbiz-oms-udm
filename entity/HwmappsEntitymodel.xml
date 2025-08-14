@@ -309,7 +309,7 @@ under the License.
         <field name="importPath" type="text-medium" enable-audit-log="true"></field>
         <field name="exportPath" type="text-medium" enable-audit-log="true"></field>
         <field name="priority" type="number-integer"></field>
-        <relationship type="one" fk-name="DTMGR_CONF_ENM" related="moqui.basic.Enumeration">
+        <relationship type="one" title="DMC_EXEC_MODE" fk-name="DTMGR_CONF_ENM" related="moqui.basic.Enumeration">
             <key-map field-name="executionModeId" related="enumId"/>
         </relationship>
     </entity>
@@ -335,6 +335,8 @@ under the License.
         <field name="productStoreId" type="id"></field>
         <field name="runByInstanceId" type="id"></field>
         <field name="runThread" type="text-medium"></field>
+        <field name="totalRecordCount" type="number-integer"></field>
+        <field name="failedRecordCount" type="number-integer"></field>
         <relationship type="one" fk-name="DM_LOG_DM_CONFG" related="co.hotwax.datamanager.DataManagerConfig">
             <key-map field-name="configId"/>
         </relationship>
@@ -353,10 +355,10 @@ under the License.
         <relationship type="one" fk-name="DTMGR_LOG_CONT" title="Log" related="org.apache.ofbiz.content.content.Content">
             <key-map field-name="logFileContentId" related="contentId"/>
         </relationship>
-        <relationship type="one" fk-name="DTMGR_ENM" related="moqui.basic.Enumeration">
+        <relationship type="one" title="DataManagerLog" fk-name="DTMGR_ENM" related="moqui.basic.Enumeration">
             <key-map field-name="logTypeEnumId" related="enumId"/>
         </relationship>
-        <relationship type="one" fk-name="DTMGR_LOG_STTS" related="moqui.basic.StatusItem">
+        <relationship type="one" title="DataManagerLog" fk-name="DTMGR_LOG_STTS" related="moqui.basic.StatusItem">
             <key-map field-name="statusId"/>
         </relationship>
         <relationship type="one-nofk" fk-name="DTMGR_USR_LOGIN" related="org.apache.ofbiz.security.login.UserLogin">
