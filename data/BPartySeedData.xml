@@ -97,6 +97,7 @@
     <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="COMMENT_NOTE" hasTable="N" description="Comment/Note" contactMechTypeId="INTERNAL_PARTYID"/>
     <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="AUTO_EMAIL_COMM" hasTable="N" description="Auto Email" contactMechTypeId="EMAIL_ADDRESS"/>
     <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="EXT_EMAIL_COMM" parentTypeId="EMAIL_COMMUNICATION" hasTable="N" description="External Email Communication" contactMechTypeId="EMAIL_ADDRESS"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="SYS_MSG_EMAIL_COMM" parentTypeId="EMAIL_COMMUNICATION" hasTable="N" description="Email Communication as a part of SystemMessage flow" contactMechTypeId="EMAIL_ADDRESS"/>
     <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="INTERNAL" description="Internal Content"/>
     <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="USERDEF" description="User Defined Content"/>
     <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="LGOIMGURL" description="Logo Image URL"/>
