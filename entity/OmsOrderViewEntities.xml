@@ -1368,10 +1368,12 @@ under the License.
         <alias entity-alias="OISG" field="shipmentMethodTypeId" name="slaShipmentMethodTypeId"/>
         <alias entity-alias="OISG" field="contactMechId" name="postalContactMechId"/>
         <alias entity-alias="OISG" name="telecomContactMechId"/>
+        <alias entity-alias="OISG" name="shippingInstructions"/>
         <alias entity-alias="OI" field="quantity" name="itemQuantity"/>
         <alias entity-alias="OI" name="cancelQuantity"/>
         <alias entity-alias="F" name="facilityId"/>
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
+        <alias entity-alias="F" name="facilityName"/>
         <alias entity-alias="FT" name="facilityTypeId"/>
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
         <alias entity-alias="FT" field="description" name="facilityTypeDesc"/>
