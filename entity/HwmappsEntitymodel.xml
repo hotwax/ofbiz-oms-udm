@@ -620,6 +620,10 @@ under the License.
         <index name="APPLI_IDENT_IDX">
             <index-field name="applicationIdentifier"/>
         </index>
+        <master>
+            <detail relationship="moqui.basic.StatusItem"/>
+            <detail relationship="org.apache.ofbiz.accounting.payment.PaymentMethodType"/>
+        </master>
     </extend-entity>
     <extend-entity entity-name="FacilityLocation" package="org.apache.ofbiz.product.facility">
         <field name="isLocked" type="text-indicator"><description>Indicates a facility location is locked for reservations or not</description></field>
