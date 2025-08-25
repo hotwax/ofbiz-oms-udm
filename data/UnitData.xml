@@ -219,6 +219,7 @@
     <moqui.basic.UomConversion uomConversionId="WT_oz_tr_WT_g" uomId="WT_oz_tr" toUomId="WT_g" conversionFactor="30"/>
     <moqui.basic.UomConversion uomConversionId="WT_dwt_WT_g" uomId="WT_dwt" toUomId="WT_g" conversionFactor="1.555"/>
     <moqui.basic.UomConversion uomConversionId="WT_lb_WT_oz" uomId="WT_lb" toUomId="WT_oz" conversionFactor="16"/>
+    <moqui.basic.UomConversion uomConversionId="WT_lb_WT_g" uomId="WT_lb" toUomId="WT_g" conversionFactor="453.59237"/>
     <moqui.basic.UomConversion uomConversionId="WT_st_WT_lb" uomId="WT_st" toUomId="WT_lb" conversionFactor="14"/>
     <moqui.basic.UomConversion uomConversionId="WT_lt_WT_mt" uomId="WT_lt" toUomId="WT_mt" conversionFactor="1.02"/>
     <moqui.basic.UomConversion uomConversionId="WT_lt_WT_lb" uomId="WT_lt" toUomId="WT_lb" conversionFactor="2240"/>

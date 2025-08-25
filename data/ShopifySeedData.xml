@@ -41,6 +41,7 @@
     <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_CASH_ON_DEL" description="Ext Cash on Delivery" paymentMethodCode="Cash on Delivery (COD)"/>
     <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXCHANGE_CREDIT" description="Exchange Credit" paymentMethodCode="Exchange Credit"/>
     <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXCHANGE_PAYMENT" description="Exchange Payment" paymentMethodCode="Exchange Payment"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="SHOP_STORE_CREDIT" description="Shopify Store Credit" paymentMethodCode="Store Credit"/>
     <moqui.basic.Enumeration enumId="SHOPIFY_UPLOAD_LOG" enumTypeId="LOG_TYPE" enumCode="ShopifyUploadLog" description="Shopify Upload Log"/>
     <moqui.basic.Enumeration enumId="SHOPIFY_CANCELLATION" enumTypeId="ODR_ITM_CH_REASON" enumCode="SHOPIFY_CANCELLATION" description="Shopify Cancellation"/>
     <moqui.basic.EnumerationType enumTypeId="SHOPIFY_TYPE" description="Shopify Types"/>

@@ -21,5 +21,73 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <!-- TODO: skipped element title -->
     <!-- TODO: skipped element version -->
+    <entity entity-name="WorkEffort" package="org.apache.ofbiz.workeffort.workeffort">
+        <field name="workEffortId" type="id" is-pk="true"></field>
+        <field name="workEffortTypeId" type="id"></field>
+        <field name="currentStatusId" type="id"></field>
+        <field name="lastStatusUpdate" type="date-time"></field>
+        <field name="workEffortPurposeTypeId" type="id"></field>
+        <field name="workEffortParentId" type="id"><description>The primary parent (or the like); it should be one of the parent WorkEfforts already setup in WorkEffortAssoc</description></field>
+        <field name="scopeEnumId" type="id"></field>
+        <field name="priority" type="number-integer"></field>
+        <field name="percentComplete" type="number-integer"></field>
+        <field name="workEffortName" type="text-medium"></field>
+        <field name="showAsEnumId" type="id"></field>
+        <field name="sendNotificationEmail" type="text-indicator"></field>
+        <field name="description" type="text-medium"></field>
+        <field name="locationDesc" type="text-medium"></field>
+        <field name="estimatedStartDate" type="date-time"></field>
+        <field name="estimatedCompletionDate" type="date-time"></field>
+        <field name="actualStartDate" type="date-time"></field>
+        <field name="actualCompletionDate" type="date-time"></field>
+        <field name="estimatedMilliSeconds" type="number-float"></field>
+        <field name="estimatedSetupMillis" type="number-float"></field>
+        <field name="estimateCalcMethod" type="id"></field>
+        <field name="actualMilliSeconds" type="number-float"></field>
+        <field name="actualSetupMillis" type="number-float"></field>
+        <field name="totalMilliSecondsAllowed" type="number-float"></field>
+        <field name="totalMoneyAllowed" type="currency-amount"></field>
+        <field name="moneyUomId" type="id"></field>
+        <field name="specialTerms" type="text-medium"></field>
+        <field name="timeTransparency" type="number-integer"><description>Deprecated - use the availabilityStatusId field in the assignment entities instead</description></field>
+        <field name="universalId" type="text-medium"></field>
+        <field name="sourceReferenceId" type="id-long"></field>
+        <field name="fixedAssetId" type="id"><description>Deprecated - use the WorkEffortFixedAssetAssign entity instead</description></field>
+        <field name="facilityId" type="id"></field>
+        <field name="infoUrl" type="text-medium"></field>
+        <field name="recurrenceInfoId" type="id"><description>Deprecated - use the tempExprId field instead</description></field>
+        <field name="tempExprId" type="id"></field>
+        <field name="runtimeDataId" type="id"></field>
+        <field name="noteId" type="id"></field>
+        <field name="serviceLoaderName" type="text-medium"></field>
+        <field name="quantityToProduce" type="number-decimal"></field>
+        <field name="quantityProduced" type="number-decimal"></field>
+        <field name="quantityRejected" type="number-decimal"></field>
+        <field name="reservPersons" type="number-decimal"><description>the number of persons renting the attached asset</description></field>
+        <field name="reserv2ndPPPerc" type="number-decimal"><description>reservationSecondPersonPricePercentage: percentage of the end price for the 2nd person renting this asset connected to the workEffort</description></field>
+        <field name="reservNthPPPerc" type="number-decimal"><description>reservationNthPersonPricePercentage: percentage of the end price for the Nth (2+) person renting this asset connected to the workEffort</description></field>
+        <field name="accommodationMapId" type="id"></field>
+        <field name="accommodationSpotId" type="id"></field>
+        <field name="revisionNumber" type="number-integer"></field>
+        <field name="createdDate" type="date-time"></field>
+        <field name="createdByUserLogin" type="id-long"></field>
+        <field name="lastModifiedDate" type="date-time"></field>
+        <field name="lastModifiedByUserLogin" type="id-long"></field>
+        <relationship type="one" fk-name="WK_EFFRT_CURSTTS" title="Current" related="moqui.basic.StatusItem">
+            <key-map field-name="currentStatusId" related="statusId"/>
+        </relationship>
+        <relationship type="one" fk-name="WK_EFFRT_SC_ENUM" title="Scope" related="moqui.basic.Enumeration">
+            <key-map field-name="scopeEnumId" related="enumId"/>
+        </relationship>
+        <relationship type="one" fk-name="WK_EFFRT_FACILITY" related="org.apache.ofbiz.product.facility.Facility">
+            <key-map field-name="facilityId"/>
+        </relationship>
+        <relationship type="one" fk-name="WK_EFFRT_MON_UOM" title="Money" related="moqui.basic.Uom">
+            <key-map field-name="moneyUomId" related="uomId"/>
+        </relationship>
+        <relationship type="one" fk-name="WK_EFFRT_NOTE" related="org.apache.ofbiz.common.note.NoteData">
+            <key-map field-name="noteId"/>
+        </relationship>
+    </entity>
 </entities>
 

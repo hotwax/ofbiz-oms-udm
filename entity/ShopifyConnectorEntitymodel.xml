@@ -119,6 +119,7 @@ under the License.
         <field name="weightUnit" type="id"></field>
         <field name="currency" type="id"></field>
         <field name="countryCode" type="id"></field>
+        <field name="isEnabled" type="text-indicator" enable-audit-log="true"></field>
         <relationship type="one" fk-name="SHPFY_SHOP_PS" related="org.apache.ofbiz.product.store.ProductStore">
             <key-map field-name="productStoreId"/>
         </relationship>
