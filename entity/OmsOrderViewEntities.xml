@@ -1579,8 +1579,8 @@ under the License.
     </view-entity>
     <view-entity entity-name="OrderHeaderNoteView" package="co.hotwax.order">
         <description>Order Header Note View Entity</description>
-        <member-entity entity-alias="OD" entity-name="OrderHeaderNote"/>
-        <member-entity entity-alias="ND" entity-name="NoteData" join-from-alias="OD">
+        <member-entity entity-alias="OD" entity-name="org.apache.ofbiz.order.order.OrderHeaderNote"/>
+        <member-entity entity-alias="ND" entity-name="org.apache.ofbiz.common.note.NoteData" join-from-alias="OD">
             <key-map field-name="noteId"/>
         </member-entity>
         <alias entity-alias="OD" name="orderId"/>
