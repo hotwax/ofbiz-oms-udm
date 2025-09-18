@@ -742,7 +742,7 @@ under the License.
         <alias entity-alias="SH" field="destinationTelecomNumberId" name="shipToTelecomContactMechId"/>
         <alias entity-alias="SH" name="shipmentTypeId"/>
         <alias entity-alias="SPRS" field="trackingCode" name="trackingNumber"/>
-        <alias entity-alias="SH" name="carrierPartyId"/>
+        <alias entity-alias="SRS" name="carrierPartyId"/>
         <alias entity-alias="SH" name="shipmentMethodTypeId"/>
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
