@@ -594,7 +594,7 @@ under the License.
         <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
         <alias entity-alias="FT" name="facilityTypeId"/>
         <alias entity-alias="FT" field="parentTypeId" name="parentFacilityTypeId"/>
-        <alias entity-alias="OS" name="statusDatetime" function="max"/>
+        <alias entity-alias="OS" name="statusDatetime"/>
         <alias entity-alias="P" name="productId"/>
         <alias entity-alias="PT" name="productTypeId"/>
         <alias entity-alias="PT" name="isPhysical"/>
@@ -609,7 +609,6 @@ under the License.
                     <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
                 </econditions>
             </econditions>
-            <order-by field-name="entryDate"/>
         </entity-condition>
     </view-entity>
 
