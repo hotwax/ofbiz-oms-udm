@@ -601,14 +601,7 @@ under the License.
         <alias entity-alias="PT" name="isDigital"/>
         <alias entity-alias="SCENM" field="enumCode" name="salesChannel"/>
         <entity-condition>
-            <!-- Using the below conditions we are fetching the eligible orders that are not sent to the external system -->
-            <econditions combine="and">
-                <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
-                <econditions combine="or">
-                    <econdition entity-alias="OI" field-name="quantity" operator="greater" to-entity-alias="OI" to-field-name="cancelQuantity"/>
-                    <econdition entity-alias="OI" field-name="cancelQuantity" operator="equals" value=""/>
-                </econditions>
-            </econditions>
+            <econdition entity-alias="OFH" field-name="orderId" operator="equals" value=""/>
         </entity-condition>
     </view-entity>
 
