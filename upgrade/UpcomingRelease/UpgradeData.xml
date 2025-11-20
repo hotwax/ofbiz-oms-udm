@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="ext-upgrade">
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="UPDATE_PRODUCT_TYPE" settingValue="true"/>
 </entity-facade-xml>
