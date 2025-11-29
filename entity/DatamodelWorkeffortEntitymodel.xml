@@ -89,5 +89,18 @@ under the License.
             <key-map field-name="noteId"/>
         </relationship>
     </entity>
+    <entity entity-name="WorkEffortStatus" package="org.apache.ofbiz.workeffort.workeffort">
+        <field name="workEffortId" type="id" is-pk="true"/>
+        <field name="statusId" type="id" is-pk="true"/>
+        <field name="statusDatetime" type="date-time" is-pk="true"/>
+        <field name="setByUserLogin" type="id-long"/>
+        <field name="reason" type="text-medium"/>
+        <relationship type="one" fk-name="WKEFF_STTS_WE" related="org.apache.ofbiz.workeffort.workeffort.WorkEffort">
+            <key-map field-name="workEffortId"/>
+        </relationship>
+        <relationship type="one" fk-name="WKEFF_STTS_STTS" related="moqui.basic.StatusItem">
+            <key-map field-name="statusId"/>
+        </relationship>
+    </entity>
 </entities>
 
