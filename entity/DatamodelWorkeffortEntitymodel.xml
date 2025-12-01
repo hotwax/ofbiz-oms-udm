@@ -73,7 +73,7 @@ under the License.
         <field name="createdByUserLogin" type="id-long"></field>
         <field name="lastModifiedDate" type="date-time"></field>
         <field name="lastModifiedByUserLogin" type="id-long"></field>
-        <relationship type="one" fk-name="WK_EFFRT_CURSTTS" title="Current" related="moqui.basic.StatusItem">
+        <relationship type="one" fk-name="WK_EFFRT_STTS" title="Current" related="moqui.basic.StatusItem">
             <key-map field-name="statusId" related="statusId"/>
         </relationship>
         <relationship type="one" fk-name="WK_EFFRT_SC_ENUM" title="Scope" related="moqui.basic.Enumeration">
