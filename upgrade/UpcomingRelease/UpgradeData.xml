@@ -1,5 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="ext-upgrade">
-    <moqui.basic.Enumeration enumId="UPDATE_PRODUCT_TYPE" enumTypeId="PROD_STR_STNG" enumName="Skip updating productType for updated products"/>
-    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="UPDATE_PRODUCT_TYPE" settingValue="true"/>
 </entity-facade-xml>
