@@ -43,6 +43,7 @@
     <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="DIS_REJ_NOTI_ON_CNCL" settingValue="N"/>
     <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="AFFECT_QOH_ON_REJ" settingValue="N"/>
     <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="REJ_ITM_CC_CRT" settingValue="false"/>
+    <org.apache.ofbiz.product.store.ProductStoreSetting productStoreId="STORE" settingTypeEnumId="UPDATE_PRODUCT_TYPE" settingValue="true"/>
     <org.apache.ofbiz.party.party.Party partyId="HOTWAX_USER" partyTypeId="PERSON"/>
     <org.apache.ofbiz.party.party.Person partyId="HOTWAX_USER" firstName="HotWax" lastName="User"/>
     <org.apache.ofbiz.party.party.PartyRole partyId="HOTWAX_USER" roleTypeId="CONTACT"/>
