@@ -1,21 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="ext-upgrade">
-    <org.apache.ofbiz.security.securitygroup.SecurityPermission description="User can Submit count from progress review page." permissionId="INV_COUNT_SUBMIT"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityPermission description="User can start count before it's start time." permissionId="INV_COUNT_PRE_START"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityPermission description="User can see items in cycle count sessions track progress page." permissionId="PREVIEW_COUNT_ITEM"/>
-
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="STORE_MANAGER" permissionId="INV_COUNT_SUBMIT"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="WAREHOUSE_MANAGER" permissionId="INV_COUNT_SUBMIT"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SUPER" permissionId="INV_COUNT_SUBMIT"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="COMMERCE_SUPER" permissionId="INV_COUNT_SUBMIT"/>
-
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="STORE_MANAGER" permissionId="INV_COUNT_PRE_START"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="WAREHOUSE_MANAGER" permissionId="INV_COUNT_PRE_START"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SUPER" permissionId="INV_COUNT_PRE_START"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="COMMERCE_SUPER" permissionId="INV_COUNT_PRE_START"/>
-
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="STORE_MANAGER" permissionId="PREVIEW_COUNT_ITEM"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="WAREHOUSE_MANAGER" permissionId="PREVIEW_COUNT_ITEM"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SUPER" permissionId="PREVIEW_COUNT_ITEM"/>
-    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="COMMERCE_SUPER" permissionId="PREVIEW_COUNT_ITEM"/>
 </entity-facade-xml>
