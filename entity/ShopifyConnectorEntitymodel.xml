@@ -162,6 +162,29 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
+    <entity entity-name="ShopifyOrderReconShopify" package="co.hotwax.shopify">
+        <description>Temporary storage for Shopify orders captured during reconciliation runs.</description>
+        <field name="systemMessageRemoteId" type="id" is-pk="true"/>
+        <field name="shopifyOrderId" type="id-long" is-pk="true"/>
+        <field name="shopId" type="id"/>
+        <field name="orderCreatedAt" type="date-time"/>
+    </entity>
+    <view-entity entity-name="ShopifyOrderReconShopifyGapView" package="co.hotwax.shopify">
+        <description>Left joins Shopify reconciliation records to OMS reconciliation rows to find Shopify-only orders.</description>
+        <member-entity entity-alias="SHOP" entity-name="co.hotwax.shopify.ShopifyOrderReconShopify"/>
+        <member-entity entity-alias="SSO" entity-name="co.hotwax.shopify.ShopifyShopOrder" join-from-alias="SHOP" join-optional="true">
+            <key-map field-name="shopifyOrderId"/>
+            <key-map field-name="shopId"/>
+        </member-entity>
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="SSO" join-optional="true">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <alias entity-alias="SHOP" name="systemMessageRemoteId"/>
+        <alias entity-alias="SHOP" name="shopifyOrderId"/>
+        <alias entity-alias="SHOP" name="shopId"/>
+        <alias entity-alias="SHOP" name="orderCreatedAt"/>
+        <alias entity-alias="OH" name="omsOrderId" field="orderId"/>
+    </view-entity>
     <entity entity-name="ShopifyShopCarrierShipment" package="co.hotwax.shopify">
         <field name="shopId" type="id" is-pk="true"></field>
         <field name="carrierPartyId" type="id"></field>
@@ -217,4 +240,3 @@ under the License.
         </index>
     </entity>
 </entities>
-
