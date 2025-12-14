@@ -846,7 +846,7 @@ under the License.
         <relationship type="one-nofk" title="Carrier" related="org.apache.ofbiz.party.party.PartyGroup">
             <key-map field-name="carrierPartyId" related="partyId"/>
         </relationship>
-        <relationship type="one" fk-name="SHPMT_RTSEG_SHMT" related="org.apache.ofbiz.shipment.shipment.ShipmentMethodType">
+        <relationship type="one-nofk" related="org.apache.ofbiz.shipment.shipment.ShipmentMethodType">
             <key-map field-name="shipmentMethodTypeId"/>
         </relationship>
         <relationship type="one" fk-name="SHPMT_RTSEG_OFAC" title="Origin" related="org.apache.ofbiz.product.facility.Facility">
