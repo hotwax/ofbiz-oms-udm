@@ -21,8 +21,8 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <view-entity entity-name="EnumerationAndType" package="co.hotwax.common.enum">
-        <member-entity entity-alias="ENUM" entity-name="org.apache.ofbiz.common.enum.Enumeration"/>
-        <member-entity entity-alias="TYPE" entity-name="org.apache.ofbiz.common.enum.EnumerationType" join-from-alias="ENUM" join-optional="true">
+        <member-entity entity-alias="ENUM" entity-name="moqui.basic.Enumeration"/>
+        <member-entity entity-alias="TYPE" entity-name="moqui.basic.EnumerationType" join-from-alias="ENUM" join-optional="true">
             <key-map field-name="enumTypeId"/>
         </member-entity>
         <alias-all entity-alias="ENUM"/>
@@ -30,5 +30,36 @@ under the License.
             <exclude field="description"/>
         </alias-all>
         <alias name="typeDescription" field="description" entity-alias="TYPE"/>
+    </view-entity>
+
+    <view-entity entity-name="IntegrationTypeMappingAndEnum" package="co.hotwax.integration">
+        <member-entity entity-alias="ITM" entity-name="co.hotwax.integration.IntegrationTypeMapping"/>
+        <member-entity entity-alias="ENUM" entity-name="moqui.basic.Enumeration" join-from-alias="ITM">
+            <key-map field-name="integrationTypeId"/>
+        </member-entity>
+        <alias-all entity-alias="ITM">
+            <exclude field="description"/>
+        </alias-all>
+        <alias-all entity-alias="ENUM"/>
+        <alias name="mappingDescription" field="description" entity-alias="ITM"/>
+    </view-entity>
+
+    <view-entity entity-name="EnumerationGroupAndMember" package="co.hotwax.common.enum">
+        <member-entity entity-alias="EG" entity-name="co.hotwax.common.enum.EnumerationGroup"/>
+        <member-entity entity-alias="EGM" entity-name="co.hotwax.common.enum.EnumerationGroupMember" join-from-alias="EG">
+            <key-map field-name="enumerationGroupId"/>
+        </member-entity>
+        <member-entity entity-alias="ENUM" entity-name="moqui.basic.Enumeration" join-from-alias="EGM">
+            <key-map field-name="enumerationId" related="enumId"/>
+        </member-entity>
+        <alias-all entity-alias="EG"/>
+        <alias entity-alias="ENUM" name="enumId"/>
+        <alias entity-alias="ENUM" name="enumTypeId"/>
+        <alias entity-alias="ENUM" name="enumCode"/>
+        <alias entity-alias="ENUM" name="enumName"/>
+        <alias entity-alias="ENUM" name="enumDescription" field="description"/>
+        <alias entity-alias="EGM" name="sequenceNum"/>
+        <alias entity-alias="EGM" name="fromDate"/>
+        <alias entity-alias="EGM" name="thruDate"/>
     </view-entity>
 </entities>

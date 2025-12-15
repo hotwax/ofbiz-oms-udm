@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="AB" geoName="Alberta" geoCodeAlpha3="AB" geoCodeAlpha2="AB" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="BC" geoName="British Columbia" geoCodeAlpha3="BC" geoCodeAlpha2="BC" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="MB" geoName="Manitoba" geoCodeAlpha3="MB" geoCodeAlpha2="MB" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NB" geoName="New Brunswick" geoCodeAlpha3="NB" geoCodeAlpha2="NB" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NL" geoName="Newfoundland and Labrador" geoCodeAlpha3="NL" geoCodeAlpha2="NL" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NS" geoName="Nova Scotia" geoCodeAlpha3="NS" geoCodeAlpha2="NS" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NT" geoName="Northwest Territories" geoCodeAlpha3="NT" geoCodeAlpha2="NT" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="NU" geoName="Nunavut" geoCodeAlpha3="NU" geoCodeAlpha2="NU" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="ON" geoName="Ontario" geoCodeAlpha3="ON" geoCodeAlpha2="ON" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="PE" geoName="Prince Edward Island" geoCodeAlpha3="PE" geoCodeAlpha2="PE" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="QC" geoName="Quebec" geoCodeAlpha3="QC" geoCodeAlpha2="QC" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="SK" geoName="Saskatchewan" geoCodeAlpha3="SK" geoCodeAlpha2="SK" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="YT" geoName="Yukon" geoCodeAlpha3="YT" geoCodeAlpha2="YT" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="AB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="BC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="MB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="NB" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="NL" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="NS" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="NT" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="NU" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="ON" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="PE" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="QC" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="SK" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CAN" toGeoId="YT" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

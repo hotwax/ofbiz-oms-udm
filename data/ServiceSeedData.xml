@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.EnumerationType enumTypeId="JS_LOCK_REASON" description="JobSandbox lock reason"/>
+    <moqui.basic.Enumeration enumId="JS_LOCK_REASON_0" enumTypeId="JS_LOCK_REASON" enumCode="0" description="Instance updating"/>
+    <moqui.basic.Enumeration enumId="JS_LOCK_REASON_1" enumTypeId="JS_LOCK_REASON" enumCode="1" description="Instance surcharge"/>
+    <moqui.basic.Enumeration enumId="JS_LOCK_REASON_2" enumTypeId="JS_LOCK_REASON" enumCode="2" description="Instance maintenance"/>
+</entity-facade-xml>
+

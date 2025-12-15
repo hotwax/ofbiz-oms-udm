@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <moqui.basic.Enumeration enumId="JOB_UL_PRCS" enumTypeId="MISC_SYS_JOB" description="Process generated files into eCommerce as resouces become available." enumName="Process uploads to eCommerce"/>
+    <moqui.basic.Enumeration enumId="JOB_UL_PRMS_DTE" enumTypeId="PRE_ORD_SYS_JOB" description="Add notes on new orders that have promise dates." enumName="Upload promise dates on new orders"/>
+    <moqui.basic.Enumeration enumId="JOB_UL_PRMS_DTE_UPD" enumTypeId="PRE_ORD_SYS_JOB" description="Add notes on orders with items that have new promise dates." enumName="Update promise dates on orders"/>
+    <moqui.basic.Enumeration enumId="JOB_REL_PREODR_CAT" enumTypeId="PRE_ORD_SYS_JOB" description="Check if new products have become eligible for pre-order/backorder and add them to the pre-order catalog." enumName="Refresh preorder/backorder catalog"/>
+    <moqui.basic.Enumeration enumId="JOB_PREORDER_CAT_SYC" enumTypeId="PRE_ORD_SYS_JOB" description="Push preorder catalog &apos;Ship from&apos; and inventory policies for SKUs to eCommerce." enumName="Preorder catalog sync"/>
+    <moqui.basic.Enumeration enumId="JOB_ADD_BACKORD_VRT" enumTypeId="PRE_ORD_SYS_JOB" description="Add backorder tags to parent products on eCommerce." enumName="Add backorder tags"/>
+    <moqui.basic.Enumeration enumId="JOB_RMV_BACKORD_VRT" enumTypeId="PRE_ORD_SYS_JOB" description="Remove backorder tags from parent products on eCommerce." enumName="Remove backorder tags"/>
+    <moqui.basic.Enumeration enumId="JOB_ADD_PREORD_VRT" enumTypeId="PRE_ORD_SYS_JOB" description="Add pre-order tags to parent products on eCommerce." enumName="Add pre-order tags"/>
+    <moqui.basic.Enumeration enumId="JOB_RMV_PREORD_VRT" enumTypeId="PRE_ORD_SYS_JOB" description="Remove pre-order tags from parent products on eCommerce." enumName="Remove pre-order tags"/>
+    <moqui.basic.Enumeration enumId="JOB_ADD_TAG_PREORD" enumTypeId="PRE_ORD_SYS_JOB" description="Add pre-order tags on eCommerce for orders with pre-order items." enumName="Add pre-order tags on orders"/>
+    <moqui.basic.Enumeration enumId="JOB_ADD_TAG_BACKORD" enumTypeId="PRE_ORD_SYS_JOB" description="Add backorder tags on eCommerce for orders with backorder items." enumName="Add backorder tags on orders"/>
+    <moqui.basic.Enumeration enumId="SD_PRMSDDTE_CNG_NOTI" enumTypeId="PRE_ORD_SYS_JOB" description="Send Promised Date Change Notification" enumName="Send Promised Date Change Notification"/>
+    <moqui.basic.Enumeration enumId="JOB_UPDT_SO_PROMS_DT" enumTypeId="PRE_ORD_SYS_JOB" description="Updates promise dates on Sales Order items when arrival date of a PO is changed." enumName="Update Sales Order Items Promise Date"/>
+    <moqui.basic.Enumeration enumId="JOB_RLS_ORD_DTE" enumTypeId="PRE_ORD_SYS_JOB" description="Release pre-order and backorders from their queues to the Brokering Queue if they have inventory." enumName="Release pre-orders and backorders"/>
+    <moqui.basic.Enumeration enumId="JOB_EXP_BACKORD_ADD" enumTypeId="PRE_ORD_SYS_JOB" description="Export a list of items that have been added to the backorder category." enumName="Export added backorder items"/>
+    <moqui.basic.Enumeration enumId="JOB_EXP_BACKORD_RMV" enumTypeId="PRE_ORD_SYS_JOB" description="Export a list of items that have been removed from the backorder category." enumName="Export removed backorder items"/>
+    <moqui.basic.Enumeration enumId="JOB_EXP_BACKORD_UPD" enumTypeId="PRE_ORD_SYS_JOB" description="Export a list of items backorder items that have been updated." enumName="Export updated backorder items"/>
+    <moqui.basic.Enumeration enumId="JOB_EXP_PREORD_ADD" enumTypeId="PRE_ORD_SYS_JOB" description="Export a list of items that have been added to the pre-order category." enumName="Export added pre-order items"/>
+    <moqui.basic.Enumeration enumId="JOB_EXP_PREORD_RMV" enumTypeId="PRE_ORD_SYS_JOB" description="Export a list of items that have been removed from the pre-order category." enumName="Export removed pre-order items"/>
+    <moqui.basic.Enumeration enumId="JOB_EXP_PREORD_UPD" enumTypeId="PRE_ORD_SYS_JOB" description="Export a list of items pre-order items that have been updated." enumName="Export updated pre-order items"/>
+    <moqui.basic.Enumeration enumId="IMP_BACKORD_MF" enumTypeId="PRE_ORD_SYS_JOB" description=" Import backorder metafields from Shopify that are used for backorder" enumName="Import backorder metafields"/>
+    <moqui.basic.Enumeration enumId="IMP_PREORD_MF" enumTypeId="PRE_ORD_SYS_JOB" description=" Import pre-order metafields from Shopify that are used for pre-order" enumName="Import pre-order metafields"/>
+    <moqui.basic.Enumeration enumId="UPD_PREORD_PRMS_DTE" enumTypeId="PRE_ORD_SYS_JOB" description="Update product category member thru date based on PO Item ETA change" enumName="Update Preorder Category Item Arrival Date"/>
+    <moqui.basic.Enumeration enumId="JOB_UL_PRMS_DTE_ORD" enumTypeId="PRE_ORD_SYS_JOB" description="Add notes on orders with items that have new promise dates." enumName="Update promise dates on orders"/>
+    <moqui.basic.Enumeration enumId="JOB_FTP_FILE_IMP" enumTypeId="PRE_ORD_SYS_JOB" description="Generates a  feed of orders for which promise date was changed" enumName="FTP file import"/>
+    <moqui.basic.Enumeration enumId="UPD_ARVL_DATE_IN_CTG" enumTypeId="PRE_ORD_SYS_JOB" description="Update the ProductCategoryMember (Preorder/backorder) thruDate if purchase order item EDD updated" enumName="Update Preorder Category Item Arrival Date"/>
+    <moqui.basic.Enumeration enumId="ADD_BACKORD_VRT_BLK" enumTypeId="PRE_ORD_SYS_JOB" description="List all backorder parent products on eCommerce" enumName="Add all backorder tags"/>
+    <moqui.basic.Enumeration enumId="ADD_BACKORD_SKU_BLK" enumTypeId="PRE_ORD_SYS_JOB" description="List all active backorder SKUs on eCommerce" enumName="Add all backorder SKUs"/>
+    <moqui.basic.Enumeration enumId="ADD_PREORD_VRT_BLK" enumTypeId="PRE_ORD_SYS_JOB" description="List all pre-order parent products on eCommerce" enumName="Add all pre-order tags"/>
+    <moqui.basic.Enumeration enumId="ADD_PREORD_SKU_BLK" enumTypeId="PRE_ORD_SYS_JOB" description="List all active backorder SKUs on eCommerce" enumName="Add all pre-order SKUs"/>
+    <moqui.basic.Enumeration enumId="JOB_CAT_REL_BACKORD" enumTypeId="PRE_ORD_SYS_JOB" description="Check if new products have become eligible for pre-order and add them to the backorder catalog." enumName="Refresh backorder catalog"/>
+    <moqui.basic.Enumeration enumId="JOB_REALOC_PO" enumTypeId="PRE_ORD_SYS_JOB" description="Re-calculate promise dates on all pre-orders based on upcoming inventory from purchase orders." enumName="Reallocate purchase orders"/>
+    <moqui.basic.Enumeration enumId="JOB_CAT_REL_PREODR" enumTypeId="PRE_ORD_SYS_JOB" description="Check if new products have become eligible for pre-order and add them to the pre-order catalog." enumName="Refresh preorder catalog"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_ORD" enumTypeId="ORDER_SYS_JOB" description="Import new orders from eCommerce." enumName="Import orders"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_ORD_BLK" enumTypeId="ORDER_SYS_JOB" description="Import new orders from eCommerce." enumName="Import orders in bulk"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_ORD_UPD" enumTypeId="ORDER_SYS_JOB" description="Import order updates from eCommerce." enumName="Import order updates from Shopify"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_ORD_CNCL" enumTypeId="ORDER_SYS_JOB" description="Check eCommerce for orders that have been canceled and cancel them in HotWax Commerce." enumName="Import canceled orders"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_ITM_CNCL" enumTypeId="ORDER_SYS_JOB" description="Check eCommerce for order items that have been canceled and cancel them in HotWax Commerce without canceling the entire order." enumName="Import canceled items"/>
+    <moqui.basic.Enumeration enumId="CRT_SHOP_APPE_RETURN" enumTypeId="ORDER_SYS_JOB" description="Check eCommerce for orders that have adjustments created against them and create those adjustments in HotWax commerce" enumName="Import appeasements from Shopify Store"/>
+    <moqui.basic.Enumeration enumId="JOB_APR_SALES_ORD" enumTypeId="ORDER_SYS_JOB" description="Approve Sales Order" enumName="Approve Sales Order"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_RTN" enumTypeId="ORDER_SYS_JOB" description="Check eCommerce for orders that have been returned and create a return for them in HotWax Commerce. Returned orders are also restocked if inventory is damaged, make sure to log a Damaged variance." enumName="Import order returns"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_CSTMR" enumTypeId="ORDER_SYS_JOB" description="Import customers" enumName="Import customers"/>
+    <moqui.basic.Enumeration enumId="JOB_UL_CMPLT_ORD" enumTypeId="ORDER_SYS_JOB" description="Update the order status of fulfilled orders to eCommerce." enumName="Upload completed orders"/>
+    <moqui.basic.Enumeration enumId="JOB_UL_CNCLD_ORD" enumTypeId="ORDER_SYS_JOB" description="Update the order status of canceled orders to eCommerce." enumName="Upload canceled orders"/>
+    <moqui.basic.Enumeration enumId="JOB_CNCL_ORD_DTE" enumTypeId="FULFILLMENT_SYS_JOB" description="Cancel orders that haven&apos;t been fulfilled yet and have passed their auto cancel date." enumName="Cancel orders past their auto cancellation date"/>
+    <moqui.basic.Enumeration enumId="JOB_UPD_TAG_ORD" enumTypeId="ORDER_SYS_JOB" description="Bulk update order tags on eCommerce" enumName="Update order tags"/>
+    <moqui.basic.Enumeration enumId="JOB_UPD_TAG_ORD" enumTypeId="ORDER_SYS_JOB" description="Bulk update order tags on eCommerce" enumName="Update order tags"/>
+    <moqui.basic.Enumeration enumId="IMP_ORD_META_FIELD" enumTypeId="ORDER_SYS_JOB" description="Schedule a job for order meta field download" enumName="Import Order Metafield"/>
+    <moqui.basic.Enumeration enumId="JOB_MOD_ORD_ATTR" enumTypeId="MISC_SYS_JOB" description="Create or update order attribute from the csv file" enumName="Import order attributes from FTP location"/>
+    <moqui.basic.Enumeration enumId="JOB_EXP_APPEASEMENT" enumTypeId="ORDER_SYS_JOB" description="Export a feed of appeasement related data to be consumed by a financial system." enumName="Export appeasement feed"/>
+    <moqui.basic.Enumeration enumId="JOB_UL_REFUNDS" enumTypeId="ORDER_SYS_JOB" description="Trigger refunds in eCommerce for canceled orders in HotWax Commerce." enumName="Upload refunds"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_PYMNT_STTS" enumTypeId="ORDER_SYS_JOB" description="Check eCommerce for new payment status updates and update them in HotWax Commerce." enumName="Import payment status"/>
+    <moqui.basic.Enumeration enumId="JOB_OPN_BOPIS_ORD_NT" enumTypeId="FULFILLMENT_SYS_JOB" description="Send Open BOPIS order Notification" enumName="Open BOPIS order Notification"/>
+    <moqui.basic.Enumeration enumId="JOB_RP_BOPIS_ORD_NT" enumTypeId="FULFILLMENT_SYS_JOB" description="Send Ready to pick BOPIS order Notification" enumName="Ready to pick BOPIS order Notification"/>
+    <moqui.basic.Enumeration enumId="JOB_OPEN_SHIP_ORD_NT" enumTypeId="FULFILLMENT_SYS_JOB" description="Send open shipping order Notification" enumName="Open Shipping Order Notification"/>
+    <moqui.basic.Enumeration enumId="JOB_SHPMNT_PKD_NT" enumTypeId="MISC_SYS_JOB" description="Send packed shipment notification to customer" enumName="Send packed shipment notification to customer"/>
+    <moqui.basic.Enumeration enumId="JOB_SHIP_ORD_PKD" enumTypeId="FULFILLMENT_SYS_JOB" description="Automatically ship orders that are packed and have a tracking number if required." enumName="Ship packed orders"/>
+    <moqui.basic.Enumeration enumId="JOB_ORD_FLMNT_HST" enumTypeId="FULFILLMENT_SYS_JOB" description="Create or update order fulfillment history records from FTP" enumName="Order fulfillment history"/>
+    <moqui.basic.Enumeration enumId="JOB_UL_INV" enumTypeId="INVENTORY_SYS_JOB" description="Upload new inventory levels to eCommerce." enumName="Upload inventory"/>
+    <moqui.basic.Enumeration enumId="UL_RCNT_INV" enumTypeId="INVENTORY_SYS_JOB" description="Upload recent inventory changes to eCommerce." enumName="Upload recent inventory change"/>
+    <moqui.basic.Enumeration enumId="JOB_ADJ_INV" enumTypeId="INVENTORY_SYS_JOB" description="Upload new inventory variances to eCommerce." enumName="Upload Inventory Variances"/>
+    <moqui.basic.Enumeration enumId="JOB_RST_INV_SFTP" enumTypeId="INVENTORY_SYS_JOB" description="Import an inventory reset file from an SFTP location. Inventory in HotWax will be adjusted to match the inventory levels in the reset file" enumName="Import inventory reset"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_PROD_FAC" enumTypeId="INVENTORY_SYS_JOB" description="Import a list of product facility records based on tags and categories" enumName="Import product facility"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_PROD_THRSHLD" enumTypeId="INVENTORY_SYS_JOB" description="Import a list of product thresholds based on tags and categories" enumName="Import product thresholds"/>
+    <moqui.basic.Enumeration enumId="JOB_EXP_PROD_THRSHLD" enumTypeId="INVENTORY_SYS_JOB" description="Export a list of product thresholds based on tags and categories" enumName="Export product thresholds"/>
+    <moqui.basic.Enumeration enumId="JOB_SYNC_INV_SHPFY" enumTypeId="INVENTORY_SYS_JOB" description="Sync Inventory From Shopify" enumName="Sync Inventory From Shopify"/>
+    <moqui.basic.Enumeration enumId="JOB_SNC_INV_SHPF_THD" enumTypeId="INVENTORY_SYS_JOB" description="Sync Inventory From Shopify multi-threading" enumName="Sync Inventory From Shopify in multi-threading"/>
+    <moqui.basic.Enumeration enumId="JOB_BOPIS_RALC" enumTypeId="INVENTORY_SYS_JOB" description="Automatically adjust POS inventory used from stores for BOPIS orders." enumName="BOPIS reallocation"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_PROD_NEW_BLK" enumTypeId="PRODUCT_SYS_JOB" description="Import products from eCommerce or PIM." enumName="Import new products in bulk"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_PROD_NEW" enumTypeId="PRODUCT_SYS_JOB" description="Import products from eCommerce or PIM." enumName="Import new products"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_PROD_UPD" enumTypeId="PRODUCT_SYS_JOB" description="Update product for existing products from eCommerce or PIM." enumName="Import product updates"/>
+    <moqui.basic.Enumeration enumId="JOB_UPD_PROD_ASSOC" enumTypeId="PRODUCT_SYS_JOB" description="Associate products in OMS with products in a system that is not the product catalog master." enumName="Associate products with sub catalog"/>
+    <moqui.basic.Enumeration enumId="JOB_APR_ORD" enumTypeId="ORDER_SYS_JOB" description="Check all orders and approve orders that are created." enumName="Approve orders"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_MISS_ORD" enumTypeId="ORDER_SYS_JOB" description="Import last day orders from Shopify" enumName="Import last day orders from Shopify"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_JSON_DATA" enumTypeId="MISC_SYS_JOB" description="Generic Config for import Json Data" enumName="Multi-stream import"/>
+    <moqui.basic.Enumeration enumId="JOB_CRT_SHOPIFY_ORD" enumTypeId="ORDER_SYS_JOB" description="Custom Shopify Order Import" enumName="Custom Shopify Order Import"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_GN_JSON_LIST" enumTypeId="MISC_SYS_JOB" description="Generic Config for import Json List Data" enumName="Packaged multi-stream import"/>
+    <moqui.basic.Enumeration enumId="JOB_APR_TO" enumTypeId="ORDER_SYS_JOB" description="Check all transfer orders and approve orders that are created." enumName="Approve transfer orders"/>
+    <moqui.basic.Enumeration enumId="BLK_RCNT_KIT_INV" enumTypeId="INVENTORY_SYS_JOB" description="Bulk recent kit product inventory setup" enumName="Bulk recent kit product inventory setup"/>
+    <moqui.basic.Enumeration enumId="JOB_SCHEDULED_RSTK" enumTypeId="INVENTORY_SYS_JOB" description="Scheduled restock" enumName="Scheduled restock"/>
+    <moqui.basic.Enumeration enumId="JOB_CRT_RETURN" enumTypeId="ORDER_SYS_JOB" description="Create Return Order" enumName="Create Return Order"/>
+    <moqui.basic.Enumeration enumId="JOB_CRT_SALES_ORD" enumTypeId="ORDER_SYS_JOB" description="Create Exchange Order" enumName="Create Exchange Order"/>
+    <moqui.basic.Enumeration enumId="JOB_BROKER_MAIL_ODR" enumTypeId="MISC_SYS_JOB" description="Bulk Send Brokered Order mail" enumName="Send Broker Order Mail"/>
+    <moqui.basic.Enumeration enumId="JOB_PACKED_MAIL_ODR" enumTypeId="MISC_SYS_JOB" description="Bulk Send Packed Order mail" enumName="Send Packed Order Mail"/>
+    <moqui.basic.Enumeration enumId="JOB_COMPLET_MAIL_ODR" enumTypeId="MISC_SYS_JOB" description="Bulk Send Completed Order mail" enumName="Send Completed Order Mail"/>
+    <moqui.basic.Enumeration enumId="JOB_PCK_ORD_RMDR" enumTypeId="FULFILLMENT_SYS_JOB" description="Send reminder notification for packed BOPIS orders" enumName="Packed BOPIS Order Reminder Notification"/>
+    <moqui.basic.Enumeration enumId="JOB_SND_ML_COMM" enumTypeId="FULFILLMENT_SYS_JOB" description="Send notification from communication event" enumName="Notification using Communication events"/>
+    <moqui.basic.Enumeration enumId="JOB_ACT_PROD_SHPFY" enumTypeId="PRODUCT_SYS_JOB" description="Activate Products on Shopify" enumName="Activate products on Shopify"/>
+    <moqui.basic.Enumeration enumId="RST_NEWLNCH_PROD_INV" enumTypeId="PRODUCT_SYS_JOB" description="Reset Newly Launched Product Inventory To Shopify" enumName="Reset Newly Launched Product Inventory To Shopify"/>
+    <moqui.basic.Enumeration enumId="JOB_AUTO_REJ_IDL_ORD" enumTypeId="ORDER_SYS_JOB" description="Cancel order items that have exceeded their idle duration and whose fulfillment has not yet begun" enumName="Auto Reject Idle Order Items"/>
+    <moqui.basic.Enumeration enumId="JOB_UPD_SHPY_FUL_LOC" enumTypeId="ORDER_SYS_JOB" description="Send Fulfillment Order Location To Shopify" enumName="Update Shopify Fulfillment Order Location"/>
+    <moqui.basic.Enumeration enumId="JOB_CNCL_ORD_N_ITEM" enumTypeId="ORDER_SYS_JOB" description="Update the order status of canceled orders and order Item to eCommerce." enumName="Upload canceled orders and order items"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="IMP_CRT_RTN_APS" importServiceName="createShopifyReturn" description="Create Return And Appeasement" executionModeId="DMC_QUEUE" importPath="/home/{SFTP-USER}/hotwax/shopify/TransformedReturnsAndAppeasementsFeed"/>
+</entity-facade-xml>
+

@@ -22,7 +22,7 @@ under the License.
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
 
     <!-- View entity to fetch the Return Items for Financial Reporting, using member entities of OFBiz -->
-    <view-entity entity-name="FinancialReturnItemsSyncQueue" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="FinancialReturnItemsSyncQueue" package="co.hotwax.financial">
         <description>View to get the Return Items for Financial Reporting.</description>
         <member-entity entity-alias="RI" entity-name="org.apache.ofbiz.order.return.ReturnItem"/>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="RI" join-optional="true">
@@ -35,7 +35,7 @@ under the License.
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="SCENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="OH" join-optional="true">
+        <member-entity entity-alias="SCENM" entity-name="moqui.basic.Enumeration" join-from-alias="OH" join-optional="true">
             <key-map field-name="salesChannelEnumId" related="enumId"/>
         </member-entity>
         <member-entity entity-alias="RS" entity-name="org.apache.ofbiz.order.return.ReturnStatus" join-from-alias="RI">
@@ -50,7 +50,7 @@ under the License.
             <key-map field-name="returnId"/>
             <key-map field-name="returnItemSeqId"/>
         </member-entity>
-        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH">
+        <member-entity entity-alias="PS" entity-name="org.apache.ofbiz.product.store.ProductStore" join-from-alias="OH" join-optional="true">
             <key-map field-name="productStoreId"/>
         </member-entity>
         <alias entity-alias="RI" name="returnId"/>
@@ -84,7 +84,7 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="FinancialAppeasementSyncQueue" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="FinancialAppeasementSyncQueue" package="co.hotwax.financial">
         <description>View to get the Order Items for Appeasement Financial Feed processing.</description>
         <member-entity entity-alias="RH" entity-name="org.apache.ofbiz.order.return.ReturnHeader"/>
         <member-entity entity-alias="RA" entity-name="org.apache.ofbiz.order.return.ReturnAdjustment" join-from-alias="RH">
@@ -116,7 +116,7 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="FinancialOrderItemsSyncQueue" package="co.hotwax.financial" group="ofbiz_transactional">
+    <view-entity entity-name="FinancialOrderItemsSyncQueue" package="co.hotwax.financial">
         <description>View to get the Order Items for Financial Reporting.</description>
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"></member-entity>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">

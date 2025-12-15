@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext-seed">
+    <moqui.basic.Enumeration enumId="FACEBOOK_SALES_CH" enumTypeId="ORDER_SALES_CHANNEL" enumCode="FACEBOOK" description="Facebook Channel"/>
+    <moqui.basic.Enumeration enumId="INSTAGRAM_SALES_CH" enumTypeId="ORDER_SALES_CHANNEL" enumCode="INSTAGRAM" description="Instagram Channel"/>
+    <moqui.basic.Enumeration enumId="CSR_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="CSR_CHANNEL" description="Shopify Draft Order"/>
+    <moqui.basic.Enumeration enumId="EXCHG_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EXCHANGE_CHANNEL" description="Exchange order placed through shopify"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_OIG_CHECK" enumTypeId="KEYWORD_TYPE" enumCode="SHOPIFY_OIG_CHECK" description="Check Shopify OIG Accociation"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="SHOPIFY_PROD_SKU" parentTypeId="HC_GOOD_ID_TYPE" hasTable="N" description="Shopify Product SKU"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="SHOPIFY_PROD_ID" parentTypeId="HC_GOOD_ID_TYPE" hasTable="N" description="Shopify Product ID"/>
+    <org.apache.ofbiz.product.product.GoodIdentificationType goodIdentificationTypeId="ERP_ID" parentTypeId="HC_GOOD_ID_TYPE" hasTable="N" description="Product ERP ID"/>
+    <moqui.basic.EnumerationType enumTypeId="SHOP_PROD_IDENTITY" description="Shopify shop unique product identifier"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_PRODUCT_ID" enumTypeId="SHOP_PROD_IDENTITY" enumCode="SHOPIFY_PRODUCT_ID" description="Shopify Product Id"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_PRODUCT_SKU" enumTypeId="SHOP_PROD_IDENTITY" enumCode="SHOPIFY_PRODUCT_SKU" description="Shopify Product SKU"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_BARCODE" enumTypeId="SHOP_PROD_IDENTITY" enumCode="SHOPIFY_BARCODE" description="Shopify Product Barcode"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_ORD_ID" enumTypeId="ORDER_IDENTITY" enumCode="SHOPIFY_ORD_ID" description="Shopify Order Id"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_ORD_NO" enumTypeId="ORDER_IDENTITY" enumCode="SHOPIFY_ORD_NO" description="Shopify Order Number"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_ORD_NAME" enumTypeId="ORDER_IDENTITY" enumCode="SHOPIFY_ORD_NAME" description="Shopify Order Name"/>
+    <moqui.basic.Enumeration enumId="OLD_SHOPIFY_ORD_ID" enumTypeId="ORDER_IDENTITY" enumCode="OLD_SHOPIFY_ORD_ID" description="Old Shopify Order Id"/>
+    <moqui.basic.Enumeration enumId="OLD_SHOPIFY_ORD_NO" enumTypeId="ORDER_IDENTITY" enumCode="OLD_SHOPIFY_ORD_NO" description="Old Shopify Order Number"/>
+    <moqui.basic.Enumeration enumId="OLD_SHOPIFY_ORD_NAME" enumTypeId="ORDER_IDENTITY" enumCode="OLD_SHOPIFY_ORD_NAME" description="Old Shopify Order Name"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_FAC_ID" enumTypeId="FACILITY_IDENTITY" enumCode="SHOP_FAC_ID" description="Shopify Facility Id"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_RTN_ID" enumTypeId="RETURN_IDENTITY" enumCode="SHOPIFY_RTN_ID" description="Shopify Return Id"/>
+    <moqui.basic.Enumeration enumId="OLD_SHOPIFY_RTN_ID" enumTypeId="RETURN_IDENTITY" enumCode="OLD_SHOPIFY_RTN_ID" description="Old Shopify Return Id"/>
+    <moqui.basic.Enumeration enumId="SHPY_ORPN_RTN_ORD_ID" enumTypeId="RETURN_IDENTITY" enumCode="SHPY_ORPN_RTN_ORD_ID" description="Shopify retruns with no Order Id"/>
+    <org.apache.ofbiz.party.party.PartyIdentificationType partyIdentificationTypeId="SHOPIFY_CUST_ID" hasTable="N" description="Shopify Customer Id"/>
+    <moqui.basic.EnumerationType enumTypeId="SHOPIFY_SHOP_ACCESS" description="Shopify shop access"/>
+    <moqui.basic.Enumeration enumId="SHOP_NO_ACCESS" enumTypeId="SHOPIFY_SHOP_ACCESS" enumCode="SHOP_NO" description="Shopify shop no access"/>
+    <moqui.basic.Enumeration enumId="SHOP_READ_ACCESS" enumTypeId="SHOPIFY_SHOP_ACCESS" enumCode="SHOP_READ" description="Shopify shop read access"/>
+    <moqui.basic.Enumeration enumId="SHOP_RW_ACCESS" enumTypeId="SHOPIFY_SHOP_ACCESS" enumCode="SHOP_READ_WRITE" description="Shopify shop read and write access"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_OTHR_GTWAY" description="Ext Other Gateways"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_VISA" description="Ext VISA" paymentMethodCode="VISA"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_AMEX" description="Ext AMEX" paymentMethodCode="American Express"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_MASTERCARD" description="Ext Mastercard" paymentMethodCode="Mastercard"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_DISCOVER" description="Ext Discover" paymentMethodCode="Discover"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_PAYPAL" description="Ext PayPal" paymentMethodCode="paypal"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_AFTRPAY_NA" description="Ext Afterpay North America" paymentMethodCode="afterpay_north_america"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_AFTRPAY" description="Ext Afterpay" paymentMethodCode="afterpay"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_KLARNA" description="Ext Klarna" paymentMethodCode="Klarna"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_GIFT_CARD" description="Ext Gift Card" paymentMethodCode="gift_card"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_PAY_INSTALL" description="Ext Shopify Installments " paymentMethodCode="shopify_installments"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_CASH_ON_DEL" description="Ext Cash on Delivery" paymentMethodCode="Cash on Delivery (COD)"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXCHANGE_CREDIT" description="Exchange Credit" paymentMethodCode="Exchange Credit"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXCHANGE_PAYMENT" description="Exchange Payment" paymentMethodCode="Exchange Payment"/>
+    <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="SHOP_STORE_CREDIT" description="Shopify Store Credit" paymentMethodCode="Store Credit"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_UPLOAD_LOG" enumTypeId="LOG_TYPE" enumCode="ShopifyUploadLog" description="Shopify Upload Log"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_CANCELLATION" enumTypeId="ODR_ITM_CH_REASON" enumCode="SHOPIFY_CANCELLATION" description="Shopify Cancellation"/>
+    <moqui.basic.EnumerationType enumTypeId="SHOPIFY_TYPE" description="Shopify Types"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_PRODUCT_TYPE" enumTypeId="SHOPIFY_TYPE" enumCode="SHOPIFY_PRODUCT_TYPE" description="Shopify Product Type"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_ORDER_SOURCE" enumTypeId="SHOPIFY_TYPE" enumCode="SHOPIFY_ORDER_SALES_CHANNEL" description="Shopify Order Sales Channel"/>
+    <moqui.basic.Enumeration enumId="SHOP_ORD_CUST_CLASS" enumTypeId="SHOPIFY_TYPE" enumCode="SHOP_ORD_CUST_CLASS" description="Shopify order customer classification"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_PAYMENT_TYPE" enumTypeId="SHOPIFY_TYPE" enumCode="SHOPIFY_PAYMENT_TYPE" description="Shopify Payment Method Type"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_PRODUCT_TAG" enumTypeId="SHOPIFY_TYPE" enumCode="SHOPIFY_PRODUCT_TAG" description="Shopify Product Tag"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_OI_ASSOC" enumTypeId="SHOPIFY_TYPE" enumCode="SHOPIFY_OI_ASSOC" description="Shopify Order Item Association"/>
+    <moqui.basic.Enumeration enumId="SHOPIFY_OIG_ASSOC" enumTypeId="SHOPIFY_TYPE" enumCode="SHOPIFY_OIG_ASSOC" description="Shopify Order Item Group Association"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="SHOPIFY_RTN_REASON" description="Shopify Return Reason"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="COLOR" description="The buyer is returning the item due to dissatisfaction with the color." sequenceId="01" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="DEFECTIVE" description="The item is being returned because of damage or a defect." sequenceId="02" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="NOT_AS_DESCRIBED" description="The item is being returned as it did not match the provided description." sequenceId="03" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="OTHER" description="The item is being returned for a different reason. A return reason note is also provided for this case." sequenceId="04" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="SIZE_TOO_LARGE" description="The item is being returned because it is larger than the desired size." sequenceId="05" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="SIZE_TOO_SMALL" description="The item is being returned because it is smaller than the desired size." sequenceId="06" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="STYLE" description="The buyer is returning the item due to dissatisfaction with the chosen style." sequenceId="07" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="UNKNOWN" description="The item is being returned for an unknown reason." sequenceId="08" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="UNWANTED" description="The item is being returned because the customer changed their mind." sequenceId="09" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="WRONG_ITEM" description="The item is being returned because the customer received the incorrect item." sequenceId="10" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="MISCELLANEOUS" description="Miscellaneous return reasons that fall outside the Shopify default list." sequenceId="99" parentTypeId="SHOPIFY_RTN_REASON"/>
+    <org.apache.ofbiz.product.product.Product productId="GIFT_CARD" productTypeId="DIGITAL_GOOD" internalName="Gift Card" productName="Gift Card Placeholder" description="Placeholder Gift Card Product." isVirtual="N" isVariant="Y"/>
+    <org.apache.ofbiz.product.product.GoodIdentification goodIdentificationTypeId="SKU" productId="GIFT_CARD" idValue="GIFT_CARD" fromDate="2024-01-01 12:00:00.000"/>
+    <org.apache.ofbiz.product.product.GoodIdentification goodIdentificationTypeId="SHOPIFY_PROD_SKU" productId="GIFT_CARD" idValue="GIFT_CARD" fromDate="2024-01-01 12:00:00.000"/>
+</entity-facade-xml>
+

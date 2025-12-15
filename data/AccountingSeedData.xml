@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.EnumerationType enumTypeId="PGT_CODE" description="Payment Gateway Transaction Code"/>
+    <moqui.basic.Enumeration enumId="PGT_AUTHORIZE" enumTypeId="PGT_CODE" enumCode="AUTHORIZE" description="Authorize"/>
+    <moqui.basic.Enumeration enumId="PGT_CAPTURE" enumTypeId="PGT_CODE" enumCode="CAPTURE" description="Capture"/>
+    <moqui.basic.Enumeration enumId="PGT_RELEASE" enumTypeId="PGT_CODE" enumCode="RELEASE" description="Release"/>
+    <moqui.basic.Enumeration enumId="PGT_REFUND" enumTypeId="PGT_CODE" enumCode="REFUND" description="Refund"/>
+    <moqui.basic.Enumeration enumId="PGT_CREDIT" enumTypeId="PGT_CODE" enumCode="CREDIT" description="Credit"/>
+    <moqui.basic.EnumerationType enumTypeId="CREDIT_CARD_TYPE" description="Credit Card Type"/>
+    <moqui.basic.Enumeration enumId="CCT_VISA" enumTypeId="CREDIT_CARD_TYPE" enumCode="Visa" description="Visa"/>
+    <moqui.basic.Enumeration enumId="CCT_MASTERCARD" enumTypeId="CREDIT_CARD_TYPE" enumCode="MasterCard" description="Master Card"/>
+    <moqui.basic.Enumeration enumId="CCT_AMERICANEXPRESS" enumTypeId="CREDIT_CARD_TYPE" enumCode="AmericanExpress" description="American Express"/>
+    <moqui.basic.Enumeration enumId="CCT_DINERSCLUB" enumTypeId="CREDIT_CARD_TYPE" enumCode="DinersClub" description="Diners Club"/>
+    <moqui.basic.Enumeration enumId="CCT_DISCOVER" enumTypeId="CREDIT_CARD_TYPE" enumCode="Discover" description="Discover"/>
+    <moqui.basic.Enumeration enumId="CCT_ENROUTE" enumTypeId="CREDIT_CARD_TYPE" enumCode="EnRoute" description="EnRoute"/>
+    <moqui.basic.Enumeration enumId="CCT_CARTEBLANCHE" enumTypeId="CREDIT_CARD_TYPE" enumCode="CarteBlanche" description="Carte Blanche"/>
+    <moqui.basic.Enumeration enumId="CCT_JCB" enumTypeId="CREDIT_CARD_TYPE" enumCode="JCB" description="JCB"/>
+    <moqui.basic.Enumeration enumId="CCT_SOLO" enumTypeId="CREDIT_CARD_TYPE" enumCode="Solo" description="Solo"/>
+    <moqui.basic.Enumeration enumId="CCT_SWITCH" enumTypeId="CREDIT_CARD_TYPE" enumCode="Switch" description="Switch"/>
+    <moqui.basic.Enumeration enumId="CCT_VISAELECTRON" enumTypeId="CREDIT_CARD_TYPE" enumCode="VisaElectron" description="Visa Electron"/>
+    <moqui.basic.Enumeration enumId="CCT_UATP" enumTypeId="CREDIT_CARD_TYPE" enumCode="UATP" description="Universal Air Travel Plan"/>
+    <moqui.basic.StatusType statusTypeId="PMNT_STATUS" description="Payment Status"/>
+    <moqui.basic.StatusItem statusId="PMNT_NOT_PAID" statusTypeId="PMNT_STATUS" statusCode="NOT_PAID" description="Not Paid"/>
+    <moqui.basic.StatusItem statusId="PMNT_SENT" statusTypeId="PMNT_STATUS" statusCode="SENT" description="Sent"/>
+    <moqui.basic.StatusItem statusId="PMNT_RECEIVED" statusTypeId="PMNT_STATUS" statusCode="RECEIVED" description="Received"/>
+    <moqui.basic.StatusItem statusId="PMNT_CONFIRMED" statusTypeId="PMNT_STATUS" statusCode="CONFIRMED" description="Confirmed"/>
+    <moqui.basic.StatusItem statusId="PMNT_CANCELLED" statusTypeId="PMNT_STATUS" statusCode="CANCELLED" description="Cancelled"/>
+    <moqui.basic.StatusItem statusId="PMNT_VOID" statusTypeId="PMNT_STATUS" statusCode="VOID" description="Voided"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_SENT" transitionName="Payment Send"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_RECEIVED" transitionName="Payment Received"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_CANCELLED" transitionName="Payment Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_CONFIRMED" transitionName="Payment Confirmed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_CONFIRMED" transitionName="Payment Confirmed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_VOID" transitionName="Payment Voided"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_VOID" transitionName="Payment Voided"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_VOID" transitionName="Payment Voided"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_NOT_PAID" transitionName="Payment Not Paid"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_NOT_PAID" transitionName="Payment Not Paid"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_SENT" transitionName="Payment Confirmed to Sent"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_RECEIVED" transitionName="Payment Confirmed to Received"/>
+    <org.apache.ofbiz.accounting.ledger.ProductAverageCostType productAverageCostTypeId="SIMPLE_AVG_COST" hasTable="N" description="Simple Average Cost"/>
+    <org.apache.ofbiz.accounting.ledger.ProductAverageCostType productAverageCostTypeId="WEIGHTED_AVG_COST" hasTable="N" description="Weighted Average Cost"/>
+    <org.apache.ofbiz.accounting.ledger.ProductAverageCostType productAverageCostTypeId="MOVING_AVG_COST" hasTable="N" description="Moving Average Cost"/>
+</entity-facade-xml>
+

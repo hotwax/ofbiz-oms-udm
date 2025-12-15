@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <org.apache.ofbiz.party.party.Party partyId="SHOPIFY_WEBHOOK_USER" partyTypeId="PERSON" statusId="PARTY_ENABLED"/>
+    <org.apache.ofbiz.party.party.Person partyId="SHOPIFY_WEBHOOK_USER" firstName="Shopify" lastName="Webhook"/>
+    <org.apache.ofbiz.party.party.PartyRole partyId="SHOPIFY_WEBHOOK_USER" roleTypeId="_NA_"/>
+    <org.apache.ofbiz.party.party.PartyRole partyId="SHOPIFY_WEBHOOK_USER" roleTypeId="CONTACT"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="IMP_SHOPIFY_CUST" importServiceName="createShopifyCustomer" description="Import Shopify customer data" scriptTitle="Shopify Customer"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="CRT_SHOPIFY_ORDER" importServiceName="createShopifyOrder" description="Import Shopify Orders" scriptTitle="CreateShopifyOrder"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="CRT_SH_DUMMY_ORDER" importServiceName="createShopifyDummyOrder" scriptTitle="createShopifyDummyOrder"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="CRT_RCV_SHOP_RETURN" importServiceName="createAndReceiveShopifyReturn" scriptTitle="Create Shopify Return Shipment"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="SYNC_SHOPIFY_INV" importServiceName="syncShopifyInventory" description="Sync shopify inventory" scriptTitle="Shopify Inventory"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="IMP_INV_VAR_SHOPIFY" importServiceName="createVarianceAndUpdateOnShopify" description="Create Inventory Variance and Update on shopify" scriptTitle="Inventory Variance"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="SYNC_INV_SHPF_MLTTHD" importServiceName="syncShopifyInventory" description="Sync shopify inventory in multi-threading" scriptTitle="Process Shopify Inventory in multi-threading" multiThreading="Y" importPath=""/>
+    <co.hotwax.datamanager.DataManagerConfig configId="SHOPIFY_ORD_ITM_CNCL" importServiceName="cancelShopifyOrderItem" description="Sync Shopify cancel order item" scriptTitle="CancelShopifyOrderItem"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="CRT_SHOP_APPE_RETURN" importServiceName="createAndReceiveShopifyReturnAppeasement" scriptTitle="Create Shopify Appeasement Return"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="COMP_SHPF_FULFIL_ITM" importServiceName="fulfillmentUpdateFromShopify" description="Sync Shopify fulfilled items" scriptTitle="Complete Shopify fulfilled items"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="SOP_IMPORT_ORDER" exportServiceName="importShopifyOrdersByIds" description="Import Shopify Orders by Id" scriptTitle="Shopify Orders" fileNamePattern="Shopify_${sequence}"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="SOP_CANCL_ODR_ITMS" exportServiceName="cancelShopifyOrderItemsByIds" description="Cancel Shopify Order Items" scriptTitle="Cancel Shopify Order Items" fileNamePattern="Shopify_${sequence}"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="SOP_IMPORT_RETURNS" exportServiceName="importShopifyReturnsByIds" description="Import Shopify Returns" scriptTitle="Shopify Returns" fileNamePattern="Shopify_${sequence}"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="SOP_COM_ORD_IMPORT" exportServiceName="importShopifyFulfilledItemsByIds" description="Sync Shopify fulfilled orders" scriptTitle="Sync shopify fulfilled orders" fileNamePattern="Shopify_${sequence}"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="SHOP_PREORDER_SYNC" exportServiceName="pushPreorderCatalogOnShopify" description="Preorder catalog" scriptTitle="Sync preorder/backorder catalog" fileNamePattern="shop_preorder_catalog_${date}" importPath="component://shopify-connector/template/graphQl/BulkVariantUpdate.ftl" exportPath="runtime/datamanager/bulk_imports/${shopifyConfigId}/${configId}"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="GRAPHQL_ADD_TAGS" exportServiceName="bulkAddProductPreAndBackOrderTags" description="Add pre-order/backorder tags to parent products on Shopify" scriptTitle="Add pre-order/backorder tags" fileNamePattern="add_shopify_product_preorder_tag_${date}" importPath="component://shopify-connector/template/graphQl/BulkUpdateProductTags.ftl" exportPath="runtime/datamanager/bulk_imports/${shopifyConfigId}/${configId}"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="GRAPHQL_REMOVE_TAGS" exportServiceName="bulkRemoveProductPreAndBackOrderTags" description="Remove pre-order/backorder tags to parent products on Shopify" scriptTitle="Remove pre-order/backorder tags" fileNamePattern="remove_shopify_preorder_tag_${date}" importPath="component://shopify-connector/template/graphQl/BulkUpdateProductTags.ftl" exportPath="runtime/datamanager/bulk_imports/${shopifyConfigId}/${configId}"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="BULK_IMP_VARIANTS_MF" description="Import metafields for SKUs from Shopify for pre-order and backorder shipping dates" scriptTitle="Import variant metafields" importPath="component://shopify-connector/template/graphQl/BulkVariantsMetafieldQuery.ftl"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="BULK_IMP_ORDERS_MF" description="Import Shopify Order Metafields" scriptTitle="Import Shopify Order Metafields" importPath="component://shopify-connector/template/graphQl/BulkOrderMetafieldsQuery.ftl"/>
+    <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="SHOPIFY_CUSTOMER" hasTable="N" description="Shopify Customer Classification"/>
+    <org.apache.ofbiz.party.party.PartyClassificationGroup partyClassificationGroupId="Guest" partyClassificationTypeId="SHOPIFY_CUSTOMER" description="Shopify guest customer"/>
+    <org.apache.ofbiz.party.party.PartyClassificationGroup partyClassificationGroupId="LoyaltyCustomer" partyClassificationTypeId="SHOPIFY_CUSTOMER" description="Shopify Loyalty customer"/>
+    <org.apache.ofbiz.party.party.PartyClassificationGroup partyClassificationGroupId="LoyaltyPlus" partyClassificationTypeId="SHOPIFY_CUSTOMER" description="Shopify Loyalty plus customer"/>
+    <org.apache.ofbiz.party.party.PartyClassificationType partyClassificationTypeId="ACCT_SOURCE_INFO" hasTable="N" description="Account Source"/>
+    <org.apache.ofbiz.party.party.PartyClassificationGroup partyClassificationGroupId="WEB_SALES_CHANNEL" partyClassificationTypeId="ACCT_SOURCE_INFO" description="Web Sales Channel"/>
+    <moqui.basic.Enumeration enumId="JOB_IMP_ORD_UPD" enumTypeId="ORDER_SYS_JOB" description="Import order updates from eCommerce." enumName="Import order updates from Shopify"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="UPD_SHOPIFY_ORDER" importServiceName="updateOrderItemFromShopify" scriptTitle="Sync Shopify order items"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="UPD_SHOPIFY_ORD_FAC" importServiceName="updateOrderItemFulfillmentStatusFromShopify" scriptTitle="Sync Shopify order items status"/>
+</entity-facade-xml>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.StatusType statusTypeId="CNTNTAPPR_STATUS" description="Content Approval Status"/>
+    <moqui.basic.StatusType statusTypeId="CONTENT_STATUS" description="Content"/>
+    <moqui.basic.StatusItem statusId="CTNT_IN_PROGRESS" statusTypeId="CONTENT_STATUS" statusCode="IN_PROGRESS" description="In Progress"/>
+    <moqui.basic.StatusItem statusId="CTNT_INITIAL_DRAFT" statusTypeId="CONTENT_STATUS" statusCode="INITIAL_DRAFT" description="Initial Draft"/>
+    <moqui.basic.StatusItem statusId="CTNT_PUBLISHED" statusTypeId="CONTENT_STATUS" statusCode="PUBLISHED" description="Published"/>
+    <moqui.basic.StatusItem statusId="CTNT_DEACTIVATED" statusTypeId="CONTENT_STATUS" statusCode="DEACTIVATED" description="Deactivated"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="CTNT_IN_PROGRESS" toStatusId="CTNT_INITIAL_DRAFT" transitionName="First draft"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="CTNT_IN_PROGRESS" toStatusId="CTNT_PUBLISHED" transitionName="published, not revised"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="CTNT_INITIAL_DRAFT" toStatusId="CTNT_PUBLISHED" transitionName="Initial draft published"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="CTNT_PUBLISHED" toStatusId="CTNT_DEACTIVATED" transitionName="Deactivated"/>
+</entity-facade-xml>
+

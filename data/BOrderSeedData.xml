@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="PROMOTION_ADJUSTMENT" hasTable="N" description="Promotion"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="REPLACE_ADJUSTMENT" hasTable="N" description="Replacement"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="DISCOUNT_ADJUSTMENT" hasTable="N" description="Discount"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="DONATION_ADJUSTMENT" hasTable="N" description="Donation"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="FEE" hasTable="N" description="Fee"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="MISCELLANEOUS_CHARGE" hasTable="N" description="Miscellaneous Charges"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="SALES_TAX" hasTable="N" description="Sales Tax"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="SURCHARGE_ADJUSTMENT" hasTable="N" description="Surcharge"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="ADDITIONAL_FEATURE" hasTable="N" description="Additional Feature"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="WARRANTY_ADJUSTMENT" hasTable="N" description="Warranty"/>
+    <org.apache.ofbiz.order.order.OrderAdjustmentType orderAdjustmentTypeId="MKTG_PKG_AUTO_ADJUST" hasTable="N" description="Marketing Package Adjustment"/>
+    <org.apache.ofbiz.order.order.OrderItemType orderItemTypeId="PRODUCT_ORDER_ITEM" hasTable="N" description="Product Item"/>
+    <org.apache.ofbiz.order.order.OrderType orderTypeId="PURCHASE_ORDER" hasTable="N" description="Purchase"/>
+    <org.apache.ofbiz.order.order.OrderType orderTypeId="SALES_ORDER" hasTable="N" description="Sales"/>
+    <org.apache.ofbiz.order.order.OrderItemAssocType orderItemAssocTypeId="EXCHANGE" hasTable="N" description="Exchange Order"/>
+    <moqui.basic.EnumerationType enumTypeId="ORDER_SALES_CHANNEL" description="Order Sales Channel"/>
+    <moqui.basic.Enumeration enumId="WEB_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="WEB_CHANNEL" description="Web Channel"/>
+    <moqui.basic.Enumeration enumId="UNKNWN_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="UNKOWN_CHANNEL" description="Unknown Channel"/>
+    <moqui.basic.EnumerationType enumTypeId="ODR_ITM_CHANGE_TYPE" description="Order Item Change Type"/>
+    <moqui.basic.Enumeration enumId="ODR_ITM_UPDATE" enumTypeId="ODR_ITM_CHANGE_TYPE" enumCode="ITM_UPDATE" description="Order Item Update"/>
+    <moqui.basic.Enumeration enumId="ODR_ITM_CANCEL" enumTypeId="ODR_ITM_CHANGE_TYPE" enumCode="ITM_CANCEL" description="Order Item Cancel"/>
+    <moqui.basic.Enumeration enumId="ODR_ITM_APPEND" enumTypeId="ODR_ITM_CHANGE_TYPE" enumCode="ITM_APPEND" description="Order Item Append"/>
+    <moqui.basic.EnumerationType enumTypeId="ODR_ITM_CH_REASON" description="Order Item Change Reason"/>
+    <moqui.basic.Enumeration enumId="OICR_MISORDER_ITEM" enumTypeId="ODR_ITM_CH_REASON" enumCode="MISORDER" description="Mis-Ordered Item"/>
+    <moqui.basic.Enumeration enumId="OICR_CHANGE_MIND" enumTypeId="ODR_ITM_CH_REASON" enumCode="CHANGE_MIND" description="Changed Mind"/>
+    <moqui.basic.StatusType statusTypeId="ORDER_STATUS" description="Order"/>
+    <moqui.basic.StatusItem statusId="ORDER_CREATED" statusTypeId="ORDER_STATUS" statusCode="CREATED" description="Created" statusAge="0"/>
+    <moqui.basic.StatusItem statusId="ORDER_PROCESSING" statusTypeId="ORDER_STATUS" statusCode="PROCESSING" description="Processing"/>
+    <moqui.basic.StatusItem statusId="ORDER_APPROVED" statusTypeId="ORDER_STATUS" statusCode="APPROVED" description="Approved" statusAge="50"/>
+    <moqui.basic.StatusItem statusId="ORDER_SENT" statusTypeId="ORDER_STATUS" statusCode="SENT" description="Sent"/>
+    <moqui.basic.StatusItem statusId="ORDER_HOLD" statusTypeId="ORDER_STATUS" statusCode="HELD" description="Held"/>
+    <moqui.basic.StatusItem statusId="ORDER_COMPLETED" statusTypeId="ORDER_STATUS" statusCode="COMPLETED" description="Completed" statusAge="100"/>
+    <moqui.basic.StatusItem statusId="ORDER_REJECTED" statusTypeId="ORDER_STATUS" statusCode="REJECTED" description="Rejected"/>
+    <moqui.basic.StatusItem statusId="ORDER_CANCELLED" statusTypeId="ORDER_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
+    <moqui.basic.StatusType statusTypeId="ORDER_ITEM_STATUS" parentTypeId="ORDER_STATUS" description="Order Item"/>
+    <moqui.basic.StatusItem statusId="ITEM_CREATED" statusTypeId="ORDER_ITEM_STATUS" statusCode="CREATED" description="Created" statusAge="0"/>
+    <moqui.basic.StatusItem statusId="ITEM_APPROVED" statusTypeId="ORDER_ITEM_STATUS" statusCode="APPROVED" description="Approved" statusAge="50"/>
+    <moqui.basic.StatusItem statusId="ITEM_COMPLETED" statusTypeId="ORDER_ITEM_STATUS" statusCode="COMPLETED" description="Completed" statusAge="100"/>
+    <moqui.basic.StatusItem statusId="ITEM_REJECTED" statusTypeId="ORDER_ITEM_STATUS" statusCode="REJECTED" description="Rejected"/>
+    <moqui.basic.StatusItem statusId="ITEM_CANCELLED" statusTypeId="ORDER_ITEM_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_APPROVED" transitionName="Approve Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_HOLD" transitionName="Hold Order" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_REJECTED" transitionName="Reject Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_CANCELLED" transitionName="Cancel Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_HOLD" transitionName="Hold Order" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_APPROVED" transitionName="Approve Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_REJECTED" transitionName="Reject Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_CANCELLED" transitionName="Cancel Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_COMPLETED" transitionName="Complete Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_CANCELLED" transitionName="Cancel Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_HOLD" transitionName="Hold Order" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_HOLD" toStatusId="ORDER_APPROVED" transitionName="Approve Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_HOLD" toStatusId="ORDER_CANCELLED" transitionName="Cancel Order"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_SENT" toStatusId="ORDER_COMPLETED" transitionName="Order Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_SENT" toStatusId="ORDER_CANCELLED" transitionName="Order Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_APPROVED" transitionName="Approve Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_REJECTED" transitionName="Reject Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_CANCELLED" transitionName="Cancel Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_COMPLETED" transitionName="Complete Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_CANCELLED" transitionName="Cancel Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_COMPLETED" toStatusId="ITEM_APPROVED" transitionName="Approve Item"/>
+    <moqui.basic.StatusType statusTypeId="PAYMENT_PREF_STATUS" description="Payment Preference"/>
+    <moqui.basic.StatusItem statusId="PAYMENT_NOT_RECEIVED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="NOT_RECEIVED" description="Not-Received" statusAge="0"/>
+    <moqui.basic.StatusItem statusId="PAYMENT_RECEIVED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="RECEIVED" description="Received" statusAge="20"/>
+    <moqui.basic.StatusItem statusId="PAYMENT_NOT_AUTH" statusTypeId="PAYMENT_PREF_STATUS" statusCode="NOT_AUTHORIZED" description="Not-Authorized" statusAge="40"/>
+    <moqui.basic.StatusItem statusId="PAYMENT_AUTHORIZED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="AUTHORIZED" description="Authorized" statusAge="50"/>
+    <moqui.basic.StatusItem statusId="PAYMENT_SETTLED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="SETTLED" description="Settled" statusAge="100"/>
+    <moqui.basic.StatusItem statusId="PAYMENT_DECLINED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="DECLINED" description="Declined" statusAge="101"/>
+    <moqui.basic.StatusItem statusId="PAYMENT_REFUNDED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="REFUNDED" description="Refunded" statusAge="110"/>
+    <moqui.basic.StatusItem statusId="PAYMENT_CANCELLED" statusTypeId="PAYMENT_PREF_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_RECEIVED" toStatusId="PAYMENT_RECEIVED" transitionName="Payment Received"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_RECEIVED" toStatusId="PAYMENT_CANCELLED" transitionName="Payment Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_AUTH" toStatusId="PAYMENT_AUTHORIZED" transitionName="Payment Authorized"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_AUTH" toStatusId="PAYMENT_CANCELLED" transitionName="Payment Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_AUTHORIZED" toStatusId="PAYMENT_SETTLED" transitionName="Payment Settled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_AUTHORIZED" toStatusId="PAYMENT_CANCELLED" transitionName="Payment Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_SETTLED" toStatusId="PAYMENT_REFUNDED" transitionName="Payment Refunded"/>
+    <moqui.basic.StatusType statusTypeId="ORDER_RETURN_STTS" description="Order Return Status For Customer Returns"/>
+    <moqui.basic.StatusItem statusId="RETURN_REQUESTED" statusTypeId="ORDER_RETURN_STTS" statusCode="REQUESTED" description="Requested" statusAge="0"/>
+    <moqui.basic.StatusItem statusId="RETURN_ACCEPTED" statusTypeId="ORDER_RETURN_STTS" statusCode="ACCEPTED" description="Accepted" statusAge="50"/>
+    <moqui.basic.StatusItem statusId="RETURN_RECEIVED" statusTypeId="ORDER_RETURN_STTS" statusCode="RECEIVED" description="Received" statusAge="80"/>
+    <moqui.basic.StatusItem statusId="RETURN_COMPLETED" statusTypeId="ORDER_RETURN_STTS" statusCode="COMPLETED" description="Completed" statusAge="100"/>
+    <moqui.basic.StatusItem statusId="RETURN_MAN_REFUND" statusTypeId="ORDER_RETURN_STTS" statusCode="MANUAL_REFUND" description="Manual Refund Required"/>
+    <moqui.basic.StatusItem statusId="RETURN_CANCELLED" statusTypeId="ORDER_RETURN_STTS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_ACCEPTED" transitionName="Requested Return Accepted"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_CANCELLED" transitionName="Requested Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_ACCEPTED" toStatusId="RETURN_RECEIVED" transitionName="Accepted Return Received"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_ACCEPTED" toStatusId="RETURN_CANCELLED" transitionName="Accepted Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_COMPLETED" transitionName="Received Return Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_CANCELLED" transitionName="Received Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_MAN_REFUND" transitionName="Received Return Requires Manual Refund"/>
+    <moqui.basic.StatusType statusTypeId="PORDER_RETURN_STTS" description="Order Return Status For Supplier Returns"/>
+    <moqui.basic.StatusItem statusId="SUP_RETURN_REQUESTED" statusTypeId="PORDER_RETURN_STTS" statusCode="REQUESTED" description="Requested"/>
+    <moqui.basic.StatusItem statusId="SUP_RETURN_ACCEPTED" statusTypeId="PORDER_RETURN_STTS" statusCode="ACCEPTED" description="Accepted"/>
+    <moqui.basic.StatusItem statusId="SUP_RETURN_SHIPPED" statusTypeId="PORDER_RETURN_STTS" statusCode="SHIPPED" description="Shipped"/>
+    <moqui.basic.StatusItem statusId="SUP_RETURN_COMPLETED" statusTypeId="PORDER_RETURN_STTS" statusCode="COMPLETED" description="Completed"/>
+    <moqui.basic.StatusItem statusId="SUP_RETURN_CANCELLED" statusTypeId="PORDER_RETURN_STTS" statusCode="CANCELLED" description="Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_REQUESTED" toStatusId="SUP_RETURN_ACCEPTED" transitionName="Requested Return Accepted"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_REQUESTED" toStatusId="SUP_RETURN_CANCELLED" transitionName="Requested Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_ACCEPTED" toStatusId="SUP_RETURN_SHIPPED" transitionName="Accepted Return Shipped"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_ACCEPTED" toStatusId="SUP_RETURN_CANCELLED" transitionName="Accepted Return Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_SHIPPED" toStatusId="SUP_RETURN_COMPLETED" transitionName="Shipped Return Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SUP_RETURN_SHIPPED" toStatusId="SUP_RETURN_CANCELLED" transitionName="Shipped Return Cancelled"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_PROMOTION_ADJ" hasTable="N" description="Return Promotion"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_REPLACE_ADJ" hasTable="N" description="Return Replacement"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_DISCOUNT_ADJ" hasTable="N" description="Return Discount"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_FEE_ADJ" hasTable="N" description="Return Fee"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_MISC_ADJ" hasTable="N" description="Return Miscellaneous Charges"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_SALES_TAX_ADJ" hasTable="N" description="Return Sales Tax"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_VAT_TAX_ADJ" hasTable="N" description="Return VAT Tax"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_VAT_PC_ADJ" hasTable="N" description="Return VAT Price Correction"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_SHIPPING_ADJ" hasTable="N" description="Return Shipping and Handling"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_SURCHARGE_ADJ" hasTable="N" description="Return Surcharge"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_ADD_FEATURE_ADJ" hasTable="N" description="Return Additional Feature"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_WARRANTY_ADJ" hasTable="N" description="Return Warranty"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_MKTG_PKG_ADJ" hasTable="N" description="Return Marketing Package Adjustment"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_MAN_ADJ" hasTable="N" description="Return Manual Adjustment"/>
+    <org.apache.ofbiz.order.return.ReturnHeaderType returnHeaderTypeId="CUSTOMER_RETURN" description="Return from Customer"/>
+    <org.apache.ofbiz.order.return.ReturnHeaderType returnHeaderTypeId="VENDOR_RETURN" description="Return to Vendor"/>
+    <org.apache.ofbiz.order.return.ReturnHeaderType returnHeaderTypeId="APPEASEMENT" description="Appeasement"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_NPROD_ITEM" description="Return Non-Product Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_PROD_ITEM" description="Return Product Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_FPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Finished Good Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_LOST_ITEM" parentTypeId="RET_PROD_ITEM" description="Lost in Shipment"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_DPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Digital Good Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_FDPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Finished/Digital Good Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_RPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Raw Material Good Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_PROD_FEATR_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Product-Feature Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_SPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Service Product Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_WE_ITEM" parentTypeId="RET_NPROD_ITEM" description="Return Work-Effort Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_TE_ITEM" parentTypeId="RET_NPROD_ITEM" description="Return Time-Entry Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemType returnItemTypeId="RET_MPROD_ITEM" parentTypeId="RET_PROD_ITEM" description="Return Raw Material Item"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="FINISHED_GOOD" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="MARKETING_PKG_AUTO" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="MARKETING_PKG_PICK" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="AGGREGATED_CONF" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DIGITAL_GOOD" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_DPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="FINDIG_GOOD" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_FDPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RAW_MATERIAL" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_RPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="PROMOTION_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_PROMOTION_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="REPLACE_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_REPLACE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DISCOUNT_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_DISCOUNT_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="FEE" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_FEE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="MISCELLANEOUS_CHARGE" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_MISC_CHARGE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SALES_TAX" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_SALES_TAX_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="VAT_TAX" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_VAT_TAX_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="VAT_PRICE_CORRECT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_VAT_PC_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SHIPPING_CHARGES" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_SHIPPING_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SURCHARGE_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_SURCHARGE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="ADDITIONAL_FEATURE" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_ADD_FEATURE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="WARRANTY_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_WARRANTY_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RENTAL_ORDER_ITEM" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="ASSET_USAGE_OUT_IN" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SERVICE_PRODUCT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_SPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SERVICE" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_SPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RAW_MATERIAL" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_MPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="FINISHED_GOOD" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="MARKETING_PKG_AUTO" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="MARKETING_PKG_PICK" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="AGGREGATED_CONF" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DIGITAL_GOOD" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_DPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="FINDIG_GOOD" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FDPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RAW_MATERIAL" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_RPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="PROMOTION_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_PROMOTION_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="REPLACE_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_REPLACE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DISCOUNT_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_DISCOUNT_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="FEE" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FEE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="MISCELLANEOUS_CHARGE" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_MISC_CHARGE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SALES_TAX" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SALES_TAX_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="VAT_TAX" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_VAT_TAX_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="VAT_PRICE_CORRECT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_VAT_PC_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SHIPPING_CHARGES" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SHIPPING_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SURCHARGE_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SURCHARGE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="ADDITIONAL_FEATURE" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_ADD_FEATURE_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="WARRANTY_ADJUSTMENT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_WARRANTY_ADJ"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RENTAL_ORDER_ITEM" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="ASSET_USAGE_OUT_IN" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_FPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SERVICE_PRODUCT" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="SERVICE" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_SPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RAW_MATERIAL" returnHeaderTypeId="APPEASEMENT" returnItemTypeId="RET_MPROD_ITEM"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="RTN_NOT_WANT" description="Did Not Want Item" sequenceId="01"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="RTN_DEFECTIVE_ITEM" description="Defective Item" sequenceId="02"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="RTN_MISSHIP_ITEM" description="Mis-Shipped Item" sequenceId="03"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="RTN_NORMAL_RETURN" description="Normal Return" sequenceId="04"/>
+    <org.apache.ofbiz.order.return.ReturnReason returnReasonId="RTN_SIZE_EXCHANGE" description="Size Exchange" sequenceId="05"/>
+    <org.apache.ofbiz.order.return.ReturnType returnTypeId="RTN_REFUND" description="Refund" sequenceId="01"/>
+    <org.apache.ofbiz.order.return.ReturnType returnTypeId="RTN_REPLACE" description="Replacement" sequenceId="02"/>
+    <org.apache.ofbiz.order.return.ReturnType returnTypeId="RTN_EXCHANGE" description="Exchange" sequenceId="03"/>
+</entity-facade-xml>
+

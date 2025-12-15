@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.basic.Geo geoId="CR-A" geoName="Alajuela" geoCodeAlpha3="A" geoCodeAlpha2="CR-A" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CR-C" geoName="Cartago" geoCodeAlpha3="C" geoCodeAlpha2="CR-C" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CR-G" geoName="Guanacaste" geoCodeAlpha3="G" geoCodeAlpha2="CR-G" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CR-H" geoName="Heredia" geoCodeAlpha3="H" geoCodeAlpha2="CR-H" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CR-L" geoName="Limón" geoCodeAlpha3="L" geoCodeAlpha2="CR-L" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CR-P" geoName="Puntarenas" geoCodeAlpha3="P" geoCodeAlpha2="CR-P" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.Geo geoId="CR-SJ" geoName="San José" geoCodeAlpha3="SJ" geoCodeAlpha2="CR-SJ" geoTypeEnumId="GEOT_PROVINCE"/>
+    <moqui.basic.GeoAssoc geoId="CRI" toGeoId="CR-A" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CRI" toGeoId="CR-C" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CRI" toGeoId="CR-G" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CRI" toGeoId="CR-H" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CRI" toGeoId="CR-L" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CRI" toGeoId="CR-P" geoAssocTypeEnumId="GAT_REGIONS"/>
+    <moqui.basic.GeoAssoc geoId="CRI" toGeoId="CR-SJ" geoAssocTypeEnumId="GAT_REGIONS"/>
+</entity-facade-xml>
+

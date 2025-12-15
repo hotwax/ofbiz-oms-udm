@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_INSPECTION" toStatusId="INV_AVAILABLE" transitionName="Available"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_INSPECTION" toStatusId="INV_ON_HOLD" transitionName="Held"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_NS_INSPECTION" toStatusId="INV_NS_AVAILABLE" transitionName="Available"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="CTNT_PUBLISHED" toStatusId="CTNT_IN_PROGRESS" transitionName="Un Published"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_REJECTED" transitionName="Requested Return Rejected"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PICKED" toStatusId="PICKLIST_COMPLETED" transitionName="Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PICKED" toStatusId="PICKLIST_CANCELLED" transitionName="Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_CREATED" toStatusId="INV_COUNT_ASSIGNED" transitionName="Assigning Inventory Import"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_CREATED" toStatusId="INV_COUNT_COMPLETED" transitionName="Completing Inventory Import"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_CREATED" toStatusId="INV_COUNT_REJECTED" transitionName="Reject Inventory Import"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_ASSIGNED" toStatusId="INV_COUNT_REVIEW" transitionName="Review Inventory Import"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_REVIEW" toStatusId="INV_COUNT_ASSIGNED" transitionName="Assign Inventory Import to recount"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_REVIEW" toStatusId="INV_COUNT_REJECTED" transitionName="Reject Inventory Import"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_REVIEW" toStatusId="INV_COUNT_COMPLETED" transitionName="Completing Inventory Import"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_CREATED" toStatusId="INV_COUNT_VOIDED" transitionName="Voiding Inventory Import"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_INPUT" transitionName="Created"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PENDING" toStatusId="PICKITEM_PICKED" transitionName="Picked"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKITEM_PICKED" toStatusId="PICKITEM_COMPLETED" transitionName="Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_CREATED" toStatusId="ITEM_EXPIRED" transitionName="Expire Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_EXPIRED" toStatusId="ITEM_CREATED" transitionName="Create Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ITEM_APPROVED" toStatusId="ITEM_REJECTED" transitionName="Reject Item"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ACCOUNT_CREATED" toStatusId="ACCOUNT_APPROVED" transitionName="Approve"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ACCOUNT_CREATED" toStatusId="ACCOUNT_HOLD" transitionName="Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ACCOUNT_HOLD" toStatusId="ACCOUNT_APPROVED" transitionName="Approve"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ACCOUNT_APPROVED" toStatusId="ACCOUNT_HOLD" transitionName="Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_APPROVED" toStatusId="SHIPMENT_PACKED" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_APPROVED" toStatusId="SHIPMENT_INPUT" transitionName="Create" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_PENDING" toStatusId="SERVICE_QUEUED" transitionName="Queued"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_QUEUED" toStatusId="SERVICE_RUNNING" transitionName="Running"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_RUNNING" toStatusId="SERVICE_FINISHED" transitionName="Finished"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_QUEUED" toStatusId="SERVICE_CRASHED" transitionName="Crashed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_PENDING" toStatusId="SERVICE_CRASHED" transitionName="Crashed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_RUNNING" toStatusId="SERVICE_CRASHED" transitionName="Crashed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_QUEUED" toStatusId="SERVICE_CANCELLED" transitionName="Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_PENDING" toStatusId="SERVICE_CANCELLED" transitionName="Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_RUNNING" toStatusId="SERVICE_CANCELLED" transitionName="Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_PENDING" toStatusId="SERVICE_FAILED" transitionName="Failed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_QUEUED" toStatusId="SERVICE_FAILED" transitionName="Failed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_RUNNING" toStatusId="SERVICE_FAILED" transitionName="Failed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_CRASHED" toStatusId="SERVICE_PENDING" transitionName="Pending"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_PENDING" toStatusId="SERVICE_DRAFT" transitionName="Draft"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SERVICE_DRAFT" toStatusId="SERVICE_PENDING" transitionName="Pending"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_ASSIGNED" transitionName="Assign" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_PRINTED" transitionName="Print" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_PICKED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_INPUT" toStatusId="PICKLIST_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_PICKED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PRINTED" toStatusId="PICKLIST_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_PRINTED" transitionName="Print" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_PICKED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_ASSIGNED" toStatusId="PICKLIST_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PICKLIST_PICKED" toStatusId="PICKLIST_COMPLETED" transitionName="Complete" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_APPROVED" transitionName="Approve"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_AUTHORIZED" transitionName="Authorize" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_REJECTED" transitionName="Reject" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_HOLD" transitionName="Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_COMPLETED" transitionName="Complete" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_CREATED" toStatusId="ORDER_COMPLETED" transitionName="Complete Order" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_REJECTED" transitionName="Reject" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_APPROVED" toStatusId="ORDER_HOLD" transitionName="Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_HOLD" toStatusId="ORDER_PROCESSING" transitionName="Process" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_HOLD" toStatusId="ORDER_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_HOLD" toStatusId="ORDER_APPROVED" transitionName="Approve"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_REJECTED" transitionName="Reject"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_HOLD" transitionName="Hold"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_APPROVED" transitionName="Approve"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_PROCESSING" toStatusId="ORDER_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_SENT" toStatusId="ORDER_COMPLETED" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_SENT" toStatusId="ORDER_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_AUTHORIZED" toStatusId="ORDER_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="ORDER_AUTHORIZED" toStatusId="ORDER_APPROVED" transitionName="Approve"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_REJECTED" transitionName="Reject"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_REQUESTED" toStatusId="RETURN_ACCEPTED" transitionName="Accept"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_ACCEPTED" toStatusId="RETURN_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_ACCEPTED" toStatusId="RETURN_RECEIVED" transitionName="Receive" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_COMPLETED" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_CANCELLED" transitionName="Cancel" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="RETURN_RECEIVED" toStatusId="RETURN_MAN_REFUND" transitionName="Manual Refund" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_RECEIVED" transitionName="Receive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_VOID" transitionName="Void"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_NOT_PAID" toStatusId="PMNT_SENT" transitionName="Send"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_RECEIVED" transitionName="Receive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_CONFIRMED" toStatusId="PMNT_SENT" transitionName="Send"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_VOID" transitionName="Void"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_NOT_PAID" transitionName="Not Paid"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_RECEIVED" toStatusId="PMNT_CONFIRMED" transitionName="Confirm"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_VOID" transitionName="Voided"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_NOT_PAID" transitionName="Not Paid"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PMNT_SENT" toStatusId="PMNT_CONFIRMED" transitionName="Confirm"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_CREATED" toStatusId="INV_COUNT_REJECTED" transitionName="Reject"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="INV_COUNT_CREATED" toStatusId="INV_COUNT_COMPLETED" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_APPROVED" toStatusId="SHIPMENT_PACKED" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_APPROVED" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_APPROVED" toStatusId="SHIPMENT_SHIPPED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_SCHEDULED" transitionName="Schedule" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_PICKED" transitionName="Pick" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_PACKED" transitionName="Pack" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_APPROVED" transitionName="Approve" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_PICKED" transitionName="Pick"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_PACKED" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_INPUT" transitionName="input" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_SHIPPED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_APPROVED" transitionName="Approve" conditionExpression="directStatusChange == false"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PICKED" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PICKED" toStatusId="SHIPMENT_PACKED" transitionName="Pack"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SHIPPED" toStatusId="SHIPMENT_DELIVERED" transitionName="Deliver"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PURCH_SHIP_CREATED" toStatusId="PURCH_SHIP_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PAYMENT_NOT_RECEIVED" toStatusId="PAYMENT_SETTLED" transitionName="Payment Settled"/>
+</entity-facade-xml>
+

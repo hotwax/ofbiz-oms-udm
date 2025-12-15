@@ -22,7 +22,7 @@ under the License.
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
 
     <!-- TODO: Discuss the group-by applied on shipmentId, shipmentItemSeqId and productId -->
-    <view-entity entity-name="ShipmentAndItemAndReceipt" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <view-entity entity-name="ShipmentAndItemAndReceipt" package="org.apache.ofbiz.shipment.shipment">
         <member-entity entity-alias="SITM" entity-name="org.apache.ofbiz.shipment.shipment.ShipmentItem"/>
         <member-entity entity-alias="SH" entity-name="org.apache.ofbiz.shipment.shipment.Shipment" join-from-alias="SITM">
             <key-map field-name="shipmentId"/>
@@ -69,7 +69,7 @@ under the License.
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="PurchaseOrderShipmentReceipt" package="org.apache.ofbiz.shipment.shipment" group="ofbiz_transactional">
+    <view-entity entity-name="PurchaseOrderShipmentReceipt" package="org.apache.ofbiz.shipment.shipment">
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"></member-entity>
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
             <key-map field-name="orderId"/>
@@ -117,5 +117,29 @@ under the License.
             <econdition entity-alias="OH" field-name="orderTypeId" value="PURCHASE_ORDER"/>
             <econdition entity-alias="SIH" field-name="receiptId" operator="equals" value=""/>
         </entity-condition>
+    </view-entity>
+
+    <view-entity entity-name="ItemIssuanceSummary" package="co.hotwax.shipment">
+        <member-entity entity-alias="II" entity-name="org.apache.ofbiz.shipment.issuance.ItemIssuance"/>
+        <alias-all entity-alias="II">
+            <exclude field="quantity"/>
+            <exclude field="cancelQuantity"/>
+            <exclude field="issuedDateTime"/>
+        </alias-all>
+        <alias name="quantity" entity-alias="II" function="sum"/>
+        <alias name="cancelQuantity" entity-alias="II" function="sum"/>
+        <alias name="issuedDateTime" entity-alias="II" function="max"/>
+    </view-entity>
+
+    <view-entity entity-name="ShipmentReceiptSummary" package="co.hotwax.shipment">
+        <member-entity entity-alias="SR" entity-name="org.apache.ofbiz.shipment.receipt.ShipmentReceipt"/>
+        <alias-all entity-alias="SR">
+            <exclude field="quantityAccepted"/>
+            <exclude field="quantityRejected"/>
+            <exclude field="datetimeReceived"/>
+        </alias-all>
+        <alias name="quantityAccepted" entity-alias="SR" function="sum"/>
+        <alias name="quantityRejected" entity-alias="SR" function="sum"/>
+        <alias name="datetimeReceived" entity-alias="SR" function="max"/>
     </view-entity>
 </entities>

@@ -22,12 +22,12 @@ under the License.
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
 
     <!-- View entity for Item Variance Details -->
-    <view-entity entity-name="ItemVarianceDetails" package="co.hotwax.warehouse" group="ofbiz_transactional">
+    <view-entity entity-name="ItemVarianceDetails" package="co.hotwax.warehouse">
         <member-entity entity-alias="PI" entity-name="org.apache.ofbiz.product.inventory.PhysicalInventory"></member-entity>
         <member-entity entity-alias="IIV" entity-name="org.apache.ofbiz.product.inventory.InventoryItemVariance" join-from-alias="PI">
             <key-map field-name="physicalInventoryId"/>
         </member-entity>
-        <member-entity entity-alias="VRENM" entity-name="org.apache.ofbiz.common.enum.Enumeration" join-from-alias="IIV">
+        <member-entity entity-alias="VRENM" entity-name="moqui.basic.Enumeration" join-from-alias="IIV">
             <key-map field-name="reasonEnumId" related="enumId"/>
         </member-entity>
         <member-entity entity-alias="II" entity-name="org.apache.ofbiz.product.inventory.InventoryItem" join-from-alias="IIV">
@@ -61,49 +61,6 @@ under the License.
         <alias entity-alias="PR" name="productId"/>
         <alias entity-alias="PR" name="productTypeId"/>
     </view-entity>
-
-    <!-- View for Inventory Count Import Variance -->
-    <!-- NOTE The view could be used for fetching details for a particular status of Inventory
-         Count Import; but this does not mean for an inventoryCountImportId, it will pull records
-         for all status in InvCountImportStatus.
-         The information will be prepared for the current status of the inventoryCountImportId. -->
-    <view-entity entity-name="InventoryCountImportVariance" package="co.hotwax.warehouse">
-        <member-entity entity-alias="ICI" entity-name="co.hotwax.warehouse.InventoryCountImport"/>
-        <member-entity entity-alias="ICIS" entity-name="co.hotwax.warehouse.InvCountImportStatus" join-from-alias="ICI">
-            <key-map field-name="inventoryCountImportId"/>
-            <key-map field-name="statusId"/>
-        </member-entity>
-        <member-entity entity-alias="ICII" entity-name="co.hotwax.warehouse.InventoryCountImportItem" join-from-alias="ICI">
-            <key-map field-name="inventoryCountImportId"/>
-        </member-entity>
-        <member-entity entity-alias="ICIV" entity-name="co.hotwax.warehouse.InvCountImportVariance" join-from-alias="ICII">
-            <key-map field-name="inventoryCountImportId"/>
-            <key-map field-name="importItemSeqId" related="invCountImportItemSeqId"/>
-        </member-entity>
-        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="ICIV">
-            <key-map field-name="productId"/>
-        </member-entity>
-        <member-entity entity-alias="F" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="ICI">
-            <key-map field-name="facilityId"/>
-        </member-entity>
-        <alias entity-alias="ICI" name="inventoryCountImportId"/>
-        <alias entity-alias="ICI" name="facilityId"/>
-        <!-- This is the current statusId from InventoryCountImport -->
-        <alias entity-alias="ICI" name="statusId"/>
-        <alias entity-alias="ICII" field="statusId" name="inventoryCountItemStatusId"/>
-        <alias entity-alias="ICI" name="createdDate"/>
-        <alias entity-alias="ICIS" name="statusDate" function="max"/>
-        <alias entity-alias="ICIV" name="invCountImportItemSeqId"/>
-        <alias entity-alias="ICIV" name="productId"/>
-        <alias entity-alias="ICIV" name="locationSeqId"/>
-        <alias entity-alias="ICIV" name="systemQuantityOnHand"/>
-        <alias entity-alias="ICIV" name="actualQuantityOnHand"/>
-        <alias entity-alias="ICIV" name="varianceQuantityOnHand"/>
-        <alias entity-alias="P" field="internalName" name="sku"/>
-        <alias entity-alias="F" field="externalId" name="facilityExternalId"/>
-        <alias entity-alias="F" name="facilityName"/>
-    </view-entity>
-
     <view-entity entity-name="ProductFacilityAndGroup" package="co.hotwax.warehouse">
         <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.facility.ProductFacility"/>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="PF">
@@ -177,6 +134,7 @@ under the License.
         <alias entity-alias="F" name="defaultDaysToShip"/>
         <alias entity-alias="F" name="maximumOrderLimit"/>
         <alias entity-alias="P" name="internalName"/>
+        <alias entity-alias="P" name="productTypeId"/>
         <alias entity-alias="FT" name="parentFacilityTypeId" field="parentTypeId"/>
     </view-entity>
 </entities>

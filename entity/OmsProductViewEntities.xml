@@ -21,7 +21,7 @@ under the License.
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
 
-    <view-entity entity-name="ProductStoreCatalogAndCategoryMember" package="co.hotwax.product.catalog.category" group="ofbiz_transactional">
+    <view-entity entity-name="ProductStoreCatalogAndCategoryMember" package="co.hotwax.product.catalog.category">
         <description>View entity for Product Store Catalog and Category Members.</description>
         <member-entity entity-alias="PSC" entity-name="org.apache.ofbiz.product.store.ProductStoreCatalog"/>
         <member-entity entity-alias="PCC" entity-name="org.apache.ofbiz.product.catalog.ProdCatalogCategory" join-from-alias="PSC">
@@ -42,7 +42,7 @@ under the License.
         <alias entity-alias="PCM" field="thruDate" name="pcmThruDate"/>
     </view-entity>
 
-    <view-entity entity-name="ProductAssocAndFrom" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <view-entity entity-name="ProductAssocAndFrom" package="org.apache.ofbiz.product.product">
         <description>View for Product Assoc and Parent Product details</description>
         <member-entity entity-alias="PA" entity-name="org.apache.ofbiz.product.product.ProductAssoc"/>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="PA">
@@ -51,7 +51,7 @@ under the License.
         <alias-all entity-alias="P"/>
     </view-entity>
 
-    <view-entity entity-name="ProductAssocAndTo" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <view-entity entity-name="ProductAssocAndTo" package="org.apache.ofbiz.product.product">
         <description>View for Product Assoc and Associated Product Details</description>
         <member-entity entity-alias="PA" entity-name="org.apache.ofbiz.product.product.ProductAssoc"/>
         <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="PA">
@@ -60,7 +60,7 @@ under the License.
         <alias-all entity-alias="P"><exclude field="productId"/></alias-all>
     </view-entity>
 
-    <view-entity entity-name="ProductFeatureAndAppl" package="co.hotwax.product.feature" group="ofbiz_transactional">
+    <view-entity entity-name="ProductFeatureAndAppl" package="co.hotwax.product.feature">
         <description>ProductFeature And ProductFeatureAppl View Entity</description>
         <member-entity entity-alias="PFA" entity-name="org.apache.ofbiz.product.feature.ProductFeatureAppl"/>
         <member-entity entity-alias="PF" entity-name="org.apache.ofbiz.product.feature.ProductFeature" join-from-alias="PFA">
@@ -70,7 +70,7 @@ under the License.
         <alias-all entity-alias="PF"/>
     </view-entity>
 
-    <view-entity entity-name="ProductContentAndInfo" package="org.apache.ofbiz.product.product" group="ofbiz_transactional">
+    <view-entity entity-name="ProductContentAndInfo" package="org.apache.ofbiz.product.product">
         <description>ProductContent, Content and DataResource and ElectronicText View</description>
         <member-entity entity-alias="PC" entity-name="org.apache.ofbiz.product.product.ProductContent"/>
         <member-entity entity-alias="CO" entity-name="org.apache.ofbiz.content.content.Content" join-from-alias="PC">

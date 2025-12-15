@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <moqui.basic.EnumerationType enumTypeId="SHOP_SCRIPT_TYPE" description="Shopify script tag"/>
+    <moqui.basic.Enumeration enumId="BOPIS_JS_SCRPT_TAG" enumTypeId="SHOP_SCRIPT_TYPE" enumCode="BOPIS.js" sequenceNum="01" description="BOPIS JS"/>
+    <moqui.basic.Enumeration enumId="PREORD_JS_SCRPT_TAG" enumTypeId="SHOP_SCRIPT_TYPE" enumCode="PRE_ORDER.js" sequenceNum="02" description="Pre-order JS"/>
+    <moqui.basic.Enumeration enumId="BOPIS_CSS_SCRPT_TAG" enumTypeId="SHOP_SCRIPT_TYPE" enumCode="BOPIS_CSS.css" sequenceNum="03" description="BOPIS CSS"/>
+    <moqui.basic.Enumeration enumId="PREORD_CSS_SCRPT_TAG" enumTypeId="SHOP_SCRIPT_TYPE" enumCode="PRE_ORDER_CSS.css" sequenceNum="04" description="Pre-order CSS"/>
+</entity-facade-xml>
+

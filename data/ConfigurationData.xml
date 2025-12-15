@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext">
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="ORGANIZATION_PARTY" systemPropertyValue="COMPANY" description="The default organizationPartyId for used in dropdowns and reports"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="currency.uom.id.default" systemPropertyValue="USD" description="The default currency to use for prices, etc"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="country.geo.id.default" systemPropertyValue="USA" description="The default country for drop downs, phone number validation etc"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="default.productstoreid" systemPropertyValue="STORE"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="BuynowCatalog" systemPropertyId="default.weight.uom" systemPropertyValue="WT_lb" description="The default weight to use for prices, etc"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="DateTimeFormats" systemPropertyId="date.format.short" systemPropertyValue="MM-dd-yyyy"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="DateTimeFormats" systemPropertyId="date.format.long" systemPropertyValue="MM-dd-yyyy hh:mm:ss a"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="DateTimeFormats" systemPropertyId="date.format.default" systemPropertyValue="MM-dd-yyyy hh:mm a"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="PreorderConfig" systemPropertyId="STORE.is.backorder.enabled" systemPropertyValue="Y" description="Flag to identify backorder setting for product store"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="FTP_CONFIG" systemPropertyId="ftp.server.hostname" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="FTP_CONFIG" systemPropertyId="ftp.server.username" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="FTP_CONFIG" systemPropertyId="ftp.server.password" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="FTP_CONFIG" systemPropertyId="ftp.server.port" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="FTP_CONFIG" systemPropertyId="instance.downloadDir" systemPropertyValue="runtime/datamanager/"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="FTP_CONFIG" systemPropertyId="ftp.server.archive.dir" systemPropertyValue="archive/"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="FTP_CONFIG" systemPropertyId="ftp.server.importPath" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="FTP_CONFIG" systemPropertyId="ftp.fileNameRegex" systemPropertyValue="*.*"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="fop" systemPropertyId="fop.font.family" systemPropertyValue="Helvetica"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="ftp.export.ftpResourceName" systemPropertyValue="FTP_CONFIG" description="Ftp configuration data for all reports."/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="updated.po.salesorderitem.ftp.export.folder.name" systemPropertyValue="updateSalesItemFeed"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="updated.po.salesorderitem.send.to.config" systemPropertyValue="FTP" description="FTP"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="update.salesitem.podetail.ftp.export.folder.name" systemPropertyValue="updateSalesItemPoDetail/"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="Report" systemPropertyId="update.salesitem.podetail.send.to.config" systemPropertyValue="FTP" description="FTP"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="general" systemPropertyId="mail.notifications.enabled" systemPropertyValue="Y"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="PreorderConfig" systemPropertyId="STORE.is.backorder.enabled" systemPropertyValue=""/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="InventoryConfig" systemPropertyId="compute.reserved.inventory" systemPropertyValue="false"/>
+    <org.apache.ofbiz.common.property.SystemProperty systemResourceId="notification" systemPropertyId="notification.enabled" systemPropertyValue="Y"/>
+</entity-facade-xml>
+

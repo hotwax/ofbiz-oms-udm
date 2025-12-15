@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <org.apache.ofbiz.party.party.Party partyId="system" partyTypeId="PERSON" statusId="PARTY_ENABLED"/>
+    <org.apache.ofbiz.party.party.Person partyId="system" firstName="System" lastName="Account"/>
+    <org.apache.ofbiz.party.party.PartyStatus statusId="PARTY_ENABLED" partyId="system" statusDate="2001-01-01 12:00:00.0"/>
+    <org.apache.ofbiz.party.party.PartyRole partyId="system" roleTypeId="PACKER"/>
+
+    <!-- Permission and group used to access the legacy fulfillment app -->
+    <org.apache.ofbiz.security.securitygroup.SecurityGroup groupId="FFMNT_LEGACY_GROUP" description="" groupName="Group for Legacy Fulfillment App permissions"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityPermission permissionId="FULFILLMENT_LEGACY_APP_VIEW" description="View Fulfillment Legacy App"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="FFMNT_LEGACY_GROUP" permissionId="FULFILLMENT_LEGACY_APP_VIEW"/>
+
+    <!-- Security group permission data to be able to release cycle count session lock -->
+    <org.apache.ofbiz.security.securitygroup.SecurityPermission description="User can release the lock of inventory count." permissionId="INV_COUNT_LOCK_RLS"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="STORE_MANAGER" permissionId="INV_COUNT_LOCK_RLS"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="WAREHOUSE_MANAGER" permissionId="INV_COUNT_LOCK_RLS"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SUPER" permissionId="INV_COUNT_LOCK_RLS"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="COMMERCE_SUPER" permissionId="INV_COUNT_LOCK_RLS"/>
+</entity-facade-xml>
+

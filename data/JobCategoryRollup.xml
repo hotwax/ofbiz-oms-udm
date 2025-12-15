@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext-seed">
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="BROKER_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="FULFILLMENT_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="INVENTORY_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="MISC_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="ORDER_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="PRE_ORD_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="PRODUCT_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="IMPORT_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="UPLOAD_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="NOTIFY_SYS_JOB" parentProductCategoryId="SYSTEM_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="IMPORT_SYS_JOB" parentProductCategoryId="BROKER_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="IMPORT_SYS_JOB" parentProductCategoryId="FULFILLMENT_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="IMPORT_SYS_JOB" parentProductCategoryId="INVENTORY_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="IMPORT_SYS_JOB" parentProductCategoryId="MISC_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="IMPORT_SYS_JOB" parentProductCategoryId="ORDER_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="IMPORT_SYS_JOB" parentProductCategoryId="PRE_ORD_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="IMPORT_SYS_JOB" parentProductCategoryId="PRODUCT_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="IMPORT_SYS_JOB" parentProductCategoryId="REPORT_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="UPLOAD_SYS_JOB" parentProductCategoryId="BROKER_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="UPLOAD_SYS_JOB" parentProductCategoryId="FULFILLMENT_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="UPLOAD_SYS_JOB" parentProductCategoryId="INVENTORY_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="UPLOAD_SYS_JOB" parentProductCategoryId="MISC_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="UPLOAD_SYS_JOB" parentProductCategoryId="ORDER_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="UPLOAD_SYS_JOB" parentProductCategoryId="PRE_ORD_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="UPLOAD_SYS_JOB" parentProductCategoryId="PRODUCT_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="UPLOAD_SYS_JOB" parentProductCategoryId="REPORT_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="NOTIFY_SYS_JOB" parentProductCategoryId="BROKER_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="NOTIFY_SYS_JOB" parentProductCategoryId="FULFILLMENT_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="NOTIFY_SYS_JOB" parentProductCategoryId="INVENTORY_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="NOTIFY_SYS_JOB" parentProductCategoryId="MISC_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="NOTIFY_SYS_JOB" parentProductCategoryId="ORDER_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="NOTIFY_SYS_JOB" parentProductCategoryId="PRE_ORD_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="NOTIFY_SYS_JOB" parentProductCategoryId="PRODUCT_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+    <org.apache.ofbiz.product.category.ProductCategoryRollup productCategoryId="NOTIFY_SYS_JOB" parentProductCategoryId="REPORT_SYS_JOB" fromDate="2024-01-01 00:00:00.0"/>
+</entity-facade-xml>
+

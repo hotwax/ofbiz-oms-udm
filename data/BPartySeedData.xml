@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="SHIPPING_LOCATION" description="Shipping Destination Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="SHIP_ORIG_LOCATION" description="Shipping Origin Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="BILLING_LOCATION" description="Billing (AP) Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PAYMENT_LOCATION" description="Payment (AR) Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="GENERAL_LOCATION" description="General Correspondence Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PUR_RET_LOCATION" description="Purchase Return Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PRIMARY_LOCATION" description="Primary Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PREVIOUS_LOCATION" description="Previous Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_SHIPPING" description="Shipping Destination Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_SHIP_ORIG" description="Shipping Origin Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_BILLING" description="Billing (AP) Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_DID" description="Direct Inward Dialing Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_PAYMENT" description="Payment (AR) Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_HOME" description="Main Home Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_WORK" description="Main Work Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_WORK_SEC" description="Secondary Work Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FAX_NUMBER" description="Main Fax Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FAX_NUMBER_SEC" description="Secondary Fax Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FAX_SHIPPING" description="Shipping Destination Fax Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FAX_BILLING" description="Billing Destination Fax Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_MOBILE" description="Main Mobile Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_ASSISTANT" description="Assistant&apos;s Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PRIMARY_PHONE" description="Primary Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PHONE_QUICK" description="Quick Calls Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="MARKETING_EMAIL" description="Primary Marketing Email Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PRIMARY_EMAIL" description="Primary Email Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="BILLING_EMAIL" description="Billing (AP) Email"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PAYMENT_EMAIL" description="Payment (AR) Email"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="OTHER_EMAIL" description="Other Email Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="SUPPORT_EMAIL" description="Support Email"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="ORDER_EMAIL" description="Order Notification Email Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="GOOGLE_MAP_URL" description="Google Map Location URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="PRIMARY_WEB_URL" description="Primary Website URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="TWITTER_URL" description="Twitter Website URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="FACEBOOK_URL" description="Facebook Website URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechPurposeType contactMechPurposeTypeId="LINKEDIN_URL" description="LinkedIn Website URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Electronic Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="POSTAL_ADDRESS" hasTable="Y" description="Postal Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="TELECOM_NUMBER" hasTable="Y" description="Phone Number"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="EMAIL_ADDRESS" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Email Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="MAP_URL" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Map Location URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="IP_ADDRESS" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Internet IP Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="DOMAIN_NAME" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Internet Domain Name"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="WEB_ADDRESS" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Web URL/Address"/>
+    <org.apache.ofbiz.party.contact.ContactMechType contactMechTypeId="INTERNAL_PARTYID" parentTypeId="ELECTRONIC_ADDRESS" hasTable="N" description="Internal Note via partyId"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="BILLING_EMAIL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="MARKETING_EMAIL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="PAYMENT_EMAIL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="ORDER_EMAIL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="OTHER_EMAIL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="EMAIL_ADDRESS" contactMechPurposeTypeId="PRIMARY_EMAIL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="SHIPPING_LOCATION"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="SHIP_ORIG_LOCATION"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="BILLING_LOCATION"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="PAYMENT_LOCATION"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="GENERAL_LOCATION"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="PUR_RET_LOCATION"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="PRIMARY_LOCATION"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="POSTAL_ADDRESS" contactMechPurposeTypeId="PREVIOUS_LOCATION"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="FAX_NUMBER"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="FAX_NUMBER_SEC"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_DID"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_HOME"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_MOBILE"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_WORK"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_WORK_SEC"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_SHIPPING"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_SHIP_ORIG"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_BILLING"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_PAYMENT"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PRIMARY_PHONE"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_QUICK"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="FAX_SHIPPING"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="FAX_BILLING"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="TELECOM_NUMBER" contactMechPurposeTypeId="PHONE_ASSISTANT"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="MAP_URL" contactMechPurposeTypeId="GOOGLE_MAP_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="PRIMARY_WEB_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="TWITTER_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="FACEBOOK_URL"/>
+    <org.apache.ofbiz.party.contact.ContactMechTypePurpose contactMechTypeId="WEB_ADDRESS" contactMechPurposeTypeId="LINKEDIN_URL"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventPrpTyp communicationEventPrpTypId="ACTIVITY_REQUEST" hasTable="N" description="Activity Request"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventPrpTyp communicationEventPrpTypId="CONFERENCE" hasTable="N" description="Conference"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventPrpTyp communicationEventPrpTypId="CUSTOMER_SERVICE_CAL" hasTable="N" description="Customer Service Call"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventPrpTyp communicationEventPrpTypId="INQUIRY" hasTable="N" description="Inquiry"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventPrpTyp communicationEventPrpTypId="MEETING" hasTable="N" description="Meeting"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventPrpTyp communicationEventPrpTypId="SALES_FOLLOW_UP" hasTable="N" description="Sales Follow Up"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventPrpTyp communicationEventPrpTypId="SEMINAR" hasTable="N" description="Seminar"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventPrpTyp communicationEventPrpTypId="SUPPORT_CALL" hasTable="N" description="Support Call"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="EMAIL_COMMUNICATION" hasTable="N" description="Email" contactMechTypeId="EMAIL_ADDRESS"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="FACE_TO_FACE_COMMUNI" hasTable="N" description="Face-To-Face"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="FAX_COMMUNICATION" hasTable="N" description="Fax" contactMechTypeId="TELECOM_NUMBER"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="LETTER_CORRESPONDENC" hasTable="N" description="Letter" contactMechTypeId="POSTAL_ADDRESS"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="PHONE_COMMUNICATION" hasTable="N" description="Phone" contactMechTypeId="TELECOM_NUMBER"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="WEB_SITE_COMMUNICATI" hasTable="N" description="Web Site" contactMechTypeId="WEB_ADDRESS"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="COMMENT_NOTE" hasTable="N" description="Comment/Note" contactMechTypeId="INTERNAL_PARTYID"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="AUTO_EMAIL_COMM" hasTable="N" description="Auto Email" contactMechTypeId="EMAIL_ADDRESS"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="EXT_EMAIL_COMM" parentTypeId="EMAIL_COMMUNICATION" hasTable="N" description="External Email Communication" contactMechTypeId="EMAIL_ADDRESS"/>
+    <org.apache.ofbiz.party.communication.CommunicationEventType communicationEventTypeId="SYS_MSG_EMAIL_COMM" parentTypeId="EMAIL_COMMUNICATION" hasTable="N" description="Email Communication as a part of SystemMessage flow" contactMechTypeId="EMAIL_ADDRESS"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="INTERNAL" description="Internal Content"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="USERDEF" description="User Defined Content"/>
+    <org.apache.ofbiz.party.party.PartyContentType partyContentTypeId="LGOIMGURL" description="Logo Image URL"/>
+    <moqui.basic.EnumerationType enumTypeId="PARTY_EMAIL" description="Party Email Notification"/>
+    <moqui.basic.Enumeration enumId="PARTY_REGIS_CONFIRM" enumTypeId="PARTY_EMAIL" enumCode="REGIS_CONFIRM" description="Party Registration Confirmation"/>
+    <moqui.basic.Enumeration enumId="UPD_PRSNL_INF_CNFRM" enumTypeId="PARTY_EMAIL" enumCode="UPDAT_CONFIRM" description="Update Personal Info Confirmation"/>
+    <moqui.basic.Enumeration enumId="PRDS_EMAIL_VERIFY" enumTypeId="PARTY_EMAIL" enumCode="EMAIL_VERIFY" description="Party Email Address Verification"/>
+    <moqui.basic.Enumeration enumId="PRDS_PARTYINV_EMAIL" enumTypeId="PARTY_EMAIL" enumCode="INVITE_EMAIL" description="Party Invitation"/>
+    <moqui.basic.Enumeration enumId="CONT_NOTI_EMAIL" enumTypeId="PARTY_EMAIL" enumCode="CONT_EMAIL" description="Contact-Us Notification"/>
+    <moqui.basic.Enumeration enumId="PRDS_CUST_ACTIVATED" enumTypeId="PARTY_EMAIL" enumCode="ACCOUNT_ACTIVATED" description="Account Activated Notification"/>
+    <moqui.basic.Enumeration enumId="UNSUB_CONT_LIST_NOTI" enumTypeId="PARTY_EMAIL" enumCode="UNSUB_CONT_EMAIL" description="Unsubscribe Contact List Notification"/>
+    <moqui.basic.Enumeration enumId="SUB_CONT_LIST_NOTI" enumTypeId="PARTY_EMAIL" enumCode="SUB_CONT_EMAIL" description="Subscribe Contact List Notification"/>
+    <moqui.basic.Enumeration enumId="UNSUB_CONT_LIST_VERI" enumTypeId="PARTY_EMAIL" enumCode="UNSUB_CONT_VERIFY_EMAIL" description="Unsubscribe Contact List Verify"/>
+    <moqui.basic.Enumeration enumId="CONT_EMAIL_TEMPLATE" enumTypeId="PARTY_EMAIL" enumCode="CONT_EMAIL_TEMPLATE" description="Contact List E-mail Template"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CUSTOMER" hasTable="N" description="Customer"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="VENDOR" hasTable="N" description="Vendor"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="_NA_" hasTable="N" description="Not Applicable"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="OWNER" hasTable="N" description="Owner"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="PERSON_ROLE" hasTable="N" description="Person"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="ORGANIZATION_ROLE" hasTable="N" description="Organization Role"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="BILL_FROM_VENDOR" hasTable="N" description="Bill-From Vendor"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="BILL_TO_CUSTOMER" parentTypeId="CUSTOMER" hasTable="N" description="Bill-To Customer"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="CARRIER" parentTypeId="ORGANIZATION_ROLE" hasTable="N" description="Carrier"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="INTERNAL_ORGANIZATIO" parentTypeId="ORGANIZATION_ROLE" hasTable="Y" description="Internal Organization"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="EMPLOYEE" parentTypeId="PERSON_ROLE" hasTable="N" description="Employee"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="END_USER_CUSTOMER" parentTypeId="CUSTOMER" hasTable="N" description="End-User Customer"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="PLACING_CUSTOMER" parentTypeId="CUSTOMER" hasTable="N" description="Placing Customer"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="SALES_REP" parentTypeId="PERSON_ROLE" hasTable="N" description="Sales Representative"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="SHIP_FROM_VENDOR" hasTable="N" description="Ship-From Vendor"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="SHIP_TO_CUSTOMER" parentTypeId="CUSTOMER" hasTable="N" description="Ship-To Customer"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="PACKER" parentTypeId="EMPLOYEE" hasTable="N" description="Packer"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="PICKER" parentTypeId="EMPLOYEE" hasTable="N" description="Picker"/>
+    <org.apache.ofbiz.party.party.RoleType roleTypeId="RECEIVER" parentTypeId="EMPLOYEE" hasTable="N" description="Receiver"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="CUSTOMER_REL" hasTable="N" partyRelationshipName="Customer" roleTypeIdValidFrom="CUSTOMER"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="EMPLOYMENT" hasTable="Y" partyRelationshipName="Employee"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="CONTACT_REL" hasTable="Y" partyRelationshipName="Contact"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="ACCOUNT" hasTable="Y" partyRelationshipName="Account"/>
+    <org.apache.ofbiz.party.party.PartyRelationshipType partyRelationshipTypeId="OWNER" hasTable="N" partyRelationshipName="Owned by"/>
+    <org.apache.ofbiz.party.party.PartyType partyTypeId="PERSON" hasTable="Y" description="Person"/>
+    <org.apache.ofbiz.party.party.PartyType partyTypeId="PARTY_GROUP" hasTable="Y" description="Party Group"/>
+    <moqui.basic.StatusType statusTypeId="PARTY_STATUS" description="Party"/>
+    <moqui.basic.StatusItem statusId="PARTY_ENABLED" statusTypeId="PARTY_STATUS" statusCode="ENABLED" description="Enabled"/>
+    <moqui.basic.StatusItem statusId="PARTY_DISABLED" statusTypeId="PARTY_STATUS" statusCode="DISABLED" description="Disabled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTY_ENABLED" toStatusId="PARTY_DISABLED" transitionName="Disable"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTY_DISABLED" toStatusId="PARTY_ENABLED" transitionName="Re-Enable"/>
+    <moqui.basic.StatusType statusTypeId="COM_EVENT_STATUS" description="Communication Event"/>
+    <moqui.basic.StatusItem statusId="COM_PENDING" statusTypeId="COM_EVENT_STATUS" statusCode="PENDING" description="Pending"/>
+    <moqui.basic.StatusItem statusId="COM_ENTERED" statusTypeId="COM_EVENT_STATUS" statusCode="ENTERED" description="Entered"/>
+    <moqui.basic.StatusItem statusId="COM_IN_PROGRESS" statusTypeId="COM_EVENT_STATUS" statusCode="IN_PROGRESS" description="In-Progress"/>
+    <moqui.basic.StatusItem statusId="COM_UNKNOWN_PARTY" statusTypeId="COM_EVENT_STATUS" statusCode="UNKNOWN_PARTY" description="Unknown Party"/>
+    <moqui.basic.StatusItem statusId="COM_COMPLETE" statusTypeId="COM_EVENT_STATUS" statusCode="COMPLETE" description="Closed"/>
+    <moqui.basic.StatusItem statusId="COM_RESOLVED" statusTypeId="COM_EVENT_STATUS" statusCode="RESOLVED" description="Resolved"/>
+    <moqui.basic.StatusItem statusId="COM_REFERRED" statusTypeId="COM_EVENT_STATUS" statusCode="REFERRED" description="Referred"/>
+    <moqui.basic.StatusItem statusId="COM_BOUNCED" statusTypeId="COM_EVENT_STATUS" statusCode="BOUNCED" description="Bounced"/>
+    <moqui.basic.StatusItem statusId="COM_CANCELLED" statusTypeId="COM_EVENT_STATUS" statusCode="CANCELLED" description="Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_PENDING" transitionName="Set Pending, only visible to originator"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_IN_PROGRESS" transitionName="Set In Progress, waiting to be send"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_COMPLETE" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_ENTERED" transitionName="Entered,visible to all participants"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_IN_PROGRESS" transitionName="Set In Progress, waiting to be send"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_IN_PROGRESS" toStatusId="COM_COMPLETE" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_IN_PROGRESS" toStatusId="COM_BOUNCED" transitionName="Bounced"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_RESOLVED" transitionName="Resolve"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_REFERRED" transitionName="Refer"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_BOUNCED" transitionName="Bounced"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_UNKNOWN_PARTY" toStatusId="COM_COMPLETE" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_UNKNOWN_PARTY" toStatusId="COM_ENTERED" transitionName="Corrected"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_COMPLETE" transitionName="Complete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ENTERED" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_PENDING" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_IN_PROGRESS" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_COMPLETE" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_RESOLVED" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_REFERRED" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_UNKNOWN_PARTY" toStatusId="COM_CANCELLED" transitionName="Cancel"/>
+    <moqui.basic.StatusType statusTypeId="COM_EVENT_ROL_STATUS" parentTypeId="COM_EVENT_STATUS" description="Communication Event Role"/>
+    <moqui.basic.StatusItem statusId="COM_ROLE_CREATED" statusTypeId="COM_EVENT_ROL_STATUS" statusCode="ENTERED" description="Created"/>
+    <moqui.basic.StatusItem statusId="COM_ROLE_READ" statusTypeId="COM_EVENT_ROL_STATUS" statusCode="PENDING" description="Read"/>
+    <moqui.basic.StatusItem statusId="COM_ROLE_COMPLETED" statusTypeId="COM_EVENT_ROL_STATUS" statusCode="READ" description="Closed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ROLE_CREATED" toStatusId="COM_ROLE_READ" transitionName="Read"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ROLE_CREATED" toStatusId="COM_ROLE_COMPLETED" transitionName="Completed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="COM_ROLE_READ" toStatusId="COM_ROLE_COMPLETED" transitionName="Completed"/>
+    <moqui.basic.StatusType statusTypeId="PARTY_REL_STATUS" description="Party Relationship"/>
+    <moqui.basic.StatusItem statusId="PARTYREL_CREATED" statusTypeId="PARTY_REL_STATUS" statusCode="CREATED" description="Created"/>
+    <moqui.basic.StatusItem statusId="PARTYREL_EXPIRED" statusTypeId="PARTY_REL_STATUS" statusCode="EXPIRED" description="Expired"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="PARTYREL_CREATED" toStatusId="PARTYREL_EXPIRED" transitionName="Expired"/>
+    <moqui.basic.EnumerationType enumTypeId="USER_PREF_GROUPS" description="User preference groups"/>
+    <moqui.basic.EnumerationType enumTypeId="GLOBAL_PREFERENCES" description="Global preferences" parentTypeId="USER_PREF_GROUPS"/>
+    <moqui.basic.Enumeration enumId="ORGANIZATION_PARTY" enumTypeId="GLOBAL_PREFERENCES" description="Organization party"/>
+    <moqui.basic.Enumeration enumId="VISUAL_THEME" enumTypeId="GLOBAL_PREFERENCES" description="Visual Theme"/>
+</entity-facade-xml>
+
