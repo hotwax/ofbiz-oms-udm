@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext-upgrade">
+    <org.apache.ofbiz.security.securitygroup.SecurityPermission description="User can view the QoH in count detail and progress review pages." permissionId="INV_CNT_VIEW_QOH"/>
+
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SUPER" permissionId="INV_CNT_VIEW_QOH"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="COMMERCE_SUPER" permissionId="INV_CNT_VIEW_QOH"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="STORE_MANAGER" permissionId="INV_CNT_VIEW_QOH"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="WAREHOUSE_MANAGER" permissionId="INV_CNT_VIEW_QOH"/>
+
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SGC_INV" permissionId="INV_CNT_VIEW_QOH"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SGC_INV" permissionId="INV_COUNT_PRE_START"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SGC_INV" permissionId="PREVIEW_COUNT_ITEM"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SGC_INV" permissionId="INV_COUNT_SUBMIT"/>
+    <org.apache.ofbiz.security.securitygroup.SecurityGroupPermission fromDate="2001-05-13 12:00:00.0" groupId="SGC_INV" permissionId="INV_COUNT_LOCK_RLS"/>
+</entity-facade-xml>
