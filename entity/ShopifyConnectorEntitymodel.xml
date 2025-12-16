@@ -162,16 +162,16 @@ under the License.
             <key-map field-name="shopId"/>
         </relationship>
     </entity>
-    <entity entity-name="ShopifyOrderReconShopify" package="co.hotwax.shopify">
+    <entity entity-name="ShopifyOmsOrderRecon" package="co.hotwax.shopify">
         <description>Temporary storage for Shopify orders captured during reconciliation runs.</description>
         <field name="systemMessageRemoteId" type="id" is-pk="true"/>
         <field name="shopifyOrderId" type="id-long" is-pk="true"/>
         <field name="shopId" type="id"/>
         <field name="orderCreatedAt" type="date-time"/>
     </entity>
-    <view-entity entity-name="ShopifyOrderReconShopifyGapView" package="co.hotwax.shopify">
+    <view-entity entity-name="ShopifyOmsOrderReconView" package="co.hotwax.shopify">
         <description>Left joins Shopify reconciliation records to OMS reconciliation rows to find Shopify-only orders.</description>
-        <member-entity entity-alias="SHOP" entity-name="co.hotwax.shopify.ShopifyOrderReconShopify"/>
+        <member-entity entity-alias="SHOP" entity-name="co.hotwax.shopify.ShopifyOmsOrderRecon"/>
         <!-- Direct match to OrderHeader.externalId using numeric Shopify order id (trusted source) -->
         <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader" join-from-alias="SHOP" join-optional="true">
             <key-map field-name="shopifyOrderId" related="externalId"/>
