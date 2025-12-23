@@ -23,10 +23,6 @@
     <moqui.basic.Enumeration enumId="OLD_SHOPIFY_RTN_ID" enumTypeId="RETURN_IDENTITY" enumCode="OLD_SHOPIFY_RTN_ID" description="Old Shopify Return Id"/>
     <moqui.basic.Enumeration enumId="SHPY_ORPN_RTN_ORD_ID" enumTypeId="RETURN_IDENTITY" enumCode="SHPY_ORPN_RTN_ORD_ID" description="Shopify retruns with no Order Id"/>
     <org.apache.ofbiz.party.party.PartyIdentificationType partyIdentificationTypeId="SHOPIFY_CUST_ID" hasTable="N" description="Shopify Customer Id"/>
-    <moqui.basic.EnumerationType enumTypeId="SHOPIFY_SHOP_ACCESS" description="Shopify shop access"/>
-    <moqui.basic.Enumeration enumId="SHOP_NO_ACCESS" enumTypeId="SHOPIFY_SHOP_ACCESS" enumCode="SHOP_NO" description="Shopify shop no access"/>
-    <moqui.basic.Enumeration enumId="SHOP_READ_ACCESS" enumTypeId="SHOPIFY_SHOP_ACCESS" enumCode="SHOP_READ" description="Shopify shop read access"/>
-    <moqui.basic.Enumeration enumId="SHOP_RW_ACCESS" enumTypeId="SHOPIFY_SHOP_ACCESS" enumCode="SHOP_READ_WRITE" description="Shopify shop read and write access"/>
     <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_OTHR_GTWAY" description="Ext Other Gateways"/>
     <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_VISA" description="Ext VISA" paymentMethodCode="VISA"/>
     <org.apache.ofbiz.accounting.payment.PaymentMethodType paymentMethodTypeId="EXT_SHOP_AMEX" description="Ext AMEX" paymentMethodCode="American Express"/>
