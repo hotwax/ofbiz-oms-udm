@@ -125,4 +125,10 @@ under the License.
             </description>
         </field>
     </entity>
+
+    <entity entity-name="AppVersion" package="co.hotwax.common">
+        <field name="id" type="id" is-pk="true"></field>
+        <field name="appName" type="text-medium"></field>
+        <field name="version" type="text-medium"></field>
+    </entity>
 </entities>
