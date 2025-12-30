@@ -104,10 +104,6 @@ under the License.
         <alias entity-alias="PSF" field="fromDate" name="psfFromDate"/>
         <alias entity-alias="PSF" field="thruDate" name="psfThruDate"/>
 
-        <entity-condition>
-            <date-filter from-field-name="psfFromDate" thru-field-name="psfThruDate"/>
-        </entity-condition>
-
     </view-entity>
 
     <view-entity entity-name="ProductFacilityView" package="co.hotwax.facility">
