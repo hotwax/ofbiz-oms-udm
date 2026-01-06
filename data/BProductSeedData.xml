@@ -447,6 +447,8 @@
     <moqui.basic.StatusItem statusId="SHIPMENT_PICKED" statusTypeId="SHIPMENT_STATUS" statusCode="PICKED" description="Picked" statusAge="60"/>
     <moqui.basic.StatusItem statusId="SHIPMENT_PACKED" statusTypeId="SHIPMENT_STATUS" statusCode="PACKED" description="Packed" statusAge="80"/>
     <moqui.basic.StatusItem statusId="SHIPMENT_SHIPPED" statusTypeId="SHIPMENT_STATUS" statusCode="SHIPPED" description="Shipped" statusAge="100"/>
+    <moqui.basic.StatusItem statusId="SHIPMENT_ARRIVED" statusTypeId="SHIPMENT_STATUS" statusCode="ARRIVED" description="Arrived" statusAge="100"/>
+    <moqui.basic.StatusItem statusId="SHIPMENT_ARRIVED1" statusTypeId="SHIPMENT_STATUS" statusCode="ARRIVED" description="Arrived" statusAge="100"/>
     <moqui.basic.StatusItem statusId="SHIPMENT_DELIVERED" statusTypeId="SHIPMENT_STATUS" statusCode="DELIVERED" description="Delivered"/>
     <moqui.basic.StatusItem statusId="SHIPMENT_CANCELLED" statusTypeId="SHIPMENT_STATUS" statusCode="CANCELLED" description="Cancelled" statusAge="101"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_INPUT" toStatusId="SHIPMENT_SCHEDULED" transitionName="Schedule"/>
