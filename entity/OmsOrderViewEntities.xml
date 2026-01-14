@@ -1618,6 +1618,8 @@ under the License.
             <key-map field-name="communicationEventId"/>
         </member-entity>
         <alias-all entity-alias="CO"/>
-        <alias-all entity-alias="CE"/>
+        <alias-all entity-alias="CE">
+            <exclude field="communicationEventId"/>
+        </alias-all>
     </view-entity>
 </entities>
