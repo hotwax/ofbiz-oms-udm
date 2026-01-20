@@ -1619,6 +1619,7 @@ under the License.
         </member-entity>
         <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OH">
             <key-map field-name="orderId"/>
+            <key-map field-name="statusId"/>
         </member-entity>
         <alias-all entity-alias="OFC"/>
         <alias name="statusId" entity-alias="OH"/>
