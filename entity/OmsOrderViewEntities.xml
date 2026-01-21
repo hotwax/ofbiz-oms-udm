@@ -1227,7 +1227,7 @@ under the License.
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
         <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
-        <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
+        <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="non-lateral" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
@@ -1412,7 +1412,7 @@ under the License.
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- NOTE: Using sub-select here to use the result of SalesOrder view while joining it with OrderItem -->
         <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
-        <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI">
+        <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="non-lateral" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
@@ -1448,7 +1448,7 @@ under the License.
     <view-entity entity-name="FulfilledOrdersItemsForShopify" package="co.hotwax.warehouse">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
-        <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="true" join-from-alias="OI">
+        <member-entity entity-alias="SOV" entity-name="co.hotwax.financial.SalesOrderView" sub-select="non-lateral" join-from-alias="OI">
             <key-map field-name="orderItemSeqId"/>
             <key-map field-name="orderId"/>
         </member-entity>
@@ -1482,7 +1482,7 @@ under the License.
     <view-entity entity-name="OrderItemShipmentForShopify" package="co.hotwax.warehouse">
         <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem"/>
         <!-- TODO sub-select is used here, but needs to be revisted for query performance and efficiency -->
-        <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="true" join-from-alias="OI">
+        <member-entity entity-alias="OISD" entity-name="co.hotwax.warehouse.OrderItemShipmentDetail" sub-select="non-lateral" join-from-alias="OI">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
         </member-entity>
