@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="ext-upgrade">
+    <co.hotwax.datamanager.DataManagerConfig configId="IMP_UPD_PRD_FACI" importServiceName="co.hotwax.oms.product.ProductServices.update#ProductFacility" description="Update Product Facility" scriptTitle="Generic Config for import Json List Data"/>
 </entity-facade-xml>

@@ -132,6 +132,7 @@
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_JSON_DATA" importServiceName="importJsonData" description="Generic Config for import Json Data" scriptTitle="Generic Config for import Json Data" importPath="/home/{SFTP-USER}/hotwax/oms/ImportJsonData"/>
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_JSON_LIST_DATA" importServiceName="importJsonListData" description="Generic Config for import Json List Data" scriptTitle="Generic Config for import Json List Data" importPath="/home/{SFTP-USER}/hotwax/oms/ImportJsonListData"/>
     <co.hotwax.datamanager.DataManagerConfig configId="IMP_PICKER" importServiceName="pickerDataSetup" description="Picker Data Setup" scriptTitle="Import Picker"/>
+    <co.hotwax.datamanager.DataManagerConfig configId="IMP_UPD_PRD_FACI" importServiceName="co.hotwax.oms.product.ProductServices.update#ProductFacility" description="Update Product Facility" scriptTitle="Generic Config for import Json List Data"/>
     <moqui.basic.StatusItem statusId="PICKITEM_PICKED" statusTypeId="PICKITEM_STATUS" statusCode="PICKED" description="Picked" statusAge="50"/>
     <moqui.basic.StatusItem statusId="ORDER_AUTHORIZED" statusTypeId="ORDER_STATUS" statusCode="AUTHORIZED" description="Authorized"/>
     <moqui.basic.StatusItem statusId="ORDER_EXPIRED" statusTypeId="ORDER_STATUS" statusCode="EXPIRED" description="Expired"/>
