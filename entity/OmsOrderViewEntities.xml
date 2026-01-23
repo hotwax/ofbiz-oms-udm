@@ -1622,4 +1622,45 @@ under the License.
             <exclude field="communicationEventId"/>
         </alias-all>
     </view-entity>
+    <view-entity entity-name="ProductSalesVelocity" package="co.hotwax.order">
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
+        <member-entity entity-alias="OI" entity-name="org.apache.ofbiz.order.order.OrderItem" join-from-alias="OH">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+            <key-map field-name="statusId"/>
+            <entity-condition>
+                <econdition field-name="statusId" entity-alias="OS" value="ITEM_COMPLETED"/>
+            </entity-condition>
+        </member-entity>
+        <member-entity entity-alias="OISG" entity-name="org.apache.ofbiz.order.order.OrderItemShipGroup" join-from-alias="OI">
+            <key-map field-name="orderId"/>
+            <key-map field-name="shipGroupSeqId"/>
+        </member-entity>
+        <member-entity entity-alias="FAC" entity-name="org.apache.ofbiz.product.facility.Facility" join-from-alias="OISG">
+            <key-map field-name="facilityId"/>
+        </member-entity>
+        <member-entity entity-alias="FT" entity-name="org.apache.ofbiz.product.facility.FacilityType" join-from-alias="FAC">
+            <key-map field-name="facilityTypeId"/>
+            <entity-condition>
+                <econdition entity-alias="FT" field-name="parentTypeId" operator="not-equals" value="VIRTUAL_FACILITY"/>
+            </entity-condition>
+        </member-entity>
+        <alias entity-alias="OH" name="productStoreId"/>
+        <alias entity-alias="OH" name="orderTypeId"/>
+        <alias entity-alias="OH" name="salesChannelEnumId"/>
+        <alias entity-alias="OI" name="orderId"/>
+        <alias entity-alias="OI" name="statusId"/>
+        <alias entity-alias="OI" name="shipGroupSeqId"/>
+        <alias entity-alias="OI" name="productId"/>
+        <alias entity-alias="OI" name="totalQuantity" field="quantity" function="sum"/>
+        <alias entity-alias="OS" name="statusDatetime" />
+        <alias entity-alias="OS" name="statusId"/>
+        <alias entity-alias="OS" name="orderItemSeqId"/>
+        <alias entity-alias="OISG" name="facilityId"/>
+        <alias entity-alias="FAC" name="facilityTypeId"/>
+        <alias entity-alias="FT" name="parentTypeId"/>
+    </view-entity>
 </entities>
