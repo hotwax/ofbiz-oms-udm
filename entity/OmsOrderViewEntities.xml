@@ -1622,4 +1622,20 @@ under the License.
             <exclude field="communicationEventId"/>
         </alias-all>
     </view-entity>
+    <view-entity entity-name="OrderHeaderAndFacilityChange" package="co.hotwax.order">
+        <member-entity entity-alias="OH" entity-name="org.apache.ofbiz.order.order.OrderHeader"/>
+        <member-entity entity-alias="OFC" entity-name="co.hotwax.facility.OrderFacilityChange" join-from-alias="OH">
+            <key-map field-name="orderId"/>
+        </member-entity>
+        <member-entity entity-alias="OS" entity-name="org.apache.ofbiz.order.order.OrderStatus" join-from-alias="OH">
+            <key-map field-name="orderId"/>
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <alias-all entity-alias="OFC"/>
+        <alias name="statusId" entity-alias="OH"/>
+        <alias name="entryDate" entity-alias="OH"/>
+        <alias name="orderTypeId" entity-alias="OH"/>
+        <alias name="productStoreId" entity-alias="OH"/>
+        <alias name="statusDatetime" entity-alias="OS"/>
+    </view-entity>
 </entities>
