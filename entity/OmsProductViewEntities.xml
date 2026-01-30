@@ -87,31 +87,4 @@ under the License.
         <alias-all entity-alias="DR" prefix="dr"/>
         <alias-all entity-alias="ELT"/>
     </view-entity>
-
-    <view-entity entity-name="ProductStoreCatalogAndCategoryRollUp" package="co.hotwax.product.catalog.category">
-        <member-entity entity-alias="PSC" entity-name="org.apache.ofbiz.product.store.ProductStoreCatalog"/>
-        <member-entity entity-alias="PCC" entity-name="org.apache.ofbiz.product.catalog.ProdCatalogCategory" join-from-alias="PSC">
-            <key-map field-name="prodCatalogId"/>
-            <entity-condition>
-                <date-filter/>
-            </entity-condition>
-        </member-entity>
-        <member-entity entity-alias="PCR" entity-name="org.apache.ofbiz.product.category.ProductCategoryRollup" join-from-alias="PCC">
-            <key-map field-name="productCategoryId" related="parentProductCategoryId"/>
-            <entity-condition>
-                <date-filter/>
-            </entity-condition>
-        </member-entity>
-        <alias entity-alias="PSC" name="productStoreId"/>
-        <alias entity-alias="PSC" name="prodCatalogId"/>
-        <alias entity-alias="PSC" name="fromDate"/>
-        <alias entity-alias="PSC" name="thruDate"/>
-        <alias entity-alias="PCC" name="prodCatalogCategoryTypeId"/>
-        <alias entity-alias="PCC" field="fromDate" name="pccFromDate"/>
-        <alias entity-alias="PCC" field="thruDate" name="pccThruDate"/>
-        <alias entity-alias="PCR" name="productCategoryId"/>
-        <alias entity-alias="PCR" name="parentProductCategoryId"/>
-        <alias entity-alias="PCR" field="fromDate" name="pccFromDate"/>
-        <alias entity-alias="PCR" field="thruDate" name="pccThruDate"/>
-    </view-entity>
 </entities>
