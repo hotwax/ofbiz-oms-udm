@@ -109,6 +109,8 @@
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SCHEDULED" toStatusId="SHIPMENT_PACKED" transitionName="Pack"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_INPUT" transitionName="input" conditionExpression="directStatusChange == false"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_SHIPPED" transitionName="Ship"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SHIPPED" toStatusId="SHIPMENT_ARRIVED" transitionName="Arrive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_ARRIVED" toStatusId="SHIPMENT_DELIVERED" transitionName="Deliver"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PACKED" toStatusId="SHIPMENT_APPROVED" transitionName="Approve" conditionExpression="directStatusChange == false"/>
     <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_PICKED" toStatusId="SHIPMENT_CANCELLED" transitionName="Cancel"/>
