@@ -183,4 +183,22 @@ under the License.
         <alias-all entity-alias="SHS"/>
         <alias-all entity-alias="SHL"/>
     </view-entity>
+    <view-entity entity-name="ShopifyShopAndProduct" package="co.hotwax.shopify">
+        <member-entity entity-alias="SSP" entity-name="co.hotwax.shopify.ShopifyShopProduct"/>
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product" join-from-alias="SSP"/>
+        <alias-all entity-alias="P"/>
+        <alias name="shopId"/>
+        <alias name="shopifyProductId"/>
+        <alias name="shopifyInventoryItemId"/>
+    </view-entity>
+    <view-entity entity-name="ProductAndIdentification" package="co.hotwax.product">
+        <member-entity entity-alias="P" entity-name="org.apache.ofbiz.product.product.Product"/>
+        <member-entity entity-alias="GI" entity-name="org.apache.ofbiz.product.product.GoodIdentification" join-from-alias="P">
+            <key-map field-name="productId"/>
+        </member-entity>
+        <alias-all entity-alias="P"/>
+        <alias-all entity-alias="GI">
+            <exclude field="productId"/>
+        </alias-all>
+    </view-entity>
 </entities>
