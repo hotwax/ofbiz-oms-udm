@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="ext-upgrade">
+    <!-- Adding new shipment status -->
+    <moqui.basic.StatusItem statusId="SHIPMENT_ARRIVED" statusTypeId="SHIPMENT_STATUS" statusCode="ARRIVED" description="Arrived" statusAge="100"/>
+    <!-- Adding new shipment status transitions -->
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_SHIPPED" toStatusId="SHIPMENT_ARRIVED" transitionName="Arrive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="Default" statusId="SHIPMENT_ARRIVED" toStatusId="SHIPMENT_DELIVERED" transitionName="Deliver"/>
+</entity-facade-xml>
