@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="ext-upgrade">
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="SHPFI_REFUND_DISCREP" hasTable="N" description="Shopify Refund Discrepancy"/>
 </entity-facade-xml>
