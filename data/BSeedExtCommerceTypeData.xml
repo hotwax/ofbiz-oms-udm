@@ -243,6 +243,7 @@
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_DEPOSIT_ADJ" hasTable="N" description="Return Deposit Adjustment"/>
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="RET_SHIPPING_ADJ" hasTable="N" description="Return S&amp;H"/>
     <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="APPEASEMENT" hasTable="N" description="Appeasement"/>
+    <org.apache.ofbiz.order.return.ReturnAdjustmentType returnAdjustmentTypeId="SHPFI_REFUND_DISCREP" hasTable="N" description="Shopify Refund Discrepancy"/>
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DUTY" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_DUTY_ADJ"/>
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="DEPOSIT_ADJUSTMENT" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_DEPOSIT_ADJ"/>
     <org.apache.ofbiz.order.return.ReturnItemTypeMap returnItemMapKey="RET_MAN_ADJ" returnHeaderTypeId="CUSTOMER_RETURN" returnItemTypeId="RET_MAN_ADJ"/>
